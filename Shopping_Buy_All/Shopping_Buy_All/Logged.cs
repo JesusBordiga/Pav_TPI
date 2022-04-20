@@ -1,4 +1,5 @@
 ﻿using System;
+using Shopping_Buy_All.Entidades;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,12 @@ using System.Windows.Forms;
 
 namespace Shopping_Buy_All
 {
-    public partial class Form1 : Form
+    public partial class Logged : Form
     {
-        public Form1()
+        public Logged(User usu)
         {
             InitializeComponent();
+            LabelBienvenido.Text = "Bienvenido \n";
         }
     }
 }

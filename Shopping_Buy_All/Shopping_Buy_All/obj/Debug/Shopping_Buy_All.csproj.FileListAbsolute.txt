@@ -1,0 +1,11 @@
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\bin\Debug\Shopping_Buy_All.exe.config
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\bin\Debug\Shopping_Buy_All.exe
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\bin\Debug\Shopping_Buy_All.pdb
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Debug\Shopping_Buy_All.csproj.AssemblyReference.cache
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Debug\Shopping_Buy_All.csproj.SuggestedBindingRedirects.cache
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Debug\Shopping_Buy_All.Login.resources
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Debug\Shopping_Buy_All.Properties.Resources.resources
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Debug\Shopping_Buy_All.csproj.GenerateResource.cache
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Debug\Shopping_Buy_All.csproj.CoreCompileInputs.cache
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Debug\Shopping_Buy_All.exe
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Debug\Shopping_Buy_All.pdb
