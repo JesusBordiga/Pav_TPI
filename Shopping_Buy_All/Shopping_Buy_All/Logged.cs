@@ -16,8 +16,11 @@ namespace Shopping_Buy_All
         public Logged(User usu)
         {
             InitializeComponent();
-            LabelBienvenido.Text = "Bienvenido \n"+ usu.Username;
+            LabelBienvenido.Text = "Bienvenido \n"+ usu.userName;
         }
 
+        private void Logged_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

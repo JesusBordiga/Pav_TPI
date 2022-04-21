@@ -29,26 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.ImageLogin = new System.Windows.Forms.PictureBox();
             this.LabelUser = new System.Windows.Forms.Label();
             this.LabelPassword = new System.Windows.Forms.Label();
             this.TxtUser = new System.Windows.Forms.TextBox();
             this.TxtPassword = new System.Windows.Forms.TextBox();
             this.BtnLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageLogin)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ImageLogin
-            // 
-            this.ImageLogin.BackColor = System.Drawing.Color.Transparent;
-            this.ImageLogin.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.pop_shop;
-            this.ImageLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ImageLogin.Location = new System.Drawing.Point(724, 357);
-            this.ImageLogin.Name = "ImageLogin";
-            this.ImageLogin.Size = new System.Drawing.Size(75, 67);
-            this.ImageLogin.TabIndex = 0;
-            this.ImageLogin.TabStop = false;
             // 
             // LabelUser
             // 
@@ -77,27 +64,32 @@
             // TxtUser
             // 
             this.TxtUser.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.TxtUser.ForeColor = System.Drawing.Color.White;
             this.TxtUser.Location = new System.Drawing.Point(353, 187);
             this.TxtUser.Name = "TxtUser";
             this.TxtUser.Size = new System.Drawing.Size(100, 20);
-            this.TxtUser.TabIndex = 3;
+            this.TxtUser.TabIndex = 1;
             // 
             // TxtPassword
             // 
             this.TxtPassword.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.TxtPassword.ForeColor = System.Drawing.Color.White;
             this.TxtPassword.Location = new System.Drawing.Point(353, 246);
             this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.PasswordChar = '*';
             this.TxtPassword.Size = new System.Drawing.Size(100, 20);
-            this.TxtPassword.TabIndex = 4;
+            this.TxtPassword.TabIndex = 2;
             // 
             // BtnLogin
             // 
             this.BtnLogin.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnLogin.Location = new System.Drawing.Point(724, 427);
+            this.BtnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLogin.ForeColor = System.Drawing.Color.White;
+            this.BtnLogin.Location = new System.Drawing.Point(364, 301);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(75, 23);
-            this.BtnLogin.TabIndex = 5;
+            this.BtnLogin.TabIndex = 3;
             this.BtnLogin.Text = "Login";
             this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
@@ -128,20 +120,19 @@
             this.Controls.Add(this.TxtUser);
             this.Controls.Add(this.LabelPassword);
             this.Controls.Add(this.LabelUser);
-            this.Controls.Add(this.ImageLogin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Login";
             this.Opacity = 0.98D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.ImageLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox ImageLogin;
         private System.Windows.Forms.Label LabelUser;
         private System.Windows.Forms.Label LabelPassword;
         private System.Windows.Forms.TextBox TxtUser;

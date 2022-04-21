@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Shopping_Buy_All
 {
@@ -18,13 +19,32 @@ namespace Shopping_Buy_All
             InitializeComponent();
         }
 
-        private void BtnLogin_Click(object sender, EventArgs e)
+        public void BtnLogin_Click(object sender, EventArgs e)
         {
-            User usu = new User(TxtUser.Text,TxtPassword.Text);
+            if (TxtUser.Text.Equals("") || TxtPassword.Text.Equals(""))
+            {
+                MessageBox.Show("Por favor complete los campos!!");
+            }
+            else
+            {
+                string userName = TxtUser.Text;
+                string password = TxtPassword.Text;
+                bool resultado = false;
 
-            Logged LoggedWindow = new Logged(usu);
-            LoggedWindow.Show();
-            this.Hide();
+                resultado = Validate_Exist(userName, password);
+                if (resultado = true)
+                {
+                   User usu = new User (userName, password);
+                   Logged LoggedWindow = new Logged(usu);
+                   LoggedWindow.Show();
+                   this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario Inexistente!");
+                }
+            }
+
 
 
             ClearLogin();
@@ -34,25 +54,40 @@ namespace Shopping_Buy_All
             TxtUser.Text = "";
             TxtPassword.Text = "";
         }
-        private bool Validate_Exist()
+        private bool Validate_Exist(string userName, string password)
         {
-            if (Validate())
-            {
-                return true;
-            }
-            return false; 
-        }
+            
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
 
-        private bool Validate()
-        {
-            if (TxtUser.Text.Equals("") || TxtPassword.Text.Equals(""))
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            string consulta = "Select * FROM Users WHERE NombreDeUsuario like '"+userName+"' AND Password like '"+password+"'";
+            
+            cmd.Parameters.Clear();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = consulta;
+
+            cn.Open();
+            cmd.Connection = cn;
+
+            DataTable table = new DataTable();
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(table);
+
+            if (table.Rows.Count == 1)
             {
-                return false;
+                
+                return true;
             }
             else
             {
-                return true;
+                return false;
             }
+             
         }
+
+
     }
 }
