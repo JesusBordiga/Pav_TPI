@@ -33,6 +33,9 @@
             this.LabelBienvenido = new System.Windows.Forms.Label();
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaDeClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificacionDeClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaDeClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.automovilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profesionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.producotsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,10 +89,39 @@
             // 
             // clienteToolStripMenuItem
             // 
+            this.clienteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaDeClienteToolStripMenuItem,
+            this.modificacionDeClienteToolStripMenuItem,
+            this.bajaDeClienteToolStripMenuItem});
             this.clienteToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.clienteToolStripMenuItem.Text = "Cliente";
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.clienteToolStripMenuItem.Text = "Clientes";
+            // 
+            // altaDeClienteToolStripMenuItem
+            // 
+            this.altaDeClienteToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.altaDeClienteToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.altaDeClienteToolStripMenuItem.Name = "altaDeClienteToolStripMenuItem";
+            this.altaDeClienteToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.altaDeClienteToolStripMenuItem.Text = "Alta de Cliente";
+            this.altaDeClienteToolStripMenuItem.Click += new System.EventHandler(this.altaDeClienteToolStripMenuItem_Click);
+            // 
+            // modificacionDeClienteToolStripMenuItem
+            // 
+            this.modificacionDeClienteToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.modificacionDeClienteToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.modificacionDeClienteToolStripMenuItem.Name = "modificacionDeClienteToolStripMenuItem";
+            this.modificacionDeClienteToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.modificacionDeClienteToolStripMenuItem.Text = "Modificacion de Cliente";
+            // 
+            // bajaDeClienteToolStripMenuItem
+            // 
+            this.bajaDeClienteToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bajaDeClienteToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.bajaDeClienteToolStripMenuItem.Name = "bajaDeClienteToolStripMenuItem";
+            this.bajaDeClienteToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.bajaDeClienteToolStripMenuItem.Text = "Baja de Cliente";
             // 
             // automovilesToolStripMenuItem
             // 
@@ -110,7 +142,7 @@
             this.producotsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.producotsToolStripMenuItem.Name = "producotsToolStripMenuItem";
             this.producotsToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.producotsToolStripMenuItem.Text = "Producots";
+            this.producotsToolStripMenuItem.Text = "Productos";
             // 
             // localesToolStripMenuItem
             // 
@@ -206,6 +238,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -257,7 +290,7 @@
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Logged";
             this.Opacity = 0.98D;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logged";
             this.Load += new System.EventHandler(this.Logged_Load);
             this.MenuStrip.ResumeLayout(false);
@@ -292,5 +325,8 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem altaDeClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificacionDeClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bajaDeClienteToolStripMenuItem;
     }
 }

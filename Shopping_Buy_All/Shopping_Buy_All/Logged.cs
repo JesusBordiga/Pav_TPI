@@ -22,5 +22,11 @@ namespace Shopping_Buy_All
         private void Logged_Load(object sender, EventArgs e)
         {
         }
+
+        private void altaDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           btnClean load = new btnClean();
+            load.ShowDialog();
+        }
     }
 }

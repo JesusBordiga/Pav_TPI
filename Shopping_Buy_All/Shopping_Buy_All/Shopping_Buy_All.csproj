@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client_Load.Designer.cs">
+      <DependentUpon>Client_Load.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\User.cs" />
     <Compile Include="Logged.cs">
       <SubType>Form</SubType>
@@ -62,6 +69,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Client_Load.resx">
+      <DependentUpon>Client_Load.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
     </EmbeddedResource>
