@@ -21,6 +21,7 @@ namespace Shopping_Buy_All
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             User usu = new User(TxtUser.Text,TxtPassword.Text);
+
             Logged LoggedWindow = new Logged(usu);
             LoggedWindow.Show();
             this.Hide();

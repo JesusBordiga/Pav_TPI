@@ -92,13 +92,14 @@
             // 
             // BtnLogin
             // 
+            this.BtnLogin.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnLogin.Location = new System.Drawing.Point(724, 427);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(75, 23);
             this.BtnLogin.TabIndex = 5;
             this.BtnLogin.Text = "Login";
-            this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // label1
@@ -130,6 +131,7 @@
             this.Controls.Add(this.ImageLogin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
+            this.Opacity = 0.98D;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.ImageLogin)).EndInit();
             this.ResumeLayout(false);
