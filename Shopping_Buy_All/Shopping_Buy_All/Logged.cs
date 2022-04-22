@@ -25,7 +25,7 @@ namespace Shopping_Buy_All
 
         private void altaDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           btnClean load = new btnClean();
+           Client_Load load = new Client_Load();
             load.ShowDialog();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace Shopping_Buy_All
 {
-    partial class btnClean
+    partial class Client_Load
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(btnClean));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client_Load));
             this.btnClear = new System.Windows.Forms.DataGridView();
             this.DocTipe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DocNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,12 +47,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textNameClient = new System.Windows.Forms.TextBox();
-            this.textSurnameClient = new System.Windows.Forms.TextBox();
             this.textDateBirthDay = new System.Windows.Forms.MaskedTextBox();
-            this.textNumberDoc = new System.Windows.Forms.TextBox();
-            this.comboBoxDocTipe = new System.Windows.Forms.ComboBox();
-            this.textStreetClient = new System.Windows.Forms.TextBox();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -61,17 +56,26 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.btnClientLoad = new System.Windows.Forms.Button();
-            this.radioButtonSingle = new System.Windows.Forms.RadioButton();
-            this.radioButtonMarried = new System.Windows.Forms.RadioButton();
             this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.radioButtonOther = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.comboBoxDocType = new System.Windows.Forms.ComboBox();
+            this.radioButtonSingle = new System.Windows.Forms.CheckBox();
+            this.radioButtonMarried = new System.Windows.Forms.CheckBox();
+            this.textNumberDoc = new System.Windows.Forms.MaskedTextBox();
+            this.textStreetHeight = new System.Windows.Forms.MaskedTextBox();
+            this.textStreetClient = new System.Windows.Forms.TextBox();
+            this.textNameClient = new System.Windows.Forms.TextBox();
+            this.textSurnameClient = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnClear)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClear
             // 
+            this.btnClear.AllowUserToAddRows = false;
+            this.btnClear.AllowUserToDeleteRows = false;
             this.btnClear.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.btnClear.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnClear.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -87,6 +91,7 @@
             this.btnClear.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnClear.Location = new System.Drawing.Point(282, 49);
             this.btnClear.Name = "btnClear";
+            this.btnClear.ReadOnly = true;
             this.btnClear.Size = new System.Drawing.Size(591, 396);
             this.btnClear.TabIndex = 0;
             this.btnClear.TabStop = false;
@@ -96,6 +101,7 @@
             this.DocTipe.Frozen = true;
             this.DocTipe.HeaderText = "Tipo Doc";
             this.DocTipe.Name = "DocTipe";
+            this.DocTipe.ReadOnly = true;
             this.DocTipe.Width = 35;
             // 
             // DocNumber
@@ -103,6 +109,7 @@
             this.DocNumber.Frozen = true;
             this.DocNumber.HeaderText = "Nro Documento";
             this.DocNumber.Name = "DocNumber";
+            this.DocNumber.ReadOnly = true;
             this.DocNumber.Width = 70;
             // 
             // Lastname
@@ -218,7 +225,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(121, 226);
+            this.label6.Location = new System.Drawing.Point(84, 228);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 17);
             this.label6.TabIndex = 6;
@@ -260,62 +267,16 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Fecha de Nacimiento";
             // 
-            // textNameClient
-            // 
-            this.textNameClient.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textNameClient.ForeColor = System.Drawing.SystemColors.Window;
-            this.textNameClient.Location = new System.Drawing.Point(109, 202);
-            this.textNameClient.Name = "textNameClient";
-            this.textNameClient.Size = new System.Drawing.Size(100, 20);
-            this.textNameClient.TabIndex = 4;
-            // 
-            // textSurnameClient
-            // 
-            this.textSurnameClient.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textSurnameClient.ForeColor = System.Drawing.SystemColors.Window;
-            this.textSurnameClient.Location = new System.Drawing.Point(109, 157);
-            this.textSurnameClient.Name = "textSurnameClient";
-            this.textSurnameClient.Size = new System.Drawing.Size(100, 20);
-            this.textSurnameClient.TabIndex = 3;
-            // 
             // textDateBirthDay
             // 
             this.textDateBirthDay.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textDateBirthDay.ForeColor = System.Drawing.SystemColors.Window;
+            this.textDateBirthDay.ForeColor = System.Drawing.Color.White;
             this.textDateBirthDay.Location = new System.Drawing.Point(128, 396);
             this.textDateBirthDay.Mask = "00/00/0000";
             this.textDateBirthDay.Name = "textDateBirthDay";
             this.textDateBirthDay.Size = new System.Drawing.Size(65, 20);
-            this.textDateBirthDay.TabIndex = 11;
+            this.textDateBirthDay.TabIndex = 12;
             this.textDateBirthDay.ValidatingType = typeof(System.DateTime);
-            // 
-            // textNumberDoc
-            // 
-            this.textNumberDoc.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textNumberDoc.ForeColor = System.Drawing.SystemColors.Window;
-            this.textNumberDoc.Location = new System.Drawing.Point(108, 118);
-            this.textNumberDoc.Name = "textNumberDoc";
-            this.textNumberDoc.Size = new System.Drawing.Size(100, 20);
-            this.textNumberDoc.TabIndex = 2;
-            // 
-            // comboBoxDocTipe
-            // 
-            this.comboBoxDocTipe.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.comboBoxDocTipe.ForeColor = System.Drawing.SystemColors.Window;
-            this.comboBoxDocTipe.FormattingEnabled = true;
-            this.comboBoxDocTipe.Location = new System.Drawing.Point(108, 74);
-            this.comboBoxDocTipe.Name = "comboBoxDocTipe";
-            this.comboBoxDocTipe.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxDocTipe.TabIndex = 1;
-            // 
-            // textStreetClient
-            // 
-            this.textStreetClient.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textStreetClient.ForeColor = System.Drawing.SystemColors.Window;
-            this.textStreetClient.Location = new System.Drawing.Point(88, 246);
-            this.textStreetClient.Name = "textStreetClient";
-            this.textStreetClient.Size = new System.Drawing.Size(140, 20);
-            this.textStreetClient.TabIndex = 5;
             // 
             // label10
             // 
@@ -397,31 +358,10 @@
             this.btnClientLoad.Location = new System.Drawing.Point(73, 422);
             this.btnClientLoad.Name = "btnClientLoad";
             this.btnClientLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnClientLoad.TabIndex = 12;
+            this.btnClientLoad.TabIndex = 13;
             this.btnClientLoad.Text = "Cargar";
             this.btnClientLoad.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSingle
-            // 
-            this.radioButtonSingle.AutoSize = true;
-            this.radioButtonSingle.BackColor = System.Drawing.Color.Transparent;
-            this.radioButtonSingle.Location = new System.Drawing.Point(138, 296);
-            this.radioButtonSingle.Name = "radioButtonSingle";
-            this.radioButtonSingle.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonSingle.TabIndex = 6;
-            this.radioButtonSingle.TabStop = true;
-            this.radioButtonSingle.UseVisualStyleBackColor = false;
-            // 
-            // radioButtonMarried
-            // 
-            this.radioButtonMarried.AutoSize = true;
-            this.radioButtonMarried.BackColor = System.Drawing.Color.Transparent;
-            this.radioButtonMarried.Location = new System.Drawing.Point(214, 296);
-            this.radioButtonMarried.Name = "radioButtonMarried";
-            this.radioButtonMarried.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonMarried.TabIndex = 7;
-            this.radioButtonMarried.TabStop = true;
-            this.radioButtonMarried.UseVisualStyleBackColor = false;
+            this.btnClientLoad.Click += new System.EventHandler(this.btnClientLoad_Click);
             // 
             // radioButtonMale
             // 
@@ -430,7 +370,7 @@
             this.radioButtonMale.Location = new System.Drawing.Point(143, 338);
             this.radioButtonMale.Name = "radioButtonMale";
             this.radioButtonMale.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonMale.TabIndex = 8;
+            this.radioButtonMale.TabIndex = 9;
             this.radioButtonMale.TabStop = true;
             this.radioButtonMale.UseVisualStyleBackColor = false;
             // 
@@ -441,7 +381,7 @@
             this.radioButtonFemale.Location = new System.Drawing.Point(230, 338);
             this.radioButtonFemale.Name = "radioButtonFemale";
             this.radioButtonFemale.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonFemale.TabIndex = 9;
+            this.radioButtonFemale.TabIndex = 10;
             this.radioButtonFemale.TabStop = true;
             this.radioButtonFemale.UseVisualStyleBackColor = false;
             // 
@@ -452,7 +392,7 @@
             this.radioButtonOther.Location = new System.Drawing.Point(169, 358);
             this.radioButtonOther.Name = "radioButtonOther";
             this.radioButtonOther.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonOther.TabIndex = 10;
+            this.radioButtonOther.TabIndex = 11;
             this.radioButtonOther.TabStop = true;
             this.radioButtonOther.UseVisualStyleBackColor = false;
             // 
@@ -464,12 +404,100 @@
             this.button1.Location = new System.Drawing.Point(169, 422);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
+            this.button1.TabIndex = 14;
             this.button1.Text = "Limpiar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnClean
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(205, 228);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(51, 17);
+            this.label16.TabIndex = 29;
+            this.label16.Text = "Altura";
+            // 
+            // comboBoxDocType
+            // 
+            this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
+            this.comboBoxDocType.FormattingEnabled = true;
+            this.comboBoxDocType.Location = new System.Drawing.Point(100, 74);
+            this.comboBoxDocType.Name = "comboBoxDocType";
+            this.comboBoxDocType.Size = new System.Drawing.Size(119, 21);
+            this.comboBoxDocType.TabIndex = 1;
+            // 
+            // radioButtonSingle
+            // 
+            this.radioButtonSingle.AutoSize = true;
+            this.radioButtonSingle.Location = new System.Drawing.Point(133, 296);
+            this.radioButtonSingle.Name = "radioButtonSingle";
+            this.radioButtonSingle.Size = new System.Drawing.Size(15, 14);
+            this.radioButtonSingle.TabIndex = 7;
+            this.radioButtonSingle.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonMarried
+            // 
+            this.radioButtonMarried.AutoSize = true;
+            this.radioButtonMarried.Location = new System.Drawing.Point(213, 296);
+            this.radioButtonMarried.Name = "radioButtonMarried";
+            this.radioButtonMarried.Size = new System.Drawing.Size(15, 14);
+            this.radioButtonMarried.TabIndex = 8;
+            this.radioButtonMarried.UseVisualStyleBackColor = true;
+            // 
+            // textNumberDoc
+            // 
+            this.textNumberDoc.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textNumberDoc.ForeColor = System.Drawing.Color.White;
+            this.textNumberDoc.Location = new System.Drawing.Point(133, 114);
+            this.textNumberDoc.Mask = "99999999";
+            this.textNumberDoc.Name = "textNumberDoc";
+            this.textNumberDoc.Size = new System.Drawing.Size(55, 20);
+            this.textNumberDoc.TabIndex = 2;
+            this.textNumberDoc.ValidatingType = typeof(int);
+            // 
+            // textStreetHeight
+            // 
+            this.textStreetHeight.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textStreetHeight.ForeColor = System.Drawing.SystemColors.Window;
+            this.textStreetHeight.Location = new System.Drawing.Point(212, 248);
+            this.textStreetHeight.Mask = "9999";
+            this.textStreetHeight.Name = "textStreetHeight";
+            this.textStreetHeight.Size = new System.Drawing.Size(29, 20);
+            this.textStreetHeight.TabIndex = 6;
+            // 
+            // textStreetClient
+            // 
+            this.textStreetClient.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textStreetClient.ForeColor = System.Drawing.Color.White;
+            this.textStreetClient.Location = new System.Drawing.Point(48, 248);
+            this.textStreetClient.Name = "textStreetClient";
+            this.textStreetClient.Size = new System.Drawing.Size(140, 20);
+            this.textStreetClient.TabIndex = 5;
+            // 
+            // textNameClient
+            // 
+            this.textNameClient.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textNameClient.ForeColor = System.Drawing.Color.White;
+            this.textNameClient.Location = new System.Drawing.Point(109, 202);
+            this.textNameClient.Name = "textNameClient";
+            this.textNameClient.Size = new System.Drawing.Size(100, 20);
+            this.textNameClient.TabIndex = 4;
+            // 
+            // textSurnameClient
+            // 
+            this.textSurnameClient.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textSurnameClient.ForeColor = System.Drawing.Color.White;
+            this.textSurnameClient.Location = new System.Drawing.Point(109, 157);
+            this.textSurnameClient.Name = "textSurnameClient";
+            this.textSurnameClient.Size = new System.Drawing.Size(100, 20);
+            this.textSurnameClient.TabIndex = 3;
+            // 
+            // Client_Load
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -477,12 +505,16 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(877, 449);
+            this.Controls.Add(this.textStreetHeight);
+            this.Controls.Add(this.textNumberDoc);
+            this.Controls.Add(this.radioButtonMarried);
+            this.Controls.Add(this.radioButtonSingle);
+            this.Controls.Add(this.comboBoxDocType);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButtonOther);
             this.Controls.Add(this.radioButtonFemale);
             this.Controls.Add(this.radioButtonMale);
-            this.Controls.Add(this.radioButtonMarried);
-            this.Controls.Add(this.radioButtonSingle);
             this.Controls.Add(this.btnClientLoad);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -491,8 +523,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textStreetClient);
-            this.Controls.Add(this.comboBoxDocTipe);
-            this.Controls.Add(this.textNumberDoc);
             this.Controls.Add(this.textDateBirthDay);
             this.Controls.Add(this.textSurnameClient);
             this.Controls.Add(this.textNameClient);
@@ -507,7 +537,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClear);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "btnClean";
+            this.Name = "Client_Load";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de Cliente";
@@ -529,12 +559,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textNameClient;
-        private System.Windows.Forms.TextBox textSurnameClient;
         private System.Windows.Forms.MaskedTextBox textDateBirthDay;
-        private System.Windows.Forms.TextBox textNumberDoc;
-        private System.Windows.Forms.ComboBox comboBoxDocTipe;
-        private System.Windows.Forms.TextBox textStreetClient;
         private System.ServiceProcess.ServiceController serviceController1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -543,8 +568,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnClientLoad;
-        private System.Windows.Forms.RadioButton radioButtonSingle;
-        private System.Windows.Forms.RadioButton radioButtonMarried;
         private System.Windows.Forms.RadioButton radioButtonMale;
         private System.Windows.Forms.RadioButton radioButtonFemale;
         private System.Windows.Forms.RadioButton radioButtonOther;
@@ -557,5 +580,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CivilStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthDate;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox comboBoxDocType;
+        private System.Windows.Forms.CheckBox radioButtonSingle;
+        private System.Windows.Forms.CheckBox radioButtonMarried;
+        private System.Windows.Forms.MaskedTextBox textNumberDoc;
+        private System.Windows.Forms.MaskedTextBox textStreetHeight;
+        private System.Windows.Forms.TextBox textStreetClient;
+        private System.Windows.Forms.TextBox textNameClient;
+        private System.Windows.Forms.TextBox textSurnameClient;
     }
 }

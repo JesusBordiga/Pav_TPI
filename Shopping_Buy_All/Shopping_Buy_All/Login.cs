@@ -30,8 +30,17 @@ namespace Shopping_Buy_All
                 string userName = TxtUser.Text;
                 string password = TxtPassword.Text;
                 bool resultado = false;
+                try
+                {
+                    resultado = Validate_Exist(userName, password);
+                }
+                catch (Exception ex)
+                {
 
-                resultado = Validate_Exist(userName, password);
+                    MessageBox.Show("Error, Base de datos no encontrada!");
+                }
+
+                
                 if (resultado = true)
                 {
                    User usu = new User (userName, password);
@@ -56,35 +65,48 @@ namespace Shopping_Buy_All
         }
         private bool Validate_Exist(string userName, string password)
         {
-            
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-
-            SqlCommand cmd = new SqlCommand();
             SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            string consulta = "Select * FROM Users WHERE NombreDeUsuario like '"+userName+"' AND Password like '"+password+"'";
             
-            cmd.Parameters.Clear();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = consulta;
-
-            cn.Open();
-            cmd.Connection = cn;
-
-            DataTable table = new DataTable();
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(table);
-
-            if (table.Rows.Count == 1)
+            try
             {
-                
-                return true;
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "Select * FROM Users WHERE NombreDeUsuario like '" + userName + "' AND Password like '" + password + "'";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable table = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(table);
+
+                if (table.Rows.Count == 1)
+                {
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return false;
+
+                throw;
             }
+            finally
+            {
+                cn.Close();
+            }
+
+
+            
              
         }
 
