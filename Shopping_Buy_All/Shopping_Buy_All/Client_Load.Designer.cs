@@ -29,15 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client_Load));
-            this.btnClear = new System.Windows.Forms.DataGridView();
-            this.DocTipe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DocNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Names = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.street = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CivilStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,7 +51,7 @@
             this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.radioButtonOther = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.comboBoxDocType = new System.Windows.Forms.ComboBox();
             this.radioButtonSingle = new System.Windows.Forms.CheckBox();
@@ -69,95 +61,44 @@
             this.textStreetClient = new System.Windows.Forms.TextBox();
             this.textNameClient = new System.Windows.Forms.TextBox();
             this.textSurnameClient = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClear)).BeginInit();
+            this.DocTipe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DocNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Names = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.street = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.height = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CivilStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnClear
+            // tablaClientes
             // 
-            this.btnClear.AllowUserToAddRows = false;
-            this.btnClear.AllowUserToDeleteRows = false;
-            this.btnClear.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.btnClear.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnClear.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.btnClear.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tablaClientes.AllowUserToAddRows = false;
+            this.tablaClientes.AllowUserToDeleteRows = false;
+            this.tablaClientes.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.tablaClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DocTipe,
             this.DocNumber,
             this.Lastname,
             this.Names,
             this.street,
+            this.height,
             this.CivilStatus,
             this.Sex,
-            this.birthDate});
-            this.btnClear.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnClear.Location = new System.Drawing.Point(282, 49);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.ReadOnly = true;
-            this.btnClear.Size = new System.Drawing.Size(591, 396);
-            this.btnClear.TabIndex = 0;
-            this.btnClear.TabStop = false;
-            // 
-            // DocTipe
-            // 
-            this.DocTipe.Frozen = true;
-            this.DocTipe.HeaderText = "Tipo Doc";
-            this.DocTipe.Name = "DocTipe";
-            this.DocTipe.ReadOnly = true;
-            this.DocTipe.Width = 35;
-            // 
-            // DocNumber
-            // 
-            this.DocNumber.Frozen = true;
-            this.DocNumber.HeaderText = "Nro Documento";
-            this.DocNumber.Name = "DocNumber";
-            this.DocNumber.ReadOnly = true;
-            this.DocNumber.Width = 70;
-            // 
-            // Lastname
-            // 
-            this.Lastname.Frozen = true;
-            this.Lastname.HeaderText = "Apellido";
-            this.Lastname.Name = "Lastname";
-            this.Lastname.ReadOnly = true;
-            this.Lastname.Width = 80;
-            // 
-            // Names
-            // 
-            this.Names.Frozen = true;
-            this.Names.HeaderText = "Nombres";
-            this.Names.Name = "Names";
-            this.Names.ReadOnly = true;
-            this.Names.Width = 80;
-            // 
-            // street
-            // 
-            this.street.Frozen = true;
-            this.street.HeaderText = "Domicilio";
-            this.street.Name = "street";
-            this.street.ReadOnly = true;
-            // 
-            // CivilStatus
-            // 
-            this.CivilStatus.Frozen = true;
-            this.CivilStatus.HeaderText = "Estado    Civil";
-            this.CivilStatus.Name = "CivilStatus";
-            this.CivilStatus.ReadOnly = true;
-            this.CivilStatus.Width = 50;
-            // 
-            // Sex
-            // 
-            this.Sex.Frozen = true;
-            this.Sex.HeaderText = "Sexo";
-            this.Sex.Name = "Sex";
-            this.Sex.ReadOnly = true;
-            this.Sex.Width = 50;
-            // 
-            // birthDate
-            // 
-            this.birthDate.Frozen = true;
-            this.birthDate.HeaderText = "Fecha Nacimiento";
-            this.birthDate.Name = "birthDate";
-            this.birthDate.ReadOnly = true;
-            this.birthDate.Width = 80;
+            this.birthDate,
+            this.Estado});
+            this.tablaClientes.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tablaClientes.Location = new System.Drawing.Point(262, 49);
+            this.tablaClientes.Name = "tablaClientes";
+            this.tablaClientes.ReadOnly = true;
+            this.tablaClientes.Size = new System.Drawing.Size(724, 396);
+            this.tablaClientes.TabIndex = 0;
+            this.tablaClientes.TabStop = false;
             // 
             // label1
             // 
@@ -396,18 +337,18 @@
             this.radioButtonOther.TabStop = true;
             this.radioButtonOther.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnClear
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(169, 422);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Limpiar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(169, 422);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 14;
+            this.btnClear.Text = "Limpiar";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label16
             // 
@@ -497,6 +438,92 @@
             this.textSurnameClient.Size = new System.Drawing.Size(100, 20);
             this.textSurnameClient.TabIndex = 3;
             // 
+            // DocTipe
+            // 
+            this.DocTipe.DataPropertyName = "Tipo_Doc";
+            this.DocTipe.Frozen = true;
+            this.DocTipe.HeaderText = "Tipo Doc";
+            this.DocTipe.Name = "DocTipe";
+            this.DocTipe.ReadOnly = true;
+            // 
+            // DocNumber
+            // 
+            this.DocNumber.DataPropertyName = "Num_Doc";
+            this.DocNumber.Frozen = true;
+            this.DocNumber.HeaderText = "Nro Documento";
+            this.DocNumber.Name = "DocNumber";
+            this.DocNumber.ReadOnly = true;
+            this.DocNumber.Width = 70;
+            // 
+            // Lastname
+            // 
+            this.Lastname.DataPropertyName = "Apellido";
+            this.Lastname.Frozen = true;
+            this.Lastname.HeaderText = "Apellido";
+            this.Lastname.Name = "Lastname";
+            this.Lastname.ReadOnly = true;
+            // 
+            // Names
+            // 
+            this.Names.DataPropertyName = "Domicilio";
+            this.Names.Frozen = true;
+            this.Names.HeaderText = "Nombres";
+            this.Names.Name = "Names";
+            this.Names.ReadOnly = true;
+            this.Names.Width = 80;
+            // 
+            // street
+            // 
+            this.street.DataPropertyName = "Domicilio";
+            this.street.Frozen = true;
+            this.street.HeaderText = "Domicilio";
+            this.street.Name = "street";
+            this.street.ReadOnly = true;
+            // 
+            // height
+            // 
+            this.height.DataPropertyName = "altura";
+            this.height.Frozen = true;
+            this.height.HeaderText = "Altura";
+            this.height.Name = "height";
+            this.height.ReadOnly = true;
+            this.height.Width = 50;
+            // 
+            // CivilStatus
+            // 
+            this.CivilStatus.DataPropertyName = "Estado_Civil";
+            this.CivilStatus.Frozen = true;
+            this.CivilStatus.HeaderText = "Estado    Civil";
+            this.CivilStatus.Name = "CivilStatus";
+            this.CivilStatus.ReadOnly = true;
+            this.CivilStatus.Width = 50;
+            // 
+            // Sex
+            // 
+            this.Sex.DataPropertyName = "Sexo";
+            this.Sex.Frozen = true;
+            this.Sex.HeaderText = "Sexo";
+            this.Sex.Name = "Sex";
+            this.Sex.ReadOnly = true;
+            this.Sex.Width = 50;
+            // 
+            // birthDate
+            // 
+            this.birthDate.DataPropertyName = "Fecha_Nacimiento";
+            this.birthDate.Frozen = true;
+            this.birthDate.HeaderText = "Fecha Nacimiento";
+            this.birthDate.Name = "birthDate";
+            this.birthDate.ReadOnly = true;
+            this.birthDate.Width = 80;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
+            // 
             // Client_Load
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,14 +531,14 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(877, 449);
+            this.ClientSize = new System.Drawing.Size(991, 449);
             this.Controls.Add(this.textStreetHeight);
             this.Controls.Add(this.textNumberDoc);
             this.Controls.Add(this.radioButtonMarried);
             this.Controls.Add(this.radioButtonSingle);
             this.Controls.Add(this.comboBoxDocType);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.radioButtonOther);
             this.Controls.Add(this.radioButtonFemale);
             this.Controls.Add(this.radioButtonMale);
@@ -535,13 +562,15 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.tablaClientes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1007, 488);
+            this.MinimumSize = new System.Drawing.Size(1007, 488);
             this.Name = "Client_Load";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de Cliente";
-            ((System.ComponentModel.ISupportInitialize)(this.btnClear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -549,7 +578,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView btnClear;
+        private System.Windows.Forms.DataGridView tablaClientes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -571,15 +600,7 @@
         private System.Windows.Forms.RadioButton radioButtonMale;
         private System.Windows.Forms.RadioButton radioButtonFemale;
         private System.Windows.Forms.RadioButton radioButtonOther;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DocTipe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DocNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lastname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Names;
-        private System.Windows.Forms.DataGridViewTextBoxColumn street;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CivilStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birthDate;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox comboBoxDocType;
         private System.Windows.Forms.CheckBox radioButtonSingle;
@@ -589,5 +610,15 @@
         private System.Windows.Forms.TextBox textStreetClient;
         private System.Windows.Forms.TextBox textNameClient;
         private System.Windows.Forms.TextBox textSurnameClient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DocTipe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DocNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lastname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Names;
+        private System.Windows.Forms.DataGridViewTextBoxColumn street;
+        private System.Windows.Forms.DataGridViewTextBoxColumn height;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CivilStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

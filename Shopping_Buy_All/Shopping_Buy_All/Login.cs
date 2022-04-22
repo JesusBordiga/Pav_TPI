@@ -71,9 +71,11 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "Select * FROM Users WHERE NombreDeUsuario like '" + userName + "' AND Password like '" + password + "'";
+                string consulta = "Select * FROM Users WHERE NombreDeUsuario like @nombreUsuario AND Password like @pass";
 
                 cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nombreUsuario", userName);
+                cmd.Parameters.AddWithValue("@pass", password);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 

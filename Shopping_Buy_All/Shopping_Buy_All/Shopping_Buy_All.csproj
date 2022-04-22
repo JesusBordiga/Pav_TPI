@@ -54,6 +54,7 @@
     <Compile Include="Client_Load.Designer.cs">
       <DependentUpon>Client_Load.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\Client.cs" />
     <Compile Include="Entidades\User.cs" />
     <Compile Include="Logged.cs">
       <SubType>Form</SubType>
