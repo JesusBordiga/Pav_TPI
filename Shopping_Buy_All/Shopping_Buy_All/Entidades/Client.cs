@@ -17,23 +17,6 @@ namespace Shopping_Buy_All.Entidades
         public string Sexo { get; set; }
         public string EstadoCivil { get; set; }
         public string FechaNacimiento { get; set; }
-        public bool EstadoClienteBand { get; set; } = false;
-
-
-        public Client(string tipoDocumento, string nroDocumento, string Apellido, string Nombre, string Domicilio, string Altura,
-            string Sexo, string EstadoCivil, string FechaNacimiento,bool EstadoClienteBand)
-        {
-            this.tipoDocumento = tipoDocumento;
-            this.nroDocumento = nroDocumento;
-            this.Apellido = Apellido;
-            this.Nombre = Nombre;
-            this.Domicilio = Domicilio;
-            this.Altura = Altura;
-            this.Sexo = Sexo;
-            this.EstadoCivil = EstadoCivil;
-            this.FechaNacimiento = FechaNacimiento;
-            this.EstadoClienteBand = EstadoClienteBand;
-        }
-
+        public string EstadoClienteBand { get; set; }
     }
 }

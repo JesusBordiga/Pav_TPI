@@ -61,16 +61,15 @@
             this.textStreetClient = new System.Windows.Forms.TextBox();
             this.textNameClient = new System.Windows.Forms.TextBox();
             this.textSurnameClient = new System.Windows.Forms.TextBox();
-            this.DocTipe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DocNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Names = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.street = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.height = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CivilStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,21 +81,20 @@
             this.tablaClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DocTipe,
-            this.DocNumber,
-            this.Lastname,
-            this.Names,
-            this.street,
-            this.height,
-            this.CivilStatus,
-            this.Sex,
-            this.birthDate,
-            this.Estado});
+            this.TipoDocumento,
+            this.NroDocumento,
+            this.Apellido,
+            this.Nombres,
+            this.Calle,
+            this.NroCalle,
+            this.EstadoCivil,
+            this.Sexo,
+            this.FechaNacimiento});
             this.tablaClientes.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaClientes.Location = new System.Drawing.Point(262, 49);
+            this.tablaClientes.Location = new System.Drawing.Point(343, 46);
             this.tablaClientes.Name = "tablaClientes";
             this.tablaClientes.ReadOnly = true;
-            this.tablaClientes.Size = new System.Drawing.Size(724, 396);
+            this.tablaClientes.Size = new System.Drawing.Size(704, 397);
             this.tablaClientes.TabIndex = 0;
             this.tablaClientes.TabStop = false;
             // 
@@ -212,12 +210,11 @@
             // 
             this.textDateBirthDay.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textDateBirthDay.ForeColor = System.Drawing.Color.White;
-            this.textDateBirthDay.Location = new System.Drawing.Point(128, 396);
-            this.textDateBirthDay.Mask = "00/00/0000";
+            this.textDateBirthDay.Location = new System.Drawing.Point(129, 396);
+            this.textDateBirthDay.Mask = "00-00-0000";
             this.textDateBirthDay.Name = "textDateBirthDay";
-            this.textDateBirthDay.Size = new System.Drawing.Size(65, 20);
+            this.textDateBirthDay.Size = new System.Drawing.Size(60, 20);
             this.textDateBirthDay.TabIndex = 12;
-            this.textDateBirthDay.ValidatingType = typeof(System.DateTime);
             // 
             // label10
             // 
@@ -285,7 +282,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(468, 13);
+            this.label15.Location = new System.Drawing.Point(588, 10);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(232, 31);
             this.label15.TabIndex = 28;
@@ -405,17 +402,18 @@
             // 
             this.textStreetHeight.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textStreetHeight.ForeColor = System.Drawing.SystemColors.Window;
-            this.textStreetHeight.Location = new System.Drawing.Point(212, 248);
-            this.textStreetHeight.Mask = "9999";
+            this.textStreetHeight.Location = new System.Drawing.Point(214, 248);
+            this.textStreetHeight.Mask = "99999";
             this.textStreetHeight.Name = "textStreetHeight";
             this.textStreetHeight.Size = new System.Drawing.Size(29, 20);
             this.textStreetHeight.TabIndex = 6;
+            this.textStreetHeight.ValidatingType = typeof(int);
             // 
             // textStreetClient
             // 
             this.textStreetClient.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textStreetClient.ForeColor = System.Drawing.Color.White;
-            this.textStreetClient.Location = new System.Drawing.Point(48, 248);
+            this.textStreetClient.Location = new System.Drawing.Point(51, 248);
             this.textStreetClient.Name = "textStreetClient";
             this.textStreetClient.Size = new System.Drawing.Size(140, 20);
             this.textStreetClient.TabIndex = 5;
@@ -438,91 +436,75 @@
             this.textSurnameClient.Size = new System.Drawing.Size(100, 20);
             this.textSurnameClient.TabIndex = 3;
             // 
-            // DocTipe
+            // TipoDocumento
             // 
-            this.DocTipe.DataPropertyName = "Tipo_Doc";
-            this.DocTipe.Frozen = true;
-            this.DocTipe.HeaderText = "Tipo Doc";
-            this.DocTipe.Name = "DocTipe";
-            this.DocTipe.ReadOnly = true;
+            this.TipoDocumento.DataPropertyName = "TipoDocumento";
+            this.TipoDocumento.HeaderText = "TipoDocumento";
+            this.TipoDocumento.Name = "TipoDocumento";
+            this.TipoDocumento.ReadOnly = true;
             // 
-            // DocNumber
+            // NroDocumento
             // 
-            this.DocNumber.DataPropertyName = "Num_Doc";
-            this.DocNumber.Frozen = true;
-            this.DocNumber.HeaderText = "Nro Documento";
-            this.DocNumber.Name = "DocNumber";
-            this.DocNumber.ReadOnly = true;
-            this.DocNumber.Width = 70;
+            this.NroDocumento.DataPropertyName = "NroDocumento";
+            this.NroDocumento.HeaderText = "Nro Documento";
+            this.NroDocumento.Name = "NroDocumento";
+            this.NroDocumento.ReadOnly = true;
+            this.NroDocumento.Width = 70;
             // 
-            // Lastname
+            // Apellido
             // 
-            this.Lastname.DataPropertyName = "Apellido";
-            this.Lastname.Frozen = true;
-            this.Lastname.HeaderText = "Apellido";
-            this.Lastname.Name = "Lastname";
-            this.Lastname.ReadOnly = true;
+            this.Apellido.DataPropertyName = "Apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            this.Apellido.Width = 70;
             // 
-            // Names
+            // Nombres
             // 
-            this.Names.DataPropertyName = "Domicilio";
-            this.Names.Frozen = true;
-            this.Names.HeaderText = "Nombres";
-            this.Names.Name = "Names";
-            this.Names.ReadOnly = true;
-            this.Names.Width = 80;
+            this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            this.Nombres.Width = 80;
             // 
-            // street
+            // Calle
             // 
-            this.street.DataPropertyName = "Domicilio";
-            this.street.Frozen = true;
-            this.street.HeaderText = "Domicilio";
-            this.street.Name = "street";
-            this.street.ReadOnly = true;
+            this.Calle.DataPropertyName = "Calle";
+            this.Calle.HeaderText = "Domicilio";
+            this.Calle.Name = "Calle";
+            this.Calle.ReadOnly = true;
             // 
-            // height
+            // NroCalle
             // 
-            this.height.DataPropertyName = "altura";
-            this.height.Frozen = true;
-            this.height.HeaderText = "Altura";
-            this.height.Name = "height";
-            this.height.ReadOnly = true;
-            this.height.Width = 50;
+            this.NroCalle.DataPropertyName = "NroCalle";
+            this.NroCalle.HeaderText = "Nro Calle";
+            this.NroCalle.Name = "NroCalle";
+            this.NroCalle.ReadOnly = true;
+            this.NroCalle.Width = 50;
             // 
-            // CivilStatus
+            // EstadoCivil
             // 
-            this.CivilStatus.DataPropertyName = "Estado_Civil";
-            this.CivilStatus.Frozen = true;
-            this.CivilStatus.HeaderText = "Estado    Civil";
-            this.CivilStatus.Name = "CivilStatus";
-            this.CivilStatus.ReadOnly = true;
-            this.CivilStatus.Width = 50;
+            this.EstadoCivil.DataPropertyName = "EstadoCivil";
+            this.EstadoCivil.HeaderText = "Estado Civil";
+            this.EstadoCivil.Name = "EstadoCivil";
+            this.EstadoCivil.ReadOnly = true;
+            this.EstadoCivil.Width = 50;
             // 
-            // Sex
+            // Sexo
             // 
-            this.Sex.DataPropertyName = "Sexo";
-            this.Sex.Frozen = true;
-            this.Sex.HeaderText = "Sexo";
-            this.Sex.Name = "Sex";
-            this.Sex.ReadOnly = true;
-            this.Sex.Width = 50;
+            this.Sexo.DataPropertyName = "Sexo";
+            this.Sexo.HeaderText = "Sexo";
+            this.Sexo.Name = "Sexo";
+            this.Sexo.ReadOnly = true;
+            this.Sexo.Width = 60;
             // 
-            // birthDate
+            // FechaNacimiento
             // 
-            this.birthDate.DataPropertyName = "Fecha_Nacimiento";
-            this.birthDate.Frozen = true;
-            this.birthDate.HeaderText = "Fecha Nacimiento";
-            this.birthDate.Name = "birthDate";
-            this.birthDate.ReadOnly = true;
-            this.birthDate.Width = 80;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Visible = false;
+            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
+            this.FechaNacimiento.HeaderText = "Fecha Nacimiento";
+            this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.ReadOnly = true;
+            this.FechaNacimiento.Width = 80;
             // 
             // Client_Load
             // 
@@ -531,7 +513,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(991, 449);
+            this.ClientSize = new System.Drawing.Size(1056, 449);
             this.Controls.Add(this.textStreetHeight);
             this.Controls.Add(this.textNumberDoc);
             this.Controls.Add(this.radioButtonMarried);
@@ -564,7 +546,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tablaClientes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1007, 488);
             this.MinimumSize = new System.Drawing.Size(1007, 488);
             this.Name = "Client_Load";
             this.Opacity = 0.98D;
@@ -610,15 +591,14 @@
         private System.Windows.Forms.TextBox textStreetClient;
         private System.Windows.Forms.TextBox textNameClient;
         private System.Windows.Forms.TextBox textSurnameClient;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DocTipe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DocNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lastname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Names;
-        private System.Windows.Forms.DataGridViewTextBoxColumn street;
-        private System.Windows.Forms.DataGridViewTextBoxColumn height;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CivilStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birthDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroCalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCivil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
     }
 }

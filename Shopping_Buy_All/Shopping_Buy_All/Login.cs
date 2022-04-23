@@ -41,7 +41,7 @@ namespace Shopping_Buy_All
                 }
 
                 
-                if (resultado = true)
+                if (resultado == true)
                 {
                    User usu = new User (userName, password);
                    Logged LoggedWindow = new Logged(usu);
@@ -70,7 +70,9 @@ namespace Shopping_Buy_All
             
             try
             {
+                bool resultado = false;
                 SqlCommand cmd = new SqlCommand();
+
                 string consulta = "Select * FROM Users WHERE NombreDeUsuario like @nombreUsuario AND Password like @pass";
 
                 cmd.Parameters.Clear();
