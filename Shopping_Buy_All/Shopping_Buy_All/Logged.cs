@@ -28,5 +28,17 @@ namespace Shopping_Buy_All
            Client_Load load = new Client_Load();
             load.ShowDialog();
         }
+
+        private void modificacionDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Client_Modify modify = new Client_Modify();
+            modify.ShowDialog();
+        }
+
+        private void bajaDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Delete_Client delete = new Delete_Client();
+            delete.ShowDialog();
+        }
     }
 }

@@ -8,29 +8,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Shopping_Buy_All.Entidades;
 
 namespace Shopping_Buy_All
 {
-    public partial class Client_Load : Form
+    public partial class Client_Modify : Form
     {
-        public Client_Load()
+        public Client_Modify()
         {
             InitializeComponent();
-            Tipo_Doc_Initialize();
-            ConexionTablaClientes();
-
-
         }
+        private void Client_Modify_Load(object sender, EventArgs e)
+        {
+            ConexionTablaClientes();
+            Tipo_Doc_Initialize();
+        }
+
         private void Tipo_Doc_Initialize()
         {
             comboBoxDocType.Items.Add("1-DNI");
             comboBoxDocType.Items.Add("2-Pasaporte");
             comboBoxDocType.Items.Add("3-Libreta Universitaria");
+            BoxDocumentSearch.Items.Add("1-DNI");
+            BoxDocumentSearch.Items.Add("2-Pasaporte");
+            BoxDocumentSearch.Items.Add("3-Libreta Universitaria");
+
         }
-        private void btnClear_Click(object sender, EventArgs e)
+        private void CleanSearch()
         {
-            Clean();
+            BoxDocumentSearch.SelectedIndex = -1;
+            maskedTextBoxDocumentSearch.Text = "";
         }
         private void Clean()
         {
@@ -62,7 +68,7 @@ namespace Shopping_Buy_All
             string sexo = "";
             int sexoInt = 0;
 
-        bool estadoCivilOK = true;
+            bool estadoCivilOK = true;
             if (comboBoxDocType.GetItemText(comboBoxDocType.SelectedItem).Equals("DNI"))
             {
                 tipoDocumento = 1;
@@ -82,72 +88,72 @@ namespace Shopping_Buy_All
                 }
             }
             if (radioButtonSingle.Checked && radioButtonMarried.Checked)
-                {
-                    MessageBox.Show("Error, Ingrese solo una opcion en estado Civil!");
-                    radioButtonSingle.Focus();
-                    estadoCivilOK = false;
-                }
+            {
+                MessageBox.Show("Error, Ingrese solo una opcion en estado Civil!");
+                radioButtonSingle.Focus();
+                estadoCivilOK = false;
+            }
             else
+            {
+                if (radioButtonSingle.Checked)
                 {
-                    if (radioButtonSingle.Checked)
-                    {
-                        estadoCivil = "Soltero";
-                        estadoCivilInt = 1;
-                    }
-                    if (radioButtonMarried.Checked)
-                    {
-                        estadoCivil = "Casado";
-                        estadoCivilInt = 2;
+                    estadoCivil = "Soltero";
+                    estadoCivilInt = 1;
                 }
+                if (radioButtonMarried.Checked)
+                {
+                    estadoCivil = "Casado";
+                    estadoCivilInt = 2;
                 }
+            }
             if (radioButtonMale.Checked)
-                {
-                    sexo = "Hombre";
-                    sexoInt = 1;    
-                }
-            if(radioButtonFemale.Checked)
-                {
-                    sexo = "Mujer";
-                    sexoInt = 2;
+            {
+                sexo = "Hombre";
+                sexoInt = 1;
+            }
+            if (radioButtonFemale.Checked)
+            {
+                sexo = "Mujer";
+                sexoInt = 2;
             }
             if (radioButtonOther.Checked)
-                {
-                    sexo = "Otro";
-                    sexoInt = 3;
+            {
+                sexo = "Otro";
+                sexoInt = 3;
 
             }
-            if(estadoCivilOK)
-                {  
-                    if (tipoDocumento.Equals("") ||nroDocumento.Equals("")||apellido.Equals("") ||nombres.Equals("") ||calle.Equals("") ||NroCalle.Equals("") ||
-                        sexo.Equals("") ||estadoCivil.Equals("")||fechaNacimiento.Equals(""))
+            if (estadoCivilOK)
+            {
+                if (tipoDocumento.Equals("") || nroDocumento.Equals("") || apellido.Equals("") || nombres.Equals("") || calle.Equals("") || NroCalle.Equals("") ||
+                    sexo.Equals("") || estadoCivil.Equals("") || fechaNacimiento.Equals(""))
+                {
+                    MessageBox.Show("Error \n" +
+                        "Por Favor Complete todos los campos!");
+                    comboBoxDocType.Focus();
+                }
+                else
+                {
+                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                    String mensajeCarga = (
+                         " |Tipo Documento: " + tipoDocumento + " |Numero Documento: " + nroDocumento + "|" + "\n"
+                        + " |Apellido: " + apellido + " |Nombre: " + nombres + "|" + "\n"
+                        + " |Calle: " + calle + " |Nro Calle: " + nroCalle + "|" + "\n"
+                        + " |Estado Civil: " + estadoCivil + " |Sexo: " + sexo + "|" + "\n"
+                        + " |Fecha Nacimiento: " + fechaNacimiento + "|" + "\n");
+
+                    string titulo = "Información de Carga";
+
+                    DialogResult resultado = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                    if (resultado == DialogResult.OK)
                     {
-                        MessageBox.Show("Error \n" +
-                            "Por Favor Complete todos los campos!");
-                        comboBoxDocType.Focus();
+                        Modificar_Ciente(tipoDocumento, nroDocumento, apellido, nombres, calle,
+                            nroCalle, estadoCivilInt, sexoInt, fechaNacimiento);
+                        Clean();
                     }
                     else
-                    { 
-                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                        String mensajeCarga = (
-                             " |Tipo Documento: " + tipoDocumento + " |Numero Documento: " + nroDocumento +"|"+"\n"
-                            + " |Apellido: " + apellido + " |Nombre: " + nombres + "|" + "\n"
-                            + " |Calle: " + calle + " |Nro Calle: " + nroCalle + "|" + "\n"
-                            + " |Estado Civil: " + estadoCivil + " |Sexo: " + sexo + "|" + "\n"
-                            + " |Fecha Nacimiento: " + fechaNacimiento+"|"+"\n");
-
-                        string titulo = "Información de Carga";
-
-                        DialogResult resultado = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                        if (resultado == DialogResult.OK)
-                        {
-                            Agegrar_Ciente(tipoDocumento, nroDocumento, apellido, nombres, calle, 
-                                nroCalle,estadoCivilInt,sexoInt, fechaNacimiento);
-                            Clean();
-                        }
-                        else
-                        {
-                            comboBoxDocType.Focus();
+                    {
+                        comboBoxDocType.Focus();
                     }
                 }
             }
@@ -185,7 +191,7 @@ namespace Shopping_Buy_All
                 cn.Close();
             }
         }
-        private void Agegrar_Ciente(int tipoDocumento, int nroDocumento, string apellido, string nombres, string calle,
+        private void Modificar_Ciente(int tipoDocumento, int nroDocumento, string apellido, string nombres, string calle,
                                     int nroCalle, int estadoCivilInt, int sexoInt, DateTime fechaNacimiento)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -221,17 +227,29 @@ namespace Shopping_Buy_All
             {
                 cn.Close();
             }
-
         }
 
-        private void Client_Load_Load(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            label17.Visible = false;
+            label19.Visible = false;
+            BoxDocumentSearch.Visible = false;
+            label18.Visible = false;
+            maskedTextBoxDocumentSearch.Visible = false;
+            btnSearch.Visible = false;
+            Mascara.Visible = false;
+            CleanSearch();
         }
 
-        private void Client_Load_Load_1(object sender, EventArgs e)
+        private void SearchClient_Click(object sender, EventArgs e)
         {
-
+            label17.Visible = true;
+            label19.Visible = true;
+            BoxDocumentSearch.Visible = true;
+            label18.Visible = true;
+            maskedTextBoxDocumentSearch.Visible = true;
+            btnSearch.Visible = true;
+            Mascara.Visible = true;
         }
-    }   
+    }
 }

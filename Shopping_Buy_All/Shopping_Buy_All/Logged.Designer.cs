@@ -100,6 +100,7 @@
             this.modificacionDeClienteToolStripMenuItem.Name = "modificacionDeClienteToolStripMenuItem";
             this.modificacionDeClienteToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.modificacionDeClienteToolStripMenuItem.Text = "Modificacion de Cliente";
+            this.modificacionDeClienteToolStripMenuItem.Click += new System.EventHandler(this.modificacionDeClienteToolStripMenuItem_Click);
             // 
             // bajaDeClienteToolStripMenuItem
             // 
@@ -108,6 +109,7 @@
             this.bajaDeClienteToolStripMenuItem.Name = "bajaDeClienteToolStripMenuItem";
             this.bajaDeClienteToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.bajaDeClienteToolStripMenuItem.Text = "Baja de Cliente";
+            this.bajaDeClienteToolStripMenuItem.Click += new System.EventHandler(this.bajaDeClienteToolStripMenuItem_Click);
             // 
             // automovilesToolStripMenuItem
             // 
