@@ -227,6 +227,173 @@ namespace Shopping_Buy_All
             comboBoxDocType.Visible = true;
             label4.Visible = true;
             Cargar_Campos(c);
+<<<<<<< HEAD
+        }
+
+        private Cliente ObtenerDatosCliente()
+        {
+
+            Cliente c = new Cliente();
+            //Tipo de documento
+            c.TipoDocumentoCliente = (int)comboBoxDocType.SelectedValue;
+
+            //Nro de documento
+            c.DocumentoCliente = textNumberDoc.Text.Trim();
+
+            //Apellido Cliente
+            c.ApellidoCliente = textSurnameClient.Text.Trim();
+
+            //Nombre de Cliente
+            c.NombreCliente = textNameClient.Text.Trim();
+
+            //Calle de Cliente
+            c.CalleCliente = textStreetClient.Text.Trim();
+
+            //Numero de calle de Cliente
+            c.NroCalleCliente = int.Parse(textStreetHeight.Text.Trim());
+
+            //Estado civil de cliente
+            if (radioButtonSingle.Checked)
+            {
+                c.EstadoCivilCliente = 1;
+            }
+            else if (radioButtonMarried.Checked)
+            {
+                c.EstadoCivilCliente = 2;
+            }
+            else
+            {
+                MessageBox.Show("Error al elegir estado Civil de Cliente! \n" +
+                    "Complete los campos por favor!");
+                radioButtonSingle.Focus();
+            }
+
+            //Sexo de cliente
+            if (radioButtonMale.Checked)
+            {
+                c.SexoCliente = 1;
+            }
+            else if (radioButtonFemale.Checked)
+            {
+                c.SexoCliente = 2;
+            }
+            else if (radioButtonOther.Checked)
+            {
+                c.SexoCliente = 3;
+            }
+            else
+            {
+                MessageBox.Show("Error al elegir estado Civil de Cliente! \n" +
+                    "Complete los campos por favor!");
+                radioButtonMale.Focus();
+            }
+
+            //Fecha de nacimiento de Cliente
+            DateTime fecha = c.FechaNacimientoCliente;
+            string dia = "";string mes = "";string año = "";
+            dia = fecha.Date.Day.ToString();
+
+            if (dia.Length ==1)
+            {
+                dia = "0" + dia;
+            }
+
+            mes = fecha.Date.Month.ToString();
+            if (mes.Length == 1)
+            {
+                mes = "0" + mes;
+            }
+            año = fecha.Date.Year.ToString();
+
+            textDateBirthDay.Text= dia + mes + año;
+
+            return c;
+
+        }
+
+        private void btnClientLoad_Click(object sender, EventArgs e)
+        {
+            Cliente c = ObtenerDatosCliente();
+            bool resultado = ModificarCliente(c);
+            if (resultado)
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                String mensajeCarga = (
+                     " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
+                    + " |Apellido: " + c.ApellidoCliente + " |Nombre: " + c.NombreCliente + "|" + "\n"
+                    + " |Calle: " + c.CalleCliente + " |Nro Calle: " + c.NroCalleCliente + "|" + "\n"
+                    + " |Estado Civil: " + c.EstadoCivilCliente + " |Sexo: " + c.SexoCliente + "|" + "\n"
+                    + " |Fecha Nacimiento: " + c.FechaNacimientoCliente + "|" + "\n");
+
+                string titulo = "Información de Carga";
+
+                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                if (result == DialogResult.OK)
+                {
+                    MessageBox.Show("Cliente agregado con éxito!");
+                    Clean();
+                    CargarTablaClientes();
+                    CargarTiposDocumentos();
+
+
+                }
+                else
+                {
+                    comboBoxDocType.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error al modificar la persona!");
+            }
+        }
+        private bool ModificarCliente(Cliente client)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            bool resultado = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "UPDATE Clientes SET TipoDocumento=@tipoDocumento,NroDocumento = @nroDocumento,Apellido =  @apellido,Nombres =  @nombres,Calle =  @calle,NroCalle = @nroCalle,EstadoCivil = @estadoCivil,Sexo = @sexo,FechaNacimiento = @fechaNacimiento WHERE NroDocumento Like @nroDocumento";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@tipoDocumento", client.TipoDocumentoCliente);
+                cmd.Parameters.AddWithValue("@nroDocumento", client.DocumentoCliente);
+                cmd.Parameters.AddWithValue("@apellido", client.ApellidoCliente);
+                cmd.Parameters.AddWithValue("@nombres", client.NombreCliente);
+                cmd.Parameters.AddWithValue("@calle", client.CalleCliente);
+                cmd.Parameters.AddWithValue("@nroCalle", client.NroCalleCliente);
+                cmd.Parameters.AddWithValue("@estadoCivil", client.EstadoCivilCliente);
+                cmd.Parameters.AddWithValue("@sexo", client.SexoCliente);
+                cmd.Parameters.AddWithValue("@fechaNacimiento", client.FechaNacimientoCliente);
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                resultado = true;
+            }
+            catch (SqlException ex)
+            {
+
+                throw;
+                resultado = false;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+                resultado = false;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
+
+=======
+>>>>>>> 6c75a8a79a07478eb385d3ed9d0e9162e2f02fbd
         }
 
 

@@ -114,6 +114,14 @@ namespace Shopping_Buy_All
                 cn.Close();
             }
         }
+<<<<<<< HEAD
+        private Cliente ObtenerDatosCliente()
+        {
+            
+            Cliente c = new Cliente();
+            //Tipo de documento
+            c.TipoDocumentoCliente = (int)comboBoxDocType.SelectedValue;
+=======
 
         private void btnCargarCliente_Click(object sender, EventArgs e)
         {
@@ -121,6 +129,7 @@ namespace Shopping_Buy_All
             Cliente c = new Cliente();
             //Tipo de documento
             c.TipoDocumentoCliente =(int)comboBoxDocType.SelectedValue;
+>>>>>>> 6c75a8a79a07478eb385d3ed9d0e9162e2f02fbd
 
             //Nro de documento
             c.DocumentoCliente = textNumberDoc.Text.Trim();
@@ -158,11 +167,19 @@ namespace Shopping_Buy_All
             {
                 c.SexoCliente = 1;
             }
+<<<<<<< HEAD
+            else if (radioButtonFemale.Checked)
+            {
+                c.SexoCliente = 2;
+            }
+            else if (radioButtonOther.Checked)
+=======
             else if(radioButtonFemale.Checked)
             { 
                 c.SexoCliente = 2; 
             }
             else if(radioButtonOther.Checked)
+>>>>>>> 6c75a8a79a07478eb385d3ed9d0e9162e2f02fbd
             {
                 c.SexoCliente = 3;
             }
@@ -176,7 +193,17 @@ namespace Shopping_Buy_All
             //Fecha de nacimiento de Cliente
             c.FechaNacimientoCliente = DateTime.Parse(textDateBirthDay.Text);
 
+<<<<<<< HEAD
+            return c;
+
+        }
+        private void btnCargarCliente_Click(object sender, EventArgs e)
+        {
+            Cliente c = ObtenerDatosCliente();
+            bool resultado = Agregar_Cliente(c);
+=======
             resultado = Agregar_Cliente(c);
+>>>>>>> 6c75a8a79a07478eb385d3ed9d0e9162e2f02fbd
             if (resultado)
             {
                 MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
