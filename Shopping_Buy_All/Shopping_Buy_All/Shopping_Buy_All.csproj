@@ -60,13 +60,7 @@
     <Compile Include="Client_Modify.Designer.cs">
       <DependentUpon>Client_Modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="Delete_Client.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Delete_Client.Designer.cs">
-      <DependentUpon>Delete_Client.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Entidades\Client.cs" />
+    <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\User.cs" />
     <Compile Include="Logged.cs">
       <SubType>Form</SubType>
@@ -87,9 +81,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Client_Modify.resx">
       <DependentUpon>Client_Modify.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Delete_Client.resx">
-      <DependentUpon>Delete_Client.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
