@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client_Load));
             this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,31 +46,31 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textDateBirthDay = new System.Windows.Forms.MaskedTextBox();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.btnClientLoad = new System.Windows.Forms.Button();
+            this.radioButtonMale = new System.Windows.Forms.RadioButton();
+            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
+            this.radioButtonOther = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.comboBoxDocType = new System.Windows.Forms.ComboBox();
+            this.radioButtonSingle = new System.Windows.Forms.CheckBox();
+            this.radioButtonMarried = new System.Windows.Forms.CheckBox();
             this.textNumberDoc = new System.Windows.Forms.MaskedTextBox();
             this.textStreetHeight = new System.Windows.Forms.MaskedTextBox();
             this.textStreetClient = new System.Windows.Forms.TextBox();
             this.textNameClient = new System.Windows.Forms.TextBox();
             this.textSurnameClient = new System.Windows.Forms.TextBox();
-            this.radioButtonMarried = new System.Windows.Forms.CheckBox();
-            this.radioButtonSingle = new System.Windows.Forms.CheckBox();
-            this.radioButtonOther = new System.Windows.Forms.RadioButton();
-            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
-            this.radioButtonMale = new System.Windows.Forms.RadioButton();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +83,7 @@
             this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TipoDocumento,
+            this.Borrado,
             this.NroDocumento,
             this.Apellido,
             this.Nombres,
@@ -91,19 +93,28 @@
             this.Sexo,
             this.FechaNacimiento});
             this.tablaClientes.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaClientes.Location = new System.Drawing.Point(343, 46);
+            this.tablaClientes.Location = new System.Drawing.Point(347, 47);
             this.tablaClientes.Name = "tablaClientes";
             this.tablaClientes.ReadOnly = true;
-            this.tablaClientes.Size = new System.Drawing.Size(704, 397);
+            this.tablaClientes.Size = new System.Drawing.Size(675, 397);
             this.tablaClientes.TabIndex = 0;
             this.tablaClientes.TabStop = false;
             // 
             // TipoDocumento
             // 
             this.TipoDocumento.DataPropertyName = "TipoDocumento";
-            this.TipoDocumento.HeaderText = "TipoDocumento";
+            this.TipoDocumento.HeaderText = "Tipo Documento";
             this.TipoDocumento.Name = "TipoDocumento";
             this.TipoDocumento.ReadOnly = true;
+            this.TipoDocumento.Width = 70;
+            // 
+            // Borrado
+            // 
+            this.Borrado.DataPropertyName = "Borrado";
+            this.Borrado.HeaderText = "Borrado";
+            this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
+            this.Borrado.Visible = false;
             // 
             // NroDocumento
             // 
@@ -240,6 +251,30 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Domicilio";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(115, 271);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 17);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Estado Civil";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(137, 314);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 17);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Sexo";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -257,11 +292,70 @@
             this.textDateBirthDay.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textDateBirthDay.ForeColor = System.Drawing.Color.White;
             this.textDateBirthDay.Location = new System.Drawing.Point(129, 396);
-            this.textDateBirthDay.Mask = "00/00/0000";
+            this.textDateBirthDay.Mask = "00-00-0000";
             this.textDateBirthDay.Name = "textDateBirthDay";
-            this.textDateBirthDay.Size = new System.Drawing.Size(64, 20);
+            this.textDateBirthDay.Size = new System.Drawing.Size(60, 20);
             this.textDateBirthDay.TabIndex = 12;
-            this.textDateBirthDay.ValidatingType = typeof(System.DateTime);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(158, 293);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(55, 15);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Casado";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(81, 293);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 15);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Soltero";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(70, 335);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 15);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "Masculino";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(159, 336);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(71, 15);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "Femenino";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(136, 356);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(34, 15);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "Otro";
             // 
             // label15
             // 
@@ -269,7 +363,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(588, 10);
+            this.label15.Location = new System.Drawing.Point(590, 11);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(232, 31);
             this.label15.TabIndex = 28;
@@ -286,7 +380,40 @@
             this.btnClientLoad.TabIndex = 13;
             this.btnClientLoad.Text = "Cargar";
             this.btnClientLoad.UseVisualStyleBackColor = true;
-            this.btnClientLoad.Click += new System.EventHandler(this.btnClientLoad_Click);
+            this.btnClientLoad.Click += new System.EventHandler(this.btnCargarCliente_Click);
+            // 
+            // radioButtonMale
+            // 
+            this.radioButtonMale.AutoSize = true;
+            this.radioButtonMale.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonMale.Location = new System.Drawing.Point(143, 338);
+            this.radioButtonMale.Name = "radioButtonMale";
+            this.radioButtonMale.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonMale.TabIndex = 9;
+            this.radioButtonMale.TabStop = true;
+            this.radioButtonMale.UseVisualStyleBackColor = false;
+            // 
+            // radioButtonFemale
+            // 
+            this.radioButtonFemale.AutoSize = true;
+            this.radioButtonFemale.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonFemale.Location = new System.Drawing.Point(230, 338);
+            this.radioButtonFemale.Name = "radioButtonFemale";
+            this.radioButtonFemale.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonFemale.TabIndex = 10;
+            this.radioButtonFemale.TabStop = true;
+            this.radioButtonFemale.UseVisualStyleBackColor = false;
+            // 
+            // radioButtonOther
+            // 
+            this.radioButtonOther.AutoSize = true;
+            this.radioButtonOther.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonOther.Location = new System.Drawing.Point(169, 358);
+            this.radioButtonOther.Name = "radioButtonOther";
+            this.radioButtonOther.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonOther.TabIndex = 11;
+            this.radioButtonOther.TabStop = true;
+            this.radioButtonOther.UseVisualStyleBackColor = false;
             // 
             // btnClear
             // 
@@ -318,10 +445,28 @@
             this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
             this.comboBoxDocType.FormattingEnabled = true;
-            this.comboBoxDocType.Location = new System.Drawing.Point(100, 74);
+            this.comboBoxDocType.Location = new System.Drawing.Point(94, 74);
             this.comboBoxDocType.Name = "comboBoxDocType";
             this.comboBoxDocType.Size = new System.Drawing.Size(119, 21);
             this.comboBoxDocType.TabIndex = 1;
+            // 
+            // radioButtonSingle
+            // 
+            this.radioButtonSingle.AutoSize = true;
+            this.radioButtonSingle.Location = new System.Drawing.Point(133, 296);
+            this.radioButtonSingle.Name = "radioButtonSingle";
+            this.radioButtonSingle.Size = new System.Drawing.Size(15, 14);
+            this.radioButtonSingle.TabIndex = 7;
+            this.radioButtonSingle.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonMarried
+            // 
+            this.radioButtonMarried.AutoSize = true;
+            this.radioButtonMarried.Location = new System.Drawing.Point(213, 296);
+            this.radioButtonMarried.Name = "radioButtonMarried";
+            this.radioButtonMarried.Size = new System.Drawing.Size(15, 14);
+            this.radioButtonMarried.TabIndex = 8;
+            this.radioButtonMarried.UseVisualStyleBackColor = true;
             // 
             // textNumberDoc
             // 
@@ -339,7 +484,7 @@
             this.textStreetHeight.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textStreetHeight.ForeColor = System.Drawing.SystemColors.Window;
             this.textStreetHeight.Location = new System.Drawing.Point(214, 248);
-            this.textStreetHeight.Mask = "99999";
+            this.textStreetHeight.Mask = "9999999";
             this.textStreetHeight.Name = "textStreetHeight";
             this.textStreetHeight.Size = new System.Drawing.Size(29, 20);
             this.textStreetHeight.TabIndex = 6;
@@ -372,141 +517,6 @@
             this.textSurnameClient.Size = new System.Drawing.Size(100, 20);
             this.textSurnameClient.TabIndex = 3;
             // 
-            // radioButtonMarried
-            // 
-            this.radioButtonMarried.AutoSize = true;
-            this.radioButtonMarried.Location = new System.Drawing.Point(216, 296);
-            this.radioButtonMarried.Name = "radioButtonMarried";
-            this.radioButtonMarried.Size = new System.Drawing.Size(15, 14);
-            this.radioButtonMarried.TabIndex = 61;
-            this.radioButtonMarried.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSingle
-            // 
-            this.radioButtonSingle.AutoSize = true;
-            this.radioButtonSingle.Location = new System.Drawing.Point(134, 296);
-            this.radioButtonSingle.Name = "radioButtonSingle";
-            this.radioButtonSingle.Size = new System.Drawing.Size(15, 14);
-            this.radioButtonSingle.TabIndex = 59;
-            this.radioButtonSingle.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonOther
-            // 
-            this.radioButtonOther.AutoSize = true;
-            this.radioButtonOther.BackColor = System.Drawing.Color.Transparent;
-            this.radioButtonOther.Location = new System.Drawing.Point(178, 359);
-            this.radioButtonOther.Name = "radioButtonOther";
-            this.radioButtonOther.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonOther.TabIndex = 65;
-            this.radioButtonOther.TabStop = true;
-            this.radioButtonOther.UseVisualStyleBackColor = false;
-            // 
-            // radioButtonFemale
-            // 
-            this.radioButtonFemale.AutoSize = true;
-            this.radioButtonFemale.BackColor = System.Drawing.Color.Transparent;
-            this.radioButtonFemale.Location = new System.Drawing.Point(237, 340);
-            this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonFemale.TabIndex = 64;
-            this.radioButtonFemale.TabStop = true;
-            this.radioButtonFemale.UseVisualStyleBackColor = false;
-            // 
-            // radioButtonMale
-            // 
-            this.radioButtonMale.AutoSize = true;
-            this.radioButtonMale.BackColor = System.Drawing.Color.Transparent;
-            this.radioButtonMale.Location = new System.Drawing.Point(141, 339);
-            this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonMale.TabIndex = 63;
-            this.radioButtonMale.TabStop = true;
-            this.radioButtonMale.UseVisualStyleBackColor = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(134, 356);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 15);
-            this.label14.TabIndex = 70;
-            this.label14.Text = "3-Otro";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(56, 336);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(86, 15);
-            this.label12.TabIndex = 69;
-            this.label12.Text = "1-Masculino";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(155, 336);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 15);
-            this.label13.TabIndex = 68;
-            this.label13.Text = "2-Femenino";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(65, 294);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 15);
-            this.label11.TabIndex = 67;
-            this.label11.Text = "1- Soltero";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(148, 293);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 15);
-            this.label10.TabIndex = 66;
-            this.label10.Text = "2-Casado";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(138, 314);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 17);
-            this.label8.TabIndex = 62;
-            this.label8.Text = "Sexo";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(116, 271);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 17);
-            this.label7.TabIndex = 60;
-            this.label7.Text = "Estado Civil";
-            // 
             // Client_Load
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,31 +524,31 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1052, 449);
+            this.ClientSize = new System.Drawing.Size(1027, 449);
+            this.Controls.Add(this.textStreetHeight);
+            this.Controls.Add(this.textNumberDoc);
             this.Controls.Add(this.radioButtonMarried);
             this.Controls.Add(this.radioButtonSingle);
+            this.Controls.Add(this.comboBoxDocType);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.radioButtonOther);
             this.Controls.Add(this.radioButtonFemale);
             this.Controls.Add(this.radioButtonMale);
+            this.Controls.Add(this.btnClientLoad);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textStreetHeight);
-            this.Controls.Add(this.textNumberDoc);
-            this.Controls.Add(this.comboBoxDocType);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnClientLoad);
-            this.Controls.Add(this.label15);
             this.Controls.Add(this.textStreetClient);
             this.Controls.Add(this.textDateBirthDay);
             this.Controls.Add(this.textSurnameClient);
             this.Controls.Add(this.textNameClient);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -547,14 +557,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tablaClientes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1068, 900);
-            this.MinimumSize = new System.Drawing.Size(1068, 488);
+            this.MaximumSize = new System.Drawing.Size(1043, 488);
+            this.MinimumSize = new System.Drawing.Size(1043, 488);
             this.Name = "Client_Load";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de Cliente";
-            this.Load += new System.EventHandler(this.Client_Load_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -570,20 +578,33 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.MaskedTextBox textDateBirthDay;
         private System.ServiceProcess.ServiceController serviceController1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnClientLoad;
+        private System.Windows.Forms.RadioButton radioButtonMale;
+        private System.Windows.Forms.RadioButton radioButtonFemale;
+        private System.Windows.Forms.RadioButton radioButtonOther;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox comboBoxDocType;
+        private System.Windows.Forms.CheckBox radioButtonSingle;
+        private System.Windows.Forms.CheckBox radioButtonMarried;
         private System.Windows.Forms.MaskedTextBox textNumberDoc;
         private System.Windows.Forms.MaskedTextBox textStreetHeight;
         private System.Windows.Forms.TextBox textStreetClient;
         private System.Windows.Forms.TextBox textNameClient;
         private System.Windows.Forms.TextBox textSurnameClient;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
@@ -592,17 +613,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCivil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
-        private System.Windows.Forms.CheckBox radioButtonMarried;
-        private System.Windows.Forms.CheckBox radioButtonSingle;
-        private System.Windows.Forms.RadioButton radioButtonOther;
-        private System.Windows.Forms.RadioButton radioButtonFemale;
-        private System.Windows.Forms.RadioButton radioButtonMale;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
     }
 }

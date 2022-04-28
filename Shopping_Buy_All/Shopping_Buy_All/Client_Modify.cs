@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Shopping_Buy_All.Entidades;
 
 namespace Shopping_Buy_All
 {
@@ -16,27 +17,29 @@ namespace Shopping_Buy_All
         public Client_Modify()
         {
             InitializeComponent();
-        }
-        private void Client_Modify_Load(object sender, EventArgs e)
-        {
-            ConexionTablaClientes();
-            Tipo_Doc_Initialize();
+            CargarTablaClientes();
+            CargarTiposDocumentos();
+            comboBoxDocType.Visible = false;
+            label4.Visible = false;
         }
 
-        private void Tipo_Doc_Initialize()
+        private void btnBuscarCliente_click(object sender, EventArgs e)
         {
-            comboBoxDocType.Items.Add("1-DNI");
-            comboBoxDocType.Items.Add("2-Pasaporte");
-            comboBoxDocType.Items.Add("3-Libreta Universitaria");
-            BoxDocumentSearch.Items.Add("1-DNI");
-            BoxDocumentSearch.Items.Add("2-Pasaporte");
-            BoxDocumentSearch.Items.Add("3-Libreta Universitaria");
-
+            Cliente c = Buscar_Cliente(textNumberDoc.Text);
+            Cargar_Campos(c);
+            SearchPanel.Visible=false;
+            btnSearchClient.Visible=false;
+            comboBoxDocType.Visible = true;
+            label4.Visible = true;
         }
-        private void CleanSearch()
+        private void btnSearchClient2_Click(object sender, EventArgs e)
         {
-            BoxDocumentSearch.SelectedIndex = -1;
-            maskedTextBoxDocumentSearch.Text = "";
+            Clean();
+            SearchPanel.Visible = true;
+            btnSearchClient.Visible = true;
+            comboBoxDocType.Visible = false;
+            label4.Visible = false;
+
         }
         private void Clean()
         {
@@ -52,113 +55,84 @@ namespace Shopping_Buy_All
             radioButtonFemale.Checked = false;
             radioButtonOther.Checked = false;
             textDateBirthDay.Text = "";
-
         }
-        private void btnClientLoad_Click(object sender, EventArgs e)
+        private void Cargar_Campos(Cliente c)
         {
-            int tipoDocumento = 0;
-            int nroDocumento = int.Parse(textNumberDoc.Text);
-            string apellido = textSurnameClient.Text;
-            string nombres = textNameClient.Text;
-            string calle = textStreetClient.Text;
-            int nroCalle = int.Parse(textStreetHeight.Text);
-            DateTime fechaNacimiento = DateTime.Parse(textDateBirthDay.Text);
-            string estadoCivil = "";
-            int estadoCivilInt = 0;
-            string sexo = "";
-            int sexoInt = 0;
-
-            bool estadoCivilOK = true;
-            if (comboBoxDocType.GetItemText(comboBoxDocType.SelectedItem).Equals("DNI"))
+            //Cargar Tipo Documento
+            comboBoxDocType.SelectedValue = c.TipoDocumentoCliente;
+            //Cargar Documento
+            textNumberDoc.Text = c.DocumentoCliente;
+            //Cargar Apellido
+            textSurnameClient.Text = c.ApellidoCliente;
+            //Cargar Nombre
+            textNameClient.Text = c.NombreCliente;
+            //Cargar Calle
+            textStreetClient.Text = c.CalleCliente;
+            //Cargar Nro Calle
+            textStreetHeight.Text = c.NroCalleCliente.ToString();
+            //Cargar Estado Civil
+            if (c.EstadoCivilCliente == 1)
             {
-                tipoDocumento = 1;
+                radioButtonSingle.Checked = true;
+            }
+            else if (c.EstadoCivilCliente == 2)
+            {
+                radioButtonMarried.Checked = true;
+            }
+            //Cargar Sexo
+            if (c.SexoCliente == 1)
+            {
+                radioButtonMale.Checked = true;
+            }
+            else if (c.SexoCliente == 2)
+            {
+                radioButtonFemale.Checked = true;
             }
             else
             {
-                if (comboBoxDocType.GetItemText(comboBoxDocType.SelectedItem).Equals("Pasaporte"))
-                {
-                    tipoDocumento = 2;
-                }
-                else
-                {
-                    if (comboBoxDocType.GetItemText(comboBoxDocType.SelectedItem).Equals("Pasaporte"))
-                    {
-                        tipoDocumento = 3;
-                    }
-                }
+                radioButtonOther.Checked = true;
             }
-            if (radioButtonSingle.Checked && radioButtonMarried.Checked)
-            {
-                MessageBox.Show("Error, Ingrese solo una opcion en estado Civil!");
-                radioButtonSingle.Focus();
-                estadoCivilOK = false;
-            }
-            else
-            {
-                if (radioButtonSingle.Checked)
-                {
-                    estadoCivil = "Soltero";
-                    estadoCivilInt = 1;
-                }
-                if (radioButtonMarried.Checked)
-                {
-                    estadoCivil = "Casado";
-                    estadoCivilInt = 2;
-                }
-            }
-            if (radioButtonMale.Checked)
-            {
-                sexo = "Hombre";
-                sexoInt = 1;
-            }
-            if (radioButtonFemale.Checked)
-            {
-                sexo = "Mujer";
-                sexoInt = 2;
-            }
-            if (radioButtonOther.Checked)
-            {
-                sexo = "Otro";
-                sexoInt = 3;
+            //Cargar Fecha Nacimiento 
+            textDateBirthDay.Text = c.FechaNacimientoCliente.Date.ToString();
+        }
+        private void CargarTiposDocumentos()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
 
-            }
-            if (estadoCivilOK)
+            try
             {
-                if (tipoDocumento.Equals("") || nroDocumento.Equals("") || apellido.Equals("") || nombres.Equals("") || calle.Equals("") || NroCalle.Equals("") ||
-                    sexo.Equals("") || estadoCivil.Equals("") || fechaNacimiento.Equals(""))
-                {
-                    MessageBox.Show("Error \n" +
-                        "Por Favor Complete todos los campos!");
-                    comboBoxDocType.Focus();
-                }
-                else
-                {
-                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                    String mensajeCarga = (
-                         " |Tipo Documento: " + tipoDocumento + " |Numero Documento: " + nroDocumento + "|" + "\n"
-                        + " |Apellido: " + apellido + " |Nombre: " + nombres + "|" + "\n"
-                        + " |Calle: " + calle + " |Nro Calle: " + nroCalle + "|" + "\n"
-                        + " |Estado Civil: " + estadoCivil + " |Sexo: " + sexo + "|" + "\n"
-                        + " |Fecha Nacimiento: " + fechaNacimiento + "|" + "\n");
+                SqlCommand comand = new SqlCommand();
+                string consulta = "Select * FROM TipoDocumento";
 
-                    string titulo = "Información de Carga";
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
 
-                    DialogResult resultado = MessageBox.Show(mensajeCarga, titulo, buttons);
+                cn.Open();
+                comand.Connection = cn;
 
-                    if (resultado == DialogResult.OK)
-                    {
-                        Modificar_Ciente(tipoDocumento, nroDocumento, apellido, nombres, calle,
-                            nroCalle, estadoCivilInt, sexoInt, fechaNacimiento);
-                        Clean();
-                    }
-                    else
-                    {
-                        comboBoxDocType.Focus();
-                    }
-                }
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                comboBoxDocType.DataSource = tabla;
+                comboBoxDocType.DisplayMember = "NombreDocumento";
+                comboBoxDocType.ValueMember = "TipoDocumento";
+                comboBoxDocType.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
             }
         }
-        public void ConexionTablaClientes()
+        private void CargarTablaClientes()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -191,32 +165,37 @@ namespace Shopping_Buy_All
                 cn.Close();
             }
         }
-        private void Modificar_Ciente(int tipoDocumento, int nroDocumento, string apellido, string nombres, string calle,
-                                    int nroCalle, int estadoCivilInt, int sexoInt, DateTime fechaNacimiento)
+        private Cliente Buscar_Cliente(string NroDocumento)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
-
+            Cliente client= new Cliente();
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO Clientes(TipoDocumento,NroDocumento,Apellido,Nombres,Calle,NroCalle,EstadoCivil,Sexo,FechaNacimiento)" +
-                                               "Values(@tipoDocumento, @nroDocumento, @apellido, @nombres, @calle, @nroCalle, @estadoCivil,@sexo, @fechaNacimiento)";
+                string consulta = "SELECT * FROM Clientes where NroDocumento like @Nrodocumento";
+                //cmd.Parameters.AddWithValue("@tipoDocumento", TipoDocumento);
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@tipoDocumento", tipoDocumento);
-                cmd.Parameters.AddWithValue("@nroDocumento", nroDocumento);
-                cmd.Parameters.AddWithValue("@apellido", apellido);
-                cmd.Parameters.AddWithValue("@nombres", nombres);
-                cmd.Parameters.AddWithValue("@calle", calle);
-                cmd.Parameters.AddWithValue("@nroCalle", nroCalle);
-                cmd.Parameters.AddWithValue("@estadoCivil", estadoCivilInt);
-                cmd.Parameters.AddWithValue("@sexo", sexoInt);
-                cmd.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+                cmd.Parameters.AddWithValue("@NroDocumento", NroDocumento);
+
+                cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
                 cn.Open();
                 cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
+                SqlDataReader DataReader = cmd.ExecuteReader();
+                if (DataReader !=null && DataReader.Read())
+                {
+                    client.TipoDocumentoCliente = int.Parse(DataReader["TipoDocumento"].ToString());
+                    client.DocumentoCliente= DataReader["NroDocumento"].ToString();
+                    client.ApellidoCliente = DataReader["Apellido"].ToString();
+                    client.NombreCliente = DataReader["Nombres"].ToString();
+                    client.CalleCliente = DataReader["Calle"].ToString();
+                    client.NroCalleCliente = int.Parse(DataReader["NroCalle"].ToString());
+                    client.EstadoCivilCliente = int.Parse(DataReader["EstadoCivil"].ToString());
+                    client.SexoCliente = int.Parse(DataReader["Sexo"].ToString());
+                    client.FechaNacimientoCliente = DateTime.Parse(DataReader["FechaNacimiento"].ToString());
+                }
             }
             catch (Exception ex)
             {
@@ -227,29 +206,29 @@ namespace Shopping_Buy_All
             {
                 cn.Close();
             }
+            return client;
+
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
-            label17.Visible = false;
-            label19.Visible = false;
-            BoxDocumentSearch.Visible = false;
-            label18.Visible = false;
-            maskedTextBoxDocumentSearch.Visible = false;
-            btnSearch.Visible = false;
-            Mascara.Visible = false;
-            CleanSearch();
+            Clean();
         }
 
-        private void SearchClient_Click(object sender, EventArgs e)
+        private void tablaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            label17.Visible = true;
-            label19.Visible = true;
-            BoxDocumentSearch.Visible = true;
-            label18.Visible = true;
-            maskedTextBoxDocumentSearch.Visible = true;
-            btnSearch.Visible = true;
-            Mascara.Visible = true;
+            int indice = e.RowIndex;
+            DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
+            string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
+            Cliente c = Buscar_Cliente(documento);
+            Clean();
+            SearchPanel.Visible = false;
+            btnSearchClient.Visible = false;
+            comboBoxDocType.Visible = true;
+            label4.Visible = true;
+            Cargar_Campos(c);
         }
+
+
     }
 }
