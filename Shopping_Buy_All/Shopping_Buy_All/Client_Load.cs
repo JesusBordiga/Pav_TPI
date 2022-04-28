@@ -81,7 +81,7 @@ namespace Shopping_Buy_All
                 cn.Close();
             }
         }
-    private void CargarTablaClientes()
+        private void CargarTablaClientes()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -114,22 +114,11 @@ namespace Shopping_Buy_All
                 cn.Close();
             }
         }
-<<<<<<< HEAD
         private Cliente ObtenerDatosCliente()
         {
-            
             Cliente c = new Cliente();
             //Tipo de documento
             c.TipoDocumentoCliente = (int)comboBoxDocType.SelectedValue;
-=======
-
-        private void btnCargarCliente_Click(object sender, EventArgs e)
-        {
-            bool resultado = false;
-            Cliente c = new Cliente();
-            //Tipo de documento
-            c.TipoDocumentoCliente =(int)comboBoxDocType.SelectedValue;
->>>>>>> 6c75a8a79a07478eb385d3ed9d0e9162e2f02fbd
 
             //Nro de documento
             c.DocumentoCliente = textNumberDoc.Text.Trim();
@@ -167,25 +156,17 @@ namespace Shopping_Buy_All
             {
                 c.SexoCliente = 1;
             }
-<<<<<<< HEAD
             else if (radioButtonFemale.Checked)
             {
                 c.SexoCliente = 2;
             }
             else if (radioButtonOther.Checked)
-=======
-            else if(radioButtonFemale.Checked)
-            { 
-                c.SexoCliente = 2; 
-            }
-            else if(radioButtonOther.Checked)
->>>>>>> 6c75a8a79a07478eb385d3ed9d0e9162e2f02fbd
             {
                 c.SexoCliente = 3;
             }
             else
             {
-                MessageBox.Show("Error al elegir estado Civil de Cliente! \n" +
+                MessageBox.Show("Error al elegir Sexo de Cliente! \n" +
                     "Complete los campos por favor!");
                 radioButtonMale.Focus();
             }
@@ -193,17 +174,13 @@ namespace Shopping_Buy_All
             //Fecha de nacimiento de Cliente
             c.FechaNacimientoCliente = DateTime.Parse(textDateBirthDay.Text);
 
-<<<<<<< HEAD
             return c;
-
         }
+
         private void btnCargarCliente_Click(object sender, EventArgs e)
         {
             Cliente c = ObtenerDatosCliente();
             bool resultado = Agregar_Cliente(c);
-=======
-            resultado = Agregar_Cliente(c);
->>>>>>> 6c75a8a79a07478eb385d3ed9d0e9162e2f02fbd
             if (resultado)
             {
                 MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
@@ -234,9 +211,10 @@ namespace Shopping_Buy_All
             }
             else
             {
-                MessageBox.Show("Error al agregar la persona!");
+                MessageBox.Show("Error al modificar la persona!");
             }
         }
+
         private bool Agregar_Cliente(Cliente client)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -246,7 +224,7 @@ namespace Shopping_Buy_All
             {
                 SqlCommand cmd = new SqlCommand();
                 string consulta = "INSERT INTO Clientes(TipoDocumento,NroDocumento,Apellido,Nombres,Calle,NroCalle,EstadoCivil,Sexo,FechaNacimiento)" +
-                                               "Values(@tipoDocumento, @nroDocumento, @apellido, @nombres, @calle, @nroCalle, @estadoCivil,@sexo, @fechaNacimiento)";
+                                               "Values(@tipoDocumento,@nroDocumento, @apellido, @nombres, @calle, @nroCalle, @estadoCivil,@sexo, @fechaNacimiento)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@tipoDocumento", client.TipoDocumentoCliente);
                 cmd.Parameters.AddWithValue("@nroDocumento", client.DocumentoCliente);
@@ -283,6 +261,5 @@ namespace Shopping_Buy_All
             return resultado;
 
         }
-
     }
 }

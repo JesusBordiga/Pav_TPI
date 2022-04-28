@@ -194,8 +194,9 @@
             this.btnClientLoad.Name = "btnClientLoad";
             this.btnClientLoad.Size = new System.Drawing.Size(75, 23);
             this.btnClientLoad.TabIndex = 52;
-            this.btnClientLoad.Text = "Cargar";
+            this.btnClientLoad.Text = "Modificar";
             this.btnClientLoad.UseVisualStyleBackColor = true;
+            this.btnClientLoad.Click += new System.EventHandler(this.btnClientLoad_Click_1);
             // 
             // label15
             // 
@@ -524,11 +525,7 @@
             // SearchPanel
             // 
             this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< HEAD
-            this.SearchPanel.Location = new System.Drawing.Point(29, 133);
-=======
             this.SearchPanel.Location = new System.Drawing.Point(29, 136);
->>>>>>> 6c75a8a79a07478eb385d3ed9d0e9162e2f02fbd
             this.SearchPanel.Name = "SearchPanel";
             this.SearchPanel.Size = new System.Drawing.Size(245, 309);
             this.SearchPanel.TabIndex = 61;

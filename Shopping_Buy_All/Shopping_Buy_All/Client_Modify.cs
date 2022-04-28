@@ -90,10 +90,23 @@ namespace Shopping_Buy_All
             }
             else
             {
-                radioButtonOther.Checked = true;
+                radioButtonOther.Checked = true;                                
             }
             //Cargar Fecha Nacimiento 
-            textDateBirthDay.Text = c.FechaNacimientoCliente.Date.ToString();
+            DateTime fecha = c.FechaNacimientoCliente;
+            string dia = "";string mes = ""; string año = "";
+            dia = fecha.Date.Day.ToString();
+            if(dia.Length ==1)
+            {
+                dia = "0" + dia;
+            }
+            mes = fecha.Date.Month.ToString();
+            if (mes.Length == 1)
+            {
+                mes = "0" + mes;
+            }
+            año = fecha.Date.Year.ToString();
+            textDateBirthDay.Text = dia+mes+año;
         }
         private void CargarTiposDocumentos()
         {
@@ -227,7 +240,6 @@ namespace Shopping_Buy_All
             comboBoxDocType.Visible = true;
             label4.Visible = true;
             Cargar_Campos(c);
-<<<<<<< HEAD
         }
 
         private Cliente ObtenerDatosCliente()
@@ -289,29 +301,58 @@ namespace Shopping_Buy_All
             }
 
             //Fecha de nacimiento de Cliente
-            DateTime fecha = c.FechaNacimientoCliente;
-            string dia = "";string mes = "";string año = "";
-            dia = fecha.Date.Day.ToString();
-
-            if (dia.Length ==1)
-            {
-                dia = "0" + dia;
-            }
-
-            mes = fecha.Date.Month.ToString();
-            if (mes.Length == 1)
-            {
-                mes = "0" + mes;
-            }
-            año = fecha.Date.Year.ToString();
-
-            textDateBirthDay.Text= dia + mes + año;
-
+            c.FechaNacimientoCliente = DateTime.Parse(textDateBirthDay.Text);
             return c;
 
         }
 
-        private void btnClientLoad_Click(object sender, EventArgs e)
+        private bool ModificarCliente(Cliente client)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            bool resultado = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "UPDATE Clientes SET TipoDocumento=@tipoDocumento,NroDocumento = @nroDocumento,Apellido =  @apellido,Nombres =  @nombres,Calle =  @calle,NroCalle = @nroCalle,EstadoCivil = @estadoCivil,Sexo = @sexo,FechaNacimiento = @fechaNacimiento WHERE TipoDocumento Like @tipoDocumento AND NroDocumento Like @nroDocumento";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@tipoDocumento", client.TipoDocumentoCliente);
+                cmd.Parameters.AddWithValue("@nroDocumento", client.DocumentoCliente);
+                cmd.Parameters.AddWithValue("@apellido", client.ApellidoCliente);
+                cmd.Parameters.AddWithValue("@nombres", client.NombreCliente);
+                cmd.Parameters.AddWithValue("@calle", client.CalleCliente);
+                cmd.Parameters.AddWithValue("@nroCalle", client.NroCalleCliente);
+                cmd.Parameters.AddWithValue("@estadoCivil", client.EstadoCivilCliente);
+                cmd.Parameters.AddWithValue("@sexo", client.SexoCliente);
+                cmd.Parameters.AddWithValue("@fechaNacimiento", client.FechaNacimientoCliente);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                resultado = true;
+            }
+            catch (SqlException ex)
+            {
+
+                throw;
+                resultado = false;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+                resultado = false;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
+        }
+
+        private void btnClientLoad_Click_1(object sender, EventArgs e)
         {
             Cliente c = ObtenerDatosCliente();
             bool resultado = ModificarCliente(c);
@@ -348,54 +389,5 @@ namespace Shopping_Buy_All
                 MessageBox.Show("Error al modificar la persona!");
             }
         }
-        private bool ModificarCliente(Cliente client)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Clientes SET TipoDocumento=@tipoDocumento,NroDocumento = @nroDocumento,Apellido =  @apellido,Nombres =  @nombres,Calle =  @calle,NroCalle = @nroCalle,EstadoCivil = @estadoCivil,Sexo = @sexo,FechaNacimiento = @fechaNacimiento WHERE NroDocumento Like @nroDocumento";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@tipoDocumento", client.TipoDocumentoCliente);
-                cmd.Parameters.AddWithValue("@nroDocumento", client.DocumentoCliente);
-                cmd.Parameters.AddWithValue("@apellido", client.ApellidoCliente);
-                cmd.Parameters.AddWithValue("@nombres", client.NombreCliente);
-                cmd.Parameters.AddWithValue("@calle", client.CalleCliente);
-                cmd.Parameters.AddWithValue("@nroCalle", client.NroCalleCliente);
-                cmd.Parameters.AddWithValue("@estadoCivil", client.EstadoCivilCliente);
-                cmd.Parameters.AddWithValue("@sexo", client.SexoCliente);
-                cmd.Parameters.AddWithValue("@fechaNacimiento", client.FechaNacimientoCliente);
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException ex)
-            {
-
-                throw;
-                resultado = false;
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-                resultado = false;
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return resultado;
-
-=======
->>>>>>> 6c75a8a79a07478eb385d3ed9d0e9162e2f02fbd
-        }
-
-
     }
 }
