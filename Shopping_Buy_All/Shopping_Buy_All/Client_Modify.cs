@@ -23,10 +23,17 @@ namespace Shopping_Buy_All
 
         private void btnBuscarCliente_click(object sender, EventArgs e)
         {
+            if (comboBoxDocType.SelectedIndex != 0 && textNumberDoc.Text.Equals(""))
+            {
+                MessageBox.Show("Error, Completar campos!!");
+            }
+            else
+            {
             Cliente c = Buscar_Cliente_Documento(comboBoxDocType.SelectedIndex, textNumberDoc.Text);
             Cargar_Campos(c);
             SearchPanel.Visible=false;
             btnSearchClient.Visible=false;
+            }
         }
         private void btnSearchClient2_Click(object sender, EventArgs e)
         {

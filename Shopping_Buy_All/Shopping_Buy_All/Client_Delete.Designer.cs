@@ -36,7 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.pictureDeleteUser = new System.Windows.Forms.PictureBox();
             this.btnClean = new System.Windows.Forms.Button();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,8 +47,8 @@
             this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDeleteClient = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureDeleteUser)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,7 +71,7 @@
             this.textNumberDoc.Mask = "99999999";
             this.textNumberDoc.Name = "textNumberDoc";
             this.textNumberDoc.Size = new System.Drawing.Size(55, 20);
-            this.textNumberDoc.TabIndex = 41;
+            this.textNumberDoc.TabIndex = 2;
             this.textNumberDoc.ValidatingType = typeof(int);
             // 
             // comboBoxDocType
@@ -83,7 +82,7 @@
             this.comboBoxDocType.Location = new System.Drawing.Point(342, 122);
             this.comboBoxDocType.Name = "comboBoxDocType";
             this.comboBoxDocType.Size = new System.Drawing.Size(119, 21);
-            this.comboBoxDocType.TabIndex = 40;
+            this.comboBoxDocType.TabIndex = 1;
             // 
             // label5
             // 
@@ -131,7 +130,7 @@
             this.tablaClientes.Location = new System.Drawing.Point(26, 195);
             this.tablaClientes.Name = "tablaClientes";
             this.tablaClientes.ReadOnly = true;
-            this.tablaClientes.Size = new System.Drawing.Size(742, 88);
+            this.tablaClientes.Size = new System.Drawing.Size(723, 63);
             this.tablaClientes.TabIndex = 64;
             this.tablaClientes.TabStop = false;
             // 
@@ -144,23 +143,10 @@
             this.btnSearch.Location = new System.Drawing.Point(368, 204);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 65;
+            this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Buscar";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // pictureDeleteUser
-            // 
-            this.pictureDeleteUser.BackColor = System.Drawing.Color.Transparent;
-            this.pictureDeleteUser.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.Trash;
-            this.pictureDeleteUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureDeleteUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureDeleteUser.Location = new System.Drawing.Point(370, 324);
-            this.pictureDeleteUser.Name = "pictureDeleteUser";
-            this.pictureDeleteUser.Size = new System.Drawing.Size(64, 66);
-            this.pictureDeleteUser.TabIndex = 66;
-            this.pictureDeleteUser.TabStop = false;
-            this.pictureDeleteUser.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnClean
             // 
@@ -168,10 +154,10 @@
             this.btnClean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClean.ForeColor = System.Drawing.Color.White;
-            this.btnClean.Location = new System.Drawing.Point(368, 288);
+            this.btnClean.Location = new System.Drawing.Point(368, 264);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(75, 23);
-            this.btnClean.TabIndex = 67;
+            this.btnClean.TabIndex = 4;
             this.btnClean.Text = "Limpiar";
             this.btnClean.UseVisualStyleBackColor = false;
             this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
@@ -255,6 +241,21 @@
             this.Borrado.ReadOnly = true;
             this.Borrado.Width = 50;
             // 
+            // btnDeleteClient
+            // 
+            this.btnDeleteClient.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteClient.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.Trash;
+            this.btnDeleteClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDeleteClient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteClient.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteClient.Location = new System.Drawing.Point(364, 302);
+            this.btnDeleteClient.Name = "btnDeleteClient";
+            this.btnDeleteClient.Size = new System.Drawing.Size(76, 73);
+            this.btnDeleteClient.TabIndex = 67;
+            this.btnDeleteClient.UseVisualStyleBackColor = false;
+            this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click);
+            // 
             // Client_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,8 +264,8 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDeleteClient);
             this.Controls.Add(this.btnClean);
-            this.Controls.Add(this.pictureDeleteUser);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.tablaClientes);
             this.Controls.Add(this.textNumberDoc);
@@ -278,7 +279,6 @@
             this.Text = "Eliminar Cliente";
             this.Load += new System.EventHandler(this.Client_Delete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureDeleteUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,7 +293,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView tablaClientes;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.PictureBox pictureDeleteUser;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
@@ -305,5 +304,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.Button btnDeleteClient;
     }
 }

@@ -22,8 +22,8 @@ namespace Shopping_Buy_All
         private void Client_Delete_Load(object sender, EventArgs e)
         {
             tablaClientes.Visible = false;
-            btnSearch.Location = new System.Drawing.Point(361, 201);
-            pictureDeleteUser.Visible = false;
+            btnSearch.Visible = true;
+            btnDeleteClient.Visible = false;
             CargarTiposDocumentos();
         }
         private void CargarTiposDocumentos()
@@ -68,7 +68,6 @@ namespace Shopping_Buy_All
         {
             comboBoxDocType.SelectedIndex = -1;
             textNumberDoc.Text = "";
-            tablaClientes.Rows.Clear();
         }
         private Cliente Buscar_Cliente(string NroDocumento)
         {
@@ -119,25 +118,31 @@ namespace Shopping_Buy_All
                 cn.Close();
             }
             return client;
-
         }
 
         private void btnClean_Click(object sender, EventArgs e)
-        {
-            Clean();
-        }
+            {    
+              Clean();
+              tablaClientes.Visible = false;
+              btnDeleteClient.Visible = false;
+              btnSearch.Visible = true;
+            }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Cliente client = Buscar_Cliente(textNumberDoc.Text);
-            // Cliente client =Buscar_Cliente(comboBoxDocType.Text,textNumberDoc.Text);
-            tablaClientes.Visible = true;
-            btnSearch.Location = new System.Drawing.Point(564,166);
-            pictureDeleteUser.Visible = true;
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
+            if (textNumberDoc.Text.Equals(""))
+            //if (comboBoxDocType.SelectedIndex !=0 && textNumberDoc.Text.Equals(""))
+            {
+                MessageBox.Show("Error, Debe completar los campos!!");
+                }
+            else
+                {
+                Cliente client = Buscar_Cliente(textNumberDoc.Text);
+                // Cliente client =Buscar_Cliente(comboBoxDocType.Text,textNumberDoc.Text);
+                tablaClientes.Visible = true;
+                btnDeleteClient.Visible = true;
+                btnSearch.Visible = false;
+                }
         }
         private bool BorrarCliente(Cliente client)
         {
@@ -179,7 +184,36 @@ namespace Shopping_Buy_All
             return resultado;
         }
 
+        private void btnDeleteClient_Click(object sender, EventArgs e)
+        {
+            Cliente c = new Cliente();
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            String mensajeCarga = (
+                  " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
+                + " |Apellido: " + c.ApellidoCliente + " |Nombre: " + c.NombreCliente + "|" + "\n"
+                + " |Calle: " + c.CalleCliente + " |Nro Calle: " + c.NroCalleCliente + "|" + "\n"
+                + " |Estado Civil: " + c.EstadoCivilCliente + " |Sexo: " + c.SexoCliente + "|" + "\n"
+                + " |Fecha Nacimiento: " + c.FechaNacimientoCliente + "|" + "\n" + "\n" + " |Desea eliminar a este cliente??");
 
+            string titulo = "Información de Eliminación";
+
+            DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+            if (result == DialogResult.OK)
+            {
+                MessageBox.Show("Cliente Borrado con éxito!");
+                Clean();
+                //BorrarCliente(c);
+                CargarTiposDocumentos();
+                tablaClientes.Visible = false;
+                btnDeleteClient.Visible = false;
+                btnSearch.Visible = true;
+            }
+            else
+            {
+                comboBoxDocType.Focus();
+            }
+        }
     }
 }
 
