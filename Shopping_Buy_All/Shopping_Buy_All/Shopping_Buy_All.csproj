@@ -48,22 +48,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client_Delete.cs">
+    <Compile Include="ABM Cliente\Client_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client_Delete.Designer.cs">
+    <Compile Include="ABM Cliente\Client_Delete.Designer.cs">
       <DependentUpon>Client_Delete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client_Load.cs">
+    <Compile Include="ABM Cliente\Client_Load.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client_Load.Designer.cs">
+    <Compile Include="ABM Cliente\Client_Load.Designer.cs">
       <DependentUpon>Client_Load.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client_Modify.cs">
+    <Compile Include="ABM Cliente\Client_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client_Modify.Designer.cs">
+    <Compile Include="ABM Cliente\Client_Modify.Designer.cs">
       <DependentUpon>Client_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Cliente.cs" />
@@ -82,13 +82,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Client_Delete.resx">
+    <EmbeddedResource Include="ABM Cliente\Client_Delete.resx">
       <DependentUpon>Client_Delete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client_Load.resx">
+    <EmbeddedResource Include="ABM Cliente\Client_Load.resx">
       <DependentUpon>Client_Load.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client_Modify.resx">
+    <EmbeddedResource Include="ABM Cliente\Client_Modify.resx">
       <DependentUpon>Client_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged.resx">

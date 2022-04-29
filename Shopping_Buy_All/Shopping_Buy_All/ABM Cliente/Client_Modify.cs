@@ -29,7 +29,7 @@ namespace Shopping_Buy_All
             }
             else
             {
-            Cliente c = Buscar_Cliente_Documento(comboBoxDocType.SelectedIndex, textNumberDoc.Text);
+            Cliente c = Buscar_Cliente_Documento((int)comboBoxDocType.SelectedValue, textNumberDoc.Text);
             Cargar_Campos(c);
             SearchPanel.Visible=false;
             btnSearchClient.Visible=false;
@@ -154,7 +154,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Clientes";
+                string consulta = "Select * FROM Clientes WHERE Borrado like 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -187,7 +187,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Clientes where TipoDocumendo like @tipoDocumento AND NroDocumento like @nrodocumento";
+                string consulta = "SELECT * FROM Clientes where TipoDocumento like @tipoDocumento AND NroDocumento like @nrodocumento AND Borrado like 0";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
@@ -232,7 +232,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Clientes where NroDocumento like @Nrodocumento";
+                string consulta = "SELECT * FROM Clientes WHERE NroDocumento like @Nrodocumento ";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@NroDocumento", NroDocumento);

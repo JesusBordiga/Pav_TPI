@@ -92,7 +92,7 @@
             // 
             this.textNumberDoc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNumberDoc.ForeColor = System.Drawing.Color.White;
-            this.textNumberDoc.Location = new System.Drawing.Point(144, 110);
+            this.textNumberDoc.Location = new System.Drawing.Point(139, 110);
             this.textNumberDoc.Mask = "99999999";
             this.textNumberDoc.Name = "textNumberDoc";
             this.textNumberDoc.Size = new System.Drawing.Size(55, 20);
@@ -286,7 +286,7 @@
             this.textDateBirthDay.Location = new System.Drawing.Point(147, 392);
             this.textDateBirthDay.Mask = "00/00/0000";
             this.textDateBirthDay.Name = "textDateBirthDay";
-            this.textDateBirthDay.Size = new System.Drawing.Size(60, 20);
+            this.textDateBirthDay.Size = new System.Drawing.Size(64, 20);
             this.textDateBirthDay.TabIndex = 51;
             this.textDateBirthDay.ValidatingType = typeof(System.DateTime);
             // 
@@ -410,11 +410,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-3, 12);
+            this.label1.Location = new System.Drawing.Point(77, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(350, 31);
+            this.label1.Size = new System.Drawing.Size(199, 31);
             this.label1.TabIndex = 32;
-            this.label1.Text = "Buscar cliente a modificar";
+            this.label1.Text = "Buscar cliente";
             // 
             // tablaClientes
             // 
@@ -525,7 +525,7 @@
             // SearchPanel
             // 
             this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.SearchPanel.Location = new System.Drawing.Point(34, 136);
+            this.SearchPanel.Location = new System.Drawing.Point(29, 136);
             this.SearchPanel.Name = "SearchPanel";
             this.SearchPanel.Size = new System.Drawing.Size(245, 309);
             this.SearchPanel.TabIndex = 61;
