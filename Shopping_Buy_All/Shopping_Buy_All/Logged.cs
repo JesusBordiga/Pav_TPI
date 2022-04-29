@@ -34,5 +34,11 @@ namespace Shopping_Buy_All
             Client_Modify modify = new Client_Modify();
             modify.ShowDialog();
         }
+
+        private void bajaDeClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Client_Delete delete = new Client_Delete();
+            delete.ShowDialog();
+        }
     }
 }

@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client_Delete.Designer.cs">
+      <DependentUpon>Client_Delete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client_Load.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Client_Delete.resx">
+      <DependentUpon>Client_Delete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client_Load.resx">
       <DependentUpon>Client_Load.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +125,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pop-shop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

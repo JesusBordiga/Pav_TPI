@@ -15,3 +15,4 @@ G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Debug\Shopping_B
 G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Debug\Shopping_Buy_All.Client_Modify.resources
 =======
 >>>>>>> 6c75a8a79a07478eb385d3ed9d0e9162e2f02fbd
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Debug\Shopping_Buy_All.Client_Delete.resources

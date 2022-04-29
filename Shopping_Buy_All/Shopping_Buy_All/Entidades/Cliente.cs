@@ -17,6 +17,7 @@ namespace Shopping_Buy_All.Entidades
         private int EstadoCivil;
         private int IdSexo;
         private DateTime FechaNacimiento;
+        private int Borrado;
         
         
         public Cliente(string documento,string apellido , string nombre)
@@ -74,6 +75,11 @@ namespace Shopping_Buy_All.Entidades
         {
         get => FechaNacimiento;
         set => FechaNacimiento = value;
+        }
+        public int BorradoCliente
+        {
+            get => Borrado;
+            set => Borrado = value;
         }
     }
 }
