@@ -188,7 +188,6 @@ namespace Shopping_Buy_All
             {
                 SqlCommand cmd = new SqlCommand();
                 string consulta = "SELECT * FROM Clientes where TipoDocumento like @tipoDocumento AND NroDocumento like @nrodocumento AND Borrado like 0";
-
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
                 cmd.Parameters.AddWithValue("@tipoDocumento", TipoDocumento);
@@ -410,9 +409,9 @@ namespace Shopping_Buy_All
                     + " |Apellido: " + c.ApellidoCliente + " |Nombre: " + c.NombreCliente + "|" + "\n"
                     + " |Calle: " + c.CalleCliente + " |Nro Calle: " + c.NroCalleCliente + "|" + "\n"
                     + " |Estado Civil: " + c.EstadoCivilCliente + " |Sexo: " + c.SexoCliente + "|" + "\n"
-                    + " |Fecha Nacimiento: " + c.FechaNacimientoCliente + "|" + "\n");
+                    + " |Fecha Nacimiento: " + c.FechaNacimientoCliente.ToShortDateString() + "|" + "\n");
 
-                string titulo = "Información de Carga";
+                string titulo = "Información de Modificación";
 
                 DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
 
