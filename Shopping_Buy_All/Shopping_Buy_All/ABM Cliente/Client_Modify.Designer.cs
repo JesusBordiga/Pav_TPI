@@ -601,6 +601,7 @@
             this.Controls.Add(this.tablaClientes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1043, 488);
             this.MinimumSize = new System.Drawing.Size(1043, 488);
             this.Name = "Client_Modify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

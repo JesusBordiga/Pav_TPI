@@ -46,3 +46,4 @@ G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Relea
 G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.pdb
 =======
 >>>>>>> 8ef430b2b2798c991cb2a2f8c706092ca4eb3377
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.ABM_Cliente.Grilla_Clientes.resources

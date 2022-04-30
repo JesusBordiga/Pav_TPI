@@ -89,7 +89,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Clientes";
+                string consulta = "Select * FROM Clientes WHERE Borrado like 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -136,43 +136,63 @@ namespace Shopping_Buy_All
             c.NroCalleCliente = int.Parse(textStreetHeight.Text.Trim());
 
             //Estado civil de cliente
-            if (radioButtonSingle.Checked)
-            {
-                c.EstadoCivilCliente = 1;
-            }
-            else if (radioButtonMarried.Checked)
-            {
-                c.EstadoCivilCliente = 2;
-            }
-            else
+            if (radioButtonSingle.Checked && radioButtonMarried.Checked)
             {
                 MessageBox.Show("Error al elegir estado Civil de Cliente! \n" +
-                    "Complete los campos por favor!");
-                radioButtonSingle.Focus();
-            }
-
-            //Sexo de cliente
-            if (radioButtonMale.Checked)
-            {
-                c.SexoCliente = 1;
-            }
-            else if (radioButtonFemale.Checked)
-            {
-                c.SexoCliente = 2;
-            }
-            else if (radioButtonOther.Checked)
-            {
-                c.SexoCliente = 3;
+                        "Seleccione solo una opción!");
             }
             else
             {
-                MessageBox.Show("Error al elegir Sexo de Cliente! \n" +
-                    "Complete los campos por favor!");
-                radioButtonMale.Focus();
+                if (radioButtonSingle.Checked)
+                {
+                    c.EstadoCivilCliente = 1;
+                }
+                else if (radioButtonMarried.Checked)
+                {
+                    c.EstadoCivilCliente = 2;
+                }
+                else
+                {
+                    MessageBox.Show("Error al elegir estado Civil de Cliente! \n" +
+                        "Complete los campos por favor!");
+                    radioButtonSingle.Focus();
+                }
             }
 
+
+            //Sexo de cliente
+            if (radioButtonMale.Checked && radioButtonFemale.Checked && radioButtonOther.Checked
+                || radioButtonMale.Checked && radioButtonFemale.Checked
+                || radioButtonFemale.Checked && radioButtonOther.Checked
+                || radioButtonMale.Checked && radioButtonOther.Checked)
+            {
+                MessageBox.Show("Error al elegir Sexo de Cliente! \n" +
+                        "Seleccione solo 1 sexo por favor!");
+            }
+            else
+            { 
+                if (radioButtonMale.Checked)
+                {
+                    c.SexoCliente = 1;
+                }
+                else if (radioButtonFemale.Checked)
+                {
+                    c.SexoCliente = 2;
+                }
+                else if (radioButtonOther.Checked)
+                {
+                    c.SexoCliente = 3;
+                }
+                else
+                {
+                    MessageBox.Show("Error al elegir Sexo de Cliente! \n" +
+                        "Complete los campos por favor!");
+                    radioButtonMale.Focus();
+                }
+            }
             //Fecha de nacimiento de Cliente
             c.FechaNacimientoCliente = DateTime.Parse(textDateBirthDay.Text);
+
 
             return c;
         }
@@ -182,36 +202,37 @@ namespace Shopping_Buy_All
             Cliente c = ObtenerDatosCliente();
             bool resultado = Agregar_Cliente(c);
             if (resultado)
-            {
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = (
-                     " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
-                    + " |Apellido: " + c.ApellidoCliente + " |Nombre: " + c.NombreCliente + "|" + "\n"
-                    + " |Calle: " + c.CalleCliente + " |Nro Calle: " + c.NroCalleCliente + "|" + "\n"
-                    + " |Estado Civil: " + c.EstadoCivilCliente + " |Sexo: " + c.SexoCliente + "|" + "\n"
-                    + " |Fecha Nacimiento: " + c.FechaNacimientoCliente + "|" + "\n");
-
-                string titulo = "Información de Carga";
-
-                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                if (result == DialogResult.OK)
                 {
-                    MessageBox.Show("Cliente agregado con éxito!");
-                    Clean();
-                    CargarTablaClientes();
-                    CargarTiposDocumentos();
+                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                    String mensajeCarga = (
+                          " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
+                        + " |Apellido: " + c.ApellidoCliente + " |Nombre: " + c.NombreCliente + "|" + "\n"
+                        + " |Calle: " + c.CalleCliente + " |Nro Calle: " + c.NroCalleCliente + "|" + "\n"
+                        + " |Estado Civil: " + c.EstadoCivilCliente + " |Sexo: " + c.SexoCliente + "|" + "\n"
+                        + " |Fecha Nacimiento: " + c.FechaNacimientoCliente.ToShortDateString() + "|" + "\n");
+
+                    string titulo = "Información de Carga";
+
+                    DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                    if (result == DialogResult.OK)
+                    {
+                        MessageBox.Show("Cliente agregado con éxito!");
+                        Clean();
+                        CargarTablaClientes();
+                        CargarTiposDocumentos();
 
 
+                    }
+                    else
+                    {
+                        comboBoxDocType.Focus();
+                    }
                 }
-                else
-                {
-                    comboBoxDocType.Focus();
-                }
-            }
             else
             {
-                MessageBox.Show("Error al modificar la persona!");
+                MessageBox.Show("Error al cargar el Cliente! \n" +
+                        "Complete los campos por favor!");
             }
         }
 

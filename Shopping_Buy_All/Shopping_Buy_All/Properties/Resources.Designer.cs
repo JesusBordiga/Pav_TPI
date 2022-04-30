@@ -63,6 +63,16 @@ namespace Shopping_Buy_All.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap menu_editor {
+            get {
+                object obj = ResourceManager.GetObject("menu-editor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com {
             get {
                 object obj = ResourceManager.GetObject("montanas-minimalista-arte-low-poly_2560x1440_xtrafondos.com", resourceCulture);

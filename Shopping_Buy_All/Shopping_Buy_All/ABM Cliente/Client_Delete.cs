@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABM_Cliente;
 
 namespace Shopping_Buy_All
 {
@@ -77,7 +78,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Clientes where TipoDocumento like @tipoDocumento AND NroDocumento like @nrodocumento";
+                string consulta = "SELECT * FROM Clientes where TipoDocumento like @tipoDocumento AND NroDocumento like @nrodocumento AND Borrado Like 0";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
@@ -213,7 +214,7 @@ namespace Shopping_Buy_All
                 try
                 {
                     SqlCommand cmd = new SqlCommand();
-                    string consulta = "UPDATE Clientes SET Borrado = @borrado WHERE TipoDocumento Like @tipoDocumento AND NroDocumento Like @nroDocumento";
+                    string consulta = "UPDATE Clientes SET Borrado = @borrado WHERE TipoDocumento Like @tipoDocumento AND NroDocumento Like @nroDocumento AND Borrado like 0";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@tipoDocumento", TipoDocumento);
                     cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
@@ -283,6 +284,13 @@ namespace Shopping_Buy_All
             {
                 comboBoxDocType.Focus();
             }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Grilla_Clientes tabla = new Grilla_Clientes();
+            tabla.Show();
+            bool creado = true;
+
         }
     }
 }
