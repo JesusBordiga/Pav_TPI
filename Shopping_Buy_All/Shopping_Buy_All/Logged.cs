@@ -40,5 +40,35 @@ namespace Shopping_Buy_All
             Client_Delete delete = new Client_Delete();
             delete.ShowDialog();
         }
+
+        private void altaLocalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modificacionDeLocalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bajaDeLocalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void altaDeTipoComercioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modificacionDeTipoComercioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bajaDeTipoComercioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
