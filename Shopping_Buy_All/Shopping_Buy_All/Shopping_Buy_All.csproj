@@ -73,6 +73,7 @@
       <DependentUpon>Grilla_Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\TipoComercio.cs" />
     <Compile Include="Entidades\Local.cs" />
     <Compile Include="Entidades\User.cs" />
@@ -87,6 +88,30 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Grilla_Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Grilla_Productos.Designer.cs">
+      <DependentUpon>Grilla_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Producto_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Producto_Modify.Designer.cs">
+      <DependentUpon>Producto_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Product_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Product_Delete.Designer.cs">
+      <DependentUpon>Product_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Product_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Product_Load.Designer.cs">
+      <DependentUpon>Product_Load.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,6 +132,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Grilla_Productos.resx">
+      <DependentUpon>Grilla_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Producto_Modify.resx">
+      <DependentUpon>Producto_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Product_Delete.resx">
+      <DependentUpon>Product_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Product_Load.resx">
+      <DependentUpon>Product_Load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -145,6 +182,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ABM Local y Tipo Comercio\" />
+    <Folder Include="Rubros\" />
+    <Folder Include="Vehiculos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
