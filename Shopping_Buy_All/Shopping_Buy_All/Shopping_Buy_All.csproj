@@ -73,6 +73,8 @@
       <DependentUpon>Grilla_Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\TipoComercio.cs" />
+    <Compile Include="Entidades\Local.cs" />
     <Compile Include="Entidades\User.cs" />
     <Compile Include="Logged.cs">
       <SubType>Form</SubType>
@@ -140,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menu-editor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ABM Local y Tipo Comercio\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
