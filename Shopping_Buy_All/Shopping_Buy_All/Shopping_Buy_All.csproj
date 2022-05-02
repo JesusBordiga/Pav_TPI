@@ -89,28 +89,28 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Productos\Grilla_Productos.cs">
+    <Compile Include="ABM Productos\Grilla_Productos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Productos\Grilla_Productos.Designer.cs">
+    <Compile Include="ABM Productos\Grilla_Productos.Designer.cs">
       <DependentUpon>Grilla_Productos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Productos\Producto_Modify.cs">
+    <Compile Include="ABM Productos\Product_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Productos\Producto_Modify.Designer.cs">
-      <DependentUpon>Producto_Modify.cs</DependentUpon>
+    <Compile Include="ABM Productos\Product_Modify.Designer.cs">
+      <DependentUpon>Product_Modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="Productos\Product_Delete.cs">
+    <Compile Include="ABM Productos\Product_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Productos\Product_Delete.Designer.cs">
+    <Compile Include="ABM Productos\Product_Delete.Designer.cs">
       <DependentUpon>Product_Delete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Productos\Product_Load.cs">
+    <Compile Include="ABM Productos\Product_Load.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Productos\Product_Load.Designer.cs">
+    <Compile Include="ABM Productos\Product_Load.Designer.cs">
       <DependentUpon>Product_Load.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -133,16 +133,16 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Productos\Grilla_Productos.resx">
+    <EmbeddedResource Include="ABM Productos\Grilla_Productos.resx">
       <DependentUpon>Grilla_Productos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Productos\Producto_Modify.resx">
-      <DependentUpon>Producto_Modify.cs</DependentUpon>
+    <EmbeddedResource Include="ABM Productos\Product_Modify.resx">
+      <DependentUpon>Product_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Productos\Product_Delete.resx">
+    <EmbeddedResource Include="ABM Productos\Product_Delete.resx">
       <DependentUpon>Product_Delete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Productos\Product_Load.resx">
+    <EmbeddedResource Include="ABM Productos\Product_Load.resx">
       <DependentUpon>Product_Load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

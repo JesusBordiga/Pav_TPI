@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Shopping_Buy_All.Productos
 {
-    public partial class Producto_Modify : Form
+    public partial class Product_Modify : Form
     {
-        public Producto_Modify()
+        public Product_Modify()
         {
             InitializeComponent();
         }

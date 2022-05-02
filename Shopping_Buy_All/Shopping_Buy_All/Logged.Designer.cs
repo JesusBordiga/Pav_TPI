@@ -39,13 +39,16 @@
             this.profesionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.producotsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.marcasDeTarjetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaLocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificacionDeLocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bajaDeLocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaDeTipoComercioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificacionDeTipoComercioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bajaDeTipoComercioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marcasDeTarjetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificaciónProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,6 +136,10 @@
             // 
             // producotsToolStripMenuItem
             // 
+            this.producotsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaProductoToolStripMenuItem,
+            this.modificaciónProductosToolStripMenuItem,
+            this.bajaProductosToolStripMenuItem});
             this.producotsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.producotsToolStripMenuItem.Name = "producotsToolStripMenuItem";
             this.producotsToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
@@ -151,13 +158,6 @@
             this.localesToolStripMenuItem.Name = "localesToolStripMenuItem";
             this.localesToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.localesToolStripMenuItem.Text = "Locales";
-            // 
-            // marcasDeTarjetaToolStripMenuItem
-            // 
-            this.marcasDeTarjetaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.marcasDeTarjetaToolStripMenuItem.Name = "marcasDeTarjetaToolStripMenuItem";
-            this.marcasDeTarjetaToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
-            this.marcasDeTarjetaToolStripMenuItem.Text = "Marcas De Tarjeta";
             // 
             // altaLocalToolStripMenuItem
             // 
@@ -213,6 +213,34 @@
             this.bajaDeTipoComercioToolStripMenuItem.Text = "Baja de Tipo Comercio";
             this.bajaDeTipoComercioToolStripMenuItem.Click += new System.EventHandler(this.bajaDeTipoComercioToolStripMenuItem_Click);
             // 
+            // marcasDeTarjetaToolStripMenuItem
+            // 
+            this.marcasDeTarjetaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.marcasDeTarjetaToolStripMenuItem.Name = "marcasDeTarjetaToolStripMenuItem";
+            this.marcasDeTarjetaToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
+            this.marcasDeTarjetaToolStripMenuItem.Text = "Marcas De Tarjeta";
+            // 
+            // altaProductoToolStripMenuItem
+            // 
+            this.altaProductoToolStripMenuItem.Name = "altaProductoToolStripMenuItem";
+            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.altaProductoToolStripMenuItem.Text = "Alta Productos";
+            this.altaProductoToolStripMenuItem.Click += new System.EventHandler(this.altaProductoToolStripMenuItem_Click);
+            // 
+            // modificaciónProductosToolStripMenuItem
+            // 
+            this.modificaciónProductosToolStripMenuItem.Name = "modificaciónProductosToolStripMenuItem";
+            this.modificaciónProductosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.modificaciónProductosToolStripMenuItem.Text = "Modificación Productos";
+            this.modificaciónProductosToolStripMenuItem.Click += new System.EventHandler(this.modificaciónProductosToolStripMenuItem_Click);
+            // 
+            // bajaProductosToolStripMenuItem
+            // 
+            this.bajaProductosToolStripMenuItem.Name = "bajaProductosToolStripMenuItem";
+            this.bajaProductosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.bajaProductosToolStripMenuItem.Text = "Baja Productos";
+            this.bajaProductosToolStripMenuItem.Click += new System.EventHandler(this.bajaProductosToolStripMenuItem_Click);
+            // 
             // Logged
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,5 +288,8 @@
         private System.Windows.Forms.ToolStripMenuItem altaDeTipoComercioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificacionDeTipoComercioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bajaDeTipoComercioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaProductoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificaciónProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bajaProductosToolStripMenuItem;
     }
 }

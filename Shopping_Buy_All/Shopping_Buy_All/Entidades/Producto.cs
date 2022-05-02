@@ -10,8 +10,7 @@ namespace Shopping_Buy_All.Entidades
     {
         private int Codigo;
         private string Nombre;
-        private int Precio;
-        private int Borrado;
+        private float Precio;
 
 
         public Producto(int codigo, string nombre, int precio)
@@ -34,7 +33,7 @@ namespace Shopping_Buy_All.Entidades
             get => Nombre;
             set => Nombre = value;
         }
-        public int PrecioProducto
+        public float PrecioProducto
         {
             get => Precio;
             set => Precio = value;

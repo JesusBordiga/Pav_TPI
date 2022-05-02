@@ -1,6 +1,6 @@
 ﻿namespace Shopping_Buy_All.Productos
 {
-    partial class Producto_Modify
+    partial class Product_Modify
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Producto_Modify));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_Modify));
             this.SuspendLayout();
             // 
             // Producto_Modify
