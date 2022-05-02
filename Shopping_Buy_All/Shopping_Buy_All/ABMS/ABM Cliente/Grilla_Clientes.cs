@@ -41,7 +41,7 @@ namespace Shopping_Buy_All.ABM_Cliente
                 da.Fill(tabla);
                 tablaClientes.DataSource = tabla;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;

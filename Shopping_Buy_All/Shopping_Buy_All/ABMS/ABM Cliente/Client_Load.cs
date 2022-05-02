@@ -71,7 +71,7 @@ namespace Shopping_Buy_All
                 comboBoxDocType.ValueMember = "TipoDocumento";
                 comboBoxDocType.SelectedIndex = -1;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -104,7 +104,7 @@ namespace Shopping_Buy_All
                 da.Fill(tabla);
                 tablaClientes.DataSource = tabla;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -254,7 +254,7 @@ namespace Shopping_Buy_All
                 cmd.Parameters.AddWithValue("@calle", client.CalleCliente);
                 cmd.Parameters.AddWithValue("@nroCalle", client.NroCalleCliente);
                 cmd.Parameters.AddWithValue("@estadoCivil", client.EstadoCivilCliente);
-                cmd.Parameters.AddWithValue("@sexo",client.SexoCliente);
+                cmd.Parameters.AddWithValue("@sexo", client.SexoCliente);
                 cmd.Parameters.AddWithValue("@fechaNacimiento", client.FechaNacimientoCliente);
                 cmd.CommandText = consulta;
 
@@ -263,17 +263,13 @@ namespace Shopping_Buy_All
                 cmd.ExecuteNonQuery();
                 resultado = true;
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-
                 throw;
-                resultado = false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 throw;
-                resultado = false;
             }
             finally
             {

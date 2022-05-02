@@ -38,7 +38,7 @@ namespace Shopping_Buy_All.Productos
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Productos WHERE Borrado like 0";
+                string consulta = "Select * FROM Productos WHERE Borrado = 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -53,7 +53,7 @@ namespace Shopping_Buy_All.Productos
                 da.Fill(tabla);
                 tablaProductos.DataSource = tabla;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -129,7 +129,7 @@ namespace Shopping_Buy_All.Productos
                 cmd.ExecuteNonQuery();
                 resultado = true;
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
 
                 throw;

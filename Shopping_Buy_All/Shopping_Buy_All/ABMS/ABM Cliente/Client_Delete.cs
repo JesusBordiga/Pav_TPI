@@ -54,7 +54,7 @@ namespace Shopping_Buy_All
                 comboBoxDocType.ValueMember = "TipoDocumento";
                 comboBoxDocType.SelectedIndex = -1;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -111,7 +111,7 @@ namespace Shopping_Buy_All
                 tablaClientes.DataSource = tabla;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -164,7 +164,7 @@ namespace Shopping_Buy_All
                 }
   
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -211,33 +211,30 @@ namespace Shopping_Buy_All
                 string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
                 SqlConnection cn = new SqlConnection(cadenaConexion);
                 bool resultado = false;
-                try
-                {
-                    SqlCommand cmd = new SqlCommand();
-                    string consulta = "UPDATE Clientes SET Borrado = @borrado WHERE TipoDocumento Like @tipoDocumento AND NroDocumento Like @nroDocumento AND Borrado like 0";
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@tipoDocumento", TipoDocumento);
-                    cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
-                    cmd.Parameters.AddWithValue("@borrado", Borrado);
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = consulta;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "UPDATE Clientes SET Borrado = @borrado WHERE TipoDocumento Like @tipoDocumento AND NroDocumento Like @nroDocumento AND Borrado like 0";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@tipoDocumento", TipoDocumento);
+                cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
+                cmd.Parameters.AddWithValue("@borrado", Borrado);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
 
-                    cn.Open();
-                    cmd.Connection = cn;
-                    cmd.ExecuteNonQuery();
-                    resultado = true;
-                }
-                catch (SqlException ex)
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                resultado = true;
+            }
+            catch (SqlException)
+            {
+                throw;
+                
+            }
+            catch (Exception)
                 {
-
                     throw;
-                    resultado = false;
-                }
-                catch (Exception ex)
-                {
-
-                    throw;
-                    resultado = false;
                 }
                 finally
                 {

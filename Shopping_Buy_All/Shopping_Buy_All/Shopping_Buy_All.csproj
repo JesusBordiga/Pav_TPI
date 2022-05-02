@@ -48,29 +48,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABM Cliente\Client_Delete.cs">
+    <Compile Include="ABMS\ABM Cliente\Client_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Cliente\Client_Delete.Designer.cs">
+    <Compile Include="ABMS\ABM Cliente\Client_Delete.Designer.cs">
       <DependentUpon>Client_Delete.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Cliente\Client_Load.cs">
+    <Compile Include="ABMS\ABM Cliente\Client_Load.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Cliente\Client_Load.Designer.cs">
+    <Compile Include="ABMS\ABM Cliente\Client_Load.Designer.cs">
       <DependentUpon>Client_Load.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Cliente\Client_Modify.cs">
+    <Compile Include="ABMS\ABM Cliente\Client_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Cliente\Client_Modify.Designer.cs">
+    <Compile Include="ABMS\ABM Cliente\Client_Modify.Designer.cs">
       <DependentUpon>Client_Modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Cliente\Grilla_Clientes.cs">
+    <Compile Include="ABMS\ABM Cliente\Grilla_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Cliente\Grilla_Clientes.Designer.cs">
+    <Compile Include="ABMS\ABM Cliente\Grilla_Clientes.Designer.cs">
       <DependentUpon>Grilla_Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Productos\Client_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Productos\Client_Modify.Designer.cs">
+      <DependentUpon>Client_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Producto.cs" />
@@ -89,43 +95,46 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Productos\Grilla_Productos.cs">
+    <Compile Include="ABMS\ABM Productos\Grilla_Productos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Productos\Grilla_Productos.Designer.cs">
+    <Compile Include="ABMS\ABM Productos\Grilla_Productos.Designer.cs">
       <DependentUpon>Grilla_Productos.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Productos\Product_Modify.cs">
+    <Compile Include="ABMS\ABM Productos\Product_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Productos\Product_Modify.Designer.cs">
+    <Compile Include="ABMS\ABM Productos\Product_Modify.Designer.cs">
       <DependentUpon>Product_Modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Productos\Product_Delete.cs">
+    <Compile Include="ABMS\ABM Productos\Product_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Productos\Product_Delete.Designer.cs">
+    <Compile Include="ABMS\ABM Productos\Product_Delete.Designer.cs">
       <DependentUpon>Product_Delete.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Productos\Product_Load.cs">
+    <Compile Include="ABMS\ABM Productos\Product_Load.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Productos\Product_Load.Designer.cs">
+    <Compile Include="ABMS\ABM Productos\Product_Load.Designer.cs">
       <DependentUpon>Product_Load.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ABM Cliente\Client_Delete.resx">
+    <EmbeddedResource Include="ABMS\ABM Cliente\Client_Delete.resx">
       <DependentUpon>Client_Delete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Cliente\Client_Load.resx">
+    <EmbeddedResource Include="ABMS\ABM Cliente\Client_Load.resx">
       <DependentUpon>Client_Load.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Cliente\Client_Modify.resx">
+    <EmbeddedResource Include="ABMS\ABM Cliente\Client_Modify.resx">
       <DependentUpon>Client_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Cliente\Grilla_Clientes.resx">
+    <EmbeddedResource Include="ABMS\ABM Cliente\Grilla_Clientes.resx">
       <DependentUpon>Grilla_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Productos\Client_Modify.resx">
+      <DependentUpon>Client_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
@@ -133,16 +142,16 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Productos\Grilla_Productos.resx">
+    <EmbeddedResource Include="ABMS\ABM Productos\Grilla_Productos.resx">
       <DependentUpon>Grilla_Productos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Productos\Product_Modify.resx">
+    <EmbeddedResource Include="ABMS\ABM Productos\Product_Modify.resx">
       <DependentUpon>Product_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Productos\Product_Delete.resx">
+    <EmbeddedResource Include="ABMS\ABM Productos\Product_Delete.resx">
       <DependentUpon>Product_Delete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Productos\Product_Load.resx">
+    <EmbeddedResource Include="ABMS\ABM Productos\Product_Load.resx">
       <DependentUpon>Product_Load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -181,9 +190,19 @@
     <None Include="Resources\menu-editor.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ABM Local y Tipo Comercio\" />
-    <Folder Include="Rubros\" />
-    <Folder Include="Vehiculos\" />
+    <Folder Include="ABMS\ABM Local\" />
+    <Folder Include="ABMS\ABM MarcaTarjeta\" />
+    <Folder Include="ABMS\ABM MarcaVehiculo\" />
+    <Folder Include="ABMS\ABM Modelos\" />
+    <Folder Include="ABMS\ABM Profesiones\" />
+    <Folder Include="ABMS\ABM Rubros\" />
+    <Folder Include="ABMS\ABM TipoComercio\" />
+    <Folder Include="ABMS\ABM TipoDocumento\" />
+    <Folder Include="ABMS\ABM TipoEstadoCivil\" />
+    <Folder Include="ABMS\ABM TipoSexo\" />
+    <Folder Include="ABMS\ABM TipoVehiculo\" />
+    <Folder Include="ABMS\ABM Usuario\" />
+    <Folder Include="ABMS\ABM Vehiculos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

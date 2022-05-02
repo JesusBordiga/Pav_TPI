@@ -12,9 +12,9 @@ using Shopping_Buy_All.Entidades;
 
 namespace Shopping_Buy_All
 {
-    public partial class Client_Modify : Form
+    public partial class Product_Modify : Form
     {
-        public Client_Modify()
+        public  Product_Modify()
         {
             InitializeComponent();
             CargarTablaClientes();
@@ -385,7 +385,7 @@ namespace Shopping_Buy_All
                 throw;
                 resultado = false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;

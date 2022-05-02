@@ -53,3 +53,4 @@ G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping
 G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Productos.Product_Delete.resources
 G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Productos.Product_Load.resources
 G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Productos.Product_Modify.resources
+G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Product_Modify.resources
