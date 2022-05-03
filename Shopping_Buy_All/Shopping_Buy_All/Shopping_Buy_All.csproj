@@ -138,11 +138,11 @@
     <Compile Include="ABMS\ABM TipoSexo\text.Designer.cs">
       <DependentUpon>text.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM TipoVehiculo\text.cs">
+    <Compile Include="ABMS\ABM TipoVehiculo\TipoVehiculo_Load.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM TipoVehiculo\text.Designer.cs">
-      <DependentUpon>text.cs</DependentUpon>
+    <Compile Include="ABMS\ABM TipoVehiculo\TipoVehiculo_Load.Designer.cs">
+      <DependentUpon>TipoVehiculo_Load.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\ABM Usuario\text.cs">
       <SubType>Form</SubType>

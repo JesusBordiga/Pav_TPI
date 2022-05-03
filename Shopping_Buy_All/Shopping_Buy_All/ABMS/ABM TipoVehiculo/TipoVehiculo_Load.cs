@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Shopping_Buy_All.ABMS.ABM_Local
+namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
 {
-    public partial class test : Form
+    public partial class TipoVehiculo_Load : Form
     {
-        public test()
+        public TipoVehiculo_Load()
         {
             InitializeComponent();
         }
