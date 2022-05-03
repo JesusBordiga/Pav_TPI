@@ -48,6 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABMS\ABM Productos\Grilla_Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Productos\Grilla_Productos.Designer.cs">
+      <DependentUpon>Grilla_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Productos\Product_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Productos\Product_Delete.Designer.cs">
+      <DependentUpon>Product_Delete.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM Tarjetas\test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,11 +114,11 @@
     <Compile Include="ABMS\ABM Modelos\text.Designer.cs">
       <DependentUpon>text.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM Productos\Client_Modify.cs">
+    <Compile Include="ABMS\ABM Productos\Product_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM Productos\Client_Modify.Designer.cs">
-      <DependentUpon>Client_Modify.cs</DependentUpon>
+    <Compile Include="ABMS\ABM Productos\Product_Modify.Designer.cs">
+      <DependentUpon>Product_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\ABM Profesiones\text.cs">
       <SubType>Form</SubType>
@@ -179,24 +191,6 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM Productos\Grilla_Productos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Productos\Grilla_Productos.Designer.cs">
-      <DependentUpon>Grilla_Productos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM Productos\Product_Modify.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Productos\Product_Modify.Designer.cs">
-      <DependentUpon>Product_Modify.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM Productos\Product_Delete.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Productos\Product_Delete.Designer.cs">
-      <DependentUpon>Product_Delete.cs</DependentUpon>
-    </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Load.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,23 +211,20 @@
     <EmbeddedResource Include="ABMS\ABM Cliente\Grilla_Clientes.resx">
       <DependentUpon>Grilla_Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Productos\Client_Modify.resx">
-      <DependentUpon>Client_Modify.cs</DependentUpon>
+    <EmbeddedResource Include="ABMS\ABM Productos\Grilla_Productos.resx">
+      <DependentUpon>Grilla_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Productos\Product_Delete.resx">
+      <DependentUpon>Product_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Productos\Product_Modify.resx">
+      <DependentUpon>Product_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Productos\Grilla_Productos.resx">
-      <DependentUpon>Grilla_Productos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Productos\Product_Modify.resx">
-      <DependentUpon>Product_Modify.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Productos\Product_Delete.resx">
-      <DependentUpon>Product_Delete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Load.resx">
       <DependentUpon>Product_Load.cs</DependentUpon>
