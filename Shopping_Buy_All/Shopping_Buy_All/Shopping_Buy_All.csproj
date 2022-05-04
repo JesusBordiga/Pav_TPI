@@ -60,12 +60,6 @@
     <Compile Include="ABMS\ABM Productos\Product_Delete.Designer.cs">
       <DependentUpon>Product_Delete.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM Tarjetas\test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Tarjetas\test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
-    </Compile>
     <Compile Include="ABMS\ABM Cliente\Client_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,89 +84,11 @@
     <Compile Include="ABMS\ABM Cliente\Grilla_Clientes.Designer.cs">
       <DependentUpon>Grilla_Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM Local\test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Local\test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM MarcaTarjeta\text.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM MarcaTarjeta\text.Designer.cs">
-      <DependentUpon>text.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM MarcaVehiculo\text.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM MarcaVehiculo\text.Designer.cs">
-      <DependentUpon>text.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM Modelos\text.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Modelos\text.Designer.cs">
-      <DependentUpon>text.cs</DependentUpon>
-    </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Modify.Designer.cs">
       <DependentUpon>Product_Modify.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM Profesiones\text.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Profesiones\text.Designer.cs">
-      <DependentUpon>text.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM Rubros\text.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Rubros\text.Designer.cs">
-      <DependentUpon>text.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM TipoComercio\text.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM TipoComercio\text.Designer.cs">
-      <DependentUpon>text.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM TipoDocumento\text.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM TipoDocumento\text.Designer.cs">
-      <DependentUpon>text.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM TipoEstadoCivil\text.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM TipoEstadoCivil\text.Designer.cs">
-      <DependentUpon>text.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM TipoSexo\text.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM TipoSexo\text.Designer.cs">
-      <DependentUpon>text.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM TipoVehiculo\TipoVehiculo_Load.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM TipoVehiculo\TipoVehiculo_Load.Designer.cs">
-      <DependentUpon>TipoVehiculo_Load.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM Usuario\text.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Usuario\text.Designer.cs">
-      <DependentUpon>text.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM Vehiculos\text.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Vehiculos\text.Designer.cs">
-      <DependentUpon>text.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Producto.cs" />
@@ -264,6 +180,21 @@
   <ItemGroup>
     <None Include="Resources\menu-editor.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ABMS\ABM Local\" />
+    <Folder Include="ABMS\ABM MarcaTarjeta\" />
+    <Folder Include="ABMS\ABM MarcaVehiculo\" />
+    <Folder Include="ABMS\ABM Modelos\" />
+    <Folder Include="ABMS\ABM Profesiones\" />
+    <Folder Include="ABMS\ABM Rubros\" />
+    <Folder Include="ABMS\ABM Tarjetas\" />
+    <Folder Include="ABMS\ABM TipoComercio\" />
+    <Folder Include="ABMS\ABM TipoDocumento\" />
+    <Folder Include="ABMS\ABM TipoEstadoCivil\" />
+    <Folder Include="ABMS\ABM TipoSexo\" />
+    <Folder Include="ABMS\ABM TipoVehiculo\" />
+    <Folder Include="ABMS\ABM Usuario\" />
+    <Folder Include="ABMS\ABM Vehiculos\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

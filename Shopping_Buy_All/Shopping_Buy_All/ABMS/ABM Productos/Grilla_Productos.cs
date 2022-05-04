@@ -26,7 +26,7 @@ namespace Shopping_Buy_All.ABM_Cliente
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Clientes WHERE Borrado like 0";
+                string consulta = "Select * FROM Productos WHERE Borrado like 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
