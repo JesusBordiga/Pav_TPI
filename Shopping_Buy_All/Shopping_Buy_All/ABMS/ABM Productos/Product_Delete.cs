@@ -9,8 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shopping_Buy_All.Entidades;
-using Shopping_Buy_All.ABM_Cliente;
-
 namespace Shopping_Buy_All
 {
     public partial class Product_Delete : Form
