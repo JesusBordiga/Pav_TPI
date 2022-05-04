@@ -129,9 +129,6 @@
             this.tablaProductos.AllowUserToAddRows = false;
             this.tablaProductos.AllowUserToDeleteRows = false;
             this.tablaProductos.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tablaProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tablaProductos.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.tablaProductos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tablaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -140,6 +137,14 @@
             this.Nombre,
             this.Precio,
             this.Borrado});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaProductos.DefaultCellStyle = dataGridViewCellStyle1;
             this.tablaProductos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tablaProductos.Location = new System.Drawing.Point(270, 34);
             this.tablaProductos.Name = "tablaProductos";

@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_Load));
             this.label15 = new System.Windows.Forms.Label();
             this.textNameProduct = new System.Windows.Forms.TextBox();
@@ -117,6 +118,7 @@
             // 
             // btnPorductLoad
             // 
+            this.btnPorductLoad.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnPorductLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPorductLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPorductLoad.ForeColor = System.Drawing.Color.White;
@@ -125,11 +127,12 @@
             this.btnPorductLoad.Size = new System.Drawing.Size(75, 23);
             this.btnPorductLoad.TabIndex = 52;
             this.btnPorductLoad.Text = "Cargar";
-            this.btnPorductLoad.UseVisualStyleBackColor = true;
+            this.btnPorductLoad.UseVisualStyleBackColor = false;
             this.btnPorductLoad.Click += new System.EventHandler(this.btnCargarProducto_Click);
             // 
             // btnClear
             // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
@@ -138,15 +141,13 @@
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 53;
             this.btnClear.Text = "Limpiar";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
             // tablaProductos
             // 
             this.tablaProductos.AllowUserToAddRows = false;
             this.tablaProductos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tablaProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaProductos.AllowUserToOrderColumns = true;
             this.tablaProductos.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.tablaProductos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tablaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -155,8 +156,16 @@
             this.Nombre,
             this.Precio,
             this.Borrado});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaProductos.DefaultCellStyle = dataGridViewCellStyle1;
             this.tablaProductos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tablaProductos.Location = new System.Drawing.Point(271, 40);
+            this.tablaProductos.Location = new System.Drawing.Point(269, 36);
             this.tablaProductos.Name = "tablaProductos";
             this.tablaProductos.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -167,8 +176,13 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaProductos.Size = new System.Drawing.Size(316, 298);
-            this.tablaProductos.TabIndex = 60;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.tablaProductos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.tablaProductos.Size = new System.Drawing.Size(316, 310);
+            this.tablaProductos.TabIndex = 87;
             this.tablaProductos.TabStop = false;
             // 
             // Codigo
@@ -209,7 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 350);

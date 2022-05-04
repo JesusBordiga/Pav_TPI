@@ -179,18 +179,6 @@ namespace Shopping_Buy_All
             btnSearchProduct.Visible = true;
         }
 
-        private void tablaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaProductos.Rows[indice];
-            string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
-            Producto p = Buscar_Producto(codigo);
-            Cargar_Campos(p);
-            SearchPanel.Visible = false;
-            btnSearchProduct.Visible = false;
-            btnSerachProduct2.Visible = true;
-        }
-
         private void btnPorductLoad_Click(object sender, EventArgs e)
         {
             Producto p = ObtenerDatosProducto();
@@ -234,6 +222,18 @@ namespace Shopping_Buy_All
             SearchPanel.Visible = true;
             btnSearchProduct.Visible = true;
             btnSerachProduct2.Visible = false;
+        }
+
+        private void tablaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSeleccionada = tablaProductos.Rows[indice];
+            string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
+            Producto p = Buscar_Producto(codigo);
+            Cargar_Campos(p);
+            SearchPanel.Visible = false;
+            btnSearchProduct.Visible = false;
+            btnSerachProduct2.Visible = true;
         }
     }
 }

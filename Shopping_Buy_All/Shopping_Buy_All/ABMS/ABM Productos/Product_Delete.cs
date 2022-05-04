@@ -223,6 +223,7 @@ namespace Shopping_Buy_All
 
         private void tablaProductos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            Clean();
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = tablaProductos.Rows[indice];
             string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
@@ -231,6 +232,7 @@ namespace Shopping_Buy_All
             SearchPanel.Visible = false;
             btnSearchProduct.Visible = false;
             btnSerachProduct2.Visible = true;
+            
         }
     }
 }

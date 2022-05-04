@@ -31,11 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_Modify));
-            this.tablaProductos = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnPorductLoad = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -49,76 +44,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textCodeProduct = new System.Windows.Forms.MaskedTextBox();
             this.btnSerachProduct2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).BeginInit();
+            this.tablaProductos = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tablaProductos
-            // 
-            this.tablaProductos.AllowUserToAddRows = false;
-            this.tablaProductos.AllowUserToDeleteRows = false;
-            this.tablaProductos.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tablaProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.tablaProductos.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.tablaProductos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tablaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
-            this.Nombre,
-            this.Precio,
-            this.Borrado});
-            this.tablaProductos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tablaProductos.Location = new System.Drawing.Point(271, 35);
-            this.tablaProductos.Name = "tablaProductos";
-            this.tablaProductos.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaProductos.Size = new System.Drawing.Size(316, 310);
-            this.tablaProductos.TabIndex = 69;
-            this.tablaProductos.TabStop = false;
-            this.tablaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaProductos_CellContentClick);
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "Codigo_Producto";
-            this.Codigo.Frozen = true;
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "NombreProducto";
-            this.Nombre.Frozen = true;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "Precio";
-            this.Precio.Frozen = true;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Width = 70;
-            // 
-            // Borrado
-            // 
-            this.Borrado.DataPropertyName = "Borrado";
-            this.Borrado.Frozen = true;
-            this.Borrado.HeaderText = "Borrado";
-            this.Borrado.Name = "Borrado";
-            this.Borrado.ReadOnly = true;
-            this.Borrado.Visible = false;
             // 
             // btnClear
             // 
@@ -272,6 +205,78 @@
             this.btnSerachProduct2.UseVisualStyleBackColor = true;
             this.btnSerachProduct2.Click += new System.EventHandler(this.button1_Click);
             // 
+            // tablaProductos
+            // 
+            this.tablaProductos.AllowUserToAddRows = false;
+            this.tablaProductos.AllowUserToDeleteRows = false;
+            this.tablaProductos.AllowUserToOrderColumns = true;
+            this.tablaProductos.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.tablaProductos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tablaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Nombre,
+            this.Precio,
+            this.Borrado});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaProductos.DefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaProductos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tablaProductos.Location = new System.Drawing.Point(270, 33);
+            this.tablaProductos.Name = "tablaProductos";
+            this.tablaProductos.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaProductos.Size = new System.Drawing.Size(316, 310);
+            this.tablaProductos.TabIndex = 86;
+            this.tablaProductos.TabStop = false;
+            this.tablaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaProductos_CellContentClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Codigo_Producto";
+            this.Codigo.Frozen = true;
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "NombreProducto";
+            this.Nombre.Frozen = true;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            this.Precio.Frozen = true;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            this.Precio.Width = 70;
+            // 
+            // Borrado
+            // 
+            this.Borrado.DataPropertyName = "Borrado";
+            this.Borrado.Frozen = true;
+            this.Borrado.HeaderText = "Borrado";
+            this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
+            this.Borrado.Visible = false;
+            // 
             // Product_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,13 +285,13 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 350);
+            this.Controls.Add(this.tablaProductos);
             this.Controls.Add(this.btnSearchProduct);
             this.Controls.Add(this.btnSerachProduct2);
             this.Controls.Add(this.textCodeProduct);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.SearchPanel);
-            this.Controls.Add(this.tablaProductos);
             this.Controls.Add(this.btnPorductLoad);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.textPrice);
@@ -301,16 +306,14 @@
             this.Name = "Product_Modify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Clientes";
-            ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView tablaProductos;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnPorductLoad;
         private System.Windows.Forms.Label label15;
@@ -323,10 +326,11 @@
         private System.Windows.Forms.PictureBox SearchPanel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox textCodeProduct;
+        private System.Windows.Forms.Button btnSerachProduct2;
+        private System.Windows.Forms.DataGridView tablaProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
-        private System.Windows.Forms.Button btnSerachProduct2;
     }
 }
