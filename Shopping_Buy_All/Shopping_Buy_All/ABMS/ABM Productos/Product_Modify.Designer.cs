@@ -305,7 +305,7 @@
             this.MinimumSize = new System.Drawing.Size(608, 389);
             this.Name = "Product_Modify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Modificar Clientes";
+            this.Text = "Modificar Productos";
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).EndInit();
             this.ResumeLayout(false);
