@@ -51,11 +51,11 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(301, 6);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(257, 31);
+            this.label15.Size = new System.Drawing.Size(230, 29);
             this.label15.TabIndex = 59;
             this.label15.Text = "Lista de Productos";
             // 
@@ -63,9 +63,9 @@
             // 
             this.textNameProduct.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNameProduct.ForeColor = System.Drawing.Color.White;
-            this.textNameProduct.Location = new System.Drawing.Point(96, 143);
+            this.textNameProduct.Location = new System.Drawing.Point(77, 143);
             this.textNameProduct.Name = "textNameProduct";
-            this.textNameProduct.Size = new System.Drawing.Size(100, 20);
+            this.textNameProduct.Size = new System.Drawing.Size(133, 20);
             this.textNameProduct.TabIndex = 38;
             // 
             // label2
@@ -84,11 +84,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(38, 67);
+            this.label1.Location = new System.Drawing.Point(42, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 31);
+            this.label1.Size = new System.Drawing.Size(202, 29);
             this.label1.TabIndex = 32;
             this.label1.Text = "Cargar producto";
             // 
@@ -108,10 +108,10 @@
             // 
             this.textPrice.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textPrice.ForeColor = System.Drawing.Color.White;
-            this.textPrice.Location = new System.Drawing.Point(114, 195);
+            this.textPrice.Location = new System.Drawing.Point(117, 195);
             this.textPrice.Mask = "9999999";
             this.textPrice.Name = "textPrice";
-            this.textPrice.Size = new System.Drawing.Size(46, 20);
+            this.textPrice.Size = new System.Drawing.Size(52, 20);
             this.textPrice.TabIndex = 51;
             this.textPrice.ValidatingType = typeof(int);
             // 
@@ -225,8 +225,11 @@
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(608, 389);
+            this.MinimumSize = new System.Drawing.Size(608, 389);
             this.Name = "Product_Load";
             this.Opacity = 0.98D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cargar Producto";
             ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).EndInit();
             this.ResumeLayout(false);

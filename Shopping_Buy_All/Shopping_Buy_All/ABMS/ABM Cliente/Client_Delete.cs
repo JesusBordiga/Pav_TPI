@@ -168,7 +168,6 @@ namespace Shopping_Buy_All
             {
 
                 throw;
-                resultado = false;
             }
             finally
             {
@@ -286,7 +285,6 @@ namespace Shopping_Buy_All
         {
             Grilla_Clientes tabla = new Grilla_Clientes();
             tabla.Show();
-            bool creado = true;
 
         }
     }
