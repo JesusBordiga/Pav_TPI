@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client_Modify));
             this.textStreetHeight = new System.Windows.Forms.MaskedTextBox();
             this.textNumberDoc = new System.Windows.Forms.MaskedTextBox();
@@ -59,6 +61,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.SearchPanel = new System.Windows.Forms.PictureBox();
+            this.btnSearchClient = new System.Windows.Forms.Button();
+            this.btnSearchClient2 = new System.Windows.Forms.Button();
             this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,11 +75,8 @@
             this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SearchPanel = new System.Windows.Forms.PictureBox();
-            this.btnSearchClient = new System.Windows.Forms.Button();
-            this.btnSearchClient2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // textStreetHeight
@@ -202,11 +204,11 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(586, 9);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(232, 31);
+            this.label15.Size = new System.Drawing.Size(208, 29);
             this.label15.TabIndex = 59;
             this.label15.Text = "Lista de Clientes";
             // 
@@ -408,13 +410,48 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(77, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 31);
+            this.label1.Size = new System.Drawing.Size(178, 29);
             this.label1.TabIndex = 32;
             this.label1.Text = "Buscar cliente";
+            // 
+            // SearchPanel
+            // 
+            this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
+            this.SearchPanel.Location = new System.Drawing.Point(29, 133);
+            this.SearchPanel.Name = "SearchPanel";
+            this.SearchPanel.Size = new System.Drawing.Size(245, 309);
+            this.SearchPanel.TabIndex = 61;
+            this.SearchPanel.TabStop = false;
+            // 
+            // btnSearchClient
+            // 
+            this.btnSearchClient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchClient.ForeColor = System.Drawing.Color.White;
+            this.btnSearchClient.Location = new System.Drawing.Point(199, 419);
+            this.btnSearchClient.Name = "btnSearchClient";
+            this.btnSearchClient.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchClient.TabIndex = 62;
+            this.btnSearchClient.Text = "Buscar";
+            this.btnSearchClient.UseVisualStyleBackColor = true;
+            this.btnSearchClient.Click += new System.EventHandler(this.btnBuscarCliente_click);
+            // 
+            // btnSearchClient2
+            // 
+            this.btnSearchClient2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchClient2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchClient2.ForeColor = System.Drawing.Color.White;
+            this.btnSearchClient2.Location = new System.Drawing.Point(199, 419);
+            this.btnSearchClient2.Name = "btnSearchClient2";
+            this.btnSearchClient2.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchClient2.TabIndex = 63;
+            this.btnSearchClient2.Text = "Buscar";
+            this.btnSearchClient2.UseVisualStyleBackColor = true;
+            this.btnSearchClient2.Click += new System.EventHandler(this.btnSearchClient2_Click);
             // 
             // tablaClientes
             // 
@@ -422,6 +459,14 @@
             this.tablaClientes.AllowUserToDeleteRows = false;
             this.tablaClientes.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.tablaClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TipoDocumento,
@@ -435,13 +480,20 @@
             this.Sexo,
             this.FechaNacimiento});
             this.tablaClientes.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaClientes.Location = new System.Drawing.Point(343, 45);
+            this.tablaClientes.Location = new System.Drawing.Point(349, 45);
             this.tablaClientes.Name = "tablaClientes";
             this.tablaClientes.ReadOnly = true;
-            this.tablaClientes.Size = new System.Drawing.Size(675, 397);
-            this.tablaClientes.TabIndex = 30;
+            this.tablaClientes.RowHeadersWidth = 20;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.tablaClientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaClientes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tablaClientes.Size = new System.Drawing.Size(668, 397);
+            this.tablaClientes.TabIndex = 64;
             this.tablaClientes.TabStop = false;
-            this.tablaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick);
+            this.tablaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick_2);
             // 
             // TipoDocumento
             // 
@@ -522,41 +574,6 @@
             this.FechaNacimiento.ReadOnly = true;
             this.FechaNacimiento.Width = 80;
             // 
-            // SearchPanel
-            // 
-            this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.SearchPanel.Location = new System.Drawing.Point(29, 133);
-            this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(245, 309);
-            this.SearchPanel.TabIndex = 61;
-            this.SearchPanel.TabStop = false;
-            // 
-            // btnSearchClient
-            // 
-            this.btnSearchClient.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchClient.ForeColor = System.Drawing.Color.White;
-            this.btnSearchClient.Location = new System.Drawing.Point(199, 419);
-            this.btnSearchClient.Name = "btnSearchClient";
-            this.btnSearchClient.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchClient.TabIndex = 62;
-            this.btnSearchClient.Text = "Buscar";
-            this.btnSearchClient.UseVisualStyleBackColor = true;
-            this.btnSearchClient.Click += new System.EventHandler(this.btnBuscarCliente_click);
-            // 
-            // btnSearchClient2
-            // 
-            this.btnSearchClient2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchClient2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchClient2.ForeColor = System.Drawing.Color.White;
-            this.btnSearchClient2.Location = new System.Drawing.Point(199, 419);
-            this.btnSearchClient2.Name = "btnSearchClient2";
-            this.btnSearchClient2.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchClient2.TabIndex = 63;
-            this.btnSearchClient2.Text = "Buscar";
-            this.btnSearchClient2.UseVisualStyleBackColor = true;
-            this.btnSearchClient2.Click += new System.EventHandler(this.btnSearchClient2_Click);
-            // 
             // Client_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -565,6 +582,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1027, 449);
+            this.Controls.Add(this.tablaClientes);
             this.Controls.Add(this.btnSearchClient);
             this.Controls.Add(this.btnSearchClient2);
             this.Controls.Add(this.btnClear);
@@ -598,7 +616,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tablaClientes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1043, 488);
@@ -606,8 +623,8 @@
             this.Name = "Client_Modify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Clientes";
-            ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -645,6 +662,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox SearchPanel;
+        private System.Windows.Forms.Button btnSearchClient;
+        private System.Windows.Forms.Button btnSearchClient2;
         private System.Windows.Forms.DataGridView tablaClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
@@ -656,8 +676,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCivil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
-        private System.Windows.Forms.PictureBox SearchPanel;
-        private System.Windows.Forms.Button btnSearchClient;
-        private System.Windows.Forms.Button btnSearchClient2;
     }
 }

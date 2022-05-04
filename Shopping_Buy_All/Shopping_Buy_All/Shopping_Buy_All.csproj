@@ -78,12 +78,6 @@
     <Compile Include="ABMS\ABM Cliente\Client_Modify.Designer.cs">
       <DependentUpon>Client_Modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM Cliente\Grilla_Clientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Cliente\Grilla_Clientes.Designer.cs">
-      <DependentUpon>Grilla_Clientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,9 +117,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Cliente\Client_Modify.resx">
       <DependentUpon>Client_Modify.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Cliente\Grilla_Clientes.resx">
-      <DependentUpon>Grilla_Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Grilla_Productos.resx">
       <DependentUpon>Grilla_Productos.cs</DependentUpon>

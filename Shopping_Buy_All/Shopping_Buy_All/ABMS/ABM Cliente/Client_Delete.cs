@@ -22,10 +22,43 @@ namespace Shopping_Buy_All
         }
         private void Client_Delete_Load(object sender, EventArgs e)
         {
-            tablaClientes.Visible = false;
             btnSearch.Visible = true;
             btnDeleteClient.Visible = false;
             CargarTiposDocumentos();
+            CargarTablaClientes();
+        }
+        private void CargarTablaClientes()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "Select * FROM Clientes WHERE Borrado like 0";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+                tablaClientes.DataSource = tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
         private void CargarTiposDocumentos()
         {
@@ -123,7 +156,7 @@ namespace Shopping_Buy_All
             return client;
 
         }
-        private bool Buscar_Cliente(int TipoDocumento, string NroDocumento)
+        private bool Buscar_Cliente1(int TipoDocumento, string NroDocumento)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -179,7 +212,7 @@ namespace Shopping_Buy_All
         private void btnClean_Click(object sender, EventArgs e)
             {    
               Clean();
-              tablaClientes.Visible = false;
+              CargarTablaClientes();
               btnDeleteClient.Visible = false;
               btnSearch.Visible = true;
             }
@@ -192,7 +225,7 @@ namespace Shopping_Buy_All
                 }
             else
                 {
-                bool existe = Buscar_Cliente((int)comboBoxDocType.SelectedValue, textNumberDoc.Text.Trim());
+                bool existe = Buscar_Cliente1((int)comboBoxDocType.SelectedValue, textNumberDoc.Text.Trim());
                 if (existe)
                     {
                     tablaClientes.Visible = true;
@@ -266,9 +299,9 @@ namespace Shopping_Buy_All
                     Clean();
                     //BorrarCliente(c);
                     CargarTiposDocumentos();
-                    tablaClientes.Visible = false;
                     btnDeleteClient.Visible = false;
                     btnSearch.Visible = true;
+                    CargarTablaClientes();
                     comboBoxDocType.Focus();
                 }
                 else
@@ -281,10 +314,73 @@ namespace Shopping_Buy_All
                 comboBoxDocType.Focus();
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void tablaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Grilla_Clientes tabla = new Grilla_Clientes();
-            tabla.Show();
+            int indice = e.RowIndex;
+            DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
+            string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
+            string tipodocumento = filaSeleccionada.Cells["TipoDocumento"].Value.ToString();
+            Cliente c = Buscar_Cliente1(tipodocumento, documento);
+            Clean();
+            Cargar_Campos(c);
+            btnDeleteClient.Visible = true;
+        }
+        private void Cargar_Campos(Cliente c)
+        {
+            //Cargar Tipo Documento
+            comboBoxDocType.SelectedValue = c.TipoDocumentoCliente;
+            //Cargar Documento
+            textNumberDoc.Text = c.DocumentoCliente;
+        }
+        private Cliente Buscar_Cliente1(string TipoDocumento, string NroDocumento)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            Cliente client = new Cliente();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT * FROM Clientes WHERE TipoDocumento like @Tipodocumento AND NroDocumento like @Nrodocumento AND Borrado like 0 ";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@TipoDocumento", TipoDocumento);
+                cmd.Parameters.AddWithValue("@NroDocumento", NroDocumento);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                SqlDataReader DataReader = cmd.ExecuteReader();
+                if (DataReader != null && DataReader.Read())
+                {
+                    client.TipoDocumentoCliente = int.Parse(DataReader["TipoDocumento"].ToString());
+                    client.DocumentoCliente = DataReader["NroDocumento"].ToString();
+                    client.ApellidoCliente = DataReader["Apellido"].ToString();
+                    client.NombreCliente = DataReader["Nombres"].ToString();
+                    client.CalleCliente = DataReader["Calle"].ToString();
+                    client.NroCalleCliente = int.Parse(DataReader["NroCalle"].ToString());
+                    client.EstadoCivilCliente = int.Parse(DataReader["EstadoCivil"].ToString());
+                    client.SexoCliente = int.Parse(DataReader["Sexo"].ToString());
+                    client.FechaNacimientoCliente = DateTime.Parse(DataReader["FechaNacimiento"].ToString());
+                    cn.Close();
+                    DataTable tabla = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(tabla);
+                    tablaClientes.DataSource = tabla;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return client;
 
         }
     }
