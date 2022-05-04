@@ -34,7 +34,7 @@ namespace Shopping_Buy_All
                 {
                     resultado = Validate_Exist(userName, password);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                     MessageBox.Show("Error, Base de datos no encontrada!");
@@ -70,7 +70,6 @@ namespace Shopping_Buy_All
             
             try
             {
-                bool resultado = false;
                 SqlCommand cmd = new SqlCommand();
 
                 string consulta = "Select * FROM Users WHERE NombreDeUsuario like @nombreUsuario AND Password like @pass";
@@ -99,7 +98,7 @@ namespace Shopping_Buy_All
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
@@ -108,12 +107,6 @@ namespace Shopping_Buy_All
             {
                 cn.Close();
             }
-
-
-            
-             
         }
-
-
     }
 }

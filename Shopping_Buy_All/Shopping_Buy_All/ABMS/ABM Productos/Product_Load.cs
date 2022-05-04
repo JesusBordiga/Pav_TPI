@@ -133,13 +133,11 @@ namespace Shopping_Buy_All.Productos
             {
 
                 throw;
-                resultado = false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;
-                resultado = false;
             }
             finally
             {

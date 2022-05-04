@@ -525,7 +525,7 @@
             // SearchPanel
             // 
             this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.SearchPanel.Location = new System.Drawing.Point(29, 136);
+            this.SearchPanel.Location = new System.Drawing.Point(29, 133);
             this.SearchPanel.Name = "SearchPanel";
             this.SearchPanel.Size = new System.Drawing.Size(245, 309);
             this.SearchPanel.TabIndex = 61;
