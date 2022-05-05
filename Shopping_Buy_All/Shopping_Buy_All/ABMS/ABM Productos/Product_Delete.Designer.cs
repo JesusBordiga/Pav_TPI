@@ -306,7 +306,7 @@
             this.Name = "Product_Delete";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Eliminar Cliente";
+            this.Text = "Eliminar Producto";
             this.Load += new System.EventHandler(this.Client_Delete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).EndInit();

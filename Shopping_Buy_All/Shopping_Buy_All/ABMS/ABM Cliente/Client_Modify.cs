@@ -273,21 +273,6 @@ namespace Shopping_Buy_All
         {
             Clean();
         }
-
-        public void tablaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
-            string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
-            Cliente c = Buscar_Cliente(documento);
-            Clean();
-            SearchPanel.Visible = false;
-            btnSearchClient.Visible = false;
-            comboBoxDocType.Visible = true;
-            label4.Visible = true;
-            Cargar_Campos(c);
-        }
-
         private Cliente ObtenerDatosCliente()
         {
 
@@ -430,6 +415,20 @@ namespace Shopping_Buy_All
             {
                 MessageBox.Show("Error al modificar la persona!");
             }
+        }
+
+        private void tablaClientes_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
+            string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
+            Cliente c = Buscar_Cliente(documento);
+            Clean();
+            SearchPanel.Visible = false;
+            btnSearchClient.Visible = false;
+            comboBoxDocType.Visible = true;
+            label4.Visible = true;
+            Cargar_Campos(c);
         }
     }
 }

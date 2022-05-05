@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client_Delete));
             this.label1 = new System.Windows.Forms.Label();
             this.textNumberDoc = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxDocType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
             this.btnDeleteClient = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +50,7 @@
             this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,19 +58,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(242, 13);
+            this.label1.Location = new System.Drawing.Point(10, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(333, 31);
+            this.label1.Size = new System.Drawing.Size(218, 29);
             this.label1.TabIndex = 33;
-            this.label1.Text = "Buscar cliente a eliminar";
+            this.label1.Text = "Cliente a eliminar";
             // 
             // textNumberDoc
             // 
             this.textNumberDoc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNumberDoc.ForeColor = System.Drawing.Color.White;
-            this.textNumberDoc.Location = new System.Drawing.Point(375, 170);
+            this.textNumberDoc.Location = new System.Drawing.Point(76, 166);
             this.textNumberDoc.Mask = "99999999";
             this.textNumberDoc.Name = "textNumberDoc";
             this.textNumberDoc.Size = new System.Drawing.Size(55, 20);
@@ -80,7 +82,7 @@
             this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
             this.comboBoxDocType.FormattingEnabled = true;
-            this.comboBoxDocType.Location = new System.Drawing.Point(342, 122);
+            this.comboBoxDocType.Location = new System.Drawing.Point(43, 118);
             this.comboBoxDocType.Name = "comboBoxDocType";
             this.comboBoxDocType.Size = new System.Drawing.Size(119, 21);
             this.comboBoxDocType.TabIndex = 1;
@@ -91,7 +93,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(331, 148);
+            this.label5.Location = new System.Drawing.Point(32, 144);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 17);
             this.label5.TabIndex = 44;
@@ -103,37 +105,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(328, 100);
+            this.label4.Location = new System.Drawing.Point(29, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 17);
             this.label4.TabIndex = 43;
             this.label4.Text = "Tipo de Documento";
-            // 
-            // tablaClientes
-            // 
-            this.tablaClientes.AllowUserToAddRows = false;
-            this.tablaClientes.AllowUserToDeleteRows = false;
-            this.tablaClientes.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.tablaClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TipoDocumento,
-            this.NroDocumento,
-            this.Apellido,
-            this.Nombres,
-            this.Calle,
-            this.NroCalle,
-            this.EstadoCivil,
-            this.Sexo,
-            this.FechaNacimiento,
-            this.Borrado});
-            this.tablaClientes.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaClientes.Location = new System.Drawing.Point(60, 196);
-            this.tablaClientes.Name = "tablaClientes";
-            this.tablaClientes.ReadOnly = true;
-            this.tablaClientes.Size = new System.Drawing.Size(674, 54);
-            this.tablaClientes.TabIndex = 64;
-            this.tablaClientes.TabStop = false;
             // 
             // btnSearch
             // 
@@ -141,7 +117,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(368, 204);
+            this.btnSearch.Location = new System.Drawing.Point(69, 200);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 3;
@@ -155,7 +131,7 @@
             this.btnClean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClean.ForeColor = System.Drawing.Color.White;
-            this.btnClean.Location = new System.Drawing.Point(368, 264);
+            this.btnClean.Location = new System.Drawing.Point(69, 260);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(75, 23);
             this.btnClean.TabIndex = 4;
@@ -171,27 +147,53 @@
             this.btnDeleteClient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteClient.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteClient.Location = new System.Drawing.Point(364, 302);
+            this.btnDeleteClient.Location = new System.Drawing.Point(65, 298);
             this.btnDeleteClient.Name = "btnDeleteClient";
             this.btnDeleteClient.Size = new System.Drawing.Size(76, 73);
             this.btnDeleteClient.TabIndex = 67;
             this.btnDeleteClient.UseVisualStyleBackColor = false;
             this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click);
             // 
-            // button1
+            // tablaClientes
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkGray;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(722, 425);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 68;
-            this.button1.Text = "Clientes";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tablaClientes.AllowUserToAddRows = false;
+            this.tablaClientes.AllowUserToDeleteRows = false;
+            this.tablaClientes.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.tablaClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TipoDocumento,
+            this.Borrado,
+            this.NroDocumento,
+            this.Apellido,
+            this.Nombres,
+            this.Calle,
+            this.NroCalle,
+            this.EstadoCivil,
+            this.Sexo,
+            this.FechaNacimiento});
+            this.tablaClientes.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tablaClientes.Location = new System.Drawing.Point(245, 47);
+            this.tablaClientes.Name = "tablaClientes";
+            this.tablaClientes.ReadOnly = true;
+            this.tablaClientes.RowHeadersWidth = 20;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.tablaClientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaClientes.Size = new System.Drawing.Size(671, 397);
+            this.tablaClientes.TabIndex = 69;
+            this.tablaClientes.TabStop = false;
+            this.tablaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick);
             // 
             // TipoDocumento
             // 
@@ -200,6 +202,14 @@
             this.TipoDocumento.Name = "TipoDocumento";
             this.TipoDocumento.ReadOnly = true;
             this.TipoDocumento.Width = 70;
+            // 
+            // Borrado
+            // 
+            this.Borrado.DataPropertyName = "Borrado";
+            this.Borrado.HeaderText = "Borrado";
+            this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
+            this.Borrado.Visible = false;
             // 
             // NroDocumento
             // 
@@ -264,14 +274,17 @@
             this.FechaNacimiento.ReadOnly = true;
             this.FechaNacimiento.Width = 80;
             // 
-            // Borrado
+            // label15
             // 
-            this.Borrado.DataPropertyName = "Borrado";
-            this.Borrado.HeaderText = "Borrado";
-            this.Borrado.Name = "Borrado";
-            this.Borrado.ReadOnly = true;
-            this.Borrado.Visible = false;
-            this.Borrado.Width = 50;
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(480, 15);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(208, 29);
+            this.label15.TabIndex = 71;
+            this.label15.Text = "Lista de Clientes";
             // 
             // Client_Delete
             // 
@@ -280,8 +293,9 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(922, 450);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.tablaClientes);
             this.Controls.Add(this.btnDeleteClient);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.btnSearch);
@@ -290,11 +304,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tablaClientes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(816, 489);
-            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Client_Delete";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -313,12 +324,12 @@
         private System.Windows.Forms.ComboBox comboBoxDocType;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView tablaClientes;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Button btnDeleteClient;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView tablaClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
@@ -327,6 +338,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCivil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.Label label15;
     }
 }

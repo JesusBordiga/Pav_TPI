@@ -84,18 +84,13 @@
     <Compile Include="ABMS\ABM Cliente\Client_Modify.Designer.cs">
       <DependentUpon>Client_Modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM Cliente\Grilla_Clientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Cliente\Grilla_Clientes.Designer.cs">
-      <DependentUpon>Grilla_Clientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Modify.Designer.cs">
       <DependentUpon>Product_Modify.cs</DependentUpon>
     </Compile>
+
     <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,10 +104,17 @@
       <DependentUpon>TipoComercio_Load.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\AccesoADatos\AD_TipoComercio.cs" />
+    <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Load.Designer.cs">
+      <DependentUpon>VehicleType_Load.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\TipoComercio.cs" />
     <Compile Include="Entidades\Local.cs" />
+    <Compile Include="Entidades\TipoVehiculo.cs" />
     <Compile Include="Entidades\User.cs" />
     <Compile Include="Logged.cs">
       <SubType>Form</SubType>
@@ -163,6 +165,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Load.resx">
       <DependentUpon>TipoComercio_Load.cs</DependentUpon>
+    <EmbeddedResource Include="ABMS\ABM TipoVehiculo\VehicleType_Load.resx">
+      <DependentUpon>VehicleType_Load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
@@ -218,7 +222,6 @@
     <Folder Include="ABMS\ABM TipoDocumento\" />
     <Folder Include="ABMS\ABM TipoEstadoCivil\" />
     <Folder Include="ABMS\ABM TipoSexo\" />
-    <Folder Include="ABMS\ABM TipoVehiculo\" />
     <Folder Include="ABMS\ABM Usuario\" />
     <Folder Include="ABMS\ABM Vehiculos\" />
   </ItemGroup>
