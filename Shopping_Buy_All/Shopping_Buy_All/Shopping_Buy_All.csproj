@@ -54,12 +54,6 @@
     <Compile Include="ABMS\ABM Local\Local_Load.Designer.cs">
       <DependentUpon>Local_Load.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM Productos\Grilla_Productos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Productos\Grilla_Productos.Designer.cs">
-      <DependentUpon>Grilla_Productos.cs</DependentUpon>
-    </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,13 +83,6 @@
     </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Modify.Designer.cs">
       <DependentUpon>Product_Modify.cs</DependentUpon>
-    </Compile>
-
-    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Delete.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Delete.Designer.cs">
-      <DependentUpon>TipoComercio_Delete.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Load.cs">
       <SubType>Form</SubType>
@@ -145,14 +132,8 @@
     <EmbeddedResource Include="ABMS\ABM Cliente\Client_Modify.resx">
       <DependentUpon>Client_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Cliente\Grilla_Clientes.resx">
-      <DependentUpon>Grilla_Clientes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Local\Local_Load.resx">
       <DependentUpon>Local_Load.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Productos\Grilla_Productos.resx">
-      <DependentUpon>Grilla_Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Delete.resx">
       <DependentUpon>Product_Delete.cs</DependentUpon>
@@ -160,11 +141,9 @@
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Modify.resx">
       <DependentUpon>Product_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Delete.resx">
-      <DependentUpon>TipoComercio_Delete.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Load.resx">
       <DependentUpon>TipoComercio_Load.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM TipoVehiculo\VehicleType_Load.resx">
       <DependentUpon>VehicleType_Load.cs</DependentUpon>
     </EmbeddedResource>
