@@ -49,6 +49,12 @@
             this.modificacionDeTipoComercioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bajaDeTipoComercioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcasDeTarjetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaTipoDeAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificacionTipoDeAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaTipoDeAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificacionAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,9 +64,10 @@
             this.LabelBienvenido.BackColor = System.Drawing.Color.Transparent;
             this.LabelBienvenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelBienvenido.ForeColor = System.Drawing.Color.White;
-            this.LabelBienvenido.Location = new System.Drawing.Point(-6, 421);
+            this.LabelBienvenido.Location = new System.Drawing.Point(-8, 518);
+            this.LabelBienvenido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelBienvenido.Name = "LabelBienvenido";
-            this.LabelBienvenido.Size = new System.Drawing.Size(228, 31);
+            this.LabelBienvenido.Size = new System.Drawing.Size(283, 39);
             this.LabelBienvenido.TabIndex = 7;
             this.LabelBienvenido.Text = "Bienvenido User";
             // 
@@ -68,6 +75,7 @@
             // 
             this.MenuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.MenuStrip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.MenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clienteToolStripMenuItem,
             this.automovilesToolStripMenuItem,
@@ -78,7 +86,7 @@
             this.MenuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(800, 23);
+            this.MenuStrip.Size = new System.Drawing.Size(1064, 28);
             this.MenuStrip.TabIndex = 8;
             this.MenuStrip.Text = "menuStrip1";
             // 
@@ -92,7 +100,7 @@
             this.clienteToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.ShowShortcutKeys = false;
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(63, 19);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.clienteToolStripMenuItem.Text = "Clientes";
             // 
             // altaDeClienteToolStripMenuItem
@@ -100,7 +108,7 @@
             this.altaDeClienteToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.altaDeClienteToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.altaDeClienteToolStripMenuItem.Name = "altaDeClienteToolStripMenuItem";
-            this.altaDeClienteToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.altaDeClienteToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
             this.altaDeClienteToolStripMenuItem.Text = "Alta de Cliente";
             this.altaDeClienteToolStripMenuItem.Click += new System.EventHandler(this.altaDeClienteToolStripMenuItem_Click);
             // 
@@ -109,7 +117,7 @@
             this.modificacionDeClienteToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.modificacionDeClienteToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.modificacionDeClienteToolStripMenuItem.Name = "modificacionDeClienteToolStripMenuItem";
-            this.modificacionDeClienteToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.modificacionDeClienteToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
             this.modificacionDeClienteToolStripMenuItem.Text = "Modificacion de Cliente";
             this.modificacionDeClienteToolStripMenuItem.Click += new System.EventHandler(this.modificacionDeClienteToolStripMenuItem_Click);
             // 
@@ -118,22 +126,29 @@
             this.bajaDeClienteToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bajaDeClienteToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.bajaDeClienteToolStripMenuItem.Name = "bajaDeClienteToolStripMenuItem";
-            this.bajaDeClienteToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.bajaDeClienteToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
             this.bajaDeClienteToolStripMenuItem.Text = "Baja de Cliente";
             this.bajaDeClienteToolStripMenuItem.Click += new System.EventHandler(this.bajaDeClienteToolStripMenuItem_Click);
             // 
             // automovilesToolStripMenuItem
             // 
+            this.automovilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaTipoDeAutomovilToolStripMenuItem,
+            this.modificacionTipoDeAutomovilToolStripMenuItem,
+            this.bajaTipoDeAutomovilToolStripMenuItem,
+            this.altaAutomovilToolStripMenuItem,
+            this.modificacionAutomovilToolStripMenuItem,
+            this.bajaAutomovilToolStripMenuItem});
             this.automovilesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.automovilesToolStripMenuItem.Name = "automovilesToolStripMenuItem";
-            this.automovilesToolStripMenuItem.Size = new System.Drawing.Size(89, 19);
+            this.automovilesToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.automovilesToolStripMenuItem.Text = "Automoviles";
             // 
             // profesionesToolStripMenuItem
             // 
             this.profesionesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.profesionesToolStripMenuItem.Name = "profesionesToolStripMenuItem";
-            this.profesionesToolStripMenuItem.Size = new System.Drawing.Size(84, 19);
+            this.profesionesToolStripMenuItem.Size = new System.Drawing.Size(105, 24);
             this.profesionesToolStripMenuItem.Text = "Profesiones";
             // 
             // producotsToolStripMenuItem
@@ -144,7 +159,7 @@
             this.bajaProductosToolStripMenuItem});
             this.producotsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Menu;
             this.producotsToolStripMenuItem.Name = "producotsToolStripMenuItem";
-            this.producotsToolStripMenuItem.Size = new System.Drawing.Size(75, 19);
+            this.producotsToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
             this.producotsToolStripMenuItem.Text = "Productos";
             // 
             // altaProductoToolStripMenuItem
@@ -152,7 +167,7 @@
             this.altaProductoToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.altaProductoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.altaProductoToolStripMenuItem.Name = "altaProductoToolStripMenuItem";
-            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.altaProductoToolStripMenuItem.Text = "Alta Productos";
             this.altaProductoToolStripMenuItem.Click += new System.EventHandler(this.altaProductoToolStripMenuItem_Click);
             // 
@@ -161,7 +176,7 @@
             this.modificaciónProductosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.modificaciónProductosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.modificaciónProductosToolStripMenuItem.Name = "modificaciónProductosToolStripMenuItem";
-            this.modificaciónProductosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.modificaciónProductosToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.modificaciónProductosToolStripMenuItem.Text = "Modificación Productos";
             this.modificaciónProductosToolStripMenuItem.Click += new System.EventHandler(this.modificaciónProductosToolStripMenuItem_Click);
             // 
@@ -170,7 +185,7 @@
             this.bajaProductosToolStripMenuItem.BackColor = System.Drawing.Color.Gray;
             this.bajaProductosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.bajaProductosToolStripMenuItem.Name = "bajaProductosToolStripMenuItem";
-            this.bajaProductosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.bajaProductosToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.bajaProductosToolStripMenuItem.Text = "Baja Productos";
             this.bajaProductosToolStripMenuItem.Click += new System.EventHandler(this.bajaProductosToolStripMenuItem_Click);
             // 
@@ -185,7 +200,7 @@
             this.bajaDeTipoComercioToolStripMenuItem});
             this.localesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.localesToolStripMenuItem.Name = "localesToolStripMenuItem";
-            this.localesToolStripMenuItem.Size = new System.Drawing.Size(59, 19);
+            this.localesToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.localesToolStripMenuItem.Text = "Locales";
             // 
             // altaLocalToolStripMenuItem
@@ -193,7 +208,7 @@
             this.altaLocalToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.altaLocalToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.altaLocalToolStripMenuItem.Name = "altaLocalToolStripMenuItem";
-            this.altaLocalToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.altaLocalToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.altaLocalToolStripMenuItem.Text = "Alta de Local";
             this.altaLocalToolStripMenuItem.Click += new System.EventHandler(this.altaLocalToolStripMenuItem_Click);
             // 
@@ -202,7 +217,7 @@
             this.modificacionDeLocalToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.modificacionDeLocalToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.modificacionDeLocalToolStripMenuItem.Name = "modificacionDeLocalToolStripMenuItem";
-            this.modificacionDeLocalToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.modificacionDeLocalToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.modificacionDeLocalToolStripMenuItem.Text = "Modificacion de Local";
             this.modificacionDeLocalToolStripMenuItem.Click += new System.EventHandler(this.modificacionDeLocalToolStripMenuItem_Click);
             // 
@@ -211,7 +226,7 @@
             this.bajaDeLocalToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bajaDeLocalToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.bajaDeLocalToolStripMenuItem.Name = "bajaDeLocalToolStripMenuItem";
-            this.bajaDeLocalToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.bajaDeLocalToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.bajaDeLocalToolStripMenuItem.Text = "Baja de Local";
             this.bajaDeLocalToolStripMenuItem.Click += new System.EventHandler(this.bajaDeLocalToolStripMenuItem_Click);
             // 
@@ -220,7 +235,7 @@
             this.altaDeTipoComercioToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.altaDeTipoComercioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.altaDeTipoComercioToolStripMenuItem.Name = "altaDeTipoComercioToolStripMenuItem";
-            this.altaDeTipoComercioToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.altaDeTipoComercioToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.altaDeTipoComercioToolStripMenuItem.Text = "Alta de Tipo Comercio";
             this.altaDeTipoComercioToolStripMenuItem.Click += new System.EventHandler(this.altaDeTipoComercioToolStripMenuItem_Click);
             // 
@@ -229,7 +244,7 @@
             this.modificacionDeTipoComercioToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.modificacionDeTipoComercioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.modificacionDeTipoComercioToolStripMenuItem.Name = "modificacionDeTipoComercioToolStripMenuItem";
-            this.modificacionDeTipoComercioToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.modificacionDeTipoComercioToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.modificacionDeTipoComercioToolStripMenuItem.Text = "Modificacion de Tipo Comercio";
             this.modificacionDeTipoComercioToolStripMenuItem.Click += new System.EventHandler(this.modificacionDeTipoComercioToolStripMenuItem_Click);
             // 
@@ -238,7 +253,7 @@
             this.bajaDeTipoComercioToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bajaDeTipoComercioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.bajaDeTipoComercioToolStripMenuItem.Name = "bajaDeTipoComercioToolStripMenuItem";
-            this.bajaDeTipoComercioToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
+            this.bajaDeTipoComercioToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.bajaDeTipoComercioToolStripMenuItem.Text = "Baja de Tipo Comercio";
             this.bajaDeTipoComercioToolStripMenuItem.Click += new System.EventHandler(this.bajaDeTipoComercioToolStripMenuItem_Click);
             // 
@@ -246,25 +261,63 @@
             // 
             this.marcasDeTarjetaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.marcasDeTarjetaToolStripMenuItem.Name = "marcasDeTarjetaToolStripMenuItem";
-            this.marcasDeTarjetaToolStripMenuItem.Size = new System.Drawing.Size(118, 19);
+            this.marcasDeTarjetaToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
             this.marcasDeTarjetaToolStripMenuItem.Text = "Marcas De Tarjeta";
+            // 
+            // altaTipoDeAutomovilToolStripMenuItem
+            // 
+            this.altaTipoDeAutomovilToolStripMenuItem.Name = "altaTipoDeAutomovilToolStripMenuItem";
+            this.altaTipoDeAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.altaTipoDeAutomovilToolStripMenuItem.Text = "Alta tipo de automovil";
+            this.altaTipoDeAutomovilToolStripMenuItem.Click += new System.EventHandler(this.altaTipoDeAutomovilToolStripMenuItem_Click);
+            // 
+            // modificacionTipoDeAutomovilToolStripMenuItem
+            // 
+            this.modificacionTipoDeAutomovilToolStripMenuItem.Name = "modificacionTipoDeAutomovilToolStripMenuItem";
+            this.modificacionTipoDeAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.modificacionTipoDeAutomovilToolStripMenuItem.Text = "Modificacion tipo de automovil";
+            // 
+            // bajaTipoDeAutomovilToolStripMenuItem
+            // 
+            this.bajaTipoDeAutomovilToolStripMenuItem.Name = "bajaTipoDeAutomovilToolStripMenuItem";
+            this.bajaTipoDeAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.bajaTipoDeAutomovilToolStripMenuItem.Text = "Baja tipo de automovil";
+            // 
+            // altaAutomovilToolStripMenuItem
+            // 
+            this.altaAutomovilToolStripMenuItem.Name = "altaAutomovilToolStripMenuItem";
+            this.altaAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.altaAutomovilToolStripMenuItem.Text = "Alta automovil";
+            // 
+            // modificacionAutomovilToolStripMenuItem
+            // 
+            this.modificacionAutomovilToolStripMenuItem.Name = "modificacionAutomovilToolStripMenuItem";
+            this.modificacionAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.modificacionAutomovilToolStripMenuItem.Text = "Modificacion Automovil";
+            // 
+            // bajaAutomovilToolStripMenuItem
+            // 
+            this.bajaAutomovilToolStripMenuItem.Name = "bajaAutomovilToolStripMenuItem";
+            this.bajaAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.bajaAutomovilToolStripMenuItem.Text = "Baja automovil";
             // 
             // Logged
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1064, 544);
             this.Controls.Add(this.LabelBienvenido);
             this.Controls.Add(this.MenuStrip);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MenuStrip;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(816, 489);
-            this.MinimumSize = new System.Drawing.Size(816, 489);
+            this.MaximumSize = new System.Drawing.Size(1082, 591);
+            this.MinimumSize = new System.Drawing.Size(1082, 591);
             this.Name = "Logged";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -299,5 +352,11 @@
         private System.Windows.Forms.ToolStripMenuItem altaProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificaciónProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bajaProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaTipoDeAutomovilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificacionTipoDeAutomovilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bajaTipoDeAutomovilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaAutomovilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificacionAutomovilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bajaAutomovilToolStripMenuItem;
     }
 }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shopping_Buy_All.Productos;
+using Shopping_Buy_All.ABMS.ABM_TipoVehiculo;
 
 namespace Shopping_Buy_All
 {
@@ -88,6 +89,12 @@ namespace Shopping_Buy_All
         {
             Product_Delete deletep = new Product_Delete();
             deletep.ShowDialog();
+        }
+
+        private void altaTipoDeAutomovilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VehicleType_Load loadTV = new VehicleType_Load();
+            loadTV.ShowDialog();
         }
     }
 }
