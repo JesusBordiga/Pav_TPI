@@ -72,10 +72,67 @@
     <Compile Include="ABM Cliente\Grilla_Clientes.Designer.cs">
       <DependentUpon>Grilla_Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABM Estado Civil\EstadoCivil_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Estado Civil\EstadoCivil_Delete.Designer.cs">
+      <DependentUpon>EstadoCivil_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Estado Civil\EstadoCivil_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Estado Civil\EstadoCivil_Load.Designer.cs">
+      <DependentUpon>EstadoCivil_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Estado Civil\EstadoCivil_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Estado Civil\EstadoCivil_Modify.Designer.cs">
+      <DependentUpon>EstadoCivil_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Sexo\Sexo_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Sexo\Sexo_Delete.Designer.cs">
+      <DependentUpon>Sexo_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Sexo\Sexo_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Sexo\Sexo_Load.Designer.cs">
+      <DependentUpon>Sexo_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Sexo\Sexo_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Sexo\Sexo_Modify.Designer.cs">
+      <DependentUpon>Sexo_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Tipo Documento\TipoDoc_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Tipo Documento\TipoDoc_Delete.Designer.cs">
+      <DependentUpon>TipoDoc_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Tipo Documento\TipoDoc_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Tipo Documento\TipoDoc_Load.Designer.cs">
+      <DependentUpon>TipoDoc_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Tipo Documento\TipoDoc_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Tipo Documento\TipoDoc_Modify.Designer.cs">
+      <DependentUpon>TipoDoc_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\EstadoCivil.cs" />
     <Compile Include="Entidades\Producto.cs" />
+    <Compile Include="Entidades\Sexo.cs" />
     <Compile Include="Entidades\TipoComercio.cs" />
     <Compile Include="Entidades\Local.cs" />
+    <Compile Include="Entidades\TipoDocumento.cs" />
     <Compile Include="Entidades\User.cs" />
     <Compile Include="Logged.cs">
       <SubType>Form</SubType>
@@ -126,6 +183,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABM Cliente\Grilla_Clientes.resx">
       <DependentUpon>Grilla_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Estado Civil\EstadoCivil_Delete.resx">
+      <DependentUpon>EstadoCivil_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Estado Civil\EstadoCivil_Load.resx">
+      <DependentUpon>EstadoCivil_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Estado Civil\EstadoCivil_Modify.resx">
+      <DependentUpon>EstadoCivil_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Sexo\Sexo_Delete.resx">
+      <DependentUpon>Sexo_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Sexo\Sexo_Load.resx">
+      <DependentUpon>Sexo_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Sexo\Sexo_Modify.resx">
+      <DependentUpon>Sexo_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Tipo Documento\TipoDoc_Delete.resx">
+      <DependentUpon>TipoDoc_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Tipo Documento\TipoDoc_Load.resx">
+      <DependentUpon>TipoDoc_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Tipo Documento\TipoDoc_Modify.resx">
+      <DependentUpon>TipoDoc_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>

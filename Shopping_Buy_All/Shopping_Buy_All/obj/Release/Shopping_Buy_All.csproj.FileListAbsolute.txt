@@ -1,55 +1,29 @@
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\bin\Release\Shopping_Buy_All.exe.config
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\bin\Release\Shopping_Buy_All.exe
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\bin\Release\Shopping_Buy_All.pdb
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.AssemblyReference.cache
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.SuggestedBindingRedirects.cache
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Login.resources
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Properties.Resources.resources
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.GenerateResource.cache
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.CoreCompileInputs.cache
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.exe
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.pdb
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Logged.resources
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Client_Load.resources
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Client_Modify.resources
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Client_Delete.resources
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\bin\Release\Shopping_Buy_All.exe.config
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\bin\Release\Shopping_Buy_All.exe
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\bin\Release\Shopping_Buy_All.pdb
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.AssemblyReference.cache
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.SuggestedBindingRedirects.cache
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Client_Delete.resources
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Client_Load.resources
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Client_Modify.resources
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Logged.resources
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Login.resources
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Properties.Resources.resources
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.GenerateResource.cache
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.CoreCompileInputs.cache
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.exe
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.pdb
-<<<<<<< HEAD
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\bin\Release\Shopping_Buy_All.exe.config
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\bin\Release\Shopping_Buy_All.exe
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\bin\Release\Shopping_Buy_All.pdb
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.AssemblyReference.cache
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.SuggestedBindingRedirects.cache
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Client_Delete.resources
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Client_Load.resources
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Client_Modify.resources
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Logged.resources
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Login.resources
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Properties.Resources.resources
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.GenerateResource.cache
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.CoreCompileInputs.cache
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.exe
-G:\Documentos\PAV\repos\Pav_TPI-main\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.pdb
-=======
->>>>>>> 8ef430b2b2798c991cb2a2f8c706092ca4eb3377
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.ABM_Cliente.Grilla_Clientes.resources
-C:\Users\usuario\Documents\GitHub\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.ABM_Cliente.Grilla_Clientes.resources
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Productos.Grilla_Productos.resources
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Productos.Producto_Modify.resources
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Productos.Product_Delete.resources
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Productos.Product_Load.resources
-G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Productos.Product_Modify.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\bin\Release\Shopping_Buy_All.exe.config
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\bin\Release\Shopping_Buy_All.exe
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\bin\Release\Shopping_Buy_All.pdb
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.AssemblyReference.cache
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.SuggestedBindingRedirects.cache
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Client_Delete.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Client_Load.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Client_Modify.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.ABM_Cliente.Grilla_Clientes.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.ABM_Estado_Civil.EstadoCivil_Delete.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.ABM_Estado_Civil.EstadoCivil_Load.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.ABM_Estado_Civil.EstadoCivil_Modify.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.ABM_Sexo.Sexo_Delete.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.ABM_Sexo.Sexo_Load.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.ABM_Sexo.Sexo_Modify.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.ABM_Tipo_Documento.TipoDoc_Delete.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.ABM_Tipo_Documento.TipoDoc_Load.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.ABM_Tipo_Documento.TipoDoc_Modify.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Logged.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Login.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Productos.Grilla_Productos.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Productos.Product_Modify.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Productos.Product_Delete.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Productos.Product_Load.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.Properties.Resources.resources
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.GenerateResource.cache
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.csproj.CoreCompileInputs.cache
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.exe
+D:\Lean\Facultad\Programación de Aplicaciones Visuales I\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\obj\Release\Shopping_Buy_All.pdb

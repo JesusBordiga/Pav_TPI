@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shopping_Buy_All.Productos;
+using Shopping_Buy_All.ABM_Estado_Civil;
+using Shopping_Buy_All.ABM_Sexo;
+using Shopping_Buy_All.ABM_Tipo_Documento;
 
 namespace Shopping_Buy_All
 {
@@ -88,6 +91,24 @@ namespace Shopping_Buy_All
         {
             Product_Delete deletep = new Product_Delete();
             deletep.ShowDialog();
+        }
+
+        private void altaDeEstadoCivilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadoCivil_Load escivLoad = new EstadoCivil_Load();
+            escivLoad.ShowDialog();
+        }
+
+        private void altaDeSexoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sexo_Load sexoLoad = new Sexo_Load();
+            sexoLoad.ShowDialog();
+        }
+
+        private void altaDeTipoDeDocumentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TipoDoc_Load tipoDoc_Load = new TipoDoc_Load();
+            tipoDoc_Load.ShowDialog();
         }
     }
 }

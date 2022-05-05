@@ -2,35 +2,29 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 using Shopping_Buy_All.Entidades;
 
-namespace Shopping_Buy_All.Productos
+namespace Shopping_Buy_All.ABM_Estado_Civil
 {
-    public partial class Product_Load : Form
+    public partial class EstadoCivil_Load : Form
     {
-        public Product_Load()
+        public EstadoCivil_Load()
         {
             InitializeComponent();
-            CargarTablaProductos();
+            CargarTablaEsCiv();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void limpiarCampos()
         {
-            Clean();
+            txtNombreEC.Text = "";
         }
-        private void Clean()
-        {
-            textNameProduct.Text = "";
-            textPrice.Text="";
-        }
-        
-        private void CargarTablaProductos()
+        private void CargarTablaEsCiv()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -38,7 +32,7 @@ namespace Shopping_Buy_All.Productos
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Productos WHERE Borrado like 0";
+                string consulta = "SELECT * FROM TipoEstadoCivil WHERE Borrado = 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -51,7 +45,11 @@ namespace Shopping_Buy_All.Productos
 
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
-                tablaProductos.DataSource = tabla;
+                tablaEsCiv.DataSource = tabla;
+            }
+            catch (SqlException)
+            {
+                throw;
             }
             catch (Exception)
             {
@@ -62,53 +60,35 @@ namespace Shopping_Buy_All.Productos
                 cn.Close();
             }
         }
-        private Producto ObtenerDatosProducto()
+
+        private void btnECLoad_Click(object sender, EventArgs e)
         {
-            Producto p = new Producto();
-
-            //Nombre de Producto
-            p.NombreProducto = textNameProduct.Text.Trim();
-
-            //Precio de Producto
-            p.PrecioProducto = float.Parse(textPrice.Text.Trim());
-
-            return p;
-        }
-
-        private void btnCargarProducto_Click(object sender, EventArgs e)
-        {
-            Producto p = ObtenerDatosProducto();
-            bool resultado = Agregar_Producto(p);
+            EstadoCivil esCiv = new EstadoCivil(txtNombreEC.Text.Trim(), 0);
+            bool resultado = Agregar_EstadoCivil(esCiv);
             if (resultado)
             {
                 MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = (
-                      " |Nombre: " + p.NombreProducto + "|" + "\n"
-                    + " |Precio: " + p.PrecioProducto + "|" + "\n");
-
+                string mensajeCarga = (" |Nombre: " + esCiv.NombreEc + "|");
                 string titulo = "Información de Carga";
-
                 DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
 
                 if (result == DialogResult.OK)
                 {
-                    MessageBox.Show("Producto agregado con éxito!");
-                    Clean();
-                    CargarTablaProductos();
+                    MessageBox.Show("Estado Civil agregado con éxito!");
+                    limpiarCampos();
+                    CargarTablaEsCiv();
                 }
                 else
                 {
-                    textNameProduct.Focus();
+                    txtNombreEC.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Error al cargar el Producto! \n" +
-                        "Complete los campos por favor!");
+                MessageBox.Show("Error al cargar el Estado Civil! \n Complete los campos por favor!");
             }
         }
-
-        private bool Agregar_Producto(Producto product)
+        private bool Agregar_EstadoCivil(EstadoCivil esCiv)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -116,10 +96,9 @@ namespace Shopping_Buy_All.Productos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO Productos(NombreProducto,Precio) Values(@nombre,@precio)";
+                string consulta = "INSERT INTO TipoEstadoCivil Values(@nombre, 0)";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombre", product.NombreProducto);
-                cmd.Parameters.AddWithValue("@precio", product.PrecioProducto);
+                cmd.Parameters.AddWithValue("@nombre", esCiv.NombreEc);
 
                 cmd.CommandText = consulta;
 
@@ -141,7 +120,6 @@ namespace Shopping_Buy_All.Productos
                 cn.Close();
             }
             return resultado;
-
         }
     }
 }

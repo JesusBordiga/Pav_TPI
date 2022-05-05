@@ -71,9 +71,8 @@ namespace Shopping_Buy_All
                 comboBoxDocType.ValueMember = "TipoDocumento";
                 comboBoxDocType.SelectedIndex = -1;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 throw;
             }
             finally
@@ -104,9 +103,8 @@ namespace Shopping_Buy_All
                 da.Fill(tabla);
                 tablaClientes.DataSource = tabla;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 throw;
             }
             finally
@@ -263,17 +261,13 @@ namespace Shopping_Buy_All
                 cmd.ExecuteNonQuery();
                 resultado = true;
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-
                 throw;
-                resultado = false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 throw;
-                resultado = false;
             }
             finally
             {
