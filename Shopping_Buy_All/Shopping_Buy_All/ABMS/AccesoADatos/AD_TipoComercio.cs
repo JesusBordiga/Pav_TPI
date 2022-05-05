@@ -81,6 +81,41 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 
         }
 
+        public static bool Modificar_TipoComercio(TipoComercio comercio)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            bool resultado = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "modificarTipoComercio";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nombreTipoComercio", comercio.NombreTipoComercio);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                resultado = true;
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
+
+        }
+
         public static bool Buscar_TipoComercio(string NombreTipoComercio)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -105,7 +140,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 if (DataReader != null && DataReader.Read())
                 {
                     
-                    comercio.NombreTipoComercio = DataReader["NombreTipoComercio"].ToString();
+                    //comercio.NombreTipoComercio = DataReader["NombreTipoComercio"].ToString();
                     
                     cn.Close();
                     DataTable tabla = new DataTable();
@@ -127,6 +162,50 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             }
             return resultado;
 
+        }
+
+        public static bool ExisteTipoComercio(String NombreTipoComercio)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            
+            bool resultado = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "existeTipoComercio";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@NombreTipoComercio", NombreTipoComercio);
+
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                SqlDataReader DataReader = cmd.ExecuteReader();
+                if (DataReader != null && DataReader.Read())
+                {
+                    cn.Close();
+                    DataTable tabla = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(tabla);
+
+                    resultado = true;
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
         }
     }
 }

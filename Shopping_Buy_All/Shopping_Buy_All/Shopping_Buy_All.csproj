@@ -84,6 +84,12 @@
     <Compile Include="ABMS\ABM Productos\Product_Modify.Designer.cs">
       <DependentUpon>Product_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Modify.Designer.cs">
+      <DependentUpon>TipoComercio_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Load.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Modify.resx">
       <DependentUpon>Product_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Modify.resx">
+      <DependentUpon>TipoComercio_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Load.resx">
       <DependentUpon>TipoComercio_Load.cs</DependentUpon>

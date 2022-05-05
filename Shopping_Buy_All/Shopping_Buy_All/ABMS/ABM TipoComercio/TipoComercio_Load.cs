@@ -68,45 +68,82 @@ namespace Shopping_Buy_All
             else
             {
                 TipoComercio comercio = ObtenerDatosTipoComercio();
-
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = ("Nombre Tipo Comercio: " + comercio.NombreTipoComercio);
-
-                string titulo = "Información de Carga";
-
-                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                if (result == DialogResult.OK)
+                try
                 {
-                    try
+                    bool noBorrado = AD_TipoComercio.Buscar_TipoComercio(comercio.NombreTipoComercio);
+                    if (noBorrado)
                     {
-                        bool resultado = AD_TipoComercio.Agregar_TipoComercio(comercio);
+                        MessageBox.Show("Ya existe el Tipo Comercio que desea cargar...");
+                        Clean();
+                        txtNombreTipoComercio.Focus();
 
-                        if (resultado)
+                    }
+                    else if (AD_TipoComercio.ExisteTipoComercio(comercio.NombreTipoComercio))
+                    {
+                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                        String mensajeCarga = ("Nombre Tipo Comercio: " + comercio.NombreTipoComercio);
+
+                        string titulo = "Información de Carga";
+
+                        DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                        if (result == DialogResult.OK)
                         {
-                            MessageBox.Show("Tipo Comercio agregado con éxito!");
-                            Clean();
-                            CargarTablaTipoComercio();
+                            bool resultado = AD_TipoComercio.Modificar_TipoComercio(comercio);
+
+                            if (resultado)
+                            {
+                                MessageBox.Show("Tipo Comercio agregado con éxito!");
+                                Clean();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error al cargar el TipoComercio! \n" +
+                                        "Complete los campos por favor!");
+                            }
+
                         }
                         else
                         {
-                            MessageBox.Show("Error al cargar el TipoComercio! \n" +
-                                    "Complete los campos por favor!");
+                            txtNombreTipoComercio.Focus();
                         }
                     }
-                    catch (Exception ex)
+                    else
                     {
+                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                        String mensajeCarga = ("Nombre Tipo Comercio: " + comercio.NombreTipoComercio);
 
-                        MessageBox.Show("Error al agregar el Tipo Comercio");
+                        string titulo = "Información de Carga";
+
+                        DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                        if (result == DialogResult.OK)
+                        {
+                            bool resultado = AD_TipoComercio.Agregar_TipoComercio(comercio);
+
+                            if (resultado)
+                            {
+                                MessageBox.Show("Tipo Comercio agregado con éxito!");
+                                Clean();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error al cargar el TipoComercio! \n" +
+                                        "Complete los campos por favor!");
+                            }
+                            
+                        }
+                        else
+                        {
+                            txtNombreTipoComercio.Focus();
+                        }
                     }
-
                 }
-                else
+                catch (Exception)
                 {
-                    txtNombreTipoComercio.Focus();
+                    MessageBox.Show("Error al agregar el Tipo Comercio.");
                 }
-
-                
+            
             }
             
             
