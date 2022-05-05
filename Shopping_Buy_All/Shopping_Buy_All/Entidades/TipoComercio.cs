@@ -9,10 +9,10 @@ namespace Shopping_Buy_All.Entidades
     public class TipoComercio
     {
         public string NombreTipoComercio { get; set; }
-        public int Borrado { get; set; } = 0;
+        public bool Borrado { get; set; } = false;
 
 
-        public TipoComercio(string nombreTipoComercio, int borrado)
+        public TipoComercio(string nombreTipoComercio, bool borrado)
         {
             this.NombreTipoComercio = nombreTipoComercio;    
             this.Borrado = borrado;
@@ -22,5 +22,7 @@ namespace Shopping_Buy_All.Entidades
         {
             this.NombreTipoComercio = nombreTipoComercio;
         }
+
+        public TipoComercio() { }
     }
 }

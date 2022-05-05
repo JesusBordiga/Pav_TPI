@@ -59,7 +59,8 @@ namespace Shopping_Buy_All
 
         private void altaDeTipoComercioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            TipoComercio_Load loadTipoComercio = new TipoComercio_Load();
+            loadTipoComercio.ShowDialog();
         }
 
         private void modificacionDeTipoComercioToolStripMenuItem_Click(object sender, EventArgs e)
