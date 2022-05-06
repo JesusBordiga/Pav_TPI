@@ -110,9 +110,8 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             }
             return resultado;
         }
-        private void btnBuscarTipoTarjeta_Click(object sender, EventArgs e)
+        private void buscarTipoTarjeta(string nombreViejo)
         {
-            string nombreViejo = txtNombreTdT.Text.Trim();
             if (nombreViejo != "")
             {
                 bool resultado = busquedaXNombre(nombreViejo);
@@ -120,6 +119,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
                 {
                     cambiarModificador(true);
                     cambiarBuscador(false);
+                    txtNombreTdT.Text = nombreViejo;
                 }
                 else
                 {
@@ -167,6 +167,11 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
                 cn.Close();
             }
         }
+        private void btnBuscarTipoTarjeta_Click(object sender, EventArgs e)
+        {
+            string nombreViejo = txtNombreTdT.Text.Trim();
+            buscarTipoTarjeta(nombreViejo);
+        }
         private void btnTipoTarjetaModify_Click(object sender, EventArgs e)
         {
             string nombreViejo = txtNombreTdT.Text.Trim();
@@ -195,6 +200,13 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             {
                 MessageBox.Show("Error al modificar el Tipo de Tarjeta! \n Complete los campos por favor!");
             }
+        }
+        private void tablaTipoTarjeta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSeleccionada = tablaTipoTarjeta.Rows[indice];
+            string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
+            buscarTipoTarjeta(nombre);
         }
     }
 }

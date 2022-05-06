@@ -133,7 +133,7 @@
             this.Nombre,
             this.Borrado});
             this.tablaTipoTarjeta.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaTipoTarjeta.Location = new System.Drawing.Point(250, 41);
+            this.tablaTipoTarjeta.Location = new System.Drawing.Point(262, 40);
             this.tablaTipoTarjeta.Name = "tablaTipoTarjeta";
             this.tablaTipoTarjeta.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -147,6 +147,7 @@
             this.tablaTipoTarjeta.Size = new System.Drawing.Size(246, 298);
             this.tablaTipoTarjeta.TabIndex = 80;
             this.tablaTipoTarjeta.TabStop = false;
+            this.tablaTipoTarjeta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaTipoTarjeta_CellContentClick);
             // 
             // idTipo
             // 
