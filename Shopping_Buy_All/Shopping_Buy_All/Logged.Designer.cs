@@ -62,6 +62,10 @@
             this.modificacionDeTipoComercioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bajaDeTipoComercioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcasDeTarjetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoDeTarjetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaDeTipoDeTarjetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaDeTipoDeTarjetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificacionDeTipoDeTarjetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -174,6 +178,7 @@
             this.bajaDeSexoToolStripMenuItem.Name = "bajaDeSexoToolStripMenuItem";
             this.bajaDeSexoToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.bajaDeSexoToolStripMenuItem.Text = "Baja de Sexo";
+            this.bajaDeSexoToolStripMenuItem.Click += new System.EventHandler(this.bajaDeSexoToolStripMenuItem_Click);
             // 
             // modificacionDeSexoToolStripMenuItem
             // 
@@ -182,6 +187,7 @@
             this.modificacionDeSexoToolStripMenuItem.Name = "modificacionDeSexoToolStripMenuItem";
             this.modificacionDeSexoToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.modificacionDeSexoToolStripMenuItem.Text = "Modificacion de Sexo";
+            this.modificacionDeSexoToolStripMenuItem.Click += new System.EventHandler(this.modificacionDeSexoToolStripMenuItem_Click);
             // 
             // tipoDeDocumentoToolStripMenuItem
             // 
@@ -211,6 +217,7 @@
             this.bajaDeTipoDeDocumentoToolStripMenuItem.Name = "bajaDeTipoDeDocumentoToolStripMenuItem";
             this.bajaDeTipoDeDocumentoToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
             this.bajaDeTipoDeDocumentoToolStripMenuItem.Text = "Baja de Tipo de Documento";
+            this.bajaDeTipoDeDocumentoToolStripMenuItem.Click += new System.EventHandler(this.bajaDeTipoDeDocumentoToolStripMenuItem_Click);
             // 
             // modificacionDeTipoDeDocumentoToolStripMenuItem
             // 
@@ -219,6 +226,7 @@
             this.modificacionDeTipoDeDocumentoToolStripMenuItem.Name = "modificacionDeTipoDeDocumentoToolStripMenuItem";
             this.modificacionDeTipoDeDocumentoToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
             this.modificacionDeTipoDeDocumentoToolStripMenuItem.Text = "Modificacion de Tipo de Documento";
+            this.modificacionDeTipoDeDocumentoToolStripMenuItem.Click += new System.EventHandler(this.modificacionDeTipoDeDocumentoToolStripMenuItem_Click);
             // 
             // estadoCivilToolStripMenuItem
             // 
@@ -249,6 +257,7 @@
             this.bajaDeEstadoCivilToolStripMenuItem.Name = "bajaDeEstadoCivilToolStripMenuItem";
             this.bajaDeEstadoCivilToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.bajaDeEstadoCivilToolStripMenuItem.Text = "Baja de Estado Civil";
+            this.bajaDeEstadoCivilToolStripMenuItem.Click += new System.EventHandler(this.bajaDeEstadoCivilToolStripMenuItem_Click);
             // 
             // modificacionDeEstadoCivilToolStripMenuItem
             // 
@@ -257,6 +266,7 @@
             this.modificacionDeEstadoCivilToolStripMenuItem.Name = "modificacionDeEstadoCivilToolStripMenuItem";
             this.modificacionDeEstadoCivilToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.modificacionDeEstadoCivilToolStripMenuItem.Text = "Modificacion de Estado Civil";
+            this.modificacionDeEstadoCivilToolStripMenuItem.Click += new System.EventHandler(this.modificacionDeEstadoCivilToolStripMenuItem_Click);
             // 
             // automovilesToolStripMenuItem
             // 
@@ -374,10 +384,51 @@
             // 
             // marcasDeTarjetaToolStripMenuItem
             // 
+            this.marcasDeTarjetaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tipoDeTarjetaToolStripMenuItem});
             this.marcasDeTarjetaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.marcasDeTarjetaToolStripMenuItem.Name = "marcasDeTarjetaToolStripMenuItem";
             this.marcasDeTarjetaToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
             this.marcasDeTarjetaToolStripMenuItem.Text = "Marcas De Tarjeta";
+            // 
+            // tipoDeTarjetaToolStripMenuItem
+            // 
+            this.tipoDeTarjetaToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tipoDeTarjetaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaDeTipoDeTarjetaToolStripMenuItem,
+            this.bajaDeTipoDeTarjetaToolStripMenuItem,
+            this.modificacionDeTipoDeTarjetaToolStripMenuItem});
+            this.tipoDeTarjetaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.tipoDeTarjetaToolStripMenuItem.Name = "tipoDeTarjetaToolStripMenuItem";
+            this.tipoDeTarjetaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoDeTarjetaToolStripMenuItem.Text = "Tipo de Tarjeta";
+            // 
+            // altaDeTipoDeTarjetaToolStripMenuItem
+            // 
+            this.altaDeTipoDeTarjetaToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.altaDeTipoDeTarjetaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.altaDeTipoDeTarjetaToolStripMenuItem.Name = "altaDeTipoDeTarjetaToolStripMenuItem";
+            this.altaDeTipoDeTarjetaToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.altaDeTipoDeTarjetaToolStripMenuItem.Text = "Alta de Tipo de Tarjeta";
+            this.altaDeTipoDeTarjetaToolStripMenuItem.Click += new System.EventHandler(this.altaDeTipoDeTarjetaToolStripMenuItem_Click);
+            // 
+            // bajaDeTipoDeTarjetaToolStripMenuItem
+            // 
+            this.bajaDeTipoDeTarjetaToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bajaDeTipoDeTarjetaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.bajaDeTipoDeTarjetaToolStripMenuItem.Name = "bajaDeTipoDeTarjetaToolStripMenuItem";
+            this.bajaDeTipoDeTarjetaToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.bajaDeTipoDeTarjetaToolStripMenuItem.Text = "Baja de Tipo de Tarjeta";
+            this.bajaDeTipoDeTarjetaToolStripMenuItem.Click += new System.EventHandler(this.bajaDeTipoDeTarjetaToolStripMenuItem_Click);
+            // 
+            // modificacionDeTipoDeTarjetaToolStripMenuItem
+            // 
+            this.modificacionDeTipoDeTarjetaToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.modificacionDeTipoDeTarjetaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.modificacionDeTipoDeTarjetaToolStripMenuItem.Name = "modificacionDeTipoDeTarjetaToolStripMenuItem";
+            this.modificacionDeTipoDeTarjetaToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.modificacionDeTipoDeTarjetaToolStripMenuItem.Text = "Modificacion de Tipo de Tarjeta";
+            this.modificacionDeTipoDeTarjetaToolStripMenuItem.Click += new System.EventHandler(this.modificacionDeTipoDeTarjetaToolStripMenuItem_Click);
             // 
             // Logged
             // 
@@ -442,5 +493,9 @@
         private System.Windows.Forms.ToolStripMenuItem altaDeEstadoCivilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bajaDeEstadoCivilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificacionDeEstadoCivilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoDeTarjetaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaDeTipoDeTarjetaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bajaDeTipoDeTarjetaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificacionDeTipoDeTarjetaToolStripMenuItem;
     }
 }

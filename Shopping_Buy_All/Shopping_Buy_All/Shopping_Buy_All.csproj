@@ -126,6 +126,24 @@
     <Compile Include="ABM Tipo Documento\TipoDoc_Modify.Designer.cs">
       <DependentUpon>TipoDoc_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABM Tipo Tarjeta\TipoTarjeta_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Tipo Tarjeta\TipoTarjeta_Delete.Designer.cs">
+      <DependentUpon>TipoTarjeta_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Tipo Tarjeta\TipoTarjeta_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Tipo Tarjeta\TipoTarjeta_Load.Designer.cs">
+      <DependentUpon>TipoTarjeta_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Tipo Tarjeta\TipoTarjeta_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Tipo Tarjeta\TipoTarjeta_Modify.Designer.cs">
+      <DependentUpon>TipoTarjeta_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\EstadoCivil.cs" />
     <Compile Include="Entidades\Producto.cs" />
@@ -133,6 +151,7 @@
     <Compile Include="Entidades\TipoComercio.cs" />
     <Compile Include="Entidades\Local.cs" />
     <Compile Include="Entidades\TipoDocumento.cs" />
+    <Compile Include="Entidades\TipoTarjeta.cs" />
     <Compile Include="Entidades\User.cs" />
     <Compile Include="Logged.cs">
       <SubType>Form</SubType>
@@ -210,6 +229,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABM Tipo Documento\TipoDoc_Modify.resx">
       <DependentUpon>TipoDoc_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Tipo Tarjeta\TipoTarjeta_Delete.resx">
+      <DependentUpon>TipoTarjeta_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Tipo Tarjeta\TipoTarjeta_Load.resx">
+      <DependentUpon>TipoTarjeta_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Tipo Tarjeta\TipoTarjeta_Modify.resx">
+      <DependentUpon>TipoTarjeta_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
