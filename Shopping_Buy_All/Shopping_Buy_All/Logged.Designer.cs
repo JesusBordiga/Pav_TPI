@@ -36,6 +36,12 @@
             this.modificacionDeClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bajaDeClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.automovilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaTipoDeAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificacionTipoDeAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaTipoDeAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificacionAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profesionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.producotsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,12 +55,6 @@
             this.modificacionDeTipoComercioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bajaDeTipoComercioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcasDeTarjetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaTipoDeAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificacionTipoDeAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bajaTipoDeAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificacionAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bajaAutomovilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,6 +143,45 @@
             this.automovilesToolStripMenuItem.Name = "automovilesToolStripMenuItem";
             this.automovilesToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.automovilesToolStripMenuItem.Text = "Automoviles";
+            // 
+            // altaTipoDeAutomovilToolStripMenuItem
+            // 
+            this.altaTipoDeAutomovilToolStripMenuItem.Name = "altaTipoDeAutomovilToolStripMenuItem";
+            this.altaTipoDeAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.altaTipoDeAutomovilToolStripMenuItem.Text = "Alta tipo de automovil";
+            this.altaTipoDeAutomovilToolStripMenuItem.Click += new System.EventHandler(this.altaTipoDeAutomovilToolStripMenuItem_Click);
+            // 
+            // modificacionTipoDeAutomovilToolStripMenuItem
+            // 
+            this.modificacionTipoDeAutomovilToolStripMenuItem.Name = "modificacionTipoDeAutomovilToolStripMenuItem";
+            this.modificacionTipoDeAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.modificacionTipoDeAutomovilToolStripMenuItem.Text = "Modificacion tipo de automovil";
+            this.modificacionTipoDeAutomovilToolStripMenuItem.Click += new System.EventHandler(this.modificacionTipoDeAutomovilToolStripMenuItem_Click);
+            // 
+            // bajaTipoDeAutomovilToolStripMenuItem
+            // 
+            this.bajaTipoDeAutomovilToolStripMenuItem.Name = "bajaTipoDeAutomovilToolStripMenuItem";
+            this.bajaTipoDeAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.bajaTipoDeAutomovilToolStripMenuItem.Text = "Baja tipo de automovil";
+            this.bajaTipoDeAutomovilToolStripMenuItem.Click += new System.EventHandler(this.bajaTipoDeAutomovilToolStripMenuItem_Click);
+            // 
+            // altaAutomovilToolStripMenuItem
+            // 
+            this.altaAutomovilToolStripMenuItem.Name = "altaAutomovilToolStripMenuItem";
+            this.altaAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.altaAutomovilToolStripMenuItem.Text = "Alta automovil";
+            // 
+            // modificacionAutomovilToolStripMenuItem
+            // 
+            this.modificacionAutomovilToolStripMenuItem.Name = "modificacionAutomovilToolStripMenuItem";
+            this.modificacionAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.modificacionAutomovilToolStripMenuItem.Text = "Modificacion Automovil";
+            // 
+            // bajaAutomovilToolStripMenuItem
+            // 
+            this.bajaAutomovilToolStripMenuItem.Name = "bajaAutomovilToolStripMenuItem";
+            this.bajaAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.bajaAutomovilToolStripMenuItem.Text = "Baja automovil";
             // 
             // profesionesToolStripMenuItem
             // 
@@ -264,43 +303,6 @@
             this.marcasDeTarjetaToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
             this.marcasDeTarjetaToolStripMenuItem.Text = "Marcas De Tarjeta";
             // 
-            // altaTipoDeAutomovilToolStripMenuItem
-            // 
-            this.altaTipoDeAutomovilToolStripMenuItem.Name = "altaTipoDeAutomovilToolStripMenuItem";
-            this.altaTipoDeAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
-            this.altaTipoDeAutomovilToolStripMenuItem.Text = "Alta tipo de automovil";
-            this.altaTipoDeAutomovilToolStripMenuItem.Click += new System.EventHandler(this.altaTipoDeAutomovilToolStripMenuItem_Click);
-            // 
-            // modificacionTipoDeAutomovilToolStripMenuItem
-            // 
-            this.modificacionTipoDeAutomovilToolStripMenuItem.Name = "modificacionTipoDeAutomovilToolStripMenuItem";
-            this.modificacionTipoDeAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
-            this.modificacionTipoDeAutomovilToolStripMenuItem.Text = "Modificacion tipo de automovil";
-            // 
-            // bajaTipoDeAutomovilToolStripMenuItem
-            // 
-            this.bajaTipoDeAutomovilToolStripMenuItem.Name = "bajaTipoDeAutomovilToolStripMenuItem";
-            this.bajaTipoDeAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
-            this.bajaTipoDeAutomovilToolStripMenuItem.Text = "Baja tipo de automovil";
-            // 
-            // altaAutomovilToolStripMenuItem
-            // 
-            this.altaAutomovilToolStripMenuItem.Name = "altaAutomovilToolStripMenuItem";
-            this.altaAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
-            this.altaAutomovilToolStripMenuItem.Text = "Alta automovil";
-            // 
-            // modificacionAutomovilToolStripMenuItem
-            // 
-            this.modificacionAutomovilToolStripMenuItem.Name = "modificacionAutomovilToolStripMenuItem";
-            this.modificacionAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
-            this.modificacionAutomovilToolStripMenuItem.Text = "Modificacion Automovil";
-            // 
-            // bajaAutomovilToolStripMenuItem
-            // 
-            this.bajaAutomovilToolStripMenuItem.Name = "bajaAutomovilToolStripMenuItem";
-            this.bajaAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
-            this.bajaAutomovilToolStripMenuItem.Text = "Baja automovil";
-            // 
             // Logged
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -314,7 +316,7 @@
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MenuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1082, 591);
             this.MinimumSize = new System.Drawing.Size(1082, 591);
