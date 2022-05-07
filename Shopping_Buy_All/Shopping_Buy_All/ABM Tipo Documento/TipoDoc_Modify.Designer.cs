@@ -40,10 +40,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tablaTipDoc = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipDoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,18 +172,6 @@
             this.tablaTipDoc.TabStop = false;
             this.tablaTipDoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaTipDoc_CellContentClick);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(53, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 31);
-            this.label3.TabIndex = 119;
-            this.label3.Text = "Documento";
-            // 
             // TipoDocumento
             // 
             this.TipoDocumento.DataPropertyName = "TipoDocumento";
@@ -205,6 +193,18 @@
             this.Borrado.Name = "Borrado";
             this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(53, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(162, 31);
+            this.label3.TabIndex = 119;
+            this.label3.Text = "Documento";
             // 
             // TipoDoc_Modify
             // 
