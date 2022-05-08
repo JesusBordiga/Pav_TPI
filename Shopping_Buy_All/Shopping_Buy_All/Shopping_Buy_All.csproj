@@ -95,6 +95,12 @@
     <Compile Include="Logged\Ventanas\Automoviles_Ventana.Designer.cs">
       <DependentUpon>Automoviles_Ventana.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logged\Ventanas\Usuarios_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Usuarios_Ventana.Designer.cs">
+      <DependentUpon>Usuarios_Ventana.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logged\Ventanas\MarcaTarjeta_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Automoviles_Ventana.resx">
       <DependentUpon>Automoviles_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Usuarios_Ventana.resx">
+      <DependentUpon>Usuarios_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\MarcaTarjeta_Ventana.resx">
       <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
@@ -249,6 +258,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\audacious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

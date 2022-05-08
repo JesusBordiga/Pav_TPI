@@ -12,9 +12,9 @@ using Shopping_Buy_All.Entidades;
 
 namespace Shopping_Buy_All
 {
-    public partial class Locales_Ventana : Form
+    public partial class Usuarios_Ventana : Form
     {
-        public Locales_Ventana()
+        public Usuarios_Ventana()
         {
             InitializeComponent();
         }
@@ -41,6 +41,5 @@ namespace Shopping_Buy_All
         {
 
         }
-
     }
 }

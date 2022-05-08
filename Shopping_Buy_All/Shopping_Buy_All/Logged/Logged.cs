@@ -18,6 +18,8 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
             LabelBienvenido.Text = "Bienvenido "+ usu.userName;
+            labelHora.Text = "Hora: " + DateTime.Now.ToString("ss:mm:hh");
+            labelFecha.Text =DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void Logged_Load(object sender, EventArgs e)
@@ -73,6 +75,12 @@ namespace Shopping_Buy_All
         {
             btnMenu1.Visible = true;
             panel.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Clientes_Ventana client_ventana = new Clientes_Ventana();
+            client_ventana.Show();
         }
     }
 }
