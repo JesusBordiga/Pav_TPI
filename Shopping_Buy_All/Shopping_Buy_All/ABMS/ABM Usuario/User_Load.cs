@@ -28,8 +28,8 @@ namespace Shopping_Buy_All
         {
             textUsernameUser.Text = "";
             textPasswordUser.Text = "";
+            textConfirmPasswordUser.Text = "";
             CargarTablaUsuarios();
-
         }
         private void CargarTablaUsuarios()
         {
@@ -76,35 +76,43 @@ namespace Shopping_Buy_All
             return u;
         }
         
-        private void btnCargarCliente_Click(object sender, EventArgs e)
+        private void btnCargarUsuario_Click(object sender, EventArgs e)
         {
-            User u = ObtenerDatosUsuario();
-            bool resultado = Agregar_Usuario(u);
-            if (resultado)
+            if (ValidarCampos())
             {
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = (
-                      " |Nombre de Usuario: " + u.userName + "\n");
-
-                string titulo = "Información de Carga";
-
-                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                if (result == DialogResult.OK)
+                User u = ObtenerDatosUsuario();
+                bool resultado = Agregar_Usuario(u);
+                if (resultado)
                 {
-                    MessageBox.Show("Usuario agregado con éxito!");
-                    Clean();
-                    CargarTablaUsuarios();
+                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                    String mensajeCarga = (
+                          " |Nombre de Usuario: " + u.userName + "\n");
+
+                    string titulo = "Información de Carga";
+
+                    DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                    if (result == DialogResult.OK)
+                    {
+                        MessageBox.Show("Usuario agregado con éxito!");
+                        Clean();
+                        CargarTablaUsuarios();
+                    }
+                    else
+                    {
+                        textUsernameUser.Focus();
+                    }
                 }
                 else
                 {
-                    textUsernameUser.Focus();
+                    MessageBox.Show("Error al cargar el Usuario! \n" +
+                            "Complete los campos por favor!");
                 }
             }
             else
             {
                 MessageBox.Show("Error al cargar el Usuario! \n" +
-                        "Complete los campos por favor!");
+                        "Complete los campos correctamente por favor!");
             }
         }
         
@@ -142,6 +150,27 @@ namespace Shopping_Buy_All
             }
             return resultado;
 
+        }
+
+        private bool ValidarCampos()
+        {
+            if (textUsernameUser.Text.Trim() == "")
+            {
+                return false;
+            }
+            if (textPasswordUser.Text.Trim() == "")
+            {
+                return false;
+            }
+            if (textConfirmPasswordUser.Text.Trim() == "")
+            {
+                return false;
+            }
+            if (textConfirmPasswordUser.Text.Trim() != textPasswordUser.Text.Trim())
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

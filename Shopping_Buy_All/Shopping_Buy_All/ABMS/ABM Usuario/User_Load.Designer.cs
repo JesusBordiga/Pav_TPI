@@ -32,18 +32,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Load));
             this.tablaUsuarios = new System.Windows.Forms.DataGridView();
+            this.NombreDeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTitle = new System.Windows.Forms.Label();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
-            this.label15 = new System.Windows.Forms.Label();
-            this.btnClientLoad = new System.Windows.Forms.Button();
+            this.labelUserList = new System.Windows.Forms.Label();
+            this.btnUserLoad = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.textPasswordUser = new System.Windows.Forms.TextBox();
             this.textUsernameUser = new System.Windows.Forms.TextBox();
             this.labelPasswordUser = new System.Windows.Forms.Label();
             this.labelUsername = new System.Windows.Forms.Label();
-            this.NombreDeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelConfirmPasswordUser = new System.Windows.Forms.Label();
+            this.textConfirmPasswordUser = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +83,30 @@
             this.tablaUsuarios.TabIndex = 0;
             this.tablaUsuarios.TabStop = false;
             // 
+            // NombreDeUsuario
+            // 
+            this.NombreDeUsuario.DataPropertyName = "NombreDeUsuario";
+            this.NombreDeUsuario.HeaderText = "Nombre de Usuario";
+            this.NombreDeUsuario.Name = "NombreDeUsuario";
+            this.NombreDeUsuario.ReadOnly = true;
+            this.NombreDeUsuario.Width = 140;
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Contraseña";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            this.Password.Width = 120;
+            // 
+            // Borrado
+            // 
+            this.Borrado.DataPropertyName = "Borrado";
+            this.Borrado.HeaderText = "Borrado";
+            this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
+            this.Borrado.Visible = false;
+            // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
@@ -93,30 +119,30 @@
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "Cargar Usuario";
             // 
-            // label15
+            // labelUserList
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(590, 11);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(208, 29);
-            this.label15.TabIndex = 28;
-            this.label15.Text = "Lista de Clientes";
+            this.labelUserList.AutoSize = true;
+            this.labelUserList.BackColor = System.Drawing.Color.Transparent;
+            this.labelUserList.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserList.ForeColor = System.Drawing.Color.White;
+            this.labelUserList.Location = new System.Drawing.Point(590, 11);
+            this.labelUserList.Name = "labelUserList";
+            this.labelUserList.Size = new System.Drawing.Size(215, 29);
+            this.labelUserList.TabIndex = 28;
+            this.labelUserList.Text = "Lista de Usuarios";
             // 
-            // btnClientLoad
+            // btnUserLoad
             // 
-            this.btnClientLoad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClientLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientLoad.ForeColor = System.Drawing.Color.White;
-            this.btnClientLoad.Location = new System.Drawing.Point(73, 422);
-            this.btnClientLoad.Name = "btnClientLoad";
-            this.btnClientLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnClientLoad.TabIndex = 13;
-            this.btnClientLoad.Text = "Cargar";
-            this.btnClientLoad.UseVisualStyleBackColor = true;
-            this.btnClientLoad.Click += new System.EventHandler(this.btnCargarCliente_Click);
+            this.btnUserLoad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserLoad.ForeColor = System.Drawing.Color.White;
+            this.btnUserLoad.Location = new System.Drawing.Point(73, 422);
+            this.btnUserLoad.Name = "btnUserLoad";
+            this.btnUserLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnUserLoad.TabIndex = 5;
+            this.btnUserLoad.Text = "Cargar";
+            this.btnUserLoad.UseVisualStyleBackColor = true;
+            this.btnUserLoad.Click += new System.EventHandler(this.btnCargarUsuario_Click);
             // 
             // btnClear
             // 
@@ -126,7 +152,7 @@
             this.btnClear.Location = new System.Drawing.Point(169, 422);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 14;
+            this.btnClear.TabIndex = 6;
             this.btnClear.Text = "Limpiar";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -139,7 +165,7 @@
             this.textPasswordUser.Name = "textPasswordUser";
             this.textPasswordUser.PasswordChar = '*';
             this.textPasswordUser.Size = new System.Drawing.Size(110, 20);
-            this.textPasswordUser.TabIndex = 4;
+            this.textPasswordUser.TabIndex = 2;
             // 
             // textUsernameUser
             // 
@@ -148,7 +174,7 @@
             this.textUsernameUser.Location = new System.Drawing.Point(105, 135);
             this.textUsernameUser.Name = "textUsernameUser";
             this.textUsernameUser.Size = new System.Drawing.Size(110, 20);
-            this.textUsernameUser.TabIndex = 3;
+            this.textUsernameUser.TabIndex = 1;
             // 
             // labelPasswordUser
             // 
@@ -176,29 +202,28 @@
             this.labelUsername.Text = "Nombre de Usuario";
             this.labelUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // NombreDeUsuario
+            // labelConfirmPasswordUser
             // 
-            this.NombreDeUsuario.DataPropertyName = "NombreDeUsuario";
-            this.NombreDeUsuario.HeaderText = "Nombre de Usuario";
-            this.NombreDeUsuario.Name = "NombreDeUsuario";
-            this.NombreDeUsuario.ReadOnly = true;
-            this.NombreDeUsuario.Width = 140;
+            this.labelConfirmPasswordUser.AutoSize = true;
+            this.labelConfirmPasswordUser.BackColor = System.Drawing.Color.Transparent;
+            this.labelConfirmPasswordUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelConfirmPasswordUser.ForeColor = System.Drawing.Color.White;
+            this.labelConfirmPasswordUser.Location = new System.Drawing.Point(77, 240);
+            this.labelConfirmPasswordUser.Name = "labelConfirmPasswordUser";
+            this.labelConfirmPasswordUser.Size = new System.Drawing.Size(166, 17);
+            this.labelConfirmPasswordUser.TabIndex = 31;
+            this.labelConfirmPasswordUser.Text = "Confirmar Contraseña";
+            this.labelConfirmPasswordUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Password
+            // textConfirmPasswordUser
             // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Contraseña";
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            this.Password.Width = 120;
-            // 
-            // Borrado
-            // 
-            this.Borrado.DataPropertyName = "Borrado";
-            this.Borrado.HeaderText = "Borrado";
-            this.Borrado.Name = "Borrado";
-            this.Borrado.ReadOnly = true;
-            this.Borrado.Visible = false;
+            this.textConfirmPasswordUser.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textConfirmPasswordUser.ForeColor = System.Drawing.Color.White;
+            this.textConfirmPasswordUser.Location = new System.Drawing.Point(105, 265);
+            this.textConfirmPasswordUser.Name = "textConfirmPasswordUser";
+            this.textConfirmPasswordUser.PasswordChar = '*';
+            this.textConfirmPasswordUser.Size = new System.Drawing.Size(110, 20);
+            this.textConfirmPasswordUser.TabIndex = 3;
             // 
             // User_Load
             // 
@@ -208,10 +233,12 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1027, 449);
+            this.Controls.Add(this.textConfirmPasswordUser);
+            this.Controls.Add(this.labelConfirmPasswordUser);
             this.Controls.Add(this.labelPasswordUser);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnClientLoad);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.btnUserLoad);
+            this.Controls.Add(this.labelUserList);
             this.Controls.Add(this.textUsernameUser);
             this.Controls.Add(this.textPasswordUser);
             this.Controls.Add(this.labelUsername);
@@ -236,8 +263,8 @@
         private System.Windows.Forms.DataGridView tablaUsuarios;
         private System.Windows.Forms.Label labelTitle;
         private System.ServiceProcess.ServiceController serviceController1;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btnClientLoad;
+        private System.Windows.Forms.Label labelUserList;
+        private System.Windows.Forms.Button btnUserLoad;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.TextBox textPasswordUser;
         private System.Windows.Forms.TextBox textUsernameUser;
@@ -246,5 +273,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreDeUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.Label labelConfirmPasswordUser;
+        private System.Windows.Forms.TextBox textConfirmPasswordUser;
     }
 }
