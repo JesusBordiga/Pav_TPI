@@ -45,6 +45,7 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(301, 6);
+            this.label15.Location = new System.Drawing.Point(322, 6);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(230, 29);
             this.label15.TabIndex = 59;
@@ -165,7 +166,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tablaProductos.DefaultCellStyle = dataGridViewCellStyle1;
             this.tablaProductos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tablaProductos.Location = new System.Drawing.Point(269, 36);
+            this.tablaProductos.Location = new System.Drawing.Point(286, 36);
             this.tablaProductos.Name = "tablaProductos";
             this.tablaProductos.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -176,12 +177,13 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaProductos.RowHeadersWidth = 10;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.tablaProductos.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.tablaProductos.Size = new System.Drawing.Size(316, 310);
+            this.tablaProductos.Size = new System.Drawing.Size(301, 310);
             this.tablaProductos.TabIndex = 87;
             this.tablaProductos.TabStop = false;
             // 
@@ -192,6 +194,7 @@
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 50;
             // 
             // Nombre
             // 
@@ -200,6 +203,7 @@
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 150;
             // 
             // Precio
             // 
@@ -219,6 +223,18 @@
             this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(103, 196);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 17);
+            this.label3.TabIndex = 88;
+            this.label3.Text = "$";
+            // 
             // Product_Load
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +252,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -265,5 +282,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.Label label3;
     }
 }

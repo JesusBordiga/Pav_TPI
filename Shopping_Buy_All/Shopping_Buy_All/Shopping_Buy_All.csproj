@@ -83,11 +83,47 @@
     <Compile Include="Entidades\TipoComercio.cs" />
     <Compile Include="Entidades\Local.cs" />
     <Compile Include="Entidades\User.cs" />
-    <Compile Include="Logged.cs">
+    <Compile Include="Logged\Logged.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Logged.Designer.cs">
+    <Compile Include="Logged\Logged.Designer.cs">
       <DependentUpon>Logged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Automoviles_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Automoviles_Ventana.Designer.cs">
+      <DependentUpon>Automoviles_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\MarcaTarjeta_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\MarcaTarjeta_Ventana.Designer.cs">
+      <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Profesiones_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Profesiones_Ventana.Designer.cs">
+      <DependentUpon>Profesiones_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Locales_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Locales_Ventana.Designer.cs">
+      <DependentUpon>Locales_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Productos_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Productos_Ventana.Designer.cs">
+      <DependentUpon>Productos_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes_Ventana.Designer.cs">
+      <DependentUpon>Clientes_Ventana.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -118,8 +154,26 @@
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Modify.resx">
       <DependentUpon>Product_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Logged.resx">
+    <EmbeddedResource Include="Logged\Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Automoviles_Ventana.resx">
+      <DependentUpon>Automoviles_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\MarcaTarjeta_Ventana.resx">
+      <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Profesiones_Ventana.resx">
+      <DependentUpon>Profesiones_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Locales_Ventana.resx">
+      <DependentUpon>Locales_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Productos_Ventana.resx">
+      <DependentUpon>Productos_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Clientes_Ventana.resx">
+      <DependentUpon>Clientes_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -128,7 +182,7 @@
       <DependentUpon>Product_Load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -177,6 +231,24 @@
     <Folder Include="ABMS\ABM TipoVehiculo\" />
     <Folder Include="ABMS\ABM Usuario\" />
     <Folder Include="ABMS\ABM Vehiculos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-editor1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\software-manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terminator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\audacious.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

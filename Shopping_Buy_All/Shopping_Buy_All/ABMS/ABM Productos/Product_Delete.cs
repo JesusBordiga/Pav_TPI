@@ -159,35 +159,6 @@ namespace Shopping_Buy_All
                 return resultado;
         }
 
-        private void btnDeleteProduct_Click(object sender, EventArgs e)
-        {
-            Producto p = ObtenerDatosProducto();
-            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-            String mensajeCarga = (
-                  " |Codigo: " + p.CodigoProducto + "|" + "\n"
-                + " |Nombre: " + p.NombreProducto + "|" + "\n"
-                + " |Precio: " + p.PrecioProducto + "|" + "\n");
-
-            string titulo = "Información de Producto";
-
-            DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-            if (result == DialogResult.OK)
-            {
-                MessageBox.Show("Borrado agregado con éxito!");
-                BorrarProducto(p.CodigoProducto,1);
-                Clean();
-                SearchPanel.Visible = true;
-                btnSearchProduct.Visible = true;
-                btnSerachProduct2.Visible = false;
-                CargarTablaProductos();
-            }
-            else
-            {
-                textNameProduct.Focus();
-            }
-        }
-
         private void btnSearchProduct_Click_1(object sender, EventArgs e)
         {
             if (textCodeProduct.Text.Equals(""))
@@ -218,8 +189,7 @@ namespace Shopping_Buy_All
             btnSearchProduct.Visible = true;
             btnSerachProduct2.Visible = false;
         }
-
-        private void tablaProductos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void tablaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Clean();
             int indice = e.RowIndex;
@@ -230,7 +200,35 @@ namespace Shopping_Buy_All
             SearchPanel.Visible = false;
             btnSearchProduct.Visible = false;
             btnSerachProduct2.Visible = true;
-            
+        }
+
+        private void btnDeleteProduct_Click_1(object sender, EventArgs e)
+        {
+            Producto p = ObtenerDatosProducto();
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            String mensajeCarga = (
+                  " |Codigo: " + p.CodigoProducto + "|" + "\n"
+                + " |Nombre: " + p.NombreProducto + "|" + "\n"
+                + " |Precio: "+"$"+ p.PrecioProducto + "|" + "\n");
+
+            string titulo = "Información de Producto";
+
+            DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+            if (result == DialogResult.OK)
+            {
+                MessageBox.Show("Borrado agregado con éxito!");
+                BorrarProducto(p.CodigoProducto, 1);
+                Clean();
+                SearchPanel.Visible = true;
+                btnSearchProduct.Visible = true;
+                btnSerachProduct2.Visible = false;
+                CargarTablaProductos();
+            }
+            else
+            {
+                textNameProduct.Focus();
+            }
         }
     }
 }

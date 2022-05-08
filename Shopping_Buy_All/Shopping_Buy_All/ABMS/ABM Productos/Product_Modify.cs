@@ -189,7 +189,7 @@ namespace Shopping_Buy_All
                 String mensajeCarga = (
                       " |Codigo: " + p.CodigoProducto + "|" + "\n"
                     + " |Nombre: " + p.NombreProducto + "|" + "\n"
-                    + " |Precio: " + p.PrecioProducto + "|" + "\n");
+                    + " |Precio: " +"$"+ p.PrecioProducto + "|" + "\n");
 
                 string titulo = "Información de Producto";
 
@@ -224,7 +224,7 @@ namespace Shopping_Buy_All
             btnSerachProduct2.Visible = false;
         }
 
-        private void tablaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tablaProductos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = tablaProductos.Rows[indice];
@@ -235,5 +235,6 @@ namespace Shopping_Buy_All
             btnSearchProduct.Visible = false;
             btnSerachProduct2.Visible = true;
         }
+
     }
 }

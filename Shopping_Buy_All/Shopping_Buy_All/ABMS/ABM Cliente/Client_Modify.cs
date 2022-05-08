@@ -30,7 +30,7 @@ namespace Shopping_Buy_All
             }
             else
             {
-            Cliente c = Buscar_Cliente_Documento((int)comboBoxDocType.SelectedValue, textNumberDoc.Text);
+            Cliente c = Buscar_Cliente_Documento(comboBoxDocType.SelectedIndex.ToString(), textNumberDoc.Text);
             Cargar_Campos(c);
             SearchPanel.Visible=false;
             btnSearchClient.Visible=false;
@@ -246,7 +246,7 @@ namespace Shopping_Buy_All
             {
                 SqlCommand comand = new SqlCommand();
                 string consulta = "SELECT TD.NombreDocumento AS TipoDocumento,C.NroDocumento,C.Apellido,C.Nombres,C.Calle,C.NroCalle,TEC.NombreEstadoCivil AS EstadoCivil" +
-                    ",TS.NombreSexo AS Sexo,C.FechaNacimiento,C.Borrado FROM Clientes C JOIN TipoDocumento TD ON (C.TipoDocumento = TD.TipoDocumento) " +
+                    ",TS.NombreSexo AS Sexo,C.FechaNacimiento,C.Borrado,C.TipoDocumento AS TipoDoc FROM Clientes C JOIN TipoDocumento TD ON (C.TipoDocumento = TD.TipoDocumento) " +
                     "JOIN TipoEstadoCivil TEC ON (C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON (C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0";
 
                 comand.Parameters.Clear();
@@ -272,7 +272,7 @@ namespace Shopping_Buy_All
                 cn.Close();
             }
         }
-        private Cliente Buscar_Cliente_Documento(int TipoDocumento ,string NroDocumento)
+        private Cliente Buscar_Cliente_Documento(string TipoDocumento ,string NroDocumento)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -280,7 +280,9 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Clientes where TipoDocumento like @tipoDocumento AND NroDocumento like @nrodocumento AND Borrado like 0";
+                string consulta = "SELECT TD.NombreDocumento AS TipoDocumento,C.NroDocumento,C.Apellido,C.Nombres,C.Calle,C.NroCalle,TEC.NombreEstadoCivil AS EstadoCivil" +
+                    ",TS.NombreSexo AS Sexo,C.FechaNacimiento,C.Borrado,C.TipoDocumento As TipoDoc,EstadoCivil As EstadoCiv,Sexo As Sex FROM Clientes C JOIN TipoDocumento TD ON (C.TipoDocumento = TD.TipoDocumento) " +
+                    "JOIN TipoEstadoCivil TEC ON (C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON (C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0 AND C.TipoDocumento like @tipoDocumento AND C.NroDocumento like @nroDocumento";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
@@ -294,62 +296,23 @@ namespace Shopping_Buy_All
                 SqlDataReader DataReader = cmd.ExecuteReader();
                 if (DataReader !=null && DataReader.Read())
                 {
-                    client.TipoDocumentoCliente = int.Parse(DataReader["TipoDocumento"].ToString());
+                    client.TipoDocumentoCliente = int.Parse(DataReader["TipoDoc"].ToString());
                     client.DocumentoCliente= DataReader["NroDocumento"].ToString();
                     client.ApellidoCliente = DataReader["Apellido"].ToString();
                     client.NombreCliente = DataReader["Nombres"].ToString();
                     client.CalleCliente = DataReader["Calle"].ToString();
                     client.NroCalleCliente = int.Parse(DataReader["NroCalle"].ToString());
-                    client.EstadoCivilCliente = int.Parse(DataReader["EstadoCivil"].ToString());
-                    client.SexoCliente = int.Parse(DataReader["Sexo"].ToString());
+                    client.EstadoCivilCliente = int.Parse(DataReader["EstadoCiv"].ToString());
+                    client.SexoCliente = int.Parse(DataReader["Sex"].ToString());
                     client.FechaNacimientoCliente = DateTime.Parse(DataReader["FechaNacimiento"].ToString());
                 }
-            }
-            catch (Exception )
-            {
-
-                throw;
-            }
-            finally
-            {
                 cn.Close();
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                tablaClientes.DataSource = tabla;
             }
-            return client;
-
-        }
-        private Cliente Buscar_Cliente(string NroDocumento)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            Cliente client = new Cliente();
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Clientes WHERE NroDocumento like @Nrodocumento ";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@NroDocumento", NroDocumento);
-
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
-                {
-                    client.TipoDocumentoCliente = int.Parse(DataReader["TipoDocumento"].ToString());
-                    client.DocumentoCliente = DataReader["NroDocumento"].ToString();
-                    client.ApellidoCliente = DataReader["Apellido"].ToString();
-                    client.NombreCliente = DataReader["Nombres"].ToString();
-                    client.CalleCliente = DataReader["Calle"].ToString();
-                    client.NroCalleCliente = int.Parse(DataReader["NroCalle"].ToString());
-                    client.EstadoCivilCliente = int.Parse(DataReader["EstadoCivil"].ToString());
-                    client.SexoCliente = int.Parse(DataReader["Sexo"].ToString());
-                    client.FechaNacimientoCliente = DateTime.Parse(DataReader["FechaNacimiento"].ToString());
-                }
-            }
-            catch (Exception )
+            catch (Exception)
             {
 
                 throw;
@@ -365,6 +328,8 @@ namespace Shopping_Buy_All
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clean();
+            SearchPanel.Visible = true;
+            CargarTablaClientes();
         }
         private Cliente ObtenerDatosCliente()
         {
@@ -457,39 +422,42 @@ namespace Shopping_Buy_All
 
         private void btnClientLoad_Click_1(object sender, EventArgs e)
         {
-            Cliente c = ObtenerDatosCliente();
-            bool resultado = ModificarCliente(c);
-            if (resultado)
+            if (validarCliente())
             {
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = (
-                      " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
-                    + " |Apellido: " + c.ApellidoCliente + " |Nombre: " + c.NombreCliente + "|" + "\n"
-                    + " |Calle: " + c.CalleCliente + " |Nro Calle: " + c.NroCalleCliente + "|" + "\n"
-                    + " |Estado Civil: " + c.EstadoCivilCliente + " |Sexo: " + c.SexoCliente + "|" + "\n"
-                    + " |Fecha Nacimiento: " + c.FechaNacimientoCliente + "|" + "\n");
-
-                string titulo = "Información de Carga";
-
-                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                if (result == DialogResult.OK)
+                Cliente c = ObtenerDatosCliente();
+                bool resultado = ModificarCliente(c);
+                if (resultado)
                 {
-                    MessageBox.Show("Cliente agregado con éxito!");
-                    Clean();
-                    CargarTablaClientes();
-                    CargarTiposDocumentos();
+                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                    String mensajeCarga = (
+                          " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
+                        + " |Apellido: " + c.ApellidoCliente + " |Nombre: " + c.NombreCliente + "|" + "\n"
+                        + " |Calle: " + c.CalleCliente + " |Nro Calle: " + c.NroCalleCliente + "|" + "\n"
+                        + " |Estado Civil: " + c.EstadoCivilCliente + " |Sexo: " + c.SexoCliente + "|" + "\n"
+                        + " |Fecha Nacimiento: " + c.FechaNacimientoCliente + "|" + "\n");
+
+                    string titulo = "Información de Carga";
+
+                    DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                    if (result == DialogResult.OK)
+                    {
+                        MessageBox.Show("Cliente agregado con éxito!");
+                        Clean();
+                        CargarTablaClientes();
+                        CargarTiposDocumentos();
 
 
+                    }
+                    else
+                    {
+                        comboBoxDocType.Focus();
+                    }
                 }
                 else
                 {
-                    comboBoxDocType.Focus();
+                    MessageBox.Show("Error al modificar la persona!");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Error al modificar la persona!");
             }
         }
         private void tablaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -497,7 +465,8 @@ namespace Shopping_Buy_All
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
             string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
-            Cliente c = Buscar_Cliente(documento);
+            string tipodocumento = filaSeleccionada.Cells["TipoDoc"].Value.ToString();
+            Cliente c = Buscar_Cliente_Documento(tipodocumento,documento);
             Clean();
             SearchPanel.Visible = false;
             btnSearchClient.Visible = false;
