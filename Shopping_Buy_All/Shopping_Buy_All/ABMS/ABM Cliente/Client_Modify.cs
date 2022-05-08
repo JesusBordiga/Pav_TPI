@@ -19,6 +19,7 @@ namespace Shopping_Buy_All
             InitializeComponent();
             CargarTablaClientes();
             CargarTiposDocumentos();
+            CargarTipoSexo();
         }
 
         private void btnBuscarCliente_click(object sender, EventArgs e)
@@ -52,11 +53,111 @@ namespace Shopping_Buy_All
             textStreetHeight.Text = "";
             radioButtonSingle.Checked = false;
             radioButtonMarried.Checked = false;
-            radioButtonMale.Checked = false;
-            radioButtonFemale.Checked = false;
-            radioButtonOther.Checked = false;
             textDateBirthDay.Text = "";
         }
+        private bool validarCliente()
+        {
+            ;
+            if (comboBoxDocType.SelectedIndex.Equals(-1))
+            {
+                MessageBox.Show("Error, Cargar tipo de documento!");
+                comboBoxDocType.Focus();
+                return false;
+            }
+            else if (textNumberDoc.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Error, Cargar numero de documento!");
+                textNumberDoc.Focus();
+                return false;
+            }
+            else if (textSurnameClient.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Error, Cargar apellido de cliente!");
+                textSurnameClient.Focus();
+                return false;
+            }
+            else if (textNameClient.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Error, Cargar nombre de cliente!");
+                textNameClient.Focus();
+                return false;
+            }
+            else if (textStreetClient.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Error, Cargar domicilio de cliente!");
+                textStreetClient.Focus();
+                return false;
+            }
+            else if (textStreetHeight.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Error, Cargar numero de calle de cliente!");
+                textStreetHeight.Focus();
+                return false;
+            }
+
+            else if (radioButtonSingle.Checked == false && radioButtonMarried.Checked == false)
+            {
+                MessageBox.Show("Error, Cargar estado civil de cliente!");
+                textDateBirthDay.Focus();
+                return false;
+            }
+            else if (comboBoxSex.SelectedIndex.Equals(-1))
+            {
+                MessageBox.Show("Error, Cargar tipo de sexo!");
+                comboBoxSex.Focus();
+                return false;
+            }
+            else if (textDateBirthDay.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Error, Cargar fecha de nacimiento de cliente!");
+                textDateBirthDay.Focus();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
+        private void CargarTipoSexo()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "Select * FROM TipoSexo";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                comboBoxSex.DataSource = tabla;
+                comboBoxSex.DisplayMember = "NombreSexo";
+                comboBoxSex.ValueMember = "TipoSexo";
+                comboBoxSex.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         private void Cargar_Campos(Cliente c)
         {
             //Cargar Tipo Documento
@@ -80,19 +181,9 @@ namespace Shopping_Buy_All
             {
                 radioButtonMarried.Checked = true;
             }
-            //Cargar Sexo
-            if (c.SexoCliente == 1)
-            {
-                radioButtonMale.Checked = true;
-            }
-            else if (c.SexoCliente == 2)
-            {
-                radioButtonFemale.Checked = true;
-            }
-            else
-            {
-                radioButtonOther.Checked = true;                                
-            }
+            //Cargar Tipo Sexo
+            comboBoxSex.SelectedValue = c.SexoCliente;
+
             //Cargar Fecha Nacimiento 
             DateTime fecha = c.FechaNacimientoCliente;
             string dia = "";string mes = ""; string año = "";
@@ -154,7 +245,9 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Clientes WHERE Borrado like 0";
+                string consulta = "SELECT TD.NombreDocumento AS TipoDocumento,C.NroDocumento,C.Apellido,C.Nombres,C.Calle,C.NroCalle,TEC.NombreEstadoCivil AS EstadoCivil" +
+                    ",TS.NombreSexo AS Sexo,C.FechaNacimiento,C.Borrado FROM Clientes C JOIN TipoDocumento TD ON (C.TipoDocumento = TD.TipoDocumento) " +
+                    "JOIN TipoEstadoCivil TEC ON (C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON (C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -312,24 +405,7 @@ namespace Shopping_Buy_All
             }
 
             //Sexo de cliente
-            if (radioButtonMale.Checked)
-            {
-                c.SexoCliente = 1;
-            }
-            else if (radioButtonFemale.Checked)
-            {
-                c.SexoCliente = 2;
-            }
-            else if (radioButtonOther.Checked)
-            {
-                c.SexoCliente = 3;
-            }
-            else
-            {
-                MessageBox.Show("Error al elegir estado Civil de Cliente! \n" +
-                    "Complete los campos por favor!");
-                radioButtonMale.Focus();
-            }
+            c.TipoDocumentoCliente = (int)comboBoxDocType.SelectedValue;
 
             //Fecha de nacimiento de Cliente
             c.FechaNacimientoCliente = DateTime.Parse(textDateBirthDay.Text);
@@ -416,8 +492,7 @@ namespace Shopping_Buy_All
                 MessageBox.Show("Error al modificar la persona!");
             }
         }
-
-        private void tablaClientes_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        private void tablaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];

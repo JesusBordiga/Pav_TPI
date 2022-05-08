@@ -39,6 +39,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
             this.btnDeleteClient = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +51,6 @@
             this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,6 +154,18 @@
             this.btnDeleteClient.UseVisualStyleBackColor = false;
             this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(480, 15);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(208, 29);
+            this.label15.TabIndex = 71;
+            this.label15.Text = "Lista de Clientes";
+            // 
             // tablaClientes
             // 
             this.tablaClientes.AllowUserToAddRows = false;
@@ -181,7 +193,7 @@
             this.Sexo,
             this.FechaNacimiento});
             this.tablaClientes.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaClientes.Location = new System.Drawing.Point(245, 47);
+            this.tablaClientes.Location = new System.Drawing.Point(242, 47);
             this.tablaClientes.Name = "tablaClientes";
             this.tablaClientes.ReadOnly = true;
             this.tablaClientes.RowHeadersWidth = 20;
@@ -190,10 +202,11 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.tablaClientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaClientes.Size = new System.Drawing.Size(671, 397);
-            this.tablaClientes.TabIndex = 69;
+            this.tablaClientes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tablaClientes.Size = new System.Drawing.Size(672, 397);
+            this.tablaClientes.TabIndex = 72;
             this.tablaClientes.TabStop = false;
-            this.tablaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick);
+            this.tablaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick_1);
             // 
             // TipoDocumento
             // 
@@ -274,18 +287,6 @@
             this.FechaNacimiento.ReadOnly = true;
             this.FechaNacimiento.Width = 80;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(480, 15);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(208, 29);
-            this.label15.TabIndex = 71;
-            this.label15.Text = "Lista de Clientes";
-            // 
             // Client_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,8 +295,8 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(922, 450);
-            this.Controls.Add(this.label15);
             this.Controls.Add(this.tablaClientes);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.btnDeleteClient);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.btnSearch);
@@ -327,6 +328,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Button btnDeleteClient;
+        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridView tablaClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
@@ -338,6 +340,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCivil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
-        private System.Windows.Forms.Label label15;
     }
 }

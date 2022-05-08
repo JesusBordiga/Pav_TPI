@@ -34,7 +34,9 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Clientes WHERE Borrado like 0";
+                string consulta = "SELECT TD.NombreDocumento AS TipoDocumento,C.NroDocumento,C.Apellido,C.Nombres,C.Calle,C.NroCalle,TEC.NombreEstadoCivil AS EstadoCivil" +
+                    ",TS.NombreSexo AS Sexo,C.FechaNacimiento,C.Borrado FROM Clientes C JOIN TipoDocumento TD ON (C.TipoDocumento = TD.TipoDocumento) " +
+                    "JOIN TipoEstadoCivil TEC ON (C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON (C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -178,16 +180,6 @@ namespace Shopping_Buy_All
                 SqlDataReader DataReader = cmd.ExecuteReader();
                 if (DataReader != null && DataReader.Read())
                 {
-                    client.TipoDocumentoCliente = int.Parse(DataReader["TipoDocumento"].ToString());
-                    client.DocumentoCliente = DataReader["NroDocumento"].ToString();
-                    client.ApellidoCliente = DataReader["Apellido"].ToString();
-                    client.NombreCliente = DataReader["Nombres"].ToString();
-                    client.CalleCliente = DataReader["Calle"].ToString();
-                    client.NroCalleCliente = int.Parse(DataReader["NroCalle"].ToString());
-                    client.EstadoCivilCliente = int.Parse(DataReader["EstadoCivil"].ToString());
-                    client.SexoCliente = int.Parse(DataReader["Sexo"].ToString());
-                    client.FechaNacimientoCliente = DateTime.Parse(DataReader["FechaNacimiento"].ToString());
-                    cn.Close();
                     DataTable tabla = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(tabla);
@@ -313,18 +305,6 @@ namespace Shopping_Buy_All
                 comboBoxDocType.Focus();
             }
         }
-
-        private void tablaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
-            string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
-            string tipodocumento = filaSeleccionada.Cells["TipoDocumento"].Value.ToString();
-            Cliente c = Buscar_Cliente1(tipodocumento, documento);
-            Clean();
-            Cargar_Campos(c);
-            btnDeleteClient.Visible = true;
-        }
         private void Cargar_Campos(Cliente c)
         {
             //Cargar Tipo Documento
@@ -381,6 +361,18 @@ namespace Shopping_Buy_All
             }
             return client;
 
+        }
+
+        private void tablaClientes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
+            string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
+            string tipodocumento = filaSeleccionada.Cells["TipoDocumento"].Value.ToString();
+            Cliente c = Buscar_Cliente1(tipodocumento, documento);
+            Clean();
+            Cargar_Campos(c);
+            btnDeleteClient.Visible = true;
         }
     }
 }
