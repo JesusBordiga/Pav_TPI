@@ -160,6 +160,7 @@
             this.btnSearchType.TabIndex = 2;
             this.btnSearchType.Text = "Buscar";
             this.btnSearchType.UseVisualStyleBackColor = true;
+            this.btnSearchType.Click += new System.EventHandler(this.btnSearchType_Click);
             // 
             // btnCleanType
             // 
@@ -173,11 +174,12 @@
             this.btnCleanType.TabIndex = 3;
             this.btnCleanType.Text = "Limpiar";
             this.btnCleanType.UseVisualStyleBackColor = true;
+            this.btnCleanType.Click += new System.EventHandler(this.btnCleanType_Click);
             // 
             // searchPanel
             // 
             this.searchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.searchPanel.Location = new System.Drawing.Point(52, 74);
+            this.searchPanel.Location = new System.Drawing.Point(97, 52);
             this.searchPanel.Name = "searchPanel";
             this.searchPanel.Size = new System.Drawing.Size(301, 299);
             this.searchPanel.TabIndex = 87;
@@ -218,6 +220,7 @@
             this.btnTypeLoad.TabIndex = 6;
             this.btnTypeLoad.Text = "Modificar";
             this.btnTypeLoad.UseVisualStyleBackColor = true;
+            this.btnTypeLoad.Click += new System.EventHandler(this.btnTypeLoad_Click);
             // 
             // btnSearchType2
             // 
@@ -231,6 +234,7 @@
             this.btnSearchType2.TabIndex = 74;
             this.btnSearchType2.Text = "Buscar";
             this.btnSearchType2.UseVisualStyleBackColor = true;
+            this.btnSearchType2.Click += new System.EventHandler(this.btnSearchType2_Click);
             // 
             // VehicleType_Modify
             // 

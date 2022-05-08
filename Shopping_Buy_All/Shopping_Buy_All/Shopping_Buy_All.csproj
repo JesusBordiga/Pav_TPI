@@ -108,6 +108,13 @@
     <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Modify.Designer.cs">
       <DependentUpon>VehicleType_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM Vehiculos\Vehicle_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Vehiculos\Vehicle_Load.Designer.cs">
+      <DependentUpon>Vehicle_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Automovil.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\TipoComercio.cs" />
@@ -163,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM TipoVehiculo\VehicleType_Modify.resx">
       <DependentUpon>VehicleType_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Vehiculos\Vehicle_Load.resx">
+      <DependentUpon>Vehicle_Load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
@@ -221,7 +231,6 @@
     <Folder Include="ABMS\ABM TipoEstadoCivil\" />
     <Folder Include="ABMS\ABM TipoSexo\" />
     <Folder Include="ABMS\ABM Usuario\" />
-    <Folder Include="ABMS\ABM Vehiculos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

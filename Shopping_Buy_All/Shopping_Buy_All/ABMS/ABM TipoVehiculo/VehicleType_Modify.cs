@@ -81,7 +81,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             try
             {
                SqlCommand cmd = new SqlCommand();
-               string consulta = "SELECT * FROM TipoAuto WHERE Codigo_TipoVehiculo like @codigoTipoVehiculo AND Borrado like 0";
+               string consulta = "SELECT * FROM TipoAuto WHERE Cod_tipo like @codigoTipoVehiculo AND Borrado like 0";
 
                cmd.Parameters.Clear();
                cmd.Parameters.AddWithValue("@codigoTipoVehiculo", Code);
@@ -94,25 +94,21 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
                SqlDataReader DataReader = cmd.ExecuteReader();
                if (DataReader != null && DataReader.Read())
                {
-                tipoVehiculo.CodigoTipoVehiculo = int.Parse(DataReader["Codigo_TipoVehiculo"].ToString());
-                tipoVehiculo.NombreTipoVehiculo = DataReader["NombreTipoVehiculo"].ToString();
-                        
-
-                }
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-                finally
-                {
-                    cn.Close();
-                }
-                return tipoVehiculo;
-
-
+                tipoVehiculo.CodigoTipoVehiculo = int.Parse(DataReader["Cod_tipo"].ToString());
+                tipoVehiculo.NombreTipoVehiculo = DataReader["Nombre"].ToString();
+               }
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return tipoVehiculo;
+        }
 
         private TipoVehiculo ObtenerDatosTipoVehiculo()
         {
