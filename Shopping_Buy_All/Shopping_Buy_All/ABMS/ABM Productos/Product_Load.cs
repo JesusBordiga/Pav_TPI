@@ -40,6 +40,7 @@ namespace Shopping_Buy_All.Productos
                 SqlCommand comand = new SqlCommand();
                 string consulta = "Select * FROM Productos WHERE Borrado = 0";
 
+
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
                 comand.CommandText = consulta;
@@ -75,38 +76,57 @@ namespace Shopping_Buy_All.Productos
 
             return p;
         }
-
-        private void btnCargarProducto_Click(object sender, EventArgs e)
+        private bool ValidarProducto()
         {
-            Producto p = ObtenerDatosProducto();
-            bool resultado = Agregar_Producto(p);
-            if (resultado)
+            if (textNameProduct.Text.Trim().Equals(""))
             {
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = (
-                      " |Nombre: " + p.NombreProducto + "|" + "\n"
-                    + " |Precio: " + p.PrecioProducto + "|" + "\n");
-
-                string titulo = "Información de Carga";
-
-                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                if (result == DialogResult.OK)
-                {
-                    MessageBox.Show("Producto agregado con éxito!");
-                    Clean();
-                    CargarTablaProductos();
-                }
-                else
-                {
-                    textNameProduct.Focus();
-                }
+                MessageBox.Show("Error! Cargar Nombre de producto");
+                textNameProduct.Focus();
+                return false;
+            }
+            else if (textPrice.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Error! Cargar precio de producto");
+                textNameProduct.Focus();
+                return false;
             }
             else
             {
-                MessageBox.Show("Error al cargar el Producto! \n" +
-                        "Complete los campos por favor!");
+                return true;
             }
+        }
+
+        private void btnCargarProducto_Click(object sender, EventArgs e)
+        {
+            if (ValidarProducto())
+            {
+                Producto p = ObtenerDatosProducto();
+                bool resultado = Agregar_Producto(p);
+                if (resultado)
+                {
+                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                    String mensajeCarga = (
+                          " |Nombre: " + p.NombreProducto + "|" + "\n"
+                        + " |Precio: " + "$" + p.PrecioProducto + "|" + "\n");
+
+                    string titulo = "Información de Carga";
+
+                    DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                    if (result == DialogResult.OK)
+                    {
+                        MessageBox.Show("Producto agregado con éxito!");
+                        Clean();
+                        CargarTablaProductos();
+                    }
+                    else
+                    {
+                        textNameProduct.Focus();
+                    }
+                }
+            }
+            
+            
         }
 
         private bool Agregar_Producto(Producto product)
