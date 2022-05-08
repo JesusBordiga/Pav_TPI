@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textCodeType = new System.Windows.Forms.TextBox();
             this.btnSearchType = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
             this.tablaTipoVehiculo = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.textNameType = new System.Windows.Forms.TextBox();
             this.btnDeleteType = new System.Windows.Forms.Button();
             this.btnSerachType2 = new System.Windows.Forms.Button();
             this.SearchPanel = new System.Windows.Forms.PictureBox();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoVehiculo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +57,7 @@
             this.label1.Location = new System.Drawing.Point(47, 59);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(315, 33);
+            this.label1.Size = new System.Drawing.Size(307, 32);
             this.label1.TabIndex = 81;
             this.label1.Text = "Eliminar tipo vehiculo";
             // 
@@ -95,6 +96,7 @@
             this.btnSearchType.TabIndex = 76;
             this.btnSearchType.Text = "Buscar";
             this.btnSearchType.UseVisualStyleBackColor = true;
+            this.btnSearchType.Click += new System.EventHandler(this.btnSerachType2_Click);
             // 
             // btnClean
             // 
@@ -108,6 +110,7 @@
             this.btnClean.TabIndex = 77;
             this.btnClean.Text = "Limpiar";
             this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click_1);
             // 
             // tablaTipoVehiculo
             // 
@@ -119,51 +122,34 @@
             this.tablaTipoVehiculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaTipoVehiculo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
-            this.nombre});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaTipoVehiculo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.nombre,
+            this.Borrado});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaTipoVehiculo.DefaultCellStyle = dataGridViewCellStyle11;
             this.tablaTipoVehiculo.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tablaTipoVehiculo.Location = new System.Drawing.Point(360, 42);
             this.tablaTipoVehiculo.Margin = new System.Windows.Forms.Padding(4);
             this.tablaTipoVehiculo.Name = "tablaTipoVehiculo";
             this.tablaTipoVehiculo.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaTipoVehiculo.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaTipoVehiculo.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.tablaTipoVehiculo.RowHeadersWidth = 51;
             this.tablaTipoVehiculo.RowTemplate.Height = 24;
             this.tablaTipoVehiculo.Size = new System.Drawing.Size(421, 382);
             this.tablaTipoVehiculo.TabIndex = 85;
             this.tablaTipoVehiculo.TabStop = false;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "cod_tipo";
-            this.codigo.HeaderText = "codigo";
-            this.codigo.MinimumWidth = 6;
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 125;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 125;
             // 
             // label3
             // 
@@ -200,6 +186,7 @@
             this.btnDeleteType.TabIndex = 90;
             this.btnDeleteType.Text = "Eliminar";
             this.btnDeleteType.UseVisualStyleBackColor = true;
+            this.btnDeleteType.Click += new System.EventHandler(this.btnDeleteType_Click);
             // 
             // btnSerachType2
             // 
@@ -213,16 +200,45 @@
             this.btnSerachType2.TabIndex = 91;
             this.btnSerachType2.Text = "Buscar";
             this.btnSerachType2.UseVisualStyleBackColor = true;
+            this.btnSerachType2.Click += new System.EventHandler(this.btnSearchType_Click_1);
             // 
             // SearchPanel
             // 
             this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.SearchPanel.Location = new System.Drawing.Point(379, 76);
+            this.SearchPanel.Location = new System.Drawing.Point(11, 102);
             this.SearchPanel.Margin = new System.Windows.Forms.Padding(4);
             this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(323, 306);
+            this.SearchPanel.Size = new System.Drawing.Size(333, 306);
             this.SearchPanel.TabIndex = 92;
             this.SearchPanel.TabStop = false;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "Cod_tipo";
+            this.codigo.HeaderText = "codigo";
+            this.codigo.MinimumWidth = 6;
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 125;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "Nombre";
+            this.nombre.HeaderText = "nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 125;
+            // 
+            // Borrado
+            // 
+            this.Borrado.DataPropertyName = "Borrado";
+            this.Borrado.HeaderText = "Borrado";
+            this.Borrado.MinimumWidth = 6;
+            this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
+            this.Borrado.Visible = false;
+            this.Borrado.Width = 125;
             // 
             // VehicleType_Delete
             // 
@@ -232,16 +248,16 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(787, 421);
-            this.Controls.Add(this.SearchPanel);
             this.Controls.Add(this.btnSerachType2);
+            this.Controls.Add(this.textCodeType);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.SearchPanel);
             this.Controls.Add(this.btnDeleteType);
             this.Controls.Add(this.textNameType);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tablaTipoVehiculo);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.btnSearchType);
-            this.Controls.Add(this.textCodeType);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MaximumSize = new System.Drawing.Size(805, 468);
@@ -250,6 +266,7 @@
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar tipo vehiculo";
+            this.Load += new System.EventHandler(this.TypeDelete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoVehiculo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).EndInit();
             this.ResumeLayout(false);
@@ -265,12 +282,13 @@
         private System.Windows.Forms.Button btnSearchType;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.DataGridView tablaTipoVehiculo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textNameType;
         private System.Windows.Forms.Button btnDeleteType;
         private System.Windows.Forms.Button btnSerachType2;
         private System.Windows.Forms.PictureBox SearchPanel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
     }
 }

@@ -82,10 +82,10 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM TipoAuto WHERE Codigo_TipoVehiculo like @codigoTipoVehiculo AND Borrado like 0";
+                string consulta = "SELECT * FROM TipoAuto WHERE Cod_tipo like @codigoTipoVehiculo AND Borrado like 0";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@codigoProducto", Code);
+                cmd.Parameters.AddWithValue("@codigoTipoVehiculo", Code);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
@@ -95,8 +95,8 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
                 SqlDataReader DataReader = cmd.ExecuteReader();
                 if (DataReader != null && DataReader.Read())
                 {
-                    typ.CodigoTipoVehiculo= int.Parse(DataReader["Codigo_Producto"].ToString());
-                    typ.NombreTipoVehiculo = DataReader["NombreProducto"].ToString();
+                    typ.CodigoTipoVehiculo= int.Parse(DataReader["Cod_tipo"].ToString());
+                    typ.NombreTipoVehiculo = DataReader["Nombre"].ToString();
 
                 }
             }
@@ -110,8 +110,6 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
                 cn.Close();
             }
             return typ;
-
-
         }
 
         private TipoVehiculo ObtenerDatosTipoVehiculo()
@@ -132,9 +130,9 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Productos SET Borrado = @borrado WHERE Codigo_Producto Like @codigoProducto AND Borrado like 0";
+                string consulta = "UPDATE TipoAuto SET Borrado = @borrado WHERE Cod_tipo Like @codigoTipo AND Borrado like 0";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@codigoProducto", Codigo);
+                cmd.Parameters.AddWithValue("@codigoTipo", Codigo);
                 cmd.Parameters.AddWithValue("@borrado", Borrado);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;

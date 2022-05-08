@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textCodeType = new System.Windows.Forms.TextBox();
             this.tablaTipoVehiculo = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearchType = new System.Windows.Forms.Button();
             this.btnCleanType = new System.Windows.Forms.Button();
             this.searchPanel = new System.Windows.Forms.PictureBox();
@@ -44,6 +42,9 @@
             this.textNameTypeVehicle = new System.Windows.Forms.TextBox();
             this.btnTypeLoad = new System.Windows.Forms.Button();
             this.btnSearchType2 = new System.Windows.Forms.Button();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoVehiculo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchPanel)).BeginInit();
             this.SuspendLayout();
@@ -91,69 +92,53 @@
             this.tablaTipoVehiculo.AllowUserToOrderColumns = true;
             this.tablaTipoVehiculo.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.tablaTipoVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaTipoVehiculo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaTipoVehiculo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tablaTipoVehiculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaTipoVehiculo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
-            this.nombre});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaTipoVehiculo.DefaultCellStyle = dataGridViewCellStyle8;
+            this.nombre,
+            this.Borrado});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaTipoVehiculo.DefaultCellStyle = dataGridViewCellStyle2;
             this.tablaTipoVehiculo.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tablaTipoVehiculo.Location = new System.Drawing.Point(360, 41);
+            this.tablaTipoVehiculo.Location = new System.Drawing.Point(395, 26);
             this.tablaTipoVehiculo.Margin = new System.Windows.Forms.Padding(4);
             this.tablaTipoVehiculo.Name = "tablaTipoVehiculo";
             this.tablaTipoVehiculo.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaTipoVehiculo.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaTipoVehiculo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.tablaTipoVehiculo.RowHeadersWidth = 51;
             this.tablaTipoVehiculo.RowTemplate.Height = 24;
-            this.tablaTipoVehiculo.Size = new System.Drawing.Size(421, 382);
+            this.tablaTipoVehiculo.Size = new System.Drawing.Size(388, 382);
             this.tablaTipoVehiculo.TabIndex = 86;
             this.tablaTipoVehiculo.TabStop = false;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "cod_tipo";
-            this.codigo.HeaderText = "codigo";
-            this.codigo.MinimumWidth = 6;
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 125;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 125;
+            this.tablaTipoVehiculo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaTipoVehiculo_CellContentClick);
             // 
             // btnSearchType
             // 
             this.btnSearchType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchType.ForeColor = System.Drawing.Color.White;
-            this.btnSearchType.Location = new System.Drawing.Point(144, 311);
+            this.btnSearchType.Location = new System.Drawing.Point(104, 311);
             this.btnSearchType.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchType.Name = "btnSearchType";
             this.btnSearchType.Size = new System.Drawing.Size(100, 28);
@@ -167,7 +152,7 @@
             this.btnCleanType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCleanType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCleanType.ForeColor = System.Drawing.Color.White;
-            this.btnCleanType.Location = new System.Drawing.Point(252, 311);
+            this.btnCleanType.Location = new System.Drawing.Point(212, 311);
             this.btnCleanType.Margin = new System.Windows.Forms.Padding(4);
             this.btnCleanType.Name = "btnCleanType";
             this.btnCleanType.Size = new System.Drawing.Size(100, 28);
@@ -179,9 +164,9 @@
             // searchPanel
             // 
             this.searchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.searchPanel.Location = new System.Drawing.Point(97, 52);
+            this.searchPanel.Location = new System.Drawing.Point(19, 109);
             this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(301, 299);
+            this.searchPanel.Size = new System.Drawing.Size(327, 299);
             this.searchPanel.TabIndex = 87;
             this.searchPanel.TabStop = false;
             // 
@@ -213,7 +198,7 @@
             this.btnTypeLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTypeLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTypeLoad.ForeColor = System.Drawing.Color.White;
-            this.btnTypeLoad.Location = new System.Drawing.Point(30, 380);
+            this.btnTypeLoad.Location = new System.Drawing.Point(65, 380);
             this.btnTypeLoad.Margin = new System.Windows.Forms.Padding(4);
             this.btnTypeLoad.Name = "btnTypeLoad";
             this.btnTypeLoad.Size = new System.Drawing.Size(100, 28);
@@ -227,14 +212,42 @@
             this.btnSearchType2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchType2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchType2.ForeColor = System.Drawing.Color.White;
-            this.btnSearchType2.Location = new System.Drawing.Point(138, 380);
+            this.btnSearchType2.Location = new System.Drawing.Point(173, 380);
             this.btnSearchType2.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchType2.Name = "btnSearchType2";
             this.btnSearchType2.Size = new System.Drawing.Size(100, 28);
             this.btnSearchType2.TabIndex = 74;
-            this.btnSearchType2.Text = "Buscar";
+            this.btnSearchType2.Text = "Cancelar";
             this.btnSearchType2.UseVisualStyleBackColor = true;
             this.btnSearchType2.Click += new System.EventHandler(this.btnSearchType2_Click);
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "cod_tipo";
+            this.codigo.HeaderText = "codigo";
+            this.codigo.MinimumWidth = 6;
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 80;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 125;
+            // 
+            // Borrado
+            // 
+            this.Borrado.DataPropertyName = "Borrado";
+            this.Borrado.HeaderText = "Borrado";
+            this.Borrado.MinimumWidth = 6;
+            this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
+            this.Borrado.Visible = false;
+            this.Borrado.Width = 125;
             // 
             // VehicleType_Modify
             // 
@@ -244,15 +257,15 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(787, 421);
-            this.Controls.Add(this.btnSearchType2);
-            this.Controls.Add(this.btnTypeLoad);
-            this.Controls.Add(this.textNameTypeVehicle);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCleanType);
             this.Controls.Add(this.btnSearchType);
             this.Controls.Add(this.textCodeType);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.searchPanel);
+            this.Controls.Add(this.btnSearchType2);
+            this.Controls.Add(this.btnTypeLoad);
+            this.Controls.Add(this.textNameTypeVehicle);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.tablaTipoVehiculo);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
@@ -274,8 +287,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textCodeType;
         private System.Windows.Forms.DataGridView tablaTipoVehiculo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.Button btnSearchType;
         private System.Windows.Forms.Button btnCleanType;
         private System.Windows.Forms.PictureBox searchPanel;
@@ -283,5 +294,8 @@
         private System.Windows.Forms.TextBox textNameTypeVehicle;
         private System.Windows.Forms.Button btnTypeLoad;
         private System.Windows.Forms.Button btnSearchType2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
     }
 }

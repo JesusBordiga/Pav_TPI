@@ -77,7 +77,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
-            TipoVehiculo tipoVehiculo = new TipoVehiculo();
+            TipoVehiculo tipoVehiculo = null;
             try
             {
                SqlCommand cmd = new SqlCommand();
@@ -92,10 +92,11 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
                cn.Open();
                cmd.Connection = cn;
                SqlDataReader DataReader = cmd.ExecuteReader();
-               if (DataReader != null && DataReader.Read())
+               if (DataReader != null && DataReader.HasRows && DataReader.Read())
                {
-                tipoVehiculo.CodigoTipoVehiculo = int.Parse(DataReader["Cod_tipo"].ToString());
-                tipoVehiculo.NombreTipoVehiculo = DataReader["Nombre"].ToString();
+                    tipoVehiculo = new TipoVehiculo();
+                    tipoVehiculo.CodigoTipoVehiculo = int.Parse(DataReader["Cod_tipo"].ToString());
+                    tipoVehiculo.NombreTipoVehiculo = DataReader["Nombre"].ToString();
                }
             }
             catch (Exception)
@@ -128,10 +129,10 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Productos SET NombreProducto = @nombreProducto , Precio = @precio WHERE Codigo_Producto Like @codigoProducto";
+                string consulta = "UPDATE TipoAuto SET Nombre = @nombre WHERE Cod_tipo Like @codigoTipoVehiculo";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@codigoTipoVehiculo", typ.CodigoTipoVehiculo);
-                cmd.Parameters.AddWithValue("@nombreProducto", typ.NombreTipoVehiculo);
+                cmd.Parameters.AddWithValue("@nombre", typ.NombreTipoVehiculo);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -139,21 +140,21 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
                 cmd.Connection = cn;
                 cmd.ExecuteNonQuery();
                 resultado = true;
-                }
-                catch (SqlException)
-                {
-                    throw;
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    cn.Close();
-                }
-                return resultado;
             }
+            catch (SqlException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
+        }
 
         private void btnSearchType_Click(object sender, EventArgs e)
         {
@@ -164,10 +165,19 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             else
             {
                 TipoVehiculo tv = Buscar_TipoVehiculo (textCodeType.Text);
-                Cargar_Campos(tv);
-                searchPanel.Visible = false;
-                btnSearchType.Visible = false;
-                btnSearchType2.Visible = true;
+                if (tv != null)
+                {
+                    Cargar_Campos(tv);
+                    searchPanel.Visible = false;
+                    btnSearchType.Visible = false;
+                    btnSearchType2.Visible = true;
+                    textCodeType.Enabled = false;
+                    btnCleanType.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show($"No se encontro el tipo de vehiculo con el codigo {textCodeType.Text}");
+                }
             }
         }
 
@@ -195,11 +205,13 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
 
                 if (result == DialogResult.OK)
                 {
-                    MessageBox.Show("Producto agregado con éxito!");
+                    MessageBox.Show("Producto modificado con éxito!");
                     Clean();
-                    searchPanel.Visible = false;
-                    btnSearchType.Visible = false;
-                    btnSearchType2.Visible = true;
+                    searchPanel.Visible = true;
+                    btnSearchType.Visible = true;
+                    btnCleanType.Visible = true;
+                    textCodeType.Clear();
+                    textCodeType.Enabled = true;
                     CargarTablaTipoVehiculo();
                 }
                 else
@@ -219,6 +231,8 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             searchPanel.Visible = true;
             btnSearchType.Visible = true;
             btnSearchType2.Visible = false;
+            textCodeType.Enabled = true;
+            btnCleanType.Visible = true;
         }
         private void tablaTipoVehiculo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -230,6 +244,8 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             searchPanel.Visible = false;
             btnSearchType.Visible = false;
             btnSearchType2.Visible = true;
+            textCodeType.Enabled = false;
+            btnCleanType.Visible = false;
         }
 
     }
