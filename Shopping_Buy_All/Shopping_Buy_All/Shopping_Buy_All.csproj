@@ -78,6 +78,24 @@
     <Compile Include="ABMS\ABM Productos\Product_Modify.Designer.cs">
       <DependentUpon>Product_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM Sexo\Sexo_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Sexo\Sexo_Delete.Designer.cs">
+      <DependentUpon>Sexo_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Sexo\Sexo_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Sexo\Sexo_Load.Designer.cs">
+      <DependentUpon>Sexo_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Sexo\Sexo_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Sexo\Sexo_Modify.Designer.cs">
+      <DependentUpon>Sexo_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\TipoComercio.cs" />
@@ -160,6 +178,15 @@
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Modify.resx">
       <DependentUpon>Product_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Sexo\Sexo_Delete.resx">
+      <DependentUpon>Sexo_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Sexo\Sexo_Load.resx">
+      <DependentUpon>Sexo_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Sexo\Sexo_Modify.resx">
+      <DependentUpon>Sexo_Modify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logged\Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,7 +263,6 @@
     <Folder Include="ABMS\ABM TipoComercio\" />
     <Folder Include="ABMS\ABM TipoDocumento\" />
     <Folder Include="ABMS\ABM TipoEstadoCivil\" />
-    <Folder Include="ABMS\ABM TipoSexo\" />
     <Folder Include="ABMS\ABM TipoVehiculo\" />
     <Folder Include="ABMS\ABM Usuario\" />
     <Folder Include="ABMS\ABM Vehiculos\" />
