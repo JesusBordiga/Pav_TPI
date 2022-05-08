@@ -84,6 +84,12 @@
     <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Load.Designer.cs">
       <DependentUpon>VehicleType_Load.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM Usuario\User_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Usuario\User_Delete.Designer.cs">
+      <DependentUpon>User_Delete.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM Usuario\User_Load.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM TipoVehiculo\VehicleType_Load.resx">
       <DependentUpon>VehicleType_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Usuario\User_Delete.resx">
+      <DependentUpon>User_Delete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Usuario\User_Load.resx">
       <DependentUpon>User_Load.cs</DependentUpon>

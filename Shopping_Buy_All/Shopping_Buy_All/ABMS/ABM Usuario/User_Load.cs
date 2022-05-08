@@ -24,6 +24,7 @@ namespace Shopping_Buy_All
         {
             Clean();
         }
+
         private void Clean()
         {
             textUsernameUser.Text = "";
@@ -31,6 +32,7 @@ namespace Shopping_Buy_All
             textConfirmPasswordUser.Text = "";
             CargarTablaUsuarios();
         }
+
         private void CargarTablaUsuarios()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -64,6 +66,7 @@ namespace Shopping_Buy_All
                 cn.Close();
             }
         }
+
         private User ObtenerDatosUsuario()
         {
             User u = new User();
