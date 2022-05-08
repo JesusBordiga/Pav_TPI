@@ -86,7 +86,7 @@ namespace Shopping_Buy_All.ABM_Sexo
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoSexo where Borrado = 0";
+                string consulta = "select TipoSexo, NombreSexo from TipoSexo where Borrado = 0";
                 command.Parameters.Clear();
                 command.CommandType = CommandType.Text;
                 command.CommandText = consulta;

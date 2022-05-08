@@ -42,7 +42,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoEstadoCivil where Borrado = 0";
+                string consulta = "select TipoEstadoCivil, NombreEstadoCivil from TipoEstadoCivil where Borrado = 0";
                 command.Parameters.Clear();
                 command.CommandType = CommandType.Text;
                 command.CommandText = consulta;

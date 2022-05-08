@@ -42,7 +42,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoTarjeta where Borrado = 0";
+                string consulta = "select idTipo, Nombre from TipoTarjeta where Borrado = 0";
                 command.Parameters.Clear();
                 command.CommandType = CommandType.Text;
                 command.CommandText = consulta;

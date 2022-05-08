@@ -87,7 +87,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoDocumento where Borrado = 0";
+                string consulta = "select TipoDocumento, NombreDocumento from TipoDocumento where Borrado = 0";
                 command.Parameters.Clear();
                 command.CommandType = CommandType.Text;
                 command.CommandText = consulta;
