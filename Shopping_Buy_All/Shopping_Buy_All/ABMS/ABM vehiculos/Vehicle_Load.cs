@@ -107,7 +107,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             }
         }
 
-        private Automovil ObtenerDatosCliente()
+        private Automovil ObtenerDatosVehiculos()
         {
             Automovil a = new Automovil();
             //Tipo de documento
@@ -116,81 +116,87 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             //Nro de documento
             a.DocumentoPropietario = textNumberDoc.Text.Trim();
 
-
-            /* ---- REVISAR ----  
-            //Apellido Cliente
-            a. = textSurnameClient.Text.Trim();
+            //Patente Vehiculo
+            a.PatenteAutomovil = textPatente.Text.Trim();
 
             //Nombre de Cliente
-            a.NombreCliente = textNameClient.Text.Trim();
-
-            //Calle de Cliente
-            a.CalleCliente = textStreetClient.Text.Trim();
-
-            //Numero de calle de Cliente
-            a.NroCalleCliente = int.Parse(textStreetHeight.Text.Trim());
-
-            //Estado civil de cliente
-            if (radioButtonSingle.Checked && radioButtonMarried.Checked)
-            {
-                MessageBox.Show("Error al elegir estado Civil de Cliente! \n" +
-                        "Seleccione solo una opción!");
-            }
-            else
-            {
-                if (radioButtonSingle.Checked)
-                {
-                    a.EstadoCivilCliente = 1;
-                }
-                else if (radioButtonMarried.Checked)
-                {
-                    a.EstadoCivilCliente = 2;
-                }
-                else
-                {
-                    MessageBox.Show("Error al elegir estado Civil de Cliente! \n" +
-                        "Complete los campos por favor!");
-                    radioButtonSingle.Focus();
-                }
-            }
-
-
-            //Sexo de cliente
-            if (radioButtonMale.Checked && radioButtonFemale.Checked && radioButtonOther.Checked
-                || radioButtonMale.Checked && radioButtonFemale.Checked
-                || radioButtonFemale.Checked && radioButtonOther.Checked
-                || radioButtonMale.Checked && radioButtonOther.Checked)
-            {
-                MessageBox.Show("Error al elegir Sexo de Cliente! \n" +
-                        "Seleccione solo 1 sexo por favor!");
-            }
-            else
-            {
-                if (radioButtonMale.Checked)
-                {
-                    a.SexoCliente = 1;
-                }
-                else if (radioButtonFemale.Checked)
-                {
-                    a.SexoCliente = 2;
-                }
-                else if (radioButtonOther.Checked)
-                {
-                    a.SexoCliente = 3;
-                }
-                else
-                {
-                    MessageBox.Show("Error al elegir Sexo de Cliente! \n" +
-                        "Complete los campos por favor!");
-                    radioButtonMale.Focus();
-                }
-            }
-            //Fecha de nacimiento de Cliente
-            a.FechaNacimientoCliente = DateTime.Parse(textDateBirthDay.Text);
-
-            */
+            a.ModeloAutomovil = textNameModelo.Text.Trim();
 
             return a;
+        }
+
+        private void btnVehicleLoad_Click(object sender, EventArgs e)
+        {
+            Automovil a = ObtenerDatosVehiculos();
+            bool resultado = Agregar_Vehiculo(a);
+            if (resultado)
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                String mensajeCarga = (
+                      " |Tipo Documento: " + a.TipoDocumentoPropietario + " |Numero Documento: " + a.DocumentoPropietario + "|" + "\n"
+                    + " |Patente del vehiculo: " + a.PatenteAutomovil + " |Modelo del vehiculo: " + a.ModeloAutomovil + "|" + "\n");
+        
+                string titulo = "Información de Carga";
+
+                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                if (result == DialogResult.OK)
+                {
+                    MessageBox.Show("Cliente agregado con éxito!");
+                    Clean();
+                    CargarTablaVehiculos();
+                    CargarTiposDocumentos();
+
+
+                }
+                else
+                {
+                    comboBoxDocType.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar el Cliente! \n" +
+                        "Complete los campos por favor!");
+            }
+        }
+
+        private bool Agregar_Vehiculo(Automovil a)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            bool resultado = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "INSERT INTO Automovil (TipoDoc,NroDoc,Patente,Modelo)" +
+                                               "Values(@tipoDoc,@nroDoc, @patente, @modelo)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@tipoDoc", a.TipoDocumentoPropietario);
+                cmd.Parameters.AddWithValue("@nroDoc", a.DocumentoPropietario);
+                cmd.Parameters.AddWithValue("@patente", a.PatenteAutomovil);
+                cmd.Parameters.AddWithValue("@nombres", a.ModeloAutomovil);
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                resultado = true;
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
+
         }
     }
 }

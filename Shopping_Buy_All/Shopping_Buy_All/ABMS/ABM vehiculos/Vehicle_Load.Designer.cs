@@ -43,7 +43,7 @@
             this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnClientLoad = new System.Windows.Forms.Button();
+            this.btnVehicleLoad = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaVehiculo)).BeginInit();
@@ -226,18 +226,18 @@
             this.Modelo.ReadOnly = true;
             this.Modelo.Width = 125;
             // 
-            // btnClientLoad
+            // btnVehicleLoad
             // 
-            this.btnClientLoad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClientLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientLoad.ForeColor = System.Drawing.Color.White;
-            this.btnClientLoad.Location = new System.Drawing.Point(107, 453);
-            this.btnClientLoad.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClientLoad.Name = "btnClientLoad";
-            this.btnClientLoad.Size = new System.Drawing.Size(100, 28);
-            this.btnClientLoad.TabIndex = 14;
-            this.btnClientLoad.Text = "Cargar";
-            this.btnClientLoad.UseVisualStyleBackColor = true;
+            this.btnVehicleLoad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVehicleLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehicleLoad.ForeColor = System.Drawing.Color.White;
+            this.btnVehicleLoad.Location = new System.Drawing.Point(107, 453);
+            this.btnVehicleLoad.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVehicleLoad.Name = "btnVehicleLoad";
+            this.btnVehicleLoad.Size = new System.Drawing.Size(100, 28);
+            this.btnVehicleLoad.TabIndex = 14;
+            this.btnVehicleLoad.Text = "Cargar";
+            this.btnVehicleLoad.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
@@ -275,7 +275,7 @@
             this.ClientSize = new System.Drawing.Size(1367, 543);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnClientLoad);
+            this.Controls.Add(this.btnVehicleLoad);
             this.Controls.Add(this.tablaVehiculo);
             this.Controls.Add(this.textNameModelo);
             this.Controls.Add(this.label2);
@@ -312,7 +312,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Patente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
-        private System.Windows.Forms.Button btnClientLoad;
+        private System.Windows.Forms.Button btnVehicleLoad;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label15;
     }

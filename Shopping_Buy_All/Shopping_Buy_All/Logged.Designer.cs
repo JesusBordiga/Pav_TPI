@@ -170,18 +170,21 @@
             this.altaAutomovilToolStripMenuItem.Name = "altaAutomovilToolStripMenuItem";
             this.altaAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
             this.altaAutomovilToolStripMenuItem.Text = "Alta automovil";
+            this.altaAutomovilToolStripMenuItem.Click += new System.EventHandler(this.altaAutomovilToolStripMenuItem_Click);
             // 
             // modificacionAutomovilToolStripMenuItem
             // 
             this.modificacionAutomovilToolStripMenuItem.Name = "modificacionAutomovilToolStripMenuItem";
             this.modificacionAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
             this.modificacionAutomovilToolStripMenuItem.Text = "Modificacion Automovil";
+            this.modificacionAutomovilToolStripMenuItem.Click += new System.EventHandler(this.modificacionAutomovilToolStripMenuItem_Click);
             // 
             // bajaAutomovilToolStripMenuItem
             // 
             this.bajaAutomovilToolStripMenuItem.Name = "bajaAutomovilToolStripMenuItem";
             this.bajaAutomovilToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
             this.bajaAutomovilToolStripMenuItem.Text = "Baja automovil";
+            this.bajaAutomovilToolStripMenuItem.Click += new System.EventHandler(this.bajaAutomovilToolStripMenuItem_Click);
             // 
             // profesionesToolStripMenuItem
             // 
