@@ -20,18 +20,36 @@ namespace Shopping_Buy_All
         }
         private void btnAltaLocal_btn(object sender, EventArgs e)
         {
-            Client_Load load = new Client_Load();
-            load.ShowDialog();
+            Local_Load Localload = new Local_Load();
+            Localload.ShowDialog();
         }
         private void btnModificarLocal_btn(object sender, EventArgs e)
         {
-            Client_Modify modify = new Client_Modify();
-            modify.ShowDialog();
+            Local_Modify Localmodify = new Local_Modify();
+            Localmodify.ShowDialog();
         }
         private void btnEliminarLocal_Click(object sender, EventArgs e)
         {
-            Client_Delete delete = new Client_Delete();
-            delete.ShowDialog();
+            Local_Delete Localdelete = new Local_Delete();
+            Localdelete.ShowDialog();
+        }
+
+        private void btnAltaTipoComercio_Click(object sender, EventArgs e)
+        {
+            TipoComercio_Load TipoComercioload = new TipoComercio_Load();
+            TipoComercioload.ShowDialog();
+        }
+
+        private void btnModificarTipoComercio_Click(object sender, EventArgs e)
+        {
+            TipoComercio_Modify TipoComerciomodify = new TipoComercio_Modify();
+            TipoComerciomodify.ShowDialog();
+        }
+
+        private void btnEliminarTipoComercio_Click(object sender, EventArgs e)
+        {
+            TipoComercio_Delete TipoComerciodelete = new TipoComercio_Delete();
+            TipoComerciodelete.ShowDialog();
         }
     }
 }

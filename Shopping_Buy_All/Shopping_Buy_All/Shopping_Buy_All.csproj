@@ -66,6 +66,24 @@
     <Compile Include="ABMS\ABM Estado Civil\EstadoCivil_Modify.designer.cs">
       <DependentUpon>EstadoCivil_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Delete.Designer.cs">
+      <DependentUpon>Local_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Load.Designer.cs">
+      <DependentUpon>Local_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Modify.Designer.cs">
+      <DependentUpon>Local_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +131,24 @@
     </Compile>
     <Compile Include="ABMS\ABM Sexo\Sexo_Modify.Designer.cs">
       <DependentUpon>Sexo_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Delete.Designer.cs">
+      <DependentUpon>TipoComercio_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Load.Designer.cs">
+      <DependentUpon>TipoComercio_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Modify.Designer.cs">
+      <DependentUpon>TipoComercio_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\ABM TipoDocumento\TipoDoc_Delete.cs">
       <SubType>Form</SubType>
@@ -295,6 +331,15 @@
     <EmbeddedResource Include="ABMS\ABM Estado Civil\EstadoCivil_Modify.resx">
       <DependentUpon>EstadoCivil_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Local\Local_Delete.resx">
+      <DependentUpon>Local_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Local\Local_Load.resx">
+      <DependentUpon>Local_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Local\Local_Modify.resx">
+      <DependentUpon>Local_Modify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Delete.resx">
       <DependentUpon>Product_Delete.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +354,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Sexo\Sexo_Modify.resx">
       <DependentUpon>Sexo_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Delete.resx">
+      <DependentUpon>TipoComercio_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Load.resx">
+      <DependentUpon>TipoComercio_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Modify.resx">
+      <DependentUpon>TipoComercio_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM TipoDocumento\TipoDoc_Delete.resx">
       <DependentUpon>TipoDoc_Delete.cs</DependentUpon>
@@ -421,14 +475,12 @@
     <None Include="Resources\menu-editor.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ABMS\ABM Local\" />
     <Folder Include="ABMS\ABM MarcaTarjeta\" />
     <Folder Include="ABMS\ABM MarcaVehiculo\" />
     <Folder Include="ABMS\ABM Modelos\" />
     <Folder Include="ABMS\ABM Profesiones\" />
     <Folder Include="ABMS\ABM Rubros\" />
     <Folder Include="ABMS\ABM Tarjetas\" />
-    <Folder Include="ABMS\ABM TipoComercio\" />
     <Folder Include="ABMS\ABM Vehiculos\" />
   </ItemGroup>
   <ItemGroup>

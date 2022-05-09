@@ -43,9 +43,9 @@
             this.btnAltaLocal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAltaLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltaLocal.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAltaLocal.Location = new System.Drawing.Point(57, 31);
+            this.btnAltaLocal.Location = new System.Drawing.Point(38, 31);
             this.btnAltaLocal.Name = "btnAltaLocal";
-            this.btnAltaLocal.Size = new System.Drawing.Size(126, 26);
+            this.btnAltaLocal.Size = new System.Drawing.Size(145, 26);
             this.btnAltaLocal.TabIndex = 0;
             this.btnAltaLocal.Text = "Alta Local";
             this.btnAltaLocal.UseVisualStyleBackColor = false;
@@ -57,9 +57,9 @@
             this.btnModificarLocal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificarLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarLocal.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnModificarLocal.Location = new System.Drawing.Point(57, 77);
+            this.btnModificarLocal.Location = new System.Drawing.Point(38, 77);
             this.btnModificarLocal.Name = "btnModificarLocal";
-            this.btnModificarLocal.Size = new System.Drawing.Size(126, 26);
+            this.btnModificarLocal.Size = new System.Drawing.Size(145, 26);
             this.btnModificarLocal.TabIndex = 1;
             this.btnModificarLocal.Text = "Modificar Local";
             this.btnModificarLocal.UseVisualStyleBackColor = false;
@@ -71,9 +71,9 @@
             this.btnEliminarLocal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminarLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarLocal.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEliminarLocal.Location = new System.Drawing.Point(57, 123);
+            this.btnEliminarLocal.Location = new System.Drawing.Point(38, 123);
             this.btnEliminarLocal.Name = "btnEliminarLocal";
-            this.btnEliminarLocal.Size = new System.Drawing.Size(126, 26);
+            this.btnEliminarLocal.Size = new System.Drawing.Size(145, 26);
             this.btnEliminarLocal.TabIndex = 2;
             this.btnEliminarLocal.Text = "Eliminar Local";
             this.btnEliminarLocal.UseVisualStyleBackColor = false;
@@ -87,10 +87,11 @@
             this.btnEliminarTipoComercio.ForeColor = System.Drawing.SystemColors.Control;
             this.btnEliminarTipoComercio.Location = new System.Drawing.Point(214, 123);
             this.btnEliminarTipoComercio.Name = "btnEliminarTipoComercio";
-            this.btnEliminarTipoComercio.Size = new System.Drawing.Size(126, 26);
+            this.btnEliminarTipoComercio.Size = new System.Drawing.Size(152, 26);
             this.btnEliminarTipoComercio.TabIndex = 31;
             this.btnEliminarTipoComercio.Text = "Eliminar Tipo Comercio";
             this.btnEliminarTipoComercio.UseVisualStyleBackColor = false;
+            this.btnEliminarTipoComercio.Click += new System.EventHandler(this.btnEliminarTipoComercio_Click);
             // 
             // btnModificarTipoComercio
             // 
@@ -100,10 +101,11 @@
             this.btnModificarTipoComercio.ForeColor = System.Drawing.SystemColors.Control;
             this.btnModificarTipoComercio.Location = new System.Drawing.Point(214, 77);
             this.btnModificarTipoComercio.Name = "btnModificarTipoComercio";
-            this.btnModificarTipoComercio.Size = new System.Drawing.Size(126, 26);
+            this.btnModificarTipoComercio.Size = new System.Drawing.Size(152, 26);
             this.btnModificarTipoComercio.TabIndex = 30;
             this.btnModificarTipoComercio.Text = "Modificar Tipo Comercio";
             this.btnModificarTipoComercio.UseVisualStyleBackColor = false;
+            this.btnModificarTipoComercio.Click += new System.EventHandler(this.btnModificarTipoComercio_Click);
             // 
             // btnAltaTipoComercio
             // 
@@ -113,10 +115,11 @@
             this.btnAltaTipoComercio.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAltaTipoComercio.Location = new System.Drawing.Point(214, 31);
             this.btnAltaTipoComercio.Name = "btnAltaTipoComercio";
-            this.btnAltaTipoComercio.Size = new System.Drawing.Size(126, 26);
+            this.btnAltaTipoComercio.Size = new System.Drawing.Size(152, 26);
             this.btnAltaTipoComercio.TabIndex = 29;
             this.btnAltaTipoComercio.Text = "Alta Tipo Comercio";
             this.btnAltaTipoComercio.UseVisualStyleBackColor = false;
+            this.btnAltaTipoComercio.Click += new System.EventHandler(this.btnAltaTipoComercio_Click);
             // 
             // Locales_Ventana
             // 
