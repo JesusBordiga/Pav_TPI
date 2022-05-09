@@ -54,6 +54,18 @@
     <Compile Include="ABMS\ABM Local\Local_Load.Designer.cs">
       <DependentUpon>Local_Load.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Delete.Designer.cs">
+      <DependentUpon>Local_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Modify.Designer.cs">
+      <DependentUpon>Local_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +96,12 @@
     <Compile Include="ABMS\ABM Productos\Product_Modify.Designer.cs">
       <DependentUpon>Product_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Delete.Designer.cs">
+      <DependentUpon>TipoComercio_Delete.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +114,7 @@
     <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Load.Designer.cs">
       <DependentUpon>TipoComercio_Load.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\AccesoADatos\AD_Local.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_TipoComercio.cs" />
     <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Load.cs">
       <SubType>Form</SubType>
@@ -141,11 +160,20 @@
     <EmbeddedResource Include="ABMS\ABM Local\Local_Load.resx">
       <DependentUpon>Local_Load.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Local\Local_Delete.resx">
+      <DependentUpon>Local_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Local\Local_Modify.resx">
+      <DependentUpon>Local_Modify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Delete.resx">
       <DependentUpon>Product_Delete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Modify.resx">
       <DependentUpon>Product_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Delete.resx">
+      <DependentUpon>TipoComercio_Delete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Modify.resx">
       <DependentUpon>TipoComercio_Modify.cs</DependentUpon>

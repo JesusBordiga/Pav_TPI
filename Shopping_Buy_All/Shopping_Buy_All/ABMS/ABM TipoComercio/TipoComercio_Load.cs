@@ -45,7 +45,7 @@ namespace Shopping_Buy_All
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Error al obtener Tipo Comercio");
             }
             
         }
@@ -89,7 +89,7 @@ namespace Shopping_Buy_All
 
                         if (result == DialogResult.OK)
                         {
-                            bool resultado = AD_TipoComercio.Modificar_TipoComercio(comercio);
+                            bool resultado = AD_TipoComercio.Modificar_TipoComercioANoBorrado(comercio);
 
                             if (resultado)
                             {
@@ -98,8 +98,7 @@ namespace Shopping_Buy_All
                             }
                             else
                             {
-                                MessageBox.Show("Error al cargar el TipoComercio! \n" +
-                                        "Complete los campos por favor!");
+                                MessageBox.Show("Error al cargar el Tipo Comercio");
                             }
 
                         }
@@ -128,8 +127,7 @@ namespace Shopping_Buy_All
                             }
                             else
                             {
-                                MessageBox.Show("Error al cargar el TipoComercio! \n" +
-                                        "Complete los campos por favor!");
+                                MessageBox.Show("Error al cargar el Tipo Comercio");
                             }
                             
                         }

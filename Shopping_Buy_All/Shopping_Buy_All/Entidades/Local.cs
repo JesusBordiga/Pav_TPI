@@ -25,5 +25,10 @@ namespace Shopping_Buy_All.Entidades
             this.NombreLocal = nombreLocal;
             this.TipoComercio = tipoComercio;
         }
+
+        public Local()
+        {
+
+        }
     }
 }

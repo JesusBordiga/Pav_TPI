@@ -13,15 +13,46 @@ using Shopping_Buy_All.Entidades;
 
 namespace Shopping_Buy_All
 {
-    public partial class TipoComercio_Modify : Form
+    public partial class TipoComercio_Delete : Form
     {
-        public TipoComercio_Modify()
+        public TipoComercio_Delete()
         {
             InitializeComponent();
+        }
+        private void Client_Delete_Load(object sender, EventArgs e)
+        {
+            btnBuscar.Visible = true;
+            btnDeleteTipoComercio.Visible = false;
+
             CargarTablaTipoComercio();
         }
+        private void CargarTablaTipoComercio()
+        {
+            try
+            {
+                tablaTipoComercio.DataSource = AD_TipoComercio.ObtenerTablaTipoComercioReducida();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        private void Clean()
+        {
+            txtId.Text = "";
+            txtNombreTipoComercio.Text = "";
+        }
 
-        private void btnBuscarCliente_click(object sender, EventArgs e)
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            Clean();
+            CargarTablaTipoComercio();
+            btnDeleteTipoComercio.Visible = false;
+            btnBuscar.Visible = true;
+            txtId.Enabled = true;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             if (txtId.Text.Equals("") && txtNombreTipoComercio.Text.Equals(""))
             {
@@ -37,8 +68,9 @@ namespace Shopping_Buy_All
                     if (existe)
                     {
                         txtId.Enabled = false;
-                        btnModificarTipoComercio.Enabled = true;
-                        MessageBox.Show("El Tipo Comercio se encontro, ya puede proceder a modificar");
+                        btnDeleteTipoComercio.Visible = true;
+                        btnBuscar.Visible = false;
+                        MessageBox.Show("El Tipo Comercio se encontro, ya puede proceder a borrarlo");
                     }
                     else
                     {
@@ -68,7 +100,8 @@ namespace Shopping_Buy_All
                     {
                         Cargar_Campos(int.Parse(txtId.Text.Trim()), nombre);
                         txtId.Enabled = false;
-                        btnModificarTipoComercio.Enabled = true;
+                        btnDeleteTipoComercio.Visible = true;
+                        btnBuscar.Visible = false;
                     }
                 }
                 catch (Exception)
@@ -92,7 +125,8 @@ namespace Shopping_Buy_All
                     {
                         Cargar_Campos(Id, txtNombreTipoComercio.Text.Trim());
                         txtId.Enabled = false;
-                        btnModificarTipoComercio.Enabled = true;
+                        btnDeleteTipoComercio.Visible = true;
+                        btnBuscar.Visible = false;
                     }
                 }
                 catch (Exception)
@@ -102,40 +136,50 @@ namespace Shopping_Buy_All
                 }
             }
         }
-        
-        private void Clean()
-        {
-            txtNombreTipoComercio.Text = "";
-            txtId.Text = "";
-            txtId.Enabled = true;
-            btnBuscarTipoComercio.Visible = true;
-            btnModificarTipoComercio.Enabled = false;
-            CargarTablaTipoComercio();
-        }
-        private void Cargar_Campos(int Id, string Nombre)
-        {
-            txtId.Text = Id.ToString();
-            txtNombreTipoComercio.Text = Nombre;
-        }
 
-        private void CargarTablaTipoComercio()
+        private void btnDeleteClient_Click(object sender, EventArgs e)
         {
-            try
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            String mensajeCarga = ("Desea eliminar el Tipo Comercio " + txtNombreTipoComercio.Text + " ?");
+
+            string titulo = "Información de Eliminación";
+
+            DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+            if (result == DialogResult.OK)
             {
-                tablaTipoComercio.DataSource = AD_TipoComercio.ObtenerTablaTipoComercioReducida();
+                try
+                {
+                    bool resultado = AD_TipoComercio.BorrarTipoComercio(txtNombreTipoComercio.Text.Trim());
+                    if (resultado)
+                    {
+                        MessageBox.Show("Tipo Comercio Borrado con éxito!");
+                        Clean();
+                        btnDeleteTipoComercio.Visible = false;
+                        btnBuscar.Visible = true;
+                        txtId.Enabled=true;
+                        CargarTablaTipoComercio();
+                        txtId.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El Tipo Comercio No fue Borrado!");
+                    }
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Error al borrar el Tipo Comercio");
+                }
+                
             }
-            catch (Exception)
+            else
             {
-                throw;
+                txtId.Focus();
             }
-        }  
+        }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            Clean();
-        } 
-
-        private void tablaClientes_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        private void tablaTipoComercio_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = tablaTipoComercio.Rows[indice];
@@ -143,65 +187,15 @@ namespace Shopping_Buy_All
             int Id = int.Parse(filaSeleccionada.Cells["Tipo_Comercio"].Value.ToString());
 
             txtId.Enabled = false;
-            btnBuscarTipoComercio.Visible = false;
-            btnModificarTipoComercio.Enabled = true;
-
+            btnBuscar.Visible = false;
+            btnDeleteTipoComercio.Visible = true;
             Cargar_Campos(Id, Nombre);
         }
-
-        private void btnModificarTipoComercio_Click(object sender, EventArgs e)
+        private void Cargar_Campos(int Id, string Nombre)
         {
-            if (txtNombreTipoComercio.Text.Equals(""))
-            {
-                MessageBox.Show("No puede dejar el campo Nombre vacio, ingrese el dato...");
-                txtNombreTipoComercio.Focus();
-            }
-            else
-            {
-                TipoComercio comercio = new TipoComercio(txtNombreTipoComercio.Text.Trim());
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = ("Nombre Tipo Comercio: " + comercio.NombreTipoComercio);
-
-                string titulo = "Información de Carga";
-
-                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                if (result == DialogResult.OK)
-                {
-                    try
-                    {
-                        if (AD_TipoComercio.Buscar_TipoComercio(comercio.NombreTipoComercio))
-                        {
-                            MessageBox.Show("Ya existe un Tipo Comercio con esos datos");
-                        }
-                        else
-                        {
-                            bool resultado = AD_TipoComercio.ModificarNombre_TipoComercio(int.Parse(txtId.Text), comercio);
-
-                            if (resultado)
-                            {
-                                MessageBox.Show("Tipo Comercio modificado con éxito!");
-                                Clean();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error al modificar el Tipo Comercio");
-                            }
-                        }
-                        
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Error al modificar el Tipo Comercio");
-                    }
-                    
-
-                }
-                else
-                {
-                    txtNombreTipoComercio.Focus();
-                }
-            }
+            txtId.Text = Id.ToString();
+            txtNombreTipoComercio.Text = Nombre;
         }
-    }
+    }   
 }
+

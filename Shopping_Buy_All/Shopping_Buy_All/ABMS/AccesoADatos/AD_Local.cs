@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
-    public class AD_TipoComercio
+    public class AD_Local
     {
-        public static DataTable ObtenerTablaTipoComercioReducida()
+        public static DataTable ObtenerTablaLocalReducida()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -19,7 +19,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "getTipoComercioNoBorrados";
+                string consulta = "getLocalNoBorrados";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.StoredProcedure;
@@ -32,7 +32,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
-                
+
                 return tabla;
             }
             catch (Exception)
@@ -46,113 +46,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             }
         }
 
-        public static bool Agregar_TipoComercio(TipoComercio comercio)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "agregarTipoComercio";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombreTipoComercio", comercio.NombreTipoComercio);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return resultado;
-
-        }
-
-        public static bool Modificar_TipoComercioANoBorrado(TipoComercio comercio)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "modificarTipoComercio";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@NombreTipoComercio", comercio.NombreTipoComercio);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return resultado;
-
-        }
-
-        public static bool ModificarNombre_TipoComercio(int Id, TipoComercio comercio)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "modificarNombreTipoComercio";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@IdTipoComercio", Id);
-                cmd.Parameters.AddWithValue("@NombreTipoComercio", comercio.NombreTipoComercio);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return resultado;
-
-        }
-
-        public static bool Buscar_TipoComercio(string NombreTipoComercio)
+        public static bool Buscar_Local(Local l)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -161,55 +55,12 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "buscarTipoComercioPorNombreNoBorrado";
+                string consulta = "buscarLocalNoBorrado";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@NombreTipoComercio", NombreTipoComercio);
+                cmd.Parameters.AddWithValue("@Nombre", l.NombreLocal);
+                cmd.Parameters.AddWithValue("@TipoComercio", l.TipoComercio);
 
-
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
-                {                    
-                    cn.Close();
-                    DataTable tabla = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(tabla);
-                    
-                    resultado = true;
-                }
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return resultado;
-
-        }
-
-        public static bool Buscar_TipoComercioPorIdyNombre(string Id, string NombreTipoComercio)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "buscarTipoComercioPorIDyNombreNoBorrado";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@NombreTipoComercio", NombreTipoComercio);
-                cmd.Parameters.AddWithValue("@IdTipoComercio", Id);
 
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = consulta;
@@ -241,19 +92,20 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 
         }
 
-        public static string Buscar_TipoComercioPorId(string Id)
+        public static bool ExisteLocal(Local l)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
-            TipoComercio comercio = new TipoComercio();
-            string resultado = "";
+
+            bool resultado = false;
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "buscarTipoComercioPorIdNoBorrado";
+                string consulta = "existeLocal";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@IdTipoComercio", Id);
+                cmd.Parameters.AddWithValue("@Nombre", l.NombreLocal);
+                cmd.Parameters.AddWithValue("@TipoComercio", l.TipoComercio);
 
 
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -264,7 +116,12 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 SqlDataReader DataReader = cmd.ExecuteReader();
                 if (DataReader != null && DataReader.Read())
                 {
-                    resultado = DataReader["NombreTipoComercio"].ToString();
+                    cn.Close();
+                    DataTable tabla = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(tabla);
+
+                    resultado = true;
                 }
 
             }
@@ -278,22 +135,20 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 cn.Close();
             }
             return resultado;
-
         }
 
-        public static int Buscar_TipoComercioPorNombre(string NombreTipoComercio)
+        public static bool Modificar_LocalANoBorrado(Local l)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
-            TipoComercio comercio = new TipoComercio();
-            int resultado = -1;
+            bool resultado = false;
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "buscarTipoComercioPorNombreNoBorrado";
-
+                string consulta = "modificarLocalANoBorrado";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@NombreTipoComercio", NombreTipoComercio);
+                cmd.Parameters.AddWithValue("@Nombre", l.NombreLocal);
+                cmd.Parameters.AddWithValue("@TipoComercio", l.TipoComercio);
 
 
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -301,39 +156,34 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 
                 cn.Open();
                 cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
-                {
-                    resultado = int.Parse(DataReader["Tipo_Comercio"].ToString());
-                }
-
+                cmd.ExecuteNonQuery();
+                resultado = true;
             }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return resultado;
-
-        }
-
-        public static bool ExisteTipoComercio(String NombreTipoComercio)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
             
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
+
+        }
+
+        public static bool Agregar_Local(Local l)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
             bool resultado = false;
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "existeTipoComercio";
-
+                string consulta = "agregarLocal";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@NombreTipoComercio", NombreTipoComercio);
+                cmd.Parameters.AddWithValue("@Nombre", l.NombreLocal);
+                cmd.Parameters.AddWithValue("@TipoComercio", l.TipoComercio);
 
 
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -341,16 +191,55 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 
                 cn.Open();
                 cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                resultado = true;
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
+
+        }
+
+        public static Local Buscar_LocalPorCodigo(string codigo)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            Local l = new Local();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "buscarLocalPorCodigoNoBorrado";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Codigo", codigo);
+
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
                 SqlDataReader DataReader = cmd.ExecuteReader();
+
                 if (DataReader != null && DataReader.Read())
                 {
-                    cn.Close();
-                    DataTable tabla = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(tabla);
-
-                    resultado = true;
+                    l.NombreLocal = DataReader["Nombre"].ToString();
+                    l.TipoComercio = int.Parse(DataReader["TipoComercio"].ToString());
                 }
+                return l;
 
             }
             catch (Exception)
@@ -362,10 +251,52 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             {
                 cn.Close();
             }
-            return resultado;
         }
 
-        public static bool BorrarTipoComercio(String NombreTipoComercio)
+        public static int Buscar_LocalPorNombreYTipoComercio(Local l)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            int Codigo = -1; 
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "buscarLocalPorNombreYTipoComercioNoBorrado";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Nombre", l.NombreLocal);
+                cmd.Parameters.AddWithValue("@TipoComercio", l.TipoComercio);
+
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataReader DataReader = cmd.ExecuteReader();
+
+                if (DataReader != null && DataReader.Read())
+                {
+                    Codigo = int.Parse(DataReader["CodigoLocal"].ToString());
+                }
+                return Codigo;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static bool BorrarLocal(int Codigo)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -373,9 +304,9 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "BorrarTipoComercio";
+                string consulta = "BorrarLocal";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@NombreTipoComercio", NombreTipoComercio);
+                cmd.Parameters.AddWithValue("@Codigo", Codigo);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = consulta;
 
@@ -399,5 +330,41 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             return resultado;
         }
 
+        public static bool Modificar_Local(string Codigo, Local l)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            bool resultado = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "modificarLocal";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Codigo", Codigo);
+                cmd.Parameters.AddWithValue("@IdTipoComercio", l.TipoComercio);
+                cmd.Parameters.AddWithValue("@NombreLocal", l.NombreLocal);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                resultado = true;
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
+
+        }
     }
 }

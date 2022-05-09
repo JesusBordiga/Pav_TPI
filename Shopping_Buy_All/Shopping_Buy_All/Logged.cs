@@ -45,17 +45,20 @@ namespace Shopping_Buy_All
 
         private void altaLocalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Local_Load local = new Local_Load();
+            local.ShowDialog();
         }
 
         private void modificacionDeLocalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Local_Modify local_Modify = new Local_Modify();
+            local_Modify.ShowDialog();
         }
 
         private void bajaDeLocalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Local_Delete local_Delete = new Local_Delete();
+            local_Delete.ShowDialog();
         }
 
         private void altaDeTipoComercioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,12 +69,14 @@ namespace Shopping_Buy_All
 
         private void modificacionDeTipoComercioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            TipoComercio_Modify modifyTipoComercio = new TipoComercio_Modify();
+            modifyTipoComercio.ShowDialog();
         }
 
         private void bajaDeTipoComercioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            TipoComercio_Delete delTipoComercio = new TipoComercio_Delete();
+            delTipoComercio.ShowDialog();
         }
 
         private void altaProductoToolStripMenuItem_Click(object sender, EventArgs e)
