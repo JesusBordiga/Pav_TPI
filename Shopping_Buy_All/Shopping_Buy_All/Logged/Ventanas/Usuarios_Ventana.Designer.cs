@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios_Ventana));
             this.btnAltaUsuario = new System.Windows.Forms.Button();
-            this.btnModificarUsuario = new System.Windows.Forms.Button();
-            this.btnEliminarUsuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAltaUsuario
@@ -40,7 +38,7 @@
             this.btnAltaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAltaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltaUsuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAltaUsuario.Location = new System.Drawing.Point(78, 24);
+            this.btnAltaUsuario.Location = new System.Drawing.Point(78, 70);
             this.btnAltaUsuario.Name = "btnAltaUsuario";
             this.btnAltaUsuario.Size = new System.Drawing.Size(126, 26);
             this.btnAltaUsuario.TabIndex = 0;
@@ -48,41 +46,11 @@
             this.btnAltaUsuario.UseVisualStyleBackColor = false;
             this.btnAltaUsuario.Click += new System.EventHandler(this.btnAltaUsuario_Click);
             // 
-            // btnModificarUsuario
-            // 
-            this.btnModificarUsuario.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnModificarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModificarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarUsuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnModificarUsuario.Location = new System.Drawing.Point(78, 70);
-            this.btnModificarUsuario.Name = "btnModificarUsuario";
-            this.btnModificarUsuario.Size = new System.Drawing.Size(126, 26);
-            this.btnModificarUsuario.TabIndex = 1;
-            this.btnModificarUsuario.Text = "Modificar Usuario";
-            this.btnModificarUsuario.UseVisualStyleBackColor = false;
-            this.btnModificarUsuario.Click += new System.EventHandler(this.btnModificarUsuario_Click);
-            // 
-            // btnEliminarUsuario
-            // 
-            this.btnEliminarUsuario.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnEliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarUsuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(78, 116);
-            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
-            this.btnEliminarUsuario.Size = new System.Drawing.Size(126, 26);
-            this.btnEliminarUsuario.TabIndex = 2;
-            this.btnEliminarUsuario.Text = "Eliminar Usuario";
-            this.btnEliminarUsuario.UseVisualStyleBackColor = false;
-            this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
-            // 
             // Usuarios_Ventana
             // 
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(290, 168);
-            this.Controls.Add(this.btnEliminarUsuario);
-            this.Controls.Add(this.btnModificarUsuario);
             this.Controls.Add(this.btnAltaUsuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -141,7 +109,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCiv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
         private System.Windows.Forms.Button btnAltaUsuario;
-        private System.Windows.Forms.Button btnModificarUsuario;
-        private System.Windows.Forms.Button btnEliminarUsuario;
     }
 }

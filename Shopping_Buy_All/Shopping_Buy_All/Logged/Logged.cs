@@ -79,8 +79,8 @@ namespace Shopping_Buy_All
 
         private void btnVentanaClientes_Click(object sender, EventArgs e)
         {
-            Clientes_Ventana client_ventana = new Clientes_Ventana();
-            client_ventana.Show();
+            Usuarios_Ventana Usuarios = new Usuarios_Ventana();
+            Usuarios.Show();
         }
     }
 }

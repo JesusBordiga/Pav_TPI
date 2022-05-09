@@ -20,18 +20,8 @@ namespace Shopping_Buy_All
         }
         private void btnAltaUsuario_Click(object sender, EventArgs e)
         {
-            Client_Load load = new Client_Load();
-            load.ShowDialog();
-        }
-        private void btnModificarUsuario_Click(object sender, EventArgs e)
-        {
-            Client_Modify modify = new Client_Modify();
-            modify.ShowDialog();
-        }
-        private void btnEliminarUsuario_Click(object sender, EventArgs e)
-        {
-            Client_Delete delete = new Client_Delete();
-            delete.ShowDialog();
+            User_Load Userload = new User_Load();
+            Userload.ShowDialog();
         }
     }
 }
