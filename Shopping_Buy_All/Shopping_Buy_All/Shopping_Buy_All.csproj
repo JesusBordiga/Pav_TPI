@@ -114,22 +114,22 @@
     <Compile Include="ABMS\ABM Sexo\Sexo_Modify.Designer.cs">
       <DependentUpon>Sexo_Modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM Tipo Documento\TipoDoc_Delete.cs">
+    <Compile Include="ABMS\ABM TipoDocumento\TipoDoc_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM Tipo Documento\TipoDoc_Delete.designer.cs">
+    <Compile Include="ABMS\ABM TipoDocumento\TipoDoc_Delete.designer.cs">
       <DependentUpon>TipoDoc_Delete.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM Tipo Documento\TipoDoc_Load.cs">
+    <Compile Include="ABMS\ABM TipoDocumento\TipoDoc_Load.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM Tipo Documento\TipoDoc_Load.designer.cs">
+    <Compile Include="ABMS\ABM TipoDocumento\TipoDoc_Load.designer.cs">
       <DependentUpon>TipoDoc_Load.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM Tipo Documento\TipoDoc_Modify.cs">
+    <Compile Include="ABMS\ABM TipoDocumento\TipoDoc_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM Tipo Documento\TipoDoc_Modify.designer.cs">
+    <Compile Include="ABMS\ABM TipoDocumento\TipoDoc_Modify.designer.cs">
       <DependentUpon>TipoDoc_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\ABM Tipo Tarjeta\TipoTarjeta_Delete.cs">
@@ -176,6 +176,7 @@
     <Compile Include="Entidades\Local.cs" />
     <Compile Include="Entidades\TipoDocumento.cs" />
     <Compile Include="Entidades\TipoTarjeta.cs" />
+    <Compile Include="Entidades\TipoVehiculo.cs" />
     <Compile Include="Entidades\User.cs" />
     <Compile Include="Logged\Logged.cs">
       <SubType>Form</SubType>
@@ -189,16 +190,46 @@
     <Compile Include="Logged\Ventanas\Automoviles_Ventana.Designer.cs">
       <DependentUpon>Automoviles_Ventana.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\Clientes_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\Clientes_Ventana.Designer.cs">
+      <DependentUpon>Clientes_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\EstadoCivil_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\EstadoCivil_Ventana.Designer.cs">
+      <DependentUpon>EstadoCivil_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\TipoSexo_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\TipoSexo_Ventana.Designer.cs">
+      <DependentUpon>TipoSexo_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\TipoTarjeta_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\TipoTarjeta_Ventana.Designer.cs">
+      <DependentUpon>TipoTarjeta_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\TipoDocumento_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\TipoDocumento_Ventana.Designer.cs">
+      <DependentUpon>TipoDocumento_Ventana.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logged\Ventanas\Usuarios_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Logged\Ventanas\Usuarios_Ventana.Designer.cs">
       <DependentUpon>Usuarios_Ventana.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logged\Ventanas\MarcaTarjeta_Ventana.cs">
+    <Compile Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Logged\Ventanas\MarcaTarjeta_Ventana.Designer.cs">
+    <Compile Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.Designer.cs">
       <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
     </Compile>
     <Compile Include="Logged\Ventanas\Profesiones_Ventana.cs">
@@ -218,12 +249,6 @@
     </Compile>
     <Compile Include="Logged\Ventanas\Productos_Ventana.Designer.cs">
       <DependentUpon>Productos_Ventana.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Logged\Ventanas\Clientes_Ventana.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Logged\Ventanas\Clientes_Ventana.Designer.cs">
-      <DependentUpon>Clientes_Ventana.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -272,13 +297,13 @@
     <EmbeddedResource Include="ABMS\ABM Sexo\Sexo_Modify.resx">
       <DependentUpon>Sexo_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Tipo Documento\TipoDoc_Delete.resx">
+    <EmbeddedResource Include="ABMS\ABM TipoDocumento\TipoDoc_Delete.resx">
       <DependentUpon>TipoDoc_Delete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Tipo Documento\TipoDoc_Load.resx">
+    <EmbeddedResource Include="ABMS\ABM TipoDocumento\TipoDoc_Load.resx">
       <DependentUpon>TipoDoc_Load.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Tipo Documento\TipoDoc_Modify.resx">
+    <EmbeddedResource Include="ABMS\ABM TipoDocumento\TipoDoc_Modify.resx">
       <DependentUpon>TipoDoc_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Tipo Tarjeta\TipoTarjeta_Delete.resx">
@@ -305,10 +330,25 @@
     <EmbeddedResource Include="Logged\Ventanas\Automoviles_Ventana.resx">
       <DependentUpon>Automoviles_Ventana.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Clientes\Clientes_Ventana.resx">
+      <DependentUpon>Clientes_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Clientes\EstadoCivil_Ventana.resx">
+      <DependentUpon>EstadoCivil_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Clientes\TipoSexo_Ventana.resx">
+      <DependentUpon>TipoSexo_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Tarjetas\TipoTarjeta_Ventana.resx">
+      <DependentUpon>TipoTarjeta_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Clientes\TipoDocumento_Ventana.resx">
+      <DependentUpon>TipoDocumento_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Usuarios_Ventana.resx">
       <DependentUpon>Usuarios_Ventana.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Logged\Ventanas\MarcaTarjeta_Ventana.resx">
+    <EmbeddedResource Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.resx">
       <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Profesiones_Ventana.resx">
@@ -319,9 +359,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Productos_Ventana.resx">
       <DependentUpon>Productos_Ventana.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Logged\Ventanas\Clientes_Ventana.resx">
-      <DependentUpon>Clientes_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

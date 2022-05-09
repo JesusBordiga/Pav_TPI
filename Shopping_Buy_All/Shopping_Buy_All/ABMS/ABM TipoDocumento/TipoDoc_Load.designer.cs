@@ -36,12 +36,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.tablaSexo = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.tablaTipDoc = new System.Windows.Forms.DataGridView();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaSexo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaTipDoc)).BeginInit();
             this.SuspendLayout();
             // 
             // btnTipDocLoad
@@ -103,36 +103,6 @@
             this.label15.TabIndex = 74;
             this.label15.Text = "Lista de Tipos de Documento";
             // 
-            // tablaSexo
-            // 
-            this.tablaSexo.AllowUserToAddRows = false;
-            this.tablaSexo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tablaSexo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.tablaSexo.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.tablaSexo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tablaSexo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaSexo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TipoDocumento,
-            this.NombreDocumento,
-            this.Borrado});
-            this.tablaSexo.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaSexo.Location = new System.Drawing.Point(293, 43);
-            this.tablaSexo.Name = "tablaSexo";
-            this.tablaSexo.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaSexo.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaSexo.Size = new System.Drawing.Size(246, 298);
-            this.tablaSexo.TabIndex = 73;
-            this.tablaSexo.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -144,6 +114,36 @@
             this.label3.Size = new System.Drawing.Size(202, 31);
             this.label3.TabIndex = 79;
             this.label3.Text = "de Documento";
+            // 
+            // tablaTipDoc
+            // 
+            this.tablaTipDoc.AllowUserToAddRows = false;
+            this.tablaTipDoc.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tablaTipDoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaTipDoc.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.tablaTipDoc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tablaTipDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaTipDoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TipoDocumento,
+            this.NombreDocumento,
+            this.Borrado});
+            this.tablaTipDoc.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tablaTipDoc.Location = new System.Drawing.Point(283, 43);
+            this.tablaTipDoc.Name = "tablaTipDoc";
+            this.tablaTipDoc.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaTipDoc.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaTipDoc.Size = new System.Drawing.Size(246, 298);
+            this.tablaTipDoc.TabIndex = 80;
+            this.tablaTipDoc.TabStop = false;
             // 
             // TipoDocumento
             // 
@@ -174,17 +174,18 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 350);
+            this.Controls.Add(this.tablaTipDoc);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnTipDocLoad);
             this.Controls.Add(this.txtTipoDoc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.tablaSexo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TipoDoc_Load";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de Tipo de Documento";
-            ((System.ComponentModel.ISupportInitialize)(this.tablaSexo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaTipDoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,8 +198,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DataGridView tablaSexo;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView tablaTipDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;

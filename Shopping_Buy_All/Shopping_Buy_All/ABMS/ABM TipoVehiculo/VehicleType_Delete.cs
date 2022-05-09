@@ -28,7 +28,6 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             textNameType.Text = "";
             textCodeType.Text = "";
         }
-
         private void Cargar_Campos(TipoVehiculo tv)
         {
             //Cargar Codigo

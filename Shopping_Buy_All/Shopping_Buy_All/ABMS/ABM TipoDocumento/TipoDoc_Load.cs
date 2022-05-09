@@ -30,21 +30,18 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
 
             try
             {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "SELECT * FROM TipoDocumento WHERE Borrado = 0";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
+                SqlCommand command = new SqlCommand();
+                string consulta = "select TipoDocumento, NombreDocumento from TipoDocumento where Borrado = 0";
+                command.Parameters.Clear();
+                command.CommandType = CommandType.Text;
+                command.CommandText = consulta;
 
                 cn.Open();
-                comand.Connection = cn;
-
+                command.Connection = cn;
                 DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-                tablaSexo.DataSource = tabla;
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(tabla);
+                tablaTipDoc.DataSource = tabla;
             }
             catch (SqlException)
             {

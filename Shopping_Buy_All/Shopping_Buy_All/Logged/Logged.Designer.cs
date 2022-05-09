@@ -280,7 +280,7 @@
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.Transparent;
-            this.panel.Location = new System.Drawing.Point(226, 53);
+            this.panel.Location = new System.Drawing.Point(227, 53);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(353, 300);
             this.panel.TabIndex = 36;

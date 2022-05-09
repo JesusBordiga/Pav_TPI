@@ -67,7 +67,7 @@ namespace Shopping_Buy_All
 
         private void btnAutomoviles_Click(object sender, EventArgs e)
         {
-            Automoviles_Ventana auto_ventana = new Automoviles_Ventana();
+            Vehiculos_Ventana auto_ventana = new Vehiculos_Ventana();
             auto_ventana.Show();
         }
 

@@ -10,6 +10,8 @@ namespace Shopping_Buy_All.Entidades
     {
         public string Nombre { get; set; }
         public int Borrado { get; set; } = 0;
+        public string NombreTipoVehiculo { get; internal set; }
+        public int CodigoTipoVehiculo { get; internal set; }
 
         public TipoVehiculo()
         { }

@@ -52,7 +52,7 @@
             this.btnSexoModify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSexoModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSexoModify.ForeColor = System.Drawing.Color.White;
-            this.btnSexoModify.Location = new System.Drawing.Point(76, 320);
+            this.btnSexoModify.Location = new System.Drawing.Point(90, 320);
             this.btnSexoModify.Name = "btnSexoModify";
             this.btnSexoModify.Size = new System.Drawing.Size(75, 23);
             this.btnSexoModify.TabIndex = 109;
@@ -87,7 +87,7 @@
             this.btnBuscarSexo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarSexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarSexo.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarSexo.Location = new System.Drawing.Point(76, 320);
+            this.btnBuscarSexo.Location = new System.Drawing.Point(90, 320);
             this.btnBuscarSexo.Name = "btnBuscarSexo";
             this.btnBuscarSexo.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarSexo.TabIndex = 106;

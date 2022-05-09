@@ -41,7 +41,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
 
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
-                TablaTipoAuto.DataSource = tabla;
+                tablaTipoVehiculo.DataSource = tabla;
             }
             catch (Exception)
             {
@@ -93,11 +93,6 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
                 {
                     textNameVehicle.Focus();
                 }
-            }
-            else
-            {
-                MessageBox.Show("Error al cargar el Producto! \n" +
-                        "Complete los campos por favor!");
             }
         }
         private bool Agregar_TipoVehiculo(TipoVehiculo tipoVehiculo)

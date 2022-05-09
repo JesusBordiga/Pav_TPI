@@ -200,6 +200,7 @@
             this.Controls.Add(this.tablaTipDoc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TipoDoc_Delete";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar Tipo de Documento";
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipDoc)).EndInit();
             this.ResumeLayout(false);
