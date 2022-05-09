@@ -150,6 +150,24 @@
     <Compile Include="ABMS\ABM Tipo Tarjeta\TipoTarjeta_Modify.designer.cs">
       <DependentUpon>TipoTarjeta_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Delete.designer.cs">
+      <DependentUpon>VehicleType_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Load.Designer.cs">
+      <DependentUpon>VehicleType_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Modify.designer.cs">
+      <DependentUpon>VehicleType_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\EstadoCivil.cs" />
     <Compile Include="Entidades\Producto.cs" />
@@ -272,6 +290,15 @@
     <EmbeddedResource Include="ABMS\ABM Tipo Tarjeta\TipoTarjeta_Modify.resx">
       <DependentUpon>TipoTarjeta_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoVehiculo\VehicleType_Delete.resx">
+      <DependentUpon>VehicleType_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoVehiculo\VehicleType_Load.resx">
+      <DependentUpon>VehicleType_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoVehiculo\VehicleType_Modify.resx">
+      <DependentUpon>VehicleType_Modify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logged\Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
     </EmbeddedResource>
@@ -346,7 +373,6 @@
     <Folder Include="ABMS\ABM Rubros\" />
     <Folder Include="ABMS\ABM Tarjetas\" />
     <Folder Include="ABMS\ABM TipoComercio\" />
-    <Folder Include="ABMS\ABM TipoVehiculo\" />
     <Folder Include="ABMS\ABM Usuario\" />
     <Folder Include="ABMS\ABM Vehiculos\" />
   </ItemGroup>
