@@ -462,6 +462,8 @@ namespace Shopping_Buy_All
         }
         private void tablaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
             string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
@@ -473,6 +475,11 @@ namespace Shopping_Buy_All
             comboBoxDocType.Visible = true;
             label4.Visible = true;
             Cargar_Campos(c);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! seleccione una casilla dentro de la tabla");
+            }
         }
     }
 }
