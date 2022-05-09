@@ -18,7 +18,7 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
             LabelBienvenido.Text = "Bienvenido "+ usu.userName;
-            labelHora.Text = "Hora: " + DateTime.Now.ToString("ss:mm:hh");
+            labelHora.Text = "Hora: " + DateTime.Now.ToString("hh:mm:ss");
             labelFecha.Text =DateTime.Now.ToString("dd/MM/yyyy");
         }
 

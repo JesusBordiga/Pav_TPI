@@ -53,13 +53,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(8, 51);
+            this.label1.Location = new System.Drawing.Point(71, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 29);
+            this.label1.Size = new System.Drawing.Size(133, 50);
             this.label1.TabIndex = 81;
-            this.label1.Text = "Eliminar tipo vehiculo";
+            this.label1.Text = "    Eliminar \r\ntipo vehiculo";
             // 
             // label2
             // 
@@ -150,7 +150,7 @@
             this.btnSerachType2.Location = new System.Drawing.Point(102, 268);
             this.btnSerachType2.Name = "btnSerachType2";
             this.btnSerachType2.Size = new System.Drawing.Size(75, 23);
-            this.btnSerachType2.TabIndex = 91;
+            this.btnSerachType2.TabIndex = 1;
             this.btnSerachType2.Text = "Buscar";
             this.btnSerachType2.UseVisualStyleBackColor = true;
             this.btnSerachType2.Click += new System.EventHandler(this.btnSearchType_Click_1);
@@ -158,7 +158,7 @@
             // SearchPanel
             // 
             this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.SearchPanel.Location = new System.Drawing.Point(8, 83);
+            this.SearchPanel.Location = new System.Drawing.Point(21, 83);
             this.SearchPanel.Name = "SearchPanel";
             this.SearchPanel.Size = new System.Drawing.Size(250, 249);
             this.SearchPanel.TabIndex = 92;
@@ -177,7 +177,7 @@
             this.Nombre,
             this.Borrado});
             this.tablaTipoVehiculo.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tablaTipoVehiculo.Location = new System.Drawing.Point(303, 27);
+            this.tablaTipoVehiculo.Location = new System.Drawing.Point(297, 29);
             this.tablaTipoVehiculo.Name = "tablaTipoVehiculo";
             this.tablaTipoVehiculo.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -194,7 +194,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.tablaTipoVehiculo.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaTipoVehiculo.RowTemplate.Height = 24;
-            this.tablaTipoVehiculo.Size = new System.Drawing.Size(191, 310);
+            this.tablaTipoVehiculo.Size = new System.Drawing.Size(201, 310);
             this.tablaTipoVehiculo.TabIndex = 93;
             this.tablaTipoVehiculo.TabStop = false;
             // 
@@ -233,7 +233,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(592, 349);
+            this.ClientSize = new System.Drawing.Size(507, 349);
             this.Controls.Add(this.tablaTipoVehiculo);
             this.Controls.Add(this.btnSerachType2);
             this.Controls.Add(this.textCodeType);
@@ -249,8 +249,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(608, 388);
-            this.MinimumSize = new System.Drawing.Size(608, 388);
             this.Name = "VehicleType_Delete";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

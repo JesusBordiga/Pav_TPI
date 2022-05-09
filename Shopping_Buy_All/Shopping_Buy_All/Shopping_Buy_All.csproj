@@ -184,11 +184,17 @@
     <Compile Include="Logged\Logged.Designer.cs">
       <DependentUpon>Logged.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logged\Ventanas\Automoviles_Ventana.cs">
+    <Compile Include="Logged\Ventanas\Vehiculos\MarcaVehiculo_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Logged\Ventanas\Automoviles_Ventana.Designer.cs">
-      <DependentUpon>Automoviles_Ventana.cs</DependentUpon>
+    <Compile Include="Logged\Ventanas\Vehiculos\MarcaVehiculo_Ventana.Designer.cs">
+      <DependentUpon>MarcaVehiculo_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Vehiculos\Vehiculos_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Vehiculos\Vehiculos_Ventana.Designer.cs">
+      <DependentUpon>Vehiculos_Ventana.cs</DependentUpon>
     </Compile>
     <Compile Include="Logged\Ventanas\Clientes\Clientes_Ventana.cs">
       <SubType>Form</SubType>
@@ -327,8 +333,11 @@
     <EmbeddedResource Include="Logged\Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Logged\Ventanas\Automoviles_Ventana.resx">
-      <DependentUpon>Automoviles_Ventana.cs</DependentUpon>
+    <EmbeddedResource Include="Logged\Ventanas\Vehiculos\MarcaVehiculo_Ventana.resx">
+      <DependentUpon>MarcaVehiculo_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Vehiculos\Vehiculos_Ventana.resx">
+      <DependentUpon>Vehiculos_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Clientes\Clientes_Ventana.resx">
       <DependentUpon>Clientes_Ventana.cs</DependentUpon>

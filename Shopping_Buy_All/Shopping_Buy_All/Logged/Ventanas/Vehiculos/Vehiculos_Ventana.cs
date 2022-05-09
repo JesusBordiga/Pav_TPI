@@ -28,20 +28,20 @@ namespace Shopping_Buy_All
 
         private void btnAltaTipoVehiculo_Click(object sender, EventArgs e)
         {
-            VehicleType_Load vehicleType_Load = new VehicleType_Load();
-            vehicleType_Load.ShowDialog();
+            VehicleType_Load VehicleTypeLoad = new VehicleType_Load();
+            VehicleTypeLoad.ShowDialog();
         }
 
         private void btnModificarTipoVehiculo_Click(object sender, EventArgs e)
         {
-            VehicleType_Modify vehicleType_Modify = new VehicleType_Modify();
-            vehicleType_Modify.ShowDialog();
+            VehicleType_Modify VehicleTypeModify = new VehicleType_Modify();
+            VehicleTypeModify.ShowDialog();
         }
 
         private void btnEliminarTipoVehiculo_Click(object sender, EventArgs e)
         {
-            VehicleType_Delete vehicleType_Delete = new VehicleType_Delete();
-            vehicleType_Delete.ShowDialog();
+            VehicleType_Delete VehicleTypeDelete = new VehicleType_Delete();
+            VehicleTypeDelete.ShowDialog();
         }
 
         private void btnAltaVehiculo_Click(object sender, EventArgs e)
@@ -57,6 +57,12 @@ namespace Shopping_Buy_All
         private void btnEliminarVehiculo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MarcaVehiculo_Ventana MarcaVehiculo = new MarcaVehiculo_Ventana();
+            MarcaVehiculo.ShowDialog();
         }
     }
 }

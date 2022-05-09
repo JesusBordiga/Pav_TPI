@@ -68,30 +68,49 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
         {
             textNameVehicle.Text = "";
         }
-
+        private bool validarVacio()
+        {
+            if (textCodeType.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Error! debe cargar codigo de tipo de vehiculo");
+                return false;
+            }
+            else if (textNameType.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Error! debe cargar nombre de tipo de vehiculo");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void butVehicleLoad_Click(object sender, EventArgs e)
         {
-            TipoVehiculo tv = ObtenerDatosTipoVehiculo();
-            bool resultado = Agregar_TipoVehiculo(tv);
-            if (resultado)
+            if (validarVacio())
             {
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = (
-                      " |Nombre: " + tv.Nombre );
-
-                string titulo = "Información de Carga";
-
-                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                if (result == DialogResult.OK)
+                TipoVehiculo tv = ObtenerDatosTipoVehiculo();
+                bool resultado = Agregar_TipoVehiculo(tv);
+                if (resultado)
                 {
-                    MessageBox.Show("Tipo Vehiculo agregado con éxito!");
-                    Clean();
-                    CargarTablaTipoVehiculo();
-                }
-                else
-                {
-                    textNameVehicle.Focus();
+                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                    String mensajeCarga = (
+                          " |Nombre: " + tv.Nombre);
+
+                    string titulo = "Información de Carga";
+
+                    DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                    if (result == DialogResult.OK)
+                    {
+                        MessageBox.Show("Tipo Vehiculo agregado con éxito!");
+                        Clean();
+                        CargarTablaTipoVehiculo();
+                    }
+                    else
+                    {
+                        textNameVehicle.Focus();
+                    }
                 }
             }
         }

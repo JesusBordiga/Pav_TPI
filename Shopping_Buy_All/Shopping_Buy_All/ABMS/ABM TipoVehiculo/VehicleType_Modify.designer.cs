@@ -53,11 +53,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(54, 30);
+            this.label1.Location = new System.Drawing.Point(63, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 58);
+            this.label1.Size = new System.Drawing.Size(141, 50);
             this.label1.TabIndex = 61;
             this.label1.Text = "   Modificar \r\nTipo vehiculo";
             // 
@@ -90,7 +90,7 @@
             this.btnSearchType.Location = new System.Drawing.Point(49, 309);
             this.btnSearchType.Name = "btnSearchType";
             this.btnSearchType.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchType.TabIndex = 2;
+            this.btnSearchType.TabIndex = 1;
             this.btnSearchType.Text = "Buscar";
             this.btnSearchType.UseVisualStyleBackColor = true;
             this.btnSearchType.Click += new System.EventHandler(this.btnSearchType_Click);
@@ -103,7 +103,7 @@
             this.btnCleanType.Location = new System.Drawing.Point(130, 309);
             this.btnCleanType.Name = "btnCleanType";
             this.btnCleanType.Size = new System.Drawing.Size(75, 23);
-            this.btnCleanType.TabIndex = 3;
+            this.btnCleanType.TabIndex = 2;
             this.btnCleanType.Text = "Limpiar";
             this.btnCleanType.UseVisualStyleBackColor = true;
             this.btnCleanType.Click += new System.EventHandler(this.btnCleanType_Click);
@@ -111,8 +111,8 @@
             // searchPanel
             // 
             this.searchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.searchPanel.Location = new System.Drawing.Point(11, 89);
-            this.searchPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchPanel.Location = new System.Drawing.Point(11, 96);
+            this.searchPanel.Margin = new System.Windows.Forms.Padding(2);
             this.searchPanel.Name = "searchPanel";
             this.searchPanel.Size = new System.Drawing.Size(245, 243);
             this.searchPanel.TabIndex = 87;
@@ -178,7 +178,7 @@
             this.Nombre,
             this.Borrado});
             this.tablaTipoVehiculo.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tablaTipoVehiculo.Location = new System.Drawing.Point(292, 27);
+            this.tablaTipoVehiculo.Location = new System.Drawing.Point(284, 30);
             this.tablaTipoVehiculo.Name = "tablaTipoVehiculo";
             this.tablaTipoVehiculo.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -195,7 +195,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.tablaTipoVehiculo.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaTipoVehiculo.RowTemplate.Height = 24;
-            this.tablaTipoVehiculo.Size = new System.Drawing.Size(191, 310);
+            this.tablaTipoVehiculo.Size = new System.Drawing.Size(201, 310);
             this.tablaTipoVehiculo.TabIndex = 88;
             this.tablaTipoVehiculo.TabStop = false;
             // 
@@ -247,7 +247,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "VehicleType_Modify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
