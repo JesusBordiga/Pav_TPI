@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sexo_Delete));
-            this.label3 = new System.Windows.Forms.Label();
             this.btnSexoDelete = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscarSexo = new System.Windows.Forms.Button();
@@ -44,18 +43,6 @@
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaSexo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(77, 102);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 31);
-            this.label3.TabIndex = 145;
-            this.label3.Text = "de Sexo";
             // 
             // btnSexoDelete
             // 
@@ -114,9 +101,10 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(28, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 31);
+            this.label1.Size = new System.Drawing.Size(225, 62);
             this.label1.TabIndex = 140;
-            this.label1.Text = "Buscar Nombres";
+            this.label1.Text = "Buscar nombres\r\nde Sexo";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
@@ -190,7 +178,6 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 350);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSexoDelete);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBuscarSexo);
@@ -199,6 +186,7 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tablaSexo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Sexo_Delete";
             this.Text = "Borrar Sexo";
             ((System.ComponentModel.ISupportInitialize)(this.tablaSexo)).EndInit();
@@ -208,8 +196,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSexoDelete;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBuscarSexo;

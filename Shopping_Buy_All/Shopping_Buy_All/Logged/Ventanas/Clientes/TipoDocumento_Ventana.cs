@@ -20,28 +20,22 @@ namespace Shopping_Buy_All
             InitializeComponent();
         }
 
-        private void Alta_Cliente(object sender, EventArgs e)
+        private void btnAltaTipoDocumento_Click(object sender, EventArgs e)
         {
-            TipoDoc_Load TípoDocload = new TipoDoc_Load();
-            TípoDocload.ShowDialog();
+            TipoDoc_Load tipoDocLoad = new TipoDoc_Load();
+            tipoDocLoad.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnModificarTipoDocumento_Click(object sender, EventArgs e)
         {
-            TipoDoc_Modify TípoDocmodify = new TipoDoc_Modify();
-            TípoDocmodify.ShowDialog();
+            TipoDoc_Modify tipoDocModify = new TipoDoc_Modify();
+            tipoDocModify.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEliminarTipoDocumento_Click(object sender, EventArgs e)
         {
-            TipoDoc_Delete TípoDocdelete = new TipoDoc_Delete();
-            TípoDocdelete.ShowDialog();
+            TipoDoc_Delete tipoDocDelete = new TipoDoc_Delete();
+            tipoDocDelete.ShowDialog();
         }
-
-        private void Clientes_Ventana_Load(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

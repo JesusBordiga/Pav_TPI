@@ -19,24 +19,20 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAltaProducto_Click(object sender, EventArgs e)
         {
-            Product_Load loadp = new Product_Load();
-            loadp.ShowDialog();
+            Product_Load product_Load = new Product_Load();
+            product_Load.ShowDialog();
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            Product_Modify modifyp = new Product_Modify();
-            modifyp.ShowDialog();
+            Product_Modify product_Modify = new Product_Modify();
+            product_Modify.ShowDialog();
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
-            Product_Delete deletep = new Product_Delete();
-            deletep.ShowDialog();
+            Product_Delete product_Delete = new Product_Delete();
+            product_Delete.ShowDialog();
         }
-
     }
 }

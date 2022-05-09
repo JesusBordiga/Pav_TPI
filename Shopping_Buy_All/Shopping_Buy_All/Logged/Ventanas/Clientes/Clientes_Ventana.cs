@@ -19,46 +19,40 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
         }
-
-        private void Alta_Cliente(object sender, EventArgs e)
+        private void btnAltaCliente_Click(object sender, EventArgs e)
         {
-            Client_Load load = new Client_Load();
-            load.ShowDialog();
+            Client_Load cargaCliente = new Client_Load();
+            cargaCliente.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnModificarCliente_Click(object sender, EventArgs e)
         {
-            Client_Modify modify = new Client_Modify();
-            modify.ShowDialog();
+            Client_Modify modificarCliente = new Client_Modify();
+            modificarCliente.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEliminarCliente_Click(object sender, EventArgs e)
         {
-            Client_Delete delete = new Client_Delete();
-            delete.ShowDialog();
+            Client_Delete deleteCliente = new Client_Delete();
+            deleteCliente.ShowDialog();
         }
 
-        private void Clientes_Ventana_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            TipoDocumento_Ventana TipoDocumento = new TipoDocumento_Ventana();
-            TipoDocumento.ShowDialog();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
+        private void btnTipoSexo_Click(object sender, EventArgs e)
         {
             TipoSexo_Ventana TipoSexo = new TipoSexo_Ventana();
             TipoSexo.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnEstadoCivil_Click(object sender, EventArgs e)
         {
             EstadoCivil_Ventana EstadoCivil = new EstadoCivil_Ventana();
             EstadoCivil.ShowDialog();
+        }
+
+        private void btnTipoDocumento_Click(object sender, EventArgs e)
+        {
+            TipoDocumento_Ventana TipoDocumento = new TipoDocumento_Ventana();
+            TipoDocumento.ShowDialog();
         }
     }
 }

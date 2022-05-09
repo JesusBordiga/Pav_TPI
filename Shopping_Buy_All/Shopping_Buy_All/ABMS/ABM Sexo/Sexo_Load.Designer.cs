@@ -49,7 +49,7 @@
             this.btnSexoLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSexoLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSexoLoad.ForeColor = System.Drawing.Color.White;
-            this.btnSexoLoad.Location = new System.Drawing.Point(120, 316);
+            this.btnSexoLoad.Location = new System.Drawing.Point(106, 315);
             this.btnSexoLoad.Name = "btnSexoLoad";
             this.btnSexoLoad.Size = new System.Drawing.Size(75, 23);
             this.btnSexoLoad.TabIndex = 72;
@@ -84,11 +84,12 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(61, 91);
+            this.label1.Location = new System.Drawing.Point(45, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 31);
+            this.label1.Size = new System.Drawing.Size(216, 62);
             this.label1.TabIndex = 69;
-            this.label1.Text = "Cargar Sexo";
+            this.label1.Text = "Cargar nombre \r\nde Sexo";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
@@ -168,7 +169,9 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tablaSexo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Sexo_Load";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de Sexo";
             ((System.ComponentModel.ISupportInitialize)(this.tablaSexo)).EndInit();
             this.ResumeLayout(false);

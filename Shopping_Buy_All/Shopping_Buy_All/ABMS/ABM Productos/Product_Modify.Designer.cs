@@ -246,7 +246,7 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.tablaProductos.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.tablaProductos.Size = new System.Drawing.Size(301, 310);
+            this.tablaProductos.Size = new System.Drawing.Size(294, 310);
             this.tablaProductos.TabIndex = 88;
             this.tablaProductos.TabStop = false;
             this.tablaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaProductos_CellContentClick_1);

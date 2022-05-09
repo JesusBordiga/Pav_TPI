@@ -18,28 +18,20 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
         }
-
-        private void Alta_Cliente(object sender, EventArgs e)
+        private void btnAltaProfesiones_Click(object sender, EventArgs e)
         {
             Client_Load load = new Client_Load();
             load.ShowDialog();
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void btnModificarProfesiones_Click(object sender, EventArgs e)
         {
             Client_Modify modify = new Client_Modify();
             modify.ShowDialog();
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEliminarProfesiones_Click(object sender, EventArgs e)
         {
             Client_Delete delete = new Client_Delete();
             delete.ShowDialog();
-        }
-
-        private void Clientes_Ventana_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

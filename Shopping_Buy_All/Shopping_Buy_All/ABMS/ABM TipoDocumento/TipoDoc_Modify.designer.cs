@@ -43,7 +43,6 @@
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipDoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,9 +124,10 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(22, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 31);
+            this.label1.Size = new System.Drawing.Size(225, 62);
             this.label1.TabIndex = 112;
-            this.label1.Text = "Buscar Tipos de";
+            this.label1.Text = "Buscar Tipos de\r\nDocumento";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
@@ -194,18 +194,6 @@
             this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(53, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 31);
-            this.label3.TabIndex = 119;
-            this.label3.Text = "Documento";
-            // 
             // TipoDoc_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,7 +201,6 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 350);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnTipDocModify);
             this.Controls.Add(this.txtNombreTipDoc);
             this.Controls.Add(this.label2);
@@ -224,7 +211,9 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tablaTipDoc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "TipoDoc_Modify";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Tipo de Documento";
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipDoc)).EndInit();
             this.ResumeLayout(false);
@@ -243,7 +232,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridView tablaTipDoc;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;

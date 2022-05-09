@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TipoDoc_Delete));
-            this.label3 = new System.Windows.Forms.Label();
             this.btnTipDocDelete = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscarTipDoc = new System.Windows.Forms.Button();
@@ -44,18 +43,6 @@
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipDoc)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(33, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 31);
-            this.label3.TabIndex = 129;
-            this.label3.Text = "Documento";
             // 
             // btnTipDocDelete
             // 
@@ -114,9 +101,10 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(2, 65);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 31);
+            this.label1.Size = new System.Drawing.Size(225, 62);
             this.label1.TabIndex = 122;
-            this.label1.Text = "Buscar Tipos de";
+            this.label1.Text = "Buscar Tipos de\r\nDocumento";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
@@ -190,7 +178,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 350);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnTipDocDelete);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBuscarTipDoc);
@@ -199,6 +186,7 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tablaTipDoc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "TipoDoc_Delete";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar Tipo de Documento";
@@ -209,8 +197,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnTipDocDelete;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBuscarTipDoc;

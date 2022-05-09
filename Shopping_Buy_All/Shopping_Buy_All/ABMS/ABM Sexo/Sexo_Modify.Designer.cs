@@ -122,11 +122,12 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(29, 99);
+            this.label1.Location = new System.Drawing.Point(12, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 31);
+            this.label1.Size = new System.Drawing.Size(223, 62);
             this.label1.TabIndex = 102;
-            this.label1.Text = "Buscar Sexos";
+            this.label1.Text = "Buscar Nombre \r\nde Sexo";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
@@ -210,7 +211,9 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tablaSexo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Sexo_Modify";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Sexo";
             ((System.ComponentModel.ISupportInitialize)(this.tablaSexo)).EndInit();
             this.ResumeLayout(false);

@@ -20,22 +20,22 @@ namespace Shopping_Buy_All
             InitializeComponent();
         }
 
-        private void Alta_Cliente(object sender, EventArgs e)
+        private void btnAltaSexo_Click(object sender, EventArgs e)
         {
-            Sexo_Load Sexoload = new Sexo_Load();
-            Sexoload.ShowDialog();
+            Sexo_Load sexoLoad = new Sexo_Load();
+            sexoLoad.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnModificarSexo_Click(object sender, EventArgs e)
         {
-            Sexo_Modify Sexomodify = new Sexo_Modify();
-            Sexomodify.ShowDialog();
+            Sexo_Modify sexoModify = new Sexo_Modify();
+            sexoModify.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEliminarSexo_Click(object sender, EventArgs e)
         {
-            Sexo_Delete Sexodelete = new Sexo_Delete();
-            Sexodelete.ShowDialog();
+            Sexo_Delete sexoDelete = new Sexo_Delete();
+            sexoDelete.ShowDialog();
         }
     }
 }

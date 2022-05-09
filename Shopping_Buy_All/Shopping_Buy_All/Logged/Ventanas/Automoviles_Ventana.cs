@@ -26,22 +26,37 @@ namespace Shopping_Buy_All
             InitializeComponent();
         }
 
-        private void Alta_Cliente(object sender, EventArgs e)
+        private void btnAltaTipoVehiculo_Click(object sender, EventArgs e)
         {
-            VehicleType_Load typevehicleload = new VehicleType_Load();
-            typevehicleload.ShowDialog();
+            VehicleType_Load vehicleType_Load = new VehicleType_Load();
+            vehicleType_Load.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnModificarTipoVehiculo_Click(object sender, EventArgs e)
         {
-            VehicleType_Modify VehicleTypemodify = new VehicleType_Modify();
-            VehicleTypemodify.ShowDialog();
+            VehicleType_Modify vehicleType_Modify = new VehicleType_Modify();
+            vehicleType_Modify.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEliminarTipoVehiculo_Click(object sender, EventArgs e)
         {
-            VehicleType_Delete VehicleTypedelete = new VehicleType_Delete();
-            VehicleTypedelete.ShowDialog();
+            VehicleType_Delete vehicleType_Delete = new VehicleType_Delete();
+            vehicleType_Delete.ShowDialog();
+        }
+
+        private void btnAltaVehiculo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificarVehiculo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminarVehiculo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

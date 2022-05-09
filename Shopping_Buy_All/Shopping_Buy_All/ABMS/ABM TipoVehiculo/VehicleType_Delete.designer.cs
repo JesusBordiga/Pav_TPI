@@ -248,6 +248,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(608, 388);
             this.MinimumSize = new System.Drawing.Size(608, 388);
             this.Name = "VehicleType_Delete";

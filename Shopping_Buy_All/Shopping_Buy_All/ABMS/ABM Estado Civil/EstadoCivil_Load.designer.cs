@@ -32,14 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EstadoCivil_Load));
             this.tablaEsCiv = new System.Windows.Forms.DataGridView();
+            this.TipoEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label15 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreEC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnECLoad = new System.Windows.Forms.Button();
-            this.TipoEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEsCiv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +72,28 @@
             this.tablaEsCiv.Size = new System.Drawing.Size(246, 298);
             this.tablaEsCiv.TabIndex = 61;
             this.tablaEsCiv.TabStop = false;
+            // 
+            // TipoEstadoCivil
+            // 
+            this.TipoEstadoCivil.DataPropertyName = "TipoEstadoCivil";
+            this.TipoEstadoCivil.HeaderText = "Id";
+            this.TipoEstadoCivil.Name = "TipoEstadoCivil";
+            this.TipoEstadoCivil.ReadOnly = true;
+            // 
+            // NombreEstadoCivil
+            // 
+            this.NombreEstadoCivil.DataPropertyName = "NombreEstadoCivil";
+            this.NombreEstadoCivil.HeaderText = "Nombre";
+            this.NombreEstadoCivil.Name = "NombreEstadoCivil";
+            this.NombreEstadoCivil.ReadOnly = true;
+            // 
+            // Borrado
+            // 
+            this.Borrado.DataPropertyName = "Borrado";
+            this.Borrado.HeaderText = "Borrado";
+            this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
+            this.Borrado.Visible = false;
             // 
             // label15
             // 
@@ -132,28 +154,6 @@
             this.btnECLoad.UseVisualStyleBackColor = false;
             this.btnECLoad.Click += new System.EventHandler(this.btnECLoad_Click);
             // 
-            // TipoEstadoCivil
-            // 
-            this.TipoEstadoCivil.DataPropertyName = "TipoEstadoCivil";
-            this.TipoEstadoCivil.HeaderText = "Id";
-            this.TipoEstadoCivil.Name = "TipoEstadoCivil";
-            this.TipoEstadoCivil.ReadOnly = true;
-            // 
-            // NombreEstadoCivil
-            // 
-            this.NombreEstadoCivil.DataPropertyName = "NombreEstadoCivil";
-            this.NombreEstadoCivil.HeaderText = "Nombre";
-            this.NombreEstadoCivil.Name = "NombreEstadoCivil";
-            this.NombreEstadoCivil.ReadOnly = true;
-            // 
-            // Borrado
-            // 
-            this.Borrado.DataPropertyName = "Borrado";
-            this.Borrado.HeaderText = "Borrado";
-            this.Borrado.Name = "Borrado";
-            this.Borrado.ReadOnly = true;
-            this.Borrado.Visible = false;
-            // 
             // EstadoCivil_Load
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +171,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "EstadoCivil_Load";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de  Estado Civil";
             ((System.ComponentModel.ISupportInitialize)(this.tablaEsCiv)).EndInit();
             this.ResumeLayout(false);

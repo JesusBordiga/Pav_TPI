@@ -29,67 +29,68 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios_Ventana));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAltaUsuario = new System.Windows.Forms.Button();
+            this.btnModificarUsuario = new System.Windows.Forms.Button();
+            this.btnEliminarUsuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAltaUsuario
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(78, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 26);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Alta Usuario";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Alta_Cliente);
+            this.btnAltaUsuario.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnAltaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAltaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaUsuario.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAltaUsuario.Location = new System.Drawing.Point(78, 24);
+            this.btnAltaUsuario.Name = "btnAltaUsuario";
+            this.btnAltaUsuario.Size = new System.Drawing.Size(126, 26);
+            this.btnAltaUsuario.TabIndex = 0;
+            this.btnAltaUsuario.Text = "Alta Usuario";
+            this.btnAltaUsuario.UseVisualStyleBackColor = false;
+            this.btnAltaUsuario.Click += new System.EventHandler(this.btnAltaUsuario_Click);
             // 
-            // button2
+            // btnModificarUsuario
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(78, 70);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 26);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Modificar Usuario";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnModificarUsuario.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnModificarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarUsuario.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnModificarUsuario.Location = new System.Drawing.Point(78, 70);
+            this.btnModificarUsuario.Name = "btnModificarUsuario";
+            this.btnModificarUsuario.Size = new System.Drawing.Size(126, 26);
+            this.btnModificarUsuario.TabIndex = 1;
+            this.btnModificarUsuario.Text = "Modificar Usuario";
+            this.btnModificarUsuario.UseVisualStyleBackColor = false;
+            this.btnModificarUsuario.Click += new System.EventHandler(this.btnModificarUsuario_Click);
             // 
-            // button3
+            // btnEliminarUsuario
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(78, 116);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(126, 26);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Eliminar Usuario";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnEliminarUsuario.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnEliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarUsuario.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(78, 116);
+            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(126, 26);
+            this.btnEliminarUsuario.TabIndex = 2;
+            this.btnEliminarUsuario.Text = "Eliminar Usuario";
+            this.btnEliminarUsuario.UseVisualStyleBackColor = false;
+            this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
             // 
             // Usuarios_Ventana
             // 
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(290, 168);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEliminarUsuario);
+            this.Controls.Add(this.btnModificarUsuario);
+            this.Controls.Add(this.btnAltaUsuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Usuarios_Ventana";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario";
-            this.Load += new System.EventHandler(this.Clientes_Ventana_Load);
             this.ResumeLayout(false);
 
         }
@@ -139,8 +140,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCiv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAltaUsuario;
+        private System.Windows.Forms.Button btnModificarUsuario;
+        private System.Windows.Forms.Button btnEliminarUsuario;
     }
 }

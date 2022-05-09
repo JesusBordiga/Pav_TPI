@@ -330,7 +330,7 @@
             this.MinimumSize = new System.Drawing.Size(608, 389);
             this.Name = "Product_Delete";
             this.Opacity = 0.98D;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar Producto";
             this.Load += new System.EventHandler(this.Client_Delete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).EndInit();

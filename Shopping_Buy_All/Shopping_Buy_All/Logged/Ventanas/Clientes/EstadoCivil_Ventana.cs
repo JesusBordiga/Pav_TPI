@@ -20,22 +20,22 @@ namespace Shopping_Buy_All
             InitializeComponent();
         }
 
-        private void Alta_Cliente(object sender, EventArgs e)
+        private void btnAltaEstadoCivil_Click(object sender, EventArgs e)
         {
-            EstadoCivil_Load EstadoCivilload = new EstadoCivil_Load();
-            EstadoCivilload.ShowDialog();
+            EstadoCivil_Load estadoCivilLoad = new EstadoCivil_Load();
+            estadoCivilLoad.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnModificarEstadoCivil_Click(object sender, EventArgs e)
         {
-            EstadoCivil_Modify EstadoCivilmodify = new EstadoCivil_Modify();
-            EstadoCivilmodify.ShowDialog();
+            EstadoCivil_Modify estadoCivilModify = new EstadoCivil_Modify();
+            estadoCivilModify.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEliminarEstadoCivil_Click(object sender, EventArgs e)
         {
-            EstadoCivil_Delete EstadoCivildelete = new EstadoCivil_Delete();
-            EstadoCivildelete.ShowDialog();
+            EstadoCivil_Delete estadoCivilDelete = new EstadoCivil_Delete();
+            estadoCivilDelete.ShowDialog();
         }
     }
 }

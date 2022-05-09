@@ -20,43 +20,37 @@ namespace Shopping_Buy_All
             InitializeComponent();
         }
 
-        private void Alta_Cliente(object sender, EventArgs e)
+        private void btnAltaTarjeta_Click(object sender, EventArgs e)
         {
             Client_Load load = new Client_Load();
             load.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnModificarTarjeta_Click(object sender, EventArgs e)
         {
             Client_Modify modify = new Client_Modify();
             modify.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEliminarTarjeta_Click(object sender, EventArgs e)
         {
             Client_Delete delete = new Client_Delete();
             delete.ShowDialog();
         }
 
-        private void Clientes_Ventana_Load(object sender, EventArgs e)
+        private void btnAltaTipoTarjeta_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
             TipoTarjeta_Load TipoTarjetadelete = new TipoTarjeta_Load();
             TipoTarjetadelete.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnModificarTipoTarjeta_Click(object sender, EventArgs e)
         {
             TipoTarjeta_Modify TipoTarjetaModify = new TipoTarjeta_Modify();
             TipoTarjetaModify.ShowDialog();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnEliminarTipoTarjeta_Click(object sender, EventArgs e)
         {
             TipoTarjeta_Delete TipoTarjetadelete = new TipoTarjeta_Delete();
             TipoTarjetadelete.ShowDialog();

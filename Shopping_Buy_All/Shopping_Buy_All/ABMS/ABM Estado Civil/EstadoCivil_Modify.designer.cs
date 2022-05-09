@@ -34,16 +34,15 @@
             this.btnBuscarEstadoCivil = new System.Windows.Forms.Button();
             this.txtNuevoNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tablaEstadoCivil = new System.Windows.Forms.DataGridView();
-            this.btnEstadoCivilModify = new System.Windows.Forms.Button();
-            this.txtNombreEC = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.TipoEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEstadoCivilModify = new System.Windows.Forms.Button();
+            this.txtNombreEC = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEstadoCivil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,18 +81,6 @@
             this.label4.TabIndex = 94;
             this.label4.Text = "Nuevo Nombre";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(80, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 31);
-            this.label3.TabIndex = 93;
-            this.label3.Text = "Civiles";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -102,9 +89,10 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(25, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 31);
+            this.label1.Size = new System.Drawing.Size(219, 62);
             this.label1.TabIndex = 92;
-            this.label1.Text = "Buscar Estados";
+            this.label1.Text = "Buscar Estados\r\nCiviles";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
@@ -149,6 +137,28 @@
             this.tablaEstadoCivil.TabStop = false;
             this.tablaEstadoCivil.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaEstadoCivil_CellContentClick);
             // 
+            // TipoEstadoCivil
+            // 
+            this.TipoEstadoCivil.DataPropertyName = "TipoEstadoCivil";
+            this.TipoEstadoCivil.HeaderText = "Id";
+            this.TipoEstadoCivil.Name = "TipoEstadoCivil";
+            this.TipoEstadoCivil.ReadOnly = true;
+            // 
+            // NombreEstadoCivil
+            // 
+            this.NombreEstadoCivil.DataPropertyName = "NombreEstadoCivil";
+            this.NombreEstadoCivil.HeaderText = "Nombre";
+            this.NombreEstadoCivil.Name = "NombreEstadoCivil";
+            this.NombreEstadoCivil.ReadOnly = true;
+            // 
+            // Borrado
+            // 
+            this.Borrado.DataPropertyName = "Borrado";
+            this.Borrado.HeaderText = "Borrado";
+            this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
+            this.Borrado.Visible = false;
+            // 
             // btnEstadoCivilModify
             // 
             this.btnEstadoCivilModify.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -184,28 +194,6 @@
             this.label2.TabIndex = 97;
             this.label2.Text = "Nombre";
             // 
-            // TipoEstadoCivil
-            // 
-            this.TipoEstadoCivil.DataPropertyName = "TipoEstadoCivil";
-            this.TipoEstadoCivil.HeaderText = "Id";
-            this.TipoEstadoCivil.Name = "TipoEstadoCivil";
-            this.TipoEstadoCivil.ReadOnly = true;
-            // 
-            // NombreEstadoCivil
-            // 
-            this.NombreEstadoCivil.DataPropertyName = "NombreEstadoCivil";
-            this.NombreEstadoCivil.HeaderText = "Nombre";
-            this.NombreEstadoCivil.Name = "NombreEstadoCivil";
-            this.NombreEstadoCivil.ReadOnly = true;
-            // 
-            // Borrado
-            // 
-            this.Borrado.DataPropertyName = "Borrado";
-            this.Borrado.HeaderText = "Borrado";
-            this.Borrado.Name = "Borrado";
-            this.Borrado.ReadOnly = true;
-            this.Borrado.Visible = false;
-            // 
             // EstadoCivil_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,13 +207,14 @@
             this.Controls.Add(this.btnBuscarEstadoCivil);
             this.Controls.Add(this.txtNuevoNombre);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tablaEstadoCivil);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "EstadoCivil_Modify";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Estado Civil";
             ((System.ComponentModel.ISupportInitialize)(this.tablaEstadoCivil)).EndInit();
             this.ResumeLayout(false);
@@ -238,7 +227,6 @@
         private System.Windows.Forms.Button btnBuscarEstadoCivil;
         private System.Windows.Forms.TextBox txtNuevoNombre;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridView tablaEstadoCivil;

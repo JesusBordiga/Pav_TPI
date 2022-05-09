@@ -34,6 +34,11 @@ namespace Shopping_Buy_All
             btnMenu1.Visible = false;
             panel.Visible = false;
         }
+        private void btnMenu2_Click(object sender, EventArgs e)
+        {
+            btnMenu1.Visible = true;
+            panel.Visible = true;
+        }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
@@ -71,13 +76,8 @@ namespace Shopping_Buy_All
             auto_ventana.Show();
         }
 
-        private void btnMenu2_Click(object sender, EventArgs e)
-        {
-            btnMenu1.Visible = true;
-            panel.Visible = true;
-        }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnVentanaClientes_Click(object sender, EventArgs e)
         {
             Clientes_Ventana client_ventana = new Clientes_Ventana();
             client_ventana.Show();

@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EstadoCivil_Delete));
-            this.label3 = new System.Windows.Forms.Label();
             this.btnECDelete = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscarEC = new System.Windows.Forms.Button();
@@ -44,18 +43,6 @@
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEC)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 102);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 31);
-            this.label3.TabIndex = 153;
-            this.label3.Text = "Estados Civiles";
             // 
             // btnECDelete
             // 
@@ -112,11 +99,12 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(73, 71);
+            this.label1.Location = new System.Drawing.Point(12, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 31);
+            this.label1.Size = new System.Drawing.Size(216, 62);
             this.label1.TabIndex = 148;
-            this.label1.Text = "Buscar";
+            this.label1.Text = "Buscar\r\nEstados Civiles";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
@@ -190,7 +178,6 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 350);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnECDelete);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBuscarEC);
@@ -199,7 +186,9 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tablaEC);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "EstadoCivil_Delete";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Borrar Estado Civil";
             ((System.ComponentModel.ISupportInitialize)(this.tablaEC)).EndInit();
             this.ResumeLayout(false);
@@ -208,8 +197,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnECDelete;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBuscarEC;

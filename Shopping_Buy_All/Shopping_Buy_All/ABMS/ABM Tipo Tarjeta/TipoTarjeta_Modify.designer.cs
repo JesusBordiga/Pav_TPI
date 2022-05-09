@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TipoTarjeta_Modify));
-            this.label3 = new System.Windows.Forms.Label();
             this.btnTipoTarjetaModify = new System.Windows.Forms.Button();
             this.txtNombreTdT = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,18 +45,6 @@
             this.btnBuscarTipoTarjeta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoTarjeta)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(44, 93);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 31);
-            this.label3.TabIndex = 86;
-            this.label3.Text = "de Tarjeta";
             // 
             // btnTipoTarjetaModify
             // 
@@ -102,9 +89,10 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(27, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 31);
+            this.label1.Size = new System.Drawing.Size(185, 62);
             this.label1.TabIndex = 82;
-            this.label1.Text = "Buscar Tipos";
+            this.label1.Text = "Buscar Tipos\r\nde Tarjeta";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
@@ -216,7 +204,6 @@
             this.Controls.Add(this.btnBuscarTipoTarjeta);
             this.Controls.Add(this.txtNuevoNombre);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnTipoTarjetaModify);
             this.Controls.Add(this.txtNombreTdT);
             this.Controls.Add(this.label2);
@@ -224,8 +211,10 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tablaTipoTarjeta);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "TipoTarjeta_Modify";
-            this.Text = "TipoTarjeta_Modify";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Modificar Tipo de Tarjeta";
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoTarjeta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -233,8 +222,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnTipoTarjetaModify;
         private System.Windows.Forms.TextBox txtNombreTdT;
         private System.Windows.Forms.Label label2;
