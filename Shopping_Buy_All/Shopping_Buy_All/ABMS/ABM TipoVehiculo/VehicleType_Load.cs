@@ -69,13 +69,8 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             textNameVehicle.Text = "";
         }
         private bool validarVacio()
-        {
-            if (textCodeType.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Error! debe cargar codigo de tipo de vehiculo");
-                return false;
-            }
-            else if (textNameType.Text.Trim().Equals(""))
+        {   
+            if (textNameVehicle.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Error! debe cargar nombre de tipo de vehiculo");
                 return false;
