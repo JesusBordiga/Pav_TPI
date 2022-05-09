@@ -102,6 +102,7 @@
     <Compile Include="Entidades\Local.cs" />
     <Compile Include="Entidades\TipoVehiculo.cs" />
     <Compile Include="Entidades\User.cs" />
+    <Compile Include="Entidades\Utils.cs" />
     <Compile Include="Logged.cs">
       <SubType>Form</SubType>
     </Compile>

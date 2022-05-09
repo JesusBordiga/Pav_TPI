@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Shopping_Buy_All
 {
     public partial class User_Load : Form
@@ -69,13 +70,7 @@ namespace Shopping_Buy_All
 
         private User ObtenerDatosUsuario()
         {
-            User u = new User();
-            //Nombre de Usuario
-            u.userName = textUsernameUser.Text;
-
-            //Contraseña
-            u.password = textPasswordUser.Text;
-
+            User u = new User(textUsernameUser.Text, textPasswordUser.Text);
             return u;
         }
         
@@ -127,11 +122,12 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO Users(NombreDeUsuario,Password)" +
-                                               "Values(@userName,@password)";
+                string consulta = "INSERT INTO Users(NombreDeUsuario,PasswordHash)" +
+                                               "VALUES(@userName,@hash)";
+                                               //"Values(@userName,'@userName'+':'+'@password')";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@userName", u.userName);
-                cmd.Parameters.AddWithValue("@password", u.password);
+                cmd.Parameters.AddWithValue("@hash", Utils.UserToSHA256(u.userName, u.password));
                 cmd.CommandText = consulta;
 
                 cn.Open();

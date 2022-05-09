@@ -32,9 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Load));
             this.tablaUsuarios = new System.Windows.Forms.DataGridView();
-            this.NombreDeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTitle = new System.Windows.Forms.Label();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
             this.labelUserList = new System.Windows.Forms.Label();
@@ -46,6 +43,11 @@
             this.labelUsername = new System.Windows.Forms.Label();
             this.labelConfirmPasswordUser = new System.Windows.Forms.Label();
             this.textConfirmPasswordUser = new System.Windows.Forms.TextBox();
+            this.NombreDeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PasswordHash = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +68,8 @@
             this.tablaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NombreDeUsuario,
+            this.PasswordHash,
+            this.Id,
             this.Password,
             this.Borrado});
             this.tablaUsuarios.GridColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -82,30 +86,6 @@
             this.tablaUsuarios.Size = new System.Drawing.Size(668, 397);
             this.tablaUsuarios.TabIndex = 0;
             this.tablaUsuarios.TabStop = false;
-            // 
-            // NombreDeUsuario
-            // 
-            this.NombreDeUsuario.DataPropertyName = "NombreDeUsuario";
-            this.NombreDeUsuario.HeaderText = "Nombre de Usuario";
-            this.NombreDeUsuario.Name = "NombreDeUsuario";
-            this.NombreDeUsuario.ReadOnly = true;
-            this.NombreDeUsuario.Width = 140;
-            // 
-            // Password
-            // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Contraseña";
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            this.Password.Width = 120;
-            // 
-            // Borrado
-            // 
-            this.Borrado.DataPropertyName = "Borrado";
-            this.Borrado.HeaderText = "Borrado";
-            this.Borrado.Name = "Borrado";
-            this.Borrado.ReadOnly = true;
-            this.Borrado.Visible = false;
             // 
             // labelTitle
             // 
@@ -225,6 +205,46 @@
             this.textConfirmPasswordUser.Size = new System.Drawing.Size(110, 20);
             this.textConfirmPasswordUser.TabIndex = 3;
             // 
+            // NombreDeUsuario
+            // 
+            this.NombreDeUsuario.DataPropertyName = "NombreDeUsuario";
+            this.NombreDeUsuario.HeaderText = "Nombre de Usuario";
+            this.NombreDeUsuario.Name = "NombreDeUsuario";
+            this.NombreDeUsuario.ReadOnly = true;
+            this.NombreDeUsuario.Width = 140;
+            // 
+            // PasswordHash
+            // 
+            this.PasswordHash.DataPropertyName = "PasswordHash";
+            this.PasswordHash.HeaderText = "PasswordHash";
+            this.PasswordHash.Name = "PasswordHash";
+            this.PasswordHash.ReadOnly = true;
+            this.PasswordHash.Visible = false;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Contraseña";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            this.Password.Width = 120;
+            // 
+            // Borrado
+            // 
+            this.Borrado.DataPropertyName = "Borrado";
+            this.Borrado.HeaderText = "Borrado";
+            this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
+            this.Borrado.Visible = false;
+            // 
             // User_Load
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,10 +290,12 @@
         private System.Windows.Forms.TextBox textUsernameUser;
         private System.Windows.Forms.Label labelPasswordUser;
         private System.Windows.Forms.Label labelUsername;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreDeUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.Label labelConfirmPasswordUser;
         private System.Windows.Forms.TextBox textConfirmPasswordUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreDeUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PasswordHash;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
     }
 }

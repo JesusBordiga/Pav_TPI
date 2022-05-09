@@ -18,7 +18,7 @@ namespace Shopping_Buy_All.Entidades
 
         public User(string userName, string password)
         {
-            this.userName = userName;
+            this.userName = userName.ToLower();
             this.password = password;
         }
     }
