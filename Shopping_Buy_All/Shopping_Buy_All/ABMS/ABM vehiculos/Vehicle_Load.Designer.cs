@@ -238,6 +238,7 @@
             this.btnVehicleLoad.TabIndex = 14;
             this.btnVehicleLoad.Text = "Cargar";
             this.btnVehicleLoad.UseVisualStyleBackColor = true;
+            this.btnVehicleLoad.Click += new System.EventHandler(this.btnVehicleLoad_Click);
             // 
             // btnClear
             // 
@@ -251,6 +252,7 @@
             this.btnClear.TabIndex = 15;
             this.btnClear.Text = "Limpiar";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label15
             // 

@@ -44,7 +44,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM TipoDoc";
+                string consulta = "Select * FROM TipoDocumento WHERE Borrado like 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -59,8 +59,8 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
                 da.Fill(tabla);
 
                 comboBoxDocType.DataSource = tabla;
-                comboBoxDocType.DisplayMember = "NroDoc";
-                comboBoxDocType.ValueMember = "TipoDoc";
+                comboBoxDocType.DisplayMember = "NombreDocumento";
+                comboBoxDocType.ValueMember = "TipoDocumento";
                 comboBoxDocType.SelectedIndex = -1;
             }
             catch (Exception)
@@ -175,7 +175,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
                 cmd.Parameters.AddWithValue("@tipoDoc", a.TipoDocumentoPropietario);
                 cmd.Parameters.AddWithValue("@nroDoc", a.DocumentoPropietario);
                 cmd.Parameters.AddWithValue("@patente", a.PatenteAutomovil);
-                cmd.Parameters.AddWithValue("@nombres", a.ModeloAutomovil);
+                cmd.Parameters.AddWithValue("@modelo", a.ModeloAutomovil);
                 cmd.CommandText = consulta;
 
                 cn.Open();
