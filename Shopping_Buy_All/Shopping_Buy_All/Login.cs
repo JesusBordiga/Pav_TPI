@@ -27,7 +27,7 @@ namespace Shopping_Buy_All
             }
             else
             {
-                string userName = TxtUser.Text;
+                string userName = TxtUser.Text.ToLower();
                 string password = TxtPassword.Text;
                 bool resultado = false;
                 try
@@ -72,11 +72,11 @@ namespace Shopping_Buy_All
             {
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "Select * FROM Users WHERE NombreDeUsuario like @nombreUsuario AND Password like @pass";
+                string consulta = "Select * FROM Users WHERE NombreDeUsuario like @nombreUsuario AND PasswordHash like @hash";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nombreUsuario", userName);
-                cmd.Parameters.AddWithValue("@pass", password);
+                cmd.Parameters.AddWithValue("@hash", Utils.UserToSHA256(userName, password));
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
