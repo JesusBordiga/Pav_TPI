@@ -84,6 +84,24 @@
     <Compile Include="ABMS\ABM Local\Local_Modify.Designer.cs">
       <DependentUpon>Local_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Delete.designer.cs">
+      <DependentUpon>MarcaVeh_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Load.designer.cs">
+      <DependentUpon>MarcaVeh_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Modify.designer.cs">
+      <DependentUpon>MarcaVeh_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +149,24 @@
     </Compile>
     <Compile Include="ABMS\ABM Sexo\Sexo_Modify.Designer.cs">
       <DependentUpon>Sexo_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Delete.designer.cs">
+      <DependentUpon>Tarjeta_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Load.designer.cs">
+      <DependentUpon>Tarjeta_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Modify.designer.cs">
+      <DependentUpon>Tarjeta_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Delete.cs">
       <SubType>Form</SubType>
@@ -354,6 +390,15 @@
     <EmbeddedResource Include="ABMS\ABM Local\Local_Modify.resx">
       <DependentUpon>Local_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Delete.resx">
+      <DependentUpon>MarcaVeh_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Load.resx">
+      <DependentUpon>MarcaVeh_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Modify.resx">
+      <DependentUpon>MarcaVeh_Modify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Delete.resx">
       <DependentUpon>Product_Delete.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,6 +413,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Sexo\Sexo_Modify.resx">
       <DependentUpon>Sexo_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Tarjeta\Tarjeta_Delete.resx">
+      <DependentUpon>Tarjeta_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Tarjeta\Tarjeta_Load.resx">
+      <DependentUpon>Tarjeta_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Tarjeta\Tarjeta_Modify.resx">
+      <DependentUpon>Tarjeta_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Delete.resx">
       <DependentUpon>TipoComercio_Delete.cs</DependentUpon>
@@ -496,11 +550,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ABMS\ABM MarcaTarjeta\" />
-    <Folder Include="ABMS\ABM MarcaVehiculo\" />
     <Folder Include="ABMS\ABM Modelos\" />
     <Folder Include="ABMS\ABM Profesiones\" />
     <Folder Include="ABMS\ABM Rubros\" />
-    <Folder Include="ABMS\ABM Tarjetas\" />
     <Folder Include="ABMS\ABM Vehiculos\" />
   </ItemGroup>
   <ItemGroup>
