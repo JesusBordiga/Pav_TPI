@@ -17,7 +17,6 @@ namespace Shopping_Buy_All
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
-            //Application.Run(new Client_Delete());
         }
     }
 }
