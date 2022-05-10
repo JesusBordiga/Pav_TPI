@@ -17,7 +17,7 @@ namespace Shopping_Buy_All
         public Rubro_Modify()
         {
             InitializeComponent();
-            CargarTablaUsuarios();
+            CargarTablaRubros();
         }
 
         private void Clean()
@@ -26,23 +26,29 @@ namespace Shopping_Buy_All
             textRubroNew.Text = "";
             textRubroOld.Visible = true;
             textRubroNew.Visible = false;
-            btnUserLoad.Visible = false;
-            btnSearchUser.Visible = true;
+            btnModify.Visible = false;
+            btnSearch.Visible = true;
+            labelRubro.Visible = true;
+            labelMod.Visible = false;
+            textRubroOld.Focus();
         }
 
-        private void Cargar_Campos(string username)
+        private void Cargar_Campos(string rubro)
         {
             //Cargar Nombre Original
-            textRubroOld.Text = username;
+            textRubroOld.Text = rubro;
             //Cargar Nombre Nuevo
-            textRubroNew.Text = username;
-            btnUserLoad.Visible = true;
+            textRubroNew.Text = rubro;
+            btnModify.Visible = true;
             textRubroOld.Visible = false;
             textRubroNew.Visible = true;
-            btnSearchUser.Visible = false;
+            btnSearch.Visible = false;
+            labelRubro.Visible = false;
+            labelMod.Visible = true;
+            textRubroNew.Focus();
         }
 
-        private void CargarTablaUsuarios()
+        private void CargarTablaRubros()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -50,7 +56,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Users WHERE Borrado like 0";
+                string consulta = "Select * FROM Rubros WHERE Borrado like 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -63,7 +69,7 @@ namespace Shopping_Buy_All
 
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
-                tablaUsuarios.DataSource = tabla;
+                tablaRubros.DataSource = tabla;
             }
             catch (Exception)
             {
@@ -76,7 +82,7 @@ namespace Shopping_Buy_All
             }
         }
 
-        private bool Buscar_Usuario(string username)
+        private bool ExisteRubro(string rubro)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -84,10 +90,10 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Users WHERE NombreDeUsuario = @username AND Borrado like 0";
+                string consulta = "SELECT * FROM Rubros WHERE Nombre = @rubro AND Borrado like 0";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@rubro", rubro);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
@@ -111,13 +117,13 @@ namespace Shopping_Buy_All
             return result;
         }
 
-        private User ObtenerDatos()
+        private string ObtenerDatos()
         {
-            User u = new User(textRubroNew.Text.Trim());
-            return u;
+            string r = textRubroNew.Text.Trim();
+            return r;
         }
 
-        private bool ModificarUsuario(User u, string old_username)
+        private bool ModificarRubro(string newR, string oldR)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -125,11 +131,10 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Users SET NombreDeUsuario = @username,PasswordHash = @hash WHERE NombreDeUsuario = @olduser";
+                string consulta = "UPDATE Rubros SET Nombre = @newNombre WHERE Nombre = @oldNombre";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@username", u.userName);
-                cmd.Parameters.AddWithValue("@hash", Utils.UserToSHA256(u.userName, u.password));
-                cmd.Parameters.AddWithValue("@olduser", old_username);
+                cmd.Parameters.AddWithValue("@newNombre", newR);
+                cmd.Parameters.AddWithValue("@oldNombre", oldR);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -153,7 +158,7 @@ namespace Shopping_Buy_All
             return resultado;
         }
 
-        private void btnSearchUser_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             if (textRubroOld.Text.Trim().Equals(""))
             {
@@ -161,11 +166,11 @@ namespace Shopping_Buy_All
             }
             else
             {
-                string username = textRubroOld.Text.Trim().ToLower();
-                bool existe = Buscar_Usuario(username);
+                string rubro = textRubroOld.Text.Trim();
+                bool existe = ExisteRubro(rubro);
                 if (existe)
                 {
-                    Cargar_Campos(username);
+                    Cargar_Campos(rubro);
                 }
                 else
                 {
@@ -179,53 +184,61 @@ namespace Shopping_Buy_All
             Clean();
         }
 
-        private void btnUserLoad_Click(object sender, EventArgs e)
+        private void btnModify_Click(object sender, EventArgs e)
         {
-            if (textRubroNew.Text.Trim() != "" && textPasswordUser.Text.Trim() != "" && textConfirmPasswordUser.Text.Trim() == textPasswordUser.Text.Trim())
+            if (textRubroNew.Text.Trim() != "")
             {
-                User u = ObtenerDatos();
-                string oldUser = textRubroOld.Text.Trim().ToLower();
-                bool resultado = ModificarUsuario(u, oldUser);
-                if (resultado)
+                string newR = ObtenerDatos();
+                if (!ExisteRubro(newR))
                 {
-                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                    String mensajeCarga = (
-                          " | Nombre de Usuario: " + u.userName + " |" + "\n");
-
-                    string titulo = "Información de Producto";
-
-                    DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                    if (result == DialogResult.OK)
+                    string oldR = textRubroOld.Text.Trim().ToLower();
+                    bool resultado = ModificarRubro(newR, oldR);
+                    if (resultado)
                     {
-                        MessageBox.Show("Usuario modificado con éxito!");
-                        Clean();
-                        CargarTablaUsuarios();
+                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                        String mensajeCarga = (
+                              " | Rubro: " + newR + " |" + "\n");
+
+                        string titulo = "Información de Rubro";
+
+                        DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                        if (result == DialogResult.OK)
+                        {
+                            MessageBox.Show("Rubro modificado con éxito!");
+                            Clean();
+                            CargarTablaRubros();
+                        }
+                        else
+                        {
+                            textRubroOld.Focus();
+                        }
                     }
                     else
                     {
-                        textRubroOld.Focus();
+                        MessageBox.Show("Error al cargar el Rubro! \n" +
+                                "Complete los campos por favor!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error al cargar el Usuario! \n" +
-                            "Complete los campos por favor!");
+                    MessageBox.Show("Error al modificar el Rubro! \n" +
+                            "Ya existe un rubro con ese nombre!");
                 }
             }
             else
             {
-                MessageBox.Show("Error al cargar el Usuario! \n" +
+                MessageBox.Show("Error al cargar el Rubro! \n" +
                             "Complete los campos por favor!");
             }
         }
 
-        private void tablaUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tablaRubros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaUsuarios.Rows[indice];
-            string username = filaSeleccionada.Cells["NombreDeUsuario"].Value.ToString();
-            Cargar_Campos(username);
+            DataGridViewRow filaSeleccionada = tablaRubros.Rows[indice];
+            string rubro = filaSeleccionada.Cells["Nombre"].Value.ToString();
+            Cargar_Campos(rubro);
         }
     }
 }
