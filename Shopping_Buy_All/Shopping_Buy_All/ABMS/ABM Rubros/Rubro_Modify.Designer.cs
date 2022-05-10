@@ -193,10 +193,10 @@
             // CodigoRubro
             // 
             this.CodigoRubro.DataPropertyName = "CodigoRubro";
-            this.CodigoRubro.HeaderText = "CodigoRubro";
+            this.CodigoRubro.HeaderText = "Id";
             this.CodigoRubro.Name = "CodigoRubro";
             this.CodigoRubro.ReadOnly = true;
-            this.CodigoRubro.Visible = false;
+            this.CodigoRubro.Width = 35;
             // 
             // nombre
             // 
@@ -204,7 +204,7 @@
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
-            this.nombre.Width = 180;
+            this.nombre.Width = 150;
             // 
             // dataGridViewTextBoxColumn1
             // 
