@@ -84,6 +84,12 @@
     <Compile Include="ABMS\ABM Local\Local_Modify.Designer.cs">
       <DependentUpon>Local_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Load.designer.cs">
+      <DependentUpon>MarcaTarjeta_Load.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -410,6 +416,9 @@
     <EmbeddedResource Include="ABMS\ABM Local\Local_Modify.resx">
       <DependentUpon>Local_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Load.resx">
+      <DependentUpon>MarcaTarjeta_Load.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Delete.resx">
       <DependentUpon>MarcaVeh_Delete.cs</DependentUpon>
     </EmbeddedResource>
@@ -578,7 +587,6 @@
     <None Include="Resources\menu-editor.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ABMS\ABM MarcaTarjeta\" />
     <Folder Include="ABMS\ABM Modelos\" />
     <Folder Include="ABMS\ABM Profesiones\" />
     <Folder Include="ABMS\ABM Vehiculos\" />
