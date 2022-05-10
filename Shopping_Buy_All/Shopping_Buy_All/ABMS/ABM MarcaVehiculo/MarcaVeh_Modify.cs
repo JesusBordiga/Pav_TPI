@@ -17,80 +17,21 @@ namespace Shopping_Buy_All
         public MarcaVeh_Modify()
         {
             InitializeComponent();
-            CargarTablaMarcasVeh();
-            CargarMarcasVeh();
-
+            CargarTablaMarcas();
         }
-
-        private void btnBuscarMarca_click(object sender, EventArgs e)
-        {
-            if (textMarcaOld.SelectedIndex != 0)
-            {
-                MessageBox.Show("Error, Completar campos!!");
-            }
-            else
-            {
-                MarcaVehiculo c = Buscar_Marca(textMarcaOld.Text.Trim());
-                Cargar_Campos(c);
-                btnBuscarMarca.Visible = false;
-            }
-        }
-        private void btnBuscarMarca_Click(object sender, EventArgs e)
-        {
-            Clean();
-            btnBuscarMarca.Visible = true;
-
-        }
+        
         private void Clean()
         {
-            textMarcaOld.SelectedIndex = -1;
-
+            textMarcaNew.Text = "";
+            textMarcaOld.Text = "";
+            textMarcaOld.Visible = true;
+            textMarcaNew.Visible = false;
+            btnMarcaLoad.Visible = false;
+            labelMarca.Text = "Marca";
+            btnSearchMarca.Visible = true;
         }
-        private void Cargar_Campos(MarcaVehiculo c)
-        {
 
-            textMarcaOld.Text = c.MarcaVeh;
-            textMarcaNew.Text = c.MarcaVeh;
-        }
-
-        private void CargarMarcasVeh()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Marcas where Borrado = 0";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-
-                textMarcaOld.DataSource = tabla;
-                textMarcaOld.DisplayMember = "Descripcion";
-                textMarcaOld.ValueMember = "Id";
-                textMarcaOld.SelectedIndex = -1;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-        private void CargarTablaMarcasVeh()
+        private void CargarTablaMarcas()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -123,18 +64,32 @@ namespace Shopping_Buy_All
                 cn.Close();
             }
         }
-        private MarcaVehiculo Buscar_Marca(string Marca)
+
+        private void Cargar_Campos(string marca)
+        {
+            //Cargar Nombre Original
+            textMarcaOld.Text = marca;
+            //Cargar Nombre Nuevo
+            textMarcaNew.Text = marca;
+            btnMarcaLoad.Visible = true;
+            textMarcaOld.Visible = false;
+            textMarcaNew.Visible = true;
+            labelMarca.Text = "Nueva descripción de marca";
+            btnSearchMarca.Visible = false;
+        }
+
+        private bool Existe_Marca(string marca)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
-            MarcaVehiculo mark = new MarcaVehiculo();
+            bool result = false;
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Marcas where Descripcion like @marcaVeh AND Borrado = 0";
+                string consulta = "SELECT * FROM Marcas WHERE Descripcion = @descripcion AND Borrado like 0";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@marcaVeh", Marca);
+                cmd.Parameters.AddWithValue("@descripcion", marca);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
@@ -142,50 +97,30 @@ namespace Shopping_Buy_All
                 cn.Open();
                 cmd.Connection = cn;
                 SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader !=null && DataReader.Read())
+                if (DataReader != null && DataReader.Read())
                 {
-
-                    mark.MarcaVeh = DataReader["TipoDocumento"].ToString();
-
+                    result = true;
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
-
                 throw;
             }
             finally
             {
                 cn.Close();
             }
-            return mark;
-
+            return result;
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private MarcaVehiculo ObtenerDatos()
         {
-            Clean();
+            MarcaVehiculo marca = new MarcaVehiculo();
+            marca.MarcaVeh = textMarcaNew.Text.Trim();
+            return marca;
         }
 
-        private MarcaVehiculo ObtenerMarcaOld()
-        {
-            MarcaVehiculo c = new MarcaVehiculo();
-
-            c.MarcaVeh = textMarcaOld.Text.Trim();
-
-            return c;
-        }
-
-        private MarcaVehiculo ObtenerMarcaNew()
-        {
-            MarcaVehiculo c = new MarcaVehiculo();
-
-            c.MarcaVeh = textMarcaNew.Text.Trim();
-
-            return c;
-        }
-
-        private bool ModificarMarca(MarcaVehiculo marcaNew, MarcaVehiculo marcaOld)
+        private bool ModificarMarca(MarcaVehiculo newM, string oldM)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -193,10 +128,10 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Marcas SET Descripcion = @marcaNew WHERE Descripcion = @marcaOld";
+                string consulta = "UPDATE Marcas SET Descripcion = @descripcion WHERE Descripcion = @oldDesc";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@marcaNew", marcaNew.MarcaVeh);
-                cmd.Parameters.AddWithValue("@marcaOld", marcaOld.MarcaVeh);
+                cmd.Parameters.AddWithValue("@descripcion", newM.MarcaVeh);
+                cmd.Parameters.AddWithValue("@oldDesc", oldM);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -220,36 +155,79 @@ namespace Shopping_Buy_All
             return resultado;
         }
 
-        private void btnMarcaMod_Click_1(object sender, EventArgs e)
+        private void btnSearchMarca_Click(object sender, EventArgs e)
         {
-            MarcaVehiculo oldM = ObtenerMarcaOld();
-            MarcaVehiculo newM = ObtenerMarcaNew();
-            bool resultado = ModificarMarca(c);
-            if (resultado)
+            if (textMarcaOld.Text.Trim().Equals(""))
             {
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = (
-                      " |Marca: " + c.MarcaVeh + "\n");
-
-                string titulo = "Información de Carga";
-
-                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                if (result == DialogResult.OK)
+                MessageBox.Show("Error, Completar campos!!");
+            }
+            else
+            {
+                string marca = textMarcaOld.Text.Trim();
+                bool existe = Existe_Marca(marca);
+                if (existe)
                 {
-                    MessageBox.Show("Marca agregada con éxito!");
-                    Clean();
-                    CargarTablaMarcasVeh();
-                    CargarMarcasVeh();
+                    Cargar_Campos(marca);
                 }
                 else
                 {
-                    textMarcaOld.Focus();
+                    Clean();
+                    MessageBox.Show("No existe la marca buscada!!");
+                }
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clean();
+        }
+
+        private void btnMarcaLoad_Click(object sender, EventArgs e)
+        {
+            if (textMarcaNew.Text.Trim() != "")
+            {
+                if (!Existe_Marca(textMarcaNew.Text.Trim()))
+                {
+                    MarcaVehiculo m = ObtenerDatos();
+                    string oldM = textMarcaOld.Text.Trim();
+                    bool resultado = ModificarMarca(m, oldM);
+                    if (resultado)
+                    {
+                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                        String mensajeCarga = (
+                              " | Descripcion: " + m.MarcaVeh + " |" + "\n");
+
+                        string titulo = "Información de MARCA";
+
+                        DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                        if (result == DialogResult.OK)
+                        {
+                            MessageBox.Show("Marca modificada con éxito!");
+                            Clean();
+                            CargarTablaMarcas();
+                        }
+                        else
+                        {
+                            textMarcaOld.Focus();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al cargar la Marca! \n" +
+                                "Complete los campos por favor!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error al cargar la Marca! \n" +
+                            "La marca ya existe!");
                 }
             }
             else
             {
-                MessageBox.Show("Error al modificar la persona!");
+                MessageBox.Show("Error al cargar la Marca! \n" +
+                            "Complete los campos por favor!");
             }
         }
 
@@ -257,12 +235,8 @@ namespace Shopping_Buy_All
         {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = tablaMarcas.Rows[indice];
-            string marcaVeh = filaSeleccionada.Cells["Descripcion"].Value.ToString();
-            MarcaVehiculo c = Buscar_Marca(marcaVeh);
-            Clean();
-            btnBuscarMarca.Visible = false;
-            textMarcaOld.Visible = true;
-            Cargar_Campos(c);
+            string marca = filaSeleccionada.Cells["Descripcion"].Value.ToString();
+            Cargar_Campos(marca);
         }
     }
 }

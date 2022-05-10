@@ -32,17 +32,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarcaVeh_Modify));
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnMarcaMod = new System.Windows.Forms.Button();
+            this.btnMarcaLoad = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBuscarMarca = new System.Windows.Forms.Button();
-            this.btnSearchClient2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnSearchMarca = new System.Windows.Forms.Button();
+            this.labelMarca = new System.Windows.Forms.Label();
             this.tablaMarcas = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textMarcaNew = new System.Windows.Forms.TextBox();
-            this.textMarcaOld = new System.Windows.Forms.ComboBox();
+            this.textMarcaOld = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaMarcas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,18 +58,19 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnMarcaMod
+            // btnMarcaLoad
             // 
-            this.btnMarcaMod.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMarcaMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarcaMod.ForeColor = System.Drawing.Color.White;
-            this.btnMarcaMod.Location = new System.Drawing.Point(34, 419);
-            this.btnMarcaMod.Name = "btnMarcaMod";
-            this.btnMarcaMod.Size = new System.Drawing.Size(75, 23);
-            this.btnMarcaMod.TabIndex = 52;
-            this.btnMarcaMod.Text = "Modificar";
-            this.btnMarcaMod.UseVisualStyleBackColor = true;
-            this.btnMarcaMod.Click += new System.EventHandler(this.btnMarcaMod_Click_1);
+            this.btnMarcaLoad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMarcaLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMarcaLoad.ForeColor = System.Drawing.Color.White;
+            this.btnMarcaLoad.Location = new System.Drawing.Point(34, 419);
+            this.btnMarcaLoad.Name = "btnMarcaLoad";
+            this.btnMarcaLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnMarcaLoad.TabIndex = 52;
+            this.btnMarcaLoad.Text = "Modificar";
+            this.btnMarcaLoad.UseVisualStyleBackColor = true;
+            this.btnMarcaLoad.Visible = false;
+            this.btnMarcaLoad.Click += new System.EventHandler(this.btnMarcaLoad_Click);
             // 
             // label15
             // 
@@ -96,43 +96,30 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Buscar marca";
             // 
-            // btnBuscarMarca
+            // btnSearchMarca
             // 
-            this.btnBuscarMarca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarMarca.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarMarca.Location = new System.Drawing.Point(199, 419);
-            this.btnBuscarMarca.Name = "btnBuscarMarca";
-            this.btnBuscarMarca.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarMarca.TabIndex = 62;
-            this.btnBuscarMarca.Text = "Buscar";
-            this.btnBuscarMarca.UseVisualStyleBackColor = true;
-            this.btnBuscarMarca.Click += new System.EventHandler(this.btnBuscarMarca_click);
+            this.btnSearchMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchMarca.ForeColor = System.Drawing.Color.White;
+            this.btnSearchMarca.Location = new System.Drawing.Point(196, 419);
+            this.btnSearchMarca.Name = "btnSearchMarca";
+            this.btnSearchMarca.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchMarca.TabIndex = 62;
+            this.btnSearchMarca.Text = "Buscar";
+            this.btnSearchMarca.UseVisualStyleBackColor = true;
+            this.btnSearchMarca.Click += new System.EventHandler(this.btnSearchMarca_Click);
             // 
-            // btnSearchClient2
+            // labelMarca
             // 
-            this.btnSearchClient2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchClient2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchClient2.ForeColor = System.Drawing.Color.White;
-            this.btnSearchClient2.Location = new System.Drawing.Point(199, 419);
-            this.btnSearchClient2.Name = "btnSearchClient2";
-            this.btnSearchClient2.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchClient2.TabIndex = 63;
-            this.btnSearchClient2.Text = "Buscar";
-            this.btnSearchClient2.UseVisualStyleBackColor = true;
-            this.btnSearchClient2.Click += new System.EventHandler(this.btnBuscarMarca_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(132, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 17);
-            this.label2.TabIndex = 68;
-            this.label2.Text = "Marca";
+            this.labelMarca.AutoSize = true;
+            this.labelMarca.BackColor = System.Drawing.Color.Transparent;
+            this.labelMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMarca.ForeColor = System.Drawing.Color.White;
+            this.labelMarca.Location = new System.Drawing.Point(132, 73);
+            this.labelMarca.Name = "labelMarca";
+            this.labelMarca.Size = new System.Drawing.Size(52, 17);
+            this.labelMarca.TabIndex = 68;
+            this.labelMarca.Text = "Marca";
             // 
             // tablaMarcas
             // 
@@ -197,11 +184,10 @@
             // 
             this.textMarcaOld.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textMarcaOld.ForeColor = System.Drawing.Color.White;
-            this.textMarcaOld.FormattingEnabled = true;
             this.textMarcaOld.Location = new System.Drawing.Point(105, 94);
             this.textMarcaOld.Name = "textMarcaOld";
-            this.textMarcaOld.Size = new System.Drawing.Size(119, 21);
-            this.textMarcaOld.TabIndex = 66;
+            this.textMarcaOld.Size = new System.Drawing.Size(119, 20);
+            this.textMarcaOld.TabIndex = 75;
             // 
             // MarcaVeh_Modify
             // 
@@ -211,13 +197,12 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1027, 449);
-            this.Controls.Add(this.tablaMarcas);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.textMarcaOld);
-            this.Controls.Add(this.btnBuscarMarca);
-            this.Controls.Add(this.btnSearchClient2);
+            this.Controls.Add(this.tablaMarcas);
+            this.Controls.Add(this.labelMarca);
+            this.Controls.Add(this.btnSearchMarca);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnMarcaMod);
+            this.Controls.Add(this.btnMarcaLoad);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textMarcaNew);
@@ -236,16 +221,15 @@
 
         #endregion
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnMarcaMod;
+        private System.Windows.Forms.Button btnMarcaLoad;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnBuscarMarca;
-        private System.Windows.Forms.Button btnSearchClient2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSearchMarca;
+        private System.Windows.Forms.Label labelMarca;
         private System.Windows.Forms.DataGridView tablaMarcas;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.TextBox textMarcaNew;
-        private System.Windows.Forms.ComboBox textMarcaOld;
+        private System.Windows.Forms.TextBox textMarcaOld;
     }
 }
