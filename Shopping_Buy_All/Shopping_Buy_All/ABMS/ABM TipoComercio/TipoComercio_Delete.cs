@@ -34,7 +34,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
         }
         private void Clean()
@@ -195,11 +195,6 @@ namespace Shopping_Buy_All
         {
             txtId.Text = Id.ToString();
             txtNombreTipoComercio.Text = Nombre;
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
         }
     }   
 }

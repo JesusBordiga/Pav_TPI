@@ -350,16 +350,23 @@ namespace Shopping_Buy_All
 
         private void tablaTarjetas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaTarjetas.Rows[indice];
-            string nroTarjeta = filaSeleccionada.Cells["NroTarjeta"].Value.ToString();
-            Tarjeta c = Buscar_Tarjeta(nroTarjeta);
-            Clean();
-            SearchPanel.Visible = false;
-            btnBuscarTarjeta.Visible = false;
-            cmbTipoDoc.Visible = true;
-            label4.Visible = true;
-            Cargar_Campos(c);
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaTarjetas.Rows[indice];
+                string nroTarjeta = filaSeleccionada.Cells["NroTarjeta"].Value.ToString();
+                Tarjeta c = Buscar_Tarjeta(nroTarjeta);
+                Clean();
+                SearchPanel.Visible = false;
+                btnBuscarTarjeta.Visible = false;
+                cmbTipoDoc.Visible = true;
+                label4.Visible = true;
+                Cargar_Campos(c);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! \n Seleccione una casilla dentro de la tabla");
+            }
         }
     }
 }
