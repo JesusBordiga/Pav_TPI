@@ -39,23 +39,6 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             textNameTypeVehicle.Text = tv.NombreTipoVehiculo;
             
         }
-        private bool validarVacio()
-        {
-            if (textCodeType.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Error! debe cargar codigo de tipo de vehiculo");
-                return false;
-            }
-            else if (textNameTypeVehicle.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Error! debe cargar nombre de tipo de vehiculo");
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
 
         private void CargarTablaTipoVehiculo()
         {
@@ -207,39 +190,40 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
 
         private void btnTypeLoad_Click(object sender, EventArgs e)
         {
-            if (validarVacio())
+            TipoVehiculo tv = ObtenerDatosTipoVehiculo();
+            bool resultado = ModificarTipoVehiculo(tv);
+            if (resultado)
             {
-                TipoVehiculo tv = ObtenerDatosTipoVehiculo();
-                bool resultado = ModificarTipoVehiculo(tv);
-                if (resultado)
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                String mensajeCarga = (
+                    " |Codigo: " + tv.CodigoTipoVehiculo + "|" + "\n"
+                    + " |Nombre: " + tv.NombreTipoVehiculo + "|" + "\n");
+
+                string titulo = "Información de Tipo Vehiculo";
+
+                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                if (result == DialogResult.OK)
                 {
-                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                    String mensajeCarga = (
-                        " |Codigo: " + tv.CodigoTipoVehiculo + "|" + "\n"
-                        + " |Nombre: " + tv.NombreTipoVehiculo + "|" + "\n");
-
-                    string titulo = "Información de Tipo Vehiculo";
-
-                    DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                    if (result == DialogResult.OK)
-                    {
-                        MessageBox.Show("Producto modificado con éxito!");
-                        Clean();
-                        searchPanel.Visible = true;
-                        btnSearchType.Visible = true;
-                        btnCleanType.Visible = true;
-                        textCodeType.Clear();
-                        textCodeType.Enabled = true;
-                        CargarTablaTipoVehiculo();
-                    }
-                    else
-                    {
-                        textNameTypeVehicle.Focus();
-                    }
+                    MessageBox.Show("Producto modificado con éxito!");
+                    Clean();
+                    searchPanel.Visible = true;
+                    btnSearchType.Visible = true;
+                    btnCleanType.Visible = true;
+                    textCodeType.Clear();
+                    textCodeType.Enabled = true;
+                    CargarTablaTipoVehiculo();
+                }
+                else
+                {
+                    textNameTypeVehicle.Focus();
                 }
             }
-          
+            else
+            {
+                MessageBox.Show("Error al cargar el tipo de vehiculo! \n" +
+                            "Complete los campos por favor!");
+            }
         }
         private void btnSearchType2_Click(object sender, EventArgs e)
         {

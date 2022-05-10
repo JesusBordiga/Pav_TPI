@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shopping_Buy_All.Productos;
 using Shopping_Buy_All.ABMS.ABM_TipoVehiculo;
+using Shopping_Buy_All.ABMS.ABM_Vehiculos;
 
 namespace Shopping_Buy_All
 {
@@ -95,6 +96,36 @@ namespace Shopping_Buy_All
         {
             VehicleType_Load loadTV = new VehicleType_Load();
             loadTV.ShowDialog();
+        }
+
+        private void modificacionTipoDeAutomovilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VehicleType_Modify modify = new VehicleType_Modify();
+            modify.ShowDialog();
+        }
+
+        private void bajaTipoDeAutomovilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VehicleType_Delete delete = new VehicleType_Delete();
+            delete.ShowDialog();
+        }
+
+        private void altaAutomovilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vehicle_Load LoadA = new Vehicle_Load();
+            LoadA.ShowDialog();
+        }
+
+        private void modificacionAutomovilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vehicle_Modify modify = new Vehicle_Modify ();
+            modify.ShowDialog();
+        }
+
+        private void bajaAutomovilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vehicle_Delete delete = new Vehicle_Delete ();          
+            delete. ShowDialog();
         }
     }
 }

@@ -28,6 +28,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             textNameType.Text = "";
             textCodeType.Text = "";
         }
+
         private void Cargar_Campos(TipoVehiculo tv)
         {
             //Cargar Codigo
@@ -72,23 +73,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
 
 
         }
-        private bool validarVacio()
-        {
-            if (textCodeType.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Error! debe cargar codigo de tipo de vehiculo");
-                return false;
-            }
-            else if (textNameType.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Error! debe cargar nombre de tipo de vehiculo");
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+
         private TipoVehiculo Buscar_TipoVehiculo(string Code)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -174,32 +159,29 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
         }
         private void btnDeleteType_Click(object sender, EventArgs e)
         {
-            if (validarVacio())
+            TipoVehiculo tv = ObtenerDatosTipoVehiculo();
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            String mensajeCarga = (
+                  " |Codigo: " + tv.CodigoTipoVehiculo + "|" + "\n"
+                + " |Nombre: " + tv.NombreTipoVehiculo + "|" + "\n");
+
+            string titulo = "Información de tipo de vehiculo";
+
+            DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+            if (result == DialogResult.OK)
             {
-                TipoVehiculo tv = ObtenerDatosTipoVehiculo();
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = (
-                      " |Codigo: " + tv.CodigoTipoVehiculo + "|" + "\n"
-                    + " |Nombre: " + tv.NombreTipoVehiculo + "|" + "\n");
-
-                string titulo = "Información de tipo de vehiculo";
-
-                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                if (result == DialogResult.OK)
-                {
-                    MessageBox.Show("Borrado agregado con éxito!");
-                    BorrarTipoVehiculo(tv.CodigoTipoVehiculo, 1);
-                    Clean();
-                    SearchPanel.Visible = true;
-                    btnSearchType.Visible = false;
-                    btnSerachType2.Visible = true;
-                    CargarTablaTipoVehiculo();
-                }
-                else
-                {
-                    textNameType.Focus();
-                }
+                MessageBox.Show("Borrado agregado con éxito!");
+                BorrarTipoVehiculo(tv.CodigoTipoVehiculo, 1);
+                Clean();
+                SearchPanel.Visible = true;
+                btnSearch2.Visible = true;
+                btnSerachType2.Visible = false;
+                CargarTablaTipoVehiculo();
+            }
+            else
+            {
+                textNameType.Focus();
             }
         }
 
@@ -214,7 +196,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
                 TipoVehiculo tv = Buscar_TipoVehiculo(textCodeType.Text);
                 Cargar_Campos(tv);
                 SearchPanel.Visible = false;
-                btnSearchType.Visible = false;
+                btnSearch2.Visible = false;
                 btnSerachType2.Visible = true;
             }
         }
@@ -222,14 +204,14 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
         {
             Clean();
             SearchPanel.Visible = true;
-            btnSearchType.Visible = true;
+            btnSearch2.Visible = true;
         }
 
         private void btnSerachType2_Click(object sender, EventArgs e)
         {
             Clean();
             SearchPanel.Visible = true;
-            btnSearchType.Visible = true;
+            btnSearch2.Visible = true;
             btnSerachType2.Visible = false;
         }
 
@@ -242,9 +224,11 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             TipoVehiculo tv = Buscar_TipoVehiculo(codigo);
             Cargar_Campos(tv);
             SearchPanel.Visible = false;
-            btnSearchType.Visible = false;
+            btnSearch2.Visible = false;
             btnSerachType2.Visible = true;
 
         }
+
+
     }
 }
