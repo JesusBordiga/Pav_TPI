@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VehicleType_Modify));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textCodeType = new System.Windows.Forms.TextBox();
+            this.tablaTipoVehiculo = new System.Windows.Forms.DataGridView();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearchType = new System.Windows.Forms.Button();
             this.btnCleanType = new System.Windows.Forms.Button();
             this.searchPanel = new System.Windows.Forms.PictureBox();
@@ -41,25 +45,22 @@
             this.textNameTypeVehicle = new System.Windows.Forms.TextBox();
             this.btnTypeLoad = new System.Windows.Forms.Button();
             this.btnSearchType2 = new System.Windows.Forms.Button();
-            this.tablaTipoVehiculo = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.searchPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoVehiculo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchPanel)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(63, 38);
+            this.label1.Location = new System.Drawing.Point(13, 79);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 50);
+            this.label1.Size = new System.Drawing.Size(320, 32);
             this.label1.TabIndex = 61;
-            this.label1.Text = "   Modificar \r\nTipo vehiculo";
+            this.label1.Text = "Modificar tipo vehiculo";
             // 
             // label2
             // 
@@ -67,9 +68,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(105, 98);
+            this.label2.Location = new System.Drawing.Point(140, 121);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
+            this.label2.Size = new System.Drawing.Size(67, 20);
             this.label2.TabIndex = 73;
             this.label2.Text = "Codigo";
             // 
@@ -77,93 +79,11 @@
             // 
             this.textCodeType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textCodeType.ForeColor = System.Drawing.Color.White;
-            this.textCodeType.Location = new System.Drawing.Point(108, 127);
+            this.textCodeType.Location = new System.Drawing.Point(144, 156);
+            this.textCodeType.Margin = new System.Windows.Forms.Padding(4);
             this.textCodeType.Name = "textCodeType";
-            this.textCodeType.Size = new System.Drawing.Size(46, 20);
+            this.textCodeType.Size = new System.Drawing.Size(60, 22);
             this.textCodeType.TabIndex = 1;
-            // 
-            // btnSearchType
-            // 
-            this.btnSearchType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchType.ForeColor = System.Drawing.Color.White;
-            this.btnSearchType.Location = new System.Drawing.Point(49, 309);
-            this.btnSearchType.Name = "btnSearchType";
-            this.btnSearchType.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchType.TabIndex = 1;
-            this.btnSearchType.Text = "Buscar";
-            this.btnSearchType.UseVisualStyleBackColor = true;
-            this.btnSearchType.Click += new System.EventHandler(this.btnSearchType_Click);
-            // 
-            // btnCleanType
-            // 
-            this.btnCleanType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCleanType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCleanType.ForeColor = System.Drawing.Color.White;
-            this.btnCleanType.Location = new System.Drawing.Point(130, 309);
-            this.btnCleanType.Name = "btnCleanType";
-            this.btnCleanType.Size = new System.Drawing.Size(75, 23);
-            this.btnCleanType.TabIndex = 2;
-            this.btnCleanType.Text = "Limpiar";
-            this.btnCleanType.UseVisualStyleBackColor = true;
-            this.btnCleanType.Click += new System.EventHandler(this.btnCleanType_Click);
-            // 
-            // searchPanel
-            // 
-            this.searchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.searchPanel.Location = new System.Drawing.Point(11, 96);
-            this.searchPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(245, 243);
-            this.searchPanel.TabIndex = 87;
-            this.searchPanel.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(105, 155);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
-            this.label3.TabIndex = 62;
-            this.label3.Text = "Nombre";
-            // 
-            // textNameTypeVehicle
-            // 
-            this.textNameTypeVehicle.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textNameTypeVehicle.ForeColor = System.Drawing.Color.White;
-            this.textNameTypeVehicle.Location = new System.Drawing.Point(73, 183);
-            this.textNameTypeVehicle.Name = "textNameTypeVehicle";
-            this.textNameTypeVehicle.Size = new System.Drawing.Size(120, 20);
-            this.textNameTypeVehicle.TabIndex = 4;
-            // 
-            // btnTypeLoad
-            // 
-            this.btnTypeLoad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTypeLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTypeLoad.ForeColor = System.Drawing.Color.White;
-            this.btnTypeLoad.Location = new System.Drawing.Point(49, 309);
-            this.btnTypeLoad.Name = "btnTypeLoad";
-            this.btnTypeLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnTypeLoad.TabIndex = 6;
-            this.btnTypeLoad.Text = "Modificar";
-            this.btnTypeLoad.UseVisualStyleBackColor = true;
-            this.btnTypeLoad.Click += new System.EventHandler(this.btnTypeLoad_Click);
-            // 
-            // btnSearchType2
-            // 
-            this.btnSearchType2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchType2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchType2.ForeColor = System.Drawing.Color.White;
-            this.btnSearchType2.Location = new System.Drawing.Point(130, 309);
-            this.btnSearchType2.Name = "btnSearchType2";
-            this.btnSearchType2.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchType2.TabIndex = 74;
-            this.btnSearchType2.Text = "Cancelar";
-            this.btnSearchType2.UseVisualStyleBackColor = true;
-            this.btnSearchType2.Click += new System.EventHandler(this.btnSearchType2_Click);
             // 
             // tablaTipoVehiculo
             // 
@@ -172,50 +92,64 @@
             this.tablaTipoVehiculo.AllowUserToOrderColumns = true;
             this.tablaTipoVehiculo.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.tablaTipoVehiculo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaTipoVehiculo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.tablaTipoVehiculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaTipoVehiculo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
-            this.Nombre,
+            this.nombre,
             this.Borrado});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaTipoVehiculo.DefaultCellStyle = dataGridViewCellStyle11;
             this.tablaTipoVehiculo.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tablaTipoVehiculo.Location = new System.Drawing.Point(284, 30);
+            this.tablaTipoVehiculo.Location = new System.Drawing.Point(395, 26);
+            this.tablaTipoVehiculo.Margin = new System.Windows.Forms.Padding(4);
             this.tablaTipoVehiculo.Name = "tablaTipoVehiculo";
             this.tablaTipoVehiculo.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaTipoVehiculo.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.tablaTipoVehiculo.RowHeadersWidth = 10;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.tablaTipoVehiculo.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaTipoVehiculo.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.tablaTipoVehiculo.RowHeadersWidth = 51;
             this.tablaTipoVehiculo.RowTemplate.Height = 24;
-            this.tablaTipoVehiculo.Size = new System.Drawing.Size(201, 310);
-            this.tablaTipoVehiculo.TabIndex = 88;
+            this.tablaTipoVehiculo.Size = new System.Drawing.Size(388, 382);
+            this.tablaTipoVehiculo.TabIndex = 86;
             this.tablaTipoVehiculo.TabStop = false;
+            this.tablaTipoVehiculo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaTipoVehiculo_CellContentClick);
             // 
             // codigo
             // 
             this.codigo.DataPropertyName = "cod_tipo";
-            this.codigo.HeaderText = "Codigo";
+            this.codigo.HeaderText = "codigo";
             this.codigo.MinimumWidth = 6;
             this.codigo.Name = "codigo";
             this.codigo.ReadOnly = true;
-            this.codigo.Width = 50;
+            this.codigo.Width = 80;
             // 
-            // Nombre
+            // nombre
             // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 125;
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 125;
             // 
             // Borrado
             // 
@@ -227,15 +161,102 @@
             this.Borrado.Visible = false;
             this.Borrado.Width = 125;
             // 
+            // btnSearchType
+            // 
+            this.btnSearchType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchType.ForeColor = System.Drawing.Color.White;
+            this.btnSearchType.Location = new System.Drawing.Point(104, 311);
+            this.btnSearchType.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearchType.Name = "btnSearchType";
+            this.btnSearchType.Size = new System.Drawing.Size(100, 28);
+            this.btnSearchType.TabIndex = 2;
+            this.btnSearchType.Text = "Buscar";
+            this.btnSearchType.UseVisualStyleBackColor = true;
+            this.btnSearchType.Click += new System.EventHandler(this.btnSearchType_Click);
+            // 
+            // btnCleanType
+            // 
+            this.btnCleanType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCleanType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCleanType.ForeColor = System.Drawing.Color.White;
+            this.btnCleanType.Location = new System.Drawing.Point(212, 311);
+            this.btnCleanType.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCleanType.Name = "btnCleanType";
+            this.btnCleanType.Size = new System.Drawing.Size(100, 28);
+            this.btnCleanType.TabIndex = 3;
+            this.btnCleanType.Text = "Limpiar";
+            this.btnCleanType.UseVisualStyleBackColor = true;
+            this.btnCleanType.Click += new System.EventHandler(this.btnCleanType_Click);
+            // 
+            // searchPanel
+            // 
+            this.searchPanel.BackColor = System.Drawing.Color.Transparent;
+            this.searchPanel.Location = new System.Drawing.Point(280, 93);
+            this.searchPanel.Name = "searchPanel";
+            this.searchPanel.Size = new System.Drawing.Size(327, 299);
+            this.searchPanel.TabIndex = 87;
+            this.searchPanel.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(140, 191);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 20);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "Nombre";
+            // 
+            // textNameTypeVehicle
+            // 
+            this.textNameTypeVehicle.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textNameTypeVehicle.ForeColor = System.Drawing.Color.White;
+            this.textNameTypeVehicle.Location = new System.Drawing.Point(97, 225);
+            this.textNameTypeVehicle.Margin = new System.Windows.Forms.Padding(4);
+            this.textNameTypeVehicle.Name = "textNameTypeVehicle";
+            this.textNameTypeVehicle.Size = new System.Drawing.Size(159, 22);
+            this.textNameTypeVehicle.TabIndex = 4;
+            // 
+            // btnTypeLoad
+            // 
+            this.btnTypeLoad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTypeLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTypeLoad.ForeColor = System.Drawing.Color.White;
+            this.btnTypeLoad.Location = new System.Drawing.Point(65, 380);
+            this.btnTypeLoad.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTypeLoad.Name = "btnTypeLoad";
+            this.btnTypeLoad.Size = new System.Drawing.Size(100, 28);
+            this.btnTypeLoad.TabIndex = 6;
+            this.btnTypeLoad.Text = "Modificar";
+            this.btnTypeLoad.UseVisualStyleBackColor = true;
+            this.btnTypeLoad.Click += new System.EventHandler(this.btnTypeLoad_Click);
+            // 
+            // btnSearchType2
+            // 
+            this.btnSearchType2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchType2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchType2.ForeColor = System.Drawing.Color.White;
+            this.btnSearchType2.Location = new System.Drawing.Point(173, 380);
+            this.btnSearchType2.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearchType2.Name = "btnSearchType2";
+            this.btnSearchType2.Size = new System.Drawing.Size(100, 28);
+            this.btnSearchType2.TabIndex = 74;
+            this.btnSearchType2.Text = "Cancelar";
+            this.btnSearchType2.UseVisualStyleBackColor = true;
+            this.btnSearchType2.Click += new System.EventHandler(this.btnSearchType2_Click);
+            // 
             // VehicleType_Modify
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(497, 349);
-            this.Controls.Add(this.tablaTipoVehiculo);
+            this.ClientSize = new System.Drawing.Size(787, 421);
             this.Controls.Add(this.btnCleanType);
             this.Controls.Add(this.btnSearchType);
             this.Controls.Add(this.textCodeType);
@@ -245,15 +266,16 @@
             this.Controls.Add(this.btnTypeLoad);
             this.Controls.Add(this.textNameTypeVehicle);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.tablaTipoVehiculo);
             this.Controls.Add(this.label1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(805, 468);
+            this.MinimumSize = new System.Drawing.Size(805, 468);
             this.Name = "VehicleType_Modify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar tipo vehiculo";
-            ((System.ComponentModel.ISupportInitialize)(this.searchPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoVehiculo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchPanel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,6 +286,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textCodeType;
+        private System.Windows.Forms.DataGridView tablaTipoVehiculo;
         private System.Windows.Forms.Button btnSearchType;
         private System.Windows.Forms.Button btnCleanType;
         private System.Windows.Forms.PictureBox searchPanel;
@@ -271,9 +294,8 @@
         private System.Windows.Forms.TextBox textNameTypeVehicle;
         private System.Windows.Forms.Button btnTypeLoad;
         private System.Windows.Forms.Button btnSearchType2;
-        private System.Windows.Forms.DataGridView tablaTipoVehiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
     }
 }
