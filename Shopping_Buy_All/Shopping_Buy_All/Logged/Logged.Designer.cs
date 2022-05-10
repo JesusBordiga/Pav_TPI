@@ -191,7 +191,7 @@
             this.btnAutomoviles.Name = "btnAutomoviles";
             this.btnAutomoviles.Size = new System.Drawing.Size(75, 23);
             this.btnAutomoviles.TabIndex = 21;
-            this.btnAutomoviles.Text = "Automoviles";
+            this.btnAutomoviles.Text = "Vehiculos";
             this.btnAutomoviles.UseVisualStyleBackColor = false;
             this.btnAutomoviles.Click += new System.EventHandler(this.btnAutomoviles_Click);
             // 

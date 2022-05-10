@@ -18,18 +18,19 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
             CargarTablaMarcasVeh();
+            CargarMarcasVeh();
 
         }
 
         private void btnBuscarMarca_click(object sender, EventArgs e)
         {
-            if (cmbMarcaVeh.SelectedIndex != 0)
+            if (textMarcaOld.SelectedIndex != 0)
             {
                 MessageBox.Show("Error, Completar campos!!");
             }
             else
             {
-                MarcaVehiculo c = Buscar_Marca(cmbMarcaVeh.SelectedValue.ToString());
+                MarcaVehiculo c = Buscar_Marca(textMarcaOld.Text.Trim());
                 Cargar_Campos(c);
                 btnBuscarMarca.Visible = false;
             }
@@ -42,16 +43,53 @@ namespace Shopping_Buy_All
         }
         private void Clean()
         {
-            cmbMarcaVeh.SelectedIndex = -1;
+            textMarcaOld.SelectedIndex = -1;
 
         }
         private void Cargar_Campos(MarcaVehiculo c)
         {
 
-            cmbMarcaVeh.SelectedValue = c.MarcaVeh;
+            textMarcaOld.Text = c.MarcaVeh;
+            textMarcaNew.Text = c.MarcaVeh;
+        }
 
-        } 
+        private void CargarMarcasVeh()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
 
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "Select * FROM Marcas where Borrado = 0";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                textMarcaOld.DataSource = tabla;
+                textMarcaOld.DisplayMember = "Descripcion";
+                textMarcaOld.ValueMember = "Id";
+                textMarcaOld.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         private void CargarTablaMarcasVeh()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -128,17 +166,26 @@ namespace Shopping_Buy_All
         {
             Clean();
         }
-        private MarcaVehiculo ObtenerDatosMarca()
+
+        private MarcaVehiculo ObtenerMarcaOld()
         {
             MarcaVehiculo c = new MarcaVehiculo();
 
-            c.MarcaVeh = cmbMarcaVeh.SelectedValue.ToString();
+            c.MarcaVeh = textMarcaOld.Text.Trim();
 
             return c;
         }
 
+        private MarcaVehiculo ObtenerMarcaNew()
+        {
+            MarcaVehiculo c = new MarcaVehiculo();
 
-        private bool ModificarMarca(MarcaVehiculo mark)
+            c.MarcaVeh = textMarcaNew.Text.Trim();
+
+            return c;
+        }
+
+        private bool ModificarMarca(MarcaVehiculo marcaNew, MarcaVehiculo marcaOld)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -146,10 +193,10 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Marcas SET Descripcion=@marcaVeh";
+                string consulta = "UPDATE Marcas SET Descripcion = @marcaNew WHERE Descripcion = @marcaOld";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@marcaVeh", mark.MarcaVeh);
-                cmd.Parameters.AddWithValue("@borrado", mark.BorradoMarcaVeh);
+                cmd.Parameters.AddWithValue("@marcaNew", marcaNew.MarcaVeh);
+                cmd.Parameters.AddWithValue("@marcaOld", marcaOld.MarcaVeh);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -175,7 +222,8 @@ namespace Shopping_Buy_All
 
         private void btnMarcaMod_Click_1(object sender, EventArgs e)
         {
-            MarcaVehiculo c = ObtenerDatosMarca();
+            MarcaVehiculo oldM = ObtenerMarcaOld();
+            MarcaVehiculo newM = ObtenerMarcaNew();
             bool resultado = ModificarMarca(c);
             if (resultado)
             {
@@ -192,12 +240,11 @@ namespace Shopping_Buy_All
                     MessageBox.Show("Marca agregada con éxito!");
                     Clean();
                     CargarTablaMarcasVeh();
-
-
+                    CargarMarcasVeh();
                 }
                 else
                 {
-                    cmbMarcaVeh.Focus();
+                    textMarcaOld.Focus();
                 }
             }
             else
@@ -214,7 +261,7 @@ namespace Shopping_Buy_All
             MarcaVehiculo c = Buscar_Marca(marcaVeh);
             Clean();
             btnBuscarMarca.Visible = false;
-            cmbMarcaVeh.Visible = true;
+            textMarcaOld.Visible = true;
             Cargar_Campos(c);
         }
     }

@@ -25,7 +25,6 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
             CargarTablaMarcas();
-            CargarMarcaVeh();
 
 
 
@@ -37,46 +36,9 @@ namespace Shopping_Buy_All
         }
         private void Clean()
         {
-            cmbMarca.SelectedIndex = -1;
+            cmbMarca.Text = "";
             CargarTablaMarcas();
 
-        }
-        private void CargarMarcaVeh()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Marcas where Borrado = 0";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-
-                cmbMarca.DataSource = tabla;
-                cmbMarca.DisplayMember = "Descripcion";
-                cmbMarca.ValueMember = "Id";
-                cmbMarca.SelectedIndex = -1;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
         }
 
         private void CargarTablaMarcas()
@@ -116,7 +78,7 @@ namespace Shopping_Buy_All
         {
             MarcaVehiculo c = new MarcaVehiculo();
 
-            c.MarcaVeh = cmbMarca.SelectedValue.ToString();
+            c.MarcaVeh = cmbMarca.Text.Trim();
 
             return c;
         }
@@ -129,7 +91,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO Marcas" +
+                string consulta = "INSERT INTO Marcas (Descripcion) " +
                                                "Values(@descripcion)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@descripcion", mark.MarcaVeh);
@@ -174,7 +136,6 @@ namespace Shopping_Buy_All
                     MessageBox.Show("Marca agregado con éxito!");
                     Clean();
                     CargarTablaMarcas();
-                    CargarMarcaVeh();
 
 
                 }

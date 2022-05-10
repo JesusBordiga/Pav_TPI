@@ -262,8 +262,10 @@
     <Compile Include="ABMS\AccesoADatos\AD_TipoComercio.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\EstadoCivil.cs" />
+    <Compile Include="Entidades\MarcaVehiculo.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\Sexo.cs" />
+    <Compile Include="Entidades\Tarjeta.cs" />
     <Compile Include="Entidades\TipoComercio.cs" />
     <Compile Include="Entidades\Local.cs" />
     <Compile Include="Entidades\TipoDocumento.cs" />

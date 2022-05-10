@@ -37,11 +37,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscarMarca = new System.Windows.Forms.Button();
             this.btnSearchClient2 = new System.Windows.Forms.Button();
-            this.cmbMarcaVeh = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tablaMarcas = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textMarcaNew = new System.Windows.Forms.TextBox();
+            this.textMarcaOld = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaMarcas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,16 +122,6 @@
             this.btnSearchClient2.UseVisualStyleBackColor = true;
             this.btnSearchClient2.Click += new System.EventHandler(this.btnBuscarMarca_Click);
             // 
-            // cmbMarcaVeh
-            // 
-            this.cmbMarcaVeh.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.cmbMarcaVeh.ForeColor = System.Drawing.Color.White;
-            this.cmbMarcaVeh.FormattingEnabled = true;
-            this.cmbMarcaVeh.Location = new System.Drawing.Point(105, 93);
-            this.cmbMarcaVeh.Name = "cmbMarcaVeh";
-            this.cmbMarcaVeh.Size = new System.Drawing.Size(119, 21);
-            this.cmbMarcaVeh.TabIndex = 66;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -193,6 +184,25 @@
             this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
             // 
+            // textMarcaNew
+            // 
+            this.textMarcaNew.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textMarcaNew.ForeColor = System.Drawing.Color.White;
+            this.textMarcaNew.Location = new System.Drawing.Point(105, 94);
+            this.textMarcaNew.Name = "textMarcaNew";
+            this.textMarcaNew.Size = new System.Drawing.Size(119, 20);
+            this.textMarcaNew.TabIndex = 74;
+            // 
+            // textMarcaOld
+            // 
+            this.textMarcaOld.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textMarcaOld.ForeColor = System.Drawing.Color.White;
+            this.textMarcaOld.FormattingEnabled = true;
+            this.textMarcaOld.Location = new System.Drawing.Point(105, 94);
+            this.textMarcaOld.Name = "textMarcaOld";
+            this.textMarcaOld.Size = new System.Drawing.Size(119, 21);
+            this.textMarcaOld.TabIndex = 66;
+            // 
             // MarcaVeh_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,13 +213,14 @@
             this.ClientSize = new System.Drawing.Size(1027, 449);
             this.Controls.Add(this.tablaMarcas);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cmbMarcaVeh);
+            this.Controls.Add(this.textMarcaOld);
             this.Controls.Add(this.btnBuscarMarca);
             this.Controls.Add(this.btnSearchClient2);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnMarcaMod);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.textMarcaNew);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1043, 488);
@@ -230,10 +241,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscarMarca;
         private System.Windows.Forms.Button btnSearchClient2;
-        private System.Windows.Forms.ComboBox cmbMarcaVeh;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView tablaMarcas;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.TextBox textMarcaNew;
+        private System.Windows.Forms.ComboBox textMarcaOld;
     }
 }
