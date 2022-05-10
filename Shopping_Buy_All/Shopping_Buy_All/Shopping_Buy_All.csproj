@@ -132,6 +132,12 @@
     <Compile Include="ABMS\ABM Productos\Product_Modify.Designer.cs">
       <DependentUpon>Product_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM Rubros\Rubro_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Rubros\Rubro_Modify.Designer.cs">
+      <DependentUpon>Rubro_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM Sexo\Sexo_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -407,6 +413,9 @@
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Modify.resx">
       <DependentUpon>Product_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Rubros\Rubro_Modify.resx">
+      <DependentUpon>Rubro_Modify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Sexo\Sexo_Delete.resx">
       <DependentUpon>Sexo_Delete.cs</DependentUpon>
     </EmbeddedResource>
@@ -554,7 +563,6 @@
     <Folder Include="ABMS\ABM MarcaTarjeta\" />
     <Folder Include="ABMS\ABM Modelos\" />
     <Folder Include="ABMS\ABM Profesiones\" />
-    <Folder Include="ABMS\ABM Rubros\" />
     <Folder Include="ABMS\ABM Vehiculos\" />
   </ItemGroup>
   <ItemGroup>
