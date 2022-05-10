@@ -234,10 +234,17 @@ namespace Shopping_Buy_All
 
         private void tablaUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaUsuarios.Rows[indice];
-            string username = filaSeleccionada.Cells["NombreDeUsuario"].Value.ToString();
-            Cargar_Campos(username);
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaUsuarios.Rows[indice];
+                string username = filaSeleccionada.Cells["NombreDeUsuario"].Value.ToString();
+                Cargar_Campos(username);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una casilla dentro de la tabla", "ERROR");
+            }
         }
     }
 }

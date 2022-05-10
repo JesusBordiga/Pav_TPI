@@ -203,12 +203,19 @@ namespace Shopping_Buy_All
 
         private void tablaUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaUsuarios.Rows[indice];
-            string username = filaSeleccionada.Cells["NombreDeUsuario"].Value.ToString();
-            Clean();
-            Cargar_Campos(username);
-            btnDeleteUser.Visible = true;
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaUsuarios.Rows[indice];
+                string username = filaSeleccionada.Cells["NombreDeUsuario"].Value.ToString();
+                Clean();
+                Cargar_Campos(username);
+                btnDeleteUser.Visible = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una casilla dentro de la tabla", "ERROR");
+            }
         }
 
         private void Cargar_Campos(string username)

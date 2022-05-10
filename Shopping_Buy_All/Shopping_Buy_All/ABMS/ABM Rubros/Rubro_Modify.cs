@@ -235,10 +235,17 @@ namespace Shopping_Buy_All
 
         private void tablaRubros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaRubros.Rows[indice];
-            string rubro = filaSeleccionada.Cells["Nombre"].Value.ToString();
-            Cargar_Campos(rubro);
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaRubros.Rows[indice];
+                string rubro = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                Cargar_Campos(rubro);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una casilla dentro de la tabla", "ERROR");
+            }
         }
     }
 }
