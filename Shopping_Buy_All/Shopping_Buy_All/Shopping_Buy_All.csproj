@@ -138,6 +138,12 @@
     <Compile Include="ABMS\ABM Rubros\Rubro_Delete.Designer.cs">
       <DependentUpon>Rubro_Delete.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM Rubros\Rubro_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Rubros\Rubro_Load.designer.cs">
+      <DependentUpon>Rubro_Load.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM Rubros\Rubro_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -421,6 +427,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Rubros\Rubro_Delete.resx">
       <DependentUpon>Rubro_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Rubros\Rubro_Load.resx">
+      <DependentUpon>Rubro_Load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Rubros\Rubro_Modify.resx">
       <DependentUpon>Rubro_Modify.cs</DependentUpon>
