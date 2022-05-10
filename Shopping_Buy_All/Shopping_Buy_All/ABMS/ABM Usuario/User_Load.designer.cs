@@ -73,7 +73,7 @@
             this.Password,
             this.Borrado});
             this.tablaUsuarios.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaUsuarios.Location = new System.Drawing.Point(350, 47);
+            this.tablaUsuarios.Location = new System.Drawing.Point(340, 48);
             this.tablaUsuarios.Name = "tablaUsuarios";
             this.tablaUsuarios.ReadOnly = true;
             this.tablaUsuarios.RowHeadersWidth = 20;
@@ -83,7 +83,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.tablaUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaUsuarios.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tablaUsuarios.Size = new System.Drawing.Size(668, 397);
+            this.tablaUsuarios.Size = new System.Drawing.Size(205, 397);
             this.tablaUsuarios.TabIndex = 0;
             this.tablaUsuarios.TabStop = false;
             // 
@@ -105,7 +105,7 @@
             this.labelUserList.BackColor = System.Drawing.Color.Transparent;
             this.labelUserList.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUserList.ForeColor = System.Drawing.Color.White;
-            this.labelUserList.Location = new System.Drawing.Point(590, 11);
+            this.labelUserList.Location = new System.Drawing.Point(335, 9);
             this.labelUserList.Name = "labelUserList";
             this.labelUserList.Size = new System.Drawing.Size(215, 29);
             this.labelUserList.TabIndex = 28;
@@ -211,7 +211,7 @@
             this.NombreDeUsuario.HeaderText = "Nombre de Usuario";
             this.NombreDeUsuario.Name = "NombreDeUsuario";
             this.NombreDeUsuario.ReadOnly = true;
-            this.NombreDeUsuario.Width = 140;
+            this.NombreDeUsuario.Width = 180;
             // 
             // PasswordHash
             // 
@@ -235,6 +235,7 @@
             this.Password.HeaderText = "Contraseña";
             this.Password.Name = "Password";
             this.Password.ReadOnly = true;
+            this.Password.Visible = false;
             this.Password.Width = 120;
             // 
             // Borrado
@@ -252,7 +253,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1027, 449);
+            this.ClientSize = new System.Drawing.Size(551, 449);
             this.Controls.Add(this.textConfirmPasswordUser);
             this.Controls.Add(this.labelConfirmPasswordUser);
             this.Controls.Add(this.labelPasswordUser);
@@ -266,8 +267,8 @@
             this.Controls.Add(this.tablaUsuarios);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1043, 488);
-            this.MinimumSize = new System.Drawing.Size(1043, 488);
+            this.MaximumSize = new System.Drawing.Size(567, 488);
+            this.MinimumSize = new System.Drawing.Size(567, 488);
             this.Name = "User_Load";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

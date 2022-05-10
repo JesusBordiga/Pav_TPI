@@ -204,11 +204,23 @@
     <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Modify.designer.cs">
       <DependentUpon>VehicleType_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM Usuario\User_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Usuario\User_Delete.Designer.cs">
+      <DependentUpon>User_Delete.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM Usuario\User_Load.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ABMS\ABM Usuario\User_Load.designer.cs">
       <DependentUpon>User_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Usuario\User_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Usuario\User_Modify.Designer.cs">
+      <DependentUpon>User_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\AccesoADatos\AD_Local.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_TipoComercio.cs" />
@@ -393,8 +405,14 @@
     <EmbeddedResource Include="ABMS\ABM TipoVehiculo\VehicleType_Modify.resx">
       <DependentUpon>VehicleType_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Usuario\User_Delete.resx">
+      <DependentUpon>User_Delete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Usuario\User_Load.resx">
       <DependentUpon>User_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Usuario\User_Modify.resx">
+      <DependentUpon>User_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
