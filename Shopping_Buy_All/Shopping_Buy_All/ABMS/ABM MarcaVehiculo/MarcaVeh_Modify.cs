@@ -235,7 +235,7 @@ namespace Shopping_Buy_All
         {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = tablaMarcas.Rows[indice];
-            string marca = filaSeleccionada.Cells["Descripcion"].Value.ToString();
+            string marca = filaSeleccionada.Cells["dataGridViewTextBoxColumn4"].Value.ToString();
             Cargar_Campos(marca);
         }
     }
