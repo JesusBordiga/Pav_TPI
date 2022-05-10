@@ -19,7 +19,6 @@ namespace Shopping_Buy_All.ABM_Sexo
             InitializeComponent();
             CargarTablaSexo();
         }
-
         private void btnSexoLoad_Click(object sender, EventArgs e)
         {
             Sexo sexo = new Sexo(txtNombreSexo.Text.Trim(), 0);
@@ -76,11 +75,11 @@ namespace Shopping_Buy_All.ABM_Sexo
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -108,11 +107,11 @@ namespace Shopping_Buy_All.ABM_Sexo
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {

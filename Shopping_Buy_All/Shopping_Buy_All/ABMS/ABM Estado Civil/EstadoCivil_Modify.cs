@@ -100,11 +100,11 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -139,11 +139,11 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -197,11 +197,11 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {

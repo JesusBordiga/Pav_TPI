@@ -45,11 +45,11 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -77,11 +77,11 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -89,7 +89,6 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             }
             return resultado;
         }
-
         private void btnSexoLoad_Click_1(object sender, EventArgs e)
         {
             TipoDocumento tipDoc = new TipoDocumento(txtTipoDoc.Text.Trim(), 0);

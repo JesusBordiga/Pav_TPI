@@ -48,11 +48,11 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -80,11 +80,11 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -92,7 +92,6 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             }
             return resultado;
         }
-
         private void btnTipoTarjetaLoad_Click(object sender, EventArgs e)
         {
             TipoTarjeta tipoTarjeta = new TipoTarjeta(txtNombreTdT.Text.Trim(), 0);

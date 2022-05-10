@@ -56,11 +56,11 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -95,11 +95,11 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -152,11 +152,11 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -198,10 +198,18 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
         }
         private void tablaTipoTarjeta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+            {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = tablaTipoTarjeta.Rows[indice];
             string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
             buscarTipoTarjeta(nombre);
+            }
+            catch
+            {
+                MessageBox.Show("Error! Seleccione una casilla dentro de la tabla");
+            }
         }
     }
 }

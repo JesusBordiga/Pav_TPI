@@ -21,11 +21,18 @@ namespace Shopping_Buy_All.ABM_Sexo
             cargarTablaSexo();
         }
         private void tablaSexo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaSexo.Rows[indice];
-            string nombre = filaSeleccionada.Cells["NombreSexo"].Value.ToString();
-            buscarSexo(nombre);
+        {   
+            try
+            { 
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaSexo.Rows[indice];
+                string nombre = filaSeleccionada.Cells["NombreSexo"].Value.ToString();
+                buscarSexo(nombre);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! \n Seleccione una casilla dentro de la tabla");
+            }
         }
         private void btnSexoModify_Click(object sender, EventArgs e)
         {
@@ -100,11 +107,11 @@ namespace Shopping_Buy_All.ABM_Sexo
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -139,11 +146,11 @@ namespace Shopping_Buy_All.ABM_Sexo
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -197,11 +204,11 @@ namespace Shopping_Buy_All.ABM_Sexo
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
