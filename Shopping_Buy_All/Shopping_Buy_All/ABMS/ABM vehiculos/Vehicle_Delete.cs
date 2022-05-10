@@ -29,14 +29,58 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
         {
             textNamePatente.Text = "";
             textNroDoc.Text = "";
+            textNameModelo.Text = "";
+            comboBoxDocType.SelectedValue = "";
+        }
+
+        private void CargarTiposDocumentos()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "Select * FROM TipoDocumento WHERE Borrado like 0";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                comboBoxDocType.DataSource = tabla;
+                comboBoxDocType.DisplayMember = "NombreDocumento";
+                comboBoxDocType.ValueMember = "TipoDocumento";
+                comboBoxDocType.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
 
         private void Cargar_Campos(Automovil a)
         {
             //Cargar NroDoc
             textNroDoc.Text = a.DocumentoPropietario.ToString();
-            //Cargar Nombre
+            //Cargar Patente
             textNamePatente.Text = a.PatenteAutomovil;
+            //Tipo de documento
+            comboBoxDocType.SelectedValue = a.TipoDocumentoPropietario;
+            //Modelo Vehiculo
+            textNameModelo.Text = a.ModeloAutomovil;
 
         }
 
@@ -84,10 +128,10 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Automovil WHERE NroDoc like @nroDocPropietario AND Borrado like 0";
+                string consulta = "SELECT * FROM Automovil WHERE Patente like @patente AND Borrado like 0";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nroDocPropietario", Code);
+                cmd.Parameters.AddWithValue("@patente", Code);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
@@ -99,6 +143,8 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
                 {
                     aut.DocumentoPropietario = DataReader["NroDoc"].ToString();
                     aut.PatenteAutomovil = DataReader["Patente"].ToString();
+                    aut.TipoDocumentoPropietario = int.Parse(DataReader["TipoDoc"].ToString());
+                    aut.ModeloAutomovil = DataReader["Modelo"].ToString();
 
                 }
             }
@@ -121,6 +167,10 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             a.DocumentoPropietario = textNroDoc.Text.Trim();
             //Cargar Patente
             a.PatenteAutomovil = textNamePatente.Text.Trim();
+            //Cargar tipoDoc
+            a.TipoDocumentoPropietario = (int)comboBoxDocType.SelectedValue;
+            //Modelo Vehiculo
+            a.ModeloAutomovil = textNameModelo.Text.Trim();
             return a;
         }
 
@@ -136,6 +186,8 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nrodoc", Codigo);
                 cmd.Parameters.AddWithValue("@patente", Borrado);
+                cmd.Parameters.AddWithValue("@modelo", Borrado);
+                cmd.Parameters.AddWithValue("@tipodocpropietario", Borrado);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -165,10 +217,13 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             Automovil a = ObtenerDatosVehiculo();
             MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
             String mensajeCarga = (
-                  " |NroDoc: " + a.DocumentoPropietario + "|" + "\n"
-                + " |Patente: " + a.PatenteAutomovil + "|" + "\n");
+                " |NroDoc: " + a.DocumentoPropietario + "|" + "\n"
+                    + " |Patente: " + a.PatenteAutomovil + "|" + "\n"
+                    + " |Modelo: " + a.ModeloAutomovil + "|" + "\n"
+                    + " |TipoDoc: " + a.TipoDocumentoPropietario + "|" + "\n");
 
-            string titulo = "Información de tipo de vehiculo";
+
+            string titulo = "Información del vehiculo";
 
             DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
 

@@ -32,11 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tablaVehiculos = new System.Windows.Forms.DataGridView();
-            this.Patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDocPropietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NroDocPropietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.searchPanel = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,6 +42,15 @@
             this.textNamePatente = new System.Windows.Forms.TextBox();
             this.btnModifyVehicle = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.Patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDocPropietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroDocPropietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxDocType = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textNameModelo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaVehiculos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchPanel)).BeginInit();
             this.SuspendLayout();
@@ -82,7 +86,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tablaVehiculos.DefaultCellStyle = dataGridViewCellStyle2;
             this.tablaVehiculos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tablaVehiculos.Location = new System.Drawing.Point(598, 26);
+            this.tablaVehiculos.Location = new System.Drawing.Point(617, 40);
             this.tablaVehiculos.Margin = new System.Windows.Forms.Padding(4);
             this.tablaVehiculos.Name = "tablaVehiculos";
             this.tablaVehiculos.ReadOnly = true;
@@ -100,8 +104,133 @@
             this.tablaVehiculos.TabIndex = 87;
             this.tablaVehiculos.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(141, 54);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(261, 32);
+            this.label1.TabIndex = 88;
+            this.label1.Text = "Modificar vehiculo";
+            // 
+            // searchPanel
+            // 
+            this.searchPanel.BackColor = System.Drawing.Color.Transparent;
+            this.searchPanel.Location = new System.Drawing.Point(292, 89);
+            this.searchPanel.Name = "searchPanel";
+            this.searchPanel.Size = new System.Drawing.Size(476, 366);
+            this.searchPanel.TabIndex = 89;
+            this.searchPanel.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(175, 245);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(165, 20);
+            this.label2.TabIndex = 90;
+            this.label2.Text = "NroDocPropietario";
+            // 
+            // textNroDoc
+            // 
+            this.textNroDoc.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textNroDoc.ForeColor = System.Drawing.Color.White;
+            this.textNroDoc.Location = new System.Drawing.Point(225, 269);
+            this.textNroDoc.Margin = new System.Windows.Forms.Padding(4);
+            this.textNroDoc.Name = "textNroDoc";
+            this.textNroDoc.Size = new System.Drawing.Size(60, 22);
+            this.textNroDoc.TabIndex = 91;
+            // 
+            // btnSearchType
+            // 
+            this.btnSearchType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchType.ForeColor = System.Drawing.Color.White;
+            this.btnSearchType.Location = new System.Drawing.Point(194, 434);
+            this.btnSearchType.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearchType.Name = "btnSearchType";
+            this.btnSearchType.Size = new System.Drawing.Size(100, 28);
+            this.btnSearchType.TabIndex = 92;
+            this.btnSearchType.Text = "Buscar";
+            this.btnSearchType.UseVisualStyleBackColor = true;
+            this.btnSearchType.Click += new System.EventHandler(this.btnSearchType_Click);
+            // 
+            // btnCleanType
+            // 
+            this.btnCleanType.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCleanType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCleanType.ForeColor = System.Drawing.Color.White;
+            this.btnCleanType.Location = new System.Drawing.Point(302, 434);
+            this.btnCleanType.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCleanType.Name = "btnCleanType";
+            this.btnCleanType.Size = new System.Drawing.Size(100, 28);
+            this.btnCleanType.TabIndex = 93;
+            this.btnCleanType.Text = "Limpiar";
+            this.btnCleanType.UseVisualStyleBackColor = true;
+            this.btnCleanType.Click += new System.EventHandler(this.btnCleanType_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(221, 113);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 20);
+            this.label3.TabIndex = 94;
+            this.label3.Text = "Patente";
+            // 
+            // textNamePatente
+            // 
+            this.textNamePatente.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textNamePatente.ForeColor = System.Drawing.Color.White;
+            this.textNamePatente.Location = new System.Drawing.Point(183, 137);
+            this.textNamePatente.Margin = new System.Windows.Forms.Padding(4);
+            this.textNamePatente.Name = "textNamePatente";
+            this.textNamePatente.Size = new System.Drawing.Size(159, 22);
+            this.textNamePatente.TabIndex = 95;
+            // 
+            // btnModifyVehicle
+            // 
+            this.btnModifyVehicle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModifyVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifyVehicle.ForeColor = System.Drawing.Color.White;
+            this.btnModifyVehicle.Location = new System.Drawing.Point(194, 384);
+            this.btnModifyVehicle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModifyVehicle.Name = "btnModifyVehicle";
+            this.btnModifyVehicle.Size = new System.Drawing.Size(100, 28);
+            this.btnModifyVehicle.TabIndex = 96;
+            this.btnModifyVehicle.Text = "Modificar";
+            this.btnModifyVehicle.UseVisualStyleBackColor = true;
+            this.btnModifyVehicle.Click += new System.EventHandler(this.btnModifyVehicle_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(302, 384);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 28);
+            this.btnCancel.TabIndex = 97;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // Patente
             // 
+            this.Patente.DataPropertyName = "Patente";
             this.Patente.HeaderText = "Patente";
             this.Patente.MinimumWidth = 6;
             this.Patente.Name = "Patente";
@@ -110,7 +239,7 @@
             // 
             // TipoDocPropietario
             // 
-            this.TipoDocPropietario.DataPropertyName = "TipDoc";
+            this.TipoDocPropietario.DataPropertyName = "TipoDoc";
             this.TipoDocPropietario.HeaderText = "TipoDocPropietario";
             this.TipoDocPropietario.MinimumWidth = 6;
             this.TipoDocPropietario.Name = "TipoDocPropietario";
@@ -137,131 +266,60 @@
             // 
             // Borrado
             // 
+            this.Borrado.DataPropertyName = "Borrado";
             this.Borrado.HeaderText = "Borrado";
             this.Borrado.MinimumWidth = 6;
             this.Borrado.Name = "Borrado";
             this.Borrado.ReadOnly = true;
+            this.Borrado.Visible = false;
             this.Borrado.Width = 125;
             // 
-            // label1
+            // label4
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(141, 54);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 32);
-            this.label1.TabIndex = 88;
-            this.label1.Text = "Modificar vehiculo";
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(179, 184);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(172, 20);
+            this.label4.TabIndex = 98;
+            this.label4.Text = "Tipo de Documento";
             // 
-            // searchPanel
+            // comboBoxDocType
             // 
-            this.searchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.searchPanel.Location = new System.Drawing.Point(124, 107);
-            this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(327, 299);
-            this.searchPanel.TabIndex = 89;
-            this.searchPanel.TabStop = false;
+            this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
+            this.comboBoxDocType.FormattingEnabled = true;
+            this.comboBoxDocType.Location = new System.Drawing.Point(183, 208);
+            this.comboBoxDocType.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxDocType.Name = "comboBoxDocType";
+            this.comboBoxDocType.Size = new System.Drawing.Size(157, 24);
+            this.comboBoxDocType.TabIndex = 99;
             // 
-            // label2
+            // label5
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(183, 127);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 20);
-            this.label2.TabIndex = 90;
-            this.label2.Text = "NroDocPropietario";
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(216, 295);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 20);
+            this.label5.TabIndex = 100;
+            this.label5.Text = "Modelo";
             // 
-            // textNroDoc
+            // textNameModelo
             // 
-            this.textNroDoc.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textNroDoc.ForeColor = System.Drawing.Color.White;
-            this.textNroDoc.Location = new System.Drawing.Point(232, 151);
-            this.textNroDoc.Margin = new System.Windows.Forms.Padding(4);
-            this.textNroDoc.Name = "textNroDoc";
-            this.textNroDoc.Size = new System.Drawing.Size(60, 22);
-            this.textNroDoc.TabIndex = 91;
-            // 
-            // btnSearchType
-            // 
-            this.btnSearchType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchType.ForeColor = System.Drawing.Color.White;
-            this.btnSearchType.Location = new System.Drawing.Point(225, 369);
-            this.btnSearchType.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSearchType.Name = "btnSearchType";
-            this.btnSearchType.Size = new System.Drawing.Size(100, 28);
-            this.btnSearchType.TabIndex = 92;
-            this.btnSearchType.Text = "Buscar";
-            this.btnSearchType.UseVisualStyleBackColor = true;
-            // 
-            // btnCleanType
-            // 
-            this.btnCleanType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCleanType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCleanType.ForeColor = System.Drawing.Color.White;
-            this.btnCleanType.Location = new System.Drawing.Point(333, 369);
-            this.btnCleanType.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCleanType.Name = "btnCleanType";
-            this.btnCleanType.Size = new System.Drawing.Size(100, 28);
-            this.btnCleanType.TabIndex = 93;
-            this.btnCleanType.Text = "Limpiar";
-            this.btnCleanType.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(221, 208);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 20);
-            this.label3.TabIndex = 94;
-            this.label3.Text = "Patente";
-            // 
-            // textNamePatente
-            // 
-            this.textNamePatente.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textNamePatente.ForeColor = System.Drawing.Color.White;
-            this.textNamePatente.Location = new System.Drawing.Point(187, 232);
-            this.textNamePatente.Margin = new System.Windows.Forms.Padding(4);
-            this.textNamePatente.Name = "textNamePatente";
-            this.textNamePatente.Size = new System.Drawing.Size(159, 22);
-            this.textNamePatente.TabIndex = 95;
-            // 
-            // btnModifyVehicle
-            // 
-            this.btnModifyVehicle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModifyVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifyVehicle.ForeColor = System.Drawing.Color.White;
-            this.btnModifyVehicle.Location = new System.Drawing.Point(124, 310);
-            this.btnModifyVehicle.Margin = new System.Windows.Forms.Padding(4);
-            this.btnModifyVehicle.Name = "btnModifyVehicle";
-            this.btnModifyVehicle.Size = new System.Drawing.Size(100, 28);
-            this.btnModifyVehicle.TabIndex = 96;
-            this.btnModifyVehicle.Text = "Modificar";
-            this.btnModifyVehicle.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(232, 310);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 28);
-            this.btnCancel.TabIndex = 97;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.textNameModelo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textNameModelo.ForeColor = System.Drawing.Color.White;
+            this.textNameModelo.Location = new System.Drawing.Point(183, 332);
+            this.textNameModelo.Margin = new System.Windows.Forms.Padding(4);
+            this.textNameModelo.Name = "textNameModelo";
+            this.textNameModelo.Size = new System.Drawing.Size(132, 22);
+            this.textNameModelo.TabIndex = 101;
             // 
             // Vehicle_Modify
             // 
@@ -271,17 +329,21 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1367, 543);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnModifyVehicle);
-            this.Controls.Add(this.textNamePatente);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCleanType);
             this.Controls.Add(this.btnSearchType);
+            this.Controls.Add(this.textNamePatente);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnModifyVehicle);
             this.Controls.Add(this.textNroDoc);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tablaVehiculos);
+            this.Controls.Add(this.textNameModelo);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.comboBoxDocType);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.searchPanel);
             this.Name = "Vehicle_Modify";
             this.Text = "Vehicle_Modify";
             ((System.ComponentModel.ISupportInitialize)(this.tablaVehiculos)).EndInit();
@@ -294,11 +356,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView tablaVehiculos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Patente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocPropietario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NroDocPropietario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox searchPanel;
         private System.Windows.Forms.Label label2;
@@ -309,5 +366,14 @@
         private System.Windows.Forms.TextBox textNamePatente;
         private System.Windows.Forms.Button btnModifyVehicle;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Patente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocPropietario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroDocPropietario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBoxDocType;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textNameModelo;
     }
 }

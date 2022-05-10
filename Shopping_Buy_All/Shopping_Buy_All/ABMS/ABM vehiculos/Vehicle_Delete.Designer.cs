@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tablaVehiculos = new System.Windows.Forms.DataGridView();
             this.Patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoDocPropietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +47,10 @@
             this.btnSearchvehicle = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
             this.btnSerach2 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxDocType = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textNameModelo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaVehiculos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).BeginInit();
             this.SuspendLayout();
@@ -58,14 +62,14 @@
             this.tablaVehiculos.AllowUserToOrderColumns = true;
             this.tablaVehiculos.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.tablaVehiculos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaVehiculos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaVehiculos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.tablaVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaVehiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Patente,
@@ -73,27 +77,27 @@
             this.NroDocPropietario,
             this.Modelo,
             this.Borrado});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaVehiculos.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaVehiculos.DefaultCellStyle = dataGridViewCellStyle17;
             this.tablaVehiculos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tablaVehiculos.Location = new System.Drawing.Point(531, 74);
             this.tablaVehiculos.Margin = new System.Windows.Forms.Padding(4);
             this.tablaVehiculos.Name = "tablaVehiculos";
             this.tablaVehiculos.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaVehiculos.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaVehiculos.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.tablaVehiculos.RowHeadersWidth = 51;
             this.tablaVehiculos.RowTemplate.Height = 24;
             this.tablaVehiculos.Size = new System.Drawing.Size(700, 400);
@@ -159,7 +163,7 @@
             // SearchPanel
             // 
             this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.SearchPanel.Location = new System.Drawing.Point(385, 112);
+            this.SearchPanel.Location = new System.Drawing.Point(57, 117);
             this.SearchPanel.Margin = new System.Windows.Forms.Padding(4);
             this.SearchPanel.Name = "SearchPanel";
             this.SearchPanel.Size = new System.Drawing.Size(333, 306);
@@ -172,7 +176,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(169, 124);
+            this.label2.Location = new System.Drawing.Point(164, 242);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 20);
@@ -183,7 +187,7 @@
             // 
             this.textNroDoc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNroDoc.ForeColor = System.Drawing.Color.White;
-            this.textNroDoc.Location = new System.Drawing.Point(217, 180);
+            this.textNroDoc.Location = new System.Drawing.Point(217, 266);
             this.textNroDoc.Margin = new System.Windows.Forms.Padding(4);
             this.textNroDoc.Name = "textNroDoc";
             this.textNroDoc.Size = new System.Drawing.Size(60, 22);
@@ -195,7 +199,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(213, 242);
+            this.label3.Location = new System.Drawing.Point(213, 117);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 20);
@@ -206,7 +210,7 @@
             // 
             this.textNamePatente.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNamePatente.ForeColor = System.Drawing.Color.White;
-            this.textNamePatente.Location = new System.Drawing.Point(173, 281);
+            this.textNamePatente.Location = new System.Drawing.Point(166, 150);
             this.textNamePatente.Margin = new System.Windows.Forms.Padding(4);
             this.textNamePatente.Name = "textNamePatente";
             this.textNamePatente.Size = new System.Drawing.Size(159, 22);
@@ -224,6 +228,7 @@
             this.btnDelete.TabIndex = 98;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSearchvehicle
             // 
@@ -237,6 +242,7 @@
             this.btnSearchvehicle.TabIndex = 99;
             this.btnSearchvehicle.Text = "Buscar";
             this.btnSearchvehicle.UseVisualStyleBackColor = true;
+            this.btnSearchvehicle.Click += new System.EventHandler(this.btnSearchVehicle_Click_1);
             // 
             // btnClean
             // 
@@ -250,19 +256,68 @@
             this.btnClean.TabIndex = 100;
             this.btnClean.Text = "Limpiar";
             this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click_1);
             // 
             // btnSerach2
             // 
             this.btnSerach2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSerach2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSerach2.ForeColor = System.Drawing.Color.White;
-            this.btnSerach2.Location = new System.Drawing.Point(186, 341);
+            this.btnSerach2.Location = new System.Drawing.Point(182, 364);
             this.btnSerach2.Margin = new System.Windows.Forms.Padding(4);
             this.btnSerach2.Name = "btnSerach2";
             this.btnSerach2.Size = new System.Drawing.Size(100, 28);
             this.btnSerach2.TabIndex = 101;
             this.btnSerach2.Text = "Buscar";
             this.btnSerach2.UseVisualStyleBackColor = true;
+            this.btnSerach2.Click += new System.EventHandler(this.btnSerach2_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(162, 190);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(172, 20);
+            this.label4.TabIndex = 102;
+            this.label4.Text = "Tipo de Documento";
+            // 
+            // comboBoxDocType
+            // 
+            this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
+            this.comboBoxDocType.FormattingEnabled = true;
+            this.comboBoxDocType.Location = new System.Drawing.Point(168, 214);
+            this.comboBoxDocType.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxDocType.Name = "comboBoxDocType";
+            this.comboBoxDocType.Size = new System.Drawing.Size(157, 24);
+            this.comboBoxDocType.TabIndex = 103;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(213, 292);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 20);
+            this.label5.TabIndex = 104;
+            this.label5.Text = "Modelo";
+            // 
+            // textNameModelo
+            // 
+            this.textNameModelo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textNameModelo.ForeColor = System.Drawing.Color.White;
+            this.textNameModelo.Location = new System.Drawing.Point(186, 311);
+            this.textNameModelo.Margin = new System.Windows.Forms.Padding(4);
+            this.textNameModelo.Name = "textNameModelo";
+            this.textNameModelo.Size = new System.Drawing.Size(132, 22);
+            this.textNameModelo.TabIndex = 105;
             // 
             // Vehicle_Delete
             // 
@@ -273,6 +328,10 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1282, 553);
+            this.Controls.Add(this.textNameModelo);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.comboBoxDocType);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSerach2);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.btnSearchvehicle);
@@ -311,5 +370,9 @@
         private System.Windows.Forms.Button btnSearchvehicle;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Button btnSerach2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBoxDocType;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textNameModelo;
     }
 }

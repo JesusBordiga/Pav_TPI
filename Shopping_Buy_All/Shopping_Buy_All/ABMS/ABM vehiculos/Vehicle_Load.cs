@@ -119,7 +119,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             //Patente Vehiculo
             a.PatenteAutomovil = textPatente.Text.Trim();
 
-            //Nombre de Cliente
+            //Modelo Vehiculo
             a.ModeloAutomovil = textNameModelo.Text.Trim();
 
             return a;

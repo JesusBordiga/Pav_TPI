@@ -25,6 +25,8 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
         {
             textNamePatente.Text = "";
             textNroDoc.Text = "";
+            textNameModelo.Text = "";
+            comboBoxDocType.SelectedValue = "";
 
         }
 
@@ -34,7 +36,10 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             textNroDoc.Text = a.DocumentoPropietario.ToString();
             //Cargar Nombre
             textNamePatente.Text = a.PatenteAutomovil;
-
+            //Tipo de documento
+            comboBoxDocType.SelectedValue = a.TipoDocumentoPropietario;
+            //Modelo Vehiculo
+            textNameModelo.Text = a.ModeloAutomovil;
         }
 
         private void CargarTablaVehiculo()
@@ -71,6 +76,44 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             }
         }
 
+        private void CargarTiposDocumentos()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "Select * FROM TipoDocumento WHERE Borrado like 0";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                comboBoxDocType.DataSource = tabla;
+                comboBoxDocType.DisplayMember = "NombreDocumento";
+                comboBoxDocType.ValueMember = "TipoDocumento";
+                comboBoxDocType.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         private Automovil Buscar_Automovil(string Code)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -79,10 +122,10 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Automovil WHERE NroDoc like @nroDocPropietario AND Borrado like 0";
+                string consulta = "SELECT * FROM Automovil WHERE Patente like @patente AND Borrado like 0";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nroDocPropietario", Code);
+                cmd.Parameters.AddWithValue("@patente", Code);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
@@ -95,6 +138,8 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
                     automovil = new Automovil();
                     automovil.DocumentoPropietario = DataReader["NroDoc"].ToString();
                     automovil.PatenteAutomovil = DataReader["Patente"].ToString();
+                    automovil.TipoDocumentoPropietario = int.Parse(DataReader["TipoDoc"].ToString());
+                    automovil.ModeloAutomovil = DataReader["Modelo"].ToString();
                 }
             }
             catch (Exception)
@@ -114,8 +159,12 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             Automovil a = new Automovil();
             //Cargar NroDoc
             a.DocumentoPropietario = textNroDoc.Text.Trim();
-            //Cargar Nombre
+            //Cargar tipoDoc
+            a.TipoDocumentoPropietario = (int)comboBoxDocType.SelectedValue;
+            //Patente Vehiculo
             a.PatenteAutomovil = textNamePatente.Text.Trim();
+            //Modelo Vehiculo
+            a.ModeloAutomovil = textNameModelo.Text.Trim();
             return a;
         }
 
@@ -131,6 +180,8 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nrodocpropietario", aut.DocumentoPropietario);
                 cmd.Parameters.AddWithValue("@patente", aut.PatenteAutomovil);
+                cmd.Parameters.AddWithValue("@modelo", aut.ModeloAutomovil);
+                cmd.Parameters.AddWithValue("@tipodocpropietario", aut.TipoDocumentoPropietario);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -156,25 +207,25 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
 
         private void btnSearchType_Click(object sender, EventArgs e)
         {
-            if (textNroDoc.Text.Equals(""))
+            if (textNamePatente.Text.Equals(""))
             {
                 MessageBox.Show("Error, Completar campos!!");
             }
             else
             {
-                Automovil a = Buscar_Automovil(textNroDoc.Text);
+                Automovil a = Buscar_Automovil(textNamePatente.Text);
                 if (a != null)
                 {
                     Cargar_Campos(a);
                     searchPanel.Visible = false;
                     btnSearchType.Visible = false;
                     btnCancel.Visible = true;
-                    textNroDoc.Enabled = false;
+                    textNamePatente.Enabled = false;
                     btnCleanType.Visible = false;
                 }
                 else
                 {
-                    MessageBox.Show($"No se encontro el vehiculo con el numero de documento {textNroDoc.Text}");
+                    MessageBox.Show($"No se encontro registrado el vehiculo con esa patente {textNroDoc.Text}");
                 }
             }
         }
@@ -184,6 +235,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             Clean();
             searchPanel.Visible = true;
             btnSearchType.Visible = true;
+            textNamePatente.Enabled = true;
         }
 
         private void btnModifyVehicle_Click(object sender, EventArgs e)
@@ -195,21 +247,23 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
                 MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
                 String mensajeCarga = (
                     " |NroDoc: " + a.DocumentoPropietario + "|" + "\n"
-                    + " |Patente: " + a.PatenteAutomovil + "|" + "\n");
+                    + " |Patente: " + a.PatenteAutomovil + "|" + "\n"
+                    + " |Modelo: " + a.ModeloAutomovil + "|" + "\n"
+                    + " |TipoDoc: " + a.TipoDocumentoPropietario + "|" + "\n");
 
-                string titulo = "Información de Tipo Vehiculo";
+                string titulo = "Información del Vehiculo";
 
                 DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
 
                 if (result == DialogResult.OK)
                 {
-                    MessageBox.Show("Producto modificado con éxito!");
+                    MessageBox.Show("Vehiculo modificado con éxito!");
                     Clean();
                     searchPanel.Visible = true;
                     btnSearchType.Visible = true;
                     btnCleanType.Visible = true;
                     textNamePatente.Clear();
-                    textNroDoc.Enabled = true;
+                    textNamePatente.Enabled = true;
                     CargarTablaVehiculo();
                 }
                 else
@@ -230,7 +284,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             searchPanel.Visible = true;
             btnSearchType.Visible = true;
             btnCancel.Visible = false;
-            textNroDoc.Enabled = true;
+            textNamePatente.Enabled = true;
             btnCleanType.Visible = true;
         }
 
@@ -238,7 +292,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
         {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = tablaVehiculos.Rows[indice];
-            string codigo = filaSeleccionada.Cells["NroDoc"].Value.ToString();
+            string codigo = filaSeleccionada.Cells["Patente"].Value.ToString();
             Automovil a = Buscar_Automovil(codigo);
             Cargar_Campos(a);
             searchPanel.Visible = false;
