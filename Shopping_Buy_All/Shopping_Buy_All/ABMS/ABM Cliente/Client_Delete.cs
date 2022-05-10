@@ -18,13 +18,13 @@ namespace Shopping_Buy_All
         public Client_Delete()
         {
             InitializeComponent();
-
+            CargarTiposDocumentos();
         }
         private void Client_Delete_Load(object sender, EventArgs e)
         {
             tablaClientes.Visible = false;
             btnSearch.Visible = true;
-            btnDeleteClient.Visible = false;
+            btnDeleteProfesion.Visible = false;
             CargarTiposDocumentos();
         }
         private void CargarTiposDocumentos()
@@ -181,7 +181,7 @@ namespace Shopping_Buy_All
             {    
               Clean();
               tablaClientes.Visible = false;
-              btnDeleteClient.Visible = false;
+              btnDeleteProfesion.Visible = false;
               btnSearch.Visible = true;
             }
 
@@ -197,7 +197,7 @@ namespace Shopping_Buy_All
                 if (existe)
                     {
                     tablaClientes.Visible = true;
-                    btnDeleteClient.Visible = true;
+                    btnDeleteProfesion.Visible = true;
                     btnSearch.Visible = false;
                     }
                 else
@@ -268,7 +268,7 @@ namespace Shopping_Buy_All
                     //BorrarCliente(c);
                     CargarTiposDocumentos();
                     tablaClientes.Visible = false;
-                    btnDeleteClient.Visible = false;
+                    btnDeleteProfesion.Visible = false;
                     btnSearch.Visible = true;
                     comboBoxDocType.Focus();
                 }

@@ -35,10 +35,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tablaClientes = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnClean = new System.Windows.Forms.Button();
-            this.btnDeleteClient = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +45,10 @@
             this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnClean = new System.Windows.Forms.Button();
+            this.btnDeleteProfesion = new System.Windows.Forms.Button();
+            this.botonClientes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,64 +135,6 @@
             this.tablaClientes.TabIndex = 64;
             this.tablaClientes.TabStop = false;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.DarkGray;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(368, 204);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Buscar";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnClean
-            // 
-            this.btnClean.BackColor = System.Drawing.Color.DarkGray;
-            this.btnClean.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClean.ForeColor = System.Drawing.Color.White;
-            this.btnClean.Location = new System.Drawing.Point(368, 264);
-            this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(75, 23);
-            this.btnClean.TabIndex = 4;
-            this.btnClean.Text = "Limpiar";
-            this.btnClean.UseVisualStyleBackColor = false;
-            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
-            // 
-            // btnDeleteClient
-            // 
-            this.btnDeleteClient.BackColor = System.Drawing.Color.Transparent;
-            this.btnDeleteClient.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.Trash;
-            this.btnDeleteClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDeleteClient.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteClient.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteClient.Location = new System.Drawing.Point(364, 302);
-            this.btnDeleteClient.Name = "btnDeleteClient";
-            this.btnDeleteClient.Size = new System.Drawing.Size(76, 73);
-            this.btnDeleteClient.TabIndex = 67;
-            this.btnDeleteClient.UseVisualStyleBackColor = false;
-            this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkGray;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(722, 425);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 68;
-            this.button1.Text = "Clientes";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // TipoDocumento
             // 
             this.TipoDocumento.DataPropertyName = "TipoDocumento";
@@ -273,6 +215,64 @@
             this.Borrado.Visible = false;
             this.Borrado.Width = 50;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.DarkGray;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(368, 204);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Buscar";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnClean
+            // 
+            this.btnClean.BackColor = System.Drawing.Color.DarkGray;
+            this.btnClean.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClean.ForeColor = System.Drawing.Color.White;
+            this.btnClean.Location = new System.Drawing.Point(368, 264);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(75, 23);
+            this.btnClean.TabIndex = 4;
+            this.btnClean.Text = "Limpiar";
+            this.btnClean.UseVisualStyleBackColor = false;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
+            // 
+            // btnDeleteProfesion
+            // 
+            this.btnDeleteProfesion.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteProfesion.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.Trash;
+            this.btnDeleteProfesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDeleteProfesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteProfesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteProfesion.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteProfesion.Location = new System.Drawing.Point(364, 302);
+            this.btnDeleteProfesion.Name = "btnDeleteProfesion";
+            this.btnDeleteProfesion.Size = new System.Drawing.Size(76, 73);
+            this.btnDeleteProfesion.TabIndex = 67;
+            this.btnDeleteProfesion.UseVisualStyleBackColor = false;
+            this.btnDeleteProfesion.Click += new System.EventHandler(this.btnDeleteClient_Click);
+            // 
+            // botonClientes
+            // 
+            this.botonClientes.BackColor = System.Drawing.Color.DarkGray;
+            this.botonClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botonClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonClientes.ForeColor = System.Drawing.Color.White;
+            this.botonClientes.Location = new System.Drawing.Point(722, 425);
+            this.botonClientes.Name = "botonClientes";
+            this.botonClientes.Size = new System.Drawing.Size(75, 23);
+            this.botonClientes.TabIndex = 68;
+            this.botonClientes.Text = "Clientes";
+            this.botonClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonClientes.UseVisualStyleBackColor = false;
+            this.botonClientes.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Client_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,8 +281,8 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnDeleteClient);
+            this.Controls.Add(this.botonClientes);
+            this.Controls.Add(this.btnDeleteProfesion);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.textNumberDoc);
@@ -316,8 +316,8 @@
         private System.Windows.Forms.DataGridView tablaClientes;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnClean;
-        private System.Windows.Forms.Button btnDeleteClient;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDeleteProfesion;
+        private System.Windows.Forms.Button botonClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;

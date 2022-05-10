@@ -89,5 +89,46 @@ namespace Shopping_Buy_All
             Product_Delete deletep = new Product_Delete();
             deletep.ShowDialog();
         }
+
+        private void profesionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void altaDeProfesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Profesiones_Load load = new Profesiones_Load();
+            load.ShowDialog();
+        }
+
+        private void bajaDeProfesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Profesiones_Delete load = new Profesiones_Delete();
+            load.ShowDialog();
+        }
+
+        private void modificacionDeProfesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Profesiones_Modify load = new Profesiones_Modify();
+            load.ShowDialog();
+        }
+
+        private void altaModeloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Modelo_Load load = new Modelo_Load();
+            load.ShowDialog();
+        }
+
+        private void bajaModeloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Modelo_Delete load = new Modelo_Delete();
+            load.ShowDialog();
+        }
+
+        private void modificacionModeloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Modelo_Modify load = new Modelo_Modify();
+            load.ShowDialog();
+        }
     }
 }

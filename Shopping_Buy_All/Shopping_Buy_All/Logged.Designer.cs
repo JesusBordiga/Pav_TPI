@@ -37,7 +37,13 @@
             this.bajaDeClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.automovilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profesionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaDeProfesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificacionDeProfesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaDeProfesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.producotsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificaciónProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaLocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificacionDeLocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,9 +52,10 @@
             this.modificacionDeTipoComercioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bajaDeTipoComercioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcasDeTarjetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificaciónProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bajaProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modelosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaModeloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificacionModeloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaModeloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +81,8 @@
             this.profesionesToolStripMenuItem,
             this.producotsToolStripMenuItem,
             this.localesToolStripMenuItem,
-            this.marcasDeTarjetaToolStripMenuItem});
+            this.marcasDeTarjetaToolStripMenuItem,
+            this.modelosToolStripMenuItem});
             this.MenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip.Name = "MenuStrip";
             this.MenuStrip.Size = new System.Drawing.Size(800, 24);
@@ -129,10 +137,36 @@
             // 
             // profesionesToolStripMenuItem
             // 
+            this.profesionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaDeProfesionToolStripMenuItem,
+            this.modificacionDeProfesionToolStripMenuItem,
+            this.bajaDeProfesionToolStripMenuItem});
             this.profesionesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.profesionesToolStripMenuItem.Name = "profesionesToolStripMenuItem";
             this.profesionesToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.profesionesToolStripMenuItem.Text = "Profesiones";
+            this.profesionesToolStripMenuItem.Click += new System.EventHandler(this.profesionesToolStripMenuItem_Click);
+            // 
+            // altaDeProfesionToolStripMenuItem
+            // 
+            this.altaDeProfesionToolStripMenuItem.Name = "altaDeProfesionToolStripMenuItem";
+            this.altaDeProfesionToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.altaDeProfesionToolStripMenuItem.Text = "Alta de Profesion";
+            this.altaDeProfesionToolStripMenuItem.Click += new System.EventHandler(this.altaDeProfesionToolStripMenuItem_Click);
+            // 
+            // modificacionDeProfesionToolStripMenuItem
+            // 
+            this.modificacionDeProfesionToolStripMenuItem.Name = "modificacionDeProfesionToolStripMenuItem";
+            this.modificacionDeProfesionToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.modificacionDeProfesionToolStripMenuItem.Text = "Modificacion de Profesion";
+            this.modificacionDeProfesionToolStripMenuItem.Click += new System.EventHandler(this.modificacionDeProfesionToolStripMenuItem_Click);
+            // 
+            // bajaDeProfesionToolStripMenuItem
+            // 
+            this.bajaDeProfesionToolStripMenuItem.Name = "bajaDeProfesionToolStripMenuItem";
+            this.bajaDeProfesionToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.bajaDeProfesionToolStripMenuItem.Text = "Baja de Profesion";
+            this.bajaDeProfesionToolStripMenuItem.Click += new System.EventHandler(this.bajaDeProfesionToolStripMenuItem_Click);
             // 
             // producotsToolStripMenuItem
             // 
@@ -144,6 +178,27 @@
             this.producotsToolStripMenuItem.Name = "producotsToolStripMenuItem";
             this.producotsToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.producotsToolStripMenuItem.Text = "Productos";
+            // 
+            // altaProductoToolStripMenuItem
+            // 
+            this.altaProductoToolStripMenuItem.Name = "altaProductoToolStripMenuItem";
+            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.altaProductoToolStripMenuItem.Text = "Alta Productos";
+            this.altaProductoToolStripMenuItem.Click += new System.EventHandler(this.altaProductoToolStripMenuItem_Click);
+            // 
+            // modificaciónProductosToolStripMenuItem
+            // 
+            this.modificaciónProductosToolStripMenuItem.Name = "modificaciónProductosToolStripMenuItem";
+            this.modificaciónProductosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.modificaciónProductosToolStripMenuItem.Text = "Modificación Productos";
+            this.modificaciónProductosToolStripMenuItem.Click += new System.EventHandler(this.modificaciónProductosToolStripMenuItem_Click);
+            // 
+            // bajaProductosToolStripMenuItem
+            // 
+            this.bajaProductosToolStripMenuItem.Name = "bajaProductosToolStripMenuItem";
+            this.bajaProductosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.bajaProductosToolStripMenuItem.Text = "Baja Productos";
+            this.bajaProductosToolStripMenuItem.Click += new System.EventHandler(this.bajaProductosToolStripMenuItem_Click);
             // 
             // localesToolStripMenuItem
             // 
@@ -220,26 +275,36 @@
             this.marcasDeTarjetaToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
             this.marcasDeTarjetaToolStripMenuItem.Text = "Marcas De Tarjeta";
             // 
-            // altaProductoToolStripMenuItem
+            // modelosToolStripMenuItem
             // 
-            this.altaProductoToolStripMenuItem.Name = "altaProductoToolStripMenuItem";
-            this.altaProductoToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.altaProductoToolStripMenuItem.Text = "Alta Productos";
-            this.altaProductoToolStripMenuItem.Click += new System.EventHandler(this.altaProductoToolStripMenuItem_Click);
+            this.modelosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaModeloToolStripMenuItem,
+            this.modificacionModeloToolStripMenuItem,
+            this.bajaModeloToolStripMenuItem});
+            this.modelosToolStripMenuItem.Name = "modelosToolStripMenuItem";
+            this.modelosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.modelosToolStripMenuItem.Text = "Modelos";
             // 
-            // modificaciónProductosToolStripMenuItem
+            // altaModeloToolStripMenuItem
             // 
-            this.modificaciónProductosToolStripMenuItem.Name = "modificaciónProductosToolStripMenuItem";
-            this.modificaciónProductosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.modificaciónProductosToolStripMenuItem.Text = "Modificación Productos";
-            this.modificaciónProductosToolStripMenuItem.Click += new System.EventHandler(this.modificaciónProductosToolStripMenuItem_Click);
+            this.altaModeloToolStripMenuItem.Name = "altaModeloToolStripMenuItem";
+            this.altaModeloToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.altaModeloToolStripMenuItem.Text = "Alta Modelo";
+            this.altaModeloToolStripMenuItem.Click += new System.EventHandler(this.altaModeloToolStripMenuItem_Click);
             // 
-            // bajaProductosToolStripMenuItem
+            // modificacionModeloToolStripMenuItem
             // 
-            this.bajaProductosToolStripMenuItem.Name = "bajaProductosToolStripMenuItem";
-            this.bajaProductosToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.bajaProductosToolStripMenuItem.Text = "Baja Productos";
-            this.bajaProductosToolStripMenuItem.Click += new System.EventHandler(this.bajaProductosToolStripMenuItem_Click);
+            this.modificacionModeloToolStripMenuItem.Name = "modificacionModeloToolStripMenuItem";
+            this.modificacionModeloToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.modificacionModeloToolStripMenuItem.Text = "Modificacion Modelo";
+            this.modificacionModeloToolStripMenuItem.Click += new System.EventHandler(this.modificacionModeloToolStripMenuItem_Click);
+            // 
+            // bajaModeloToolStripMenuItem
+            // 
+            this.bajaModeloToolStripMenuItem.Name = "bajaModeloToolStripMenuItem";
+            this.bajaModeloToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.bajaModeloToolStripMenuItem.Text = "Baja Modelo";
+            this.bajaModeloToolStripMenuItem.Click += new System.EventHandler(this.bajaModeloToolStripMenuItem_Click);
             // 
             // Logged
             // 
@@ -291,5 +356,12 @@
         private System.Windows.Forms.ToolStripMenuItem altaProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificaciónProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bajaProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaDeProfesionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificacionDeProfesionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bajaDeProfesionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modelosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaModeloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificacionModeloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bajaModeloToolStripMenuItem;
     }
 }
