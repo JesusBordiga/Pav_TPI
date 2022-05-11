@@ -20,7 +20,6 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             cambiarModificador(false);
             cargarTablaTipDoc();
         }
-
         private void btnTipDocModify_Click(object sender, EventArgs e)
         {
             string nombreViejo = txtNombreTipDoc.Text.Trim();
@@ -57,10 +56,17 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
         }
         private void tablaTipDoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaTipDoc.Rows[indice];
-            string nombre = filaSeleccionada.Cells["NombreDocumento"].Value.ToString();
-            buscarTipDoc(nombre);
+            try
+            { 
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaTipDoc.Rows[indice];
+                string nombre = filaSeleccionada.Cells["NombreDocumento"].Value.ToString();
+                buscarTipDoc(nombre);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! Seleccione una casilla de la tabla");
+            }
         }
         private void cambiarModificador(bool booleano)
         {
@@ -101,11 +107,11 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -140,11 +146,11 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -198,11 +204,11 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {

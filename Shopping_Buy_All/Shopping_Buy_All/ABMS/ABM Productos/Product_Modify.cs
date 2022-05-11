@@ -60,8 +60,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -97,8 +96,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -144,11 +142,11 @@ namespace Shopping_Buy_All
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -166,7 +164,7 @@ namespace Shopping_Buy_All
             {
                 Producto p = Buscar_Producto(textCodeProduct.Text);
                 Cargar_Campos(p);
-                panelBuscar.Visible = true;
+                SearchPanel.Visible = false;
                 btnSearchProduct.Visible = false;
                 btnSerachProduct2.Visible = true;
             }
@@ -175,7 +173,7 @@ namespace Shopping_Buy_All
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clean();
-            panelBuscar.Visible = false;
+            SearchPanel.Visible = true;
             btnSearchProduct.Visible = true;
         }
 
@@ -199,7 +197,7 @@ namespace Shopping_Buy_All
                 {
                     MessageBox.Show("Producto agregado con éxito!");
                     Clean();
-                    panelBuscar.Visible = false;
+                    SearchPanel.Visible = false;
                     btnSearchProduct.Visible = false;
                     btnSerachProduct2.Visible = true;
                     CargarTablaProductos();
@@ -219,21 +217,28 @@ namespace Shopping_Buy_All
         private void button1_Click(object sender, EventArgs e)
         {
             Clean();
-            panelBuscar.Visible = true;
+            SearchPanel.Visible = true;
             btnSearchProduct.Visible = true;
             btnSerachProduct2.Visible = false;
         }
 
         private void tablaProductos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaProductos.Rows[indice];
-            string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
-            Producto p = Buscar_Producto(codigo);
-            Cargar_Campos(p);
-            panelBuscar.Visible = true;
-            btnSearchProduct.Visible = false;
-            btnSerachProduct2.Visible = true;
+            try
+            { 
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaProductos.Rows[indice];
+                string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
+                Producto p = Buscar_Producto(codigo);
+                Cargar_Campos(p);
+                SearchPanel.Visible = false;
+                btnSearchProduct.Visible = false;
+                btnSerachProduct2.Visible = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! \n Seleccione una casilla dentro de la tabla!");
+            }
         }
 
     }

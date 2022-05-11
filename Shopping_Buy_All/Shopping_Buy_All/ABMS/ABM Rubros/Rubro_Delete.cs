@@ -12,19 +12,21 @@ using System.Windows.Forms;
 
 namespace Shopping_Buy_All
 {
-    public partial class User_Delete : Form
+    public partial class Rubro_Delete : Form
     {
-        public User_Delete()
+        public Rubro_Delete()
         {
             InitializeComponent();
         }
-        private void User_Delete_Load(object sender, EventArgs e)
+
+        private void Rubro_Delete_Load(object sender, EventArgs e)
         {
             btnSearch.Visible = true;
-            btnDeleteUser.Visible = false;
-            CargarTablaUsuarios();
+            btnDelete.Visible = false;
+            CargarTablaRubros();
         }
-        private void CargarTablaUsuarios()
+
+        private void CargarTablaRubros()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -32,7 +34,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Users WHERE Borrado like 0";
+                string consulta = "Select * FROM Rubros WHERE Borrado like 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -45,11 +47,11 @@ namespace Shopping_Buy_All
 
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
-                tablaUsuarios.DataSource = tabla;
+                tablaRubros.DataSource = tabla;
             }
             catch (Exception)
             {
-                MessageBox.Show("Error en la base de datos", "ERROR");
+                MessageBox.Show("Error en la base de datos.", "ERROR");
             }
             finally
             {
@@ -59,21 +61,25 @@ namespace Shopping_Buy_All
 
         private void Clean()
         {
-            textUsernameUser.Text = "";
+            textRubro.Text = "";
+            btnDelete.Visible = false;
+            btnSearch.Visible = true;
+            textRubro.Enabled = true;
         }
-        
-        private bool Buscar_Usuario_Nombre(string username)
+
+        private bool ExisteRubro(string rubro)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
+            bool result = false;
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Users where NombreDeUsuario like @username AND Borrado like 0";
+                string consulta = "SELECT * FROM Rubros WHERE Nombre = @rubro AND Borrado like 0";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@rubro", rubro);
+
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -82,56 +88,47 @@ namespace Shopping_Buy_All
                 SqlDataReader DataReader = cmd.ExecuteReader();
                 if (DataReader != null && DataReader.Read())
                 {
-                    cn.Close();
-                    DataTable tabla = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(tabla);
-                    tablaUsuarios.DataSource = tabla;
-                    resultado = true;
+                    result = true;
                 }
-
             }
             catch (Exception)
             {
-                MessageBox.Show("Error en la base de datos", "ERROR");
+                MessageBox.Show("Error en la base de datos.", "ERROR");
             }
             finally
             {
                 cn.Close();
             }
-            return resultado;
-
+            return result;
         }
+
         private void btnClean_Click(object sender, EventArgs e)
         {
             Clean();
-            CargarTablaUsuarios();
-            btnDeleteUser.Visible = false;
-            btnSearch.Visible = true;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (textUsernameUser.Text.Trim() == "")
+            if (textRubro.Text.Trim() == "")
             {
                 MessageBox.Show("Error, Debe completar los campos!!");
             }
             else
             {
-                bool existe = Buscar_Usuario_Nombre(textUsernameUser.Text.Trim());
+                string rubro = textRubro.Text.Trim();
+                bool existe = ExisteRubro(rubro);
                 if (existe)
                 {
-                    tablaUsuarios.Visible = true;
-                    btnDeleteUser.Visible = true;
-                    btnSearch.Visible = false;
+                    Cargar_Campos(rubro);
                 }
                 else
                 {
-                    MessageBox.Show("El usuario que busca no existe o fue borrado!");
+                    MessageBox.Show("El rubro que busca no existe o fue borrado!");
                 }
             }
         }
-        private bool BorrarUsuario(string username)
+
+        private bool BorrarRubro(string rubro)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -139,9 +136,9 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Users SET Borrado = 1 WHERE NombreDeUsuario = @username AND Borrado like 0";
+                string consulta = "UPDATE Rubros SET Borrado = 1 WHERE Nombre = @rubro AND Borrado like 0";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@rubro", rubro);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -152,7 +149,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-                MessageBox.Show("No se pudo eliminar el Usuario.\nError en la base de datos.", "ERROR");
+                MessageBox.Show("No se pudo eliminar el Rubro.\nError en la base de datos.", "ERROR");
             }
             finally
             {
@@ -161,12 +158,12 @@ namespace Shopping_Buy_All
             return resultado;
         }
 
-        private void btnDeleteClient_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            string username = textUsernameUser.Text.Trim();
+            string rubro = textRubro.Text.Trim();
             MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
             String mensajeCarga = (
-                  " | Nombre de Usuario: " + username + " |" + "\n" + "\n" + " | Desea eliminar a este usuario??");
+                  " | Nombre: " + rubro + " |" + "\n" + "\n" + " | Desea eliminar a este rubro??");
 
             string titulo = "Información de Eliminación";
 
@@ -174,47 +171,48 @@ namespace Shopping_Buy_All
 
             if (result == DialogResult.OK)
             {
-                bool resultado = BorrarUsuario(username);
+                bool resultado = BorrarRubro(rubro);
                 if (resultado)
                 {
-                    MessageBox.Show("Usuario Borrado con éxito!");
+                    MessageBox.Show("Rubro Borrado con éxito!");
                     Clean();
-                    btnDeleteUser.Visible = false;
+                    btnDelete.Visible = false;
                     btnSearch.Visible = true;
-                    CargarTablaUsuarios();
-                    textUsernameUser.Focus();
+                    CargarTablaRubros();
+                    textRubro.Focus();
                 }
                 else
                 {
-                    MessageBox.Show("El Usuario No fue Borrado!");
+                    MessageBox.Show("El Rubro No fue Borrado!");
                 }
             }
             else
             {
-                textUsernameUser.Focus();
+                textRubro.Focus();
             }
         }
 
-        private void tablaUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Cargar_Campos(string rubro)
+        {
+            textRubro.Text = rubro;
+            btnDelete.Visible = true;
+            btnSearch.Visible = false;
+            textRubro.Enabled = false;
+        }
+
+        private void tablaRubros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int indice = e.RowIndex;
-                DataGridViewRow filaSeleccionada = tablaUsuarios.Rows[indice];
-                string username = filaSeleccionada.Cells["NombreDeUsuario"].Value.ToString();
-                Clean();
-                Cargar_Campos(username);
-                btnDeleteUser.Visible = true;
+                DataGridViewRow filaSeleccionada = tablaRubros.Rows[indice];
+                string rubro = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                Cargar_Campos(rubro);
             }
             catch (Exception)
             {
                 MessageBox.Show("Seleccione una casilla dentro de la tabla", "ERROR");
             }
-        }
-
-        private void Cargar_Campos(string username)
-        {
-            textUsernameUser.Text = username;
         }
     }
 }

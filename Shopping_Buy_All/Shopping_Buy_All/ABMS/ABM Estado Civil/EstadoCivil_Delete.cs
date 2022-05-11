@@ -56,11 +56,11 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -95,11 +95,11 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -152,11 +152,11 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -198,10 +198,17 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
         }
         private void tablaEC_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaEC.Rows[indice];
-            string nombre = filaSeleccionada.Cells["NombreEstadoCivil"].Value.ToString();
-            buscarEC(nombre);
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaEC.Rows[indice];
+                string nombre = filaSeleccionada.Cells["NombreEstadoCivil"].Value.ToString();
+                buscarEC(nombre);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! \n Seleccione una casilla dentro de la tabla");
+            }
         }
     }
 }
