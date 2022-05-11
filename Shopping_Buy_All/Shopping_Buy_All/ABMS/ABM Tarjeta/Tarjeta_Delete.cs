@@ -295,7 +295,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-                MessageBox.Show("No se pudo modificar la Tarjeta.\nError en la base de datos.", "ERROR");
+                MessageBox.Show("No se pudo borrar la Tarjeta.\nError en la base de datos.", "ERROR");
             }
             finally
             {
@@ -379,7 +379,7 @@ namespace Shopping_Buy_All
 
                     if (result == DialogResult.OK)
                     {
-                        MessageBox.Show("Tarjeta modificada con éxito!");
+                        MessageBox.Show("Tarjeta borrada con éxito!");
                         Clean();
                         CargarTablaTarjetas();
                     }

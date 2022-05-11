@@ -122,7 +122,7 @@ namespace Shopping_Buy_All
             return r;
         }
 
-        private bool ModificarRubro(string newM, string oldM)
+        private bool ModificarMarca(string newM, string oldM)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -161,11 +161,11 @@ namespace Shopping_Buy_All
             }
             else
             {
-                string rubro = textMarcaOld.Text.Trim();
-                bool existe = ExisteMarca(rubro);
+                string mark = textMarcaOld.Text.Trim();
+                bool existe = ExisteMarca(mark);
                 if (existe)
                 {
-                    Cargar_Campos(rubro);
+                    Cargar_Campos(mark);
                 }
                 else
                 {
@@ -188,7 +188,7 @@ namespace Shopping_Buy_All
                 if (!ExisteMarca(newR))
                 {
                     string oldR = textMarcaOld.Text.Trim().ToLower();
-                    bool resultado = ModificarRubro(newR, oldR);
+                    bool resultado = ModificarMarca(newR, oldR);
                     if (resultado)
                     {
                         MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
@@ -219,7 +219,7 @@ namespace Shopping_Buy_All
                 else
                 {
                     MessageBox.Show("Error al modificar la Marca! \n" +
-                            "Ya existe un rubro con ese nombre!");
+                            "Ya existe una marca con ese nombre!");
                 }
             }
             else
@@ -238,14 +238,14 @@ namespace Shopping_Buy_All
             }
             return true;
         }
-        private void tablaRubros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tablaMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int indice = e.RowIndex;
                 DataGridViewRow filaSeleccionada = tablaMarcas.Rows[indice];
-                string rubro = filaSeleccionada.Cells["Descripcion"].Value.ToString();
-                Cargar_Campos(rubro);
+                string mark = filaSeleccionada.Cells["Descripcion"].Value.ToString();
+                Cargar_Campos(mark);
             }
             catch (Exception)
             {

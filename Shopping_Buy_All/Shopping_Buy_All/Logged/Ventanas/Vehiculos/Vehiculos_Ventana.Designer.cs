@@ -90,7 +90,7 @@
             this.btnEliminarVehiculo.Name = "btnEliminarVehiculo";
             this.btnEliminarVehiculo.Size = new System.Drawing.Size(153, 26);
             this.btnEliminarVehiculo.TabIndex = 5;
-            this.btnEliminarVehiculo.Text = "Eliminar Tipo Vehiculo";
+            this.btnEliminarVehiculo.Text = "Eliminar Vehiculo";
             this.btnEliminarVehiculo.UseVisualStyleBackColor = false;
             this.btnEliminarVehiculo.Click += new System.EventHandler(this.btnEliminarVehiculo_Click);
             // 
@@ -104,7 +104,7 @@
             this.btnModificarVehiculo.Name = "btnModificarVehiculo";
             this.btnModificarVehiculo.Size = new System.Drawing.Size(153, 26);
             this.btnModificarVehiculo.TabIndex = 4;
-            this.btnModificarVehiculo.Text = "Modificar Tipo Vehiculo";
+            this.btnModificarVehiculo.Text = "Modificar Vehiculo";
             this.btnModificarVehiculo.UseVisualStyleBackColor = false;
             this.btnModificarVehiculo.Click += new System.EventHandler(this.btnModificarVehiculo_Click);
             // 

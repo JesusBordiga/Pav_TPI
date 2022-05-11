@@ -165,7 +165,7 @@
             this.tablaMarcas.Size = new System.Drawing.Size(205, 310);
             this.tablaMarcas.TabIndex = 91;
             this.tablaMarcas.TabStop = false;
-            this.tablaMarcas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaRubros_CellContentClick);
+            this.tablaMarcas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaMarcas_CellContentClick);
             // 
             // textMarcaNew
             // 

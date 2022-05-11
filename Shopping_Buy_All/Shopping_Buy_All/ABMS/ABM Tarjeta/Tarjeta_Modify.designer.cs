@@ -131,11 +131,11 @@
             this.labelTipoDoc.Size = new System.Drawing.Size(126, 17);
             this.labelTipoDoc.TabIndex = 95;
             this.labelTipoDoc.Text = "Tipo Documento";
-            this.labelTipoDoc.Visible = false;
             // 
             // cmbTipoDoc
             // 
             this.cmbTipoDoc.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoDoc.ForeColor = System.Drawing.Color.White;
             this.cmbTipoDoc.FormattingEnabled = true;
             this.cmbTipoDoc.Location = new System.Drawing.Point(72, 73);
@@ -154,7 +154,6 @@
             this.labelNroDoc.Size = new System.Drawing.Size(150, 17);
             this.labelNroDoc.TabIndex = 97;
             this.labelNroDoc.Text = "Numero Documento";
-            this.labelNroDoc.Visible = false;
             // 
             // textNroDoc
             // 
@@ -189,11 +188,11 @@
             this.labelTarjeta.Size = new System.Drawing.Size(144, 17);
             this.labelTarjeta.TabIndex = 100;
             this.labelTarjeta.Text = "Numero de Tarjeta";
-            this.labelTarjeta.Visible = false;
             // 
             // cmbMarca
             // 
             this.cmbMarca.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.ForeColor = System.Drawing.Color.White;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(72, 213);
@@ -205,6 +204,7 @@
             // cmbTipo
             // 
             this.cmbTipo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.ForeColor = System.Drawing.Color.White;
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(72, 263);
@@ -324,7 +324,7 @@
             this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
             // 
-            // Tarjetaa_Modify
+            // Tarjeta_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -350,7 +350,7 @@
             this.Controls.Add(this.labelTipoDoc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Tarjetaa_Modify";
+            this.Name = "Tarjeta_Modify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Tarjeta";
             ((System.ComponentModel.ISupportInitialize)(this.tablaTarjetas)).EndInit();
