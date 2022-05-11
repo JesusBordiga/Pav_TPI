@@ -1,6 +1,6 @@
 ﻿namespace Shopping_Buy_All
 {
-    partial class Tarjetaa_Modify
+    partial class Tarjetaa_Delete
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tarjetaa_Modify));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tarjetaa_Delete));
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnModify = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -69,19 +69,19 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnModify
+            // btnDelete
             // 
-            this.btnModify.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModify.ForeColor = System.Drawing.Color.White;
-            this.btnModify.Location = new System.Drawing.Point(29, 316);
-            this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(75, 23);
-            this.btnModify.TabIndex = 3;
-            this.btnModify.Text = "Modificar";
-            this.btnModify.UseVisualStyleBackColor = true;
-            this.btnModify.Visible = false;
-            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(29, 316);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Eliminar";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label15
             // 
@@ -194,6 +194,7 @@
             // cmbMarca
             // 
             this.cmbMarca.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cmbMarca.Enabled = false;
             this.cmbMarca.ForeColor = System.Drawing.Color.White;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(72, 213);
@@ -205,6 +206,7 @@
             // cmbTipo
             // 
             this.cmbTipo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cmbTipo.Enabled = false;
             this.cmbTipo.ForeColor = System.Drawing.Color.White;
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(72, 263);
@@ -324,7 +326,7 @@
             this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
             // 
-            // Tarjetaa_Modify
+            // Tarjetaa_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -344,15 +346,15 @@
             this.Controls.Add(this.cmbTipoDoc);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnModify);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTipoDoc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Tarjetaa_Modify";
+            this.Name = "Tarjetaa_Delete";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Modificar Tarjeta";
+            this.Text = "Eliminar Tarjeta";
             ((System.ComponentModel.ISupportInitialize)(this.tablaTarjetas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -361,7 +363,7 @@
 
         #endregion
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnModify;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSearch;

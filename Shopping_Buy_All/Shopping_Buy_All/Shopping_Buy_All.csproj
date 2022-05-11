@@ -198,6 +198,12 @@
     <Compile Include="ABMS\ABM Sexo\Sexo_Modify.Designer.cs">
       <DependentUpon>Sexo_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjetaa_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjetaa_Delete.Designer.cs">
+      <DependentUpon>Tarjetaa_Delete.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM Tarjeta\Tarjetaa_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -518,6 +524,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Sexo\Sexo_Modify.resx">
       <DependentUpon>Sexo_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Tarjeta\Tarjetaa_Delete.resx">
+      <DependentUpon>Tarjetaa_Delete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Tarjeta\Tarjetaa_Modify.resx">
       <DependentUpon>Tarjetaa_Modify.cs</DependentUpon>
