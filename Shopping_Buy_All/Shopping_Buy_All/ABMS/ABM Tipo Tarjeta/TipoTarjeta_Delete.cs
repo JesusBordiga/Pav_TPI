@@ -200,11 +200,10 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
         {
             try
             {
-            {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaTipoTarjeta.Rows[indice];
-            string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
-            buscarTipoTarjeta(nombre);
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaTipoTarjeta.Rows[indice];
+                string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                buscarTipoTarjeta(nombre);
             }
             catch
             {
