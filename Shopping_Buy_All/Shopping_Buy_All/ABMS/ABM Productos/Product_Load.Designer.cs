@@ -143,6 +143,7 @@
             this.btnClear.TabIndex = 53;
             this.btnClear.Text = "Limpiar";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // tablaProductos
             // 

@@ -17,7 +17,6 @@ namespace Shopping_Buy_All
         public Client_Delete()
         {
             InitializeComponent();
-
         }
         private void Client_Delete_Load(object sender, EventArgs e)
         {
@@ -53,8 +52,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -90,8 +88,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -147,15 +144,13 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
                 cn.Close();
             }
             return client;
-
         }
         private bool Buscar_Cliente1(int TipoDocumento, string NroDocumento)
         {
@@ -166,7 +161,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Clientes where TipoDocumento like @tipoDocumento AND NroDocumento like @nrodocumento AND Borrado like 0";
+                string consulta = "SELECT * FROM Clientes where TipoDocumento like @tipoDocumento AND NroDocumento like @nrodocumento AND Borrado = 0";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
@@ -180,18 +175,17 @@ namespace Shopping_Buy_All
                 SqlDataReader DataReader = cmd.ExecuteReader();
                 if (DataReader != null && DataReader.Read())
                 {
+                    cn.Close();
                     DataTable tabla = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(tabla);
                     tablaClientes.DataSource = tabla;
                     resultado = true;
                 }
-  
             }
             catch (Exception)
             {
-                resultado = false;
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -207,22 +201,21 @@ namespace Shopping_Buy_All
               btnDeleteClient.Visible = false;
               btnSearch.Visible = true;
             }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (validarCliente())
             {
                 bool existe = Buscar_Cliente1((int)comboBoxDocType.SelectedValue, textNumberDoc.Text.Trim());
                 if (existe)
-                    {
+                {
                     tablaClientes.Visible = true;
                     btnDeleteClient.Visible = true;
                     btnSearch.Visible = false;
-                    }
+                }
                 else
-                    {
+                {
                     MessageBox.Show("El usuario que busca no existe o fue borrado!");
-                    }
+                }
             }
         }
         private bool BorrarCliente(int TipoDocumento, string NroDocumento,int Borrado)
@@ -248,20 +241,18 @@ namespace Shopping_Buy_All
             }
             catch (SqlException)
             {
-                throw;
-                
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    cn.Close();
-                }
-                return resultado;
+            {
+                MessageBox.Show("Error! \n Hubo un error!");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
         }
-
         private void btnDeleteClient_Click(object sender, EventArgs e)
         {
             Cliente c = Buscar_Cliente_Documento(comboBoxDocType.SelectedIndex.ToString(), textNumberDoc.Text);
@@ -308,26 +299,24 @@ namespace Shopping_Buy_All
             //Cargar Documento
             textNumberDoc.Text = c.DocumentoCliente;
         }
-       
         private bool validarCliente()
-        {
-            ;
+        { 
+            bool resultado = false;
             if (comboBoxDocType.SelectedIndex.Equals(-1))
             {
                 MessageBox.Show("Error, Cargar tipo de documento!");
                 comboBoxDocType.Focus();
-                return false;
             }
             else if (textNumberDoc.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Error, Cargar numero de documento!");
                 textNumberDoc.Focus();
-                return false;
             }
             else
             {
-                return true;
+                resultado = true;
             }
+            return resultado;
         }
         private Cliente Buscar_Cliente_Documento(string TipoDocumento, string NroDocumento)
         {
@@ -371,8 +360,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -383,6 +371,8 @@ namespace Shopping_Buy_All
         }
         private void tablaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
             string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
@@ -391,6 +381,11 @@ namespace Shopping_Buy_All
             Clean();
             Cargar_Campos(c);
             btnDeleteClient.Visible = true;
+            }
+            catch
+            {
+                MessageBox.Show("Error! \n Seleccione una casilla dentro de la tabla!");
+            }
         }
     }
 }

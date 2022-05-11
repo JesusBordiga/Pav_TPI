@@ -19,7 +19,6 @@ namespace Shopping_Buy_All.Productos
             InitializeComponent();
             CargarTablaProductos();
         }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clean();
@@ -29,7 +28,6 @@ namespace Shopping_Buy_All.Productos
             textNameProduct.Text = "";
             textPrice.Text="";
         }
-        
         private void CargarTablaProductos()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -56,8 +54,7 @@ namespace Shopping_Buy_All.Productos
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -95,7 +92,6 @@ namespace Shopping_Buy_All.Productos
                 return true;
             }
         }
-
         private void btnCargarProducto_Click(object sender, EventArgs e)
         {
             if (ValidarProducto())
@@ -128,7 +124,6 @@ namespace Shopping_Buy_All.Productos
             
             
         }
-
         private bool Agregar_Producto(Producto product)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -151,13 +146,12 @@ namespace Shopping_Buy_All.Productos
             }
             catch (SqlException)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error en la base de datos!");
             }
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {

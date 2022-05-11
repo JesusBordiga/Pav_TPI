@@ -57,10 +57,10 @@ namespace Shopping_Buy_All.ABM_Sexo
         {
             try
             {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaSexo.Rows[indice];
-            string nombre = filaSeleccionada.Cells["NombreSexo"].Value.ToString();
-            buscarSexo(nombre);
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaSexo.Rows[indice];
+                string nombre = filaSeleccionada.Cells["NombreSexo"].Value.ToString();
+                buscarSexo(nombre);
             }
             catch (Exception)
             {

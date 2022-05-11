@@ -20,10 +20,7 @@ namespace Shopping_Buy_All
             CargarTablaClientes();
             CargarTiposDocumentos();
             CargarTipoSexo();
-
-
         }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clean();
@@ -72,8 +69,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -109,8 +105,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -144,7 +139,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -263,10 +258,8 @@ namespace Shopping_Buy_All
             //Fecha de nacimiento de Cliente
             c.FechaNacimientoCliente = DateTime.Parse(textDateBirthDay.Text);
 
-
             return c;
         }
-
         private void btnCargarCliente_Click(object sender, EventArgs e)
         {
             bool valido =validarCliente();
@@ -294,8 +287,6 @@ namespace Shopping_Buy_All
                             Clean();
                             CargarTablaClientes();
                             CargarTiposDocumentos();
-
-
                         }
                         else
                         {
@@ -304,7 +295,6 @@ namespace Shopping_Buy_All
                     }
             }
         }
-
         private bool Agregar_Cliente(Cliente client)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -334,11 +324,11 @@ namespace Shopping_Buy_All
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {

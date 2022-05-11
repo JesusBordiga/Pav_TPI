@@ -21,7 +21,6 @@ namespace Shopping_Buy_All
             CargarTiposDocumentos();
             CargarTipoSexo();
         }
-
         private void btnBuscarCliente_click(object sender, EventArgs e)
         {
             if (comboBoxDocType.SelectedIndex != 0 && textNumberDoc.Text.Equals(""))
@@ -119,7 +118,6 @@ namespace Shopping_Buy_All
             }
 
         }
-
         private void CargarTipoSexo()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -149,15 +147,13 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error, No se pudo cargar el Tipo de Sexo!");
             }
             finally
             {
                 cn.Close();
             }
         }
-
         private void Cargar_Campos(Cliente c)
         {
             //Cargar Tipo Documento
@@ -230,7 +226,7 @@ namespace Shopping_Buy_All
             catch (Exception )
             {
 
-                throw;
+                MessageBox.Show("Error, no se pudo cargar el Tipo de Documento!");
             }
             finally
             {
@@ -264,8 +260,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error!");
             }
             finally
             {
@@ -314,8 +309,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error al buscar al cliente");
             }
             finally
             {
@@ -324,7 +318,6 @@ namespace Shopping_Buy_All
             return client;
 
         }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clean();
@@ -377,7 +370,6 @@ namespace Shopping_Buy_All
             return c;
 
         }
-
         private bool ModificarCliente(Cliente client)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -407,11 +399,11 @@ namespace Shopping_Buy_All
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! Hubo un problema con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error!");
             }
             finally
             {
@@ -419,7 +411,6 @@ namespace Shopping_Buy_All
             }
             return resultado;
         }
-
         private void btnClientLoad_Click_1(object sender, EventArgs e)
         {
             if (validarCliente())
