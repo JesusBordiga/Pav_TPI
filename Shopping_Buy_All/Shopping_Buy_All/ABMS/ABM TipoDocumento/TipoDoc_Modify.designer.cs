@@ -52,10 +52,10 @@
             this.btnTipDocModify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTipDocModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipDocModify.ForeColor = System.Drawing.Color.White;
-            this.btnTipDocModify.Location = new System.Drawing.Point(91, 319);
+            this.btnTipDocModify.Location = new System.Drawing.Point(74, 243);
             this.btnTipDocModify.Name = "btnTipDocModify";
             this.btnTipDocModify.Size = new System.Drawing.Size(75, 23);
-            this.btnTipDocModify.TabIndex = 118;
+            this.btnTipDocModify.TabIndex = 3;
             this.btnTipDocModify.Text = "Modificar";
             this.btnTipDocModify.UseVisualStyleBackColor = false;
             this.btnTipDocModify.Click += new System.EventHandler(this.btnTipDocModify_Click);
@@ -64,10 +64,10 @@
             // 
             this.txtNombreTipDoc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombreTipDoc.ForeColor = System.Drawing.Color.White;
-            this.txtNombreTipDoc.Location = new System.Drawing.Point(85, 158);
+            this.txtNombreTipDoc.Location = new System.Drawing.Point(60, 130);
             this.txtNombreTipDoc.Name = "txtNombreTipDoc";
             this.txtNombreTipDoc.Size = new System.Drawing.Size(100, 20);
-            this.txtNombreTipDoc.TabIndex = 117;
+            this.txtNombreTipDoc.TabIndex = 1;
             // 
             // label2
             // 
@@ -75,7 +75,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(102, 138);
+            this.label2.Location = new System.Drawing.Point(77, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 116;
@@ -87,10 +87,10 @@
             this.btnBuscarTipDoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarTipDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarTipDoc.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarTipDoc.Location = new System.Drawing.Point(91, 319);
+            this.btnBuscarTipDoc.Location = new System.Drawing.Point(74, 243);
             this.btnBuscarTipDoc.Name = "btnBuscarTipDoc";
             this.btnBuscarTipDoc.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarTipDoc.TabIndex = 115;
+            this.btnBuscarTipDoc.TabIndex = 2;
             this.btnBuscarTipDoc.Text = "Buscar";
             this.btnBuscarTipDoc.UseVisualStyleBackColor = false;
             this.btnBuscarTipDoc.Click += new System.EventHandler(this.btnBuscarTipDoc_Click);
@@ -99,7 +99,7 @@
             // 
             this.txtNuevoNombre.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNuevoNombre.ForeColor = System.Drawing.Color.White;
-            this.txtNuevoNombre.Location = new System.Drawing.Point(85, 158);
+            this.txtNuevoNombre.Location = new System.Drawing.Point(60, 130);
             this.txtNuevoNombre.Name = "txtNuevoNombre";
             this.txtNuevoNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNuevoNombre.TabIndex = 114;
@@ -110,7 +110,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(77, 139);
+            this.label4.Location = new System.Drawing.Point(52, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 113;
@@ -120,11 +120,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(22, 70);
+            this.label1.Location = new System.Drawing.Point(30, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 62);
+            this.label1.Size = new System.Drawing.Size(156, 44);
             this.label1.TabIndex = 112;
             this.label1.Text = "Buscar Tipos de\r\nDocumento";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -133,13 +133,13 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(198, 8);
+            this.label15.Location = new System.Drawing.Point(222, 8);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(393, 31);
+            this.label15.Size = new System.Drawing.Size(194, 22);
             this.label15.TabIndex = 111;
-            this.label15.Text = "Lista de Tipos de Documento";
+            this.label15.Text = "Tipos de Documento";
             // 
             // tablaTipDoc
             // 
@@ -156,7 +156,7 @@
             this.NombreDocumento,
             this.Borrado});
             this.tablaTipDoc.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaTipDoc.Location = new System.Drawing.Point(270, 42);
+            this.tablaTipDoc.Location = new System.Drawing.Point(202, 33);
             this.tablaTipDoc.Name = "tablaTipDoc";
             this.tablaTipDoc.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -167,7 +167,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaTipDoc.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaTipDoc.Size = new System.Drawing.Size(246, 298);
+            this.tablaTipDoc.RowHeadersWidth = 10;
+            this.tablaTipDoc.Size = new System.Drawing.Size(235, 248);
             this.tablaTipDoc.TabIndex = 110;
             this.tablaTipDoc.TabStop = false;
             this.tablaTipDoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaTipDoc_CellContentClick);
@@ -200,7 +201,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(592, 350);
+            this.ClientSize = new System.Drawing.Size(445, 290);
             this.Controls.Add(this.btnTipDocModify);
             this.Controls.Add(this.txtNombreTipDoc);
             this.Controls.Add(this.label2);

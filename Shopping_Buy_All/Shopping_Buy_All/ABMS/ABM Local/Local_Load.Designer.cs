@@ -52,7 +52,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(62, 57);
+            this.label1.Location = new System.Drawing.Point(50, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 25);
             this.label1.TabIndex = 1;
@@ -64,7 +64,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(96, 169);
+            this.label4.Location = new System.Drawing.Point(97, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 17);
             this.label4.TabIndex = 4;
@@ -76,7 +76,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(374, 13);
+            this.label15.Location = new System.Drawing.Point(357, 14);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(169, 25);
             this.label15.TabIndex = 28;
@@ -87,7 +87,7 @@
             this.btnLocalLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLocalLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocalLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLocalLoad.Location = new System.Drawing.Point(38, 232);
+            this.btnLocalLoad.Location = new System.Drawing.Point(28, 236);
             this.btnLocalLoad.Name = "btnLocalLoad";
             this.btnLocalLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLocalLoad.TabIndex = 13;
@@ -100,7 +100,7 @@
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(134, 232);
+            this.btnClear.Location = new System.Drawing.Point(124, 236);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 14;
@@ -111,8 +111,9 @@
             // cmbTipoComercio
             // 
             this.cmbTipoComercio.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cmbTipoComercio.ForeColor = System.Drawing.SystemColors.Window;
             this.cmbTipoComercio.FormattingEnabled = true;
-            this.cmbTipoComercio.Location = new System.Drawing.Point(67, 189);
+            this.cmbTipoComercio.Location = new System.Drawing.Point(55, 159);
             this.cmbTipoComercio.Name = "cmbTipoComercio";
             this.cmbTipoComercio.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoComercio.TabIndex = 29;
@@ -123,7 +124,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(72, 96);
+            this.label2.Location = new System.Drawing.Point(84, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 30;
@@ -132,7 +133,8 @@
             // txtNombreLocal
             // 
             this.txtNombreLocal.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txtNombreLocal.Location = new System.Drawing.Point(80, 116);
+            this.txtNombreLocal.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtNombreLocal.Location = new System.Drawing.Point(68, 103);
             this.txtNombreLocal.Name = "txtNombreLocal";
             this.txtNombreLocal.Size = new System.Drawing.Size(100, 20);
             this.txtNombreLocal.TabIndex = 31;
@@ -150,11 +152,11 @@
             this.TipoComercio,
             this.NombreTipoComercio});
             this.tablaLocales.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaLocales.Location = new System.Drawing.Point(234, 41);
+            this.tablaLocales.Location = new System.Drawing.Point(217, 41);
             this.tablaLocales.Name = "tablaLocales";
             this.tablaLocales.ReadOnly = true;
             this.tablaLocales.RowHeadersWidth = 10;
-            this.tablaLocales.Size = new System.Drawing.Size(457, 222);
+            this.tablaLocales.Size = new System.Drawing.Size(418, 222);
             this.tablaLocales.TabIndex = 79;
             this.tablaLocales.TabStop = false;
             // 
@@ -180,6 +182,7 @@
             this.TipoComercio.HeaderText = "Id Tipo Comercio";
             this.TipoComercio.Name = "TipoComercio";
             this.TipoComercio.ReadOnly = true;
+            this.TipoComercio.Width = 70;
             // 
             // NombreTipoComercio
             // 
@@ -196,7 +199,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(700, 273);
+            this.ClientSize = new System.Drawing.Size(642, 271);
             this.Controls.Add(this.tablaLocales);
             this.Controls.Add(this.txtNombreLocal);
             this.Controls.Add(this.label2);

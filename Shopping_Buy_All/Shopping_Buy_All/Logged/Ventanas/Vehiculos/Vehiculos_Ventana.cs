@@ -28,20 +28,20 @@ namespace Shopping_Buy_All
 
         private void btnAltaTipoVehiculo_Click(object sender, EventArgs e)
         {
-            MarcaVeh_Load MarcaVeh = new MarcaVeh_Load();
-            MarcaVeh.ShowDialog();
+            VehicleType_Load VehicleTypeLoad = new VehicleType_Load();
+            VehicleTypeLoad.ShowDialog();
         }
 
         private void btnModificarTipoVehiculo_Click(object sender, EventArgs e)
         {
-            MarcaVeh_Modify MarcaVeh_Modify = new MarcaVeh_Modify();
-            MarcaVeh_Modify.ShowDialog();
+            VehicleType_Modify VehicleTypeModify = new VehicleType_Modify();
+            VehicleTypeModify.ShowDialog();
         }
 
         private void btnEliminarTipoVehiculo_Click(object sender, EventArgs e)
         {
-            MarcaVeh_Delete marcaVeh_Delete = new MarcaVeh_Delete();
-            marcaVeh_Delete.ShowDialog();
+            VehicleType_Delete VehicleTypeDelete = new VehicleType_Delete();
+            VehicleTypeDelete.ShowDialog();
         }
 
         private void btnAltaVehiculo_Click(object sender, EventArgs e)

@@ -49,10 +49,10 @@
             this.btnSexoLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSexoLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSexoLoad.ForeColor = System.Drawing.Color.White;
-            this.btnSexoLoad.Location = new System.Drawing.Point(106, 315);
+            this.btnSexoLoad.Location = new System.Drawing.Point(72, 199);
             this.btnSexoLoad.Name = "btnSexoLoad";
             this.btnSexoLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnSexoLoad.TabIndex = 72;
+            this.btnSexoLoad.TabIndex = 2;
             this.btnSexoLoad.Text = "Cargar";
             this.btnSexoLoad.UseVisualStyleBackColor = false;
             this.btnSexoLoad.Click += new System.EventHandler(this.btnSexoLoad_Click);
@@ -61,10 +61,10 @@
             // 
             this.txtNombreSexo.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombreSexo.ForeColor = System.Drawing.Color.White;
-            this.txtNombreSexo.Location = new System.Drawing.Point(100, 153);
+            this.txtNombreSexo.Location = new System.Drawing.Point(66, 140);
             this.txtNombreSexo.Name = "txtNombreSexo";
             this.txtNombreSexo.Size = new System.Drawing.Size(100, 20);
-            this.txtNombreSexo.TabIndex = 71;
+            this.txtNombreSexo.TabIndex = 1;
             // 
             // label2
             // 
@@ -72,7 +72,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(117, 132);
+            this.label2.Location = new System.Drawing.Point(83, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 70;
@@ -82,11 +82,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(45, 70);
+            this.label1.Location = new System.Drawing.Point(42, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 62);
+            this.label1.Size = new System.Drawing.Size(149, 44);
             this.label1.TabIndex = 69;
             this.label1.Text = "Cargar nombre \r\nde Sexo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,11 +95,11 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(323, 7);
+            this.label15.Location = new System.Drawing.Point(258, 19);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(205, 31);
+            this.label15.Size = new System.Drawing.Size(142, 22);
             this.label15.TabIndex = 68;
             this.label15.Text = "Lista de Sexos";
             // 
@@ -118,7 +118,7 @@
             this.NombreSexo,
             this.Borrado});
             this.tablaSexo.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaSexo.Location = new System.Drawing.Point(300, 41);
+            this.tablaSexo.Location = new System.Drawing.Point(216, 44);
             this.tablaSexo.Name = "tablaSexo";
             this.tablaSexo.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -129,8 +129,9 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaSexo.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaSexo.Size = new System.Drawing.Size(246, 298);
-            this.tablaSexo.TabIndex = 67;
+            this.tablaSexo.RowHeadersWidth = 10;
+            this.tablaSexo.Size = new System.Drawing.Size(230, 239);
+            this.tablaSexo.TabIndex = 101;
             this.tablaSexo.TabStop = false;
             // 
             // TipoSexo
@@ -161,13 +162,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(592, 350);
+            this.ClientSize = new System.Drawing.Size(458, 292);
+            this.Controls.Add(this.tablaSexo);
             this.Controls.Add(this.btnSexoLoad);
             this.Controls.Add(this.txtNombreSexo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.tablaSexo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Sexo_Load";

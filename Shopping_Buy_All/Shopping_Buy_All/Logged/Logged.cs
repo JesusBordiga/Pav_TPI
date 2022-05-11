@@ -12,7 +12,7 @@ using Shopping_Buy_All.Productos;
 
 namespace Shopping_Buy_All
 {
-    public  partial class Logged : Form
+    public partial class Logged : Form
     {
         public Logged(User usu)
         {
@@ -25,19 +25,19 @@ namespace Shopping_Buy_All
         private void Logged_Load(object sender, EventArgs e)
         {
             btnMenu1.Visible = true;
-            panel.Visible = true;
+            panelMenu.Visible = false;
 
         }
 
         private void btnClientLoad_Click(object sender, EventArgs e)
         {
             btnMenu1.Visible = false;
-            panel.Visible = false;
+            panelMenu.Visible = true;
         }
         private void btnMenu2_Click(object sender, EventArgs e)
         {
             btnMenu1.Visible = true;
-            panel.Visible = true;
+            panelMenu.Visible = false;
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -81,6 +81,11 @@ namespace Shopping_Buy_All
         {
             Usuarios_Ventana Usuarios = new Usuarios_Ventana();
             Usuarios.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

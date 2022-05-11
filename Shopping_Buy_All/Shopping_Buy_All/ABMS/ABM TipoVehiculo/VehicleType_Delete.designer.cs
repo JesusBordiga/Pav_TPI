@@ -40,24 +40,24 @@
             this.textNameType = new System.Windows.Forms.TextBox();
             this.btnDeleteType = new System.Windows.Forms.Button();
             this.btnSerachType2 = new System.Windows.Forms.Button();
-            this.SearchPanel = new System.Windows.Forms.PictureBox();
             this.tablaTipoVehiculo = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).BeginInit();
+            this.SearchPanel = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoVehiculo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(71, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 50);
+            this.label1.Size = new System.Drawing.Size(123, 44);
             this.label1.TabIndex = 81;
             this.label1.Text = "    Eliminar \r\ntipo vehiculo";
             // 
@@ -155,15 +155,6 @@
             this.btnSerachType2.UseVisualStyleBackColor = true;
             this.btnSerachType2.Click += new System.EventHandler(this.btnSearchType_Click_1);
             // 
-            // SearchPanel
-            // 
-            this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.SearchPanel.Location = new System.Drawing.Point(21, 83);
-            this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(250, 249);
-            this.SearchPanel.TabIndex = 92;
-            this.SearchPanel.TabStop = false;
-            // 
             // tablaTipoVehiculo
             // 
             this.tablaTipoVehiculo.AllowUserToAddRows = false;
@@ -226,6 +217,15 @@
             this.Borrado.Visible = false;
             this.Borrado.Width = 125;
             // 
+            // SearchPanel
+            // 
+            this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
+            this.SearchPanel.Location = new System.Drawing.Point(12, 88);
+            this.SearchPanel.Name = "SearchPanel";
+            this.SearchPanel.Size = new System.Drawing.Size(250, 249);
+            this.SearchPanel.TabIndex = 92;
+            this.SearchPanel.TabStop = false;
+            // 
             // VehicleType_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,8 +254,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar tipo vehiculo";
             this.Load += new System.EventHandler(this.TypeDelete_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoVehiculo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,10 +272,10 @@
         private System.Windows.Forms.TextBox textNameType;
         private System.Windows.Forms.Button btnDeleteType;
         private System.Windows.Forms.Button btnSerachType2;
-        private System.Windows.Forms.PictureBox SearchPanel;
         private System.Windows.Forms.DataGridView tablaTipoVehiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.PictureBox SearchPanel;
     }
 }

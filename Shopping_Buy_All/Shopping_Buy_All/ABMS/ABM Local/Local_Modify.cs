@@ -24,6 +24,7 @@ namespace Shopping_Buy_All
         {
             CargarTablaLocal();
             CargarComboTipoComercio();
+            panelBuscar.Visible = false;
         }
 
         private void CargarComboTipoComercio()
@@ -58,6 +59,7 @@ namespace Shopping_Buy_All
         {
             if (!txtCodigo.Text.Equals(""))
             {
+                panelBuscar.Visible = true;
                 try
                 {
                     Local l = AD_Local.Buscar_LocalPorCodigo(txtCodigo.Text.Trim());
@@ -91,6 +93,7 @@ namespace Shopping_Buy_All
                 //Buscamos el Local por Nombre y Tipo Comercio
                 try
                 {
+                    panelBuscar.Visible = true;
                     Local local = ObtenerDatosLocal();
                     int codigo = AD_Local.Buscar_LocalPorNombreYTipoComercio(local);
 
@@ -127,9 +130,8 @@ namespace Shopping_Buy_All
             txtCodigo.Text = "";
             cmbTipoComercio.SelectedValue = -1;
             txtCodigo.Enabled = true;
-            btnBuscar.Visible = true;
-            btnModificarLocal.Visible = false;
             CargarTablaLocal();
+            panelBuscar.Visible = false;
         }
         private void Cargar_Campos(int Id, string Nombre)
         {

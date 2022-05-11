@@ -12,43 +12,43 @@ using System.Windows.Forms;
 
 namespace Shopping_Buy_All
 {
-    public partial class Rubro_Modify : Form
+    public partial class MarcaTarjeta_Modify : Form
     {
-        public Rubro_Modify()
+        public MarcaTarjeta_Modify()
         {
             InitializeComponent();
-            CargarTablaRubros();
+            CargarTablaMarcas();
         }
 
         private void Clean()
         {
-            textRubroOld.Text = "";
-            textRubroNew.Text = "";
-            textRubroOld.Visible = true;
-            textRubroNew.Visible = false;
+            textMarcaOld.Text = "";
+            textMarcaNew.Text = "";
+            textMarcaOld.Visible = true;
+            textMarcaNew.Visible = false;
             btnModify.Visible = false;
             btnSearch.Visible = true;
-            labelRubro.Visible = true;
+            labelMarca.Visible = true;
             labelMod.Visible = false;
-            textRubroOld.Focus();
+            textMarcaOld.Focus();
         }
 
-        private void Cargar_Campos(string rubro)
+        private void Cargar_Campos(string marca)
         {
             //Cargar Nombre Original
-            textRubroOld.Text = rubro;
+            textMarcaOld.Text = marca;
             //Cargar Nombre Nuevo
-            textRubroNew.Text = rubro;
+            textMarcaNew.Text = marca;
             btnModify.Visible = true;
-            textRubroOld.Visible = false;
-            textRubroNew.Visible = true;
+            textMarcaOld.Visible = false;
+            textMarcaNew.Visible = true;
             btnSearch.Visible = false;
-            labelRubro.Visible = false;
+            labelMarca.Visible = false;
             labelMod.Visible = true;
-            textRubroNew.Focus();
+            textMarcaNew.Focus();
         }
 
-        private void CargarTablaRubros()
+        private void CargarTablaMarcas()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -56,7 +56,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Rubros WHERE Borrado like 0";
+                string consulta = "Select * FROM MarcaTarjetas WHERE Borrado like 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -69,7 +69,7 @@ namespace Shopping_Buy_All
 
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
-                tablaRubros.DataSource = tabla;
+                tablaMarcas.DataSource = tabla;
             }
             catch (Exception)
             {
@@ -81,7 +81,7 @@ namespace Shopping_Buy_All
             }
         }
 
-        private bool ExisteRubro(string rubro)
+        private bool ExisteRubro(string marca)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -89,10 +89,10 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Rubros WHERE Nombre = @rubro AND Borrado like 0";
+                string consulta = "SELECT * FROM MarcaTarjetas WHERE Nombre = @marca AND Borrado like 0";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@rubro", rubro);
+                cmd.Parameters.AddWithValue("@marca", marca);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
@@ -118,11 +118,11 @@ namespace Shopping_Buy_All
 
         private string ObtenerDatos()
         {
-            string r = textRubroNew.Text.Trim();
-            return r;
+            string m = textMarcaNew.Text.Trim();
+            return m;
         }
 
-        private bool ModificarRubro(string newR, string oldR)
+        private bool ModificarMarca(string newM, string oldM)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -130,10 +130,10 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Rubros SET Nombre = @newNombre WHERE Nombre = @oldNombre";
+                string consulta = "UPDATE MarcaTarjetas SET Nombre = @newNombre WHERE Nombre = @oldNombre";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@newNombre", newR);
-                cmd.Parameters.AddWithValue("@oldNombre", oldR);
+                cmd.Parameters.AddWithValue("@newNombre", newM);
+                cmd.Parameters.AddWithValue("@oldNombre", oldM);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -144,7 +144,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-                MessageBox.Show("No se pudo modificar el Rubro.\nError en la base de datos.", "ERROR");
+                MessageBox.Show("No se pudo modificar la Marca.\nError en la base de datos.", "ERROR");
             }
             finally
             {
@@ -155,13 +155,13 @@ namespace Shopping_Buy_All
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (textRubroOld.Text.Trim().Equals(""))
+            if (textMarcaOld.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Error, Completar campos!!");
             }
             else
             {
-                string rubro = textRubroOld.Text.Trim();
+                string rubro = textMarcaOld.Text.Trim();
                 bool existe = ExisteRubro(rubro);
                 if (existe)
                 {
@@ -181,61 +181,61 @@ namespace Shopping_Buy_All
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            if (textRubroNew.Text.Trim() != "")
+            if (textMarcaNew.Text.Trim() != "")
             {
-                string newR = ObtenerDatos();
-                if (!ExisteRubro(newR))
+                string newM = ObtenerDatos();
+                if (!ExisteRubro(newM))
                 {
-                    string oldR = textRubroOld.Text.Trim().ToLower();
-                    bool resultado = ModificarRubro(newR, oldR);
+                    string oldM = textMarcaOld.Text.Trim().ToLower();
+                    bool resultado = ModificarMarca(newM, oldM);
                     if (resultado)
                     {
                         MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
                         String mensajeCarga = (
-                              " | Rubro: " + newR + " |" + "\n");
+                              " | Marca: " + newM + " |" + "\n");
 
-                        string titulo = "Información de Rubro";
+                        string titulo = "Información de Marca";
 
                         DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
 
                         if (result == DialogResult.OK)
                         {
-                            MessageBox.Show("Rubro modificado con éxito!");
+                            MessageBox.Show("Marca modificada con éxito!");
                             Clean();
-                            CargarTablaRubros();
+                            CargarTablaMarcas();
                         }
                         else
                         {
-                            textRubroOld.Focus();
+                            textMarcaOld.Focus();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Error al cargar el Rubro! \n" +
+                        MessageBox.Show("Error al cargar la Marca! \n" +
                                 "Complete los campos por favor!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error al modificar el Rubro! \n" +
-                            "Ya existe un rubro con ese nombre!");
+                    MessageBox.Show("Error al modificar la Marca! \n" +
+                            "Ya existe una marca con ese nombre!");
                 }
             }
             else
             {
-                MessageBox.Show("Error al cargar el Rubro! \n" +
+                MessageBox.Show("Error al cargar la Marca! \n" +
                             "Complete los campos por favor!");
             }
         }
 
-        private void tablaRubros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tablaMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int indice = e.RowIndex;
-                DataGridViewRow filaSeleccionada = tablaRubros.Rows[indice];
-                string rubro = filaSeleccionada.Cells["Nombre"].Value.ToString();
-                Cargar_Campos(rubro);
+                DataGridViewRow filaSeleccionada = tablaMarcas.Rows[indice];
+                string marca = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                Cargar_Campos(marca);
             }
             catch (Exception)
             {

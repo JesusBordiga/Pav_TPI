@@ -12,21 +12,21 @@ using System.Windows.Forms;
 
 namespace Shopping_Buy_All
 {
-    public partial class Rubro_Delete : Form
+    public partial class MarcaTarjeta_Delete : Form
     {
-        public Rubro_Delete()
+        public MarcaTarjeta_Delete()
         {
             InitializeComponent();
         }
 
-        private void Rubro_Delete_Load(object sender, EventArgs e)
+        private void Marca_Delete_Load(object sender, EventArgs e)
         {
             btnSearch.Visible = true;
             btnDelete.Visible = false;
-            CargarTablaRubros();
+            CargarTablaMarcas();
         }
 
-        private void CargarTablaRubros()
+        private void CargarTablaMarcas()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -34,7 +34,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Rubros WHERE Borrado like 0";
+                string consulta = "Select * FROM MarcaTarjetas WHERE Borrado like 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -47,7 +47,7 @@ namespace Shopping_Buy_All
 
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
-                tablaRubros.DataSource = tabla;
+                tablaMarcas.DataSource = tabla;
             }
             catch (Exception)
             {
@@ -61,13 +61,13 @@ namespace Shopping_Buy_All
 
         private void Clean()
         {
-            textRubro.Text = "";
+            textMarca.Text = "";
             btnDelete.Visible = false;
             btnSearch.Visible = true;
-            textRubro.Enabled = true;
+            textMarca.Enabled = true;
         }
 
-        private bool ExisteRubro(string rubro)
+        private bool ExisteMarca(string marca)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -75,10 +75,10 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Rubros WHERE Nombre = @rubro AND Borrado like 0";
+                string consulta = "SELECT * FROM MarcaTarjetas WHERE Nombre = @marca AND Borrado like 0";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@rubro", rubro);
+                cmd.Parameters.AddWithValue("@marca", marca);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
@@ -109,26 +109,26 @@ namespace Shopping_Buy_All
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (textRubro.Text.Trim() == "")
+            if (textMarca.Text.Trim() == "")
             {
                 MessageBox.Show("Error, Debe completar los campos!!");
             }
             else
             {
-                string rubro = textRubro.Text.Trim();
-                bool existe = ExisteRubro(rubro);
+                string marca = textMarca.Text.Trim();
+                bool existe = ExisteMarca(marca);
                 if (existe)
                 {
-                    Cargar_Campos(rubro);
+                    Cargar_Campos(marca);
                 }
                 else
                 {
-                    MessageBox.Show("El rubro que busca no existe o fue borrado!");
+                    MessageBox.Show("La marca que busca no existe o fue borrado!");
                 }
             }
         }
 
-        private bool BorrarRubro(string rubro)
+        private bool BorrarMarca(string marca)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -136,9 +136,9 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Rubros SET Borrado = 1 WHERE Nombre = @rubro AND Borrado like 0";
+                string consulta = "UPDATE MarcaTarjetas SET Borrado = 1 WHERE Nombre = @marca AND Borrado like 0";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@rubro", rubro);
+                cmd.Parameters.AddWithValue("@marca", marca);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -149,7 +149,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-                MessageBox.Show("No se pudo eliminar el Rubro.\nError en la base de datos.", "ERROR");
+                MessageBox.Show("No se pudo eliminar la Marca.\nError en la base de datos.", "ERROR");
             }
             finally
             {
@@ -160,10 +160,10 @@ namespace Shopping_Buy_All
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string rubro = textRubro.Text.Trim();
+            string marca = textMarca.Text.Trim();
             MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
             String mensajeCarga = (
-                  " | Nombre: " + rubro + " |" + "\n" + "\n" + " | Desea eliminar a este rubro??");
+                  " | Nombre: " + marca + " |" + "\n" + "\n" + " | Desea eliminar a esta marca??");
 
             string titulo = "Información de Eliminación";
 
@@ -171,43 +171,43 @@ namespace Shopping_Buy_All
 
             if (result == DialogResult.OK)
             {
-                bool resultado = BorrarRubro(rubro);
+                bool resultado = BorrarMarca(marca);
                 if (resultado)
                 {
-                    MessageBox.Show("Rubro Borrado con éxito!");
+                    MessageBox.Show("Marca Borrada con éxito!");
                     Clean();
                     btnDelete.Visible = false;
                     btnSearch.Visible = true;
-                    CargarTablaRubros();
-                    textRubro.Focus();
+                    CargarTablaMarcas();
+                    textMarca.Focus();
                 }
                 else
                 {
-                    MessageBox.Show("El Rubro No fue Borrado!");
+                    MessageBox.Show("La Marca No fue Borrado!");
                 }
             }
             else
             {
-                textRubro.Focus();
+                textMarca.Focus();
             }
         }
 
-        private void Cargar_Campos(string rubro)
+        private void Cargar_Campos(string marca)
         {
-            textRubro.Text = rubro;
+            textMarca.Text = marca;
             btnDelete.Visible = true;
             btnSearch.Visible = false;
-            textRubro.Enabled = false;
+            textMarca.Enabled = false;
         }
 
-        private void tablaRubros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tablaMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int indice = e.RowIndex;
-                DataGridViewRow filaSeleccionada = tablaRubros.Rows[indice];
-                string rubro = filaSeleccionada.Cells["Nombre"].Value.ToString();
-                Cargar_Campos(rubro);
+                DataGridViewRow filaSeleccionada = tablaMarcas.Rows[indice];
+                string marca = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                Cargar_Campos(marca);
             }
             catch (Exception)
             {

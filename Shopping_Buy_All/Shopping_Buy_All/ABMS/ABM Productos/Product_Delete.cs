@@ -162,23 +162,18 @@ namespace Shopping_Buy_All
             {
                 Producto p = Buscar_Producto(textCodeProduct.Text);
                 Cargar_Campos(p);
-                SearchPanel.Visible = false;
-                btnSearchProduct.Visible = false;
-                btnSerachProduct2.Visible = true;
+                panelBuscar.Visible = true;
             }
         }
         private void btnClear_Click_1(object sender, EventArgs e)
         {
             Clean();
-            SearchPanel.Visible = true;
-            btnSearchProduct.Visible = true;
+            panelBuscar.Visible = false;
         }
         private void btnSerachProduct2_Click(object sender, EventArgs e)
         {
             Clean();
-            SearchPanel.Visible = true;
-            btnSearchProduct.Visible = true;
-            btnSerachProduct2.Visible = false;
+            panelBuscar.Visible = false;
         }
         private void tablaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -217,15 +212,18 @@ namespace Shopping_Buy_All
                 MessageBox.Show("Borrado agregado con éxito!");
                 BorrarProducto(p.CodigoProducto, 1);
                 Clean();
-                SearchPanel.Visible = true;
-                btnSearchProduct.Visible = true;
-                btnSerachProduct2.Visible = false;
+                panelBuscar.Visible = true;
                 CargarTablaProductos();
             }
             else
             {
                 textNameProduct.Focus();
             }
+        }
+
+        private void btnSerachProduct2_Click_1(object sender, EventArgs e)
+        {
+            panelBuscar.Visible = false;
         }
     }
 }

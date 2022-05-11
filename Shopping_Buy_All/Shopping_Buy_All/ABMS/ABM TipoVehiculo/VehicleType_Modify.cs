@@ -22,6 +22,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
         {
             InitializeComponent();
             CargarTablaTipoVehiculo();
+            panelBusqueda.Visible = false;
         }
 
         private void Clean()
@@ -185,7 +186,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
                 if (tv != null)
                 {
                     Cargar_Campos(tv);
-                    searchPanel.Visible = false;
+                    panelBusqueda.Visible = true;
                     btnSearchType.Visible = false;
                     btnSearchType2.Visible = true;
                     textCodeType.Enabled = false;
@@ -201,8 +202,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
         private void btnCleanType_Click(object sender, EventArgs e)
         {
             Clean();
-            searchPanel.Visible = true;
-            btnSearchType.Visible = true;
+            panelBusqueda.Visible = false;
         }
 
         private void btnTypeLoad_Click(object sender, EventArgs e)
@@ -226,11 +226,8 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
                     {
                         MessageBox.Show("Producto modificado con éxito!");
                         Clean();
-                        searchPanel.Visible = true;
-                        btnSearchType.Visible = true;
-                        btnCleanType.Visible = true;
+                        panelBusqueda.Visible = false;
                         textCodeType.Clear();
-                        textCodeType.Enabled = true;
                         CargarTablaTipoVehiculo();
                     }
                     else
@@ -244,11 +241,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
         private void btnSearchType2_Click(object sender, EventArgs e)
         {
             Clean();
-            searchPanel.Visible = true;
-            btnSearchType.Visible = true;
-            btnSearchType2.Visible = false;
-            textCodeType.Enabled = true;
-            btnCleanType.Visible = true;
+            panelBusqueda.Visible = false;
         }
         private void tablaTipoVehiculo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -257,11 +250,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
             TipoVehiculo tv = Buscar_TipoVehiculo(codigo);
             Cargar_Campos(tv);
-            searchPanel.Visible = false;
-            btnSearchType.Visible = false;
-            btnSearchType2.Visible = true;
-            textCodeType.Enabled = false;
-            btnCleanType.Visible = false;
+            panelBusqueda.Visible = true;
         }
 
     }

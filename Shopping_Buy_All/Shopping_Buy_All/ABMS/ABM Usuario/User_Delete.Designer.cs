@@ -51,11 +51,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(10, 56);
+            this.label1.Location = new System.Drawing.Point(21, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 29);
+            this.label1.Size = new System.Drawing.Size(172, 22);
             this.label1.TabIndex = 33;
             this.label1.Text = "Usuario a eliminar";
             // 
@@ -65,11 +65,11 @@
             this.labelUsername.BackColor = System.Drawing.Color.Transparent;
             this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.Color.White;
-            this.labelUsername.Location = new System.Drawing.Point(48, 126);
+            this.labelUsername.Location = new System.Drawing.Point(81, 123);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(148, 17);
+            this.labelUsername.Size = new System.Drawing.Size(64, 17);
             this.labelUsername.TabIndex = 44;
-            this.labelUsername.Text = "Nombre de Usuario";
+            this.labelUsername.Text = "Nombre";
             // 
             // btnSearch
             // 
@@ -77,7 +77,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(84, 200);
+            this.btnSearch.Location = new System.Drawing.Point(70, 188);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 3;
@@ -91,7 +91,7 @@
             this.btnClean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClean.ForeColor = System.Drawing.Color.White;
-            this.btnClean.Location = new System.Drawing.Point(84, 257);
+            this.btnClean.Location = new System.Drawing.Point(70, 237);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(75, 23);
             this.btnClean.TabIndex = 4;
@@ -107,9 +107,9 @@
             this.btnDeleteUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteUser.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteUser.Location = new System.Drawing.Point(83, 298);
+            this.btnDeleteUser.Location = new System.Drawing.Point(86, 267);
             this.btnDeleteUser.Name = "btnDeleteUser";
-            this.btnDeleteUser.Size = new System.Drawing.Size(76, 73);
+            this.btnDeleteUser.Size = new System.Drawing.Size(38, 31);
             this.btnDeleteUser.TabIndex = 67;
             this.btnDeleteUser.UseVisualStyleBackColor = false;
             this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteClient_Click);
@@ -118,11 +118,11 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(240, 15);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(215, 29);
+            this.label15.Size = new System.Drawing.Size(166, 22);
             this.label15.TabIndex = 71;
             this.label15.Text = "Lista de Usuarios";
             // 
@@ -148,17 +148,17 @@
             this.Password,
             this.dataGridViewTextBoxColumn1});
             this.tablaUsuarios.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaUsuarios.Location = new System.Drawing.Point(245, 47);
+            this.tablaUsuarios.Location = new System.Drawing.Point(222, 40);
             this.tablaUsuarios.Name = "tablaUsuarios";
             this.tablaUsuarios.ReadOnly = true;
-            this.tablaUsuarios.RowHeadersWidth = 20;
+            this.tablaUsuarios.RowHeadersWidth = 10;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.tablaUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaUsuarios.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tablaUsuarios.Size = new System.Drawing.Size(205, 397);
+            this.tablaUsuarios.Size = new System.Drawing.Size(205, 281);
             this.tablaUsuarios.TabIndex = 72;
             this.tablaUsuarios.TabStop = false;
             this.tablaUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaUsuarios_CellContentClick);
@@ -208,7 +208,7 @@
             // 
             this.textUsernameUser.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textUsernameUser.ForeColor = System.Drawing.Color.White;
-            this.textUsernameUser.Location = new System.Drawing.Point(65, 146);
+            this.textUsernameUser.Location = new System.Drawing.Point(56, 141);
             this.textUsernameUser.Name = "textUsernameUser";
             this.textUsernameUser.Size = new System.Drawing.Size(110, 20);
             this.textUsernameUser.TabIndex = 74;
@@ -220,7 +220,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(459, 450);
+            this.ClientSize = new System.Drawing.Size(436, 330);
             this.Controls.Add(this.textUsernameUser);
             this.Controls.Add(this.tablaUsuarios);
             this.Controls.Add(this.label15);

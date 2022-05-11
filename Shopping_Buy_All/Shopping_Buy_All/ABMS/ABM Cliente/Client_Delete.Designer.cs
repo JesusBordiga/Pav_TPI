@@ -61,11 +61,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 56);
+            this.label1.Location = new System.Drawing.Point(23, 65);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 29);
+            this.label1.Size = new System.Drawing.Size(179, 25);
             this.label1.TabIndex = 33;
             this.label1.Text = "Cliente a eliminar";
             // 
@@ -161,11 +161,11 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(492, 15);
+            this.label15.Location = new System.Drawing.Point(493, 19);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(208, 29);
+            this.label15.Size = new System.Drawing.Size(173, 25);
             this.label15.TabIndex = 71;
             this.label15.Text = "Lista de Clientes";
             // 
@@ -202,7 +202,7 @@
             this.tablaClientes.Location = new System.Drawing.Point(262, 49);
             this.tablaClientes.MultiSelect = false;
             this.tablaClientes.Name = "tablaClientes";
-            this.tablaClientes.RowHeadersWidth = 20;
+            this.tablaClientes.RowHeadersWidth = 10;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));

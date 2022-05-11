@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace Shopping_Buy_All
 {
-    public partial class Rubro_Load : Form
+    public partial class MarcaTarjeta_Load : Form
     {
-        public Rubro_Load()
+        public MarcaTarjeta_Load()
         {
             InitializeComponent();
-            CargarTablaRubros();
+            CargarTablaMarcas();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -28,10 +28,11 @@ namespace Shopping_Buy_All
 
         private void Clean()
         {
-            textRubro.Text = "";
-            CargarTablaRubros();
+            textMarca.Text = "";
+            CargarTablaMarcas();
         }
-        private void CargarTablaRubros()
+
+        private void CargarTablaMarcas()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -39,7 +40,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Rubros WHERE Borrado like 0";
+                string consulta = "Select * FROM MarcaTarjetas WHERE Borrado like 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -52,7 +53,7 @@ namespace Shopping_Buy_All
 
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
-                tablaRubros.DataSource = tabla;
+                tablaMarcas.DataSource = tabla;
             }
             catch (Exception)
             {
@@ -64,12 +65,12 @@ namespace Shopping_Buy_All
             }
         }
 
-        private string ObtenerNombreRubro()
+        private string ObtenerNombreMarca()
         {
-            string rubro = textRubro.Text.Trim();
+            string rubro = textMarca.Text.Trim();
             return rubro;
         }
-        private bool ExisteRubro(string rubro)
+        private bool ExisteMarca(string marca)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -77,10 +78,10 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Rubros WHERE Nombre = @rubro AND Borrado like 0";
+                string consulta = "SELECT * FROM MarcaTarjetas WHERE Nombre = @marca AND Borrado like 0";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@rubro", rubro);
+                cmd.Parameters.AddWithValue("@marca", marca);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
@@ -108,15 +109,15 @@ namespace Shopping_Buy_All
         {
             if (ValidarCampos())
             {
-                string rubro = ObtenerNombreRubro();
-                if (!ExisteRubro(rubro))
+                string marca = ObtenerNombreMarca();
+                if (!ExisteMarca(marca))
                 {
-                    bool resultado = Agregar_Rubro(rubro);
+                    bool resultado = Agregar_Marca(marca);
                     if (resultado)
                     {
                         MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
                         String mensajeCarga = (
-                              " | Nombre: " + rubro + "\n");
+                              " | Nombre: " + marca + "\n");
 
                         string titulo = "Información de Carga";
 
@@ -124,35 +125,35 @@ namespace Shopping_Buy_All
 
                         if (result == DialogResult.OK)
                         {
-                            MessageBox.Show("Rubro agregado con éxito!");
+                            MessageBox.Show("Marca agregada con éxito!");
                             Clean();
-                            CargarTablaRubros();
+                            CargarTablaMarcas();
                         }
                         else
                         {
-                            textRubro.Focus();
+                            textMarca.Focus();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Error al cargar el Rubro! \n" +
+                        MessageBox.Show("Error al cargar la Marca! \n" +
                                 "Complete los campos por favor!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Error al cargar el Rubro! \n" +
-                        "Este rubro ya existe!");
+                    MessageBox.Show("Error al cargar la Marca! \n" +
+                        "Esta marca ya existe!");
                 }
             }
             else
             {
-                MessageBox.Show("Error al cargar el Rubro! \n" +
+                MessageBox.Show("Error al cargar la Marca! \n" +
                         "Complete los campos correctamente por favor!");
             }
         }
 
-        private bool Agregar_Rubro(string rubro)
+        private bool Agregar_Marca(string marca)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -160,10 +161,10 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO Rubros(Nombre)" +
-                                               "VALUES(@rubro)";
+                string consulta = "INSERT INTO MarcaTarjetas(Nombre)" +
+                                               "VALUES(@marca)";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@rubro", rubro);
+                cmd.Parameters.AddWithValue("@marca", marca);
                 cmd.CommandText = consulta;
 
                 cn.Open();
@@ -173,7 +174,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-                MessageBox.Show("No se pudo agregar el Rubro.\nError en la base de datos.", "ERROR");
+                MessageBox.Show("No se pudo agregar la Marca.\nError en la base de datos.", "ERROR");
             }
             finally
             {
@@ -185,7 +186,7 @@ namespace Shopping_Buy_All
 
         private bool ValidarCampos()
         {
-            if (textRubro.Text.Trim() == "")
+            if (textMarca.Text.Trim() == "")
             {
                 return false;
             }
