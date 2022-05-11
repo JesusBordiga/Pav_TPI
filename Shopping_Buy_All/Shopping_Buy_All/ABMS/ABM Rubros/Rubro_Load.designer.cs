@@ -49,23 +49,23 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.BackColor = System.Drawing.Color.Transparent;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(67, 12);
+            this.labelTitle.Location = new System.Drawing.Point(47, 95);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(189, 29);
+            this.labelTitle.Size = new System.Drawing.Size(124, 22);
             this.labelTitle.TabIndex = 1;
-            this.labelTitle.Text = "Cargar Usuario";
+            this.labelTitle.Text = "Cargar rubro";
             // 
             // labelUserList
             // 
             this.labelUserList.AutoSize = true;
             this.labelUserList.BackColor = System.Drawing.Color.Transparent;
-            this.labelUserList.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUserList.ForeColor = System.Drawing.Color.White;
-            this.labelUserList.Location = new System.Drawing.Point(335, 9);
+            this.labelUserList.Location = new System.Drawing.Point(255, 19);
             this.labelUserList.Name = "labelUserList";
-            this.labelUserList.Size = new System.Drawing.Size(215, 29);
+            this.labelUserList.Size = new System.Drawing.Size(166, 22);
             this.labelUserList.TabIndex = 28;
             this.labelUserList.Text = "Lista de Usuarios";
             // 
@@ -74,7 +74,7 @@
             this.btnLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Location = new System.Drawing.Point(73, 422);
+            this.btnLoad.Location = new System.Drawing.Point(33, 312);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 5;
@@ -87,7 +87,7 @@
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(169, 422);
+            this.btnClear.Location = new System.Drawing.Point(114, 312);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 6;
@@ -99,7 +99,7 @@
             // 
             this.textRubro.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textRubro.ForeColor = System.Drawing.Color.White;
-            this.textRubro.Location = new System.Drawing.Point(105, 135);
+            this.textRubro.Location = new System.Drawing.Point(57, 154);
             this.textRubro.Name = "textRubro";
             this.textRubro.Size = new System.Drawing.Size(110, 20);
             this.textRubro.TabIndex = 1;
@@ -110,11 +110,11 @@
             this.labelRubro.BackColor = System.Drawing.Color.Transparent;
             this.labelRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRubro.ForeColor = System.Drawing.Color.White;
-            this.labelRubro.Location = new System.Drawing.Point(86, 110);
+            this.labelRubro.Location = new System.Drawing.Point(82, 134);
             this.labelRubro.Name = "labelRubro";
-            this.labelRubro.Size = new System.Drawing.Size(136, 17);
+            this.labelRubro.Size = new System.Drawing.Size(64, 17);
             this.labelRubro.TabIndex = 3;
-            this.labelRubro.Text = "Nombre de Rubro";
+            this.labelRubro.Text = "Nombre";
             this.labelRubro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tablaRubros
@@ -137,17 +137,17 @@
             this.nombre,
             this.dataGridViewTextBoxColumn2});
             this.tablaRubros.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaRubros.Location = new System.Drawing.Point(340, 41);
+            this.tablaRubros.Location = new System.Drawing.Point(232, 41);
             this.tablaRubros.Name = "tablaRubros";
             this.tablaRubros.ReadOnly = true;
-            this.tablaRubros.RowHeadersWidth = 20;
+            this.tablaRubros.RowHeadersWidth = 10;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.tablaRubros.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaRubros.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tablaRubros.Size = new System.Drawing.Size(205, 396);
+            this.tablaRubros.Size = new System.Drawing.Size(217, 317);
             this.tablaRubros.TabIndex = 93;
             this.tablaRubros.TabStop = false;
             // 
@@ -182,7 +182,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(551, 449);
+            this.ClientSize = new System.Drawing.Size(462, 366);
             this.Controls.Add(this.tablaRubros);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnLoad);
@@ -192,12 +192,10 @@
             this.Controls.Add(this.labelTitle);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(567, 488);
-            this.MinimumSize = new System.Drawing.Size(567, 488);
             this.Name = "Rubro_Load";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alta de Usuario";
+            this.Text = "Alta de Rubro";
             ((System.ComponentModel.ISupportInitialize)(this.tablaRubros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

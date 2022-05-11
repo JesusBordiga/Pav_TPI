@@ -39,11 +39,11 @@
             this.labelRubro = new System.Windows.Forms.Label();
             this.textRubroOld = new System.Windows.Forms.TextBox();
             this.tablaRubros = new System.Windows.Forms.DataGridView();
-            this.textRubroNew = new System.Windows.Forms.TextBox();
-            this.labelMod = new System.Windows.Forms.Label();
             this.CodigoRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textRubroNew = new System.Windows.Forms.TextBox();
+            this.labelMod = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaRubros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,11 +78,11 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(281, 4);
+            this.label15.Location = new System.Drawing.Point(302, 16);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(196, 29);
+            this.label15.Size = new System.Drawing.Size(151, 22);
             this.label15.TabIndex = 68;
             this.label15.Text = "Lista de Rubros";
             // 
@@ -90,11 +90,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(27, 63);
+            this.label1.Location = new System.Drawing.Point(50, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 29);
+            this.label1.Size = new System.Drawing.Size(144, 22);
             this.label1.TabIndex = 61;
             this.label1.Text = "Modificar rubro";
             // 
@@ -117,7 +117,7 @@
             this.labelRubro.BackColor = System.Drawing.Color.Transparent;
             this.labelRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRubro.ForeColor = System.Drawing.Color.White;
-            this.labelRubro.Location = new System.Drawing.Point(106, 120);
+            this.labelRubro.Location = new System.Drawing.Point(101, 125);
             this.labelRubro.Name = "labelRubro";
             this.labelRubro.Size = new System.Drawing.Size(52, 17);
             this.labelRubro.TabIndex = 73;
@@ -127,7 +127,7 @@
             // 
             this.textRubroOld.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textRubroOld.ForeColor = System.Drawing.Color.White;
-            this.textRubroOld.Location = new System.Drawing.Point(77, 140);
+            this.textRubroOld.Location = new System.Drawing.Point(72, 145);
             this.textRubroOld.Name = "textRubroOld";
             this.textRubroOld.Size = new System.Drawing.Size(110, 20);
             this.textRubroOld.TabIndex = 1;
@@ -152,7 +152,7 @@
             this.nombre,
             this.dataGridViewTextBoxColumn1});
             this.tablaRubros.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaRubros.Location = new System.Drawing.Point(286, 36);
+            this.tablaRubros.Location = new System.Drawing.Point(279, 44);
             this.tablaRubros.Name = "tablaRubros";
             this.tablaRubros.ReadOnly = true;
             this.tablaRubros.RowHeadersWidth = 20;
@@ -166,29 +166,6 @@
             this.tablaRubros.TabIndex = 91;
             this.tablaRubros.TabStop = false;
             this.tablaRubros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaRubros_CellContentClick);
-            // 
-            // textRubroNew
-            // 
-            this.textRubroNew.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textRubroNew.ForeColor = System.Drawing.Color.White;
-            this.textRubroNew.Location = new System.Drawing.Point(77, 140);
-            this.textRubroNew.Name = "textRubroNew";
-            this.textRubroNew.Size = new System.Drawing.Size(110, 20);
-            this.textRubroNew.TabIndex = 2;
-            this.textRubroNew.Visible = false;
-            // 
-            // labelMod
-            // 
-            this.labelMod.AutoSize = true;
-            this.labelMod.BackColor = System.Drawing.Color.Transparent;
-            this.labelMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMod.ForeColor = System.Drawing.Color.White;
-            this.labelMod.Location = new System.Drawing.Point(76, 120);
-            this.labelMod.Name = "labelMod";
-            this.labelMod.Size = new System.Drawing.Size(113, 17);
-            this.labelMod.TabIndex = 95;
-            this.labelMod.Text = "Nuevo nombre";
-            this.labelMod.Visible = false;
             // 
             // CodigoRubro
             // 
@@ -214,6 +191,29 @@
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
             // 
+            // textRubroNew
+            // 
+            this.textRubroNew.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textRubroNew.ForeColor = System.Drawing.Color.White;
+            this.textRubroNew.Location = new System.Drawing.Point(72, 145);
+            this.textRubroNew.Name = "textRubroNew";
+            this.textRubroNew.Size = new System.Drawing.Size(110, 20);
+            this.textRubroNew.TabIndex = 2;
+            this.textRubroNew.Visible = false;
+            // 
+            // labelMod
+            // 
+            this.labelMod.AutoSize = true;
+            this.labelMod.BackColor = System.Drawing.Color.Transparent;
+            this.labelMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMod.ForeColor = System.Drawing.Color.White;
+            this.labelMod.Location = new System.Drawing.Point(71, 125);
+            this.labelMod.Name = "labelMod";
+            this.labelMod.Size = new System.Drawing.Size(113, 17);
+            this.labelMod.TabIndex = 95;
+            this.labelMod.Text = "Nuevo nombre";
+            this.labelMod.Visible = false;
+            // 
             // Rubro_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,7 +221,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(525, 350);
+            this.ClientSize = new System.Drawing.Size(499, 364);
             this.Controls.Add(this.tablaRubros);
             this.Controls.Add(this.textRubroOld);
             this.Controls.Add(this.btnSearch);
@@ -234,11 +234,9 @@
             this.Controls.Add(this.labelMod);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(541, 389);
-            this.MinimumSize = new System.Drawing.Size(541, 389);
             this.Name = "Rubro_Modify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Modificar Usuarios";
+            this.Text = "Modificar Rubro";
             ((System.ComponentModel.ISupportInitialize)(this.tablaRubros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

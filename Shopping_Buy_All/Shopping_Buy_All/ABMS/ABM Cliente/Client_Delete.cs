@@ -180,6 +180,7 @@ namespace Shopping_Buy_All
                 SqlDataReader DataReader = cmd.ExecuteReader();
                 if (DataReader != null && DataReader.Read())
                 {
+                    cn.Close();
                     DataTable tabla = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(tabla);

@@ -315,6 +315,12 @@
     <Compile Include="Logged\Logged.Designer.cs">
       <DependentUpon>Logged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logged\Ventanas\Locales\Rubros_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Locales\Rubros_Ventana.Designer.cs">
+      <DependentUpon>Rubros_Ventana.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logged\Ventanas\Vehiculos\MarcaVehiculo_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -375,10 +381,10 @@
     <Compile Include="Logged\Ventanas\Profesiones_Ventana.Designer.cs">
       <DependentUpon>Profesiones_Ventana.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logged\Ventanas\Locales_Ventana.cs">
+    <Compile Include="Logged\Ventanas\Locales\Locales_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Logged\Ventanas\Locales_Ventana.Designer.cs">
+    <Compile Include="Logged\Ventanas\Locales\Locales_Ventana.Designer.cs">
       <DependentUpon>Locales_Ventana.cs</DependentUpon>
     </Compile>
     <Compile Include="Logged\Ventanas\Productos_Ventana.cs">
@@ -527,6 +533,9 @@
     <EmbeddedResource Include="Logged\Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Locales\Rubros_Ventana.resx">
+      <DependentUpon>Rubros_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Vehiculos\MarcaVehiculo_Ventana.resx">
       <DependentUpon>MarcaVehiculo_Ventana.cs</DependentUpon>
     </EmbeddedResource>
@@ -557,7 +566,7 @@
     <EmbeddedResource Include="Logged\Ventanas\Profesiones_Ventana.resx">
       <DependentUpon>Profesiones_Ventana.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Logged\Ventanas\Locales_Ventana.resx">
+    <EmbeddedResource Include="Logged\Ventanas\Locales\Locales_Ventana.resx">
       <DependentUpon>Locales_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Productos_Ventana.resx">

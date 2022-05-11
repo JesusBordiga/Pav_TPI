@@ -350,6 +350,7 @@ namespace Shopping_Buy_All
             Cargar_Campos(c);
             btnDeleteMarca.Visible = true;
         }
+
     }
 }
 

@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarcaVeh_Delete));
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbMarcaVeh = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@
             this.tablaMarcas = new System.Windows.Forms.DataGridView();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbMarcaVeh = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaMarcas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,27 +55,17 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Marca a eliminar";
             // 
-            // cmbMarcaVeh
-            // 
-            this.cmbMarcaVeh.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.cmbMarcaVeh.ForeColor = System.Drawing.Color.White;
-            this.cmbMarcaVeh.FormattingEnabled = true;
-            this.cmbMarcaVeh.Location = new System.Drawing.Point(40, 94);
-            this.cmbMarcaVeh.Name = "cmbMarcaVeh";
-            this.cmbMarcaVeh.Size = new System.Drawing.Size(119, 21);
-            this.cmbMarcaVeh.TabIndex = 1;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(77, 59);
+            this.label4.Location = new System.Drawing.Point(65, 74);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 17);
+            this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 43;
-            this.label4.Text = "Marca";
+            this.label4.Text = "Nombre";
             // 
             // btnSearch
             // 
@@ -168,6 +158,16 @@
             this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
             // 
+            // cmbMarcaVeh
+            // 
+            this.cmbMarcaVeh.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cmbMarcaVeh.ForeColor = System.Drawing.Color.White;
+            this.cmbMarcaVeh.FormattingEnabled = true;
+            this.cmbMarcaVeh.Location = new System.Drawing.Point(38, 94);
+            this.cmbMarcaVeh.Name = "cmbMarcaVeh";
+            this.cmbMarcaVeh.Size = new System.Drawing.Size(119, 21);
+            this.cmbMarcaVeh.TabIndex = 69;
+            // 
             // MarcaVeh_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,11 +176,11 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(373, 238);
+            this.Controls.Add(this.cmbMarcaVeh);
             this.Controls.Add(this.tablaMarcas);
             this.Controls.Add(this.btnDeleteMarca);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.cmbMarcaVeh);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -199,7 +199,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbMarcaVeh;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnClean;
@@ -207,5 +206,6 @@
         private System.Windows.Forms.DataGridView tablaMarcas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.ComboBox cmbMarcaVeh;
     }
 }

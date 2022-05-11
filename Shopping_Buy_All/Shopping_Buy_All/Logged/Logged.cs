@@ -40,52 +40,46 @@ namespace Shopping_Buy_All
             panelMenu.Visible = false;
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
+        private void btnClientes_Click_1(object sender, EventArgs e)
         {
             Clientes_Ventana client_ventana = new Clientes_Ventana();
             client_ventana.Show();
         }
 
-        private void btnProfesiones_Click(object sender, EventArgs e)
+        private void btnProfesiones_Click_1(object sender, EventArgs e)
         {
             Profesiones_Ventana prof_ventana = new Profesiones_Ventana();
             prof_ventana.Show();
         }
 
-        private void btnLocales_Click(object sender, EventArgs e)
+        private void btnLocales_Click_1(object sender, EventArgs e)
         {
             Locales_Ventana loc_ventana = new Locales_Ventana();
             loc_ventana.Show();
         }
 
-        private void btnProductos_Click(object sender, EventArgs e)
+        private void btnProductos_Click_1(object sender, EventArgs e)
         {
             Productos_Ventana prod_ventana = new Productos_Ventana();
             prod_ventana.Show();
         }
 
-        private void btnMarcasTarjetas_Click(object sender, EventArgs e)
+        private void btnMarcasTarjetas_Click_1(object sender, EventArgs e)
         {
             MarcaTarjeta_Ventana marc_ventana = new MarcaTarjeta_Ventana();
             marc_ventana.Show();
         }
 
-        private void btnAutomoviles_Click(object sender, EventArgs e)
+        private void btnAutomoviles_Click_1(object sender, EventArgs e)
         {
             Vehiculos_Ventana auto_ventana = new Vehiculos_Ventana();
             auto_ventana.Show();
         }
 
-
-        private void btnVentanaClientes_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             Usuarios_Ventana Usuarios = new Usuarios_Ventana();
             Usuarios.Show();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

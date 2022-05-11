@@ -191,5 +191,10 @@ namespace Shopping_Buy_All
             }
             return true;
         }
+
+        private void labelTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

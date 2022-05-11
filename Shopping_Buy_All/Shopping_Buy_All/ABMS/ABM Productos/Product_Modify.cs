@@ -18,12 +18,14 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
             CargarTablaProductos();
+            panelBuscar.Visible = false;
         }
         private void Clean()
         {
             textNameProduct.Text = "";
             textCodeProduct.Text = "";
             textPrice.Text = "";
+            panelBuscar.Visible = false;
         }
         private void Cargar_Campos(Producto p)
         {
@@ -164,17 +166,13 @@ namespace Shopping_Buy_All
             {
                 Producto p = Buscar_Producto(textCodeProduct.Text);
                 Cargar_Campos(p);
-                panelBuscar.Visible = false;
-                btnSearchProduct.Visible = false;
-                btnSerachProduct2.Visible = true;
+                panelBuscar.Visible = true;
             }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clean();
-            panelBuscar.Visible = true;
-            btnSearchProduct.Visible = true;
         }
 
         private void btnPorductLoad_Click(object sender, EventArgs e)
@@ -216,10 +214,10 @@ namespace Shopping_Buy_All
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Clean();
+            Producto p = Buscar_Producto(textCodeProduct.Text);
+            Cargar_Campos(p);
             panelBuscar.Visible = true;
-            btnSearchProduct.Visible = true;
-            btnSerachProduct2.Visible = false;
+
         }
 
         private void tablaProductos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -231,9 +229,7 @@ namespace Shopping_Buy_All
                 string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
                 Producto p = Buscar_Producto(codigo);
                 Cargar_Campos(p);
-                panelBuscar.Visible = false;
-                btnSearchProduct.Visible = false;
-                btnSerachProduct2.Visible = true;
+                panelBuscar.Visible = true;
             }
             catch (Exception)
             {

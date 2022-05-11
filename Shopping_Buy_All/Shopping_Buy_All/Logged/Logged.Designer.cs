@@ -174,6 +174,7 @@
             this.button1.TabIndex = 53;
             this.button1.Text = "Usuarios";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureAutomoviles
             // 
@@ -255,6 +256,7 @@
             this.btnAutomoviles.TabIndex = 46;
             this.btnAutomoviles.Text = "Vehiculos";
             this.btnAutomoviles.UseVisualStyleBackColor = false;
+            this.btnAutomoviles.Click += new System.EventHandler(this.btnAutomoviles_Click_1);
             // 
             // btnMarcasTarjetas
             // 
@@ -270,6 +272,7 @@
             this.btnMarcasTarjetas.TabIndex = 45;
             this.btnMarcasTarjetas.Text = "Marcas de Tarjeta";
             this.btnMarcasTarjetas.UseVisualStyleBackColor = false;
+            this.btnMarcasTarjetas.Click += new System.EventHandler(this.btnMarcasTarjetas_Click_1);
             // 
             // btnProductos
             // 
@@ -285,6 +288,7 @@
             this.btnProductos.TabIndex = 44;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = false;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click_1);
             // 
             // btnLocales
             // 
@@ -300,6 +304,7 @@
             this.btnLocales.TabIndex = 43;
             this.btnLocales.Text = "Locales";
             this.btnLocales.UseVisualStyleBackColor = false;
+            this.btnLocales.Click += new System.EventHandler(this.btnLocales_Click_1);
             // 
             // btnProfesiones
             // 
@@ -315,6 +320,7 @@
             this.btnProfesiones.TabIndex = 42;
             this.btnProfesiones.Text = "Profesiones";
             this.btnProfesiones.UseVisualStyleBackColor = false;
+            this.btnProfesiones.Click += new System.EventHandler(this.btnProfesiones_Click_1);
             // 
             // btnClientes
             // 
@@ -330,6 +336,7 @@
             this.btnClientes.TabIndex = 41;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click_1);
             // 
             // Logged
             // 

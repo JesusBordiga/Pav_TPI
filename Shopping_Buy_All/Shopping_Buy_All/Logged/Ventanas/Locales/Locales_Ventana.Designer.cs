@@ -35,6 +35,7 @@
             this.btnEliminarTipoComercio = new System.Windows.Forms.Button();
             this.btnModificarTipoComercio = new System.Windows.Forms.Button();
             this.btnAltaTipoComercio = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAltaLocal
@@ -121,11 +122,26 @@
             this.btnAltaTipoComercio.UseVisualStyleBackColor = false;
             this.btnAltaTipoComercio.Click += new System.EventHandler(this.btnAltaTipoComercio_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(120, 165);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(152, 26);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Rubros";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Locales_Ventana
             // 
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(394, 177);
+            this.ClientSize = new System.Drawing.Size(394, 200);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnEliminarTipoComercio);
             this.Controls.Add(this.btnModificarTipoComercio);
             this.Controls.Add(this.btnAltaTipoComercio);
@@ -194,5 +210,6 @@
         private System.Windows.Forms.Button btnEliminarTipoComercio;
         private System.Windows.Forms.Button btnModificarTipoComercio;
         private System.Windows.Forms.Button btnAltaTipoComercio;
+        private System.Windows.Forms.Button button1;
     }
 }

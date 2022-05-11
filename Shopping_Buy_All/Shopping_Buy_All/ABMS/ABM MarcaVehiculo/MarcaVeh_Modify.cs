@@ -24,13 +24,13 @@ namespace Shopping_Buy_All
 
         private void btnBuscarMarca_click(object sender, EventArgs e)
         {
-            if (textMarcaOld.SelectedIndex != 0)
+            if (cmbMarcaVeh.SelectedIndex != 0)
             {
                 MessageBox.Show("Error, Completar campos!!");
             }
             else
             {
-                MarcaVehiculo c = Buscar_Marca(textMarcaOld.Text.Trim());
+                MarcaVehiculo c = Buscar_Marca(cmbMarcaVeh.Text.Trim());
                 Cargar_Campos(c);
                 btnBuscarMarca.Visible = false;
             }
@@ -43,13 +43,13 @@ namespace Shopping_Buy_All
         }
         private void Clean()
         {
-            textMarcaOld.SelectedIndex = -1;
+            cmbMarcaVeh.SelectedIndex = -1;
 
         }
         private void Cargar_Campos(MarcaVehiculo c)
         {
 
-            textMarcaOld.Text = c.MarcaVeh;
+            cmbMarcaVeh.Text = c.MarcaVeh;
             textMarcaNew.Text = c.MarcaVeh;
         }
 
@@ -75,10 +75,10 @@ namespace Shopping_Buy_All
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
 
-                textMarcaOld.DataSource = tabla;
-                textMarcaOld.DisplayMember = "Descripcion";
-                textMarcaOld.ValueMember = "Id";
-                textMarcaOld.SelectedIndex = -1;
+                cmbMarcaVeh.DataSource = tabla;
+                cmbMarcaVeh.DisplayMember = "Descripcion";
+                cmbMarcaVeh.ValueMember = "Id";
+                cmbMarcaVeh.SelectedIndex = -1;
             }
             catch (Exception)
             {
@@ -171,7 +171,7 @@ namespace Shopping_Buy_All
         {
             MarcaVehiculo c = new MarcaVehiculo();
 
-            c.MarcaVeh = textMarcaOld.Text.Trim();
+            c.MarcaVeh = cmbMarcaVeh.Text.Trim();
 
             return c;
         }
@@ -255,14 +255,27 @@ namespace Shopping_Buy_All
 
         private void tablaMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaMarcas.Rows[indice];
-            string marcaVeh = filaSeleccionada.Cells["Descripcion"].Value.ToString();
-            MarcaVehiculo c = Buscar_Marca(marcaVeh);
-            Clean();
-            btnBuscarMarca.Visible = false;
-            textMarcaOld.Visible = true;
-            Cargar_Campos(c);
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaMarcas.Rows[indice];
+                string marcaVeh = filaSeleccionada.Cells["Descripcion"].Value.ToString();
+                MarcaVehiculo c = Buscar_Marca(marcaVeh);
+                Clean();
+                btnBuscarMarca.Visible = false;
+                cmbMarcaVeh.Visible = true;
+                Cargar_Campos(c);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error! Seleccione una casilla dentro de la tabla");
+            }
+        }
+
+        private void btnMarcaMod_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
