@@ -36,6 +36,7 @@
             this.btnModificarVehiculo = new System.Windows.Forms.Button();
             this.btnAltaVehiculo = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAltaTipoVehiculo
@@ -128,7 +129,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(105, 165);
+            this.button1.Location = new System.Drawing.Point(12, 165);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 26);
             this.button1.TabIndex = 6;
@@ -136,11 +137,26 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(190, 165);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 26);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Modelos";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Vehiculos_Ventana
             // 
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(355, 203);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnEliminarVehiculo);
             this.Controls.Add(this.btnModificarVehiculo);
@@ -169,5 +185,6 @@
         private System.Windows.Forms.Button btnModificarVehiculo;
         private System.Windows.Forms.Button btnAltaVehiculo;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

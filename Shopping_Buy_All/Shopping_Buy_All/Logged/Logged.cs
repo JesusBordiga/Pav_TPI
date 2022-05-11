@@ -45,9 +45,10 @@ namespace Shopping_Buy_All
         }
 
         private void btnProfesiones_Click_1(object sender, EventArgs e)
-        {
+        {/*
             Profesiones_Ventana prof_ventana = new Profesiones_Ventana();
-            prof_ventana.Show();
+            prof_ventana.Show();*/
+            MessageBox.Show("WIP");
         }
 
         private void btnLocales_Click_1(object sender, EventArgs e)

@@ -62,5 +62,11 @@ namespace Shopping_Buy_All
             MarcaVehiculo_Ventana MarcaVehiculo = new MarcaVehiculo_Ventana();
             MarcaVehiculo.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Modelo_Ventana Modelo_Ventana = new Modelo_Ventana();
+            Modelo_Ventana.ShowDialog();
+        }
     }
 }
