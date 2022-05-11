@@ -158,7 +158,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(107, 154);
+            this.label3.Location = new System.Drawing.Point(115, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 17);
             this.label3.TabIndex = 3;
@@ -170,7 +170,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(85, 57);
+            this.label4.Location = new System.Drawing.Point(88, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 17);
             this.label4.TabIndex = 4;
@@ -182,7 +182,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(85, 98);
+            this.label5.Location = new System.Drawing.Point(91, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 17);
             this.label5.TabIndex = 5;
@@ -208,7 +208,7 @@
             this.btnTarjetaLoad.Location = new System.Drawing.Point(73, 422);
             this.btnTarjetaLoad.Name = "btnTarjetaLoad";
             this.btnTarjetaLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnTarjetaLoad.TabIndex = 13;
+            this.btnTarjetaLoad.TabIndex = 6;
             this.btnTarjetaLoad.Text = "Cargar";
             this.btnTarjetaLoad.UseVisualStyleBackColor = true;
             this.btnTarjetaLoad.Click += new System.EventHandler(this.btnTarjetaLoad_Click);
@@ -221,7 +221,7 @@
             this.btnClear.Location = new System.Drawing.Point(169, 422);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 14;
+            this.btnClear.TabIndex = 7;
             this.btnClear.Text = "Limpiar";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -231,7 +231,7 @@
             this.cmbTipoDoc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.cmbTipoDoc.ForeColor = System.Drawing.Color.White;
             this.cmbTipoDoc.FormattingEnabled = true;
-            this.cmbTipoDoc.Location = new System.Drawing.Point(94, 74);
+            this.cmbTipoDoc.Location = new System.Drawing.Point(103, 74);
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(119, 21);
             this.cmbTipoDoc.TabIndex = 1;
@@ -252,20 +252,20 @@
             this.cmbMarca.BackColor = System.Drawing.SystemColors.ControlDark;
             this.cmbMarca.ForeColor = System.Drawing.Color.White;
             this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(94, 229);
+            this.cmbMarca.Location = new System.Drawing.Point(103, 229);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(119, 21);
-            this.cmbMarca.TabIndex = 29;
+            this.cmbMarca.TabIndex = 4;
             // 
             // cmbTipo
             // 
             this.cmbTipo.BackColor = System.Drawing.SystemColors.ControlDark;
             this.cmbTipo.ForeColor = System.Drawing.Color.White;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(94, 297);
+            this.cmbTipo.Location = new System.Drawing.Point(103, 297);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(119, 21);
-            this.cmbTipo.TabIndex = 30;
+            this.cmbTipo.TabIndex = 5;
             // 
             // label2
             // 
@@ -273,7 +273,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(130, 209);
+            this.label2.Location = new System.Drawing.Point(136, 209);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 31;
@@ -285,7 +285,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(130, 277);
+            this.label6.Location = new System.Drawing.Point(142, 277);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 17);
             this.label6.TabIndex = 32;
@@ -295,11 +295,11 @@
             // 
             this.textNroTarjeta.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNroTarjeta.ForeColor = System.Drawing.Color.White;
-            this.textNroTarjeta.Location = new System.Drawing.Point(110, 174);
+            this.textNroTarjeta.Location = new System.Drawing.Point(110, 163);
             this.textNroTarjeta.Mask = "9999999999999999";
             this.textNroTarjeta.Name = "textNroTarjeta";
             this.textNroTarjeta.Size = new System.Drawing.Size(101, 20);
-            this.textNroTarjeta.TabIndex = 33;
+            this.textNroTarjeta.TabIndex = 3;
             this.textNroTarjeta.ValidatingType = typeof(int);
             // 
             // Tarjeta_Load

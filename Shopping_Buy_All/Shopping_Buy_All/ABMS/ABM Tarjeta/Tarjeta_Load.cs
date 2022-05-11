@@ -208,7 +208,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO TarjetaXCliente" +
+                string consulta = "INSERT INTO TarjetaXCliente (TipoDocumento,NroDocumento,NroTarjeta,IdMarca,IdTipo)" +
                                   "Values(@tipoDocumento,@nroDocumento, @nroTarjeta, @IdMarca, @IdTipo)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@tipoDocumento", card.TipoDocumentoTarjeta);
@@ -223,13 +223,9 @@ namespace Shopping_Buy_All
                 cmd.ExecuteNonQuery();
                 resultado = true;
             }
-            catch (SqlException)
-            {
-                throw;
-            }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("No se pudo agregar la Tarjeta.\nError en la base de datos.", "ERROR");
             }
             finally
             {
@@ -261,8 +257,6 @@ namespace Shopping_Buy_All
                     Clean();
                     CargarTablaTarjetas();
                     CargarTiposDocumentos();
-
-
                 }
                 else
                 {
