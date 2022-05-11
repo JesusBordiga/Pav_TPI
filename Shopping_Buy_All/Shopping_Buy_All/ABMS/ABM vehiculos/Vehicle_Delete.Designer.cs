@@ -28,15 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tablaVehiculos = new System.Windows.Forms.DataGridView();
-            this.Patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDocPropietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NroDocPropietario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vehicle_Delete));
             this.label1 = new System.Windows.Forms.Label();
             this.SearchPanel = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,100 +43,15 @@
             this.comboBoxDocType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textNameModelo = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaVehiculos)).BeginInit();
+            this.tablaVehiculos = new System.Windows.Forms.DataGridView();
+            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaVehiculos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tablaVehiculos
-            // 
-            this.tablaVehiculos.AllowUserToAddRows = false;
-            this.tablaVehiculos.AllowUserToDeleteRows = false;
-            this.tablaVehiculos.AllowUserToOrderColumns = true;
-            this.tablaVehiculos.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.tablaVehiculos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaVehiculos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.tablaVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaVehiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Patente,
-            this.TipoDocPropietario,
-            this.NroDocPropietario,
-            this.Modelo,
-            this.Borrado});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablaVehiculos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaVehiculos.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tablaVehiculos.Location = new System.Drawing.Point(398, 60);
-            this.tablaVehiculos.Name = "tablaVehiculos";
-            this.tablaVehiculos.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaVehiculos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.tablaVehiculos.RowHeadersWidth = 51;
-            this.tablaVehiculos.RowTemplate.Height = 24;
-            this.tablaVehiculos.Size = new System.Drawing.Size(552, 325);
-            this.tablaVehiculos.TabIndex = 88;
-            this.tablaVehiculos.TabStop = false;
-            // 
-            // Patente
-            // 
-            this.Patente.HeaderText = "Patente";
-            this.Patente.MinimumWidth = 6;
-            this.Patente.Name = "Patente";
-            this.Patente.ReadOnly = true;
-            this.Patente.Width = 125;
-            // 
-            // TipoDocPropietario
-            // 
-            this.TipoDocPropietario.DataPropertyName = "TipDoc";
-            this.TipoDocPropietario.HeaderText = "TipoDocPropietario";
-            this.TipoDocPropietario.MinimumWidth = 6;
-            this.TipoDocPropietario.Name = "TipoDocPropietario";
-            this.TipoDocPropietario.ReadOnly = true;
-            this.TipoDocPropietario.Width = 125;
-            // 
-            // NroDocPropietario
-            // 
-            this.NroDocPropietario.DataPropertyName = "NroDoc";
-            this.NroDocPropietario.HeaderText = "NroDocPropietario";
-            this.NroDocPropietario.MinimumWidth = 6;
-            this.NroDocPropietario.Name = "NroDocPropietario";
-            this.NroDocPropietario.ReadOnly = true;
-            this.NroDocPropietario.Width = 125;
-            // 
-            // Modelo
-            // 
-            this.Modelo.DataPropertyName = "Modelo";
-            this.Modelo.HeaderText = "Modelo";
-            this.Modelo.MinimumWidth = 6;
-            this.Modelo.Name = "Modelo";
-            this.Modelo.ReadOnly = true;
-            this.Modelo.Width = 125;
-            // 
-            // Borrado
-            // 
-            this.Borrado.HeaderText = "Borrado";
-            this.Borrado.MinimumWidth = 6;
-            this.Borrado.Name = "Borrado";
-            this.Borrado.ReadOnly = true;
-            this.Borrado.Width = 125;
             // 
             // label1
             // 
@@ -152,7 +59,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(100, 46);
+            this.label1.Location = new System.Drawing.Point(87, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 29);
             this.label1.TabIndex = 89;
@@ -194,7 +101,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(160, 95);
+            this.label3.Location = new System.Drawing.Point(159, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 96;
@@ -304,6 +211,74 @@
             this.textNameModelo.Size = new System.Drawing.Size(100, 20);
             this.textNameModelo.TabIndex = 105;
             // 
+            // tablaVehiculos
+            // 
+            this.tablaVehiculos.AllowUserToAddRows = false;
+            this.tablaVehiculos.AllowUserToDeleteRows = false;
+            this.tablaVehiculos.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.tablaVehiculos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tablaVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaVehiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TipoDocumento,
+            this.Borrado,
+            this.NroDocumento,
+            this.Patente,
+            this.Modelo});
+            this.tablaVehiculos.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tablaVehiculos.Location = new System.Drawing.Point(339, 56);
+            this.tablaVehiculos.Name = "tablaVehiculos";
+            this.tablaVehiculos.ReadOnly = true;
+            this.tablaVehiculos.RowHeadersWidth = 10;
+            this.tablaVehiculos.Size = new System.Drawing.Size(420, 311);
+            this.tablaVehiculos.TabIndex = 106;
+            this.tablaVehiculos.TabStop = false;
+            // 
+            // TipoDocumento
+            // 
+            this.TipoDocumento.DataPropertyName = "TipoDoc";
+            this.TipoDocumento.HeaderText = "Tipo Documento";
+            this.TipoDocumento.MinimumWidth = 6;
+            this.TipoDocumento.Name = "TipoDocumento";
+            this.TipoDocumento.ReadOnly = true;
+            this.TipoDocumento.Width = 70;
+            // 
+            // Borrado
+            // 
+            this.Borrado.DataPropertyName = "Borrado";
+            this.Borrado.HeaderText = "Borrado";
+            this.Borrado.MinimumWidth = 6;
+            this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
+            this.Borrado.Visible = false;
+            this.Borrado.Width = 125;
+            // 
+            // NroDocumento
+            // 
+            this.NroDocumento.DataPropertyName = "NroDoc";
+            this.NroDocumento.HeaderText = "Nro Documento";
+            this.NroDocumento.MinimumWidth = 6;
+            this.NroDocumento.Name = "NroDocumento";
+            this.NroDocumento.ReadOnly = true;
+            this.NroDocumento.Width = 70;
+            // 
+            // Patente
+            // 
+            this.Patente.DataPropertyName = "Patente";
+            this.Patente.HeaderText = "Patente";
+            this.Patente.MinimumWidth = 6;
+            this.Patente.Name = "Patente";
+            this.Patente.ReadOnly = true;
+            this.Patente.Width = 125;
+            // 
+            // Modelo
+            // 
+            this.Modelo.DataPropertyName = "Modelo";
+            this.Modelo.HeaderText = "Modelo";
+            this.Modelo.MinimumWidth = 6;
+            this.Modelo.Name = "Modelo";
+            this.Modelo.ReadOnly = true;
+            this.Modelo.Width = 125;
+            // 
             // Vehicle_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,7 +287,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(962, 449);
+            this.ClientSize = new System.Drawing.Size(772, 379);
+            this.Controls.Add(this.tablaVehiculos);
             this.Controls.Add(this.textNameModelo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxDocType);
@@ -327,25 +303,18 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SearchPanel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tablaVehiculos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Vehicle_Delete";
-            this.Text = "Vehicle_Delete";
-            ((System.ComponentModel.ISupportInitialize)(this.tablaVehiculos)).EndInit();
+            this.Text = "Eliminar vehiculo";
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaVehiculos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView tablaVehiculos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Patente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocPropietario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NroDocPropietario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox SearchPanel;
         private System.Windows.Forms.Label label2;
@@ -360,5 +329,11 @@
         private System.Windows.Forms.ComboBox comboBoxDocType;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textNameModelo;
+        private System.Windows.Forms.DataGridView tablaVehiculos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Patente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
     }
 }

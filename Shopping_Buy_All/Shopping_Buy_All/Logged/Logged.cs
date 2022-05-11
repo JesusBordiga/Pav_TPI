@@ -18,8 +18,6 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
             LabelBienvenido.Text = "Bienvenido "+ usu.userName;
-            labelHora.Text = "Hora: " + DateTime.Now.ToString("hh:mm:ss");
-            labelFecha.Text =DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void Logged_Load(object sender, EventArgs e)
@@ -80,6 +78,12 @@ namespace Shopping_Buy_All
         {
             Usuarios_Ventana Usuarios = new Usuarios_Ventana();
             Usuarios.Show();
+        }
+
+        private void HourTime_Tick(object sender, EventArgs e)
+        {
+            labelHora.Text = "Hora: " + DateTime.Now.ToString("hh:mm:ss");
+            labelFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
     }
 }

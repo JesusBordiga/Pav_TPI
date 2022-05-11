@@ -196,7 +196,6 @@ namespace Shopping_Buy_All
                     MessageBox.Show("Producto agregado con éxito!");
                     Clean();
                     panelBuscar.Visible = false;
-                    btnSearchProduct.Visible = false;
                     btnSerachProduct2.Visible = true;
                     CargarTablaProductos();
                 }

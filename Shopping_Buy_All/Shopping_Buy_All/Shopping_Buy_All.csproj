@@ -370,12 +370,6 @@
     <Compile Include="Logged\Ventanas\Clientes\TipoSexo_Ventana.Designer.cs">
       <DependentUpon>TipoSexo_Ventana.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logged\Ventanas\Tarjetas\TipoTarjeta_Ventana.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Logged\Ventanas\Tarjetas\TipoTarjeta_Ventana.Designer.cs">
-      <DependentUpon>TipoTarjeta_Ventana.cs</DependentUpon>
-    </Compile>
     <Compile Include="Logged\Ventanas\Clientes\TipoDocumento_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -578,9 +572,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Clientes\TipoSexo_Ventana.resx">
       <DependentUpon>TipoSexo_Ventana.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Logged\Ventanas\Tarjetas\TipoTarjeta_Ventana.resx">
-      <DependentUpon>TipoTarjeta_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Clientes\TipoDocumento_Ventana.resx">
       <DependentUpon>TipoDocumento_Ventana.cs</DependentUpon>

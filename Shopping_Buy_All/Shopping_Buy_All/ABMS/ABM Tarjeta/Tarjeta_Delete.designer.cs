@@ -89,7 +89,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(302, 16);
+            this.label15.Location = new System.Drawing.Point(421, 16);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(161, 22);
             this.label15.TabIndex = 68;
@@ -101,11 +101,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(47, 16);
+            this.label1.Location = new System.Drawing.Point(54, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 22);
+            this.label1.Size = new System.Drawing.Size(152, 22);
             this.label1.TabIndex = 61;
-            this.label1.Text = "Modificar Tarjeta";
+            this.label1.Text = "Eliminar Tarjeta";
             // 
             // btnSearch
             // 
@@ -326,14 +326,14 @@
             this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
             // 
-            // Tarjetaa_Delete
+            // Tarjeta_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(735, 380);
+            this.ClientSize = new System.Drawing.Size(712, 359);
             this.Controls.Add(this.tablaTarjetas);
             this.Controls.Add(this.labelTipo);
             this.Controls.Add(this.labelMarca);
@@ -352,7 +352,7 @@
             this.Controls.Add(this.labelTipoDoc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Tarjetaa_Delete";
+            this.Name = "Tarjeta_Delete";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar Tarjeta";
             ((System.ComponentModel.ISupportInitialize)(this.tablaTarjetas)).EndInit();

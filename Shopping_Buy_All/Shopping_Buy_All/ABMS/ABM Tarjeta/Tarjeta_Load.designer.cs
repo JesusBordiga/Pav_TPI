@@ -79,7 +79,7 @@
             this.Tipo,
             this.Borrado});
             this.tablaTarjetas.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaTarjetas.Location = new System.Drawing.Point(503, 40);
+            this.tablaTarjetas.Location = new System.Drawing.Point(288, 40);
             this.tablaTarjetas.Name = "tablaTarjetas";
             this.tablaTarjetas.ReadOnly = true;
             this.tablaTarjetas.RowHeadersWidth = 20;
@@ -144,11 +144,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(67, 12);
+            this.label1.Location = new System.Drawing.Point(85, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 29);
+            this.label1.Size = new System.Drawing.Size(152, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cargar Tarjeta";
             // 
@@ -192,11 +192,11 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(590, 11);
+            this.label15.Location = new System.Drawing.Point(415, 11);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(208, 29);
+            this.label15.Size = new System.Drawing.Size(173, 25);
             this.label15.TabIndex = 28;
             this.label15.Text = "Lista de Tarjetas";
             // 
@@ -205,7 +205,7 @@
             this.btnTarjetaLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTarjetaLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTarjetaLoad.ForeColor = System.Drawing.Color.White;
-            this.btnTarjetaLoad.Location = new System.Drawing.Point(73, 422);
+            this.btnTarjetaLoad.Location = new System.Drawing.Point(66, 377);
             this.btnTarjetaLoad.Name = "btnTarjetaLoad";
             this.btnTarjetaLoad.Size = new System.Drawing.Size(75, 23);
             this.btnTarjetaLoad.TabIndex = 6;
@@ -218,7 +218,7 @@
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(169, 422);
+            this.btnClear.Location = new System.Drawing.Point(162, 377);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 7;
@@ -309,7 +309,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1027, 449);
+            this.ClientSize = new System.Drawing.Size(709, 445);
             this.Controls.Add(this.textNroTarjeta);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
@@ -327,8 +327,6 @@
             this.Controls.Add(this.tablaTarjetas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1043, 488);
-            this.MinimumSize = new System.Drawing.Size(1043, 488);
             this.Name = "Tarjeta_Load";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -132,7 +132,7 @@ namespace Shopping_Buy_All
                     else
                     {
                         MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                        String mensajeCarga = ("Nombre Local: " + l.NombreLocal + "\nTipo Comercio: " + cmbTipoComercio.GetItemText(cmbTipoComercio.SelectedItem));
+                        String mensajeCarga = ("|Nombre Local: " + l.NombreLocal +"|"+"\n|Tipo Comercio: " + cmbTipoComercio.GetItemText(cmbTipoComercio.SelectedItem)+"|");
 
                         string titulo = "Información de Carga";
 
@@ -165,10 +165,7 @@ namespace Shopping_Buy_All
                 {
                     MessageBox.Show("Error al agregar el Tipo Comercio.");
                 }
-
             }
-
-
         }
     }
 }

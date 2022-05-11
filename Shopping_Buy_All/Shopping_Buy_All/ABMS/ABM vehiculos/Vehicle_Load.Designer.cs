@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vehicle_Load));
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxDocType = new System.Windows.Forms.ComboBox();
@@ -53,12 +54,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(75, 42);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(85, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(277, 39);
+            this.label1.Size = new System.Drawing.Size(154, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "Cargar Vehiculo";
             // 
@@ -68,10 +68,9 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(118, 98);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(88, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(172, 20);
+            this.label4.Size = new System.Drawing.Size(149, 17);
             this.label4.TabIndex = 5;
             this.label4.Text = "Tipo de Documento";
             // 
@@ -80,10 +79,9 @@
             this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
             this.comboBoxDocType.FormattingEnabled = true;
-            this.comboBoxDocType.Location = new System.Drawing.Point(128, 133);
-            this.comboBoxDocType.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxDocType.Location = new System.Drawing.Point(96, 108);
             this.comboBoxDocType.Name = "comboBoxDocType";
-            this.comboBoxDocType.Size = new System.Drawing.Size(157, 24);
+            this.comboBoxDocType.Size = new System.Drawing.Size(119, 21);
             this.comboBoxDocType.TabIndex = 6;
             // 
             // label5
@@ -92,10 +90,9 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(119, 173);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(89, 141);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(166, 20);
+            this.label5.Size = new System.Drawing.Size(143, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "Nro de Documento";
             // 
@@ -103,11 +100,10 @@
             // 
             this.textNumberDoc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNumberDoc.ForeColor = System.Drawing.Color.White;
-            this.textNumberDoc.Location = new System.Drawing.Point(167, 209);
-            this.textNumberDoc.Margin = new System.Windows.Forms.Padding(4);
+            this.textNumberDoc.Location = new System.Drawing.Point(125, 170);
             this.textNumberDoc.Mask = "99999999";
             this.textNumberDoc.Name = "textNumberDoc";
-            this.textNumberDoc.Size = new System.Drawing.Size(72, 22);
+            this.textNumberDoc.Size = new System.Drawing.Size(55, 20);
             this.textNumberDoc.TabIndex = 8;
             this.textNumberDoc.ValidatingType = typeof(int);
             // 
@@ -117,10 +113,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(166, 250);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(124, 203);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 20);
+            this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 9;
             this.label3.Text = "Patente";
             // 
@@ -128,10 +123,9 @@
             // 
             this.textPatente.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textPatente.ForeColor = System.Drawing.Color.White;
-            this.textPatente.Location = new System.Drawing.Point(139, 274);
-            this.textPatente.Margin = new System.Windows.Forms.Padding(4);
+            this.textPatente.Location = new System.Drawing.Point(104, 223);
             this.textPatente.Name = "textPatente";
-            this.textPatente.Size = new System.Drawing.Size(132, 22);
+            this.textPatente.Size = new System.Drawing.Size(100, 20);
             this.textPatente.TabIndex = 10;
             // 
             // label2
@@ -140,10 +134,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(170, 313);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(128, 254);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 20);
+            this.label2.Size = new System.Drawing.Size(60, 17);
             this.label2.TabIndex = 11;
             this.label2.Text = "Modelo";
             // 
@@ -151,10 +144,9 @@
             // 
             this.textNameModelo.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNameModelo.ForeColor = System.Drawing.Color.White;
-            this.textNameModelo.Location = new System.Drawing.Point(139, 361);
-            this.textNameModelo.Margin = new System.Windows.Forms.Padding(4);
+            this.textNameModelo.Location = new System.Drawing.Point(104, 293);
             this.textNameModelo.Name = "textNameModelo";
-            this.textNameModelo.Size = new System.Drawing.Size(132, 22);
+            this.textNameModelo.Size = new System.Drawing.Size(100, 20);
             this.textNameModelo.TabIndex = 12;
             // 
             // tablaVehiculo
@@ -171,12 +163,11 @@
             this.Patente,
             this.Modelo});
             this.tablaVehiculo.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaVehiculo.Location = new System.Drawing.Point(562, 98);
-            this.tablaVehiculo.Margin = new System.Windows.Forms.Padding(4);
+            this.tablaVehiculo.Location = new System.Drawing.Point(302, 80);
             this.tablaVehiculo.Name = "tablaVehiculo";
             this.tablaVehiculo.ReadOnly = true;
-            this.tablaVehiculo.RowHeadersWidth = 51;
-            this.tablaVehiculo.Size = new System.Drawing.Size(500, 300);
+            this.tablaVehiculo.RowHeadersWidth = 10;
+            this.tablaVehiculo.Size = new System.Drawing.Size(410, 311);
             this.tablaVehiculo.TabIndex = 13;
             this.tablaVehiculo.TabStop = false;
             // 
@@ -231,10 +222,9 @@
             this.btnVehicleLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVehicleLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVehicleLoad.ForeColor = System.Drawing.Color.White;
-            this.btnVehicleLoad.Location = new System.Drawing.Point(107, 453);
-            this.btnVehicleLoad.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVehicleLoad.Location = new System.Drawing.Point(55, 368);
             this.btnVehicleLoad.Name = "btnVehicleLoad";
-            this.btnVehicleLoad.Size = new System.Drawing.Size(100, 28);
+            this.btnVehicleLoad.Size = new System.Drawing.Size(75, 23);
             this.btnVehicleLoad.TabIndex = 14;
             this.btnVehicleLoad.Text = "Cargar";
             this.btnVehicleLoad.UseVisualStyleBackColor = true;
@@ -245,10 +235,9 @@
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(252, 453);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Location = new System.Drawing.Point(164, 368);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(100, 28);
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 15;
             this.btnClear.Text = "Limpiar";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -258,23 +247,22 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(666, 27);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(425, 54);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(312, 39);
+            this.label15.Size = new System.Drawing.Size(174, 22);
             this.label15.TabIndex = 29;
             this.label15.Text = "Lista de Vehiculos";
             // 
             // Vehicle_Load
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1367, 543);
+            this.ClientSize = new System.Drawing.Size(725, 405);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnVehicleLoad);
@@ -288,6 +276,8 @@
             this.Controls.Add(this.comboBoxDocType);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Vehicle_Load";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de Vehiculo";

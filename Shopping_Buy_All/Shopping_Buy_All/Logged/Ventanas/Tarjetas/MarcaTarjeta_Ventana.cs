@@ -19,23 +19,22 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
         }
-
         private void btnAltaTarjeta_Click(object sender, EventArgs e)
         {
-            Client_Load load = new Client_Load();
-            load.ShowDialog();
+            Tarjeta_Load Tarjeta_Load = new Tarjeta_Load();
+            Tarjeta_Load.ShowDialog();
         }
 
         private void btnModificarTarjeta_Click(object sender, EventArgs e)
         {
-            Client_Modify modify = new Client_Modify();
-            modify.ShowDialog();
+            Tarjeta_Modify Tarjeta_Modify = new Tarjeta_Modify();
+            Tarjeta_Modify.ShowDialog();
         }
 
         private void btnEliminarTarjeta_Click(object sender, EventArgs e)
         {
-            Client_Delete delete = new Client_Delete();
-            delete.ShowDialog();
+            Tarjeta_Delete Tarjeta_Delete = new Tarjeta_Delete();
+            Tarjeta_Delete.ShowDialog();
         }
 
         private void btnAltaTipoTarjeta_Click(object sender, EventArgs e)

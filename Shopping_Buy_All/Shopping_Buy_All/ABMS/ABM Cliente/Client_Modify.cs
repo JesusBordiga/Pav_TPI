@@ -54,6 +54,7 @@ namespace Shopping_Buy_All
             radioButtonSingle.Checked = false;
             radioButtonMarried.Checked = false;
             textDateBirthDay.Text = "";
+            comboBoxSex.SelectedIndex= -1;
         }
         private bool validarCliente()
         {
@@ -370,7 +371,7 @@ namespace Shopping_Buy_All
             }
 
             //Sexo de cliente
-            c.TipoDocumentoCliente = (int)comboBoxDocType.SelectedValue;
+            c.SexoCliente = (int)comboBoxDocType.SelectedValue;
 
             //Fecha de nacimiento de Cliente
             c.FechaNacimientoCliente = DateTime.Parse(textDateBirthDay.Text);
@@ -407,6 +408,8 @@ namespace Shopping_Buy_All
             }
             catch (SqlException)
             {
+                
+                MessageBox.Show("Error al cargar cliente a base de datos");
                 throw;
             }
             catch (Exception)
@@ -425,16 +428,13 @@ namespace Shopping_Buy_All
             if (validarCliente())
             {
                 Cliente c = ObtenerDatosCliente();
-                bool resultado = ModificarCliente(c);
-                if (resultado)
-                {
                     MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
                     String mensajeCarga = (
                           " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
                         + " |Apellido: " + c.ApellidoCliente + " |Nombre: " + c.NombreCliente + "|" + "\n"
                         + " |Calle: " + c.CalleCliente + " |Nro Calle: " + c.NroCalleCliente + "|" + "\n"
                         + " |Estado Civil: " + c.EstadoCivilCliente + " |Sexo: " + c.SexoCliente + "|" + "\n"
-                        + " |Fecha Nacimiento: " + c.FechaNacimientoCliente + "|" + "\n");
+                        + " |Fecha Nacimiento: " + c.FechaNacimientoCliente.ToShortDateString() + "|" + "\n");
 
                     string titulo = "Información de Carga";
 
@@ -442,22 +442,25 @@ namespace Shopping_Buy_All
 
                     if (result == DialogResult.OK)
                     {
+                        bool resultado = ModificarCliente(c);
+                        if (resultado)
+                        {
                         MessageBox.Show("Cliente agregado con éxito!");
                         Clean();
                         CargarTablaClientes();
                         CargarTiposDocumentos();
-
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al modificar la persona!");
+                        }
 
                     }
                     else
                     {
                         comboBoxDocType.Focus();
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Error al modificar la persona!");
-                }
+               
             }
         }
         private void tablaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
