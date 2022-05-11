@@ -36,7 +36,6 @@
             this.textCodeType = new System.Windows.Forms.TextBox();
             this.btnSearchType = new System.Windows.Forms.Button();
             this.btnCleanType = new System.Windows.Forms.Button();
-            this.searchPanel = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textNameTypeVehicle = new System.Windows.Forms.TextBox();
             this.btnTypeLoad = new System.Windows.Forms.Button();
@@ -45,19 +44,20 @@
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.searchPanel)).BeginInit();
+            this.panelBusqueda = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoVehiculo)).BeginInit();
+            this.panelBusqueda.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(63, 38);
+            this.label1.Location = new System.Drawing.Point(62, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 50);
+            this.label1.Size = new System.Drawing.Size(130, 44);
             this.label1.TabIndex = 61;
             this.label1.Text = "   Modificar \r\nTipo vehiculo";
             // 
@@ -84,15 +84,16 @@
             // 
             // btnSearchType
             // 
+            this.btnSearchType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnSearchType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchType.ForeColor = System.Drawing.Color.White;
-            this.btnSearchType.Location = new System.Drawing.Point(49, 309);
+            this.btnSearchType.Location = new System.Drawing.Point(3, 154);
             this.btnSearchType.Name = "btnSearchType";
             this.btnSearchType.Size = new System.Drawing.Size(75, 23);
             this.btnSearchType.TabIndex = 1;
             this.btnSearchType.Text = "Buscar";
-            this.btnSearchType.UseVisualStyleBackColor = true;
+            this.btnSearchType.UseVisualStyleBackColor = false;
             this.btnSearchType.Click += new System.EventHandler(this.btnSearchType_Click);
             // 
             // btnCleanType
@@ -108,23 +109,13 @@
             this.btnCleanType.UseVisualStyleBackColor = true;
             this.btnCleanType.Click += new System.EventHandler(this.btnCleanType_Click);
             // 
-            // searchPanel
-            // 
-            this.searchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.searchPanel.Location = new System.Drawing.Point(11, 96);
-            this.searchPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(245, 243);
-            this.searchPanel.TabIndex = 87;
-            this.searchPanel.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(105, 155);
+            this.label3.Location = new System.Drawing.Point(51, 2);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 62;
@@ -134,7 +125,7 @@
             // 
             this.textNameTypeVehicle.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNameTypeVehicle.ForeColor = System.Drawing.Color.White;
-            this.textNameTypeVehicle.Location = new System.Drawing.Point(73, 183);
+            this.textNameTypeVehicle.Location = new System.Drawing.Point(19, 28);
             this.textNameTypeVehicle.Name = "textNameTypeVehicle";
             this.textNameTypeVehicle.Size = new System.Drawing.Size(120, 20);
             this.textNameTypeVehicle.TabIndex = 4;
@@ -227,6 +218,17 @@
             this.Borrado.Visible = false;
             this.Borrado.Width = 125;
             // 
+            // panelBusqueda
+            // 
+            this.panelBusqueda.BackColor = System.Drawing.Color.Transparent;
+            this.panelBusqueda.Controls.Add(this.btnSearchType);
+            this.panelBusqueda.Controls.Add(this.label3);
+            this.panelBusqueda.Controls.Add(this.textNameTypeVehicle);
+            this.panelBusqueda.Location = new System.Drawing.Point(49, 155);
+            this.panelBusqueda.Name = "panelBusqueda";
+            this.panelBusqueda.Size = new System.Drawing.Size(156, 177);
+            this.panelBusqueda.TabIndex = 89;
+            // 
             // VehicleType_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,16 +237,13 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(497, 349);
-            this.Controls.Add(this.tablaTipoVehiculo);
             this.Controls.Add(this.btnCleanType);
-            this.Controls.Add(this.btnSearchType);
+            this.Controls.Add(this.panelBusqueda);
+            this.Controls.Add(this.tablaTipoVehiculo);
             this.Controls.Add(this.textCodeType);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.btnSearchType2);
             this.Controls.Add(this.btnTypeLoad);
-            this.Controls.Add(this.textNameTypeVehicle);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -252,8 +251,9 @@
             this.Name = "VehicleType_Modify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar tipo vehiculo";
-            ((System.ComponentModel.ISupportInitialize)(this.searchPanel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoVehiculo)).EndInit();
+            this.panelBusqueda.ResumeLayout(false);
+            this.panelBusqueda.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,7 +266,6 @@
         private System.Windows.Forms.TextBox textCodeType;
         private System.Windows.Forms.Button btnSearchType;
         private System.Windows.Forms.Button btnCleanType;
-        private System.Windows.Forms.PictureBox searchPanel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textNameTypeVehicle;
         private System.Windows.Forms.Button btnTypeLoad;
@@ -275,5 +274,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.Panel panelBusqueda;
     }
 }

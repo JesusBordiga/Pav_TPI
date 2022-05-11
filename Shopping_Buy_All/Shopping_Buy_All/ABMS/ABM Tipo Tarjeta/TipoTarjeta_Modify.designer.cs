@@ -35,14 +35,14 @@
             this.txtNombreTdT = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.tablaTipoTarjeta = new System.Windows.Forms.DataGridView();
-            this.idTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNuevoNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnBuscarTipoTarjeta = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tablaTipoTarjeta = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoTarjeta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             this.btnTipoTarjetaModify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTipoTarjetaModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoTarjetaModify.ForeColor = System.Drawing.Color.White;
-            this.btnTipoTarjetaModify.Location = new System.Drawing.Point(79, 315);
+            this.btnTipoTarjetaModify.Location = new System.Drawing.Point(48, 224);
             this.btnTipoTarjetaModify.Name = "btnTipoTarjetaModify";
             this.btnTipoTarjetaModify.Size = new System.Drawing.Size(75, 23);
             this.btnTipoTarjetaModify.TabIndex = 85;
@@ -64,7 +64,7 @@
             // 
             this.txtNombreTdT.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombreTdT.ForeColor = System.Drawing.Color.White;
-            this.txtNombreTdT.Location = new System.Drawing.Point(73, 146);
+            this.txtNombreTdT.Location = new System.Drawing.Point(36, 150);
             this.txtNombreTdT.Name = "txtNombreTdT";
             this.txtNombreTdT.Size = new System.Drawing.Size(100, 20);
             this.txtNombreTdT.TabIndex = 84;
@@ -75,7 +75,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(90, 125);
+            this.label2.Location = new System.Drawing.Point(49, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 83;
@@ -85,26 +85,61 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(27, 62);
+            this.label1.Location = new System.Drawing.Point(27, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 62);
+            this.label1.Size = new System.Drawing.Size(128, 44);
             this.label1.TabIndex = 82;
             this.label1.Text = "Buscar Tipos\r\nde Tarjeta";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtNuevoNombre
+            // 
+            this.txtNuevoNombre.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtNuevoNombre.ForeColor = System.Drawing.Color.White;
+            this.txtNuevoNombre.Location = new System.Drawing.Point(37, 150);
+            this.txtNuevoNombre.Name = "txtNuevoNombre";
+            this.txtNuevoNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNuevoNombre.TabIndex = 88;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(34, 130);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 17);
+            this.label4.TabIndex = 87;
+            this.label4.Text = "Nuevo Nombre";
+            // 
+            // btnBuscarTipoTarjeta
+            // 
+            this.btnBuscarTipoTarjeta.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnBuscarTipoTarjeta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarTipoTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarTipoTarjeta.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarTipoTarjeta.Location = new System.Drawing.Point(48, 224);
+            this.btnBuscarTipoTarjeta.Name = "btnBuscarTipoTarjeta";
+            this.btnBuscarTipoTarjeta.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarTipoTarjeta.TabIndex = 89;
+            this.btnBuscarTipoTarjeta.Text = "Buscar";
+            this.btnBuscarTipoTarjeta.UseVisualStyleBackColor = false;
+            this.btnBuscarTipoTarjeta.Click += new System.EventHandler(this.btnBuscarTipoTarjeta_Click);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(211, 7);
+            this.label15.Location = new System.Drawing.Point(198, 28);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(337, 31);
-            this.label15.TabIndex = 81;
-            this.label15.Text = "Lista de Tipos de Tarjeta";
+            this.label15.Size = new System.Drawing.Size(158, 22);
+            this.label15.TabIndex = 133;
+            this.label15.Text = "Tipos de Tarjeta";
             // 
             // tablaTipoTarjeta
             // 
@@ -117,11 +152,11 @@
             this.tablaTipoTarjeta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tablaTipoTarjeta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaTipoTarjeta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idTipo,
-            this.Nombre,
-            this.Borrado});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
             this.tablaTipoTarjeta.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaTipoTarjeta.Location = new System.Drawing.Point(262, 40);
+            this.tablaTipoTarjeta.Location = new System.Drawing.Point(161, 53);
             this.tablaTipoTarjeta.Name = "tablaTipoTarjeta";
             this.tablaTipoTarjeta.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -132,67 +167,32 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaTipoTarjeta.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaTipoTarjeta.Size = new System.Drawing.Size(246, 298);
-            this.tablaTipoTarjeta.TabIndex = 80;
+            this.tablaTipoTarjeta.RowHeadersWidth = 10;
+            this.tablaTipoTarjeta.Size = new System.Drawing.Size(229, 265);
+            this.tablaTipoTarjeta.TabIndex = 134;
             this.tablaTipoTarjeta.TabStop = false;
-            this.tablaTipoTarjeta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaTipoTarjeta_CellContentClick);
             // 
-            // idTipo
+            // dataGridViewTextBoxColumn1
             // 
-            this.idTipo.DataPropertyName = "idTipo";
-            this.idTipo.HeaderText = "Id";
-            this.idTipo.Name = "idTipo";
-            this.idTipo.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idTipo";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // Nombre
+            // dataGridViewTextBoxColumn2
             // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // Borrado
+            // dataGridViewTextBoxColumn3
             // 
-            this.Borrado.DataPropertyName = "Borrado";
-            this.Borrado.HeaderText = "Borrado";
-            this.Borrado.Name = "Borrado";
-            this.Borrado.ReadOnly = true;
-            this.Borrado.Visible = false;
-            // 
-            // txtNuevoNombre
-            // 
-            this.txtNuevoNombre.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txtNuevoNombre.ForeColor = System.Drawing.Color.White;
-            this.txtNuevoNombre.Location = new System.Drawing.Point(73, 146);
-            this.txtNuevoNombre.Name = "txtNuevoNombre";
-            this.txtNuevoNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNuevoNombre.TabIndex = 88;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(70, 126);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 17);
-            this.label4.TabIndex = 87;
-            this.label4.Text = "Nuevo Nombre";
-            // 
-            // btnBuscarTipoTarjeta
-            // 
-            this.btnBuscarTipoTarjeta.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnBuscarTipoTarjeta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarTipoTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarTipoTarjeta.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarTipoTarjeta.Location = new System.Drawing.Point(79, 316);
-            this.btnBuscarTipoTarjeta.Name = "btnBuscarTipoTarjeta";
-            this.btnBuscarTipoTarjeta.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarTipoTarjeta.TabIndex = 89;
-            this.btnBuscarTipoTarjeta.Text = "Buscar";
-            this.btnBuscarTipoTarjeta.UseVisualStyleBackColor = false;
-            this.btnBuscarTipoTarjeta.Click += new System.EventHandler(this.btnBuscarTipoTarjeta_Click);
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Borrado";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Borrado";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
             // 
             // TipoTarjeta_Modify
             // 
@@ -200,7 +200,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(592, 350);
+            this.ClientSize = new System.Drawing.Size(397, 326);
+            this.Controls.Add(this.tablaTipoTarjeta);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.btnBuscarTipoTarjeta);
             this.Controls.Add(this.txtNuevoNombre);
             this.Controls.Add(this.label4);
@@ -208,8 +210,6 @@
             this.Controls.Add(this.txtNombreTdT);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.tablaTipoTarjeta);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "TipoTarjeta_Modify";
@@ -226,13 +226,13 @@
         private System.Windows.Forms.TextBox txtNombreTdT;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DataGridView tablaTipoTarjeta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.TextBox txtNuevoNombre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBuscarTipoTarjeta;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridView tablaTipoTarjeta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

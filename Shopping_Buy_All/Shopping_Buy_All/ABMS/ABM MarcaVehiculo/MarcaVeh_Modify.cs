@@ -220,38 +220,38 @@ namespace Shopping_Buy_All
             return resultado;
         }
 
-        private void btnMarcaMod_Click_1(object sender, EventArgs e)
-        {
-            MarcaVehiculo oldM = ObtenerMarcaOld();
-            MarcaVehiculo newM = ObtenerMarcaNew();
-            bool resultado = ModificarMarca(c);
-            if (resultado)
-            {
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = (
-                      " |Marca: " + c.MarcaVeh + "\n");
+        //private void btnMarcaMod_Click_1(object sender, EventArgs e)
+        //{
+        //    MarcaVehiculo oldM = ObtenerMarcaOld();
+        //    MarcaVehiculo newM = ObtenerMarcaNew();
+        //    bool resultado = ModificarMarca();
+        //    if (resultado)
+        //    {
+        //        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+        //        String mensajeCarga = (
+        //              " |Marca: " + c.MarcaVeh + "\n");
 
-                string titulo = "Información de Carga";
+        //        string titulo = "Información de Carga";
 
-                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+        //        DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
 
-                if (result == DialogResult.OK)
-                {
-                    MessageBox.Show("Marca agregada con éxito!");
-                    Clean();
-                    CargarTablaMarcasVeh();
-                    CargarMarcasVeh();
-                }
-                else
-                {
-                    textMarcaOld.Focus();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Error al modificar la persona!");
-            }
-        }
+        //        if (result == DialogResult.OK)
+        //        {
+        //            MessageBox.Show("Marca agregada con éxito!");
+        //            Clean();
+        //            CargarTablaMarcasVeh();
+        //            CargarMarcasVeh();
+        //        }
+        //        else
+        //        {
+        //            textMarcaOld.Focus();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Error al modificar la persona!");
+        //    }
+        //}
 
         private void tablaMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

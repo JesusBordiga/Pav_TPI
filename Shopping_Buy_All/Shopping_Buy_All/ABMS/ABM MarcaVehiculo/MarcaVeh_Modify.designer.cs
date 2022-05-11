@@ -70,7 +70,7 @@
             this.btnMarcaMod.TabIndex = 52;
             this.btnMarcaMod.Text = "Modificar";
             this.btnMarcaMod.UseVisualStyleBackColor = true;
-            this.btnMarcaMod.Click += new System.EventHandler(this.btnMarcaMod_Click_1);
+            //this.btnMarcaMod.Click += new System.EventHandler(this.btnMarcaMod_Click_1);
             // 
             // label15
             // 

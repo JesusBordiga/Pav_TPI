@@ -166,7 +166,7 @@ namespace Shopping_Buy_All
             {
                 Producto p = Buscar_Producto(textCodeProduct.Text);
                 Cargar_Campos(p);
-                SearchPanel.Visible = false;
+                panelBuscar.Visible = true;
                 btnSearchProduct.Visible = false;
                 btnSerachProduct2.Visible = true;
             }
@@ -175,7 +175,7 @@ namespace Shopping_Buy_All
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clean();
-            SearchPanel.Visible = true;
+            panelBuscar.Visible = false;
             btnSearchProduct.Visible = true;
         }
 
@@ -199,7 +199,7 @@ namespace Shopping_Buy_All
                 {
                     MessageBox.Show("Producto agregado con éxito!");
                     Clean();
-                    SearchPanel.Visible = false;
+                    panelBuscar.Visible = false;
                     btnSearchProduct.Visible = false;
                     btnSerachProduct2.Visible = true;
                     CargarTablaProductos();
@@ -219,7 +219,7 @@ namespace Shopping_Buy_All
         private void button1_Click(object sender, EventArgs e)
         {
             Clean();
-            SearchPanel.Visible = true;
+            panelBuscar.Visible = true;
             btnSearchProduct.Visible = true;
             btnSerachProduct2.Visible = false;
         }
@@ -231,7 +231,7 @@ namespace Shopping_Buy_All
             string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
             Producto p = Buscar_Producto(codigo);
             Cargar_Campos(p);
-            SearchPanel.Visible = false;
+            panelBuscar.Visible = true;
             btnSearchProduct.Visible = false;
             btnSerachProduct2.Visible = true;
         }

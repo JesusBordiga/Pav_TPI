@@ -37,10 +37,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscarTipoComercio = new System.Windows.Forms.Button();
             this.tablaTipoComercio = new System.Windows.Forms.DataGridView();
-            this.txtNombreTipoComercio = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.MaskedTextBox();
             this.Tipo_Comercio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreTipoComercio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNombreTipoComercio = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoComercio)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +77,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(313, 33);
+            this.label15.Location = new System.Drawing.Point(283, 33);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(192, 20);
             this.label15.TabIndex = 59;
@@ -143,7 +143,7 @@
             this.Tipo_Comercio,
             this.NombreTipoComercio});
             this.tablaTipoComercio.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaTipoComercio.Location = new System.Drawing.Point(296, 56);
+            this.tablaTipoComercio.Location = new System.Drawing.Point(271, 56);
             this.tablaTipoComercio.Name = "tablaTipoComercio";
             this.tablaTipoComercio.ReadOnly = true;
             this.tablaTipoComercio.RowHeadersWidth = 10;
@@ -152,6 +152,22 @@
             this.tablaTipoComercio.TabIndex = 65;
             this.tablaTipoComercio.TabStop = false;
             this.tablaTipoComercio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick_2);
+            // 
+            // Tipo_Comercio
+            // 
+            this.Tipo_Comercio.DataPropertyName = "Tipo_Comercio";
+            this.Tipo_Comercio.HeaderText = "Id";
+            this.Tipo_Comercio.Name = "Tipo_Comercio";
+            this.Tipo_Comercio.ReadOnly = true;
+            this.Tipo_Comercio.Width = 50;
+            // 
+            // NombreTipoComercio
+            // 
+            this.NombreTipoComercio.DataPropertyName = "NombreTipoComercio";
+            this.NombreTipoComercio.HeaderText = "Nombre";
+            this.NombreTipoComercio.Name = "NombreTipoComercio";
+            this.NombreTipoComercio.ReadOnly = true;
+            this.NombreTipoComercio.Width = 150;
             // 
             // txtNombreTipoComercio
             // 
@@ -173,22 +189,6 @@
             this.txtId.TabIndex = 67;
             this.txtId.ValidatingType = typeof(int);
             // 
-            // Tipo_Comercio
-            // 
-            this.Tipo_Comercio.DataPropertyName = "Tipo_Comercio";
-            this.Tipo_Comercio.HeaderText = "Id";
-            this.Tipo_Comercio.Name = "Tipo_Comercio";
-            this.Tipo_Comercio.ReadOnly = true;
-            this.Tipo_Comercio.Width = 50;
-            // 
-            // NombreTipoComercio
-            // 
-            this.NombreTipoComercio.DataPropertyName = "NombreTipoComercio";
-            this.NombreTipoComercio.HeaderText = "Nombre";
-            this.NombreTipoComercio.Name = "NombreTipoComercio";
-            this.NombreTipoComercio.ReadOnly = true;
-            this.NombreTipoComercio.Width = 150;
-            // 
             // TipoComercio_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,7 +196,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(524, 271);
+            this.ClientSize = new System.Drawing.Size(501, 271);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtNombreTipoComercio);
             this.Controls.Add(this.tablaTipoComercio);

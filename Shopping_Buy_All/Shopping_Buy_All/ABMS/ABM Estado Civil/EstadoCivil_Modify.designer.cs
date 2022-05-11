@@ -52,7 +52,7 @@
             this.btnBuscarEstadoCivil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarEstadoCivil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarEstadoCivil.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarEstadoCivil.Location = new System.Drawing.Point(88, 318);
+            this.btnBuscarEstadoCivil.Location = new System.Drawing.Point(81, 180);
             this.btnBuscarEstadoCivil.Name = "btnBuscarEstadoCivil";
             this.btnBuscarEstadoCivil.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarEstadoCivil.TabIndex = 96;
@@ -64,7 +64,7 @@
             // 
             this.txtNuevoNombre.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNuevoNombre.ForeColor = System.Drawing.Color.White;
-            this.txtNuevoNombre.Location = new System.Drawing.Point(82, 148);
+            this.txtNuevoNombre.Location = new System.Drawing.Point(69, 133);
             this.txtNuevoNombre.Name = "txtNuevoNombre";
             this.txtNuevoNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNuevoNombre.TabIndex = 95;
@@ -75,7 +75,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(79, 128);
+            this.label4.Location = new System.Drawing.Point(66, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 94;
@@ -85,24 +85,24 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(25, 64);
+            this.label1.Location = new System.Drawing.Point(55, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 62);
+            this.label1.Size = new System.Drawing.Size(127, 50);
             this.label1.TabIndex = 92;
-            this.label1.Text = "Buscar Estados\r\nCiviles";
+            this.label1.Text = "  Buscar \r\nEstado Civil";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(235, 8);
+            this.label15.Location = new System.Drawing.Point(217, 18);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(327, 31);
+            this.label15.Size = new System.Drawing.Size(225, 22);
             this.label15.TabIndex = 91;
             this.label15.Text = "Lista de Estados Civiles";
             // 
@@ -121,7 +121,7 @@
             this.NombreEstadoCivil,
             this.Borrado});
             this.tablaEstadoCivil.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaEstadoCivil.Location = new System.Drawing.Point(271, 42);
+            this.tablaEstadoCivil.Location = new System.Drawing.Point(210, 43);
             this.tablaEstadoCivil.Name = "tablaEstadoCivil";
             this.tablaEstadoCivil.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -132,7 +132,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaEstadoCivil.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaEstadoCivil.Size = new System.Drawing.Size(246, 298);
+            this.tablaEstadoCivil.RowHeadersWidth = 10;
+            this.tablaEstadoCivil.Size = new System.Drawing.Size(238, 265);
             this.tablaEstadoCivil.TabIndex = 90;
             this.tablaEstadoCivil.TabStop = false;
             this.tablaEstadoCivil.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaEstadoCivil_CellContentClick);
@@ -165,7 +166,7 @@
             this.btnEstadoCivilModify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEstadoCivilModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstadoCivilModify.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoCivilModify.Location = new System.Drawing.Point(88, 318);
+            this.btnEstadoCivilModify.Location = new System.Drawing.Point(81, 180);
             this.btnEstadoCivilModify.Name = "btnEstadoCivilModify";
             this.btnEstadoCivilModify.Size = new System.Drawing.Size(75, 23);
             this.btnEstadoCivilModify.TabIndex = 99;
@@ -177,7 +178,7 @@
             // 
             this.txtNombreEC.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombreEC.ForeColor = System.Drawing.Color.White;
-            this.txtNombreEC.Location = new System.Drawing.Point(82, 148);
+            this.txtNombreEC.Location = new System.Drawing.Point(69, 133);
             this.txtNombreEC.Name = "txtNombreEC";
             this.txtNombreEC.Size = new System.Drawing.Size(100, 20);
             this.txtNombreEC.TabIndex = 98;
@@ -188,7 +189,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(99, 127);
+            this.label2.Location = new System.Drawing.Point(86, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 97;
@@ -200,7 +201,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(592, 350);
+            this.ClientSize = new System.Drawing.Size(455, 315);
             this.Controls.Add(this.btnEstadoCivilModify);
             this.Controls.Add(this.txtNombreEC);
             this.Controls.Add(this.label2);
