@@ -102,6 +102,12 @@
     <Compile Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Modify.Designer.cs">
       <DependentUpon>MarcaTarjeta_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Modify.Designer.cs">
+      <DependentUpon>MarcaVehiculo_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -461,6 +467,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Modify.resx">
       <DependentUpon>MarcaTarjeta_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Modify.resx">
+      <DependentUpon>MarcaVehiculo_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Delete.resx">
       <DependentUpon>MarcaVeh_Delete.cs</DependentUpon>
