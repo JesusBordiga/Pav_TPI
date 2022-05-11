@@ -185,7 +185,8 @@ namespace Shopping_Buy_All
 
         private bool ValidarCampos()
         {
-            if (textRubro.Text.Trim() == "")
+            // Validar que no esté vacío o no tenga más de 50 caracteres
+            if (textRubro.Text.Trim() == "" || textRubro.Text.Trim().Length > 50)
             {
                 return false;
             }

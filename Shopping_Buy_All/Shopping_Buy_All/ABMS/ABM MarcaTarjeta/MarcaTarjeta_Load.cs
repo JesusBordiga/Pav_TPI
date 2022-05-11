@@ -186,7 +186,7 @@ namespace Shopping_Buy_All
 
         private bool ValidarCampos()
         {
-            if (textMarca.Text.Trim() == "")
+            if (textMarca.Text.Trim() == "" || textMarca.Text.Trim().Length > 50)
             {
                 return false;
             }

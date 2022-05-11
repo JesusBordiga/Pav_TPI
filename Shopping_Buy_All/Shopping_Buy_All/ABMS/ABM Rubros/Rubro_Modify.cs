@@ -181,7 +181,7 @@ namespace Shopping_Buy_All
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            if (textRubroNew.Text.Trim() != "")
+            if (ValidarCampos())
             {
                 string newR = ObtenerDatos();
                 if (!ExisteRubro(newR))
@@ -228,6 +228,15 @@ namespace Shopping_Buy_All
             }
         }
 
+        private bool ValidarCampos()
+        {
+            // Validar que no esté vacío o no tenga más de 50 caracteres
+            if (textRubroNew.Text.Trim() == "" || textRubroNew.Text.Trim().Length > 50)
+            {
+                return false;
+            }
+            return true;
+        }
         private void tablaRubros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
