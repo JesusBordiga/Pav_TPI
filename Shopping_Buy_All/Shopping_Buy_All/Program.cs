@@ -16,7 +16,7 @@ namespace Shopping_Buy_All
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MarcaVehiculo_Modify());
+            Application.Run(new Login());
         }
     }
 }

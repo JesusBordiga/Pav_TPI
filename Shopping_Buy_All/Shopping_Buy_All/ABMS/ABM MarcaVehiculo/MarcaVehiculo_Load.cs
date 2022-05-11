@@ -19,15 +19,12 @@ using System.Runtime;
 
 namespace Shopping_Buy_All
 {
-    public partial class MarcaVeh_Load : Form
+    public partial class MarcaVehiculo_Load : Form
     {
-        public MarcaVeh_Load()
+        public MarcaVehiculo_Load()
         {
             InitializeComponent();
             CargarTablaMarcas();
-
-
-
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -66,8 +63,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error en la base de datos.", "ERROR");
             }
             finally
             {
@@ -102,13 +98,9 @@ namespace Shopping_Buy_All
                 cmd.ExecuteNonQuery();
                 resultado = true;
             }
-            catch (SqlException)
-            {
-                throw;
-            }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("No se pudo agregar la Marca.\nError en la base de datos.", "ERROR");
             }
             finally
             {
@@ -136,8 +128,6 @@ namespace Shopping_Buy_All
                     MessageBox.Show("Marca agregado con éxito!");
                     Clean();
                     CargarTablaMarcas();
-
-
                 }
                 else
                 {

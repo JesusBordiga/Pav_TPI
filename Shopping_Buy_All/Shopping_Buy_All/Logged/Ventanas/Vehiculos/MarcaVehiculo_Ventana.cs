@@ -22,7 +22,7 @@ namespace Shopping_Buy_All
 
         private void btnAltaVehicleType_Click(object sender, EventArgs e)
         {
-            MarcaVeh_Load MarcaVeh = new MarcaVeh_Load();
+            MarcaVehiculo_Load MarcaVeh = new MarcaVehiculo_Load();
             MarcaVeh.ShowDialog();
         }
 

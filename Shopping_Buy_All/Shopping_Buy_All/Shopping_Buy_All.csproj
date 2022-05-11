@@ -102,6 +102,12 @@
     <Compile Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Modify.Designer.cs">
       <DependentUpon>MarcaTarjeta_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Delete.Designer.cs">
+      <DependentUpon>MarcaVehiculo_Delete.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,11 +120,11 @@
     <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Delete.designer.cs">
       <DependentUpon>MarcaVeh_Delete.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Load.cs">
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Load.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Load.designer.cs">
-      <DependentUpon>MarcaVeh_Load.cs</DependentUpon>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Load.designer.cs">
+      <DependentUpon>MarcaVehiculo_Load.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Modify.cs">
       <SubType>Form</SubType>
@@ -468,14 +474,17 @@
     <EmbeddedResource Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Modify.resx">
       <DependentUpon>MarcaTarjeta_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Delete.resx">
+      <DependentUpon>MarcaVehiculo_Delete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Modify.resx">
       <DependentUpon>MarcaVehiculo_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Delete.resx">
       <DependentUpon>MarcaVeh_Delete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Load.resx">
-      <DependentUpon>MarcaVeh_Load.cs</DependentUpon>
+    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Load.resx">
+      <DependentUpon>MarcaVehiculo_Load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Modify.resx">
       <DependentUpon>MarcaVeh_Modify.cs</DependentUpon>
