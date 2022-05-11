@@ -42,13 +42,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxDocType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textNameModelo = new System.Windows.Forms.TextBox();
             this.tablaVehiculos = new System.Windows.Forms.DataGridView();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textNameModelo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaVehiculos)).BeginInit();
             this.SuspendLayout();
@@ -202,15 +202,6 @@
             this.label5.TabIndex = 104;
             this.label5.Text = "Modelo";
             // 
-            // textNameModelo
-            // 
-            this.textNameModelo.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textNameModelo.ForeColor = System.Drawing.Color.White;
-            this.textNameModelo.Location = new System.Drawing.Point(140, 253);
-            this.textNameModelo.Name = "textNameModelo";
-            this.textNameModelo.Size = new System.Drawing.Size(100, 20);
-            this.textNameModelo.TabIndex = 105;
-            // 
             // tablaVehiculos
             // 
             this.tablaVehiculos.AllowUserToAddRows = false;
@@ -279,6 +270,16 @@
             this.Modelo.ReadOnly = true;
             this.Modelo.Width = 125;
             // 
+            // textNameModelo
+            // 
+            this.textNameModelo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textNameModelo.ForeColor = System.Drawing.Color.White;
+            this.textNameModelo.FormattingEnabled = true;
+            this.textNameModelo.Location = new System.Drawing.Point(126, 257);
+            this.textNameModelo.Name = "textNameModelo";
+            this.textNameModelo.Size = new System.Drawing.Size(119, 21);
+            this.textNameModelo.TabIndex = 107;
+            // 
             // Vehicle_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,8 +289,8 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(772, 379);
-            this.Controls.Add(this.tablaVehiculos);
             this.Controls.Add(this.textNameModelo);
+            this.Controls.Add(this.tablaVehiculos);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxDocType);
             this.Controls.Add(this.label4);
@@ -328,12 +329,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxDocType;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textNameModelo;
         private System.Windows.Forms.DataGridView tablaVehiculos;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Patente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
+        private System.Windows.Forms.ComboBox textNameModelo;
     }
 }

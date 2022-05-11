@@ -10,7 +10,7 @@ namespace Shopping_Buy_All.Entidades
     {
         private string Documento;
         private int TipoDocumento;
-        private string Modelo;
+        private int Modelo;
         private string Patente;
         private int Borrado;
 
@@ -42,7 +42,7 @@ namespace Shopping_Buy_All.Entidades
             get => Patente;
             set => Patente = value;
         }
-        public string ModeloAutomovil
+        public int ModeloAutomovil
         {
             get => Modelo;
             set => Modelo = value;

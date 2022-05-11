@@ -19,8 +19,46 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             InitializeComponent();
             CargarTablaVehiculos();
             CargarTiposDocumentos();
+            CargarModelos();
         }
 
+        private void CargarModelos()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "Select * FROM Modelos where Borrado = 0";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                cmbModelo.DataSource = tabla;
+                cmbModelo.DisplayMember = "NombreModelo";
+                cmbModelo.ValueMember = "CodigoModelo";
+                cmbModelo.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clean();
@@ -31,7 +69,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             comboBoxDocType.SelectedIndex = -1;
             textNumberDoc.Text = "";
             textPatente.Text = "";
-            textNameModelo.Text = "";
+            cmbModelo.SelectedIndex = -1;
             CargarTablaVehiculos();
 
         }
@@ -120,7 +158,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             a.PatenteAutomovil = textPatente.Text.Trim();
 
             //Modelo Vehiculo
-            a.ModeloAutomovil = textNameModelo.Text.Trim();
+            a.ModeloAutomovil = (int)cmbModelo.SelectedValue;
 
             return a;
         }

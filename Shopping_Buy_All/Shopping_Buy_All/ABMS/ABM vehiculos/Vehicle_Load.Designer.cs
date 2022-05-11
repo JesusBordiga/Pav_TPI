@@ -37,7 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textPatente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textNameModelo = new System.Windows.Forms.TextBox();
             this.tablaVehiculo = new System.Windows.Forms.DataGridView();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +46,7 @@
             this.btnVehicleLoad = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
+            this.cmbModelo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaVehiculo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,15 +139,6 @@
             this.label2.Size = new System.Drawing.Size(60, 17);
             this.label2.TabIndex = 11;
             this.label2.Text = "Modelo";
-            // 
-            // textNameModelo
-            // 
-            this.textNameModelo.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textNameModelo.ForeColor = System.Drawing.Color.White;
-            this.textNameModelo.Location = new System.Drawing.Point(104, 293);
-            this.textNameModelo.Name = "textNameModelo";
-            this.textNameModelo.Size = new System.Drawing.Size(100, 20);
-            this.textNameModelo.TabIndex = 12;
             // 
             // tablaVehiculo
             // 
@@ -255,6 +246,16 @@
             this.label15.TabIndex = 29;
             this.label15.Text = "Lista de Vehiculos";
             // 
+            // cmbModelo
+            // 
+            this.cmbModelo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cmbModelo.ForeColor = System.Drawing.Color.White;
+            this.cmbModelo.FormattingEnabled = true;
+            this.cmbModelo.Location = new System.Drawing.Point(96, 274);
+            this.cmbModelo.Name = "cmbModelo";
+            this.cmbModelo.Size = new System.Drawing.Size(119, 21);
+            this.cmbModelo.TabIndex = 30;
+            // 
             // Vehicle_Load
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,11 +264,11 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(725, 405);
+            this.Controls.Add(this.cmbModelo);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnVehicleLoad);
             this.Controls.Add(this.tablaVehiculo);
-            this.Controls.Add(this.textNameModelo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textPatente);
             this.Controls.Add(this.label3);
@@ -297,7 +298,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textPatente;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textNameModelo;
         private System.Windows.Forms.DataGridView tablaVehiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
@@ -307,5 +307,6 @@
         private System.Windows.Forms.Button btnVehicleLoad;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cmbModelo;
     }
 }

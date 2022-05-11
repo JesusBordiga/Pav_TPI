@@ -19,6 +19,45 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
         {
             InitializeComponent();
             CargarTablaVehiculo();
+            CargarModelos();
+        }
+
+        private void CargarModelos()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "Select * FROM Modelos where Borrado = 0";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                textNameModelo.DataSource = tabla;
+                textNameModelo.DisplayMember = "NombreModelo";
+                textNameModelo.ValueMember = "CodigoModelo";
+                textNameModelo.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
 
         private void Clean()
@@ -39,7 +78,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             //Tipo de documento
             comboBoxDocType.SelectedValue = a.TipoDocumentoPropietario;
             //Modelo Vehiculo
-            textNameModelo.Text = a.ModeloAutomovil;
+            textNameModelo.SelectedValue = a.ModeloAutomovil;
         }
 
         private void CargarTablaVehiculo()
@@ -139,7 +178,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
                     automovil.DocumentoPropietario = DataReader["NroDoc"].ToString();
                     automovil.PatenteAutomovil = DataReader["Patente"].ToString();
                     automovil.TipoDocumentoPropietario = int.Parse(DataReader["TipoDoc"].ToString());
-                    automovil.ModeloAutomovil = DataReader["Modelo"].ToString();
+                    automovil.ModeloAutomovil = int.Parse(DataReader["Modelo"].ToString());
                 }
             }
             catch (Exception)
@@ -164,7 +203,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             //Patente Vehiculo
             a.PatenteAutomovil = textNamePatente.Text.Trim();
             //Modelo Vehiculo
-            a.ModeloAutomovil = textNameModelo.Text.Trim();
+            a.ModeloAutomovil = (int)textNameModelo.SelectedValue;
             return a;
         }
 

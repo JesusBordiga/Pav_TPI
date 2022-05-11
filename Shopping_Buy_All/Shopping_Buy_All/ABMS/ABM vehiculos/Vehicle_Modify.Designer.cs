@@ -41,13 +41,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxDocType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textNameModelo = new System.Windows.Forms.TextBox();
             this.searchPanel = new System.Windows.Forms.DataGridView();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textNameModelo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.searchPanel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,15 +191,6 @@
             this.label5.TabIndex = 100;
             this.label5.Text = "Modelo";
             // 
-            // textNameModelo
-            // 
-            this.textNameModelo.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textNameModelo.ForeColor = System.Drawing.Color.White;
-            this.textNameModelo.Location = new System.Drawing.Point(63, 277);
-            this.textNameModelo.Name = "textNameModelo";
-            this.textNameModelo.Size = new System.Drawing.Size(100, 20);
-            this.textNameModelo.TabIndex = 101;
-            // 
             // searchPanel
             // 
             this.searchPanel.AllowUserToAddRows = false;
@@ -268,6 +259,16 @@
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 125;
             // 
+            // textNameModelo
+            // 
+            this.textNameModelo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textNameModelo.ForeColor = System.Drawing.Color.White;
+            this.textNameModelo.FormattingEnabled = true;
+            this.textNameModelo.Location = new System.Drawing.Point(64, 278);
+            this.textNameModelo.Name = "textNameModelo";
+            this.textNameModelo.Size = new System.Drawing.Size(119, 21);
+            this.textNameModelo.TabIndex = 103;
+            // 
             // Vehicle_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,6 +277,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(700, 390);
+            this.Controls.Add(this.textNameModelo);
             this.Controls.Add(this.searchPanel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCleanType);
@@ -286,7 +288,6 @@
             this.Controls.Add(this.textNroDoc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textNameModelo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxDocType);
             this.Controls.Add(this.label4);
@@ -313,12 +314,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxDocType;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textNameModelo;
         private System.Windows.Forms.DataGridView searchPanel;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.ComboBox textNameModelo;
     }
 }
