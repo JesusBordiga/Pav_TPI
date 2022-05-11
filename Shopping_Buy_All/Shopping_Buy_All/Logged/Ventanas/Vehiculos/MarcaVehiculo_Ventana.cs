@@ -22,19 +22,19 @@ namespace Shopping_Buy_All
 
         private void btnAltaVehicleType_Click(object sender, EventArgs e)
         {
-            MarcaVehiculo_Load MarcaVeh = new MarcaVehiculo_Load();
-            MarcaVeh.ShowDialog();
+            MarcaVehiculo_Load marcaVeh_Load = new MarcaVehiculo_Load();
+            marcaVeh_Load.ShowDialog();
         }
 
         private void btnModificarVehicleType_Click(object sender, EventArgs e)
         {
-            MarcaVeh_Modify MarcaVeh_Modify = new MarcaVeh_Modify();
-            MarcaVeh_Modify.ShowDialog();
+            MarcaVehiculo_Modify marcaVeh_Modify = new MarcaVehiculo_Modify();
+            marcaVeh_Modify.ShowDialog();
         }
 
         private void btnEliminarVehicleType_Click(object sender, EventArgs e)
         {
-            MarcaVeh_Delete marcaVeh_Delete = new MarcaVeh_Delete();
+            MarcaVehiculo_Delete marcaVeh_Delete = new MarcaVehiculo_Delete();
             marcaVeh_Delete.ShowDialog();
         }
     }
