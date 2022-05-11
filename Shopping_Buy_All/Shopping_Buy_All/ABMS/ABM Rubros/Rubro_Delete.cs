@@ -51,8 +51,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error en la base de datos.", "ERROR");
             }
             finally
             {
@@ -94,7 +93,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error en la base de datos.", "ERROR");
             }
             finally
             {
@@ -148,13 +147,9 @@ namespace Shopping_Buy_All
                 cmd.ExecuteNonQuery();
                 resultado = true;
             }
-            catch (SqlException)
-            {
-                throw;
-            }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("No se pudo eliminar el Rubro.\nError en la base de datos.", "ERROR");
             }
             finally
             {
