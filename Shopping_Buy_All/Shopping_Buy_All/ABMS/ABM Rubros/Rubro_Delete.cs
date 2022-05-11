@@ -64,6 +64,8 @@ namespace Shopping_Buy_All
             textRubro.Text = "";
             btnDelete.Visible = false;
             btnSearch.Visible = true;
+            textRubro.Enabled = true;
+            textRubro.Focus();
         }
 
         private bool ExisteRubro(string rubro)
@@ -196,6 +198,7 @@ namespace Shopping_Buy_All
             textRubro.Text = rubro;
             btnDelete.Visible = true;
             btnSearch.Visible = false;
+            textRubro.Enabled = false;
         }
 
         private void tablaRubros_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -204,7 +207,8 @@ namespace Shopping_Buy_All
             {
                 int indice = e.RowIndex;
                 DataGridViewRow filaSeleccionada = tablaRubros.Rows[indice];
-                string rubro = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                string rubro = filaSeleccionada.Cells["nombre"].Value.ToString();
+                Cargar_Campos(rubro);
             }
             catch (Exception)
             {
