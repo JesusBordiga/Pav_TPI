@@ -365,6 +365,18 @@
     <Compile Include="Logged\Ventanas\Locales\Rubros_Ventana.Designer.cs">
       <DependentUpon>Rubros_Ventana.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.Designer.cs">
+      <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\Tarjetas_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\Tarjetas_Ventana.Designer.cs">
+      <DependentUpon>Tarjetas_Ventana.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logged\Ventanas\Vehiculos\MarcaVehiculo_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -412,12 +424,6 @@
     </Compile>
     <Compile Include="Logged\Ventanas\Usuarios_Ventana.Designer.cs">
       <DependentUpon>Usuarios_Ventana.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.Designer.cs">
-      <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
     </Compile>
     <Compile Include="Logged\Ventanas\Locales\Locales_Ventana.cs">
       <SubType>Form</SubType>
@@ -595,6 +601,12 @@
     <EmbeddedResource Include="Logged\Ventanas\Locales\Rubros_Ventana.resx">
       <DependentUpon>Rubros_Ventana.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.resx">
+      <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Tarjetas\Tarjetas_Ventana.resx">
+      <DependentUpon>Tarjetas_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Vehiculos\MarcaVehiculo_Ventana.resx">
       <DependentUpon>MarcaVehiculo_Ventana.cs</DependentUpon>
     </EmbeddedResource>
@@ -618,9 +630,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Usuarios_Ventana.resx">
       <DependentUpon>Usuarios_Ventana.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.resx">
-      <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Locales\Locales_Ventana.resx">
       <DependentUpon>Locales_Ventana.cs</DependentUpon>

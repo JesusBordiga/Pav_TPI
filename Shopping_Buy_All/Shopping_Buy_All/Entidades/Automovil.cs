@@ -15,10 +15,10 @@ namespace Shopping_Buy_All.Entidades
         private int Borrado;
 
 
-        public Automovil(string documento, string apellido, string nombre)
+        public Automovil(string documento, string patente, string nombre)
         {
             Documento = documento;
-            Patente = Patente;
+            Patente = patente;
             Modelo = Modelo;
         }
 
@@ -46,6 +46,11 @@ namespace Shopping_Buy_All.Entidades
         {
             get => Modelo;
             set => Modelo = value;
+        }
+        public int BorradoAutomovil
+        {
+            get => Borrado;
+            set => Borrado = value;
         }
 
     }

@@ -366,10 +366,7 @@ namespace Shopping_Buy_All
             if (ValidarCampos())
             {
                 Tarjeta t = ObtenerDatos();
-                bool resultado = ModificarTarjeta(t);
-                if (resultado)
-                {
-                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
                     String mensajeCarga = (
                     " |Tipo Documento: " + t.TipoDocumentoTarjeta + " |Numero Documento: " + t.NroDocumentoTarjeta + "|" + "\n"
                 + " |Nro. de Tarjeta: " + t.NroTarjetaCliente + " |Marca: " + t.IdMarcaTarjeta + "|" + "\n"
@@ -381,16 +378,21 @@ namespace Shopping_Buy_All
 
                     if (result == DialogResult.OK)
                     {
+
+                        bool resultado = ModificarTarjeta(t);
+                        if (resultado)
+                        {
                         MessageBox.Show("Tarjeta modificada con éxito!");
                         Clean();
                         CargarTablaTarjetas();
-                    }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al cargar la Tarjeta! \n" +
+                                    "Complete los campos por favor!");
+                        }
                 }
-                else
-                {
-                    MessageBox.Show("Error al cargar la Tarjeta! \n" +
-                            "Complete los campos por favor!");
-                }
+    
             }
             else
             {

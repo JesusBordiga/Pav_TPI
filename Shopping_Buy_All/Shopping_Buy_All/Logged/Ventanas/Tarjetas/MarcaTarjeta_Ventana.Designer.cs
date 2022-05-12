@@ -35,6 +35,7 @@
             this.btnEliminarTipoTarjeta = new System.Windows.Forms.Button();
             this.btnModificarTipoTarjeta = new System.Windows.Forms.Button();
             this.btnCargarTipoTarjeta = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -121,11 +122,26 @@
             this.btnCargarTipoTarjeta.UseVisualStyleBackColor = false;
             this.btnCargarTipoTarjeta.Click += new System.EventHandler(this.btnAltaTipoTarjeta_Click);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.Location = new System.Drawing.Point(108, 156);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(139, 26);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Marcas de Tarjetas";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // MarcaTarjeta_Ventana
             // 
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(353, 168);
+            this.ClientSize = new System.Drawing.Size(353, 194);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.btnEliminarTipoTarjeta);
             this.Controls.Add(this.btnModificarTipoTarjeta);
             this.Controls.Add(this.btnCargarTipoTarjeta);
@@ -151,5 +167,6 @@
         private System.Windows.Forms.Button btnEliminarTipoTarjeta;
         private System.Windows.Forms.Button btnModificarTipoTarjeta;
         private System.Windows.Forms.Button btnCargarTipoTarjeta;
+        private System.Windows.Forms.Button button4;
     }
 }

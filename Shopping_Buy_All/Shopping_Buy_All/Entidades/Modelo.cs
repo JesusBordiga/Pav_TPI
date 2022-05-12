@@ -42,6 +42,11 @@ namespace Shopping_Buy_All.Entidades
             get => idMarca;
             set => idMarca = value;
         }
+        public int CodigoParaTipoAuto
+        {
+            get => CodigoTipoAuto;
+            set => CodigoTipoAuto = value;
+        }
         public int CodBorradoigoTipoAuto
         {
             get => Borrado;

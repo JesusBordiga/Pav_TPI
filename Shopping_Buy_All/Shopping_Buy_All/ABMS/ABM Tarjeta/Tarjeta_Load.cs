@@ -238,9 +238,7 @@ namespace Shopping_Buy_All
         private void btnTarjetaLoad_Click(object sender, EventArgs e)
         {
             Tarjeta c = ObtenerDatosTarjeta();
-            bool resultado = Agregar_Tarjeta(c);
-            if (resultado)
-            {
+            
                 MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
                 String mensajeCarga = (
                       " |Tipo Documento: " + c.TipoDocumentoTarjeta + " |Numero Documento: " + c.NroDocumentoTarjeta + "|" + "\n"
@@ -253,21 +251,25 @@ namespace Shopping_Buy_All
 
                 if (result == DialogResult.OK)
                 {
-                    MessageBox.Show("Tarjeta agregado con éxito!");
-                    Clean();
-                    CargarTablaTarjetas();
-                    CargarTiposDocumentos();
-                }
+                    bool resultado = Agregar_Tarjeta(c);
+                    if (resultado)
+                        {
+                        MessageBox.Show("Tarjeta agregado con éxito!");
+                        Clean();
+                        CargarTablaTarjetas();
+                        CargarTiposDocumentos();
+                        }
+                    else
+                        {
+                        MessageBox.Show("Error al cargar la Tarjeta! \n" +
+                                "Complete los campos por favor!");
+                        }
+                 }
                 else
                 {
                     cmbTipoDoc.Focus();
                 }
-            }
-            else
-            {
-                MessageBox.Show("Error al cargar la Tarjeta! \n" +
-                        "Complete los campos por favor!");
-            }
+           
         }
 
     }

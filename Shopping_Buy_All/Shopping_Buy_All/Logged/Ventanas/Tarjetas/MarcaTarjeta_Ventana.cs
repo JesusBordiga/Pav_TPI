@@ -54,5 +54,11 @@ namespace Shopping_Buy_All
             TipoTarjeta_Delete TipoTarjetadelete = new TipoTarjeta_Delete();
             TipoTarjetadelete.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Tarjetas_Ventana Tarjetas_Ventana = new Tarjetas_Ventana();
+            Tarjetas_Ventana.ShowDialog();
+        }
     }
 }

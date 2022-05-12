@@ -236,7 +236,6 @@ namespace Shopping_Buy_All
             {
 
                 throw;
-                resultado = false;
             }
             finally
             {
@@ -352,8 +351,6 @@ namespace Shopping_Buy_All
         {
             Grilla_Modelos tabla = new Grilla_Modelos();
             tabla.Show();
-            bool creado = true;
-
         }
     }
 }
