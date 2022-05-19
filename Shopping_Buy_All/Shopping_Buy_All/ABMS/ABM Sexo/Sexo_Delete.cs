@@ -31,7 +31,7 @@ namespace Shopping_Buy_All.ABM_Sexo
                 DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
                 if (result == DialogResult.OK)
                 {
-                    modificarSexo(nombre);
+                    eliminarSexo(nombre);
                     MessageBox.Show("Nombre de sexo dado de baja con éxito!");
                     limpiarCampos();
                     cambiarBuscador(true);
@@ -70,6 +70,7 @@ namespace Shopping_Buy_All.ABM_Sexo
         private void cambiarModificador(bool booleano)
         {
             btnSexoDelete.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
@@ -89,7 +90,7 @@ namespace Shopping_Buy_All.ABM_Sexo
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select TipoSexo, NombreSexo from TipoSexo where Borrado = 0";
+                string consulta = "getTipoSexoNoBorrado";
                 command.Parameters.Clear();
                 command.CommandType = CommandType.Text;
                 command.CommandText = consulta;
@@ -123,7 +124,7 @@ namespace Shopping_Buy_All.ABM_Sexo
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoSexo where NombreSexo = @Nombre and Borrado = 0";
+                string consulta = "buscarTipoSexoNoBorrado @Nombre";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@Nombre", nombre);
                 command.CommandType = CommandType.Text;
@@ -177,14 +178,14 @@ namespace Shopping_Buy_All.ABM_Sexo
                 MessageBox.Show("Error al buscar el nombre de sexo! \n Complete el campo por favor!", "Error", MessageBoxButtons.OK);
             }
         }
-        private void modificarSexo(string nombre)
+        private void eliminarSexo(string nombre)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "update TipoSexo set Borrado = 1 where NombreSexo = @nombre";
+                string consulta = "borrarTipoSexo @nombre";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@nombre", nombre);
                 command.CommandType = CommandType.Text;
@@ -209,6 +210,13 @@ namespace Shopping_Buy_All.ABM_Sexo
             {
                 cn.Close();
             }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaSexo();
         }
     }
 }

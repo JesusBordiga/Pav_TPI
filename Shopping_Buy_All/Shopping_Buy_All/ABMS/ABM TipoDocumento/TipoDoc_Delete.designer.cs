@@ -41,6 +41,7 @@
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipDoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +124,7 @@
             this.tablaTipDoc.Size = new System.Drawing.Size(235, 248);
             this.tablaTipDoc.TabIndex = 129;
             this.tablaTipDoc.TabStop = false;
+            this.tablaTipDoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaTipDoc_CellContentClick);
             // 
             // TipoDocumento
             // 
@@ -171,6 +173,20 @@
             this.label15.TabIndex = 130;
             this.label15.Text = "Tipos de Documento";
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(76, 262);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 148;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // TipoDoc_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,6 +194,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(462, 297);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tablaTipDoc);
@@ -207,5 +224,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

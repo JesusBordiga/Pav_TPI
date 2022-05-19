@@ -36,7 +36,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
                 DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
                 if (result == DialogResult.OK)
                 {
-                    modificarTipDoc(nombre);
+                    borrarTipDoc(nombre);
                     MessageBox.Show("Tipo de documento dado de baja con éxito!");
                     limpiarCampos();
                     cambiarBuscador(true);
@@ -70,6 +70,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
         private void cambiarModificador(bool booleano)
         {
             btnTipDocDelete.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
@@ -89,7 +90,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select TipoDocumento, NombreDocumento from TipoDocumento where Borrado = 0";
+                string consulta = "getTipoDocumentoNoBorrado";
                 command.Parameters.Clear();
                 command.CommandType = CommandType.Text;
                 command.CommandText = consulta;
@@ -123,7 +124,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoDocumento where NombreDocumento = @Nombre and Borrado = 0";
+                string consulta = "buscarTipoDocumentoNoBorrado @Nombre";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@Nombre", nombre);
                 command.CommandType = CommandType.Text;
@@ -177,14 +178,14 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
                 MessageBox.Show("Error al buscar el tipo de documento! \n Complete el campo por favor!", "Error", MessageBoxButtons.OK);
             }
         }
-        private void modificarTipDoc(string nombre)
+        private void borrarTipDoc(string nombre)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "update TipoDocumento set Borrado = 1 where NombreDocumento = @nombre";
+                string consulta = "borrarTipoDocumento @nombre";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@nombre", nombre);
                 command.CommandType = CommandType.Text;
@@ -209,6 +210,13 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             {
                 cn.Close();
             }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaTipDoc();
         }
     }
 }

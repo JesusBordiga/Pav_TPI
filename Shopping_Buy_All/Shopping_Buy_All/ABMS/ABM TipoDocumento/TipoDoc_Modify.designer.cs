@@ -43,6 +43,7 @@
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipDoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             this.btnTipDocModify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTipDocModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipDocModify.ForeColor = System.Drawing.Color.White;
-            this.btnTipDocModify.Location = new System.Drawing.Point(74, 243);
+            this.btnTipDocModify.Location = new System.Drawing.Point(74, 230);
             this.btnTipDocModify.Name = "btnTipDocModify";
             this.btnTipDocModify.Size = new System.Drawing.Size(75, 23);
             this.btnTipDocModify.TabIndex = 3;
@@ -87,7 +88,7 @@
             this.btnBuscarTipDoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarTipDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarTipDoc.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarTipDoc.Location = new System.Drawing.Point(74, 243);
+            this.btnBuscarTipDoc.Location = new System.Drawing.Point(74, 230);
             this.btnBuscarTipDoc.Name = "btnBuscarTipDoc";
             this.btnBuscarTipDoc.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarTipDoc.TabIndex = 2;
@@ -195,6 +196,20 @@
             this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(74, 259);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 148;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // TipoDoc_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +217,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(445, 290);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnTipDocModify);
             this.Controls.Add(this.txtNombreTipDoc);
             this.Controls.Add(this.label2);
@@ -236,5 +252,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

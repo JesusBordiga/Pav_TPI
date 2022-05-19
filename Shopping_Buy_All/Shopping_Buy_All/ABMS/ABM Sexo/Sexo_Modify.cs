@@ -73,6 +73,7 @@ namespace Shopping_Buy_All.ABM_Sexo
             label4.Visible = booleano;
             txtNuevoNombre.Visible = booleano;
             btnSexoModify.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
@@ -93,7 +94,7 @@ namespace Shopping_Buy_All.ABM_Sexo
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select TipoSexo, NombreSexo from TipoSexo where Borrado = 0";
+                string consulta = "getTipoSexoNoBorrado";
                 command.Parameters.Clear();
                 command.CommandType = CommandType.Text;
                 command.CommandText = consulta;
@@ -127,7 +128,7 @@ namespace Shopping_Buy_All.ABM_Sexo
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoSexo where NombreSexo = @Nombre and Borrado = 0";
+                string consulta = "buscarTipoSexoNoBorrado @Nombre";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@Nombre", nombreViejo);
                 command.CommandType = CommandType.Text;
@@ -188,7 +189,7 @@ namespace Shopping_Buy_All.ABM_Sexo
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "update TipoSexo set NombreSexo = @nombreNuevo where NombreSexo = @nombreViejo";
+                string consulta = "modificarTipoSexo @nombreNuevo, @nombreViejo";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@nombreNuevo", nombreNuevo);
                 command.Parameters.AddWithValue("@nombreViejo", nombreViejo);
@@ -214,6 +215,13 @@ namespace Shopping_Buy_All.ABM_Sexo
             {
                 cn.Close();
             }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaSexo();
         }
     }
 }

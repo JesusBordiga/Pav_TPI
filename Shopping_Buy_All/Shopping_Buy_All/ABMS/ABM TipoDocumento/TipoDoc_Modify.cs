@@ -73,6 +73,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             label4.Visible = booleano;
             txtNuevoNombre.Visible = booleano;
             btnTipDocModify.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
@@ -93,7 +94,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select TipoDocumento, NombreDocumento from TipoDocumento where Borrado = 0";
+                string consulta = "getTipoDocumentoNoBorrado";
                 command.Parameters.Clear();
                 command.CommandType = CommandType.Text;
                 command.CommandText = consulta;
@@ -127,7 +128,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoDocumento where NombreDocumento = @Nombre and Borrado = 0";
+                string consulta = "buscarTipoDocumentoNoBorrado @Nombre";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@Nombre", nombreViejo);
                 command.CommandType = CommandType.Text;
@@ -188,7 +189,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "update TipoDocumento set NombreDocumento = @nombreNuevo where NombreDocumento = @nombreViejo";
+                string consulta = "modificarTipoDocumento @nombreNuevo, @nombreViejo";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@nombreNuevo", nombreNuevo);
                 command.Parameters.AddWithValue("@nombreViejo", nombreViejo);
@@ -214,6 +215,13 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             {
                 cn.Close();
             }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaTipDoc();
         }
     }
 }

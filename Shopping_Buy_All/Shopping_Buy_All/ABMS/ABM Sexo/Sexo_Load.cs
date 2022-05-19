@@ -58,7 +58,7 @@ namespace Shopping_Buy_All.ABM_Sexo
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "SELECT * FROM TipoSexo WHERE Borrado = 0";
+                string consulta = "getTipoSexoNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -94,7 +94,7 @@ namespace Shopping_Buy_All.ABM_Sexo
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO TipoSexo Values(@nombre, 0)";
+                string consulta = "agregarTipoSexo @nombre";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nombre", sexo.NombreSexo);
 

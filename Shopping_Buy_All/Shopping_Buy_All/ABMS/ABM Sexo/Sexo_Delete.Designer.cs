@@ -40,6 +40,7 @@
             this.TipoSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaSexo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.btnSexoDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSexoDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSexoDelete.ForeColor = System.Drawing.Color.White;
-            this.btnSexoDelete.Location = new System.Drawing.Point(64, 234);
+            this.btnSexoDelete.Location = new System.Drawing.Point(64, 205);
             this.btnSexoDelete.Name = "btnSexoDelete";
             this.btnSexoDelete.Size = new System.Drawing.Size(75, 23);
             this.btnSexoDelete.TabIndex = 3;
@@ -75,7 +76,7 @@
             this.btnBuscarSexo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarSexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarSexo.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarSexo.Location = new System.Drawing.Point(64, 234);
+            this.btnBuscarSexo.Location = new System.Drawing.Point(64, 205);
             this.btnBuscarSexo.Name = "btnBuscarSexo";
             this.btnBuscarSexo.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarSexo.TabIndex = 2;
@@ -135,6 +136,7 @@
             this.tablaSexo.Size = new System.Drawing.Size(230, 239);
             this.tablaSexo.TabIndex = 145;
             this.tablaSexo.TabStop = false;
+            this.tablaSexo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaSexo_CellContentClick);
             // 
             // TipoSexo
             // 
@@ -158,6 +160,20 @@
             this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(64, 234);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 146;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // Sexo_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,6 +181,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(441, 283);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.tablaSexo);
             this.Controls.Add(this.btnSexoDelete);
             this.Controls.Add(this.label2);
@@ -192,5 +209,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoSexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreSexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

@@ -31,7 +31,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoDocumento where Borrado = 0";
+                string consulta = "getTipoDocumentoNoBorrado";
                 command.Parameters.Clear();
                 command.CommandType = CommandType.Text;
                 command.CommandText = consulta;
@@ -64,7 +64,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO TipoDocumento Values(@nombre, 0)";
+                string consulta = "agregarTipoDocumento @nombre";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nombre", tipDoc.NombreTipDoc);
 
