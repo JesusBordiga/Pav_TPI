@@ -23,6 +23,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
         private void cambiarModificador(bool booleano)
         {
             btnTipoTarjetaDelete.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
@@ -42,7 +43,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select idTipo, Nombre from TipoTarjeta where Borrado = 0";
+                string consulta = "getTipoTarjetaNoBorrado";
                 command.Parameters.Clear();
                 command.CommandType = CommandType.Text;
                 command.CommandText = consulta;
@@ -76,7 +77,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoTarjeta where Nombre = @Nombre and Borrado = 0";
+                string consulta = "buscarTipoTarjetaNoBorrado @Nombre";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@Nombre", nombre);
                 command.CommandType = CommandType.Text;
@@ -137,7 +138,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "update TipoTarjeta set Borrado = 1 where Nombre = @nombre";
+                string consulta = "borrarTipoTarjeta @nombre";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@nombre", nombre);
                 command.CommandType = CommandType.Text;
@@ -209,6 +210,13 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             {
                 MessageBox.Show("Error! Seleccione una casilla dentro de la tabla");
             }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaTipoTarjeta();
         }
     }
 }

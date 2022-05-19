@@ -38,8 +38,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tablaTipoTarjeta = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.idTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoTarjeta)).BeginInit();
             this.SuspendLayout();
@@ -129,8 +130,8 @@
             this.tablaTipoTarjeta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tablaTipoTarjeta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaTipoTarjeta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.idTipo,
+            this.Nombre,
             this.dataGridViewTextBoxColumn3});
             this.tablaTipoTarjeta.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tablaTipoTarjeta.Location = new System.Drawing.Point(196, 50);
@@ -148,20 +149,35 @@
             this.tablaTipoTarjeta.Size = new System.Drawing.Size(229, 265);
             this.tablaTipoTarjeta.TabIndex = 138;
             this.tablaTipoTarjeta.TabStop = false;
+            this.tablaTipoTarjeta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaTipoTarjeta_CellContentClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // btnLimpiar
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "idTipo";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(68, 218);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 139;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // dataGridViewTextBoxColumn2
+            // idTipo
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.idTipo.DataPropertyName = "idTipo";
+            this.idTipo.HeaderText = "Id";
+            this.idTipo.Name = "idTipo";
+            this.idTipo.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -178,6 +194,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(433, 322);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.tablaTipoTarjeta);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnTipoTarjetaDelete);
@@ -204,8 +221,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView tablaTipoTarjeta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

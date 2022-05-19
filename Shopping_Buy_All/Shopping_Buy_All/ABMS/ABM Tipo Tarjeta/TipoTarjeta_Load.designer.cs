@@ -36,10 +36,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tablaTipoTarjeta = new System.Windows.Forms.DataGridView();
+            this.label15 = new System.Windows.Forms.Label();
             this.idTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoTarjeta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,6 +122,18 @@
             this.tablaTipoTarjeta.TabIndex = 73;
             this.tablaTipoTarjeta.TabStop = false;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(216, 19);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(158, 22);
+            this.label15.TabIndex = 132;
+            this.label15.Text = "Tipos de Tarjeta";
+            // 
             // idTipo
             // 
             this.idTipo.DataPropertyName = "idTipo";
@@ -143,18 +155,6 @@
             this.Borrado.Name = "Borrado";
             this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(216, 19);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(158, 22);
-            this.label15.TabIndex = 132;
-            this.label15.Text = "Tipos de Tarjeta";
             // 
             // TipoTarjeta_Load
             // 
@@ -187,9 +187,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView tablaTipoTarjeta;
+        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
-        private System.Windows.Forms.Label label15;
     }
 }

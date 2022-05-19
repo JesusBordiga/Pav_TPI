@@ -25,6 +25,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             label4.Visible = booleano;
             txtNuevoNombre.Visible = booleano;
             btnTipoTarjetaModify.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
@@ -45,7 +46,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select idTipo, Nombre from TipoTarjeta where Borrado = 0";
+                string consulta = "getTipoTarjetaNoBorrado";
                 command.Parameters.Clear();
                 command.CommandType = CommandType.Text;
                 command.CommandText = consulta;
@@ -79,7 +80,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select idTipo, Nombre from TipoTarjeta where Nombre = @Nombre and Borrado = 0";
+                string consulta = "buscarTipoTarjetaNoBorrado @Nombre";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@Nombre", nombreViejo);
                 command.CommandType = CommandType.Text;
@@ -140,7 +141,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "update TipoTarjeta set Nombre = @nombreNuevo where Nombre = @nombreViejo";
+                string consulta = "modificarTipoTarjeta @nombreNuevo, @nombreViejo";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@nombreNuevo", nombreNuevo);
                 command.Parameters.AddWithValue("@nombreViejo", nombreViejo);
@@ -214,6 +215,13 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             {
                 MessageBox.Show("Error! Seleccione una casilla dentro de la tabla");
             }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaTipoTarjeta();
         }
     }
 }

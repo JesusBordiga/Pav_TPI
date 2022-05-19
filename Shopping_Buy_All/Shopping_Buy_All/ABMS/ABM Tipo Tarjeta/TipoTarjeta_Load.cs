@@ -31,7 +31,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "SELECT * FROM TipoTarjeta WHERE Borrado = 0";
+                string consulta = "getTipoTarjetaNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -67,7 +67,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO TipoTarjeta Values(@nombre, 0)";
+                string consulta = "agregarTipoTarjeta @nombre";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nombre", tipoTarjeta.NombreTipoTarjeta);
 
