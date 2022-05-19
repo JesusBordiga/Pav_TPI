@@ -77,7 +77,7 @@ namespace Shopping_Buy_All
         }
 
 
-        private void btnVentanaClientes_Click(object sender, EventArgs e)
+        private void btnUsuarios_Click(object sender, EventArgs e)
         {
             Usuarios_Ventana Usuarios = new Usuarios_Ventana();
             Usuarios.Show();

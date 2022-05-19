@@ -48,7 +48,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM TipoSexo";
+                string consulta = "getTipoSexoNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -84,7 +84,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM TipoDocumento";
+                string consulta = "getTipoDocumentoNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -120,9 +120,10 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "SELECT TD.NombreDocumento AS TipoDocumento,C.NroDocumento,C.Apellido,C.Nombres,C.Calle,C.NroCalle,TEC.NombreEstadoCivil AS EstadoCivil" +
-                    ",TS.NombreSexo AS Sexo,C.FechaNacimiento,C.Borrado FROM Clientes C JOIN TipoDocumento TD ON (C.TipoDocumento = TD.TipoDocumento) " +
-                    "JOIN TipoEstadoCivil TEC ON (C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON (C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0";
+                string consulta = "getClienteNoBorrado";
+                    //"SELECT TD.NombreDocumento AS TipoDocumento,C.NroDocumento,C.Apellido,C.Nombres,C.Calle,C.NroCalle,TEC.NombreEstadoCivil AS EstadoCivil" +
+                    //",TS.NombreSexo AS Sexo,C.FechaNacimiento,C.Borrado FROM Clientes C JOIN TipoDocumento TD ON (C.TipoDocumento = TD.TipoDocumento) " +
+                    //"JOIN TipoEstadoCivil TEC ON (C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON (C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -303,8 +304,8 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO Clientes(TipoDocumento,NroDocumento,Apellido,Nombres,Calle,NroCalle,EstadoCivil,Sexo,FechaNacimiento)" +
-                                               "Values(@tipoDocumento,@nroDocumento, @apellido, @nombres, @calle, @nroCalle, @estadoCivil,@sexo, @fechaNacimiento)";
+                string consulta = "agregarCliente @tipoDocumento,@nroDocumento, @apellido, @nombres, @calle, @nroCalle, @estadoCivil, @sexo, @fechaNacimiento";
+                    //"INSERT INTO Clientes(TipoDocumento,NroDocumento,Apellido,Nombres,Calle,NroCalle,EstadoCivil,Sexo,FechaNacimiento) Values(@tipoDocumento,@nroDocumento, @apellido, @nombres, @calle, @nroCalle, @estadoCivil,@sexo, @fechaNacimiento)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@tipoDocumento", client.TipoDocumentoCliente);
                 cmd.Parameters.AddWithValue("@nroDocumento", client.DocumentoCliente);

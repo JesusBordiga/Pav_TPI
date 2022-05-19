@@ -53,6 +53,7 @@ namespace Shopping_Buy_All
             radioButtonSingle.Checked = false;
             radioButtonMarried.Checked = false;
             textDateBirthDay.Text = "";
+            comboBoxSex.SelectedIndex = -1;
         }
         private bool validarCliente()
         {
@@ -126,7 +127,8 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM TipoSexo";
+                string consulta = "getTipoSexoNoBorrado";
+                    //"select * from dbo.TipoSexo S where S.Borrado = 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -204,7 +206,8 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM TipoDocumento";
+                string consulta = "getTipoDocumentoNoBorrado";
+                    //"select * from dbo.TipoDocumento D where D.Borrado = 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -241,9 +244,8 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "SELECT TD.NombreDocumento AS TipoDocumento,C.NroDocumento,C.Apellido,C.Nombres,C.Calle,C.NroCalle,TEC.NombreEstadoCivil AS EstadoCivil" +
-                    ",TS.NombreSexo AS Sexo,C.FechaNacimiento,C.Borrado,C.TipoDocumento AS TipoDoc FROM Clientes C JOIN TipoDocumento TD ON (C.TipoDocumento = TD.TipoDocumento) " +
-                    "JOIN TipoEstadoCivil TEC ON (C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON (C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0";
+                string consulta = "getClienteNoBorrado";
+                    //"SELECT TD.NombreDocumento 'TipoDocumento', C.NroDocumento, C.Apellido, C.Nombres, C.Calle, C.NroCalle, TEC.NombreEstadoCivil 'EstadoCivil', TS.NombreSexo 'Sexo', C.FechaNacimiento, C.Borrado, C.TipoDocumento 'TipoDoc' FROM Clientes C JOIN TipoDocumento TD ON(C.TipoDocumento = TD.TipoDocumento) JOIN TipoEstadoCivil TEC ON(C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON(C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -275,9 +277,8 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT TD.NombreDocumento AS TipoDocumento,C.NroDocumento,C.Apellido,C.Nombres,C.Calle,C.NroCalle,TEC.NombreEstadoCivil AS EstadoCivil" +
-                    ",TS.NombreSexo AS Sexo,C.FechaNacimiento,C.Borrado,C.TipoDocumento As TipoDoc,EstadoCivil As EstadoCiv,Sexo As Sex FROM Clientes C JOIN TipoDocumento TD ON (C.TipoDocumento = TD.TipoDocumento) " +
-                    "JOIN TipoEstadoCivil TEC ON (C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON (C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0 AND C.TipoDocumento like @tipoDocumento AND C.NroDocumento like @nroDocumento";
+                string consulta = "buscarClienteNoBorrado @tipoDocumento, @nroDocumento";
+                    //"SELECT TD.NombreDocumento 'TipoDocumento', C.NroDocumento, C.Apellido, C.Nombres, C.Calle, C.NroCalle, TEC.NombreEstadoCivil 'EstadoCivil', TS.NombreSexo 'Sexo', C.FechaNacimiento, C.Borrado, C.TipoDocumento 'TipoDoc', EstadoCivil 'EstadoCiv',Sexo 'Sex' FROM Clientes C JOIN TipoDocumento TD ON(C.TipoDocumento = TD.TipoDocumento) JOIN TipoEstadoCivil TEC ON(C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON(C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0 AND C.TipoDocumento like @tipoDocumento AND C.NroDocumento like @nroDocumento";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
@@ -363,7 +364,7 @@ namespace Shopping_Buy_All
             }
 
             //Sexo de cliente
-            c.TipoDocumentoCliente = (int)comboBoxDocType.SelectedValue;
+            c.SexoCliente = (int)comboBoxSex.SelectedValue;
 
             //Fecha de nacimiento de Cliente
             c.FechaNacimientoCliente = DateTime.Parse(textDateBirthDay.Text);
@@ -378,7 +379,8 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Clientes SET TipoDocumento=@tipoDocumento,NroDocumento = @nroDocumento,Apellido =  @apellido,Nombres =  @nombres,Calle =  @calle,NroCalle = @nroCalle,EstadoCivil = @estadoCivil,Sexo = @sexo,FechaNacimiento = @fechaNacimiento WHERE TipoDocumento Like @tipoDocumento AND NroDocumento Like @nroDocumento";
+                string consulta = "modificarCliente @tipoDocumento, @nroDocumento, @apellido, @nombres, @calle, @nroCalle, @estadoCivil, @sexo, @fechaNacimiento";
+                //"UPDATE Clientes SET TipoDocumento = @tipoDocumento, NroDocumento = @nroDocumento, Apellido = @apellido, Nombres = @nombres, Calle = @calle, NroCalle = @nroCalle, EstadoCivil = @estadoCivil, Sexo = @sexo, FechaNacimiento = @fechaNacimiento WHERE TipoDocumento Like @tipoDocumento AND NroDocumento Like @nroDocumento";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@tipoDocumento", client.TipoDocumentoCliente);
                 cmd.Parameters.AddWithValue("@nroDocumento", client.DocumentoCliente);

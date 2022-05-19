@@ -33,9 +33,11 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "SELECT TD.NombreDocumento AS TipoDocumento,C.NroDocumento,C.Apellido,C.Nombres,C.Calle,C.NroCalle,TEC.NombreEstadoCivil AS EstadoCivil" +
+                string consulta = "getClienteNoBorrado";
+                    /*"SELECT TD.NombreDocumento AS TipoDocumento,C.NroDocumento,C.Apellido,C.Nombres,C.Calle,C.NroCalle,TEC.NombreEstadoCivil AS EstadoCivil" +
                     ",TS.NombreSexo AS Sexo,C.FechaNacimiento,C.Borrado, C.TipoDocumento AS TipoDoc FROM Clientes C JOIN TipoDocumento TD ON (C.TipoDocumento = TD.TipoDocumento) " +
                     "JOIN TipoEstadoCivil TEC ON (C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON (C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0";
+                    */
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -67,7 +69,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM TipoDocumento";
+                string consulta = "getTipoDocumentoNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -161,7 +163,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Clientes where TipoDocumento like @tipoDocumento AND NroDocumento like @nrodocumento AND Borrado = 0";
+                string consulta = "buscarClienteNoBorrado @tipoDocumento, @nroDocumento";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
@@ -226,7 +228,8 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Clientes SET Borrado = @borrado WHERE TipoDocumento Like @tipoDocumento AND NroDocumento Like @nroDocumento AND Borrado like 0";
+                string consulta = "borrarCliente @tipoDocumento, @nroDocumento, @borrado";
+                    //"UPDATE Clientes SET Borrado = @borrado WHERE TipoDocumento Like @tipoDocumento AND NroDocumento Like @nroDocumento AND Borrado like 0";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@tipoDocumento", TipoDocumento);
                 cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
@@ -255,7 +258,7 @@ namespace Shopping_Buy_All
         }
         private void btnDeleteClient_Click(object sender, EventArgs e)
         {
-            Cliente c = Buscar_Cliente_Documento(comboBoxDocType.SelectedIndex.ToString(), textNumberDoc.Text);
+            Cliente c = Buscar_Cliente_Documento((comboBoxDocType.SelectedIndex + 1).ToString(), textNumberDoc.Text);
             MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
             String mensajeCarga = (
                   " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
@@ -270,7 +273,7 @@ namespace Shopping_Buy_All
 
             if (result == DialogResult.OK)
             {
-                bool resultado = BorrarCliente((int)comboBoxDocType.SelectedValue, textNumberDoc.Text.Trim(), 1);
+                bool resultado = BorrarCliente(comboBoxDocType.SelectedIndex + 1, textNumberDoc.Text.Trim(), 1);
                 if (resultado)
                 {
                     MessageBox.Show("Cliente Borrado con éxito!");
@@ -326,9 +329,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT TD.NombreDocumento AS TipoDocumento,C.NroDocumento,C.Apellido,C.Nombres,C.Calle,C.NroCalle,TEC.NombreEstadoCivil AS EstadoCivil" +
-                    ",TS.NombreSexo AS Sexo,C.FechaNacimiento,C.Borrado,C.TipoDocumento As TipoDoc,EstadoCivil As EstadoCiv,Sexo As Sex FROM Clientes C JOIN TipoDocumento TD ON (C.TipoDocumento = TD.TipoDocumento) " +
-                    "JOIN TipoEstadoCivil TEC ON (C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON (C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0 AND C.TipoDocumento like @tipoDocumento AND C.NroDocumento like @nroDocumento";
+                string consulta = "buscarClienteNoBorrado @tipoDocumento, @nroDocumento";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
