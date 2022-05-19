@@ -43,6 +43,7 @@
             this.btnEstadoCivilModify = new System.Windows.Forms.Button();
             this.txtNombreEC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEstadoCivil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,6 +196,20 @@
             this.label2.TabIndex = 97;
             this.label2.Text = "Nombre";
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(81, 209);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 154;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // EstadoCivil_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +217,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(455, 315);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEstadoCivilModify);
             this.Controls.Add(this.txtNombreEC);
             this.Controls.Add(this.label2);
@@ -237,5 +253,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoEstadoCivil;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreEstadoCivil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

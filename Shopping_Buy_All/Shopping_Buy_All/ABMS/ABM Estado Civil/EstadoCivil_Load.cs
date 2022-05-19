@@ -32,7 +32,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "SELECT * FROM TipoEstadoCivil WHERE Borrado = 0";
+                string consulta = "getEstadoCivilNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -95,7 +95,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO TipoEstadoCivil Values(@nombre, 0)";
+                string consulta = "agregarEstadoCivil @nombre";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nombre", esCiv.NombreEc);
 

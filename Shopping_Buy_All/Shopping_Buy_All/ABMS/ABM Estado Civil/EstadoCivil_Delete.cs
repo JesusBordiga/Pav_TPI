@@ -23,6 +23,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
         private void cambiarModificador(bool booleano)
         {
             btnECDelete.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
@@ -42,7 +43,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select TipoEstadoCivil, NombreEstadoCivil from TipoEstadoCivil where Borrado = 0";
+                string consulta = "getEstadoCivilNoBorrado";
                 command.Parameters.Clear();
                 command.CommandType = CommandType.Text;
                 command.CommandText = consulta;
@@ -76,7 +77,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoEstadoCivil where NombreEstadoCivil = @Nombre and Borrado = 0";
+                string consulta = "buscarEstadoCivilNoBorrado @Nombre";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@Nombre", nombre);
                 command.CommandType = CommandType.Text;
@@ -137,7 +138,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "update TipoEstadoCivil set Borrado = 1 where NombreEstadoCivil = @nombre";
+                string consulta = "borrarEstadoCivil @nombre";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@nombre", nombre);
                 command.CommandType = CommandType.Text;
@@ -209,6 +210,13 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             {
                 MessageBox.Show("Error! \n Seleccione una casilla dentro de la tabla");
             }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaEC();
         }
     }
 }

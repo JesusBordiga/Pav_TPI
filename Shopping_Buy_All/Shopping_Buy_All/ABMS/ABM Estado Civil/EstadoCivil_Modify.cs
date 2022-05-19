@@ -66,6 +66,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             label4.Visible = booleano;
             txtNuevoNombre.Visible = booleano;
             btnEstadoCivilModify.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
@@ -86,7 +87,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select TipoEstadoCivil, NombreEstadoCivil from TipoEstadoCivil where Borrado = 0";
+                string consulta = "getEstadoCivilNoBorrado";
                 command.Parameters.Clear();
                 command.CommandType = CommandType.Text;
                 command.CommandText = consulta;
@@ -120,7 +121,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoEstadoCivil where NombreEstadoCivil = @Nombre and Borrado = 0";
+                string consulta = "buscarEstadoCivilNoBorrado @Nombre";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@Nombre", nombreViejo);
                 command.CommandType = CommandType.Text;
@@ -181,7 +182,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             try
             {
                 SqlCommand command = new SqlCommand();
-                string consulta = "update TipoEstadoCivil set NombreEstadoCivil = @nombreNuevo where NombreEstadoCivil = @nombreViejo";
+                string consulta = "modificarEstadoCivil @nombreNuevo, @nombreViejo";
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@nombreNuevo", nombreNuevo);
                 command.Parameters.AddWithValue("@nombreViejo", nombreViejo);
@@ -207,6 +208,13 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             {
                 cn.Close();
             }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaEstadoCivil();
         }
     }
 }
