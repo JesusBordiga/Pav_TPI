@@ -267,10 +267,7 @@ namespace Shopping_Buy_All
             if (valido)
             {
                 Cliente c = ObtenerDatosCliente();
-                bool resultado = Agregar_Cliente(c);
-                if (resultado)
-                    {
-                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
                         String mensajeCarga = (
                               " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
                             + " |Apellido: " + c.ApellidoCliente + " |Nombre: " + c.NombreCliente + "|" + "\n"
@@ -284,16 +281,21 @@ namespace Shopping_Buy_All
 
                         if (result == DialogResult.OK)
                         {
+                           
+                            bool resultado = Agregar_Cliente(c);
+                            if (resultado)
+                            {
                             MessageBox.Show("Cliente agregado con éxito!");
                             Clean();
                             CargarTablaClientes();
                             CargarTiposDocumentos();
+                            }
                         }
                         else
                         {
                             comboBoxDocType.Focus();
                         }
-                    }
+
             }
         }
         private bool Agregar_Cliente(Cliente client)

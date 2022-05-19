@@ -102,23 +102,47 @@
     <Compile Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Modify.Designer.cs">
       <DependentUpon>MarcaTarjeta_Modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Delete.cs">
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Delete.designer.cs">
-      <DependentUpon>MarcaVeh_Delete.cs</DependentUpon>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Delete.Designer.cs">
+      <DependentUpon>MarcaVehiculo_Delete.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Load.cs">
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Load.designer.cs">
-      <DependentUpon>MarcaVeh_Load.cs</DependentUpon>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Modify.Designer.cs">
+      <DependentUpon>MarcaVehiculo_Modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Modify.cs">
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Load.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Modify.designer.cs">
-      <DependentUpon>MarcaVeh_Modify.cs</DependentUpon>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Load.designer.cs">
+      <DependentUpon>MarcaVehiculo_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Grilla_Modelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Grilla_Modelos.Designer.cs">
+      <DependentUpon>Grilla_Modelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Modelo_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Modelo_Delete.Designer.cs">
+      <DependentUpon>Modelo_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Modelo_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Modelo_Load.Designer.cs">
+      <DependentUpon>Modelo_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Modelo_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Modelo_Modify.Designer.cs">
+      <DependentUpon>Modelo_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Delete.cs">
       <SubType>Form</SubType>
@@ -189,20 +213,20 @@
     <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Delete.designer.cs">
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Delete.Designer.cs">
       <DependentUpon>Tarjeta_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Modify.Designer.cs">
+      <DependentUpon>Tarjeta_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Load.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Load.designer.cs">
       <DependentUpon>Tarjeta_Load.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Modify.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Modify.designer.cs">
-      <DependentUpon>Tarjeta_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Delete.cs">
       <SubType>Form</SubType>
@@ -294,11 +318,31 @@
     <Compile Include="ABMS\ABM Usuario\User_Modify.Designer.cs">
       <DependentUpon>User_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM vehiculos\Vehicle_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM vehiculos\Vehicle_Delete.Designer.cs">
+      <DependentUpon>Vehicle_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM vehiculos\Vehicle_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM vehiculos\Vehicle_Load.Designer.cs">
+      <DependentUpon>Vehicle_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM vehiculos\Vehicle_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM vehiculos\Vehicle_Modify.Designer.cs">
+      <DependentUpon>Vehicle_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\AccesoADatos\AD_Local.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_TipoComercio.cs" />
+    <Compile Include="Entidades\Automovil.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\EstadoCivil.cs" />
     <Compile Include="Entidades\MarcaVehiculo.cs" />
+    <Compile Include="Entidades\Modelo.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\Sexo.cs" />
     <Compile Include="Entidades\Tarjeta.cs" />
@@ -315,11 +359,35 @@
     <Compile Include="Logged\Logged.Designer.cs">
       <DependentUpon>Logged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logged\Ventanas\Locales\Rubros_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Locales\Rubros_Ventana.Designer.cs">
+      <DependentUpon>Rubros_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.Designer.cs">
+      <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\Tarjetas_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\Tarjetas_Ventana.Designer.cs">
+      <DependentUpon>Tarjetas_Ventana.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logged\Ventanas\Vehiculos\MarcaVehiculo_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Logged\Ventanas\Vehiculos\MarcaVehiculo_Ventana.Designer.cs">
       <DependentUpon>MarcaVehiculo_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Vehiculos\Modelo_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Vehiculos\Modelo_Ventana.Designer.cs">
+      <DependentUpon>Modelo_Ventana.cs</DependentUpon>
     </Compile>
     <Compile Include="Logged\Ventanas\Vehiculos\Vehiculos_Ventana.cs">
       <SubType>Form</SubType>
@@ -345,12 +413,6 @@
     <Compile Include="Logged\Ventanas\Clientes\TipoSexo_Ventana.Designer.cs">
       <DependentUpon>TipoSexo_Ventana.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logged\Ventanas\Tarjetas\TipoTarjeta_Ventana.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Logged\Ventanas\Tarjetas\TipoTarjeta_Ventana.Designer.cs">
-      <DependentUpon>TipoTarjeta_Ventana.cs</DependentUpon>
-    </Compile>
     <Compile Include="Logged\Ventanas\Clientes\TipoDocumento_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -363,22 +425,10 @@
     <Compile Include="Logged\Ventanas\Usuarios_Ventana.Designer.cs">
       <DependentUpon>Usuarios_Ventana.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.cs">
+    <Compile Include="Logged\Ventanas\Locales\Locales_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.Designer.cs">
-      <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Logged\Ventanas\Profesiones_Ventana.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Logged\Ventanas\Profesiones_Ventana.Designer.cs">
-      <DependentUpon>Profesiones_Ventana.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Logged\Ventanas\Locales_Ventana.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Logged\Ventanas\Locales_Ventana.Designer.cs">
+    <Compile Include="Logged\Ventanas\Locales\Locales_Ventana.Designer.cs">
       <DependentUpon>Locales_Ventana.cs</DependentUpon>
     </Compile>
     <Compile Include="Logged\Ventanas\Productos_Ventana.cs">
@@ -437,14 +487,26 @@
     <EmbeddedResource Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Modify.resx">
       <DependentUpon>MarcaTarjeta_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Delete.resx">
-      <DependentUpon>MarcaVeh_Delete.cs</DependentUpon>
+    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Delete.resx">
+      <DependentUpon>MarcaVehiculo_Delete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Load.resx">
-      <DependentUpon>MarcaVeh_Load.cs</DependentUpon>
+    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Modify.resx">
+      <DependentUpon>MarcaVehiculo_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVeh_Modify.resx">
-      <DependentUpon>MarcaVeh_Modify.cs</DependentUpon>
+    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Load.resx">
+      <DependentUpon>MarcaVehiculo_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Modelos\Grilla_Modelos.resx">
+      <DependentUpon>Grilla_Modelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Modelos\Modelo_Delete.resx">
+      <DependentUpon>Modelo_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Modelos\Modelo_Load.resx">
+      <DependentUpon>Modelo_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Modelos\Modelo_Modify.resx">
+      <DependentUpon>Modelo_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Delete.resx">
       <DependentUpon>Product_Delete.cs</DependentUpon>
@@ -473,11 +535,11 @@
     <EmbeddedResource Include="ABMS\ABM Tarjeta\Tarjeta_Delete.resx">
       <DependentUpon>Tarjeta_Delete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Tarjeta\Tarjeta_Load.resx">
-      <DependentUpon>Tarjeta_Load.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Tarjeta\Tarjeta_Modify.resx">
       <DependentUpon>Tarjeta_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Tarjeta\Tarjeta_Load.resx">
+      <DependentUpon>Tarjeta_Load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Delete.resx">
       <DependentUpon>TipoComercio_Delete.cs</DependentUpon>
@@ -524,11 +586,32 @@
     <EmbeddedResource Include="ABMS\ABM Usuario\User_Modify.resx">
       <DependentUpon>User_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM vehiculos\Vehicle_Delete.resx">
+      <DependentUpon>Vehicle_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM vehiculos\Vehicle_Load.resx">
+      <DependentUpon>Vehicle_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM vehiculos\Vehicle_Modify.resx">
+      <DependentUpon>Vehicle_Modify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logged\Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Locales\Rubros_Ventana.resx">
+      <DependentUpon>Rubros_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.resx">
+      <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Tarjetas\Tarjetas_Ventana.resx">
+      <DependentUpon>Tarjetas_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Vehiculos\MarcaVehiculo_Ventana.resx">
       <DependentUpon>MarcaVehiculo_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Vehiculos\Modelo_Ventana.resx">
+      <DependentUpon>Modelo_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Vehiculos\Vehiculos_Ventana.resx">
       <DependentUpon>Vehiculos_Ventana.cs</DependentUpon>
@@ -542,22 +625,13 @@
     <EmbeddedResource Include="Logged\Ventanas\Clientes\TipoSexo_Ventana.resx">
       <DependentUpon>TipoSexo_Ventana.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Logged\Ventanas\Tarjetas\TipoTarjeta_Ventana.resx">
-      <DependentUpon>TipoTarjeta_Ventana.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Clientes\TipoDocumento_Ventana.resx">
       <DependentUpon>TipoDocumento_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Usuarios_Ventana.resx">
       <DependentUpon>Usuarios_Ventana.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.resx">
-      <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Logged\Ventanas\Profesiones_Ventana.resx">
-      <DependentUpon>Profesiones_Ventana.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Logged\Ventanas\Locales_Ventana.resx">
+    <EmbeddedResource Include="Logged\Ventanas\Locales\Locales_Ventana.resx">
       <DependentUpon>Locales_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Productos_Ventana.resx">
@@ -604,11 +678,7 @@
   <ItemGroup>
     <None Include="Resources\menu-editor.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ABMS\ABM Modelos\" />
-    <Folder Include="ABMS\ABM Profesiones\" />
-    <Folder Include="ABMS\ABM Vehiculos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\users.png" />
   </ItemGroup>

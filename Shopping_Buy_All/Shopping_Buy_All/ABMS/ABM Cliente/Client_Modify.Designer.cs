@@ -310,7 +310,7 @@
             // SearchPanel
             // 
             this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.SearchPanel.Location = new System.Drawing.Point(30, 135);
+            this.SearchPanel.Location = new System.Drawing.Point(29, 134);
             this.SearchPanel.Name = "SearchPanel";
             this.SearchPanel.Size = new System.Drawing.Size(245, 309);
             this.SearchPanel.TabIndex = 61;
@@ -441,6 +441,7 @@
             this.tablaClientes.Location = new System.Drawing.Point(368, 48);
             this.tablaClientes.MultiSelect = false;
             this.tablaClientes.Name = "tablaClientes";
+            this.tablaClientes.ReadOnly = true;
             this.tablaClientes.RowHeadersWidth = 10;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
@@ -459,6 +460,7 @@
             this.TipoDocumento.DataPropertyName = "TipoDocumento";
             this.TipoDocumento.HeaderText = "Tipo Documento";
             this.TipoDocumento.Name = "TipoDocumento";
+            this.TipoDocumento.ReadOnly = true;
             this.TipoDocumento.Width = 70;
             // 
             // NroDocumento
@@ -466,6 +468,7 @@
             this.NroDocumento.DataPropertyName = "NroDocumento";
             this.NroDocumento.HeaderText = "Nro Documento";
             this.NroDocumento.Name = "NroDocumento";
+            this.NroDocumento.ReadOnly = true;
             this.NroDocumento.Width = 70;
             // 
             // Apellido
@@ -473,6 +476,7 @@
             this.Apellido.DataPropertyName = "Apellido";
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
             this.Apellido.Width = 70;
             // 
             // Nombres
@@ -480,6 +484,7 @@
             this.Nombres.DataPropertyName = "Nombres";
             this.Nombres.HeaderText = "Nombres";
             this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
             this.Nombres.Width = 80;
             // 
             // Calle
@@ -487,12 +492,14 @@
             this.Calle.DataPropertyName = "Calle";
             this.Calle.HeaderText = "Domicilio";
             this.Calle.Name = "Calle";
+            this.Calle.ReadOnly = true;
             // 
             // NroCalle
             // 
             this.NroCalle.DataPropertyName = "NroCalle";
             this.NroCalle.HeaderText = "Nro Calle";
             this.NroCalle.Name = "NroCalle";
+            this.NroCalle.ReadOnly = true;
             this.NroCalle.Width = 50;
             // 
             // EstadoCivil
@@ -500,6 +507,7 @@
             this.EstadoCivil.DataPropertyName = "EstadoCivil";
             this.EstadoCivil.HeaderText = "Estado Civil";
             this.EstadoCivil.Name = "EstadoCivil";
+            this.EstadoCivil.ReadOnly = true;
             this.EstadoCivil.Width = 50;
             // 
             // Sexo
@@ -507,6 +515,7 @@
             this.Sexo.DataPropertyName = "Sexo";
             this.Sexo.HeaderText = "Sexo";
             this.Sexo.Name = "Sexo";
+            this.Sexo.ReadOnly = true;
             this.Sexo.Width = 60;
             // 
             // FechaNacimiento
@@ -514,6 +523,7 @@
             this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
             this.FechaNacimiento.HeaderText = "Fecha Nacimiento";
             this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.ReadOnly = true;
             this.FechaNacimiento.Width = 80;
             // 
             // Borrado
@@ -521,6 +531,7 @@
             this.Borrado.DataPropertyName = "Borrado";
             this.Borrado.HeaderText = "Borrado";
             this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
             // 
             // TipoDoc
@@ -528,6 +539,7 @@
             this.TipoDoc.DataPropertyName = "TipoDoc";
             this.TipoDoc.HeaderText = "TipoDoc";
             this.TipoDoc.Name = "TipoDoc";
+            this.TipoDoc.ReadOnly = true;
             this.TipoDoc.Visible = false;
             // 
             // EstadoCiv
@@ -535,6 +547,7 @@
             this.EstadoCiv.DataPropertyName = "EstadoCiv";
             this.EstadoCiv.HeaderText = "EstadoCiv";
             this.EstadoCiv.Name = "EstadoCiv";
+            this.EstadoCiv.ReadOnly = true;
             this.EstadoCiv.Visible = false;
             this.EstadoCiv.Width = 5;
             // 
@@ -543,6 +556,7 @@
             this.Sex.DataPropertyName = "Sex";
             this.Sex.HeaderText = "Sex";
             this.Sex.Name = "Sex";
+            this.Sex.ReadOnly = true;
             this.Sex.Visible = false;
             this.Sex.Width = 5;
             // 

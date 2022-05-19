@@ -39,10 +39,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombreLocal = new System.Windows.Forms.TextBox();
             this.tablaLocales = new System.Windows.Forms.DataGridView();
-            this.CodigoLocal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoComercio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreTipoComercio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaLocales)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +76,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(357, 14);
+            this.label15.Location = new System.Drawing.Point(331, 14);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(169, 25);
             this.label15.TabIndex = 28;
@@ -90,7 +90,7 @@
             this.btnLocalLoad.Location = new System.Drawing.Point(28, 236);
             this.btnLocalLoad.Name = "btnLocalLoad";
             this.btnLocalLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnLocalLoad.TabIndex = 13;
+            this.btnLocalLoad.TabIndex = 3;
             this.btnLocalLoad.Text = "Cargar";
             this.btnLocalLoad.UseVisualStyleBackColor = true;
             this.btnLocalLoad.Click += new System.EventHandler(this.btnCargarLocal_Click);
@@ -103,7 +103,7 @@
             this.btnClear.Location = new System.Drawing.Point(124, 236);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 14;
+            this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Limpiar";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -116,7 +116,7 @@
             this.cmbTipoComercio.Location = new System.Drawing.Point(55, 159);
             this.cmbTipoComercio.Name = "cmbTipoComercio";
             this.cmbTipoComercio.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoComercio.TabIndex = 29;
+            this.cmbTipoComercio.TabIndex = 2;
             // 
             // label2
             // 
@@ -137,7 +137,7 @@
             this.txtNombreLocal.Location = new System.Drawing.Point(68, 103);
             this.txtNombreLocal.Name = "txtNombreLocal";
             this.txtNombreLocal.Size = new System.Drawing.Size(100, 20);
-            this.txtNombreLocal.TabIndex = 31;
+            this.txtNombreLocal.TabIndex = 1;
             // 
             // tablaLocales
             // 
@@ -147,50 +147,51 @@
             this.tablaLocales.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tablaLocales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaLocales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CodigoLocal,
-            this.Nombre,
-            this.TipoComercio,
-            this.NombreTipoComercio});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
             this.tablaLocales.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaLocales.Location = new System.Drawing.Point(217, 41);
+            this.tablaLocales.Location = new System.Drawing.Point(232, 42);
             this.tablaLocales.Name = "tablaLocales";
             this.tablaLocales.ReadOnly = true;
             this.tablaLocales.RowHeadersWidth = 10;
-            this.tablaLocales.Size = new System.Drawing.Size(418, 222);
-            this.tablaLocales.TabIndex = 79;
+            this.tablaLocales.Size = new System.Drawing.Size(349, 222);
+            this.tablaLocales.TabIndex = 92;
             this.tablaLocales.TabStop = false;
             // 
-            // CodigoLocal
+            // dataGridViewTextBoxColumn1
             // 
-            this.CodigoLocal.DataPropertyName = "CodigoLocal";
-            this.CodigoLocal.HeaderText = "Codigo";
-            this.CodigoLocal.Name = "CodigoLocal";
-            this.CodigoLocal.ReadOnly = true;
-            this.CodigoLocal.Width = 50;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CodigoLocal";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Codigo";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
             // 
-            // Nombre
+            // dataGridViewTextBoxColumn2
             // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 125;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
-            // TipoComercio
+            // dataGridViewTextBoxColumn3
             // 
-            this.TipoComercio.DataPropertyName = "Tipo_Comercio";
-            this.TipoComercio.HeaderText = "Id Tipo Comercio";
-            this.TipoComercio.Name = "TipoComercio";
-            this.TipoComercio.ReadOnly = true;
-            this.TipoComercio.Width = 70;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Tipo_Comercio";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Id Tipo Comercio";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            this.dataGridViewTextBoxColumn3.Width = 70;
             // 
-            // NombreTipoComercio
+            // dataGridViewTextBoxColumn4
             // 
-            this.NombreTipoComercio.DataPropertyName = "NombreTipoComercio";
-            this.NombreTipoComercio.HeaderText = "Tipo Comercio";
-            this.NombreTipoComercio.Name = "NombreTipoComercio";
-            this.NombreTipoComercio.ReadOnly = true;
-            this.NombreTipoComercio.Width = 150;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NombreTipoComercio";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tipo Comercio";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 150;
             // 
             // Local_Load
             // 
@@ -199,7 +200,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(642, 271);
+            this.ClientSize = new System.Drawing.Size(588, 271);
             this.Controls.Add(this.tablaLocales);
             this.Controls.Add(this.txtNombreLocal);
             this.Controls.Add(this.label2);
@@ -234,9 +235,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombreLocal;
         private System.Windows.Forms.DataGridView tablaLocales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoLocal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoComercio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreTipoComercio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

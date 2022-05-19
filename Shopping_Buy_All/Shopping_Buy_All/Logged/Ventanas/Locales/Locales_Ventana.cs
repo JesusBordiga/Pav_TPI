@@ -51,5 +51,11 @@ namespace Shopping_Buy_All
             TipoComercio_Delete TipoComerciodelete = new TipoComercio_Delete();
             TipoComerciodelete.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Rubro_Ventana Rubro_Ventana = new Rubro_Ventana();
+            Rubro_Ventana.ShowDialog();
+        }
     }
 }

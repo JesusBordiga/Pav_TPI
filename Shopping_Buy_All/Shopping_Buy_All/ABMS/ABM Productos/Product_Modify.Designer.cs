@@ -152,15 +152,16 @@
             // 
             // btnSearchProduct
             // 
+            this.btnSearchProduct.BackColor = System.Drawing.Color.DarkGray;
             this.btnSearchProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchProduct.ForeColor = System.Drawing.Color.White;
-            this.btnSearchProduct.Location = new System.Drawing.Point(114, 311);
+            this.btnSearchProduct.Location = new System.Drawing.Point(113, 312);
             this.btnSearchProduct.Name = "btnSearchProduct";
             this.btnSearchProduct.Size = new System.Drawing.Size(75, 23);
             this.btnSearchProduct.TabIndex = 2;
             this.btnSearchProduct.Text = "Buscar";
-            this.btnSearchProduct.UseVisualStyleBackColor = true;
+            this.btnSearchProduct.UseVisualStyleBackColor = false;
             this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click);
             // 
             // label3
@@ -192,7 +193,7 @@
             this.btnSerachProduct2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSerachProduct2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSerachProduct2.ForeColor = System.Drawing.Color.White;
-            this.btnSerachProduct2.Location = new System.Drawing.Point(79, 155);
+            this.btnSerachProduct2.Location = new System.Drawing.Point(81, 155);
             this.btnSerachProduct2.Name = "btnSerachProduct2";
             this.btnSerachProduct2.Size = new System.Drawing.Size(75, 23);
             this.btnSerachProduct2.TabIndex = 3;
@@ -302,7 +303,7 @@
             this.panelBuscar.Controls.Add(this.btnPorductLoad);
             this.panelBuscar.Controls.Add(this.label4);
             this.panelBuscar.Controls.Add(this.btnSerachProduct2);
-            this.panelBuscar.Location = new System.Drawing.Point(35, 157);
+            this.panelBuscar.Location = new System.Drawing.Point(31, 157);
             this.panelBuscar.Name = "panelBuscar";
             this.panelBuscar.Size = new System.Drawing.Size(199, 185);
             this.panelBuscar.TabIndex = 90;
@@ -320,9 +321,9 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tablaProductos);
             this.Controls.Add(this.panelBuscar);
             this.Controls.Add(this.btnSearchProduct);
+            this.Controls.Add(this.tablaProductos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(608, 389);

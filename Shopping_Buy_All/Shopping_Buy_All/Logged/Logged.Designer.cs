@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Logged));
             this.LabelBienvenido = new System.Windows.Forms.Label();
             this.btnMenu1 = new System.Windows.Forms.Button();
@@ -49,6 +50,8 @@
             this.btnLocales = new System.Windows.Forms.Button();
             this.btnProfesiones = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
+            this.HourTime = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAutomoviles)).BeginInit();
@@ -57,17 +60,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureLocales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfesiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelBienvenido
             // 
             this.LabelBienvenido.AutoSize = true;
             this.LabelBienvenido.BackColor = System.Drawing.Color.Transparent;
-            this.LabelBienvenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelBienvenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelBienvenido.ForeColor = System.Drawing.Color.White;
-            this.LabelBienvenido.Location = new System.Drawing.Point(286, 14);
+            this.LabelBienvenido.Location = new System.Drawing.Point(297, 22);
             this.LabelBienvenido.Name = "LabelBienvenido";
-            this.LabelBienvenido.Size = new System.Drawing.Size(228, 31);
+            this.LabelBienvenido.Size = new System.Drawing.Size(206, 29);
             this.LabelBienvenido.TabIndex = 7;
             this.LabelBienvenido.Text = "Bienvenido User";
             // 
@@ -79,7 +83,7 @@
             this.btnMenu1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu1.ForeColor = System.Drawing.Color.White;
-            this.btnMenu1.Location = new System.Drawing.Point(356, 371);
+            this.btnMenu1.Location = new System.Drawing.Point(356, 364);
             this.btnMenu1.Name = "btnMenu1";
             this.btnMenu1.Size = new System.Drawing.Size(87, 24);
             this.btnMenu1.TabIndex = 14;
@@ -95,7 +99,7 @@
             this.btnMenu2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenu2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu2.ForeColor = System.Drawing.Color.White;
-            this.btnMenu2.Location = new System.Drawing.Point(356, 371);
+            this.btnMenu2.Location = new System.Drawing.Point(356, 364);
             this.btnMenu2.Name = "btnMenu2";
             this.btnMenu2.Size = new System.Drawing.Size(86, 24);
             this.btnMenu2.TabIndex = 34;
@@ -109,7 +113,7 @@
             this.labelHora.BackColor = System.Drawing.Color.Transparent;
             this.labelHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHora.ForeColor = System.Drawing.Color.White;
-            this.labelHora.Location = new System.Drawing.Point(693, 435);
+            this.labelHora.Location = new System.Drawing.Point(693, 434);
             this.labelHora.Name = "labelHora";
             this.labelHora.Size = new System.Drawing.Size(108, 15);
             this.labelHora.TabIndex = 37;
@@ -121,7 +125,7 @@
             this.labelFecha.BackColor = System.Drawing.Color.Transparent;
             this.labelFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFecha.ForeColor = System.Drawing.Color.White;
-            this.labelFecha.Location = new System.Drawing.Point(707, 422);
+            this.labelFecha.Location = new System.Drawing.Point(707, 417);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(87, 15);
             this.labelFecha.TabIndex = 38;
@@ -144,9 +148,9 @@
             this.panelMenu.Controls.Add(this.btnLocales);
             this.panelMenu.Controls.Add(this.btnProfesiones);
             this.panelMenu.Controls.Add(this.btnClientes);
-            this.panelMenu.Location = new System.Drawing.Point(236, 68);
+            this.panelMenu.Location = new System.Drawing.Point(234, 68);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(334, 281);
+            this.panelMenu.Size = new System.Drawing.Size(334, 286);
             this.panelMenu.TabIndex = 41;
             // 
             // pictureBox1
@@ -352,6 +356,7 @@
             this.Controls.Add(this.LabelBienvenido);
             this.Controls.Add(this.btnMenu2);
             this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.pictureBox2);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -370,6 +375,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureLocales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfesiones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,5 +403,7 @@
         private System.Windows.Forms.Button btnLocales;
         private System.Windows.Forms.Button btnProfesiones;
         private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Timer HourTime;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

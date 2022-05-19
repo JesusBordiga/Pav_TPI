@@ -9,24 +9,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABM_Cliente;
 
 namespace Shopping_Buy_All
 {
-    public partial class MarcaVeh_Delete : Form
+    public partial class Modelo_Delete : Form
     {
-        public MarcaVeh_Delete()
+        public Modelo_Delete()
         {
             InitializeComponent();
+            CargarTablaModelos();
+            CargarIdMarcas();
+            CargarCodigosTipoAuto();
+        }
+        private void Client_Delete_Load(object sender, EventArgs e)
+        {
+            tablaModelos.Visible = false;
+            btnSearch.Visible = true;
+            btnDeleteModelo.Visible = false;
+            CargarIdMarcas();
+            CargarCodigosTipoAuto();
 
         }
-        private void Marca_Delete_Load(object sender, EventArgs e)
-        {
-            btnSearch.Visible = true;
-            btnDeleteMarca.Visible = false;
-            CargarMarcasVeh();
-            CargarTablaMarcasVeh();
-        }
-        private void CargarTablaMarcasVeh()
+
+        private void CargarIdMarcas()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -34,7 +40,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Marcas WHERE Borrado = 0";
+                string consulta = "Select * FROM Marcas";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -47,7 +53,11 @@ namespace Shopping_Buy_All
 
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
-                tablaMarcas.DataSource = tabla;
+
+                comboBoxIdMarca.DataSource = tabla;
+                comboBoxIdMarca.DisplayMember = "Descripcion";
+                comboBoxIdMarca.ValueMember = "Id";
+                comboBoxIdMarca.SelectedIndex = -1;
             }
             catch (Exception)
             {
@@ -59,7 +69,8 @@ namespace Shopping_Buy_All
                 cn.Close();
             }
         }
-        private void CargarMarcasVeh()
+
+        private void CargarCodigosTipoAuto()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -67,7 +78,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Marcas where Borrado = 0";
+                string consulta = "Select * FROM TipoAuto";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -81,10 +92,43 @@ namespace Shopping_Buy_All
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
 
-                cmbMarcaVeh.DataSource = tabla;
-                cmbMarcaVeh.DisplayMember = "Descripcion";
-                cmbMarcaVeh.ValueMember = "Id";
-                cmbMarcaVeh.SelectedIndex = -1;
+                comboBoxTipoAuto.DataSource = tabla;
+                comboBoxTipoAuto.DisplayMember = "Nombre";
+                comboBoxTipoAuto.ValueMember = "Cod_tipo";
+                comboBoxTipoAuto.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        private void CargarTablaModelos()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "Select * FROM Modelos WHERE Borrado like 0";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+                tablaModelos.DataSource = tabla;
             }
             catch (Exception)
             {
@@ -98,20 +142,25 @@ namespace Shopping_Buy_All
         }
         private void Clean()
         {
-            cmbMarcaVeh.SelectedIndex = -1;
+            textNombreModelo.Text = "";
+            comboBoxIdMarca.SelectedIndex = -1;
+            comboBoxTipoAuto.SelectedIndex = -1;
+            CargarTablaModelos();
         }
-        private MarcaVehiculo Cargar_Marca(string MarcaVeh)
+        private Modelo Cargar_Modelo(string NombreModelo, int IdMarca, int CodigoTipoAuto)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
-            MarcaVehiculo mark = new MarcaVehiculo();
+            Modelo model = new Modelo();
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Marcas where Descripcion like @marca AND Borrado = 0";
+                string consulta = "SELECT * FROM Modelos where NombreModelo like @nombreModelo AND IdMarca like @idMarca AND CodigoTipoAuto like @codigoTipoAuto AND Borrado Like 0";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@marca", MarcaVeh);
+                cmd.Parameters.AddWithValue("@nombreModelo", NombreModelo);
+                cmd.Parameters.AddWithValue("@idMarca", IdMarca);
+                cmd.Parameters.AddWithValue("@codigoTipoAuto", CodigoTipoAuto);
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
@@ -122,15 +171,16 @@ namespace Shopping_Buy_All
                 if (DataReader != null && DataReader.Read())
                 {
 
-                    mark.MarcaVeh = DataReader["Descripcion"].ToString();
-                    
+                    model.NombreModeloAuto = DataReader["NombreModelo"].ToString();
+                    model.idMarcaAuto = int.Parse(DataReader["IdMarca"].ToString());
+                    model.CodigoModeloAuto = int.Parse(DataReader["CodigoTipoAuto"].ToString());
                 }
                 cn.Close();
 
                 DataTable tabla = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(tabla);
-                tablaMarcas.DataSource = tabla;
+                tablaModelos.DataSource = tabla;
 
             }
             catch (Exception)
@@ -142,22 +192,25 @@ namespace Shopping_Buy_All
             {
                 cn.Close();
             }
-            return mark;
+            return model;
 
         }
-        private bool Buscar_Marca1(string MarcaVeh)
+        private bool Buscar_Modelo(string NombreModelo, int IdMarca, int CodigoTipoAuto)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
-            MarcaVehiculo mark = new MarcaVehiculo();
+            Modelo model = new Modelo();
             bool resultado = false;
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Marcas where Descripcion like @marca AND Borrado = 0";
+                string consulta = "SELECT * FROM Modelos where NombreModelo like @nombreModelo AND IdMarca like @idMarca AND CodigoTipoAuto like @codigoTipoAuto AND Borrado Like 0";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@marca", MarcaVeh);
+                cmd.Parameters.AddWithValue("@nombreModelo", NombreModelo);
+                cmd.Parameters.AddWithValue("@idMarca", IdMarca);
+                cmd.Parameters.AddWithValue("@codigoTipoAuto", CodigoTipoAuto);
+
 
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
@@ -167,13 +220,14 @@ namespace Shopping_Buy_All
                 SqlDataReader DataReader = cmd.ExecuteReader();
                 if (DataReader != null && DataReader.Read())
                 {
-                    mark.MarcaVeh = DataReader["TipoDocumento"].ToString();
-
+                    model.NombreModeloAuto = DataReader["NombreModelo"].ToString();
+                    model.idMarcaAuto = int.Parse(DataReader["IdMarca"].ToString());
+                    model.CodigoModeloAuto = int.Parse(DataReader["CodigoTipoAuto"].ToString());
                     cn.Close();
                     DataTable tabla = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(tabla);
-                    tablaMarcas.DataSource = tabla;
+                    tablaModelos.DataSource = tabla;
                     resultado = true;
                 }
   
@@ -193,33 +247,33 @@ namespace Shopping_Buy_All
         private void btnClean_Click(object sender, EventArgs e)
             {    
               Clean();
-              CargarTablaMarcasVeh();
-              btnDeleteMarca.Visible = false;
+              tablaModelos.Visible = false;
+              btnDeleteModelo.Visible = false;
               btnSearch.Visible = true;
             }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if ((int)cmbMarcaVeh.SelectedValue == 0)
+            if ((int)comboBoxTipoAuto.SelectedIndex == 0 && (int)comboBoxIdMarca.SelectedIndex == 0 && textNombreModelo.Text.Trim().Equals(""))
                 {
                 MessageBox.Show("Error, Debe completar los campos!!");
                 }
             else
                 {
-                bool existe = Buscar_Marca1(cmbMarcaVeh.SelectedValue.ToString());
+                bool existe = Buscar_Modelo(textNombreModelo.Text.Trim(), (int)comboBoxIdMarca.SelectedValue, (int)comboBoxTipoAuto.SelectedValue);
                 if (existe)
                     {
-                    tablaMarcas.Visible = true;
-                    btnDeleteMarca.Visible = true;
+                    tablaModelos.Visible = true;
+                    btnDeleteModelo.Visible = true;
                     btnSearch.Visible = false;
                     }
                 else
                     {
-                    MessageBox.Show("La marca que busca no existe o fue borrado!");
+                    MessageBox.Show("El modelo que busca no existe o fue borrado!");
                     }
                 }
         }
-        private bool BorrarMarca(string MarcaVeh)
+        private bool BorrarModelo(string NombreModelo, int IdMarca, int CodigoTipoAuto, int Borrado)
         {
                 string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
                 SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -227,11 +281,12 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE * FROM Marcas where Descripcion like @marca AND Borrado = 0";
-
+                string consulta = "UPDATE Modelos SET Borrado = @borrado WHERE NombreModelo Like @nombreModelo AND IdMarca Like @idMarca AND CodigoTipoAuto Like @codigoTipoAuto AND Borrado like 0";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@marca", MarcaVeh);
-
+                cmd.Parameters.AddWithValue("@nombreModelo", NombreModelo);
+                cmd.Parameters.AddWithValue("@idMarca", IdMarca);
+                cmd.Parameters.AddWithValue("@codigoTipoAuto", CodigoTipoAuto);
+                cmd.Parameters.AddWithValue("@borrado", Borrado);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -256,12 +311,12 @@ namespace Shopping_Buy_All
                 return resultado;
         }
 
-        private void btnDeleteMarca_Click(object sender, EventArgs e)
+        private void btnDeleteClient_Click(object sender, EventArgs e)
+
         {
-            MarcaVehiculo c = Cargar_Marca(cmbMarcaVeh.SelectedValue.ToString());
+            Modelo m = Cargar_Modelo(textNombreModelo.Text.Trim(), (int)comboBoxIdMarca.SelectedValue, (int)comboBoxTipoAuto.SelectedValue);
             MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-            String mensajeCarga = (
-                  " |Marca: " + c.MarcaVeh + "\n" + "\n" + " |Desea eliminar a esta marca??");
+            String mensajeCarga = (" |Nobre Del Modelo: " + m.NombreModeloAuto + " | \n | Id Marca: " + m.idMarcaAuto + "| \n | Codigo Modelo de Auto:" + m.CodigoModeloAuto + " | \n Desea eliminar a este modelo?");
 
             string titulo = "Información de Eliminación";
 
@@ -269,86 +324,33 @@ namespace Shopping_Buy_All
 
             if (result == DialogResult.OK)
             {
-                bool resultado = BorrarMarca(cmbMarcaVeh.SelectedValue.ToString());
+                bool resultado = BorrarModelo(textNombreModelo.Text.Trim(), (int)comboBoxIdMarca.SelectedValue, (int)comboBoxTipoAuto.SelectedValue, 1);
                 if (resultado)
                 {
-                    MessageBox.Show("Marca Borrada con éxito!");
+                    MessageBox.Show("Modelo Borrado con éxito!");
                     Clean();
-                    CargarMarcasVeh();
-                    btnDeleteMarca.Visible = false;
+                    //BorrarModelo(m);
+                    CargarIdMarcas();
+                    CargarCodigosTipoAuto();
+                    tablaModelos.Visible = false;
+                    btnDeleteModelo.Visible = false;
                     btnSearch.Visible = true;
-                    CargarTablaMarcasVeh();
-                    cmbMarcaVeh.Focus();
+                    textNombreModelo.Focus();
                 }
                 else
                 {
-                    MessageBox.Show("La Marca No fue Borrada!");
+                    MessageBox.Show("El modelo no fue Borrado!");
                 }
             }
             else
             {
-                cmbMarcaVeh.Focus();
+                textNombreModelo.Focus();
             }
         }
-
-        private void Cargar_Campos(MarcaVehiculo c)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-            cmbMarcaVeh.SelectedValue = c.MarcaVeh;
-
-        }
-        private MarcaVehiculo Buscar_Marca2(string MarcaVeh)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            MarcaVehiculo mark = new MarcaVehiculo();
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Marcas WHERE Descripcion like @marca AND Borrado = 0 ";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@marca", MarcaVeh);
-
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
-                {
-                    mark.MarcaVeh = DataReader["Descripcion"].ToString();
-
-                    cn.Close();
-                    DataTable tabla = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(tabla);
-                    tablaMarcas.DataSource = tabla;
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return mark;
-
-        }
-
-        private void tablaMarcas_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaMarcas.Rows[indice];
-            string marca = filaSeleccionada.Cells["Marca"].Value.ToString();
-            MarcaVehiculo c = Buscar_Marca2(marca);
-            Clean();
-            Cargar_Campos(c);
-            btnDeleteMarca.Visible = true;
+            Grilla_Modelos tabla = new Grilla_Modelos();
+            tabla.Show();
         }
     }
 }

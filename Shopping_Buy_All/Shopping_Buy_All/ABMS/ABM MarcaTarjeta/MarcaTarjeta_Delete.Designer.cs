@@ -49,11 +49,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(10, 56);
+            this.label1.Location = new System.Drawing.Point(38, 85);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 29);
+            this.label1.Size = new System.Drawing.Size(157, 22);
             this.label1.TabIndex = 33;
             this.label1.Text = "Marca a eliminar";
             // 
@@ -105,9 +105,9 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(83, 298);
+            this.btnDelete.Location = new System.Drawing.Point(102, 288);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(76, 73);
+            this.btnDelete.Size = new System.Drawing.Size(40, 42);
             this.btnDelete.TabIndex = 67;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -116,11 +116,11 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(240, 15);
+            this.label15.Location = new System.Drawing.Point(266, 21);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(196, 29);
+            this.label15.Size = new System.Drawing.Size(151, 22);
             this.label15.TabIndex = 71;
             this.label15.Text = "Lista de Marcas";
             // 
@@ -163,7 +163,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.tablaMarcas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaMarcas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tablaMarcas.Size = new System.Drawing.Size(205, 302);
+            this.tablaMarcas.Size = new System.Drawing.Size(205, 274);
             this.tablaMarcas.TabIndex = 97;
             this.tablaMarcas.TabStop = false;
             this.tablaMarcas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaMarcas_CellContentClick);
@@ -199,7 +199,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(459, 405);
+            this.ClientSize = new System.Drawing.Size(459, 343);
             this.Controls.Add(this.tablaMarcas);
             this.Controls.Add(this.textMarca);
             this.Controls.Add(this.label15);
@@ -213,7 +213,7 @@
             this.Name = "MarcaTarjeta_Delete";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Eliminar Cliente";
+            this.Text = "Eliminar Marca";
             this.Load += new System.EventHandler(this.Marca_Delete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaMarcas)).EndInit();
             this.ResumeLayout(false);

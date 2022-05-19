@@ -1,6 +1,6 @@
 ﻿namespace Shopping_Buy_All
 {
-    partial class MarcaVeh_Delete
+    partial class MarcaVehiculo_Delete
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,17 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarcaVeh_Delete));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarcaVehiculo_Delete));
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbMarcaVeh = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelMarca = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
-            this.btnDeleteMarca = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textMarca = new System.Windows.Forms.TextBox();
             this.tablaMarcas = new System.Windows.Forms.DataGridView();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaMarcas)).BeginInit();
             this.SuspendLayout();
@@ -49,33 +51,23 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 34);
+            this.label1.Location = new System.Drawing.Point(35, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 22);
             this.label1.TabIndex = 33;
             this.label1.Text = "Marca a eliminar";
             // 
-            // cmbMarcaVeh
+            // labelMarca
             // 
-            this.cmbMarcaVeh.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.cmbMarcaVeh.ForeColor = System.Drawing.Color.White;
-            this.cmbMarcaVeh.FormattingEnabled = true;
-            this.cmbMarcaVeh.Location = new System.Drawing.Point(40, 94);
-            this.cmbMarcaVeh.Name = "cmbMarcaVeh";
-            this.cmbMarcaVeh.Size = new System.Drawing.Size(119, 21);
-            this.cmbMarcaVeh.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(77, 59);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 17);
-            this.label4.TabIndex = 43;
-            this.label4.Text = "Marca";
+            this.labelMarca.AutoSize = true;
+            this.labelMarca.BackColor = System.Drawing.Color.Transparent;
+            this.labelMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMarca.ForeColor = System.Drawing.Color.White;
+            this.labelMarca.Location = new System.Drawing.Point(81, 121);
+            this.labelMarca.Name = "labelMarca";
+            this.labelMarca.Size = new System.Drawing.Size(64, 17);
+            this.labelMarca.TabIndex = 44;
+            this.labelMarca.Text = "Nombre";
             // 
             // btnSearch
             // 
@@ -83,7 +75,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(22, 152);
+            this.btnSearch.Location = new System.Drawing.Point(80, 192);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 3;
@@ -97,7 +89,7 @@
             this.btnClean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClean.ForeColor = System.Drawing.Color.White;
-            this.btnClean.Location = new System.Drawing.Point(103, 152);
+            this.btnClean.Location = new System.Drawing.Point(80, 221);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(75, 23);
             this.btnClean.TabIndex = 4;
@@ -105,20 +97,41 @@
             this.btnClean.UseVisualStyleBackColor = false;
             this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
-            // btnDeleteMarca
+            // btnDelete
             // 
-            this.btnDeleteMarca.BackColor = System.Drawing.Color.Transparent;
-            this.btnDeleteMarca.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.Trash;
-            this.btnDeleteMarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDeleteMarca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteMarca.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteMarca.Location = new System.Drawing.Point(78, 181);
-            this.btnDeleteMarca.Name = "btnDeleteMarca";
-            this.btnDeleteMarca.Size = new System.Drawing.Size(40, 46);
-            this.btnDeleteMarca.TabIndex = 67;
-            this.btnDeleteMarca.UseVisualStyleBackColor = false;
-            this.btnDeleteMarca.Click += new System.EventHandler(this.btnDeleteMarca_Click);
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.Trash;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(99, 260);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(33, 37);
+            this.btnDelete.TabIndex = 67;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(264, 20);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(151, 22);
+            this.label15.TabIndex = 71;
+            this.label15.Text = "Lista de Marcas";
+            // 
+            // textMarca
+            // 
+            this.textMarca.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textMarca.ForeColor = System.Drawing.Color.White;
+            this.textMarca.Location = new System.Drawing.Point(60, 145);
+            this.textMarca.Name = "textMarca";
+            this.textMarca.Size = new System.Drawing.Size(110, 20);
+            this.textMarca.TabIndex = 74;
             // 
             // tablaMarcas
             // 
@@ -136,29 +149,40 @@
             this.tablaMarcas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tablaMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaMarcas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Marca,
+            this.Id,
+            this.Descripcion,
             this.Borrado});
             this.tablaMarcas.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaMarcas.Location = new System.Drawing.Point(238, 42);
+            this.tablaMarcas.Location = new System.Drawing.Point(248, 45);
             this.tablaMarcas.Name = "tablaMarcas";
             this.tablaMarcas.ReadOnly = true;
-            this.tablaMarcas.RowHeadersWidth = 10;
+            this.tablaMarcas.RowHeadersWidth = 20;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.tablaMarcas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaMarcas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tablaMarcas.Size = new System.Drawing.Size(123, 160);
-            this.tablaMarcas.TabIndex = 68;
+            this.tablaMarcas.Size = new System.Drawing.Size(205, 278);
+            this.tablaMarcas.TabIndex = 92;
             this.tablaMarcas.TabStop = false;
+            this.tablaMarcas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaMarcas_CellContentClick);
             // 
-            // Marca
+            // Id
             // 
-            this.Marca.DataPropertyName = "Descripcion";
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            this.Marca.ReadOnly = true;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 35;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 150;
             // 
             // Borrado
             // 
@@ -168,28 +192,29 @@
             this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
             // 
-            // MarcaVeh_Delete
+            // MarcaVehiculo_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(373, 238);
+            this.ClientSize = new System.Drawing.Size(465, 335);
             this.Controls.Add(this.tablaMarcas);
-            this.Controls.Add(this.btnDeleteMarca);
+            this.Controls.Add(this.textMarca);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.cmbMarcaVeh);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelMarca);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "MarcaVeh_Delete";
+            this.Name = "MarcaVehiculo_Delete";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Eliminar Marca";
-            this.Load += new System.EventHandler(this.Marca_Delete_Load);
+            this.Text = "Eliminar Marca Vehiculo";
+            this.Load += new System.EventHandler(this.MarcaVehiculo_Delete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaMarcas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -199,13 +224,15 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbMarcaVeh;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelMarca;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnClean;
-        private System.Windows.Forms.Button btnDeleteMarca;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textMarca;
         private System.Windows.Forms.DataGridView tablaMarcas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
     }
 }

@@ -65,6 +65,7 @@ namespace Shopping_Buy_All
             btnDelete.Visible = false;
             btnSearch.Visible = true;
             textMarca.Enabled = true;
+            textMarca.Focus();
         }
 
         private bool ExisteMarca(string marca)

@@ -181,7 +181,7 @@ namespace Shopping_Buy_All
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            if (textMarcaNew.Text.Trim() != "")
+            if (ValidarCampos())
             {
                 string newM = ObtenerDatos();
                 if (!ExisteRubro(newM))
@@ -226,6 +226,15 @@ namespace Shopping_Buy_All
                 MessageBox.Show("Error al cargar la Marca! \n" +
                             "Complete los campos por favor!");
             }
+        }
+
+        private bool ValidarCampos()
+        {
+            if (textMarcaNew.Text.Trim() == "" || textMarcaNew.Text.Trim().Length > 50)
+            {
+                return false;
+            }
+            return true;
         }
 
         private void tablaMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)

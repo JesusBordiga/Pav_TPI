@@ -151,6 +151,7 @@
             // txtId
             // 
             this.txtId.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtId.ForeColor = System.Drawing.Color.White;
             this.txtId.Location = new System.Drawing.Point(91, 101);
             this.txtId.Mask = "9999";
             this.txtId.Name = "txtId";

@@ -174,6 +174,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Sexo_Delete";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Borrar Sexo";
             ((System.ComponentModel.ISupportInitialize)(this.tablaSexo)).EndInit();
             this.ResumeLayout(false);

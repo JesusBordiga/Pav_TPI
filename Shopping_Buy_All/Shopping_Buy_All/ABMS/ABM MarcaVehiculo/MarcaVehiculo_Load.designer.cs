@@ -1,6 +1,6 @@
 ﻿namespace Shopping_Buy_All
 {
-    partial class MarcaVeh_Load
+    partial class MarcaVehiculo_Load
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,16 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarcaVeh_Load));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarcaVehiculo_Load));
             this.tablaMarcas = new System.Windows.Forms.DataGridView();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
             this.btnTarjetaLoad = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.cmbMarca = new System.Windows.Forms.TextBox();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaMarcas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +75,21 @@
             this.tablaMarcas.Size = new System.Drawing.Size(123, 160);
             this.tablaMarcas.TabIndex = 0;
             this.tablaMarcas.TabStop = false;
+            // 
+            // Marca
+            // 
+            this.Marca.DataPropertyName = "Descripcion";
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
+            // 
+            // Borrado
+            // 
+            this.Borrado.DataPropertyName = "Borrado";
+            this.Borrado.HeaderText = "Borrado";
+            this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
+            this.Borrado.Visible = false;
             // 
             // label1
             // 
@@ -130,25 +145,10 @@
             // 
             this.cmbMarca.BackColor = System.Drawing.SystemColors.ControlDark;
             this.cmbMarca.ForeColor = System.Drawing.Color.White;
-            this.cmbMarca.Location = new System.Drawing.Point(44, 101);
+            this.cmbMarca.Location = new System.Drawing.Point(45, 101);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(100, 20);
             this.cmbMarca.TabIndex = 29;
-            // 
-            // Marca
-            // 
-            this.Marca.DataPropertyName = "Descripcion";
-            this.Marca.HeaderText = "Marca";
-            this.Marca.Name = "Marca";
-            this.Marca.ReadOnly = true;
-            // 
-            // Borrado
-            // 
-            this.Borrado.DataPropertyName = "Borrado";
-            this.Borrado.HeaderText = "Borrado";
-            this.Borrado.Name = "Borrado";
-            this.Borrado.ReadOnly = true;
-            this.Borrado.Visible = false;
             // 
             // MarcaVeh_Load
             // 
@@ -184,8 +184,8 @@
         private System.ServiceProcess.ServiceController serviceController1;
         private System.Windows.Forms.Button btnTarjetaLoad;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.TextBox cmbMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.TextBox cmbMarca;
     }
 }

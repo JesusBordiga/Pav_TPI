@@ -109,7 +109,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(351, 47);
+            this.label15.Location = new System.Drawing.Point(298, 43);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(169, 25);
             this.label15.TabIndex = 71;
@@ -194,11 +194,11 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.tablaLocales.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaLocales.Location = new System.Drawing.Point(210, 74);
+            this.tablaLocales.Location = new System.Drawing.Point(212, 71);
             this.tablaLocales.Name = "tablaLocales";
             this.tablaLocales.ReadOnly = true;
             this.tablaLocales.RowHeadersWidth = 10;
-            this.tablaLocales.Size = new System.Drawing.Size(420, 255);
+            this.tablaLocales.Size = new System.Drawing.Size(349, 253);
             this.tablaLocales.TabIndex = 92;
             this.tablaLocales.TabStop = false;
             // 
@@ -224,6 +224,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Id Tipo Comercio";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
             this.dataGridViewTextBoxColumn3.Width = 70;
             // 
             // dataGridViewTextBoxColumn4
@@ -241,7 +242,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(639, 336);
+            this.ClientSize = new System.Drawing.Size(572, 336);
             this.Controls.Add(this.tablaLocales);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label3);

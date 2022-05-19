@@ -18,8 +18,6 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
             LabelBienvenido.Text = "Bienvenido "+ usu.userName;
-            labelHora.Text = "Hora: " + DateTime.Now.ToString("hh:mm:ss");
-            labelFecha.Text =DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void Logged_Load(object sender, EventArgs e)
@@ -47,9 +45,10 @@ namespace Shopping_Buy_All
         }
 
         private void btnProfesiones_Click(object sender, EventArgs e)
-        {
+        {/*
             Profesiones_Ventana prof_ventana = new Profesiones_Ventana();
-            prof_ventana.Show();
+            prof_ventana.Show();*/
+            MessageBox.Show("WIP");
         }
 
         private void btnLocales_Click(object sender, EventArgs e)
@@ -83,9 +82,10 @@ namespace Shopping_Buy_All
             Usuarios.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void HourTime_Tick(object sender, EventArgs e)
         {
-
+            labelHora.Text = "Hora: " + DateTime.Now.ToString("hh:mm:ss");
+            labelFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
     }
 }

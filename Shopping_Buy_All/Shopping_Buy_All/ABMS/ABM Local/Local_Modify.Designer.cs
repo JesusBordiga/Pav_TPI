@@ -210,7 +210,7 @@
             this.tablaLocales.Name = "tablaLocales";
             this.tablaLocales.ReadOnly = true;
             this.tablaLocales.RowHeadersWidth = 10;
-            this.tablaLocales.Size = new System.Drawing.Size(418, 222);
+            this.tablaLocales.Size = new System.Drawing.Size(349, 222);
             this.tablaLocales.TabIndex = 91;
             this.tablaLocales.TabStop = false;
             // 
@@ -236,6 +236,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Id Tipo Comercio";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
             this.dataGridViewTextBoxColumn3.Width = 70;
             // 
             // dataGridViewTextBoxColumn4
@@ -253,7 +254,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(711, 297);
+            this.ClientSize = new System.Drawing.Size(645, 297);
             this.Controls.Add(this.tablaLocales);
             this.Controls.Add(this.panelBuscar);
             this.Controls.Add(this.txtCodigo);

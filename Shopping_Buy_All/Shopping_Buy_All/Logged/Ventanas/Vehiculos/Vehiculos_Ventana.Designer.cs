@@ -36,6 +36,7 @@
             this.btnModificarVehiculo = new System.Windows.Forms.Button();
             this.btnAltaVehiculo = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAltaTipoVehiculo
@@ -90,7 +91,7 @@
             this.btnEliminarVehiculo.Name = "btnEliminarVehiculo";
             this.btnEliminarVehiculo.Size = new System.Drawing.Size(153, 26);
             this.btnEliminarVehiculo.TabIndex = 5;
-            this.btnEliminarVehiculo.Text = "Eliminar Tipo Vehiculo";
+            this.btnEliminarVehiculo.Text = "Eliminar Vehiculo";
             this.btnEliminarVehiculo.UseVisualStyleBackColor = false;
             this.btnEliminarVehiculo.Click += new System.EventHandler(this.btnEliminarVehiculo_Click);
             // 
@@ -104,7 +105,7 @@
             this.btnModificarVehiculo.Name = "btnModificarVehiculo";
             this.btnModificarVehiculo.Size = new System.Drawing.Size(153, 26);
             this.btnModificarVehiculo.TabIndex = 4;
-            this.btnModificarVehiculo.Text = "Modificar Tipo Vehiculo";
+            this.btnModificarVehiculo.Text = "Modificar Vehiculo";
             this.btnModificarVehiculo.UseVisualStyleBackColor = false;
             this.btnModificarVehiculo.Click += new System.EventHandler(this.btnModificarVehiculo_Click);
             // 
@@ -128,7 +129,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(105, 165);
+            this.button1.Location = new System.Drawing.Point(12, 165);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 26);
             this.button1.TabIndex = 6;
@@ -136,11 +137,26 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(190, 165);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 26);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Modelos";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Vehiculos_Ventana
             // 
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(355, 203);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnEliminarVehiculo);
             this.Controls.Add(this.btnModificarVehiculo);
@@ -161,49 +177,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MaskedTextBox textStreetHeight;
-        private System.Windows.Forms.MaskedTextBox textNumberDoc;
-        private System.Windows.Forms.ComboBox comboBoxDocType;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnClientLoad;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textStreetClient;
-        private System.Windows.Forms.MaskedTextBox textDateBirthDay;
-        private System.Windows.Forms.TextBox textSurnameClient;
-        private System.Windows.Forms.TextBox textNameClient;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox SearchPanel;
-        private System.Windows.Forms.Button btnSearchClient;
-        private System.Windows.Forms.Button btnSearchClient2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel PanelEstadoCivil;
-        private System.Windows.Forms.RadioButton radioButtonMarried;
-        private System.Windows.Forms.RadioButton radioButtonSingle;
-        private System.Windows.Forms.ComboBox comboBoxSex;
-        private System.Windows.Forms.DataGridView tablaClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NroCalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCivil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCiv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
+       
         private System.Windows.Forms.Button btnAltaTipoVehiculo;
         private System.Windows.Forms.Button btnModificarTipoVehiculo;
         private System.Windows.Forms.Button btnEliminarTipoVehiculo;
@@ -211,5 +185,6 @@
         private System.Windows.Forms.Button btnModificarVehiculo;
         private System.Windows.Forms.Button btnAltaVehiculo;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
