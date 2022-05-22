@@ -51,7 +51,7 @@
             this.btnTipoTarjetaDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTipoTarjetaDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoTarjetaDelete.ForeColor = System.Drawing.Color.White;
-            this.btnTipoTarjetaDelete.Location = new System.Drawing.Point(68, 189);
+            this.btnTipoTarjetaDelete.Location = new System.Drawing.Point(21, 292);
             this.btnTipoTarjetaDelete.Name = "btnTipoTarjetaDelete";
             this.btnTipoTarjetaDelete.Size = new System.Drawing.Size(75, 23);
             this.btnTipoTarjetaDelete.TabIndex = 136;
@@ -65,11 +65,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(73, 117);
+            this.label2.Location = new System.Drawing.Point(12, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 135;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre:";
             // 
             // btnBuscarTipoTarjeta
             // 
@@ -77,7 +77,7 @@
             this.btnBuscarTipoTarjeta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarTipoTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarTipoTarjeta.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarTipoTarjeta.Location = new System.Drawing.Point(68, 189);
+            this.btnBuscarTipoTarjeta.Location = new System.Drawing.Point(21, 292);
             this.btnBuscarTipoTarjeta.Name = "btnBuscarTipoTarjeta";
             this.btnBuscarTipoTarjeta.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarTipoTarjeta.TabIndex = 134;
@@ -89,7 +89,7 @@
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombre.ForeColor = System.Drawing.Color.White;
-            this.txtNombre.Location = new System.Drawing.Point(56, 137);
+            this.txtNombre.Location = new System.Drawing.Point(87, 89);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 133;
@@ -100,7 +100,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(41, 62);
+            this.label1.Location = new System.Drawing.Point(38, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 44);
             this.label1.TabIndex = 132;
@@ -113,7 +113,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(233, 25);
+            this.label3.Location = new System.Drawing.Point(237, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(158, 22);
             this.label3.TabIndex = 137;
@@ -135,7 +135,7 @@
             this.Nombre,
             this.dataGridViewTextBoxColumn3});
             this.tablaTipoTarjeta.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaTipoTarjeta.Location = new System.Drawing.Point(196, 50);
+            this.tablaTipoTarjeta.Location = new System.Drawing.Point(196, 34);
             this.tablaTipoTarjeta.Name = "tablaTipoTarjeta";
             this.tablaTipoTarjeta.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -147,7 +147,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaTipoTarjeta.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaTipoTarjeta.RowHeadersWidth = 10;
-            this.tablaTipoTarjeta.Size = new System.Drawing.Size(229, 265);
+            this.tablaTipoTarjeta.Size = new System.Drawing.Size(229, 281);
             this.tablaTipoTarjeta.TabIndex = 138;
             this.tablaTipoTarjeta.TabStop = false;
             this.tablaTipoTarjeta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaTipoTarjeta_CellContentClick);
@@ -180,7 +180,7 @@
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(68, 218);
+            this.btnLimpiar.Location = new System.Drawing.Point(102, 292);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 139;

@@ -53,9 +53,6 @@ namespace Shopping_Buy_All
                     MessageBox.Show("Usuario Inexistente!");
                 }
             }
-
-
-
             ClearLogin();
         }
         private void ClearLogin()
@@ -90,7 +87,6 @@ namespace Shopping_Buy_All
 
                 if (table.Rows.Count == 1)
                 {
-
                     return true;
                 }
                 else
@@ -100,7 +96,6 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally

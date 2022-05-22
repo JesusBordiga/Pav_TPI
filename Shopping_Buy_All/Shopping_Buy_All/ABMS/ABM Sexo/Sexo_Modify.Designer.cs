@@ -53,7 +53,7 @@
             this.btnSexoModify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSexoModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSexoModify.ForeColor = System.Drawing.Color.White;
-            this.btnSexoModify.Location = new System.Drawing.Point(49, 211);
+            this.btnSexoModify.Location = new System.Drawing.Point(18, 266);
             this.btnSexoModify.Name = "btnSexoModify";
             this.btnSexoModify.Size = new System.Drawing.Size(75, 23);
             this.btnSexoModify.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             this.txtNombreSexo.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombreSexo.ForeColor = System.Drawing.Color.White;
-            this.txtNombreSexo.Location = new System.Drawing.Point(41, 144);
+            this.txtNombreSexo.Location = new System.Drawing.Point(87, 93);
             this.txtNombreSexo.Name = "txtNombreSexo";
             this.txtNombreSexo.Size = new System.Drawing.Size(100, 20);
             this.txtNombreSexo.TabIndex = 1;
@@ -76,11 +76,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(58, 124);
+            this.label2.Location = new System.Drawing.Point(12, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 107;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre:";
             // 
             // btnBuscarSexo
             // 
@@ -88,7 +88,7 @@
             this.btnBuscarSexo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarSexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarSexo.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarSexo.Location = new System.Drawing.Point(49, 211);
+            this.btnBuscarSexo.Location = new System.Drawing.Point(18, 266);
             this.btnBuscarSexo.Name = "btnBuscarSexo";
             this.btnBuscarSexo.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarSexo.TabIndex = 3;
@@ -100,7 +100,7 @@
             // 
             this.txtNuevoNombre.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNuevoNombre.ForeColor = System.Drawing.Color.White;
-            this.txtNuevoNombre.Location = new System.Drawing.Point(41, 144);
+            this.txtNuevoNombre.Location = new System.Drawing.Point(87, 94);
             this.txtNuevoNombre.Name = "txtNuevoNombre";
             this.txtNuevoNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNuevoNombre.TabIndex = 105;
@@ -111,11 +111,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(33, 125);
+            this.label4.Location = new System.Drawing.Point(12, 87);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 17);
+            this.label4.Size = new System.Drawing.Size(64, 34);
             this.label4.TabIndex = 104;
-            this.label4.Text = "Nuevo Nombre";
+            this.label4.Text = "Nuevo\r\nNombre";
             // 
             // label1
             // 
@@ -123,7 +123,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(24, 72);
+            this.label1.Location = new System.Drawing.Point(21, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 44);
             this.label1.TabIndex = 102;
@@ -136,7 +136,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(236, 26);
+            this.label15.Location = new System.Drawing.Point(246, 9);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(142, 22);
             this.label15.TabIndex = 101;
@@ -158,7 +158,7 @@
             this.NombreSexo,
             this.Borrado});
             this.tablaSexo.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaSexo.Location = new System.Drawing.Point(198, 50);
+            this.tablaSexo.Location = new System.Drawing.Point(198, 34);
             this.tablaSexo.Name = "tablaSexo";
             this.tablaSexo.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -170,7 +170,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaSexo.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaSexo.RowHeadersWidth = 10;
-            this.tablaSexo.Size = new System.Drawing.Size(230, 239);
+            this.tablaSexo.Size = new System.Drawing.Size(230, 255);
             this.tablaSexo.TabIndex = 100;
             this.tablaSexo.TabStop = false;
             this.tablaSexo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaSexo_CellContentClick);
@@ -203,7 +203,7 @@
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(49, 240);
+            this.btnLimpiar.Location = new System.Drawing.Point(99, 266);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 147;

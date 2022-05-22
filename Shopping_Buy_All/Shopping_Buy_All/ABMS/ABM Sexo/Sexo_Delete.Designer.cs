@@ -41,6 +41,7 @@
             this.NombreSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaSexo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.btnSexoDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSexoDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSexoDelete.ForeColor = System.Drawing.Color.White;
-            this.btnSexoDelete.Location = new System.Drawing.Point(64, 205);
+            this.btnSexoDelete.Location = new System.Drawing.Point(25, 250);
             this.btnSexoDelete.Name = "btnSexoDelete";
             this.btnSexoDelete.Size = new System.Drawing.Size(75, 23);
             this.btnSexoDelete.TabIndex = 3;
@@ -64,11 +65,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(75, 98);
+            this.label2.Location = new System.Drawing.Point(12, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 143;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre:";
             // 
             // btnBuscarSexo
             // 
@@ -76,7 +77,7 @@
             this.btnBuscarSexo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarSexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarSexo.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarSexo.Location = new System.Drawing.Point(64, 205);
+            this.btnBuscarSexo.Location = new System.Drawing.Point(25, 250);
             this.btnBuscarSexo.Name = "btnBuscarSexo";
             this.btnBuscarSexo.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarSexo.TabIndex = 2;
@@ -88,7 +89,7 @@
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombre.ForeColor = System.Drawing.Color.White;
-            this.txtNombre.Location = new System.Drawing.Point(57, 118);
+            this.txtNombre.Location = new System.Drawing.Point(87, 98);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 1;
@@ -99,7 +100,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 53);
+            this.label1.Location = new System.Drawing.Point(27, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 44);
             this.label1.TabIndex = 140;
@@ -167,13 +168,26 @@
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(64, 234);
+            this.btnLimpiar.Location = new System.Drawing.Point(106, 250);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 146;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(193, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(239, 22);
+            this.label3.TabIndex = 147;
+            this.label3.Text = "Lista de nombres de sexo";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Sexo_Delete
             // 
@@ -182,6 +196,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(441, 283);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.tablaSexo);
             this.Controls.Add(this.btnSexoDelete);
@@ -211,5 +226,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreSexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Label label3;
     }
 }

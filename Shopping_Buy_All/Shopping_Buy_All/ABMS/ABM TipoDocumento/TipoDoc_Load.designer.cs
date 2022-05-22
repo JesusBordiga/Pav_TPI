@@ -40,6 +40,7 @@
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipDoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.btnTipDocLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTipDocLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipDocLoad.ForeColor = System.Drawing.Color.White;
-            this.btnTipDocLoad.Location = new System.Drawing.Point(70, 250);
+            this.btnTipDocLoad.Location = new System.Drawing.Point(37, 280);
             this.btnTipDocLoad.Name = "btnTipDocLoad";
             this.btnTipDocLoad.Size = new System.Drawing.Size(75, 23);
             this.btnTipDocLoad.TabIndex = 2;
@@ -61,7 +62,7 @@
             // 
             this.txtTipoDoc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtTipoDoc.ForeColor = System.Drawing.Color.White;
-            this.txtTipoDoc.Location = new System.Drawing.Point(64, 133);
+            this.txtTipoDoc.Location = new System.Drawing.Point(87, 111);
             this.txtTipoDoc.Name = "txtTipoDoc";
             this.txtTipoDoc.Size = new System.Drawing.Size(100, 20);
             this.txtTipoDoc.TabIndex = 1;
@@ -72,11 +73,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(81, 112);
+            this.label2.Location = new System.Drawing.Point(12, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 76;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre:";
             // 
             // tablaTipDoc
             // 
@@ -94,7 +95,7 @@
             this.NombreDocumento,
             this.Borrado});
             this.tablaTipDoc.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaTipDoc.Location = new System.Drawing.Point(210, 55);
+            this.tablaTipDoc.Location = new System.Drawing.Point(210, 34);
             this.tablaTipDoc.Name = "tablaTipDoc";
             this.tablaTipDoc.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -106,7 +107,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tablaTipDoc.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaTipDoc.RowHeadersWidth = 10;
-            this.tablaTipDoc.Size = new System.Drawing.Size(235, 248);
+            this.tablaTipDoc.Size = new System.Drawing.Size(235, 269);
             this.tablaTipDoc.TabIndex = 111;
             this.tablaTipDoc.TabStop = false;
             // 
@@ -138,7 +139,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(38, 61);
+            this.label3.Location = new System.Drawing.Point(32, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(155, 44);
             this.label3.TabIndex = 114;
@@ -151,11 +152,25 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(228, 33);
+            this.label4.Location = new System.Drawing.Point(232, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(194, 22);
             this.label4.TabIndex = 113;
             this.label4.Text = "Tipos de Documento";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(118, 280);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 115;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // TipoDoc_Load
             // 
@@ -164,6 +179,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(453, 310);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tablaTipDoc);
@@ -192,5 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

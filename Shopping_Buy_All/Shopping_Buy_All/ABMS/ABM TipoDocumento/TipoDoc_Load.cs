@@ -116,5 +116,9 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
                 MessageBox.Show("Error al cargar el tipo de documento! \n Complete los campos por favor!");
             }
         }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+        }
     }
 }

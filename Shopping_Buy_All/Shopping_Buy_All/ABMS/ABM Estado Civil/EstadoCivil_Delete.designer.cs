@@ -51,7 +51,7 @@
             this.btnECDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnECDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnECDelete.ForeColor = System.Drawing.Color.White;
-            this.btnECDelete.Location = new System.Drawing.Point(72, 203);
+            this.btnECDelete.Location = new System.Drawing.Point(31, 271);
             this.btnECDelete.Name = "btnECDelete";
             this.btnECDelete.Size = new System.Drawing.Size(75, 23);
             this.btnECDelete.TabIndex = 152;
@@ -65,11 +65,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(82, 112);
+            this.label2.Location = new System.Drawing.Point(12, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 151;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre:";
             // 
             // btnBuscarEC
             // 
@@ -77,7 +77,7 @@
             this.btnBuscarEC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarEC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarEC.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarEC.Location = new System.Drawing.Point(72, 203);
+            this.btnBuscarEC.Location = new System.Drawing.Point(31, 271);
             this.btnBuscarEC.Name = "btnBuscarEC";
             this.btnBuscarEC.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarEC.TabIndex = 150;
@@ -89,9 +89,9 @@
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombre.ForeColor = System.Drawing.Color.White;
-            this.txtNombre.Location = new System.Drawing.Point(62, 132);
+            this.txtNombre.Location = new System.Drawing.Point(87, 94);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(125, 20);
             this.txtNombre.TabIndex = 149;
             // 
             // label1
@@ -100,11 +100,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(43, 49);
+            this.label1.Location = new System.Drawing.Point(46, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 50);
             this.label1.TabIndex = 148;
-            this.label1.Text = "  Buscar\r\nEstado Civil";
+            this.label1.Text = "Buscar\r\nEstado Civil";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
@@ -180,7 +180,7 @@
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(72, 232);
+            this.btnLimpiar.Location = new System.Drawing.Point(112, 271);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 153;

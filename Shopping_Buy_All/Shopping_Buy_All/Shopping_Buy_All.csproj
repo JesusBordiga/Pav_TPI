@@ -168,6 +168,24 @@
     <Compile Include="ABMS\ABM Productos\Product_Modify.Designer.cs">
       <DependentUpon>Product_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM Profesiones\Profesion_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Profesiones\Profesion_Delete.Designer.cs">
+      <DependentUpon>Profesion_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Profesiones\Profesion_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Profesiones\Profesion_Load.Designer.cs">
+      <DependentUpon>Profesion_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Profesiones\Profesion_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Profesiones\Profesion_Modify.Designer.cs">
+      <DependentUpon>Profesion_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM Rubros\Rubro_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -504,6 +522,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Modify.resx">
       <DependentUpon>Product_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Profesiones\Profesion_Delete.resx">
+      <DependentUpon>Profesion_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Profesiones\Profesion_Load.resx">
+      <DependentUpon>Profesion_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Profesiones\Profesion_Modify.resx">
+      <DependentUpon>Profesion_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Rubros\Rubro_Delete.resx">
       <DependentUpon>Rubro_Delete.cs</DependentUpon>

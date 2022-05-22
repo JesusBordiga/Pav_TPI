@@ -119,5 +119,9 @@ namespace Shopping_Buy_All.ABM_Sexo
             }
             return resultado;
         }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+        }
     }
 }

@@ -51,7 +51,6 @@
             this.btnProfesiones = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.HourTime = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAutomoviles)).BeginInit();
@@ -60,7 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureLocales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfesiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelBienvenido
@@ -342,6 +340,10 @@
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
+            // HourTime
+            // 
+            this.HourTime.Tick += new System.EventHandler(this.HourTime_Tick);
+            // 
             // Logged
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,7 +358,6 @@
             this.Controls.Add(this.LabelBienvenido);
             this.Controls.Add(this.btnMenu2);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.pictureBox2);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -375,7 +376,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureLocales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProfesiones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,6 +404,5 @@
         private System.Windows.Forms.Button btnProfesiones;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Timer HourTime;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -53,7 +53,7 @@
             this.btnTipDocModify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTipDocModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipDocModify.ForeColor = System.Drawing.Color.White;
-            this.btnTipDocModify.Location = new System.Drawing.Point(74, 230);
+            this.btnTipDocModify.Location = new System.Drawing.Point(26, 259);
             this.btnTipDocModify.Name = "btnTipDocModify";
             this.btnTipDocModify.Size = new System.Drawing.Size(75, 23);
             this.btnTipDocModify.TabIndex = 3;
@@ -65,7 +65,7 @@
             // 
             this.txtNombreTipDoc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombreTipDoc.ForeColor = System.Drawing.Color.White;
-            this.txtNombreTipDoc.Location = new System.Drawing.Point(60, 130);
+            this.txtNombreTipDoc.Location = new System.Drawing.Point(82, 91);
             this.txtNombreTipDoc.Name = "txtNombreTipDoc";
             this.txtNombreTipDoc.Size = new System.Drawing.Size(100, 20);
             this.txtNombreTipDoc.TabIndex = 1;
@@ -76,11 +76,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(77, 110);
+            this.label2.Location = new System.Drawing.Point(12, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 116;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre:";
             // 
             // btnBuscarTipDoc
             // 
@@ -88,7 +88,7 @@
             this.btnBuscarTipDoc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarTipDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarTipDoc.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarTipDoc.Location = new System.Drawing.Point(74, 230);
+            this.btnBuscarTipDoc.Location = new System.Drawing.Point(26, 259);
             this.btnBuscarTipDoc.Name = "btnBuscarTipDoc";
             this.btnBuscarTipDoc.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarTipDoc.TabIndex = 2;
@@ -100,7 +100,7 @@
             // 
             this.txtNuevoNombre.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNuevoNombre.ForeColor = System.Drawing.Color.White;
-            this.txtNuevoNombre.Location = new System.Drawing.Point(60, 130);
+            this.txtNuevoNombre.Location = new System.Drawing.Point(82, 92);
             this.txtNuevoNombre.Name = "txtNuevoNombre";
             this.txtNuevoNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNuevoNombre.TabIndex = 114;
@@ -111,11 +111,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(52, 111);
+            this.label4.Location = new System.Drawing.Point(12, 87);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 17);
+            this.label4.Size = new System.Drawing.Size(64, 34);
             this.label4.TabIndex = 113;
-            this.label4.Text = "Nuevo Nombre";
+            this.label4.Text = "Nuevo\r\nNombre";
             // 
             // label1
             // 
@@ -123,11 +123,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 50);
+            this.label1.Location = new System.Drawing.Point(34, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 44);
+            this.label1.Size = new System.Drawing.Size(138, 44);
             this.label1.TabIndex = 112;
-            this.label1.Text = "Buscar Tipos de\r\nDocumento";
+            this.label1.Text = "Buscar Tipos\r\nde Documento";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
@@ -203,7 +203,7 @@
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(74, 259);
+            this.btnLimpiar.Location = new System.Drawing.Point(107, 258);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 148;

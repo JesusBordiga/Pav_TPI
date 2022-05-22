@@ -40,6 +40,7 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label15 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoTarjeta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.btnTipoTarjetaLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTipoTarjetaLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoTarjetaLoad.ForeColor = System.Drawing.Color.White;
-            this.btnTipoTarjetaLoad.Location = new System.Drawing.Point(62, 207);
+            this.btnTipoTarjetaLoad.Location = new System.Drawing.Point(27, 286);
             this.btnTipoTarjetaLoad.Name = "btnTipoTarjetaLoad";
             this.btnTipoTarjetaLoad.Size = new System.Drawing.Size(75, 23);
             this.btnTipoTarjetaLoad.TabIndex = 78;
@@ -61,7 +62,7 @@
             // 
             this.txtNombreTdT.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombreTdT.ForeColor = System.Drawing.Color.White;
-            this.txtNombreTdT.Location = new System.Drawing.Point(54, 137);
+            this.txtNombreTdT.Location = new System.Drawing.Point(83, 102);
             this.txtNombreTdT.Name = "txtNombreTdT";
             this.txtNombreTdT.Size = new System.Drawing.Size(100, 20);
             this.txtNombreTdT.TabIndex = 77;
@@ -72,11 +73,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(71, 116);
+            this.label2.Location = new System.Drawing.Point(12, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 76;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre:";
             // 
             // label1
             // 
@@ -84,7 +85,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(45, 60);
+            this.label1.Location = new System.Drawing.Point(38, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 44);
             this.label1.TabIndex = 75;
@@ -157,6 +158,20 @@
             this.label15.TabIndex = 132;
             this.label15.Text = "Tipos de Tarjeta";
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(108, 286);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 133;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // TipoTarjeta_Load
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,6 +179,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(429, 317);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btnTipoTarjetaLoad);
             this.Controls.Add(this.txtNombreTdT);
@@ -192,5 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

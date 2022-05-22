@@ -119,5 +119,9 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
                 MessageBox.Show("Error al cargar el Tipo de Tarjeta! \n Complete los campos por favor!");
             }
         }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+        }
     }
 }

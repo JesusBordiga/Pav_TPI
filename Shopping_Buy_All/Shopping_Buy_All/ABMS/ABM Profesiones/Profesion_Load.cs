@@ -8,22 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Shopping_Buy_All.Entidades;
 
-namespace Shopping_Buy_All.ABM_Estado_Civil
+namespace Shopping_Buy_All.ABMS.ABM_Profesiones
 {
-    public partial class EstadoCivil_Load : Form
+    public partial class Profesion_Load : Form
     {
-        public EstadoCivil_Load()
+        public Profesion_Load()
         {
             InitializeComponent();
-            CargarTablaEsCiv();
+            CargarTablaProfesiones();
         }
         private void limpiarCampos()
         {
-            txtNombreEC.Text = "";
+            txtNombreProf.Text = "";
         }
-        private void CargarTablaEsCiv()
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+        }
+        private void CargarTablaProfesiones()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -31,20 +34,20 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "getEstadoCivilNoBorrado";
+                string consulta = "getProfesionNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
                 comand.CommandText = consulta;
-
+            
                 cn.Open();
                 comand.Connection = cn;
-
+            
                 DataTable tabla = new DataTable();
-
+            
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
-                tablaEsCiv.DataSource = tabla;
+                tablaProfesiones.DataSource = tabla;
             }
             catch (SqlException)
             {
@@ -59,34 +62,33 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
                 cn.Close();
             }
         }
-        private void btnECLoad_Click(object sender, EventArgs e)
+        private void btnCargarProf_Click(object sender, EventArgs e)
         {
-            EstadoCivil esCiv = new EstadoCivil(txtNombreEC.Text.Trim(), 0);
-            bool resultado = Agregar_EstadoCivil(esCiv);
+            bool resultado = cargarProfesion(txtNombreProf.Text);
             if (resultado)
             {
                 MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                string mensajeCarga = (" |Nombre: " + esCiv.NombreEc + "|");
+                string mensajeCarga = (" |Nombre: " + txtNombreProf.Text.Trim() + "|");
                 string titulo = "Información de Carga";
                 DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
 
                 if (result == DialogResult.OK)
                 {
-                    MessageBox.Show("Estado Civil agregado con éxito!");
+                    MessageBox.Show("Profesion agregada con éxito!");
                     limpiarCampos();
-                    CargarTablaEsCiv();
+                    CargarTablaProfesiones();
                 }
                 else
                 {
-                    txtNombreEC.Focus();
+                    txtNombreProf.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Error al cargar el Estado Civil! \n Complete los campos por favor!");
+                MessageBox.Show("Error al cargar el tipo de documento! \n Complete los campos por favor!");
             }
         }
-        private bool Agregar_EstadoCivil(EstadoCivil esCiv)
+        private bool cargarProfesion(string nombre)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -94,9 +96,9 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "agregarEstadoCivil @nombre";
+                string consulta = "agregarProfesion @nombre";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombre", esCiv.NombreEc);
+                cmd.Parameters.AddWithValue("@nombre", nombre);
 
                 cmd.CommandText = consulta;
 
@@ -118,10 +120,6 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
                 cn.Close();
             }
             return resultado;
-        }
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            limpiarCampos();
         }
     }
 }

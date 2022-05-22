@@ -40,6 +40,7 @@
             this.txtNombreEC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnECLoad = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEsCiv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,17 +116,18 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(41, 63);
+            this.label1.Location = new System.Drawing.Point(40, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 50);
             this.label1.TabIndex = 63;
-            this.label1.Text = "   Cargar \r\nEstado Civil";
+            this.label1.Text = "Cargar \r\nEstado Civil";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtNombreEC
             // 
             this.txtNombreEC.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombreEC.ForeColor = System.Drawing.Color.White;
-            this.txtNombreEC.Location = new System.Drawing.Point(54, 145);
+            this.txtNombreEC.Location = new System.Drawing.Point(82, 99);
             this.txtNombreEC.Name = "txtNombreEC";
             this.txtNombreEC.Size = new System.Drawing.Size(100, 20);
             this.txtNombreEC.TabIndex = 65;
@@ -136,11 +138,11 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(75, 123);
+            this.label2.Location = new System.Drawing.Point(12, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 64;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre:";
             // 
             // btnECLoad
             // 
@@ -148,13 +150,27 @@
             this.btnECLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnECLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnECLoad.ForeColor = System.Drawing.Color.White;
-            this.btnECLoad.Location = new System.Drawing.Point(63, 189);
+            this.btnECLoad.Location = new System.Drawing.Point(26, 270);
             this.btnECLoad.Name = "btnECLoad";
             this.btnECLoad.Size = new System.Drawing.Size(75, 23);
             this.btnECLoad.TabIndex = 66;
             this.btnECLoad.Text = "Cargar";
             this.btnECLoad.UseVisualStyleBackColor = false;
             this.btnECLoad.Click += new System.EventHandler(this.btnECLoad_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(107, 270);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 147;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // EstadoCivil_Load
             // 
@@ -163,6 +179,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(436, 301);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnECLoad);
             this.Controls.Add(this.txtNombreEC);
             this.Controls.Add(this.label2);
@@ -192,5 +209,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoEstadoCivil;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreEstadoCivil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

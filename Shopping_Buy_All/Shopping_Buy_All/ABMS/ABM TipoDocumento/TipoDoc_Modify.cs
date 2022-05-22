@@ -86,6 +86,13 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             txtNuevoNombre.Text = "";
             txtNombreTipDoc.Text = "";
         }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaTipDoc();
+        }
         private void cargarTablaTipDoc()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -212,13 +219,6 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             {
                 cn.Close();
             }
-        }
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            limpiarCampos();
-            cambiarModificador(false);
-            cambiarBuscador(true);
-            cargarTablaTipDoc();
         }
     }
 }
