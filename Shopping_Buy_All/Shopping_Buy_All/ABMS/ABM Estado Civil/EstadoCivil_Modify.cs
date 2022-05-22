@@ -191,10 +191,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
 
                 cn.Open();
                 command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaEstadoCivil.DataSource = tabla;
+                command.ExecuteNonQuery();
             }
             catch (SqlException)
             {

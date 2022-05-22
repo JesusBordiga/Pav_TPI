@@ -17,184 +17,126 @@ namespace Shopping_Buy_All
         public Modelo_Load()
         {
             InitializeComponent();
-            CargarTablaModelos();
-            CargarIdMarcas();
-            CargarCodigosTipoAuto();
+            cargarTablaModelo();
+            cargarMarca();
+            cargarTipoAuto();
         }
-
-        private void btnClear_Click(object sender, EventArgs e)
+        private void limpiarCampos()
         {
-            Clean();
+            txtNombre.Text = "";
         }
-        private void Clean()
-        {
-            textNombreModelo.Text = "";
-            comboBoxIdMarca.SelectedIndex = -1;
-            comboBoxTipoAuto.SelectedIndex = -1;
-            CargarTablaModelos();
-
-        }
-        private void CargarIdMarcas()
+        private void cargarTablaModelo()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
 
             try
             {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Marcas";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-
-                comboBoxIdMarca.DataSource = tabla;
-                comboBoxIdMarca.DisplayMember = "Descripcion";
-                comboBoxIdMarca.ValueMember = "Id";
-                comboBoxIdMarca.SelectedIndex = -1;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-
-        private void CargarCodigosTipoAuto()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM TipoAuto";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
+                SqlCommand command = new SqlCommand();
+                string consulta = "getModeloNoBorrado";
+                command.Parameters.Clear();
+                command.CommandType = CommandType.Text;
+                command.CommandText = consulta;
 
                 cn.Open();
-                comand.Connection = cn;
-
+                command.Connection = cn;
                 DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-
-                comboBoxTipoAuto.DataSource = tabla;
-                comboBoxTipoAuto.DisplayMember = "Nombre";
-                comboBoxTipoAuto.ValueMember = "Cod_tipo";
-                comboBoxTipoAuto.SelectedIndex = -1;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-        private void CargarTablaModelos()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Modelos WHERE Borrado like 0";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(tabla);
                 tablaModelos.DataSource = tabla;
             }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
+            }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
                 cn.Close();
             }
         }
-        private Modelo ObtenerDatosModelo()
+        private void cargarMarca()
         {
-            Modelo m = new Modelo();
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
 
-            //Nombre del Modelo
-            m.NombreModeloAuto = textNombreModelo.Text.Trim();
-
-            //Id Marca
-            m.idMarcaAuto = (int)comboBoxIdMarca.SelectedValue;
-
-            //Codigo del modelo
-            m.CodigoModeloAuto = (int)comboBoxTipoAuto.SelectedValue;
-
-            return m;
-        }
-
-        private void btnCargarCliente_Click(object sender, EventArgs e)
-        {
-            Modelo m = ObtenerDatosModelo();
-            bool resultado = Agregar_Modelo(m);
-            if (resultado)
-                {
-                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                    String mensajeCarga = (
-                          " |Nobre Del Modelo: " + m.NombreModeloAuto + " | \n | Id Marca: " + m.idMarcaAuto + "| \n | Codigo Modelo de Auto:" + m.CodigoModeloAuto + " |");
-
-                    string titulo = "Información de Carga";
-
-                    DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                    if (result == DialogResult.OK)
-                    {
-                        MessageBox.Show("Modelo agregado con éxito!");
-                        Clean();
-                        CargarTablaModelos();
-                        CargarIdMarcas();
-                    CargarCodigosTipoAuto();
-
-
-                    }
-                    else
-                    {
-                        textNombreModelo.Focus();
-                    }
-                }
-            else
+            try
             {
-                MessageBox.Show("Error al cargar el Modelo! \n" +
-                        "Complete los campos por favor!");
+                SqlCommand comand = new SqlCommand();
+                string consulta = "getMarcaNoBorrado";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                cmbMarca.DataSource = tabla;
+                cmbMarca.DisplayMember = "Descripcion";
+                cmbMarca.ValueMember = "Id";
+                cmbMarca.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! \n Hubo un error!");
+            }
+            finally
+            {
+                cn.Close();
             }
         }
+        private void cargarTipoAuto()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
 
-        private bool Agregar_Modelo(Modelo model)
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "getTipoAutoNoBorrado";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                cmbTipoAuto.DataSource = tabla;
+                cmbTipoAuto.DisplayMember = "Nombre";
+                cmbTipoAuto.ValueMember = "Cod_tipo";
+                cmbTipoAuto.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! \n Hubo un error!");
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cmbMarca.SelectedIndex = -1;
+            cmbTipoAuto.SelectedIndex = -1;
+        }
+        private bool agregarModelo(string nombre, int marca, int tipoAuto)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -202,13 +144,11 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO Modelos(NombreModelo,IdMarca,CodigoTipoAuto)" +
-                                               "Values(@nombreModelo,@idMarcaAuto, @CodBorradoigoTipoAuto)";
+                string consulta = "agregarModelo @nombre, @marca, @tipoAuto";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombreModelo", model.NombreModeloAuto);
-                cmd.Parameters.AddWithValue("@idMarcaAuto", model.idMarcaAuto);
-                cmd.Parameters.AddWithValue("@CodBorradoigoTipoAuto", model.CodigoModeloAuto);
-
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@marca", marca);
+                cmd.Parameters.AddWithValue("@tipoAuto", tipoAuto);
                 cmd.CommandText = consulta;
 
                 cn.Open();
@@ -218,18 +158,55 @@ namespace Shopping_Buy_All
             }
             catch (SqlException)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
                 cn.Close();
             }
             return resultado;
+        }
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            string nombre = txtNombre.Text.Trim();
+            int marca = -1;
+            int tipoAuto = -1;
+            bool resultado = false;
+            if (cmbMarca.SelectedValue != null && cmbTipoAuto.SelectedValue != null)
+            {
+                marca = (int)cmbMarca.SelectedValue;
+                tipoAuto = (int)cmbTipoAuto.SelectedValue;
+            }
+            if (nombre != "")
+            {
+                resultado = agregarModelo(nombre, marca, tipoAuto);
+            }
+            if (resultado)
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                string mensajeCarga = ("Nombre: " + nombre + "\n" + "Marca: " + cmbMarca.Text + "\n" + "Tipo de Auto: " + cmbTipoAuto.Text);
+                string titulo = "Información de Carga";
+                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
 
+                if (result == DialogResult.OK)
+                {
+                    MessageBox.Show("Tipo de Documento agregado con éxito!");
+                    limpiarCampos();
+                    cargarTablaModelo();
+                }
+                else
+                {
+                    txtNombre.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar el tipo de documento! \n Complete los campos por favor!");
+            }
         }
     }
 }

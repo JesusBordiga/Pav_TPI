@@ -31,7 +31,7 @@ namespace Shopping_Buy_All.ABM_Sexo
                 DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
                 if (result == DialogResult.OK)
                 {
-                    eliminarSexo(nombre);
+                    borrarSexo(nombre);
                     MessageBox.Show("Nombre de sexo dado de baja con éxito!");
                     limpiarCampos();
                     cambiarBuscador(true);
@@ -178,7 +178,7 @@ namespace Shopping_Buy_All.ABM_Sexo
                 MessageBox.Show("Error al buscar el nombre de sexo! \n Complete el campo por favor!", "Error", MessageBoxButtons.OK);
             }
         }
-        private void eliminarSexo(string nombre)
+        private void borrarSexo(string nombre)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -193,10 +193,7 @@ namespace Shopping_Buy_All.ABM_Sexo
 
                 cn.Open();
                 command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaSexo.DataSource = tabla;
+                command.ExecuteNonQuery();
             }
             catch (SqlException)
             {

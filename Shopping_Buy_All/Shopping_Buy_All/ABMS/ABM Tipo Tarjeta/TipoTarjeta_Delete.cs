@@ -131,7 +131,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
                 MessageBox.Show("Error al buscar el tipo de tarjeta! \n Complete el campo por favor!", "Error", MessageBoxButtons.OK);
             }
         }
-        private void modificarTipoTarjeta(string nombre)
+        private void borrarTipoTarjeta(string nombre)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -146,10 +146,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
 
                 cn.Open();
                 command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaTipoTarjeta.DataSource = tabla;
+                command.ExecuteNonQuery();
             }
             catch (SqlException)
             {
@@ -175,7 +172,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
                 DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
                 if (result == DialogResult.OK)
                 {
-                    modificarTipoTarjeta(nombre);
+                    borrarTipoTarjeta(nombre);
                     MessageBox.Show("Tipo de tarjeta dado de baja con éxito!");
                     limpiarCampos();
                     cambiarBuscador(true);

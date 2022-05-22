@@ -126,6 +126,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tablaEC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaEC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablaEC.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.tablaEC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tablaEC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

@@ -29,45 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modelo_Load));
-            this.tablaModelos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnClientLoad = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textNombreModelo = new System.Windows.Forms.TextBox();
-            this.comboBoxIdMarca = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxTipoAuto = new System.Windows.Forms.ComboBox();
+            this.tablaModelos = new System.Windows.Forms.DataGridView();
             this.CodigoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoTipoAuto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbTipoAuto = new System.Windows.Forms.ComboBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaModelos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tablaModelos
-            // 
-            this.tablaModelos.AllowUserToAddRows = false;
-            this.tablaModelos.AllowUserToDeleteRows = false;
-            this.tablaModelos.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.tablaModelos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tablaModelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaModelos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CodigoModelo,
-            this.NombreModelo,
-            this.IdMarca,
-            this.CodigoTipoAuto});
-            this.tablaModelos.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaModelos.Location = new System.Drawing.Point(347, 47);
-            this.tablaModelos.Name = "tablaModelos";
-            this.tablaModelos.ReadOnly = true;
-            this.tablaModelos.Size = new System.Drawing.Size(668, 390);
-            this.tablaModelos.TabIndex = 0;
-            this.tablaModelos.TabStop = false;
             // 
             // label1
             // 
@@ -75,7 +57,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(67, 12);
+            this.label1.Location = new System.Drawing.Point(82, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 31);
             this.label1.TabIndex = 1;
@@ -92,18 +74,6 @@
             this.label4.Size = new System.Drawing.Size(0, 17);
             this.label4.TabIndex = 4;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(28, 98);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 17);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Nombre del Modelo:";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -116,88 +86,33 @@
             this.label15.TabIndex = 28;
             this.label15.Text = "Lista de Modelos";
             // 
-            // btnClientLoad
+            // tablaModelos
             // 
-            this.btnClientLoad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClientLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientLoad.ForeColor = System.Drawing.Color.White;
-            this.btnClientLoad.Location = new System.Drawing.Point(54, 414);
-            this.btnClientLoad.Name = "btnClientLoad";
-            this.btnClientLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnClientLoad.TabIndex = 13;
-            this.btnClientLoad.Text = "Cargar";
-            this.btnClientLoad.UseVisualStyleBackColor = true;
-            this.btnClientLoad.Click += new System.EventHandler(this.btnCargarCliente_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(174, 414);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 14;
-            this.btnClear.Text = "Limpiar";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(105, 131);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(57, 17);
-            this.label16.TabIndex = 29;
-            this.label16.Text = "Marca:";
-            // 
-            // textNombreModelo
-            // 
-            this.textNombreModelo.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textNombreModelo.ForeColor = System.Drawing.Color.White;
-            this.textNombreModelo.Location = new System.Drawing.Point(187, 98);
-            this.textNombreModelo.Name = "textNombreModelo";
-            this.textNombreModelo.Size = new System.Drawing.Size(119, 20);
-            this.textNombreModelo.TabIndex = 3;
-            // 
-            // comboBoxIdMarca
-            // 
-            this.comboBoxIdMarca.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.comboBoxIdMarca.ForeColor = System.Drawing.Color.White;
-            this.comboBoxIdMarca.FormattingEnabled = true;
-            this.comboBoxIdMarca.Location = new System.Drawing.Point(187, 128);
-            this.comboBoxIdMarca.Name = "comboBoxIdMarca";
-            this.comboBoxIdMarca.Size = new System.Drawing.Size(119, 21);
-            this.comboBoxIdMarca.TabIndex = 30;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(79, 158);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Tipo Auto:";
-            // 
-            // comboBoxTipoAuto
-            // 
-            this.comboBoxTipoAuto.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.comboBoxTipoAuto.ForeColor = System.Drawing.Color.White;
-            this.comboBoxTipoAuto.FormattingEnabled = true;
-            this.comboBoxTipoAuto.Location = new System.Drawing.Point(187, 158);
-            this.comboBoxTipoAuto.Name = "comboBoxTipoAuto";
-            this.comboBoxTipoAuto.Size = new System.Drawing.Size(119, 21);
-            this.comboBoxTipoAuto.TabIndex = 32;
+            this.tablaModelos.AllowUserToAddRows = false;
+            this.tablaModelos.AllowUserToDeleteRows = false;
+            this.tablaModelos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tablaModelos.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.tablaModelos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tablaModelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaModelos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodigoModelo,
+            this.NombreModelo,
+            this.IdMarca,
+            this.Descripcion,
+            this.CodigoTipoAuto,
+            this.Nombre});
+            this.tablaModelos.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tablaModelos.Location = new System.Drawing.Point(399, 45);
+            this.tablaModelos.Name = "tablaModelos";
+            this.tablaModelos.ReadOnly = true;
+            this.tablaModelos.Size = new System.Drawing.Size(625, 399);
+            this.tablaModelos.TabIndex = 89;
+            this.tablaModelos.TabStop = false;
             // 
             // CodigoModelo
             // 
             this.CodigoModelo.DataPropertyName = "CodigoModelo";
+            this.CodigoModelo.FillWeight = 50F;
             this.CodigoModelo.HeaderText = "Codigo Modelo";
             this.CodigoModelo.Name = "CodigoModelo";
             this.CodigoModelo.ReadOnly = true;
@@ -205,25 +120,135 @@
             // NombreModelo
             // 
             this.NombreModelo.DataPropertyName = "NombreModelo";
+            this.NombreModelo.FillWeight = 121.8274F;
             this.NombreModelo.HeaderText = "Nombre Modelo";
             this.NombreModelo.Name = "NombreModelo";
             this.NombreModelo.ReadOnly = true;
-            this.NombreModelo.Width = 300;
             // 
             // IdMarca
             // 
             this.IdMarca.DataPropertyName = "IdMarca";
+            this.IdMarca.FillWeight = 50F;
             this.IdMarca.HeaderText = "Id Marca";
             this.IdMarca.Name = "IdMarca";
             this.IdMarca.ReadOnly = true;
             // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.FillWeight = 116.2897F;
+            this.Descripcion.HeaderText = "Nombre marca";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
             // CodigoTipoAuto
             // 
             this.CodigoTipoAuto.DataPropertyName = "CodigoTipoAuto";
+            this.CodigoTipoAuto.FillWeight = 50F;
             this.CodigoTipoAuto.HeaderText = "Codigo Tipo Auto";
             this.CodigoTipoAuto.Name = "CodigoTipoAuto";
             this.CodigoTipoAuto.ReadOnly = true;
-            this.CodigoTipoAuto.Width = 150;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.FillWeight = 111.9744F;
+            this.Nombre.HeaderText = "TipoAuto";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(49, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 17);
+            this.label2.TabIndex = 111;
+            this.label2.Text = "Nombre del Modelo:";
+            // 
+            // cmbTipoAuto
+            // 
+            this.cmbTipoAuto.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cmbTipoAuto.ForeColor = System.Drawing.SystemColors.Window;
+            this.cmbTipoAuto.FormattingEnabled = true;
+            this.cmbTipoAuto.Location = new System.Drawing.Point(208, 138);
+            this.cmbTipoAuto.Name = "cmbTipoAuto";
+            this.cmbTipoAuto.Size = new System.Drawing.Size(119, 21);
+            this.cmbTipoAuto.TabIndex = 115;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtNombre.ForeColor = System.Drawing.Color.White;
+            this.txtNombre.Location = new System.Drawing.Point(208, 85);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(119, 20);
+            this.txtNombre.TabIndex = 110;
+            // 
+            // cmbMarca
+            // 
+            this.cmbMarca.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cmbMarca.ForeColor = System.Drawing.Color.White;
+            this.cmbMarca.FormattingEnabled = true;
+            this.cmbMarca.Location = new System.Drawing.Point(208, 111);
+            this.cmbMarca.Name = "cmbMarca";
+            this.cmbMarca.Size = new System.Drawing.Size(119, 21);
+            this.cmbMarca.TabIndex = 114;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(49, 115);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 17);
+            this.label6.TabIndex = 112;
+            this.label6.Text = "Marca:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(49, 142);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 17);
+            this.label7.TabIndex = 113;
+            this.label7.Text = "Tipo de Auto:";
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.BackColor = System.Drawing.Color.DarkGray;
+            this.btnCargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargar.ForeColor = System.Drawing.Color.White;
+            this.btnCargar.Location = new System.Drawing.Point(109, 391);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(75, 23);
+            this.btnCargar.TabIndex = 109;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = false;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.DarkGray;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(190, 391);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 108;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // Modelo_Load
             // 
@@ -233,18 +258,18 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1027, 449);
-            this.Controls.Add(this.comboBoxTipoAuto);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBoxIdMarca);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnClientLoad);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbTipoAuto);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.cmbMarca);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnCargar);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.tablaModelos);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textNombreModelo);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tablaModelos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1043, 488);
@@ -260,23 +285,24 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView tablaModelos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.ServiceProcess.ServiceController serviceController1;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btnClientLoad;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textNombreModelo;
-        private System.Windows.Forms.ComboBox comboBoxIdMarca;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBoxTipoAuto;
+        private System.Windows.Forms.DataGridView tablaModelos;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoModelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreModelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdMarca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoTipoAuto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbTipoAuto;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.ComboBox cmbMarca;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

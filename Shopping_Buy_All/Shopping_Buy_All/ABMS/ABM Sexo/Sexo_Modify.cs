@@ -198,10 +198,7 @@ namespace Shopping_Buy_All.ABM_Sexo
 
                 cn.Open();
                 command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaSexo.DataSource = tabla;
+                command.ExecuteNonQuery();
             }
             catch (SqlException)
             {

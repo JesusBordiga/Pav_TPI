@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shopping_Buy_All.Entidades;
-using Shopping_Buy_All.ABM_Cliente;
 
 namespace Shopping_Buy_All
 {
@@ -18,340 +17,204 @@ namespace Shopping_Buy_All
         public Modelo_Delete()
         {
             InitializeComponent();
-            CargarTablaModelos();
-            CargarIdMarcas();
-            CargarCodigosTipoAuto();
+            cambiarModificador(false);
+            cargarTablaModelo();
         }
-        private void Client_Delete_Load(object sender, EventArgs e)
+        private void cambiarModificador(bool booleano)
         {
-            tablaModelos.Visible = false;
-            btnSearch.Visible = true;
-            btnDeleteModelo.Visible = false;
-            CargarIdMarcas();
-            CargarCodigosTipoAuto();
-
+            btnBorrar.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
-
-        private void CargarIdMarcas()
+        private void cambiarBuscador(bool booleano, string text)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Marcas";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-
-                comboBoxIdMarca.DataSource = tabla;
-                comboBoxIdMarca.DisplayMember = "Descripcion";
-                comboBoxIdMarca.ValueMember = "Id";
-                comboBoxIdMarca.SelectedIndex = -1;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
+            lblBuscar.Text = text;
+            btnBuscar.Visible = booleano;
+            txtNombre.Visible = booleano;
+            label5.Visible = booleano;
         }
-
-        private void CargarCodigosTipoAuto()
+        private void limpiarCampos()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM TipoAuto";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-
-                comboBoxTipoAuto.DataSource = tabla;
-                comboBoxTipoAuto.DisplayMember = "Nombre";
-                comboBoxTipoAuto.ValueMember = "Cod_tipo";
-                comboBoxTipoAuto.SelectedIndex = -1;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
+            txtNombre.Text = "";
         }
-        private void CargarTablaModelos()
+        private void buscarModelos(string nombre)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
+            if (nombre != "")
             {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Modelos WHERE Borrado like 0";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-                tablaModelos.DataSource = tabla;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-        private void Clean()
-        {
-            textNombreModelo.Text = "";
-            comboBoxIdMarca.SelectedIndex = -1;
-            comboBoxTipoAuto.SelectedIndex = -1;
-            CargarTablaModelos();
-        }
-        private Modelo Cargar_Modelo(string NombreModelo, int IdMarca, int CodigoTipoAuto)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            Modelo model = new Modelo();
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Modelos where NombreModelo like @nombreModelo AND IdMarca like @idMarca AND CodigoTipoAuto like @codigoTipoAuto AND Borrado Like 0";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombreModelo", NombreModelo);
-                cmd.Parameters.AddWithValue("@idMarca", IdMarca);
-                cmd.Parameters.AddWithValue("@codigoTipoAuto", CodigoTipoAuto);
-
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
+                bool resultado = busquedaXNombre(nombre);
+                if (resultado)
                 {
-
-                    model.NombreModeloAuto = DataReader["NombreModelo"].ToString();
-                    model.idMarcaAuto = int.Parse(DataReader["IdMarca"].ToString());
-                    model.CodigoModeloAuto = int.Parse(DataReader["CodigoTipoAuto"].ToString());
+                    cambiarModificador(true);
+                    cambiarBuscador(false, "Borrar modelo");
+                    txtNombre.Text = nombre;
                 }
-                cn.Close();
-
-                DataTable tabla = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(tabla);
-                tablaModelos.DataSource = tabla;
-
+                else
+                {
+                    MessageBox.Show("No se encontró el modelo!", "Error", MessageBoxButtons.OK);
+                    limpiarCampos();
+                    cargarTablaModelo();
+                }
             }
-            catch (Exception)
+            else
             {
-
-                throw;
+                MessageBox.Show("Error al buscar el modelo! \n Complete el campo por favor!", "Error", MessageBoxButtons.OK);
             }
-            finally
-            {
-                cn.Close();
-            }
-            return model;
-
         }
-        private bool Buscar_Modelo(string NombreModelo, int IdMarca, int CodigoTipoAuto)
+        private bool busquedaXNombre(string nombre)
         {
+            bool resultado = false;
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
-            Modelo model = new Modelo();
-            bool resultado = false;
+
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Modelos where NombreModelo like @nombreModelo AND IdMarca like @idMarca AND CodigoTipoAuto like @codigoTipoAuto AND Borrado Like 0";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombreModelo", NombreModelo);
-                cmd.Parameters.AddWithValue("@idMarca", IdMarca);
-                cmd.Parameters.AddWithValue("@codigoTipoAuto", CodigoTipoAuto);
-
-
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
+                SqlCommand command = new SqlCommand();
+                string consulta = "buscarModeloNoBorrado @Nombre";
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@Nombre", nombre);
+                command.CommandType = CommandType.Text;
+                command.CommandText = consulta;
 
                 cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
+                command.Connection = cn;
+                DataTable tabla = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(tabla);
+                tablaModelos.DataSource = tabla;
+                if (tabla.Rows.Count == 1)
                 {
-                    model.NombreModeloAuto = DataReader["NombreModelo"].ToString();
-                    model.idMarcaAuto = int.Parse(DataReader["IdMarca"].ToString());
-                    model.CodigoModeloAuto = int.Parse(DataReader["CodigoTipoAuto"].ToString());
-                    cn.Close();
-                    DataTable tabla = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(tabla);
-                    tablaModelos.DataSource = tabla;
                     resultado = true;
                 }
-  
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
                 cn.Close();
             }
             return resultado;
-
         }
-        private void btnClean_Click(object sender, EventArgs e)
-            {    
-              Clean();
-              tablaModelos.Visible = false;
-              btnDeleteModelo.Visible = false;
-              btnSearch.Visible = true;
-            }
-
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void borrarModelo(string nombre)
         {
-            if ((int)comboBoxTipoAuto.SelectedIndex == 0 && (int)comboBoxIdMarca.SelectedIndex == 0 && textNombreModelo.Text.Trim().Equals(""))
-                {
-                MessageBox.Show("Error, Debe completar los campos!!");
-                }
-            else
-                {
-                bool existe = Buscar_Modelo(textNombreModelo.Text.Trim(), (int)comboBoxIdMarca.SelectedValue, (int)comboBoxTipoAuto.SelectedValue);
-                if (existe)
-                    {
-                    tablaModelos.Visible = true;
-                    btnDeleteModelo.Visible = true;
-                    btnSearch.Visible = false;
-                    }
-                else
-                    {
-                    MessageBox.Show("El modelo que busca no existe o fue borrado!");
-                    }
-                }
-        }
-        private bool BorrarModelo(string NombreModelo, int IdMarca, int CodigoTipoAuto, int Borrado)
-        {
-                string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-                SqlConnection cn = new SqlConnection(cadenaConexion);
-                bool resultado = false;
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Modelos SET Borrado = @borrado WHERE NombreModelo Like @nombreModelo AND IdMarca Like @idMarca AND CodigoTipoAuto Like @codigoTipoAuto AND Borrado like 0";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombreModelo", NombreModelo);
-                cmd.Parameters.AddWithValue("@idMarca", IdMarca);
-                cmd.Parameters.AddWithValue("@codigoTipoAuto", CodigoTipoAuto);
-                cmd.Parameters.AddWithValue("@borrado", Borrado);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
+                SqlCommand command = new SqlCommand();
+                string consulta = "borrarModelo @nombre";
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@nombre", nombre);
+                command.CommandType = CommandType.Text;
+                command.CommandText = consulta;
 
                 cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
+                command.Connection = cn;
+                command.ExecuteNonQuery();
             }
             catch (SqlException)
             {
-                throw;
-                
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
             }
             catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    cn.Close();
-                }
-                return resultado;
-        }
-
-        private void btnDeleteClient_Click(object sender, EventArgs e)
-
-        {
-            Modelo m = Cargar_Modelo(textNombreModelo.Text.Trim(), (int)comboBoxIdMarca.SelectedValue, (int)comboBoxTipoAuto.SelectedValue);
-            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-            String mensajeCarga = (" |Nobre Del Modelo: " + m.NombreModeloAuto + " | \n | Id Marca: " + m.idMarcaAuto + "| \n | Codigo Modelo de Auto:" + m.CodigoModeloAuto + " | \n Desea eliminar a este modelo?");
-
-            string titulo = "Información de Eliminación";
-
-            DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-            if (result == DialogResult.OK)
             {
-                bool resultado = BorrarModelo(textNombreModelo.Text.Trim(), (int)comboBoxIdMarca.SelectedValue, (int)comboBoxTipoAuto.SelectedValue, 1);
-                if (resultado)
+                MessageBox.Show("Error! \n Hubo un error!");
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        private void cargarTablaModelo()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                string consulta = "getModeloNoBorrado";
+                command.Parameters.Clear();
+                command.CommandType = CommandType.Text;
+                command.CommandText = consulta;
+
+                cn.Open();
+                command.Connection = cn;
+                DataTable tabla = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(tabla);
+                tablaModelos.DataSource = tabla;
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! \n Hubo un error!");
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string nombre = txtNombre.Text.Trim();
+            buscarModelos(nombre);
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true, "Buscar modelo");
+            cargarTablaModelo();
+        }
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            string nombre = txtNombre.Text.Trim();
+            if (nombre != "")
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                string mensajeCarga = (" |Nombre: " + nombre + "|");
+                string titulo = "Información de Baja";
+                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+                if (result == DialogResult.OK)
                 {
-                    MessageBox.Show("Modelo Borrado con éxito!");
-                    Clean();
-                    //BorrarModelo(m);
-                    CargarIdMarcas();
-                    CargarCodigosTipoAuto();
-                    tablaModelos.Visible = false;
-                    btnDeleteModelo.Visible = false;
-                    btnSearch.Visible = true;
-                    textNombreModelo.Focus();
+                    borrarModelo(nombre);
+                    MessageBox.Show("Modelo dado de baja con éxito!");
+                    limpiarCampos();
+                    cambiarBuscador(true, "Buscar modelo");
+                    cambiarModificador(false);
+                    cargarTablaModelo();
                 }
                 else
                 {
-                    MessageBox.Show("El modelo no fue Borrado!");
+                    txtNombre.Focus();
                 }
             }
             else
             {
-                textNombreModelo.Focus();
+                MessageBox.Show("Error al dar de baja el modelo! \n Complete los campos por favor!");
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void tablaModelos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Grilla_Modelos tabla = new Grilla_Modelos();
-            tabla.Show();
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaModelos.Rows[indice];
+                string nombre = filaSeleccionada.Cells["NombreModelo"].Value.ToString();
+                buscarModelos(nombre);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! \n Seleccione una casilla dentro de la tabla");
+            }
         }
     }
 }
-

@@ -131,7 +131,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
                 MessageBox.Show("Error al buscar el estado civil! \n Complete el campo por favor!", "Error", MessageBoxButtons.OK);
             }
         }
-        private void modificarEC(string nombre)
+        private void borrarEC(string nombre)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -146,10 +146,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
 
                 cn.Open();
                 command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaEC.DataSource = tabla;
+                command.ExecuteNonQuery();
             }
             catch (SqlException)
             {
@@ -175,7 +172,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
                 DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
                 if (result == DialogResult.OK)
                 {
-                    modificarEC(nombre);
+                    borrarEC(nombre);
                     MessageBox.Show("Estado civil dado de baja con éxito!");
                     limpiarCampos();
                     cambiarBuscador(true);

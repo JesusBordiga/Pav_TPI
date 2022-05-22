@@ -193,10 +193,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
 
                 cn.Open();
                 command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaTipDoc.DataSource = tabla;
+                command.ExecuteNonQuery();
             }
             catch (SqlException)
             {

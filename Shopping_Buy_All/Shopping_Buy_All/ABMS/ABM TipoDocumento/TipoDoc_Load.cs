@@ -56,7 +56,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
                 cn.Close();
             }
         }
-        private bool Agregar_Sexo(TipoDocumento tipDoc)
+        private bool AgregarTipoDocumento(TipoDocumento tipDoc)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -92,7 +92,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
         private void btnSexoLoad_Click_1(object sender, EventArgs e)
         {
             TipoDocumento tipDoc = new TipoDocumento(txtTipoDoc.Text.Trim(), 0);
-            bool resultado = Agregar_Sexo(tipDoc);
+            bool resultado = AgregarTipoDocumento(tipDoc);
             if (resultado)
             {
                 MessageBoxButtons buttons = MessageBoxButtons.OKCancel;

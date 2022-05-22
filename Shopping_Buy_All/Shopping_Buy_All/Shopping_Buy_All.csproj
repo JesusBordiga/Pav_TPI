@@ -120,12 +120,6 @@
     <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Load.designer.cs">
       <DependentUpon>MarcaVehiculo_Load.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM Modelos\Grilla_Modelos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Modelos\Grilla_Modelos.Designer.cs">
-      <DependentUpon>Grilla_Modelos.cs</DependentUpon>
-    </Compile>
     <Compile Include="ABMS\ABM Modelos\Modelo_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -495,9 +489,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Load.resx">
       <DependentUpon>MarcaVehiculo_Load.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Modelos\Grilla_Modelos.resx">
-      <DependentUpon>Grilla_Modelos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Modelos\Modelo_Delete.resx">
       <DependentUpon>Modelo_Delete.cs</DependentUpon>

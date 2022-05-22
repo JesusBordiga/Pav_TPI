@@ -114,6 +114,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tablaEstadoCivil.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaEstadoCivil.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablaEstadoCivil.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.tablaEstadoCivil.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tablaEstadoCivil.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

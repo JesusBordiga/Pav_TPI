@@ -113,6 +113,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tablaSexo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaSexo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablaSexo.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.tablaSexo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tablaSexo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

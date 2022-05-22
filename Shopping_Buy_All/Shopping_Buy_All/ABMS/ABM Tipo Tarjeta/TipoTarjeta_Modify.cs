@@ -150,10 +150,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
 
                 cn.Open();
                 command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaTipoTarjeta.DataSource = tabla;
+                command.ExecuteNonQuery();
             }
             catch (SqlException)
             {
