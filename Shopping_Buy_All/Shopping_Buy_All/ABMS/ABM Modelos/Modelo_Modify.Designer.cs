@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modelo_Modify));
-            this.label15 = new System.Windows.Forms.Label();
             this.tablaModelos = new System.Windows.Forms.DataGridView();
             this.CodigoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,6 +38,7 @@
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoTipoAuto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label15 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -54,18 +56,6 @@
             this.panelModificador.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(586, 9);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(234, 31);
-            this.label15.TabIndex = 59;
-            this.label15.Text = "Lista de Modelos";
-            // 
             // tablaModelos
             // 
             this.tablaModelos.AllowUserToAddRows = false;
@@ -81,14 +71,30 @@
             this.Descripcion,
             this.CodigoTipoAuto,
             this.Nombre});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablaModelos.DefaultCellStyle = dataGridViewCellStyle1;
             this.tablaModelos.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaModelos.Location = new System.Drawing.Point(390, 43);
+            this.tablaModelos.Location = new System.Drawing.Point(393, 44);
             this.tablaModelos.Name = "tablaModelos";
             this.tablaModelos.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaModelos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaModelos.RowHeadersWidth = 10;
             this.tablaModelos.Size = new System.Drawing.Size(625, 399);
-            this.tablaModelos.TabIndex = 88;
+            this.tablaModelos.TabIndex = 110;
             this.tablaModelos.TabStop = false;
-            this.tablaModelos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaModelos_CellContentClick);
             // 
             // CodigoModelo
             // 
@@ -137,6 +143,18 @@
             this.Nombre.HeaderText = "TipoAuto";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(586, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(234, 31);
+            this.label15.TabIndex = 59;
+            this.label15.Text = "Lista de Modelos";
             // 
             // btnBuscar
             // 
@@ -216,7 +234,6 @@
             // cmbTipoAuto
             // 
             this.cmbTipoAuto.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.cmbTipoAuto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoAuto.ForeColor = System.Drawing.SystemColors.Window;
             this.cmbTipoAuto.FormattingEnabled = true;
             this.cmbTipoAuto.Location = new System.Drawing.Point(174, 59);
@@ -226,8 +243,8 @@
             // 
             // cmbMarca
             // 
+            this.cmbMarca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbMarca.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.ForeColor = System.Drawing.Color.White;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(174, 32);
@@ -302,6 +319,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1027, 449);
+            this.Controls.Add(this.tablaModelos);
             this.Controls.Add(this.panelModificador);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnModificar);
@@ -309,7 +327,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.lblBuscar);
-            this.Controls.Add(this.tablaModelos);
             this.Controls.Add(this.label15);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -328,13 +345,6 @@
 
         #endregion
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DataGridView tablaModelos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoModelo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreModelo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdMarca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoTipoAuto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.TextBox txtNombre;
@@ -348,5 +358,12 @@
         private System.Windows.Forms.TextBox txtNombreNuevo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelModificador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoModelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreModelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdMarca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoTipoAuto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridView tablaModelos;
     }
 }

@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Shopping_Buy_All
 {
     public partial class Logged : Form
@@ -39,11 +38,6 @@ namespace Shopping_Buy_All
             Clientes_Ventana client_ventana = new Clientes_Ventana();
             client_ventana.Show();
         }
-        private void btnProfesiones_Click(object sender, EventArgs e)
-        {
-            Profesiones_Ventana profesiones_Ventana = new Profesiones_Ventana();
-            profesiones_Ventana.Show();
-        }
         private void btnLocales_Click(object sender, EventArgs e)
         {
             Locales_Ventana loc_ventana = new Locales_Ventana();
@@ -73,6 +67,12 @@ namespace Shopping_Buy_All
         {
             labelHora.Text = "Hora: " + DateTime.Now.ToString("hh:mm:ss");
             labelFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+        private void btnProfesiones_Click(object sender, EventArgs e)
+        {
+            Profesiones_Ventana profesiones_Ventana = new Profesiones_Ventana();
+            profesiones_Ventana.Show();
         }
     }
 }

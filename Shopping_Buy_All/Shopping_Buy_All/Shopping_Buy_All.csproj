@@ -371,6 +371,12 @@
     <Compile Include="Logged\Logged.Designer.cs">
       <DependentUpon>Logged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logged\Ventanas\Profesiones_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Profesiones_Ventana.Designer.cs">
+      <DependentUpon>Profesiones_Ventana.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logged\Ventanas\Locales\Rubros_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -615,6 +621,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Profesiones_Ventana.resx">
+      <DependentUpon>Profesiones_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Locales\Rubros_Ventana.resx">
       <DependentUpon>Rubros_Ventana.cs</DependentUpon>
