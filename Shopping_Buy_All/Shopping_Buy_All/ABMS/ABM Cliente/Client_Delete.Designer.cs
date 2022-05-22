@@ -83,6 +83,7 @@
             // comboBoxDocType
             // 
             this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.comboBoxDocType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
             this.comboBoxDocType.FormattingEnabled = true;
             this.comboBoxDocType.Location = new System.Drawing.Point(51, 118);

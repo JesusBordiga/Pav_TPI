@@ -377,6 +377,7 @@
             // comboBoxDocType
             // 
             this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.comboBoxDocType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
             this.comboBoxDocType.FormattingEnabled = true;
             this.comboBoxDocType.Location = new System.Drawing.Point(94, 74);
@@ -480,6 +481,7 @@
             // comboBoxSex
             // 
             this.comboBoxSex.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSex.ForeColor = System.Drawing.Color.White;
             this.comboBoxSex.FormattingEnabled = true;
             this.comboBoxSex.Location = new System.Drawing.Point(99, 341);

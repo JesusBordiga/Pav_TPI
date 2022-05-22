@@ -172,6 +172,7 @@
             // cmbTipoAuto
             // 
             this.cmbTipoAuto.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cmbTipoAuto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoAuto.ForeColor = System.Drawing.SystemColors.Window;
             this.cmbTipoAuto.FormattingEnabled = true;
             this.cmbTipoAuto.Location = new System.Drawing.Point(208, 138);
@@ -191,6 +192,7 @@
             // cmbMarca
             // 
             this.cmbMarca.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.ForeColor = System.Drawing.Color.White;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(208, 111);

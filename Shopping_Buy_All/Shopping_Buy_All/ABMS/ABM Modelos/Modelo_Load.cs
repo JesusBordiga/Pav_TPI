@@ -24,6 +24,8 @@ namespace Shopping_Buy_All
         private void limpiarCampos()
         {
             txtNombre.Text = "";
+            cmbMarca.SelectedIndex = -1;
+            cmbTipoAuto.SelectedIndex = -1;
         }
         private void cargarTablaModelo()
         {
@@ -133,8 +135,6 @@ namespace Shopping_Buy_All
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiarCampos();
-            cmbMarca.SelectedIndex = -1;
-            cmbTipoAuto.SelectedIndex = -1;
         }
         private bool agregarModelo(string nombre, int marca, int tipoAuto)
         {
@@ -194,7 +194,7 @@ namespace Shopping_Buy_All
 
                 if (result == DialogResult.OK)
                 {
-                    MessageBox.Show("Tipo de Documento agregado con éxito!");
+                    MessageBox.Show("Modelo agregado con éxito!");
                     limpiarCampos();
                     cargarTablaModelo();
                 }
@@ -205,7 +205,7 @@ namespace Shopping_Buy_All
             }
             else
             {
-                MessageBox.Show("Error al cargar el tipo de documento! \n Complete los campos por favor!");
+                MessageBox.Show("Error al cargar el Modelo! \n Complete los campos por favor!");
             }
         }
     }
