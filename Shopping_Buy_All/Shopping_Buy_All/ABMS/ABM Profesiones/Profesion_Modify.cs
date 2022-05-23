@@ -17,7 +17,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Profesiones
         {
             InitializeComponent();
             cargarTablaProfesiones();
-            cambiarModificador(false, "Buscar profesion");
+            cambiarModificador(false, "Buscar\nprofesion");
         }
         private void cargarTablaProfesiones()
         {
@@ -67,7 +67,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Profesiones
                 bool resultado = busquedaXNombre(nombreViejo);
                 if (resultado)
                 {
-                    cambiarModificador(true, "Modificar profesion");
+                    cambiarModificador(true, "Modificar\nprofesion");
                     cambiarBuscador(false);
                     txtNombreProf.Text = nombreViejo;
                 }
@@ -141,12 +141,13 @@ namespace Shopping_Buy_All.ABMS.ABM_Profesiones
         {
             btnProfModify.Visible = booleano;
             btnLimpiar.Visible = booleano;
-            label4.Visible = booleano;
+            label3.Visible = booleano;
             label1.Text = label;
+            txtNombreNuevo.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
-            label3.Visible = booleano;
+            label4.Visible = booleano;
             btnBuscarProf.Visible = booleano;
             txtNombreProf.Visible = booleano;
         }
@@ -158,6 +159,9 @@ namespace Shopping_Buy_All.ABMS.ABM_Profesiones
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiarCampos();
+            cargarTablaProfesiones();
+            cambiarModificador(false, "Buscar\nprofesion");
+            cambiarBuscador(true);
         }
         private void btnProfModify_Click(object sender, EventArgs e)
         {
@@ -175,7 +179,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Profesiones
                     MessageBox.Show("Profesión modificada con éxito!");
                     limpiarCampos();
                     cambiarBuscador(true);
-                    cambiarModificador(false, "Buscar profesion");
+                    cambiarModificador(false, "Buscar\nprofesion");
                     cargarTablaProfesiones();
                 }
                 else

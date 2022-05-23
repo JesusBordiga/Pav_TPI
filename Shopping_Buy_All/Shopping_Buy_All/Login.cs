@@ -69,7 +69,7 @@ namespace Shopping_Buy_All
             {
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "Select * FROM Users WHERE NombreDeUsuario like @nombreUsuario AND PasswordHash like @hash AND Borrado = 0";
+                string consulta = "getUsuarioNoBorrado @nombreUsuario, @hash";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nombreUsuario", userName);

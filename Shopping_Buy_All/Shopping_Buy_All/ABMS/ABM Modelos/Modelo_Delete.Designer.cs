@@ -31,18 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modelo_Delete));
             this.lblBuscar = new System.Windows.Forms.Label();
             this.tablaModelos = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnBorrar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.CodigoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoTipoAuto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaModelos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,54 @@
             this.tablaModelos.TabIndex = 64;
             this.tablaModelos.TabStop = false;
             this.tablaModelos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaModelos_CellContentClick);
+            // 
+            // CodigoModelo
+            // 
+            this.CodigoModelo.DataPropertyName = "CodigoModelo";
+            this.CodigoModelo.FillWeight = 50F;
+            this.CodigoModelo.HeaderText = "Codigo Modelo";
+            this.CodigoModelo.Name = "CodigoModelo";
+            this.CodigoModelo.ReadOnly = true;
+            // 
+            // NombreModelo
+            // 
+            this.NombreModelo.DataPropertyName = "NombreModelo";
+            this.NombreModelo.FillWeight = 121.8274F;
+            this.NombreModelo.HeaderText = "Nombre Modelo";
+            this.NombreModelo.Name = "NombreModelo";
+            this.NombreModelo.ReadOnly = true;
+            // 
+            // IdMarca
+            // 
+            this.IdMarca.DataPropertyName = "IdMarca";
+            this.IdMarca.FillWeight = 50F;
+            this.IdMarca.HeaderText = "Id Marca";
+            this.IdMarca.Name = "IdMarca";
+            this.IdMarca.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.FillWeight = 116.2897F;
+            this.Descripcion.HeaderText = "Nombre marca";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // CodigoTipoAuto
+            // 
+            this.CodigoTipoAuto.DataPropertyName = "CodigoTipoAuto";
+            this.CodigoTipoAuto.FillWeight = 50F;
+            this.CodigoTipoAuto.HeaderText = "Codigo Tipo Auto";
+            this.CodigoTipoAuto.Name = "CodigoTipoAuto";
+            this.CodigoTipoAuto.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.FillWeight = 111.9744F;
+            this.Nombre.HeaderText = "TipoAuto";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // btnBuscar
             // 
@@ -156,54 +204,6 @@
             this.label2.Size = new System.Drawing.Size(234, 31);
             this.label2.TabIndex = 76;
             this.label2.Text = "Lista de modelos";
-            // 
-            // CodigoModelo
-            // 
-            this.CodigoModelo.DataPropertyName = "CodigoModelo";
-            this.CodigoModelo.FillWeight = 50F;
-            this.CodigoModelo.HeaderText = "Codigo Modelo";
-            this.CodigoModelo.Name = "CodigoModelo";
-            this.CodigoModelo.ReadOnly = true;
-            // 
-            // NombreModelo
-            // 
-            this.NombreModelo.DataPropertyName = "NombreModelo";
-            this.NombreModelo.FillWeight = 121.8274F;
-            this.NombreModelo.HeaderText = "Nombre Modelo";
-            this.NombreModelo.Name = "NombreModelo";
-            this.NombreModelo.ReadOnly = true;
-            // 
-            // IdMarca
-            // 
-            this.IdMarca.DataPropertyName = "IdMarca";
-            this.IdMarca.FillWeight = 50F;
-            this.IdMarca.HeaderText = "Id Marca";
-            this.IdMarca.Name = "IdMarca";
-            this.IdMarca.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.FillWeight = 116.2897F;
-            this.Descripcion.HeaderText = "Nombre marca";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // CodigoTipoAuto
-            // 
-            this.CodigoTipoAuto.DataPropertyName = "CodigoTipoAuto";
-            this.CodigoTipoAuto.FillWeight = 50F;
-            this.CodigoTipoAuto.HeaderText = "Codigo Tipo Auto";
-            this.CodigoTipoAuto.Name = "CodigoTipoAuto";
-            this.CodigoTipoAuto.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.FillWeight = 111.9744F;
-            this.Nombre.HeaderText = "TipoAuto";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
             // 
             // Modelo_Delete
             // 

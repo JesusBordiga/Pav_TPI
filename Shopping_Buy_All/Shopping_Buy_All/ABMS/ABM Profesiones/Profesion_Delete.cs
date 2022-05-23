@@ -16,7 +16,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Profesiones
         public Profesion_Delete()
         {
             InitializeComponent();
-            cambiarModificador(false, "Buscar profesion");
+            cambiarModificador(false, "Buscar\nprofesion");
             cargarTablaProfesiones();
         }
         private void cargarTablaProfesiones()
@@ -67,7 +67,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Profesiones
                 bool resultado = busquedaXNombre(nombre);
                 if (resultado)
                 {
-                    cambiarModificador(true, "Borrar profesion");
+                    cambiarModificador(true, "Borrar\nprofesion");
                     cambiarBuscador(false);
                     txtNombreProf.Text = nombre;
                 }
@@ -141,17 +141,18 @@ namespace Shopping_Buy_All.ABMS.ABM_Profesiones
         {
             btnProfBorrar.Visible = booleano;
             btnLimpiar.Visible = booleano;
-            label4.Visible = booleano;
             label1.Text = label;
         }
         private void cambiarBuscador(bool booleano)
         {
             btnBuscarProf.Visible = booleano;
-            txtNombreProf.Visible = booleano;
         }
         private void limpiarCampos()
         {
             txtNombreProf.Text = "";
+            cargarTablaProfesiones();
+            cambiarModificador(false, "Buscar\nprofesion");
+            cambiarBuscador(true);
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -172,7 +173,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Profesiones
                     MessageBox.Show("Profesión dada de baja con éxito!");
                     limpiarCampos();
                     cambiarBuscador(true);
-                    cambiarModificador(false, "Buscar profesion");
+                    cambiarModificador(false, "Buscar\nprofesion");
                     cargarTablaProfesiones();
                 }
                 else
