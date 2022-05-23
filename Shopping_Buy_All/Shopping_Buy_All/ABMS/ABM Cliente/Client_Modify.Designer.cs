@@ -50,7 +50,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelBuscarCliente = new System.Windows.Forms.Label();
             this.btnSearchClient = new System.Windows.Forms.Button();
             this.btnSearchClient2 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -74,6 +74,8 @@
             this.EstadoCiv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchPanel = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.PanelEstadoCivil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.searchPanel.SuspendLayout();
@@ -297,17 +299,17 @@
             this.label2.TabIndex = 34;
             this.label2.Text = "Nombres";
             // 
-            // label1
+            // labelBuscarCliente
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(101, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 25);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Buscar cliente";
+            this.labelBuscarCliente.AutoSize = true;
+            this.labelBuscarCliente.BackColor = System.Drawing.Color.Transparent;
+            this.labelBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBuscarCliente.ForeColor = System.Drawing.Color.White;
+            this.labelBuscarCliente.Location = new System.Drawing.Point(101, 28);
+            this.labelBuscarCliente.Name = "labelBuscarCliente";
+            this.labelBuscarCliente.Size = new System.Drawing.Size(148, 25);
+            this.labelBuscarCliente.TabIndex = 32;
+            this.labelBuscarCliente.Text = "Buscar cliente";
             // 
             // btnSearchClient
             // 
@@ -394,6 +396,7 @@
             // 
             // comboBoxSex
             // 
+            this.comboBoxSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxSex.BackColor = System.Drawing.SystemColors.ControlDark;
             this.comboBoxSex.ForeColor = System.Drawing.Color.White;
             this.comboBoxSex.FormattingEnabled = true;
@@ -447,7 +450,7 @@
             this.tablaClientes.Size = new System.Drawing.Size(654, 397);
             this.tablaClientes.TabIndex = 66;
             this.tablaClientes.TabStop = false;
-            this.tablaClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick);
+            this.tablaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick_1);
             // 
             // TipoDocumento
             // 
@@ -557,6 +560,8 @@
             // searchPanel
             // 
             this.searchPanel.BackColor = System.Drawing.Color.Transparent;
+            this.searchPanel.Controls.Add(this.label12);
+            this.searchPanel.Controls.Add(this.label1);
             this.searchPanel.Controls.Add(this.textNameClient);
             this.searchPanel.Controls.Add(this.btnClear);
             this.searchPanel.Controls.Add(this.btnSearchClient2);
@@ -581,6 +586,30 @@
             this.searchPanel.Size = new System.Drawing.Size(245, 314);
             this.searchPanel.TabIndex = 67;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(139, 154);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 17);
+            this.label12.TabIndex = 65;
+            this.label12.Text = "Casado";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(60, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 17);
+            this.label1.TabIndex = 64;
+            this.label1.Text = "Soltero";
+            // 
             // Client_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -596,7 +625,7 @@
             this.Controls.Add(this.panelSearch);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelBuscarCliente);
             this.Controls.Add(this.tablaClientes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -636,7 +665,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelBuscarCliente;
         private System.Windows.Forms.Button btnSearchClient;
         private System.Windows.Forms.Button btnSearchClient2;
         private System.Windows.Forms.Label label10;
@@ -660,5 +689,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCiv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
         private System.Windows.Forms.Panel searchPanel;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label1;
     }
 }

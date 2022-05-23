@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client_Delete));
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelClienteaEliminar = new System.Windows.Forms.Label();
             this.textNumberDoc = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxDocType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,17 +57,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labelClienteaEliminar
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(23, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 25);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Cliente a eliminar";
+            this.labelClienteaEliminar.AutoSize = true;
+            this.labelClienteaEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.labelClienteaEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClienteaEliminar.ForeColor = System.Drawing.Color.White;
+            this.labelClienteaEliminar.Location = new System.Drawing.Point(23, 65);
+            this.labelClienteaEliminar.Name = "labelClienteaEliminar";
+            this.labelClienteaEliminar.Size = new System.Drawing.Size(179, 25);
+            this.labelClienteaEliminar.TabIndex = 33;
+            this.labelClienteaEliminar.Text = "Cliente a eliminar";
             // 
             // textNumberDoc
             // 
@@ -82,8 +82,8 @@
             // 
             // comboBoxDocType
             // 
+            this.comboBoxDocType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.comboBoxDocType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
             this.comboBoxDocType.FormattingEnabled = true;
             this.comboBoxDocType.Location = new System.Drawing.Point(51, 118);
@@ -135,7 +135,7 @@
             this.btnClean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClean.ForeColor = System.Drawing.Color.White;
-            this.btnClean.Location = new System.Drawing.Point(77, 260);
+            this.btnClean.Location = new System.Drawing.Point(77, 237);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(75, 23);
             this.btnClean.TabIndex = 4;
@@ -151,7 +151,7 @@
             this.btnDeleteClient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteClient.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteClient.Location = new System.Drawing.Point(93, 291);
+            this.btnDeleteClient.Location = new System.Drawing.Point(93, 268);
             this.btnDeleteClient.Name = "btnDeleteClient";
             this.btnDeleteClient.Size = new System.Drawing.Size(38, 42);
             this.btnDeleteClient.TabIndex = 67;
@@ -214,7 +214,7 @@
             this.tablaClientes.Size = new System.Drawing.Size(655, 397);
             this.tablaClientes.TabIndex = 72;
             this.tablaClientes.TabStop = false;
-            this.tablaClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick);
+            this.tablaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick_1);
             // 
             // TipoDocumento
             // 
@@ -323,7 +323,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(922, 450);
@@ -336,7 +336,8 @@
             this.Controls.Add(this.comboBoxDocType);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelClienteaEliminar);
+            this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Client_Delete";
@@ -352,7 +353,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelClienteaEliminar;
         private System.Windows.Forms.MaskedTextBox textNumberDoc;
         private System.Windows.Forms.ComboBox comboBoxDocType;
         private System.Windows.Forms.Label label5;

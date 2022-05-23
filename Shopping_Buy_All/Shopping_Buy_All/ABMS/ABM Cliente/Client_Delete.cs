@@ -24,6 +24,10 @@ namespace Shopping_Buy_All
             btnDeleteClient.Visible = false;
             CargarTiposDocumentos();
             CargarTablaClientes();
+            comboBoxDocType.Enabled = true;
+            textNumberDoc.Enabled = true;
+            labelClienteaEliminar.Text = "Buscar Cliente";
+
         }
         private void CargarTablaClientes()
         {
@@ -202,7 +206,10 @@ namespace Shopping_Buy_All
               CargarTablaClientes();
               btnDeleteClient.Visible = false;
               btnSearch.Visible = true;
-            }
+              comboBoxDocType.Enabled = true;
+              textNumberDoc.Enabled = true;
+              labelClienteaEliminar.Text = "Buscar Cliente";
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (validarCliente())
@@ -210,9 +217,12 @@ namespace Shopping_Buy_All
                 bool existe = Buscar_Cliente1((int)comboBoxDocType.SelectedValue, textNumberDoc.Text.Trim());
                 if (existe)
                 {
+                    labelClienteaEliminar.Text = "Cliente a Eliminar";
                     tablaClientes.Visible = true;
                     btnDeleteClient.Visible = true;
                     btnSearch.Visible = false;
+                    comboBoxDocType.Enabled = false;
+                    textNumberDoc.Enabled = false;
                 }
                 else
                 {
@@ -370,18 +380,22 @@ namespace Shopping_Buy_All
             return client;
 
         }
-        private void tablaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void tablaClientes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
-            string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
-            string tipodocumento = filaSeleccionada.Cells["TipoDoc"].Value.ToString();
-            Cliente c = Buscar_Cliente_Documento(tipodocumento, documento);
-            Clean();
-            Cargar_Campos(c);
-            btnDeleteClient.Visible = true;
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
+                string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
+                string tipodocumento = filaSeleccionada.Cells["TipoDoc"].Value.ToString();
+                Cliente c = Buscar_Cliente_Documento(tipodocumento, documento);
+                Clean();
+                Cargar_Campos(c);
+                btnDeleteClient.Visible = true;
+                comboBoxDocType.Enabled = false;
+                textNumberDoc.Enabled = false;
+                labelClienteaEliminar.Text = "Cliente a Eliminar";
             }
             catch
             {

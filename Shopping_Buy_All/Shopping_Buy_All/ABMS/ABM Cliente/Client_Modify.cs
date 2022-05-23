@@ -30,16 +30,20 @@ namespace Shopping_Buy_All
             }
             else
             {
+            labelBuscarCliente.Text = "Modificar Cliente";
             Cliente c = Buscar_Cliente_Documento(comboBoxDocType.SelectedIndex.ToString(), textNumberDoc.Text);
             Cargar_Campos(c);
             searchPanel.Visible=true;
-
+            comboBoxDocType.Enabled = false;
+            textNumberDoc.Enabled = false;
             }
         }
         private void btnSearchClient2_Click(object sender, EventArgs e)
         {
             Clean();
             searchPanel.Visible = true;
+            comboBoxDocType.Enabled = true;
+            textNumberDoc.Enabled = true;
 
         }
         private void Clean()
@@ -324,7 +328,10 @@ namespace Shopping_Buy_All
         {
             Clean();
             searchPanel.Visible = false;
+            labelBuscarCliente.Text = "Buscar Cliente";
             CargarTablaClientes();
+            comboBoxDocType.Enabled = true;
+            textNumberDoc.Enabled = true;
         }
         private Cliente ObtenerDatosCliente()
         {
@@ -454,18 +461,21 @@ namespace Shopping_Buy_All
                
             }
         }
-        private void tablaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tablaClientes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
-            string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
-            string tipodocumento = filaSeleccionada.Cells["TipoDoc"].Value.ToString();
-            Cliente c = Buscar_Cliente_Documento(tipodocumento,documento);
-            Clean();
-            searchPanel.Visible = true;
-            Cargar_Campos(c);
+                labelBuscarCliente.Text = "Modificar Cliente";
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
+                string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
+                string tipodocumento = filaSeleccionada.Cells["TipoDoc"].Value.ToString();
+                Cliente c = Buscar_Cliente_Documento(tipodocumento, documento);
+                Clean();
+                searchPanel.Visible = true;
+                Cargar_Campos(c);
+                comboBoxDocType.Enabled = true;
+                textNumberDoc.Enabled = true;
             }
             catch (Exception)
             {
