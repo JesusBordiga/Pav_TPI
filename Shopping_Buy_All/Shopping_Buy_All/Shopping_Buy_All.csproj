@@ -706,7 +706,9 @@
   <ItemGroup>
     <None Include="Resources\menu-editor.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\vnote.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\users.png" />
   </ItemGroup>

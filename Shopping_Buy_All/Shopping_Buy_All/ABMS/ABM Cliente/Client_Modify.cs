@@ -20,6 +20,7 @@ namespace Shopping_Buy_All
             CargarTablaClientes();
             CargarTiposDocumentos();
             CargarTipoSexo();
+            searchPanel.Visible = false;
         }
         private void btnBuscarCliente_click(object sender, EventArgs e)
         {
@@ -31,15 +32,14 @@ namespace Shopping_Buy_All
             {
             Cliente c = Buscar_Cliente_Documento(comboBoxDocType.SelectedIndex.ToString(), textNumberDoc.Text);
             Cargar_Campos(c);
-            SearchPanel.Visible=false;
-            btnSearchClient.Visible=false;
+            searchPanel.Visible=true;
+
             }
         }
         private void btnSearchClient2_Click(object sender, EventArgs e)
         {
             Clean();
-            SearchPanel.Visible = true;
-            btnSearchClient.Visible = true;
+            searchPanel.Visible = true;
 
         }
         private void Clean()
@@ -54,6 +54,7 @@ namespace Shopping_Buy_All
             radioButtonMarried.Checked = false;
             textDateBirthDay.Text = "";
             comboBoxSex.SelectedIndex = -1;
+            searchPanel.Visible = false;
         }
         private bool validarCliente()
         {
@@ -322,7 +323,7 @@ namespace Shopping_Buy_All
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clean();
-            SearchPanel.Visible = true;
+            searchPanel.Visible = false;
             CargarTablaClientes();
         }
         private Cliente ObtenerDatosCliente()
@@ -463,10 +464,7 @@ namespace Shopping_Buy_All
             string tipodocumento = filaSeleccionada.Cells["TipoDoc"].Value.ToString();
             Cliente c = Buscar_Cliente_Documento(tipodocumento,documento);
             Clean();
-            SearchPanel.Visible = false;
-            btnSearchClient.Visible = false;
-            comboBoxDocType.Visible = true;
-            label4.Visible = true;
+            searchPanel.Visible = true;
             Cargar_Campos(c);
             }
             catch (Exception)

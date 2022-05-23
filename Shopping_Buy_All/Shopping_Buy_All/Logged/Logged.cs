@@ -53,7 +53,7 @@ namespace Shopping_Buy_All
             MarcaTarjeta_Ventana marc_ventana = new MarcaTarjeta_Ventana();
             marc_ventana.Show();
         }
-        private void btnAutomoviles_Click(object sender, EventArgs e)
+        private void btnVehiculos_Click(object sender, EventArgs e)
         {
             Vehiculos_Ventana auto_ventana = new Vehiculos_Ventana();
             auto_ventana.Show();

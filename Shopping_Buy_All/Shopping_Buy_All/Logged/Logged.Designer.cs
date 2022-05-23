@@ -44,7 +44,7 @@
             this.pictureLocales = new System.Windows.Forms.PictureBox();
             this.pictureProfesiones = new System.Windows.Forms.PictureBox();
             this.pictureClientes = new System.Windows.Forms.PictureBox();
-            this.btnAutomoviles = new System.Windows.Forms.Button();
+            this.btnVehiculos = new System.Windows.Forms.Button();
             this.btnMarcasTarjetas = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnLocales = new System.Windows.Forms.Button();
@@ -140,7 +140,7 @@
             this.panelMenu.Controls.Add(this.pictureLocales);
             this.panelMenu.Controls.Add(this.pictureProfesiones);
             this.panelMenu.Controls.Add(this.pictureClientes);
-            this.panelMenu.Controls.Add(this.btnAutomoviles);
+            this.panelMenu.Controls.Add(this.btnVehiculos);
             this.panelMenu.Controls.Add(this.btnMarcasTarjetas);
             this.panelMenu.Controls.Add(this.btnProductos);
             this.panelMenu.Controls.Add(this.btnLocales);
@@ -156,11 +156,13 @@
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pictureBox1.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.user;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Location = new System.Drawing.Point(134, 193);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(58, 55);
             this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // button1
             // 
@@ -181,84 +183,96 @@
             // pictureAutomoviles
             // 
             this.pictureAutomoviles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureAutomoviles.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.audacious;
+            this.pictureAutomoviles.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.vnote;
             this.pictureAutomoviles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureAutomoviles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureAutomoviles.Location = new System.Drawing.Point(250, 101);
             this.pictureAutomoviles.Name = "pictureAutomoviles";
             this.pictureAutomoviles.Size = new System.Drawing.Size(58, 55);
             this.pictureAutomoviles.TabIndex = 52;
             this.pictureAutomoviles.TabStop = false;
+            this.pictureAutomoviles.Click += new System.EventHandler(this.btnVehiculos_Click);
             // 
             // pictureTarjetas
             // 
             this.pictureTarjetas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pictureTarjetas.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.terminator;
             this.pictureTarjetas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureTarjetas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureTarjetas.Location = new System.Drawing.Point(134, 102);
             this.pictureTarjetas.Name = "pictureTarjetas";
             this.pictureTarjetas.Size = new System.Drawing.Size(58, 55);
             this.pictureTarjetas.TabIndex = 51;
             this.pictureTarjetas.TabStop = false;
+            this.pictureTarjetas.Click += new System.EventHandler(this.btnMarcasTarjetas_Click);
             // 
             // pictureProductos
             // 
             this.pictureProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pictureProductos.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.icons;
             this.pictureProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureProductos.Location = new System.Drawing.Point(22, 101);
             this.pictureProductos.Name = "pictureProductos";
             this.pictureProductos.Size = new System.Drawing.Size(58, 55);
             this.pictureProductos.TabIndex = 50;
             this.pictureProductos.TabStop = false;
+            this.pictureProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // pictureLocales
             // 
             this.pictureLocales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pictureLocales.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.software_manager;
             this.pictureLocales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureLocales.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureLocales.Location = new System.Drawing.Point(250, 8);
             this.pictureLocales.Name = "pictureLocales";
             this.pictureLocales.Size = new System.Drawing.Size(58, 55);
             this.pictureLocales.TabIndex = 49;
             this.pictureLocales.TabStop = false;
+            this.pictureLocales.Click += new System.EventHandler(this.btnLocales_Click);
             // 
             // pictureProfesiones
             // 
             this.pictureProfesiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pictureProfesiones.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.menu_editor1;
             this.pictureProfesiones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureProfesiones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureProfesiones.Location = new System.Drawing.Point(134, 8);
             this.pictureProfesiones.Name = "pictureProfesiones";
             this.pictureProfesiones.Size = new System.Drawing.Size(58, 55);
             this.pictureProfesiones.TabIndex = 48;
             this.pictureProfesiones.TabStop = false;
+            this.pictureProfesiones.Click += new System.EventHandler(this.btnProfesiones_Click);
             // 
             // pictureClientes
             // 
             this.pictureClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pictureClientes.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.users;
             this.pictureClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureClientes.Location = new System.Drawing.Point(22, 8);
             this.pictureClientes.Name = "pictureClientes";
             this.pictureClientes.Size = new System.Drawing.Size(58, 55);
             this.pictureClientes.TabIndex = 47;
             this.pictureClientes.TabStop = false;
+            this.pictureClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
-            // btnAutomoviles
+            // btnVehiculos
             // 
-            this.btnAutomoviles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAutomoviles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAutomoviles.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAutomoviles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutomoviles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAutomoviles.ForeColor = System.Drawing.Color.White;
-            this.btnAutomoviles.Location = new System.Drawing.Point(242, 162);
-            this.btnAutomoviles.Name = "btnAutomoviles";
-            this.btnAutomoviles.Size = new System.Drawing.Size(75, 23);
-            this.btnAutomoviles.TabIndex = 46;
-            this.btnAutomoviles.Text = "Vehiculos";
-            this.btnAutomoviles.UseVisualStyleBackColor = false;
-            this.btnAutomoviles.Click += new System.EventHandler(this.btnAutomoviles_Click);
+            this.btnVehiculos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnVehiculos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVehiculos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehiculos.ForeColor = System.Drawing.Color.White;
+            this.btnVehiculos.Location = new System.Drawing.Point(242, 162);
+            this.btnVehiculos.Name = "btnVehiculos";
+            this.btnVehiculos.Size = new System.Drawing.Size(75, 23);
+            this.btnVehiculos.TabIndex = 46;
+            this.btnVehiculos.Text = "Vehiculos";
+            this.btnVehiculos.UseVisualStyleBackColor = false;
+            this.btnVehiculos.Click += new System.EventHandler(this.btnVehiculos_Click);
             // 
             // btnMarcasTarjetas
             // 
@@ -397,7 +411,7 @@
         private System.Windows.Forms.PictureBox pictureLocales;
         private System.Windows.Forms.PictureBox pictureProfesiones;
         private System.Windows.Forms.PictureBox pictureClientes;
-        private System.Windows.Forms.Button btnAutomoviles;
+        private System.Windows.Forms.Button btnVehiculos;
         private System.Windows.Forms.Button btnMarcasTarjetas;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnLocales;
