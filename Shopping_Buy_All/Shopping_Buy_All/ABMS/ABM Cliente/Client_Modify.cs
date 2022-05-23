@@ -20,6 +20,7 @@ namespace Shopping_Buy_All
             CargarTablaClientes();
             CargarTiposDocumentos();
             CargarTipoSexo();
+            CargarTipoEstadoCivil();
             searchPanel.Visible = false;
         }
         private void btnBuscarCliente_click(object sender, EventArgs e)
@@ -54,8 +55,7 @@ namespace Shopping_Buy_All
             textNameClient.Text = "";
             textStreetClient.Text = "";
             textStreetHeight.Text = "";
-            radioButtonSingle.Checked = false;
-            radioButtonMarried.Checked = false;
+            comboBoxEstadoCivil.SelectedIndex = -1;
             textDateBirthDay.Text = "";
             comboBoxSex.SelectedIndex = -1;
             searchPanel.Visible = false;
@@ -100,10 +100,10 @@ namespace Shopping_Buy_All
                 return false;
             }
 
-            else if (radioButtonSingle.Checked == false && radioButtonMarried.Checked == false)
+            else if (comboBoxEstadoCivil.SelectedIndex.Equals(-1))
             {
                 MessageBox.Show("Error, Cargar estado civil de cliente!");
-                textDateBirthDay.Focus();
+                comboBoxEstadoCivil.Focus();
                 return false;
             }
             else if (comboBoxSex.SelectedIndex.Equals(-1))
@@ -176,14 +176,8 @@ namespace Shopping_Buy_All
             //Cargar Nro Calle
             textStreetHeight.Text = c.NroCalleCliente.ToString();
             //Cargar Estado Civil
-            if (c.EstadoCivilCliente == 1)
-            {
-                radioButtonSingle.Checked = true;
-            }
-            else if (c.EstadoCivilCliente == 2)
-            {
-                radioButtonMarried.Checked = true;
-            }
+            //Estado civil de cliente
+            comboBoxEstadoCivil.SelectedValue = c.EstadoCivilCliente;
             //Cargar Tipo Sexo
             comboBoxSex.SelectedValue = c.SexoCliente;
 
@@ -202,6 +196,42 @@ namespace Shopping_Buy_All
             }
             año = fecha.Date.Year.ToString();
             textDateBirthDay.Text = dia+mes+año;
+        }
+        private void CargarTipoEstadoCivil()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "getEstadoCivilNoBorrado";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                comboBoxSex.DataSource = tabla;
+                comboBoxSex.DisplayMember = "NombreEstadoCivil";
+                comboBoxSex.ValueMember = "TipoEstadoCivil";
+                comboBoxSex.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! \n Hubo un error!");
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
         private void CargarTiposDocumentos()
         {
@@ -356,20 +386,7 @@ namespace Shopping_Buy_All
             c.NroCalleCliente = int.Parse(textStreetHeight.Text.Trim());
 
             //Estado civil de cliente
-            if (radioButtonSingle.Checked)
-            {
-                c.EstadoCivilCliente = 1;
-            }
-            else if (radioButtonMarried.Checked)
-            {
-                c.EstadoCivilCliente = 2;
-            }
-            else
-            {
-                MessageBox.Show("Error al elegir estado Civil de Cliente! \n" +
-                    "Complete los campos por favor!");
-                radioButtonSingle.Focus();
-            }
+            c.EstadoCivilCliente = (int)comboBoxEstadoCivil.SelectedValue;
 
             //Sexo de cliente
             c.SexoCliente = (int)comboBoxSex.SelectedValue;

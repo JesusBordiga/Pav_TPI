@@ -20,6 +20,7 @@ namespace Shopping_Buy_All
             CargarTablaClientes();
             CargarTiposDocumentos();
             CargarTipoSexo();
+            CargarTipoEstadoCivil();
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -33,12 +34,47 @@ namespace Shopping_Buy_All
             textNameClient.Text = "";
             textStreetClient.Text = "";
             textStreetHeight.Text = "";
-            radioButtonSingle.Checked = false;
-            radioButtonMarried.Checked = false;
+            comboBoxEstadoCivil.SelectedIndex = -1;
             comboBoxSex.SelectedIndex = -1;
             textDateBirthDay.Text = "";
             CargarTablaClientes();
 
+        }
+        private void CargarTipoEstadoCivil()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "getEstadoCivilNoBorrado";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                comboBoxSex.DataSource = tabla;
+                comboBoxSex.DisplayMember = "NombreEstadoCivil";
+                comboBoxSex.ValueMember = "TipoEstadoCivil";
+                comboBoxSex.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! \n Hubo un error!");
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
         private void CargarTipoSexo()
         {
@@ -185,11 +221,11 @@ namespace Shopping_Buy_All
                 textStreetHeight.Focus();
                 return false;
             }
-            
-            else if (radioButtonSingle.Checked == false && radioButtonMarried.Checked == false)
+
+            else if (comboBoxEstadoCivil.SelectedIndex.Equals(-1))
             {
                 MessageBox.Show("Error, Cargar estado civil de cliente!");
-                textDateBirthDay.Focus();
+                comboBoxEstadoCivil.Focus();
                 return false;
             }
             else if (comboBoxSex.SelectedIndex.Equals(-1))
@@ -231,28 +267,7 @@ namespace Shopping_Buy_All
             c.NroCalleCliente = int.Parse(textStreetHeight.Text.Trim());
 
             //Estado civil de cliente
-            if (radioButtonSingle.Checked && radioButtonMarried.Checked)
-            {
-                MessageBox.Show("Error al elegir estado Civil de Cliente! \n" +
-                        "Seleccione solo una opción!");
-            }
-            else
-            {
-                if (radioButtonSingle.Checked)
-                {
-                    c.EstadoCivilCliente = 1;
-                }
-                else if (radioButtonMarried.Checked)
-                {
-                    c.EstadoCivilCliente = 2;
-                }
-                else
-                {
-                    MessageBox.Show("Error al elegir estado Civil de Cliente! \n" +
-                        "Complete los campos por favor!");
-                    radioButtonSingle.Focus();
-                }
-            }
+            c.EstadoCivilCliente=(int)comboBoxEstadoCivil.SelectedValue;
             //Tipo de sexo
             c.SexoCliente = (int)comboBoxSex.SelectedValue;
 

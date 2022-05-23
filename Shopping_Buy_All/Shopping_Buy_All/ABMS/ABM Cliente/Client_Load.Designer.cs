@@ -52,8 +52,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textDateBirthDay = new System.Windows.Forms.MaskedTextBox();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.btnClientLoad = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -64,13 +62,10 @@
             this.textStreetClient = new System.Windows.Forms.TextBox();
             this.textNameClient = new System.Windows.Forms.TextBox();
             this.textSurnameClient = new System.Windows.Forms.TextBox();
-            this.PanelEstadoCivil = new System.Windows.Forms.Panel();
-            this.radioButtonMarried = new System.Windows.Forms.RadioButton();
-            this.radioButtonSingle = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxSex = new System.Windows.Forms.ComboBox();
+            this.comboBoxEstadoCivil = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
-            this.PanelEstadoCivil.SuspendLayout();
             this.SuspendLayout();
             // 
             // tablaClientes
@@ -300,30 +295,6 @@
             this.textDateBirthDay.Size = new System.Drawing.Size(60, 20);
             this.textDateBirthDay.TabIndex = 12;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(158, 293);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 15);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Casado";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(81, 293);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 15);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Soltero";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -377,7 +348,6 @@
             // comboBoxDocType
             // 
             this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.comboBoxDocType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
             this.comboBoxDocType.FormattingEnabled = true;
             this.comboBoxDocType.Location = new System.Drawing.Point(94, 74);
@@ -434,38 +404,6 @@
             this.textSurnameClient.Size = new System.Drawing.Size(100, 20);
             this.textSurnameClient.TabIndex = 3;
             // 
-            // PanelEstadoCivil
-            // 
-            this.PanelEstadoCivil.BackColor = System.Drawing.Color.Transparent;
-            this.PanelEstadoCivil.Controls.Add(this.radioButtonMarried);
-            this.PanelEstadoCivil.Controls.Add(this.radioButtonSingle);
-            this.PanelEstadoCivil.Location = new System.Drawing.Point(71, 292);
-            this.PanelEstadoCivil.Name = "PanelEstadoCivil";
-            this.PanelEstadoCivil.Size = new System.Drawing.Size(162, 19);
-            this.PanelEstadoCivil.TabIndex = 7;
-            // 
-            // radioButtonMarried
-            // 
-            this.radioButtonMarried.AutoSize = true;
-            this.radioButtonMarried.BackColor = System.Drawing.Color.Transparent;
-            this.radioButtonMarried.Location = new System.Drawing.Point(145, 3);
-            this.radioButtonMarried.Name = "radioButtonMarried";
-            this.radioButtonMarried.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonMarried.TabIndex = 8;
-            this.radioButtonMarried.TabStop = true;
-            this.radioButtonMarried.UseVisualStyleBackColor = false;
-            // 
-            // radioButtonSingle
-            // 
-            this.radioButtonSingle.AutoSize = true;
-            this.radioButtonSingle.BackColor = System.Drawing.Color.Transparent;
-            this.radioButtonSingle.Location = new System.Drawing.Point(64, 3);
-            this.radioButtonSingle.Name = "radioButtonSingle";
-            this.radioButtonSingle.Size = new System.Drawing.Size(14, 13);
-            this.radioButtonSingle.TabIndex = 7;
-            this.radioButtonSingle.TabStop = true;
-            this.radioButtonSingle.UseVisualStyleBackColor = false;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -481,13 +419,23 @@
             // comboBoxSex
             // 
             this.comboBoxSex.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.comboBoxSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSex.ForeColor = System.Drawing.Color.White;
             this.comboBoxSex.FormattingEnabled = true;
             this.comboBoxSex.Location = new System.Drawing.Point(99, 341);
             this.comboBoxSex.Name = "comboBoxSex";
             this.comboBoxSex.Size = new System.Drawing.Size(119, 21);
             this.comboBoxSex.TabIndex = 8;
+            // 
+            // comboBoxEstadoCivil
+            // 
+            this.comboBoxEstadoCivil.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBoxEstadoCivil.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.comboBoxEstadoCivil.ForeColor = System.Drawing.Color.White;
+            this.comboBoxEstadoCivil.FormattingEnabled = true;
+            this.comboBoxEstadoCivil.Location = new System.Drawing.Point(99, 296);
+            this.comboBoxEstadoCivil.Name = "comboBoxEstadoCivil";
+            this.comboBoxEstadoCivil.Size = new System.Drawing.Size(119, 21);
+            this.comboBoxEstadoCivil.TabIndex = 65;
             // 
             // Client_Load
             // 
@@ -497,6 +445,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1027, 449);
+            this.Controls.Add(this.comboBoxEstadoCivil);
             this.Controls.Add(this.comboBoxSex);
             this.Controls.Add(this.textStreetHeight);
             this.Controls.Add(this.textNumberDoc);
@@ -505,8 +454,6 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnClientLoad);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.textStreetClient);
             this.Controls.Add(this.textDateBirthDay);
             this.Controls.Add(this.textSurnameClient);
@@ -521,7 +468,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tablaClientes);
-            this.Controls.Add(this.PanelEstadoCivil);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1043, 488);
@@ -531,8 +477,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de Cliente";
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).EndInit();
-            this.PanelEstadoCivil.ResumeLayout(false);
-            this.PanelEstadoCivil.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,8 +495,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MaskedTextBox textDateBirthDay;
         private System.ServiceProcess.ServiceController serviceController1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnClientLoad;
         private System.Windows.Forms.Button btnClear;
@@ -563,9 +505,6 @@
         private System.Windows.Forms.TextBox textStreetClient;
         private System.Windows.Forms.TextBox textNameClient;
         private System.Windows.Forms.TextBox textSurnameClient;
-        private System.Windows.Forms.Panel PanelEstadoCivil;
-        private System.Windows.Forms.RadioButton radioButtonMarried;
-        private System.Windows.Forms.RadioButton radioButtonSingle;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBoxSex;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
@@ -578,5 +517,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCivil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
+        private System.Windows.Forms.ComboBox comboBoxEstadoCivil;
     }
 }
