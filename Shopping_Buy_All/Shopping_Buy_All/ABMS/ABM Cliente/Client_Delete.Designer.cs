@@ -42,6 +42,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -187,6 +188,7 @@
             this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TipoDocumento,
+            this.TipoEstadoCivil,
             this.Borrado,
             this.NroDocumento,
             this.Apellido,
@@ -223,6 +225,14 @@
             this.TipoDocumento.Name = "TipoDocumento";
             this.TipoDocumento.ReadOnly = true;
             this.TipoDocumento.Width = 70;
+            // 
+            // TipoEstadoCivil
+            // 
+            this.TipoEstadoCivil.DataPropertyName = "TipoEstadoCivil";
+            this.TipoEstadoCivil.HeaderText = "TipoEstadoCivil";
+            this.TipoEstadoCivil.Name = "TipoEstadoCivil";
+            this.TipoEstadoCivil.ReadOnly = true;
+            this.TipoEstadoCivil.Visible = false;
             // 
             // Borrado
             // 
@@ -364,6 +374,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridView tablaClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoEstadoCivil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;

@@ -432,9 +432,9 @@
             this.comboBoxEstadoCivil.BackColor = System.Drawing.SystemColors.ControlDark;
             this.comboBoxEstadoCivil.ForeColor = System.Drawing.Color.White;
             this.comboBoxEstadoCivil.FormattingEnabled = true;
-            this.comboBoxEstadoCivil.Location = new System.Drawing.Point(99, 296);
+            this.comboBoxEstadoCivil.Location = new System.Drawing.Point(73, 296);
             this.comboBoxEstadoCivil.Name = "comboBoxEstadoCivil";
-            this.comboBoxEstadoCivil.Size = new System.Drawing.Size(119, 21);
+            this.comboBoxEstadoCivil.Size = new System.Drawing.Size(171, 21);
             this.comboBoxEstadoCivil.TabIndex = 65;
             // 
             // Client_Load

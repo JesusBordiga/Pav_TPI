@@ -31,12 +31,12 @@ namespace Shopping_Buy_All
             }
             else
             {
-            labelBuscarCliente.Text = "Modificar Cliente";
-            Cliente c = Buscar_Cliente_Documento(comboBoxDocType.SelectedIndex.ToString(), textNumberDoc.Text);
-            Cargar_Campos(c);
-            searchPanel.Visible=true;
-            comboBoxDocType.Enabled = false;
-            textNumberDoc.Enabled = false;
+                labelBuscarCliente.Text = "Modificar Cliente";
+                Cliente c = Buscar_Cliente_Documento(comboBoxDocType.SelectedValue.ToString(), textNumberDoc.Text);
+                Cargar_Campos(c);
+                searchPanel.Visible = true;
+                comboBoxDocType.Enabled = false;
+                textNumberDoc.Enabled = false;
             }
         }
         private void btnSearchClient2_Click(object sender, EventArgs e)
@@ -133,7 +133,6 @@ namespace Shopping_Buy_All
             {
                 SqlCommand comand = new SqlCommand();
                 string consulta = "getTipoSexoNoBorrado";
-                    //"select * from dbo.TipoSexo S where S.Borrado = 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -219,10 +218,10 @@ namespace Shopping_Buy_All
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
 
-                comboBoxSex.DataSource = tabla;
-                comboBoxSex.DisplayMember = "NombreEstadoCivil";
-                comboBoxSex.ValueMember = "TipoEstadoCivil";
-                comboBoxSex.SelectedIndex = -1;
+                comboBoxEstadoCivil.DataSource = tabla;
+                comboBoxEstadoCivil.DisplayMember = "NombreEstadoCivil";
+                comboBoxEstadoCivil.ValueMember = "TipoEstadoCivil";
+                comboBoxEstadoCivil.SelectedIndex = -1;
             }
             catch (Exception)
             {
@@ -242,7 +241,6 @@ namespace Shopping_Buy_All
             {
                 SqlCommand comand = new SqlCommand();
                 string consulta = "getTipoDocumentoNoBorrado";
-                    //"select * from dbo.TipoDocumento D where D.Borrado = 0";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -313,7 +311,6 @@ namespace Shopping_Buy_All
             {
                 SqlCommand cmd = new SqlCommand();
                 string consulta = "buscarClienteNoBorrado @tipoDocumento, @nroDocumento";
-                    //"SELECT TD.NombreDocumento 'TipoDocumento', C.NroDocumento, C.Apellido, C.Nombres, C.Calle, C.NroCalle, TEC.NombreEstadoCivil 'EstadoCivil', TS.NombreSexo 'Sexo', C.FechaNacimiento, C.Borrado, C.TipoDocumento 'TipoDoc', EstadoCivil 'EstadoCiv',Sexo 'Sex' FROM Clientes C JOIN TipoDocumento TD ON(C.TipoDocumento = TD.TipoDocumento) JOIN TipoEstadoCivil TEC ON(C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON(C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0 AND C.TipoDocumento like @tipoDocumento AND C.NroDocumento like @nroDocumento";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);

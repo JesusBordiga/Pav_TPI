@@ -38,10 +38,6 @@ namespace Shopping_Buy_All
             {
                 SqlCommand comand = new SqlCommand();
                 string consulta = "getClienteNoBorrado";
-                    /*"SELECT TD.NombreDocumento AS TipoDocumento,C.NroDocumento,C.Apellido,C.Nombres,C.Calle,C.NroCalle,TEC.NombreEstadoCivil AS EstadoCivil" +
-                    ",TS.NombreSexo AS Sexo,C.FechaNacimiento,C.Borrado, C.TipoDocumento AS TipoDoc FROM Clientes C JOIN TipoDocumento TD ON (C.TipoDocumento = TD.TipoDocumento) " +
-                    "JOIN TipoEstadoCivil TEC ON (C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON (C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0";
-                    */
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -106,57 +102,6 @@ namespace Shopping_Buy_All
         {
             comboBoxDocType.SelectedIndex = -1;
             textNumberDoc.Text = "";
-        }
-        private Cliente Cargar_Cliente(int TipoDocumento, string NroDocumento)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            Cliente client = new Cliente();
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Clientes where TipoDocumento like @tipoDocumento AND NroDocumento like @nrodocumento AND Borrado Like 0";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
-                cmd.Parameters.AddWithValue("@tipoDocumento", TipoDocumento);
-
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
-                {
-                    client.TipoDocumentoCliente = int.Parse(DataReader["TipoDocumento"].ToString());
-                    client.DocumentoCliente = DataReader["NroDocumento"].ToString();
-                    client.ApellidoCliente = DataReader["Apellido"].ToString();
-                    client.NombreCliente = DataReader["Nombres"].ToString();
-                    client.CalleCliente = DataReader["Calle"].ToString();
-                    client.NroCalleCliente = int.Parse(DataReader["NroCalle"].ToString());
-                    client.EstadoCivilCliente = int.Parse(DataReader["EstadoCivil"].ToString());
-                    client.SexoCliente = int.Parse(DataReader["Sexo"].ToString());
-                    client.FechaNacimientoCliente = DateTime.Parse(DataReader["FechaNacimiento"].ToString());
-                    
-                }
-                cn.Close();
-
-                DataTable tabla = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(tabla);
-                tablaClientes.DataSource = tabla;
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error! \n Hubo un error!");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return client;
         }
         private bool Buscar_Cliente1(int TipoDocumento, string NroDocumento)
         {

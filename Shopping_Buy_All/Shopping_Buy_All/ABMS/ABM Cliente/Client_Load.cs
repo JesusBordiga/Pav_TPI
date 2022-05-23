@@ -62,10 +62,10 @@ namespace Shopping_Buy_All
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
 
-                comboBoxSex.DataSource = tabla;
-                comboBoxSex.DisplayMember = "NombreEstadoCivil";
-                comboBoxSex.ValueMember = "TipoEstadoCivil";
-                comboBoxSex.SelectedIndex = -1;
+                comboBoxEstadoCivil.DataSource = tabla;
+                comboBoxEstadoCivil.DisplayMember = "NombreEstadoCivil";
+                comboBoxEstadoCivil.ValueMember = "TipoEstadoCivil";
+                comboBoxEstadoCivil.SelectedIndex = -1;
             }
             catch (Exception)
             {

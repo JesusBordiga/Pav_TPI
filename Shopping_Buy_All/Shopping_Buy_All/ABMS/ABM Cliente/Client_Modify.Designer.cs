@@ -39,19 +39,6 @@
             this.labelBuscarCliente = new System.Windows.Forms.Label();
             this.btnSearchClient = new System.Windows.Forms.Button();
             this.tablaClientes = new System.Windows.Forms.DataGridView();
-            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NroCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCiv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textStreetClient = new System.Windows.Forms.TextBox();
             this.textDateBirthDay = new System.Windows.Forms.MaskedTextBox();
             this.textSurnameClient = new System.Windows.Forms.TextBox();
@@ -70,6 +57,20 @@
             this.textNameClient = new System.Windows.Forms.TextBox();
             this.searchPanel = new System.Windows.Forms.Panel();
             this.comboBoxEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCiv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.searchPanel.SuspendLayout();
             this.SuspendLayout();
@@ -184,6 +185,7 @@
             this.Borrado,
             this.TipoDoc,
             this.EstadoCiv,
+            this.TipoEstadoCivil,
             this.Sex});
             this.tablaClientes.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tablaClientes.Location = new System.Drawing.Point(368, 48);
@@ -202,111 +204,6 @@
             this.tablaClientes.TabIndex = 66;
             this.tablaClientes.TabStop = false;
             this.tablaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick_1);
-            // 
-            // TipoDocumento
-            // 
-            this.TipoDocumento.DataPropertyName = "TipoDocumento";
-            this.TipoDocumento.HeaderText = "Tipo Documento";
-            this.TipoDocumento.Name = "TipoDocumento";
-            this.TipoDocumento.ReadOnly = true;
-            this.TipoDocumento.Width = 70;
-            // 
-            // NroDocumento
-            // 
-            this.NroDocumento.DataPropertyName = "NroDocumento";
-            this.NroDocumento.HeaderText = "Nro Documento";
-            this.NroDocumento.Name = "NroDocumento";
-            this.NroDocumento.ReadOnly = true;
-            this.NroDocumento.Width = 70;
-            // 
-            // Apellido
-            // 
-            this.Apellido.DataPropertyName = "Apellido";
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            this.Apellido.Width = 70;
-            // 
-            // Nombres
-            // 
-            this.Nombres.DataPropertyName = "Nombres";
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            this.Nombres.Width = 80;
-            // 
-            // Calle
-            // 
-            this.Calle.DataPropertyName = "Calle";
-            this.Calle.HeaderText = "Domicilio";
-            this.Calle.Name = "Calle";
-            this.Calle.ReadOnly = true;
-            // 
-            // NroCalle
-            // 
-            this.NroCalle.DataPropertyName = "NroCalle";
-            this.NroCalle.HeaderText = "Nro Calle";
-            this.NroCalle.Name = "NroCalle";
-            this.NroCalle.ReadOnly = true;
-            this.NroCalle.Width = 50;
-            // 
-            // EstadoCivil
-            // 
-            this.EstadoCivil.DataPropertyName = "EstadoCivil";
-            this.EstadoCivil.HeaderText = "Estado Civil";
-            this.EstadoCivil.Name = "EstadoCivil";
-            this.EstadoCivil.ReadOnly = true;
-            this.EstadoCivil.Width = 50;
-            // 
-            // Sexo
-            // 
-            this.Sexo.DataPropertyName = "Sexo";
-            this.Sexo.HeaderText = "Sexo";
-            this.Sexo.Name = "Sexo";
-            this.Sexo.ReadOnly = true;
-            this.Sexo.Width = 60;
-            // 
-            // FechaNacimiento
-            // 
-            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
-            this.FechaNacimiento.HeaderText = "Fecha Nacimiento";
-            this.FechaNacimiento.Name = "FechaNacimiento";
-            this.FechaNacimiento.ReadOnly = true;
-            this.FechaNacimiento.Width = 80;
-            // 
-            // Borrado
-            // 
-            this.Borrado.DataPropertyName = "Borrado";
-            this.Borrado.HeaderText = "Borrado";
-            this.Borrado.Name = "Borrado";
-            this.Borrado.ReadOnly = true;
-            this.Borrado.Visible = false;
-            // 
-            // TipoDoc
-            // 
-            this.TipoDoc.DataPropertyName = "TipoDoc";
-            this.TipoDoc.HeaderText = "TipoDoc";
-            this.TipoDoc.Name = "TipoDoc";
-            this.TipoDoc.ReadOnly = true;
-            this.TipoDoc.Visible = false;
-            // 
-            // EstadoCiv
-            // 
-            this.EstadoCiv.DataPropertyName = "EstadoCiv";
-            this.EstadoCiv.HeaderText = "EstadoCiv";
-            this.EstadoCiv.Name = "EstadoCiv";
-            this.EstadoCiv.ReadOnly = true;
-            this.EstadoCiv.Visible = false;
-            this.EstadoCiv.Width = 5;
-            // 
-            // Sex
-            // 
-            this.Sex.DataPropertyName = "Sex";
-            this.Sex.HeaderText = "Sex";
-            this.Sex.Name = "Sex";
-            this.Sex.ReadOnly = true;
-            this.Sex.Visible = false;
-            this.Sex.Width = 5;
             // 
             // textStreetClient
             // 
@@ -525,10 +422,123 @@
             this.comboBoxEstadoCivil.BackColor = System.Drawing.SystemColors.ControlDark;
             this.comboBoxEstadoCivil.ForeColor = System.Drawing.Color.White;
             this.comboBoxEstadoCivil.FormattingEnabled = true;
-            this.comboBoxEstadoCivil.Location = new System.Drawing.Point(80, 154);
+            this.comboBoxEstadoCivil.Location = new System.Drawing.Point(58, 154);
             this.comboBoxEstadoCivil.Name = "comboBoxEstadoCivil";
-            this.comboBoxEstadoCivil.Size = new System.Drawing.Size(119, 21);
+            this.comboBoxEstadoCivil.Size = new System.Drawing.Size(172, 21);
             this.comboBoxEstadoCivil.TabIndex = 64;
+            // 
+            // TipoDocumento
+            // 
+            this.TipoDocumento.DataPropertyName = "TipoDocumento";
+            this.TipoDocumento.HeaderText = "Tipo Documento";
+            this.TipoDocumento.Name = "TipoDocumento";
+            this.TipoDocumento.ReadOnly = true;
+            this.TipoDocumento.Width = 70;
+            // 
+            // NroDocumento
+            // 
+            this.NroDocumento.DataPropertyName = "NroDocumento";
+            this.NroDocumento.HeaderText = "Nro Documento";
+            this.NroDocumento.Name = "NroDocumento";
+            this.NroDocumento.ReadOnly = true;
+            this.NroDocumento.Width = 70;
+            // 
+            // Apellido
+            // 
+            this.Apellido.DataPropertyName = "Apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            this.Apellido.Width = 70;
+            // 
+            // Nombres
+            // 
+            this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            this.Nombres.Width = 80;
+            // 
+            // Calle
+            // 
+            this.Calle.DataPropertyName = "Calle";
+            this.Calle.HeaderText = "Domicilio";
+            this.Calle.Name = "Calle";
+            this.Calle.ReadOnly = true;
+            // 
+            // NroCalle
+            // 
+            this.NroCalle.DataPropertyName = "NroCalle";
+            this.NroCalle.HeaderText = "Nro Calle";
+            this.NroCalle.Name = "NroCalle";
+            this.NroCalle.ReadOnly = true;
+            this.NroCalle.Width = 50;
+            // 
+            // EstadoCivil
+            // 
+            this.EstadoCivil.DataPropertyName = "EstadoCivil";
+            this.EstadoCivil.HeaderText = "Estado Civil";
+            this.EstadoCivil.Name = "EstadoCivil";
+            this.EstadoCivil.ReadOnly = true;
+            this.EstadoCivil.Width = 50;
+            // 
+            // Sexo
+            // 
+            this.Sexo.DataPropertyName = "Sexo";
+            this.Sexo.HeaderText = "Sexo";
+            this.Sexo.Name = "Sexo";
+            this.Sexo.ReadOnly = true;
+            this.Sexo.Width = 60;
+            // 
+            // FechaNacimiento
+            // 
+            this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
+            this.FechaNacimiento.HeaderText = "Fecha Nacimiento";
+            this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.ReadOnly = true;
+            this.FechaNacimiento.Width = 80;
+            // 
+            // Borrado
+            // 
+            this.Borrado.DataPropertyName = "Borrado";
+            this.Borrado.HeaderText = "Borrado";
+            this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
+            this.Borrado.Visible = false;
+            // 
+            // TipoDoc
+            // 
+            this.TipoDoc.DataPropertyName = "TipoDoc";
+            this.TipoDoc.HeaderText = "TipoDoc";
+            this.TipoDoc.Name = "TipoDoc";
+            this.TipoDoc.ReadOnly = true;
+            this.TipoDoc.Visible = false;
+            // 
+            // EstadoCiv
+            // 
+            this.EstadoCiv.DataPropertyName = "EstadoCiv";
+            this.EstadoCiv.HeaderText = "EstadoCiv";
+            this.EstadoCiv.Name = "EstadoCiv";
+            this.EstadoCiv.ReadOnly = true;
+            this.EstadoCiv.Visible = false;
+            this.EstadoCiv.Width = 5;
+            // 
+            // TipoEstadoCivil
+            // 
+            this.TipoEstadoCivil.DataPropertyName = "TipoEstadoCivil";
+            this.TipoEstadoCivil.HeaderText = "TipoEstadoCivil";
+            this.TipoEstadoCivil.Name = "TipoEstadoCivil";
+            this.TipoEstadoCivil.ReadOnly = true;
+            this.TipoEstadoCivil.Visible = false;
+            // 
+            // Sex
+            // 
+            this.Sex.DataPropertyName = "Sex";
+            this.Sex.HeaderText = "Sex";
+            this.Sex.Name = "Sex";
+            this.Sex.ReadOnly = true;
+            this.Sex.Visible = false;
+            this.Sex.Width = 5;
             // 
             // Client_Modify
             // 
@@ -571,19 +581,6 @@
         private System.Windows.Forms.Label labelBuscarCliente;
         private System.Windows.Forms.Button btnSearchClient;
         private System.Windows.Forms.DataGridView tablaClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NroCalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCivil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCiv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
         private System.Windows.Forms.TextBox textStreetClient;
         private System.Windows.Forms.MaskedTextBox textDateBirthDay;
         private System.Windows.Forms.TextBox textSurnameClient;
@@ -602,5 +599,19 @@
         private System.Windows.Forms.TextBox textNameClient;
         private System.Windows.Forms.Panel searchPanel;
         private System.Windows.Forms.ComboBox comboBoxEstadoCivil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroCalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCivil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCiv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoEstadoCivil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
     }
 }
