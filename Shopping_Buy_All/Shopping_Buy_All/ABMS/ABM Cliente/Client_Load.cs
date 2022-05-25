@@ -23,10 +23,7 @@ namespace Shopping_Buy_All
             CargarTipoSexo();
             CargarTipoEstadoCivil();
         }
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            Clean();
-        }
+        //ACCESO A BASE DE DATOS
         private void CargarTablaClientes()
         {
             tablaClientes.DataSource = AD_Cliente.ObtenerDatosClientes(); ;
@@ -53,8 +50,49 @@ namespace Shopping_Buy_All
             comboBoxEstadoCivil.SelectedIndex = -1;
             
         }
+        //BOTONES
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clean();
+        }
+        private void btnCargarCliente_Click(object sender, EventArgs e)
+        {
+            bool valido =validarCliente();
+            if (valido)
+            {
+                Cliente c = ObtenerDatosCliente();
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                        String mensajeCarga = (
+                              " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
+                            + " |Apellido: " + c.ApellidoCliente + " |Nombre: " + c.NombreCliente + "|" + "\n"
+                            + " |Calle: " + c.CalleCliente + " |Nro Calle: " + c.NroCalleCliente + "|" + "\n"
+                            + " |Estado Civil: " + c.EstadoCivilCliente + " |Sexo: " + c.SexoCliente + "|" + "\n"
+                            + " |Fecha Nacimiento: " + c.FechaNacimientoCliente.ToShortDateString() + "|" + "\n");
 
+                        string titulo = "Información de Carga";
 
+                        DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                        if (result == DialogResult.OK)
+                        {
+                           
+                            bool resultado = AD_Cliente.Agregar_Cliente(c);
+                            if (resultado)
+                            {
+                            MessageBox.Show("Cliente agregado con éxito!");
+                            Clean();
+                            AD_Cliente.ObtenerDatosClientes();
+                            AD_Cliente.ObtenerTipoDocumento();
+                            }
+                        }
+                        else
+                        {
+                            comboBoxDocType.Focus();
+                        }
+
+            }
+        }
+        //FUNCIONES
         private void Clean()
         {
             comboBoxDocType.SelectedIndex = -1;
@@ -161,43 +199,6 @@ namespace Shopping_Buy_All
             c.FechaNacimientoCliente = DateTime.Parse(textDateBirthDay.Text);
 
             return c;
-        }
-        private void btnCargarCliente_Click(object sender, EventArgs e)
-        {
-            bool valido =validarCliente();
-            if (valido)
-            {
-                Cliente c = ObtenerDatosCliente();
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                        String mensajeCarga = (
-                              " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
-                            + " |Apellido: " + c.ApellidoCliente + " |Nombre: " + c.NombreCliente + "|" + "\n"
-                            + " |Calle: " + c.CalleCliente + " |Nro Calle: " + c.NroCalleCliente + "|" + "\n"
-                            + " |Estado Civil: " + c.EstadoCivilCliente + " |Sexo: " + c.SexoCliente + "|" + "\n"
-                            + " |Fecha Nacimiento: " + c.FechaNacimientoCliente.ToShortDateString() + "|" + "\n");
-
-                        string titulo = "Información de Carga";
-
-                        DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                        if (result == DialogResult.OK)
-                        {
-                           
-                            bool resultado = AD_Cliente.Agregar_Cliente(c);
-                            if (resultado)
-                            {
-                            MessageBox.Show("Cliente agregado con éxito!");
-                            Clean();
-                            AD_Cliente.ObtenerDatosClientes();
-                            AD_Cliente.ObtenerTipoDocumento();
-                            }
-                        }
-                        else
-                        {
-                            comboBoxDocType.Focus();
-                        }
-
-            }
         }
        
     }

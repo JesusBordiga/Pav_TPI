@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 using Shopping_Buy_All.Entidades;
 
 namespace Shopping_Buy_All
@@ -18,10 +19,97 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
             CargarTablaClientes();
-            CargarTiposDocumentos();
+            CargarTipoDocumento();
             CargarTipoSexo();
             CargarTipoEstadoCivil();
             searchPanel.Visible = false;
+        }
+        //ACCESO A BASE DE DATOS
+        private void CargarTablaClientes()
+        {
+            tablaClientes.DataSource = AD_Cliente.ObtenerDatosClientes(); ;
+        }
+        private void CargarTipoDocumento()
+        {
+            comboBoxDocType.DataSource = AD_Cliente.ObtenerTipoDocumento();
+            comboBoxDocType.DisplayMember = "NombreDocumento";
+            comboBoxDocType.ValueMember = "TipoDocumento";
+            comboBoxDocType.SelectedIndex = -1;
+        }
+        private void CargarTipoSexo()
+        {
+            comboBoxSex.DataSource = AD_Cliente.ObtenerTipoSexo();
+            comboBoxSex.DisplayMember = "NombreSexo";
+            comboBoxSex.ValueMember = "TipoSexo";
+            comboBoxSex.SelectedIndex = -1;
+        }
+        private void CargarTipoEstadoCivil()
+        {
+            comboBoxEstadoCivil.DataSource = AD_Cliente.CargarTipoEstadoCivil();
+            comboBoxEstadoCivil.DisplayMember = "NombreEstadoCivil";
+            comboBoxEstadoCivil.ValueMember = "TipoEstadoCivil";
+            comboBoxEstadoCivil.SelectedIndex = -1;
+
+        }
+        private Cliente Buscar_Cliente_Documento(string TipoDocumento ,string NroDocumento)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            Cliente client= new Cliente();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "buscarClienteNoBorrado @tipoDocumento, @nroDocumento";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
+                cmd.Parameters.AddWithValue("@tipoDocumento", TipoDocumento);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                SqlDataReader DataReader = cmd.ExecuteReader();
+                if (DataReader !=null && DataReader.Read())
+                {
+                    client.TipoDocumentoCliente = int.Parse(DataReader["TipoDoc"].ToString());
+                    client.DocumentoCliente= DataReader["NroDocumento"].ToString();
+                    client.ApellidoCliente = DataReader["Apellido"].ToString();
+                    client.NombreCliente = DataReader["Nombres"].ToString();
+                    client.CalleCliente = DataReader["Calle"].ToString();
+                    client.NroCalleCliente = int.Parse(DataReader["NroCalle"].ToString());
+                    client.EstadoCivilCliente = int.Parse(DataReader["EstadoCiv"].ToString());
+                    client.SexoCliente = int.Parse(DataReader["Sex"].ToString());
+                    client.FechaNacimientoCliente = DateTime.Parse(DataReader["FechaNacimiento"].ToString());
+                }
+                cn.Close();
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                tablaClientes.DataSource = tabla;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al buscar al cliente");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return client;
+
+        }
+
+        //BOTONES
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clean();
+            searchPanel.Visible = false;
+            labelBuscarCliente.Text = "Buscar Cliente";
+            CargarTablaClientes();
+            comboBoxDocType.Enabled = true;
+            textNumberDoc.Enabled = true;
         }
         private void btnBuscarCliente_click(object sender, EventArgs e)
         {
@@ -47,6 +135,48 @@ namespace Shopping_Buy_All
             textNumberDoc.Enabled = true;
 
         }
+        private void btnClientLoad_Click_1(object sender, EventArgs e)
+        {
+            if (validarCliente())
+            {
+                Cliente c = ObtenerDatosCliente();
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                String mensajeCarga = (
+                      " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
+                    + " |Apellido: " + c.ApellidoCliente + " |Nombre: " + c.NombreCliente + "|" + "\n"
+                    + " |Calle: " + c.CalleCliente + " |Nro Calle: " + c.NroCalleCliente + "|" + "\n"
+                    + " |Estado Civil: " + c.EstadoCivilCliente + " |Sexo: " + c.SexoCliente + "|" + "\n"
+                    + " |Fecha Nacimiento: " + c.FechaNacimientoCliente.ToShortDateString() + "|" + "\n");
+
+                string titulo = "Información de Carga";
+
+                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                if (result == DialogResult.OK)
+                {
+                    bool resultado = AD_Cliente.ModificarCliente(c);
+                    if (resultado)
+                    {
+                        MessageBox.Show("Cliente agregado con éxito!");
+                        Clean();
+                        CargarTablaClientes();
+                        CargarTipoDocumento();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar la persona!");
+                    }
+
+                }
+                else
+                {
+                    comboBoxDocType.Focus();
+                }
+
+            }
+        }
+
+        //FUNCIONES
         private void Clean()
         {
             comboBoxDocType.SelectedIndex = -1;
@@ -124,42 +254,6 @@ namespace Shopping_Buy_All
             }
 
         }
-        private void CargarTipoSexo()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "getTipoSexoNoBorrado";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-
-                comboBoxSex.DataSource = tabla;
-                comboBoxSex.DisplayMember = "NombreSexo";
-                comboBoxSex.ValueMember = "TipoSexo";
-                comboBoxSex.SelectedIndex = -1;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error, No se pudo cargar el Tipo de Sexo!");
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
         private void Cargar_Campos(Cliente c)
         {
             //Cargar Tipo Documento
@@ -195,171 +289,7 @@ namespace Shopping_Buy_All
             }
             año = fecha.Date.Year.ToString();
             textDateBirthDay.Text = dia+mes+año;
-        }
-        private void CargarTipoEstadoCivil()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "getEstadoCivilNoBorrado";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-
-                comboBoxEstadoCivil.DataSource = tabla;
-                comboBoxEstadoCivil.DisplayMember = "NombreEstadoCivil";
-                comboBoxEstadoCivil.ValueMember = "TipoEstadoCivil";
-                comboBoxEstadoCivil.SelectedIndex = -1;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error! \n Hubo un error!");
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-        private void CargarTiposDocumentos()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "getTipoDocumentoNoBorrado";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-
-                comboBoxDocType.DataSource = tabla;
-                comboBoxDocType.DisplayMember = "NombreDocumento";
-                comboBoxDocType.ValueMember = "TipoDocumento";
-                comboBoxDocType.SelectedIndex = -1;
-            }
-            catch (Exception )
-            {
-
-                MessageBox.Show("Error, no se pudo cargar el Tipo de Documento!");
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-        private void CargarTablaClientes()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "getClienteNoBorrado";
-                    //"SELECT TD.NombreDocumento 'TipoDocumento', C.NroDocumento, C.Apellido, C.Nombres, C.Calle, C.NroCalle, TEC.NombreEstadoCivil 'EstadoCivil', TS.NombreSexo 'Sexo', C.FechaNacimiento, C.Borrado, C.TipoDocumento 'TipoDoc' FROM Clientes C JOIN TipoDocumento TD ON(C.TipoDocumento = TD.TipoDocumento) JOIN TipoEstadoCivil TEC ON(C.EstadoCivil = TEC.TipoEstadoCivil) JOIN TipoSexo TS ON(C.Sexo = TS.TipoSexo) WHERE C.Borrado = 0";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-                tablaClientes.DataSource = tabla;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error!");
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-        private Cliente Buscar_Cliente_Documento(string TipoDocumento ,string NroDocumento)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            Cliente client= new Cliente();
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "buscarClienteNoBorrado @tipoDocumento, @nroDocumento";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
-                cmd.Parameters.AddWithValue("@tipoDocumento", TipoDocumento);
-
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader !=null && DataReader.Read())
-                {
-                    client.TipoDocumentoCliente = int.Parse(DataReader["TipoDoc"].ToString());
-                    client.DocumentoCliente= DataReader["NroDocumento"].ToString();
-                    client.ApellidoCliente = DataReader["Apellido"].ToString();
-                    client.NombreCliente = DataReader["Nombres"].ToString();
-                    client.CalleCliente = DataReader["Calle"].ToString();
-                    client.NroCalleCliente = int.Parse(DataReader["NroCalle"].ToString());
-                    client.EstadoCivilCliente = int.Parse(DataReader["EstadoCiv"].ToString());
-                    client.SexoCliente = int.Parse(DataReader["Sex"].ToString());
-                    client.FechaNacimientoCliente = DateTime.Parse(DataReader["FechaNacimiento"].ToString());
-                }
-                cn.Close();
-                DataTable tabla = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(tabla);
-                tablaClientes.DataSource = tabla;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al buscar al cliente");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return client;
-
-        }
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            Clean();
-            searchPanel.Visible = false;
-            labelBuscarCliente.Text = "Buscar Cliente";
-            CargarTablaClientes();
-            comboBoxDocType.Enabled = true;
-            textNumberDoc.Enabled = true;
-        }
+        } 
         private Cliente ObtenerDatosCliente()
         {
 
@@ -392,89 +322,7 @@ namespace Shopping_Buy_All
             c.FechaNacimientoCliente = DateTime.Parse(textDateBirthDay.Text);
             return c;
 
-        }
-        private bool ModificarCliente(Cliente client)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "modificarCliente @tipoDocumento, @nroDocumento, @apellido, @nombres, @calle, @nroCalle, @estadoCivil, @sexo, @fechaNacimiento";
-                //"UPDATE Clientes SET TipoDocumento = @tipoDocumento, NroDocumento = @nroDocumento, Apellido = @apellido, Nombres = @nombres, Calle = @calle, NroCalle = @nroCalle, EstadoCivil = @estadoCivil, Sexo = @sexo, FechaNacimiento = @fechaNacimiento WHERE TipoDocumento Like @tipoDocumento AND NroDocumento Like @nroDocumento";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@tipoDocumento", client.TipoDocumentoCliente);
-                cmd.Parameters.AddWithValue("@nroDocumento", client.DocumentoCliente);
-                cmd.Parameters.AddWithValue("@apellido", client.ApellidoCliente);
-                cmd.Parameters.AddWithValue("@nombres", client.NombreCliente);
-                cmd.Parameters.AddWithValue("@calle", client.CalleCliente);
-                cmd.Parameters.AddWithValue("@nroCalle", client.NroCalleCliente);
-                cmd.Parameters.AddWithValue("@estadoCivil", client.EstadoCivilCliente);
-                cmd.Parameters.AddWithValue("@sexo", client.SexoCliente);
-                cmd.Parameters.AddWithValue("@fechaNacimiento", client.FechaNacimientoCliente);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error! Hubo un problema con la base de datos!");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error!");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return resultado;
-        }
-        private void btnClientLoad_Click_1(object sender, EventArgs e)
-        {
-            if (validarCliente())
-            {
-                Cliente c = ObtenerDatosCliente();
-                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                    String mensajeCarga = (
-                          " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
-                        + " |Apellido: " + c.ApellidoCliente + " |Nombre: " + c.NombreCliente + "|" + "\n"
-                        + " |Calle: " + c.CalleCliente + " |Nro Calle: " + c.NroCalleCliente + "|" + "\n"
-                        + " |Estado Civil: " + c.EstadoCivilCliente + " |Sexo: " + c.SexoCliente + "|" + "\n"
-                        + " |Fecha Nacimiento: " + c.FechaNacimientoCliente.ToShortDateString() + "|" + "\n");
-
-                    string titulo = "Información de Carga";
-
-                    DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                    if (result == DialogResult.OK)
-                    {
-                        bool resultado = ModificarCliente(c);
-                        if (resultado)
-                        {
-                        MessageBox.Show("Cliente agregado con éxito!");
-                        Clean();
-                        CargarTablaClientes();
-                        CargarTiposDocumentos();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error al modificar la persona!");
-                        }
-
-                    }
-                    else
-                    {
-                        comboBoxDocType.Focus();
-                    }
-               
-            }
-        }
+        }       
         private void tablaClientes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
