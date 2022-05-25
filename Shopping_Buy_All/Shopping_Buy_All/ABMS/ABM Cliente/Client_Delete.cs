@@ -34,14 +34,30 @@ namespace Shopping_Buy_All
         //ACCESO A BASE DE DATOS
         private void CargarTablaClientes()
         {
-            tablaClientes.DataSource = AD_Cliente.ObtenerDatosClientes(); ;
+            try
+            {
+                tablaClientes.DataSource = AD_Cliente.ObtenerDatosClientes();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error, no se pudo Otener Datos del Cliente");
+            }
         }
         private void CargarTipoDocumento()
         {
-            comboBoxDocType.DataSource = AD_Cliente.ObtenerTipoDocumento();
-            comboBoxDocType.DisplayMember = "NombreDocumento";
-            comboBoxDocType.ValueMember = "TipoDocumento";
-            comboBoxDocType.SelectedIndex = -1;
+            try
+            {
+                comboBoxDocType.DataSource = AD_Cliente.ObtenerTipoDocumento();
+                comboBoxDocType.DisplayMember = "NombreDocumento";
+                comboBoxDocType.ValueMember = "TipoDocumento";
+                comboBoxDocType.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error, no se pudo Otener Datos de Tipos de Documentos");
+            }
         }
         private Cliente Buscar_Cliente_Documento(string TipoDocumento, string NroDocumento)
         {

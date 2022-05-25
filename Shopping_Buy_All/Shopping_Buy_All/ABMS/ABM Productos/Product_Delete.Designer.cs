@@ -44,7 +44,7 @@
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelBuscar = new System.Windows.Forms.Panel();
-            this.btnSerachProduct2 = new System.Windows.Forms.Button();
+            this.btnSearchProduct2 = new System.Windows.Forms.Button();
             this.textPrice = new System.Windows.Forms.MaskedTextBox();
             this.textNameProduct = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -211,7 +211,7 @@
             // panelBuscar
             // 
             this.panelBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.panelBuscar.Controls.Add(this.btnSerachProduct2);
+            this.panelBuscar.Controls.Add(this.btnSearchProduct2);
             this.panelBuscar.Controls.Add(this.textPrice);
             this.panelBuscar.Controls.Add(this.textNameProduct);
             this.panelBuscar.Controls.Add(this.label9);
@@ -223,19 +223,19 @@
             this.panelBuscar.Size = new System.Drawing.Size(221, 173);
             this.panelBuscar.TabIndex = 90;
             // 
-            // btnSerachProduct2
+            // btnSearchProduct2
             // 
-            this.btnSerachProduct2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSerachProduct2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSerachProduct2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSerachProduct2.ForeColor = System.Drawing.Color.White;
-            this.btnSerachProduct2.Location = new System.Drawing.Point(85, 148);
-            this.btnSerachProduct2.Name = "btnSerachProduct2";
-            this.btnSerachProduct2.Size = new System.Drawing.Size(75, 23);
-            this.btnSerachProduct2.TabIndex = 96;
-            this.btnSerachProduct2.Text = "Buscar";
-            this.btnSerachProduct2.UseVisualStyleBackColor = false;
-            this.btnSerachProduct2.Click += new System.EventHandler(this.btnSerachProduct2_Click_1);
+            this.btnSearchProduct2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnSearchProduct2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchProduct2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchProduct2.ForeColor = System.Drawing.Color.White;
+            this.btnSearchProduct2.Location = new System.Drawing.Point(85, 148);
+            this.btnSearchProduct2.Name = "btnSearchProduct2";
+            this.btnSearchProduct2.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchProduct2.TabIndex = 96;
+            this.btnSearchProduct2.Text = "Buscar";
+            this.btnSearchProduct2.UseVisualStyleBackColor = false;
+            this.btnSearchProduct2.Click += new System.EventHandler(this.btnSerachProduct2_Click_1);
             // 
             // textPrice
             // 
@@ -331,7 +331,6 @@
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar Producto";
-            this.Load += new System.EventHandler(this.Client_Delete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).EndInit();
             this.panelBuscar.ResumeLayout(false);
             this.panelBuscar.PerformLayout();
@@ -354,7 +353,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.Panel panelBuscar;
-        private System.Windows.Forms.Button btnSerachProduct2;
+        private System.Windows.Forms.Button btnSearchProduct2;
         private System.Windows.Forms.MaskedTextBox textPrice;
         private System.Windows.Forms.TextBox textNameProduct;
         private System.Windows.Forms.Label label9;

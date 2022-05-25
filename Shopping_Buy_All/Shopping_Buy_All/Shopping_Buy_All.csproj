@@ -348,6 +348,7 @@
     <Compile Include="ABMS\ABM vehiculos\Vehicle_Modify.Designer.cs">
       <DependentUpon>Vehicle_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\AccesoADatos\AD_Productos.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Cliente.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Local.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Modelo.cs" />

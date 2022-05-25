@@ -26,28 +26,61 @@ namespace Shopping_Buy_All
         //ACCESO A BASE DE DATOS
         private void CargarTablaClientes()
         {
-            tablaClientes.DataSource = AD_Cliente.ObtenerDatosClientes(); ;
+            try
+            {
+                tablaClientes.DataSource = AD_Cliente.ObtenerDatosClientes();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error, no se pudo Otener Datos del Cliente");
+            }
         }
         private void CargarTipoDocumento()
         {
-            comboBoxDocType.DataSource = AD_Cliente.ObtenerTipoDocumento();
-            comboBoxDocType.DisplayMember = "NombreDocumento";
-            comboBoxDocType.ValueMember = "TipoDocumento";
-            comboBoxDocType.SelectedIndex = -1;
+            try
+            {
+                comboBoxDocType.DataSource = AD_Cliente.ObtenerTipoDocumento();
+                comboBoxDocType.DisplayMember = "NombreDocumento";
+                comboBoxDocType.ValueMember = "TipoDocumento";
+                comboBoxDocType.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error, no se pudo Otener Datos de Tipos de Documentos");
+            }
         }
         private void CargarTipoSexo()
         {
-            comboBoxSex.DataSource = AD_Cliente.ObtenerTipoSexo();
-            comboBoxSex.DisplayMember = "NombreSexo";
-            comboBoxSex.ValueMember = "TipoSexo";
-            comboBoxSex.SelectedIndex = -1;
+            try
+            {
+                comboBoxSex.DataSource = AD_Cliente.ObtenerTipoSexo();
+                comboBoxSex.DisplayMember = "NombreSexo";
+                comboBoxSex.ValueMember = "TipoSexo";
+                comboBoxSex.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error, no se pudo Otener Datos de Tipo de Sexo");
+            }
         }
         private void CargarTipoEstadoCivil()
         {
-            comboBoxEstadoCivil.DataSource = AD_Cliente.CargarTipoEstadoCivil();
-            comboBoxEstadoCivil.DisplayMember = "NombreEstadoCivil";
-            comboBoxEstadoCivil.ValueMember = "TipoEstadoCivil";
-            comboBoxEstadoCivil.SelectedIndex = -1;
+            try
+            {
+                comboBoxEstadoCivil.DataSource = AD_Cliente.CargarTipoEstadoCivil();
+                comboBoxEstadoCivil.DisplayMember = "NombreEstadoCivil";
+                comboBoxEstadoCivil.ValueMember = "TipoEstadoCivil";
+                comboBoxEstadoCivil.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error, no se pudo Otener Datos de Tipo de Estado Civil");
+            }
+            
             
         }
         //BOTONES
