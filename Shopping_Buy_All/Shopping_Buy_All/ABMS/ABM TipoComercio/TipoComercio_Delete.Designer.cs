@@ -50,7 +50,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(38, 33);
+            this.label1.Location = new System.Drawing.Point(37, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 44);
             this.label1.TabIndex = 33;
@@ -62,7 +62,7 @@
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(73, 201);
+            this.btnBuscar.Location = new System.Drawing.Point(109, 195);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 3;
@@ -76,7 +76,7 @@
             this.btnClean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClean.ForeColor = System.Drawing.Color.White;
-            this.btnClean.Location = new System.Drawing.Point(73, 245);
+            this.btnClean.Location = new System.Drawing.Point(28, 195);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(75, 23);
             this.btnClean.TabIndex = 4;
@@ -92,7 +92,7 @@
             this.btnDeleteTipoComercio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteTipoComercio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteTipoComercio.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteTipoComercio.Location = new System.Drawing.Point(86, 277);
+            this.btnDeleteTipoComercio.Location = new System.Drawing.Point(83, 227);
             this.btnDeleteTipoComercio.Name = "btnDeleteTipoComercio";
             this.btnDeleteTipoComercio.Size = new System.Drawing.Size(39, 37);
             this.btnDeleteTipoComercio.TabIndex = 67;
@@ -105,7 +105,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(218, 40);
+            this.label15.Location = new System.Drawing.Point(218, 48);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(217, 22);
             this.label15.TabIndex = 71;
@@ -152,7 +152,7 @@
             // 
             this.txtId.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtId.ForeColor = System.Drawing.Color.White;
-            this.txtId.Location = new System.Drawing.Point(91, 101);
+            this.txtId.Location = new System.Drawing.Point(114, 101);
             this.txtId.Mask = "9999";
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(35, 20);
@@ -163,7 +163,7 @@
             // 
             this.txtNombreTipoComercio.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombreTipoComercio.ForeColor = System.Drawing.Color.White;
-            this.txtNombreTipoComercio.Location = new System.Drawing.Point(59, 156);
+            this.txtNombreTipoComercio.Location = new System.Drawing.Point(83, 136);
             this.txtNombreTipoComercio.Name = "txtNombreTipoComercio";
             this.txtNombreTipoComercio.Size = new System.Drawing.Size(100, 20);
             this.txtNombreTipoComercio.TabIndex = 75;
@@ -174,7 +174,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(78, 136);
+            this.label5.Location = new System.Drawing.Point(13, 136);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 74;
@@ -186,7 +186,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(99, 82);
+            this.label3.Location = new System.Drawing.Point(56, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(21, 17);
             this.label3.TabIndex = 73;
@@ -199,7 +199,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(448, 322);
+            this.ClientSize = new System.Drawing.Size(448, 302);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtNombreTipoComercio);
             this.Controls.Add(this.label5);

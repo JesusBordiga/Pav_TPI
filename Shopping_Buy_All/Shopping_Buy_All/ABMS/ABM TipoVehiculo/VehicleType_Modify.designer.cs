@@ -55,7 +55,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(62, 44);
+            this.label1.Location = new System.Drawing.Point(62, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 44);
             this.label1.TabIndex = 61;
@@ -67,7 +67,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(105, 98);
+            this.label2.Location = new System.Drawing.Point(44, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 73;
@@ -77,7 +77,7 @@
             // 
             this.textCodeType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textCodeType.ForeColor = System.Drawing.Color.White;
-            this.textCodeType.Location = new System.Drawing.Point(108, 127);
+            this.textCodeType.Location = new System.Drawing.Point(146, 127);
             this.textCodeType.Name = "textCodeType";
             this.textCodeType.Size = new System.Drawing.Size(46, 20);
             this.textCodeType.TabIndex = 1;
@@ -88,7 +88,7 @@
             this.btnSearchType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchType.ForeColor = System.Drawing.Color.White;
-            this.btnSearchType.Location = new System.Drawing.Point(3, 154);
+            this.btnSearchType.Location = new System.Drawing.Point(20, 154);
             this.btnSearchType.Name = "btnSearchType";
             this.btnSearchType.Size = new System.Drawing.Size(75, 23);
             this.btnSearchType.TabIndex = 1;
@@ -115,7 +115,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(51, 2);
+            this.label3.Location = new System.Drawing.Point(10, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 62;
@@ -125,7 +125,7 @@
             // 
             this.textNameTypeVehicle.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNameTypeVehicle.ForeColor = System.Drawing.Color.White;
-            this.textNameTypeVehicle.Location = new System.Drawing.Point(19, 28);
+            this.textNameTypeVehicle.Location = new System.Drawing.Point(80, 3);
             this.textNameTypeVehicle.Name = "textNameTypeVehicle";
             this.textNameTypeVehicle.Size = new System.Drawing.Size(120, 20);
             this.textNameTypeVehicle.TabIndex = 4;
@@ -224,9 +224,9 @@
             this.panelBusqueda.Controls.Add(this.btnSearchType);
             this.panelBusqueda.Controls.Add(this.label3);
             this.panelBusqueda.Controls.Add(this.textNameTypeVehicle);
-            this.panelBusqueda.Location = new System.Drawing.Point(49, 155);
+            this.panelBusqueda.Location = new System.Drawing.Point(28, 155);
             this.panelBusqueda.Name = "panelBusqueda";
-            this.panelBusqueda.Size = new System.Drawing.Size(156, 177);
+            this.panelBusqueda.Size = new System.Drawing.Size(205, 177);
             this.panelBusqueda.TabIndex = 89;
             // 
             // VehicleType_Modify

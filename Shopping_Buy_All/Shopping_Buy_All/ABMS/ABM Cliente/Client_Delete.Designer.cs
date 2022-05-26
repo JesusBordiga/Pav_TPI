@@ -74,7 +74,7 @@
             // 
             this.textNumberDoc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNumberDoc.ForeColor = System.Drawing.Color.White;
-            this.textNumberDoc.Location = new System.Drawing.Point(84, 166);
+            this.textNumberDoc.Location = new System.Drawing.Point(162, 146);
             this.textNumberDoc.Mask = "99999999";
             this.textNumberDoc.Name = "textNumberDoc";
             this.textNumberDoc.Size = new System.Drawing.Size(55, 20);
@@ -87,7 +87,7 @@
             this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
             this.comboBoxDocType.FormattingEnabled = true;
-            this.comboBoxDocType.Location = new System.Drawing.Point(51, 118);
+            this.comboBoxDocType.Location = new System.Drawing.Point(132, 116);
             this.comboBoxDocType.Name = "comboBoxDocType";
             this.comboBoxDocType.Size = new System.Drawing.Size(119, 21);
             this.comboBoxDocType.TabIndex = 1;
@@ -98,7 +98,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(40, 144);
+            this.label5.Location = new System.Drawing.Point(1, 146);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 17);
             this.label5.TabIndex = 44;
@@ -110,11 +110,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(37, 96);
+            this.label4.Location = new System.Drawing.Point(1, 117);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 17);
+            this.label4.Size = new System.Drawing.Size(131, 17);
             this.label4.TabIndex = 43;
-            this.label4.Text = "Tipo de Documento";
+            this.label4.Text = "Tipo  Documento";
             // 
             // btnSearch
             // 
@@ -122,7 +122,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(77, 203);
+            this.btnSearch.Location = new System.Drawing.Point(162, 237);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 3;
@@ -152,7 +152,7 @@
             this.btnDeleteClient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteClient.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteClient.Location = new System.Drawing.Point(93, 268);
+            this.btnDeleteClient.Location = new System.Drawing.Point(14, 230);
             this.btnDeleteClient.Name = "btnDeleteClient";
             this.btnDeleteClient.Size = new System.Drawing.Size(38, 42);
             this.btnDeleteClient.TabIndex = 67;

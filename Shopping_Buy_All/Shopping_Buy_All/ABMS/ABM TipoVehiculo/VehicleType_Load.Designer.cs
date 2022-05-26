@@ -123,7 +123,7 @@
             this.name.BackColor = System.Drawing.Color.Transparent;
             this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name.ForeColor = System.Drawing.SystemColors.Window;
-            this.name.Location = new System.Drawing.Point(81, 109);
+            this.name.Location = new System.Drawing.Point(17, 134);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(64, 17);
             this.name.TabIndex = 34;
@@ -133,7 +133,7 @@
             // 
             this.textNameVehicle.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNameVehicle.ForeColor = System.Drawing.SystemColors.Window;
-            this.textNameVehicle.Location = new System.Drawing.Point(45, 134);
+            this.textNameVehicle.Location = new System.Drawing.Point(86, 134);
             this.textNameVehicle.Name = "textNameVehicle";
             this.textNameVehicle.Size = new System.Drawing.Size(133, 20);
             this.textNameVehicle.TabIndex = 1;
@@ -144,7 +144,7 @@
             this.butVehicleLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.butVehicleLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butVehicleLoad.ForeColor = System.Drawing.Color.White;
-            this.butVehicleLoad.Location = new System.Drawing.Point(22, 274);
+            this.butVehicleLoad.Location = new System.Drawing.Point(41, 202);
             this.butVehicleLoad.Name = "butVehicleLoad";
             this.butVehicleLoad.Size = new System.Drawing.Size(75, 23);
             this.butVehicleLoad.TabIndex = 2;
@@ -158,7 +158,7 @@
             this.butClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.butClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butClear.ForeColor = System.Drawing.Color.White;
-            this.butClear.Location = new System.Drawing.Point(123, 274);
+            this.butClear.Location = new System.Drawing.Point(128, 202);
             this.butClear.Name = "butClear";
             this.butClear.Size = new System.Drawing.Size(75, 23);
             this.butClear.TabIndex = 3;

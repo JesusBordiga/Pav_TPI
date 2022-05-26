@@ -49,7 +49,7 @@
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(91, 237);
+            this.btnClear.Location = new System.Drawing.Point(87, 237);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 53;
@@ -77,7 +77,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(283, 33);
+            this.label15.Location = new System.Drawing.Point(271, 33);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(192, 20);
             this.label15.TabIndex = 59;
@@ -89,7 +89,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(97, 162);
+            this.label5.Location = new System.Drawing.Point(32, 146);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 39;
@@ -101,7 +101,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(120, 115);
+            this.label3.Location = new System.Drawing.Point(75, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(21, 17);
             this.label3.TabIndex = 35;
@@ -113,7 +113,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(66, 40);
+            this.label1.Location = new System.Drawing.Point(66, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 40);
             this.label1.TabIndex = 32;
@@ -124,7 +124,7 @@
             this.btnBuscarTipoComercio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarTipoComercio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarTipoComercio.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarTipoComercio.Location = new System.Drawing.Point(172, 237);
+            this.btnBuscarTipoComercio.Location = new System.Drawing.Point(166, 237);
             this.btnBuscarTipoComercio.Name = "btnBuscarTipoComercio";
             this.btnBuscarTipoComercio.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarTipoComercio.TabIndex = 62;
@@ -143,7 +143,7 @@
             this.Tipo_Comercio,
             this.NombreTipoComercio});
             this.tablaTipoComercio.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaTipoComercio.Location = new System.Drawing.Point(271, 56);
+            this.tablaTipoComercio.Location = new System.Drawing.Point(254, 56);
             this.tablaTipoComercio.Name = "tablaTipoComercio";
             this.tablaTipoComercio.ReadOnly = true;
             this.tablaTipoComercio.RowHeadersWidth = 10;
@@ -173,7 +173,7 @@
             // 
             this.txtNombreTipoComercio.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombreTipoComercio.ForeColor = System.Drawing.Color.White;
-            this.txtNombreTipoComercio.Location = new System.Drawing.Point(80, 182);
+            this.txtNombreTipoComercio.Location = new System.Drawing.Point(102, 146);
             this.txtNombreTipoComercio.Name = "txtNombreTipoComercio";
             this.txtNombreTipoComercio.Size = new System.Drawing.Size(100, 20);
             this.txtNombreTipoComercio.TabIndex = 66;
@@ -182,10 +182,10 @@
             // 
             this.txtId.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtId.ForeColor = System.Drawing.Color.White;
-            this.txtId.Location = new System.Drawing.Point(115, 135);
+            this.txtId.Location = new System.Drawing.Point(133, 113);
             this.txtId.Mask = "9999";
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(27, 20);
+            this.txtId.Size = new System.Drawing.Size(31, 20);
             this.txtId.TabIndex = 67;
             this.txtId.ValidatingType = typeof(int);
             // 
@@ -196,7 +196,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(501, 271);
+            this.ClientSize = new System.Drawing.Size(484, 271);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtNombreTipoComercio);
             this.Controls.Add(this.tablaTipoComercio);

@@ -49,6 +49,7 @@
             this.Patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textNameModelo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SearchPanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaVehiculos)).BeginInit();
             this.SuspendLayout();
@@ -57,20 +58,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(87, 63);
+            this.label1.Location = new System.Drawing.Point(75, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 29);
+            this.label1.Size = new System.Drawing.Size(168, 22);
             this.label1.TabIndex = 89;
             this.label1.Text = "Eliminar  vehiculo";
             // 
             // SearchPanel
             // 
             this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.SearchPanel.Location = new System.Drawing.Point(43, 95);
+            this.SearchPanel.Location = new System.Drawing.Point(28, 111);
             this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(250, 249);
+            this.SearchPanel.Size = new System.Drawing.Size(279, 249);
             this.SearchPanel.TabIndex = 93;
             this.SearchPanel.TabStop = false;
             // 
@@ -80,7 +81,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(123, 197);
+            this.label2.Location = new System.Drawing.Point(32, 196);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 17);
             this.label2.TabIndex = 94;
@@ -90,7 +91,7 @@
             // 
             this.textNroDoc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNroDoc.ForeColor = System.Drawing.Color.White;
-            this.textNroDoc.Location = new System.Drawing.Point(163, 216);
+            this.textNroDoc.Location = new System.Drawing.Point(209, 196);
             this.textNroDoc.Name = "textNroDoc";
             this.textNroDoc.Size = new System.Drawing.Size(46, 20);
             this.textNroDoc.TabIndex = 95;
@@ -101,7 +102,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(159, 97);
+            this.label3.Location = new System.Drawing.Point(89, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 96;
@@ -111,7 +112,7 @@
             // 
             this.textNamePatente.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNamePatente.ForeColor = System.Drawing.Color.White;
-            this.textNamePatente.Location = new System.Drawing.Point(124, 122);
+            this.textNamePatente.Location = new System.Drawing.Point(173, 117);
             this.textNamePatente.Name = "textNamePatente";
             this.textNamePatente.Size = new System.Drawing.Size(120, 20);
             this.textNamePatente.TabIndex = 97;
@@ -160,7 +161,7 @@
             this.btnSerach2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSerach2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSerach2.ForeColor = System.Drawing.Color.White;
-            this.btnSerach2.Location = new System.Drawing.Point(136, 296);
+            this.btnSerach2.Location = new System.Drawing.Point(140, 269);
             this.btnSerach2.Name = "btnSerach2";
             this.btnSerach2.Size = new System.Drawing.Size(75, 23);
             this.btnSerach2.TabIndex = 101;
@@ -174,7 +175,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(122, 154);
+            this.label4.Location = new System.Drawing.Point(25, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 17);
             this.label4.TabIndex = 102;
@@ -185,7 +186,7 @@
             this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
             this.comboBoxDocType.FormattingEnabled = true;
-            this.comboBoxDocType.Location = new System.Drawing.Point(126, 174);
+            this.comboBoxDocType.Location = new System.Drawing.Point(174, 154);
             this.comboBoxDocType.Name = "comboBoxDocType";
             this.comboBoxDocType.Size = new System.Drawing.Size(119, 21);
             this.comboBoxDocType.TabIndex = 103;
@@ -196,7 +197,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(160, 237);
+            this.label5.Location = new System.Drawing.Point(89, 227);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 17);
             this.label5.TabIndex = 104;
@@ -275,10 +276,22 @@
             this.textNameModelo.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNameModelo.ForeColor = System.Drawing.Color.White;
             this.textNameModelo.FormattingEnabled = true;
-            this.textNameModelo.Location = new System.Drawing.Point(126, 257);
+            this.textNameModelo.Location = new System.Drawing.Point(173, 227);
             this.textNameModelo.Name = "textNameModelo";
             this.textNameModelo.Size = new System.Drawing.Size(119, 21);
             this.textNameModelo.TabIndex = 107;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(488, 31);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(171, 22);
+            this.label6.TabIndex = 108;
+            this.label6.Text = "Lista de vehiculos";
             // 
             // Vehicle_Delete
             // 
@@ -289,6 +302,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(772, 379);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.textNameModelo);
             this.Controls.Add(this.tablaVehiculos);
             this.Controls.Add(this.label5);
@@ -336,5 +350,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Patente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
         private System.Windows.Forms.ComboBox textNameModelo;
+        private System.Windows.Forms.Label label6;
     }
 }

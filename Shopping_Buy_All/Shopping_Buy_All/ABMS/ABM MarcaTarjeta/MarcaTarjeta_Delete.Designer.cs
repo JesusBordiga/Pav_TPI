@@ -63,7 +63,7 @@
             this.labelMarca.BackColor = System.Drawing.Color.Transparent;
             this.labelMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMarca.ForeColor = System.Drawing.Color.White;
-            this.labelMarca.Location = new System.Drawing.Point(89, 126);
+            this.labelMarca.Location = new System.Drawing.Point(39, 126);
             this.labelMarca.Name = "labelMarca";
             this.labelMarca.Size = new System.Drawing.Size(64, 17);
             this.labelMarca.TabIndex = 44;
@@ -75,7 +75,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(84, 200);
+            this.btnSearch.Location = new System.Drawing.Point(141, 199);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 3;
@@ -89,7 +89,7 @@
             this.btnClean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClean.ForeColor = System.Drawing.Color.White;
-            this.btnClean.Location = new System.Drawing.Point(84, 257);
+            this.btnClean.Location = new System.Drawing.Point(42, 199);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(75, 23);
             this.btnClean.TabIndex = 4;
@@ -105,7 +105,7 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(102, 288);
+            this.btnDelete.Location = new System.Drawing.Point(106, 241);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(40, 42);
             this.btnDelete.TabIndex = 67;
@@ -128,7 +128,7 @@
             // 
             this.textMarca.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textMarca.ForeColor = System.Drawing.Color.White;
-            this.textMarca.Location = new System.Drawing.Point(65, 146);
+            this.textMarca.Location = new System.Drawing.Point(106, 126);
             this.textMarca.Name = "textMarca";
             this.textMarca.Size = new System.Drawing.Size(110, 20);
             this.textMarca.TabIndex = 74;

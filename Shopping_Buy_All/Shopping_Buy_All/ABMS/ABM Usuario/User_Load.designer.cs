@@ -157,7 +157,7 @@
             this.btnUserLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUserLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserLoad.ForeColor = System.Drawing.Color.White;
-            this.btnUserLoad.Location = new System.Drawing.Point(28, 300);
+            this.btnUserLoad.Location = new System.Drawing.Point(49, 279);
             this.btnUserLoad.Name = "btnUserLoad";
             this.btnUserLoad.Size = new System.Drawing.Size(75, 23);
             this.btnUserLoad.TabIndex = 5;
@@ -170,7 +170,7 @@
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(124, 300);
+            this.btnClear.Location = new System.Drawing.Point(130, 279);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 6;
@@ -182,7 +182,7 @@
             // 
             this.textPasswordUser.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textPasswordUser.ForeColor = System.Drawing.Color.White;
-            this.textPasswordUser.Location = new System.Drawing.Point(61, 190);
+            this.textPasswordUser.Location = new System.Drawing.Point(124, 178);
             this.textPasswordUser.Name = "textPasswordUser";
             this.textPasswordUser.PasswordChar = '*';
             this.textPasswordUser.Size = new System.Drawing.Size(110, 20);
@@ -192,7 +192,7 @@
             // 
             this.textUsernameUser.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textUsernameUser.ForeColor = System.Drawing.Color.White;
-            this.textUsernameUser.Location = new System.Drawing.Point(61, 142);
+            this.textUsernameUser.Location = new System.Drawing.Point(124, 143);
             this.textUsernameUser.Name = "textUsernameUser";
             this.textUsernameUser.Size = new System.Drawing.Size(110, 20);
             this.textUsernameUser.TabIndex = 1;
@@ -203,7 +203,7 @@
             this.labelPasswordUser.BackColor = System.Drawing.Color.Transparent;
             this.labelPasswordUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPasswordUser.ForeColor = System.Drawing.Color.White;
-            this.labelPasswordUser.Location = new System.Drawing.Point(70, 171);
+            this.labelPasswordUser.Location = new System.Drawing.Point(25, 178);
             this.labelPasswordUser.Name = "labelPasswordUser";
             this.labelPasswordUser.Size = new System.Drawing.Size(91, 17);
             this.labelPasswordUser.TabIndex = 30;
@@ -216,7 +216,7 @@
             this.labelUsername.BackColor = System.Drawing.Color.Transparent;
             this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.Color.White;
-            this.labelUsername.Location = new System.Drawing.Point(87, 123);
+            this.labelUsername.Location = new System.Drawing.Point(54, 144);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(64, 17);
             this.labelUsername.TabIndex = 3;
@@ -229,18 +229,18 @@
             this.labelConfirmPasswordUser.BackColor = System.Drawing.Color.Transparent;
             this.labelConfirmPasswordUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConfirmPasswordUser.ForeColor = System.Drawing.Color.White;
-            this.labelConfirmPasswordUser.Location = new System.Drawing.Point(33, 216);
+            this.labelConfirmPasswordUser.Location = new System.Drawing.Point(23, 210);
             this.labelConfirmPasswordUser.Name = "labelConfirmPasswordUser";
-            this.labelConfirmPasswordUser.Size = new System.Drawing.Size(166, 17);
+            this.labelConfirmPasswordUser.Size = new System.Drawing.Size(91, 34);
             this.labelConfirmPasswordUser.TabIndex = 31;
-            this.labelConfirmPasswordUser.Text = "Confirmar Contraseña";
+            this.labelConfirmPasswordUser.Text = "Confirmar \r\nContraseña";
             this.labelConfirmPasswordUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textConfirmPasswordUser
             // 
             this.textConfirmPasswordUser.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textConfirmPasswordUser.ForeColor = System.Drawing.Color.White;
-            this.textConfirmPasswordUser.Location = new System.Drawing.Point(61, 248);
+            this.textConfirmPasswordUser.Location = new System.Drawing.Point(124, 217);
             this.textConfirmPasswordUser.Name = "textConfirmPasswordUser";
             this.textConfirmPasswordUser.PasswordChar = '*';
             this.textConfirmPasswordUser.Size = new System.Drawing.Size(110, 20);

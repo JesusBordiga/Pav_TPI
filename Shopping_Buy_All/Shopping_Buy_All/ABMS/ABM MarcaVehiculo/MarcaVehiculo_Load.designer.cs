@@ -97,7 +97,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 50);
+            this.label1.Location = new System.Drawing.Point(72, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 22);
             this.label1.TabIndex = 1;
@@ -109,7 +109,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(70, 81);
+            this.label4.Location = new System.Drawing.Point(70, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 17);
             this.label4.TabIndex = 4;
@@ -145,12 +145,12 @@
             // 
             this.cmbMarca.BackColor = System.Drawing.SystemColors.ControlDark;
             this.cmbMarca.ForeColor = System.Drawing.Color.White;
-            this.cmbMarca.Location = new System.Drawing.Point(45, 101);
+            this.cmbMarca.Location = new System.Drawing.Point(130, 109);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(100, 20);
             this.cmbMarca.TabIndex = 29;
             // 
-            // MarcaVeh_Load
+            // MarcaVehiculo_Load
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -166,7 +166,7 @@
             this.Controls.Add(this.tablaMarcas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "MarcaVeh_Load";
+            this.Name = "MarcaVehiculo_Load";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta de Marca";

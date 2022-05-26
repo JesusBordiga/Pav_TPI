@@ -53,7 +53,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 79);
+            this.label1.Location = new System.Drawing.Point(17, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 22);
             this.label1.TabIndex = 33;
@@ -65,7 +65,7 @@
             this.labelUsername.BackColor = System.Drawing.Color.Transparent;
             this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.Color.White;
-            this.labelUsername.Location = new System.Drawing.Point(81, 123);
+            this.labelUsername.Location = new System.Drawing.Point(12, 144);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(64, 17);
             this.labelUsername.TabIndex = 44;
@@ -77,7 +77,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(70, 188);
+            this.btnSearch.Location = new System.Drawing.Point(118, 187);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 3;
@@ -91,7 +91,7 @@
             this.btnClean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClean.ForeColor = System.Drawing.Color.White;
-            this.btnClean.Location = new System.Drawing.Point(70, 237);
+            this.btnClean.Location = new System.Drawing.Point(37, 187);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(75, 23);
             this.btnClean.TabIndex = 4;
@@ -107,7 +107,7 @@
             this.btnDeleteUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteUser.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteUser.Location = new System.Drawing.Point(86, 267);
+            this.btnDeleteUser.Location = new System.Drawing.Point(93, 225);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(38, 31);
             this.btnDeleteUser.TabIndex = 67;
@@ -208,7 +208,7 @@
             // 
             this.textUsernameUser.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textUsernameUser.ForeColor = System.Drawing.Color.White;
-            this.textUsernameUser.Location = new System.Drawing.Point(56, 141);
+            this.textUsernameUser.Location = new System.Drawing.Point(83, 143);
             this.textUsernameUser.Name = "textUsernameUser";
             this.textUsernameUser.Size = new System.Drawing.Size(110, 20);
             this.textUsernameUser.TabIndex = 74;

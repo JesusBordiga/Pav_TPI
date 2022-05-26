@@ -157,11 +157,11 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(586, 9);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(234, 31);
+            this.label15.Size = new System.Drawing.Size(161, 22);
             this.label15.TabIndex = 59;
             this.label15.Text = "Lista de Modelos";
             // 
@@ -171,7 +171,7 @@
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(141, 341);
+            this.btnBuscar.Location = new System.Drawing.Point(149, 278);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 89;
@@ -185,7 +185,7 @@
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(99, 341);
+            this.btnModificar.Location = new System.Drawing.Point(107, 278);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 94;
@@ -220,7 +220,7 @@
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(180, 341);
+            this.btnLimpiar.Location = new System.Drawing.Point(188, 278);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 90;
@@ -232,18 +232,17 @@
             // 
             this.lblBuscar.AutoSize = true;
             this.lblBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuscar.ForeColor = System.Drawing.Color.White;
             this.lblBuscar.Location = new System.Drawing.Point(82, 43);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(207, 31);
+            this.lblBuscar.Size = new System.Drawing.Size(142, 22);
             this.lblBuscar.TabIndex = 91;
             this.lblBuscar.Text = "Buscar modelo";
             // 
             // cmbTipoAuto
             // 
             this.cmbTipoAuto.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.cmbTipoAuto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoAuto.ForeColor = System.Drawing.SystemColors.Window;
             this.cmbTipoAuto.FormattingEnabled = true;
             this.cmbTipoAuto.Location = new System.Drawing.Point(174, 59);
@@ -254,7 +253,6 @@
             // cmbMarca
             // 
             this.cmbMarca.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.ForeColor = System.Drawing.Color.White;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(174, 32);

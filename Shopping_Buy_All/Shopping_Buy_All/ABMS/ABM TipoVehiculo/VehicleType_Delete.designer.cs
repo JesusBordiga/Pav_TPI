@@ -67,7 +67,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(107, 105);
+            this.label2.Location = new System.Drawing.Point(51, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 87;
@@ -77,7 +77,7 @@
             // 
             this.textCodeType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textCodeType.ForeColor = System.Drawing.Color.White;
-            this.textCodeType.Location = new System.Drawing.Point(110, 140);
+            this.textCodeType.Location = new System.Drawing.Point(148, 139);
             this.textCodeType.Name = "textCodeType";
             this.textCodeType.Size = new System.Drawing.Size(46, 20);
             this.textCodeType.TabIndex = 75;
@@ -114,7 +114,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(107, 173);
+            this.label3.Location = new System.Drawing.Point(45, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 88;
@@ -124,7 +124,7 @@
             // 
             this.textNameType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNameType.ForeColor = System.Drawing.Color.White;
-            this.textNameType.Location = new System.Drawing.Point(77, 193);
+            this.textNameType.Location = new System.Drawing.Point(115, 173);
             this.textNameType.Name = "textNameType";
             this.textNameType.Size = new System.Drawing.Size(120, 20);
             this.textNameType.TabIndex = 89;
@@ -220,9 +220,9 @@
             // SearchPanel
             // 
             this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.SearchPanel.Location = new System.Drawing.Point(12, 88);
+            this.SearchPanel.Location = new System.Drawing.Point(21, 90);
             this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(250, 249);
+            this.SearchPanel.Size = new System.Drawing.Size(246, 249);
             this.SearchPanel.TabIndex = 92;
             this.SearchPanel.TabStop = false;
             // 

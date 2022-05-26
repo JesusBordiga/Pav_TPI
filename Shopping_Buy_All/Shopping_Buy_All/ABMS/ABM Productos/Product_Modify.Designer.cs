@@ -98,7 +98,7 @@
             // 
             this.textPrice.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textPrice.ForeColor = System.Drawing.Color.White;
-            this.textPrice.Location = new System.Drawing.Point(80, 72);
+            this.textPrice.Location = new System.Drawing.Point(138, 54);
             this.textPrice.Mask = "9999999";
             this.textPrice.Name = "textPrice";
             this.textPrice.Size = new System.Drawing.Size(53, 20);
@@ -109,9 +109,9 @@
             // 
             this.textNameProduct.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNameProduct.ForeColor = System.Drawing.Color.White;
-            this.textNameProduct.Location = new System.Drawing.Point(46, 24);
+            this.textNameProduct.Location = new System.Drawing.Point(117, 19);
             this.textNameProduct.Name = "textNameProduct";
-            this.textNameProduct.Size = new System.Drawing.Size(120, 20);
+            this.textNameProduct.Size = new System.Drawing.Size(90, 20);
             this.textNameProduct.TabIndex = 4;
             // 
             // label9
@@ -120,7 +120,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(83, 51);
+            this.label9.Location = new System.Drawing.Point(53, 55);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 17);
             this.label9.TabIndex = 64;
@@ -132,7 +132,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(77, 1);
+            this.label2.Location = new System.Drawing.Point(48, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 62;
@@ -170,7 +170,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(115, 116);
+            this.label3.Location = new System.Drawing.Point(85, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 73;
@@ -180,7 +180,7 @@
             // 
             this.textCodeProduct.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textCodeProduct.ForeColor = System.Drawing.Color.White;
-            this.textCodeProduct.Location = new System.Drawing.Point(120, 136);
+            this.textCodeProduct.Location = new System.Drawing.Point(170, 136);
             this.textCodeProduct.Mask = "9999999";
             this.textCodeProduct.Name = "textCodeProduct";
             this.textCodeProduct.Size = new System.Drawing.Size(46, 20);
@@ -287,7 +287,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(66, 72);
+            this.label4.Location = new System.Drawing.Point(121, 55);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(17, 17);
             this.label4.TabIndex = 89;
@@ -305,7 +305,7 @@
             this.panelBuscar.Controls.Add(this.btnSerachProduct2);
             this.panelBuscar.Location = new System.Drawing.Point(31, 157);
             this.panelBuscar.Name = "panelBuscar";
-            this.panelBuscar.Size = new System.Drawing.Size(199, 185);
+            this.panelBuscar.Size = new System.Drawing.Size(236, 185);
             this.panelBuscar.TabIndex = 90;
             // 
             // Product_Modify

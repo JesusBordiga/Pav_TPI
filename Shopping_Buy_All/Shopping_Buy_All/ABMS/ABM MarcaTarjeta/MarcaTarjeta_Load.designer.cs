@@ -51,7 +51,7 @@
             this.labelTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(37, 80);
+            this.labelTitle.Location = new System.Drawing.Point(20, 85);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(229, 22);
             this.labelTitle.TabIndex = 1;
@@ -99,7 +99,7 @@
             // 
             this.textMarca.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textMarca.ForeColor = System.Drawing.Color.White;
-            this.textMarca.Location = new System.Drawing.Point(76, 134);
+            this.textMarca.Location = new System.Drawing.Point(103, 157);
             this.textMarca.Name = "textMarca";
             this.textMarca.Size = new System.Drawing.Size(110, 20);
             this.textMarca.TabIndex = 1;
@@ -110,7 +110,7 @@
             this.labelMarca.BackColor = System.Drawing.Color.Transparent;
             this.labelMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMarca.ForeColor = System.Drawing.Color.White;
-            this.labelMarca.Location = new System.Drawing.Point(93, 118);
+            this.labelMarca.Location = new System.Drawing.Point(33, 157);
             this.labelMarca.Name = "labelMarca";
             this.labelMarca.Size = new System.Drawing.Size(64, 17);
             this.labelMarca.TabIndex = 3;

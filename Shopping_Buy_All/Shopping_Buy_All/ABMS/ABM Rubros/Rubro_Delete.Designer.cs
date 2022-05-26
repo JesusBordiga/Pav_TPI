@@ -63,7 +63,7 @@
             this.labelRubro.BackColor = System.Drawing.Color.Transparent;
             this.labelRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRubro.ForeColor = System.Drawing.Color.White;
-            this.labelRubro.Location = new System.Drawing.Point(81, 121);
+            this.labelRubro.Location = new System.Drawing.Point(36, 141);
             this.labelRubro.Name = "labelRubro";
             this.labelRubro.Size = new System.Drawing.Size(64, 17);
             this.labelRubro.TabIndex = 44;
@@ -75,7 +75,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(80, 192);
+            this.btnSearch.Location = new System.Drawing.Point(127, 190);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 3;
@@ -89,7 +89,7 @@
             this.btnClean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClean.ForeColor = System.Drawing.Color.White;
-            this.btnClean.Location = new System.Drawing.Point(80, 221);
+            this.btnClean.Location = new System.Drawing.Point(40, 190);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(75, 23);
             this.btnClean.TabIndex = 4;
@@ -105,7 +105,7 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(99, 260);
+            this.btnDelete.Location = new System.Drawing.Point(105, 230);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(33, 37);
             this.btnDelete.TabIndex = 67;
@@ -128,7 +128,7 @@
             // 
             this.textRubro.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textRubro.ForeColor = System.Drawing.Color.White;
-            this.textRubro.Location = new System.Drawing.Point(60, 145);
+            this.textRubro.Location = new System.Drawing.Point(109, 141);
             this.textRubro.Name = "textRubro";
             this.textRubro.Size = new System.Drawing.Size(110, 20);
             this.textRubro.TabIndex = 74;

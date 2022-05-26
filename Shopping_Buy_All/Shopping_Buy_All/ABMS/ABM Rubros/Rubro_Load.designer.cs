@@ -99,7 +99,7 @@
             // 
             this.textRubro.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textRubro.ForeColor = System.Drawing.Color.White;
-            this.textRubro.Location = new System.Drawing.Point(57, 154);
+            this.textRubro.Location = new System.Drawing.Point(105, 154);
             this.textRubro.Name = "textRubro";
             this.textRubro.Size = new System.Drawing.Size(110, 20);
             this.textRubro.TabIndex = 1;
@@ -110,7 +110,7 @@
             this.labelRubro.BackColor = System.Drawing.Color.Transparent;
             this.labelRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRubro.ForeColor = System.Drawing.Color.White;
-            this.labelRubro.Location = new System.Drawing.Point(82, 134);
+            this.labelRubro.Location = new System.Drawing.Point(35, 154);
             this.labelRubro.Name = "labelRubro";
             this.labelRubro.Size = new System.Drawing.Size(64, 17);
             this.labelRubro.TabIndex = 3;

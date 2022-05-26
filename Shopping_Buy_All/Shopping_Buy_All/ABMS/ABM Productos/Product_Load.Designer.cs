@@ -65,7 +65,7 @@
             // 
             this.textNameProduct.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNameProduct.ForeColor = System.Drawing.Color.White;
-            this.textNameProduct.Location = new System.Drawing.Point(79, 129);
+            this.textNameProduct.Location = new System.Drawing.Point(111, 131);
             this.textNameProduct.Name = "textNameProduct";
             this.textNameProduct.Size = new System.Drawing.Size(133, 20);
             this.textNameProduct.TabIndex = 1;
@@ -76,7 +76,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(115, 108);
+            this.label2.Location = new System.Drawing.Point(42, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 34;
@@ -100,7 +100,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(116, 151);
+            this.label9.Location = new System.Drawing.Point(44, 171);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 17);
             this.label9.TabIndex = 47;
@@ -110,7 +110,7 @@
             // 
             this.textPrice.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textPrice.ForeColor = System.Drawing.Color.White;
-            this.textPrice.Location = new System.Drawing.Point(118, 172);
+            this.textPrice.Location = new System.Drawing.Point(145, 170);
             this.textPrice.Mask = "9999999";
             this.textPrice.Name = "textPrice";
             this.textPrice.Size = new System.Drawing.Size(52, 20);
@@ -230,7 +230,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(104, 173);
+            this.label3.Location = new System.Drawing.Point(131, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 17);
             this.label3.TabIndex = 88;

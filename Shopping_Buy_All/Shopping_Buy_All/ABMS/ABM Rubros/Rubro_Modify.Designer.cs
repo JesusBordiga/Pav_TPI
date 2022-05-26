@@ -117,7 +117,7 @@
             this.labelRubro.BackColor = System.Drawing.Color.Transparent;
             this.labelRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRubro.ForeColor = System.Drawing.Color.White;
-            this.labelRubro.Location = new System.Drawing.Point(101, 125);
+            this.labelRubro.Location = new System.Drawing.Point(96, 146);
             this.labelRubro.Name = "labelRubro";
             this.labelRubro.Size = new System.Drawing.Size(52, 17);
             this.labelRubro.TabIndex = 73;
@@ -127,7 +127,7 @@
             // 
             this.textRubroOld.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textRubroOld.ForeColor = System.Drawing.Color.White;
-            this.textRubroOld.Location = new System.Drawing.Point(72, 145);
+            this.textRubroOld.Location = new System.Drawing.Point(154, 145);
             this.textRubroOld.Name = "textRubroOld";
             this.textRubroOld.Size = new System.Drawing.Size(110, 20);
             this.textRubroOld.TabIndex = 1;
@@ -195,7 +195,7 @@
             // 
             this.textRubroNew.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textRubroNew.ForeColor = System.Drawing.Color.White;
-            this.textRubroNew.Location = new System.Drawing.Point(72, 145);
+            this.textRubroNew.Location = new System.Drawing.Point(154, 145);
             this.textRubroNew.Name = "textRubroNew";
             this.textRubroNew.Size = new System.Drawing.Size(110, 20);
             this.textRubroNew.TabIndex = 2;
@@ -207,7 +207,7 @@
             this.labelMod.BackColor = System.Drawing.Color.Transparent;
             this.labelMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMod.ForeColor = System.Drawing.Color.White;
-            this.labelMod.Location = new System.Drawing.Point(71, 125);
+            this.labelMod.Location = new System.Drawing.Point(35, 146);
             this.labelMod.Name = "labelMod";
             this.labelMod.Size = new System.Drawing.Size(113, 17);
             this.labelMod.TabIndex = 95;

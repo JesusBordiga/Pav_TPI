@@ -39,6 +39,20 @@
             this.labelBuscarCliente = new System.Windows.Forms.Label();
             this.btnSearchClient = new System.Windows.Forms.Button();
             this.tablaClientes = new System.Windows.Forms.DataGridView();
+            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoCiv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textStreetClient = new System.Windows.Forms.TextBox();
             this.textDateBirthDay = new System.Windows.Forms.MaskedTextBox();
             this.textSurnameClient = new System.Windows.Forms.TextBox();
@@ -57,20 +71,6 @@
             this.textNameClient = new System.Windows.Forms.TextBox();
             this.searchPanel = new System.Windows.Forms.Panel();
             this.comboBoxEstadoCivil = new System.Windows.Forms.ComboBox();
-            this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NroCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCiv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.searchPanel.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +79,7 @@
             // 
             this.textNumberDoc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNumberDoc.ForeColor = System.Drawing.Color.White;
-            this.textNumberDoc.Location = new System.Drawing.Point(139, 110);
+            this.textNumberDoc.Location = new System.Drawing.Point(221, 96);
             this.textNumberDoc.Mask = "99999999";
             this.textNumberDoc.Name = "textNumberDoc";
             this.textNumberDoc.Size = new System.Drawing.Size(55, 20);
@@ -91,7 +91,7 @@
             this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
             this.comboBoxDocType.FormattingEnabled = true;
-            this.comboBoxDocType.Location = new System.Drawing.Point(112, 70);
+            this.comboBoxDocType.Location = new System.Drawing.Point(190, 69);
             this.comboBoxDocType.Name = "comboBoxDocType";
             this.comboBoxDocType.Size = new System.Drawing.Size(119, 21);
             this.comboBoxDocType.TabIndex = 31;
@@ -114,7 +114,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(103, 94);
+            this.label5.Location = new System.Drawing.Point(18, 96);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 17);
             this.label5.TabIndex = 39;
@@ -126,7 +126,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(103, 53);
+            this.label4.Location = new System.Drawing.Point(12, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 17);
             this.label4.TabIndex = 37;
@@ -149,7 +149,7 @@
             this.btnSearchClient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchClient.ForeColor = System.Drawing.Color.White;
-            this.btnSearchClient.Location = new System.Drawing.Point(186, 414);
+            this.btnSearchClient.Location = new System.Drawing.Point(230, 414);
             this.btnSearchClient.Name = "btnSearchClient";
             this.btnSearchClient.Size = new System.Drawing.Size(75, 23);
             this.btnSearchClient.TabIndex = 62;
@@ -204,228 +204,6 @@
             this.tablaClientes.TabIndex = 66;
             this.tablaClientes.TabStop = false;
             this.tablaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick_1);
-            // 
-            // textStreetClient
-            // 
-            this.textStreetClient.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textStreetClient.ForeColor = System.Drawing.Color.White;
-            this.textStreetClient.Location = new System.Drawing.Point(37, 109);
-            this.textStreetClient.Name = "textStreetClient";
-            this.textStreetClient.Size = new System.Drawing.Size(140, 20);
-            this.textStreetClient.TabIndex = 40;
-            // 
-            // textDateBirthDay
-            // 
-            this.textDateBirthDay.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textDateBirthDay.ForeColor = System.Drawing.Color.White;
-            this.textDateBirthDay.Location = new System.Drawing.Point(115, 257);
-            this.textDateBirthDay.Mask = "00/00/0000";
-            this.textDateBirthDay.Name = "textDateBirthDay";
-            this.textDateBirthDay.Size = new System.Drawing.Size(64, 20);
-            this.textDateBirthDay.TabIndex = 51;
-            this.textDateBirthDay.ValidatingType = typeof(System.DateTime);
-            // 
-            // textSurnameClient
-            // 
-            this.textSurnameClient.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textSurnameClient.ForeColor = System.Drawing.Color.White;
-            this.textSurnameClient.Location = new System.Drawing.Point(95, 18);
-            this.textSurnameClient.Name = "textSurnameClient";
-            this.textSurnameClient.Size = new System.Drawing.Size(100, 20);
-            this.textSurnameClient.TabIndex = 36;
-            // 
-            // btnClientLoad
-            // 
-            this.btnClientLoad.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnClientLoad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClientLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientLoad.ForeColor = System.Drawing.Color.White;
-            this.btnClientLoad.Location = new System.Drawing.Point(2, 284);
-            this.btnClientLoad.Name = "btnClientLoad";
-            this.btnClientLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnClientLoad.TabIndex = 52;
-            this.btnClientLoad.Text = "Modificar";
-            this.btnClientLoad.UseVisualStyleBackColor = false;
-            this.btnClientLoad.Click += new System.EventHandler(this.btnClientLoad_Click_1);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(70, 237);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(160, 17);
-            this.label9.TabIndex = 47;
-            this.label9.Text = "Fecha de Nacimiento";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(191, 89);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(51, 17);
-            this.label16.TabIndex = 60;
-            this.label16.Text = "Altura";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(119, 183);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 17);
-            this.label8.TabIndex = 46;
-            this.label8.Text = "Sexo";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(101, 132);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 17);
-            this.label7.TabIndex = 44;
-            this.label7.Text = "Estado Civil";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(70, 89);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 17);
-            this.label6.TabIndex = 41;
-            this.label6.Text = "Domicilio";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(113, 1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 17);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "Apellido";
-            // 
-            // textStreetHeight
-            // 
-            this.textStreetHeight.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textStreetHeight.ForeColor = System.Drawing.SystemColors.Window;
-            this.textStreetHeight.Location = new System.Drawing.Point(200, 109);
-            this.textStreetHeight.Mask = "9999";
-            this.textStreetHeight.Name = "textStreetHeight";
-            this.textStreetHeight.Size = new System.Drawing.Size(30, 20);
-            this.textStreetHeight.TabIndex = 42;
-            this.textStreetHeight.ValidatingType = typeof(int);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(112, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 17);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Nombres";
-            // 
-            // comboBoxSex
-            // 
-            this.comboBoxSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBoxSex.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.comboBoxSex.ForeColor = System.Drawing.Color.White;
-            this.comboBoxSex.FormattingEnabled = true;
-            this.comboBoxSex.Location = new System.Drawing.Point(80, 201);
-            this.comboBoxSex.Name = "comboBoxSex";
-            this.comboBoxSex.Size = new System.Drawing.Size(119, 21);
-            this.comboBoxSex.TabIndex = 8;
-            // 
-            // btnSearchClient2
-            // 
-            this.btnSearchClient2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSearchClient2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchClient2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchClient2.ForeColor = System.Drawing.Color.White;
-            this.btnSearchClient2.Location = new System.Drawing.Point(163, 284);
-            this.btnSearchClient2.Name = "btnSearchClient2";
-            this.btnSearchClient2.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchClient2.TabIndex = 63;
-            this.btnSearchClient2.Text = "Buscar";
-            this.btnSearchClient2.UseVisualStyleBackColor = false;
-            this.btnSearchClient2.Click += new System.EventHandler(this.btnSearchClient2_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(83, 284);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 53;
-            this.btnClear.Text = "Limpiar";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // textNameClient
-            // 
-            this.textNameClient.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textNameClient.ForeColor = System.Drawing.Color.White;
-            this.textNameClient.Location = new System.Drawing.Point(95, 63);
-            this.textNameClient.Name = "textNameClient";
-            this.textNameClient.Size = new System.Drawing.Size(100, 20);
-            this.textNameClient.TabIndex = 38;
-            // 
-            // searchPanel
-            // 
-            this.searchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.searchPanel.Controls.Add(this.comboBoxEstadoCivil);
-            this.searchPanel.Controls.Add(this.textNameClient);
-            this.searchPanel.Controls.Add(this.btnClear);
-            this.searchPanel.Controls.Add(this.btnSearchClient2);
-            this.searchPanel.Controls.Add(this.comboBoxSex);
-            this.searchPanel.Controls.Add(this.label2);
-            this.searchPanel.Controls.Add(this.textStreetHeight);
-            this.searchPanel.Controls.Add(this.label3);
-            this.searchPanel.Controls.Add(this.label6);
-            this.searchPanel.Controls.Add(this.label7);
-            this.searchPanel.Controls.Add(this.label8);
-            this.searchPanel.Controls.Add(this.label16);
-            this.searchPanel.Controls.Add(this.label9);
-            this.searchPanel.Controls.Add(this.btnClientLoad);
-            this.searchPanel.Controls.Add(this.textSurnameClient);
-            this.searchPanel.Controls.Add(this.textDateBirthDay);
-            this.searchPanel.Controls.Add(this.textStreetClient);
-            this.searchPanel.Location = new System.Drawing.Point(23, 130);
-            this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(245, 314);
-            this.searchPanel.TabIndex = 67;
-            // 
-            // comboBoxEstadoCivil
-            // 
-            this.comboBoxEstadoCivil.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBoxEstadoCivil.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.comboBoxEstadoCivil.ForeColor = System.Drawing.Color.White;
-            this.comboBoxEstadoCivil.FormattingEnabled = true;
-            this.comboBoxEstadoCivil.Location = new System.Drawing.Point(58, 154);
-            this.comboBoxEstadoCivil.Name = "comboBoxEstadoCivil";
-            this.comboBoxEstadoCivil.Size = new System.Drawing.Size(172, 21);
-            this.comboBoxEstadoCivil.TabIndex = 64;
             // 
             // TipoDocumento
             // 
@@ -539,6 +317,228 @@
             this.Sex.ReadOnly = true;
             this.Sex.Visible = false;
             this.Sex.Width = 5;
+            // 
+            // textStreetClient
+            // 
+            this.textStreetClient.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textStreetClient.ForeColor = System.Drawing.Color.White;
+            this.textStreetClient.Location = new System.Drawing.Point(158, 66);
+            this.textStreetClient.Name = "textStreetClient";
+            this.textStreetClient.Size = new System.Drawing.Size(140, 20);
+            this.textStreetClient.TabIndex = 40;
+            // 
+            // textDateBirthDay
+            // 
+            this.textDateBirthDay.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textDateBirthDay.ForeColor = System.Drawing.Color.White;
+            this.textDateBirthDay.Location = new System.Drawing.Point(189, 198);
+            this.textDateBirthDay.Mask = "00/00/0000";
+            this.textDateBirthDay.Name = "textDateBirthDay";
+            this.textDateBirthDay.Size = new System.Drawing.Size(64, 20);
+            this.textDateBirthDay.TabIndex = 51;
+            this.textDateBirthDay.ValidatingType = typeof(System.DateTime);
+            // 
+            // textSurnameClient
+            // 
+            this.textSurnameClient.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textSurnameClient.ForeColor = System.Drawing.Color.White;
+            this.textSurnameClient.Location = new System.Drawing.Point(177, 3);
+            this.textSurnameClient.Name = "textSurnameClient";
+            this.textSurnameClient.Size = new System.Drawing.Size(100, 20);
+            this.textSurnameClient.TabIndex = 36;
+            // 
+            // btnClientLoad
+            // 
+            this.btnClientLoad.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnClientLoad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClientLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientLoad.ForeColor = System.Drawing.Color.White;
+            this.btnClientLoad.Location = new System.Drawing.Point(47, 284);
+            this.btnClientLoad.Name = "btnClientLoad";
+            this.btnClientLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnClientLoad.TabIndex = 52;
+            this.btnClientLoad.Text = "Modificar";
+            this.btnClientLoad.UseVisualStyleBackColor = false;
+            this.btnClientLoad.Click += new System.EventHandler(this.btnClientLoad_Click_1);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(3, 198);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(137, 17);
+            this.label9.TabIndex = 47;
+            this.label9.Text = "Fecha Nacimiento";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(87, 96);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(51, 17);
+            this.label16.TabIndex = 60;
+            this.label16.Text = "Altura";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(95, 169);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 17);
+            this.label8.TabIndex = 46;
+            this.label8.Text = "Sexo";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(45, 130);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 17);
+            this.label7.TabIndex = 44;
+            this.label7.Text = "Estado Civil";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(65, 69);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 17);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "Domicilio";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(72, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 17);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Apellido";
+            // 
+            // textStreetHeight
+            // 
+            this.textStreetHeight.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textStreetHeight.ForeColor = System.Drawing.SystemColors.Window;
+            this.textStreetHeight.Location = new System.Drawing.Point(205, 96);
+            this.textStreetHeight.Mask = "9999";
+            this.textStreetHeight.Name = "textStreetHeight";
+            this.textStreetHeight.Size = new System.Drawing.Size(30, 20);
+            this.textStreetHeight.TabIndex = 42;
+            this.textStreetHeight.ValidatingType = typeof(int);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(66, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 17);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Nombres";
+            // 
+            // comboBoxSex
+            // 
+            this.comboBoxSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBoxSex.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.comboBoxSex.ForeColor = System.Drawing.Color.White;
+            this.comboBoxSex.FormattingEnabled = true;
+            this.comboBoxSex.Location = new System.Drawing.Point(163, 165);
+            this.comboBoxSex.Name = "comboBoxSex";
+            this.comboBoxSex.Size = new System.Drawing.Size(119, 21);
+            this.comboBoxSex.TabIndex = 8;
+            // 
+            // btnSearchClient2
+            // 
+            this.btnSearchClient2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnSearchClient2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchClient2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchClient2.ForeColor = System.Drawing.Color.White;
+            this.btnSearchClient2.Location = new System.Drawing.Point(209, 284);
+            this.btnSearchClient2.Name = "btnSearchClient2";
+            this.btnSearchClient2.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchClient2.TabIndex = 63;
+            this.btnSearchClient2.Text = "Buscar";
+            this.btnSearchClient2.UseVisualStyleBackColor = false;
+            this.btnSearchClient2.Click += new System.EventHandler(this.btnSearchClient2_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(128, 284);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 53;
+            this.btnClear.Text = "Limpiar";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // textNameClient
+            // 
+            this.textNameClient.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textNameClient.ForeColor = System.Drawing.Color.White;
+            this.textNameClient.Location = new System.Drawing.Point(177, 34);
+            this.textNameClient.Name = "textNameClient";
+            this.textNameClient.Size = new System.Drawing.Size(100, 20);
+            this.textNameClient.TabIndex = 38;
+            // 
+            // searchPanel
+            // 
+            this.searchPanel.BackColor = System.Drawing.Color.Transparent;
+            this.searchPanel.Controls.Add(this.comboBoxEstadoCivil);
+            this.searchPanel.Controls.Add(this.textNameClient);
+            this.searchPanel.Controls.Add(this.btnClear);
+            this.searchPanel.Controls.Add(this.btnSearchClient2);
+            this.searchPanel.Controls.Add(this.comboBoxSex);
+            this.searchPanel.Controls.Add(this.label2);
+            this.searchPanel.Controls.Add(this.textStreetHeight);
+            this.searchPanel.Controls.Add(this.label3);
+            this.searchPanel.Controls.Add(this.label6);
+            this.searchPanel.Controls.Add(this.label7);
+            this.searchPanel.Controls.Add(this.label8);
+            this.searchPanel.Controls.Add(this.label16);
+            this.searchPanel.Controls.Add(this.label9);
+            this.searchPanel.Controls.Add(this.btnClientLoad);
+            this.searchPanel.Controls.Add(this.textSurnameClient);
+            this.searchPanel.Controls.Add(this.textDateBirthDay);
+            this.searchPanel.Controls.Add(this.textStreetClient);
+            this.searchPanel.Location = new System.Drawing.Point(21, 130);
+            this.searchPanel.Name = "searchPanel";
+            this.searchPanel.Size = new System.Drawing.Size(315, 314);
+            this.searchPanel.TabIndex = 67;
+            // 
+            // comboBoxEstadoCivil
+            // 
+            this.comboBoxEstadoCivil.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBoxEstadoCivil.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.comboBoxEstadoCivil.ForeColor = System.Drawing.Color.White;
+            this.comboBoxEstadoCivil.FormattingEnabled = true;
+            this.comboBoxEstadoCivil.Location = new System.Drawing.Point(139, 130);
+            this.comboBoxEstadoCivil.Name = "comboBoxEstadoCivil";
+            this.comboBoxEstadoCivil.Size = new System.Drawing.Size(172, 21);
+            this.comboBoxEstadoCivil.TabIndex = 64;
             // 
             // Client_Modify
             // 

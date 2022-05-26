@@ -56,7 +56,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(85, 54);
+            this.label1.Location = new System.Drawing.Point(67, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 22);
             this.label1.TabIndex = 2;
@@ -68,7 +68,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(88, 80);
+            this.label4.Location = new System.Drawing.Point(-2, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 17);
             this.label4.TabIndex = 5;
@@ -79,7 +79,7 @@
             this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
             this.comboBoxDocType.FormattingEnabled = true;
-            this.comboBoxDocType.Location = new System.Drawing.Point(96, 108);
+            this.comboBoxDocType.Location = new System.Drawing.Point(151, 153);
             this.comboBoxDocType.Name = "comboBoxDocType";
             this.comboBoxDocType.Size = new System.Drawing.Size(119, 21);
             this.comboBoxDocType.TabIndex = 6;
@@ -90,7 +90,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(89, 141);
+            this.label5.Location = new System.Drawing.Point(4, 188);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 17);
             this.label5.TabIndex = 7;
@@ -100,7 +100,7 @@
             // 
             this.textNumberDoc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNumberDoc.ForeColor = System.Drawing.Color.White;
-            this.textNumberDoc.Location = new System.Drawing.Point(125, 170);
+            this.textNumberDoc.Location = new System.Drawing.Point(184, 188);
             this.textNumberDoc.Mask = "99999999";
             this.textNumberDoc.Name = "textNumberDoc";
             this.textNumberDoc.Size = new System.Drawing.Size(55, 20);
@@ -113,7 +113,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(124, 203);
+            this.label3.Location = new System.Drawing.Point(40, 218);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 9;
@@ -123,7 +123,7 @@
             // 
             this.textPatente.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textPatente.ForeColor = System.Drawing.Color.White;
-            this.textPatente.Location = new System.Drawing.Point(104, 223);
+            this.textPatente.Location = new System.Drawing.Point(156, 218);
             this.textPatente.Name = "textPatente";
             this.textPatente.Size = new System.Drawing.Size(100, 20);
             this.textPatente.TabIndex = 10;
@@ -134,7 +134,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(128, 254);
+            this.label2.Location = new System.Drawing.Point(40, 251);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 17);
             this.label2.TabIndex = 11;
@@ -158,7 +158,7 @@
             this.tablaVehiculo.Name = "tablaVehiculo";
             this.tablaVehiculo.ReadOnly = true;
             this.tablaVehiculo.RowHeadersWidth = 10;
-            this.tablaVehiculo.Size = new System.Drawing.Size(410, 311);
+            this.tablaVehiculo.Size = new System.Drawing.Size(410, 313);
             this.tablaVehiculo.TabIndex = 13;
             this.tablaVehiculo.TabStop = false;
             // 
@@ -213,7 +213,7 @@
             this.btnVehicleLoad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVehicleLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVehicleLoad.ForeColor = System.Drawing.Color.White;
-            this.btnVehicleLoad.Location = new System.Drawing.Point(55, 368);
+            this.btnVehicleLoad.Location = new System.Drawing.Point(55, 320);
             this.btnVehicleLoad.Name = "btnVehicleLoad";
             this.btnVehicleLoad.Size = new System.Drawing.Size(75, 23);
             this.btnVehicleLoad.TabIndex = 14;
@@ -226,7 +226,7 @@
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(164, 368);
+            this.btnClear.Location = new System.Drawing.Point(164, 320);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 15;
@@ -251,7 +251,7 @@
             this.cmbModelo.BackColor = System.Drawing.SystemColors.ControlDark;
             this.cmbModelo.ForeColor = System.Drawing.Color.White;
             this.cmbModelo.FormattingEnabled = true;
-            this.cmbModelo.Location = new System.Drawing.Point(96, 274);
+            this.cmbModelo.Location = new System.Drawing.Point(151, 250);
             this.cmbModelo.Name = "cmbModelo";
             this.cmbModelo.Size = new System.Drawing.Size(119, 21);
             this.cmbModelo.TabIndex = 30;

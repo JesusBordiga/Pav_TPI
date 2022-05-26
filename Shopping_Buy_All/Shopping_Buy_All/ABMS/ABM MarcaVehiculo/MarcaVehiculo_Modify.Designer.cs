@@ -39,11 +39,11 @@
             this.labelMarca = new System.Windows.Forms.Label();
             this.textMarcaOld = new System.Windows.Forms.TextBox();
             this.tablaMarcas = new System.Windows.Forms.DataGridView();
-            this.textMarcaNew = new System.Windows.Forms.TextBox();
-            this.labelMod = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textMarcaNew = new System.Windows.Forms.TextBox();
+            this.labelMod = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaMarcas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(189, 316);
+            this.btnClear.Location = new System.Drawing.Point(189, 301);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 5;
@@ -65,7 +65,7 @@
             this.btnModify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModify.ForeColor = System.Drawing.Color.White;
-            this.btnModify.Location = new System.Drawing.Point(29, 316);
+            this.btnModify.Location = new System.Drawing.Point(29, 301);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(75, 23);
             this.btnModify.TabIndex = 3;
@@ -92,7 +92,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(50, 93);
+            this.label1.Location = new System.Drawing.Point(85, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 22);
             this.label1.TabIndex = 61;
@@ -103,7 +103,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(109, 316);
+            this.btnSearch.Location = new System.Drawing.Point(109, 301);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 4;
@@ -117,7 +117,7 @@
             this.labelMarca.BackColor = System.Drawing.Color.Transparent;
             this.labelMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMarca.ForeColor = System.Drawing.Color.White;
-            this.labelMarca.Location = new System.Drawing.Point(101, 125);
+            this.labelMarca.Location = new System.Drawing.Point(101, 161);
             this.labelMarca.Name = "labelMarca";
             this.labelMarca.Size = new System.Drawing.Size(52, 17);
             this.labelMarca.TabIndex = 73;
@@ -127,7 +127,7 @@
             // 
             this.textMarcaOld.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textMarcaOld.ForeColor = System.Drawing.Color.White;
-            this.textMarcaOld.Location = new System.Drawing.Point(72, 145);
+            this.textMarcaOld.Location = new System.Drawing.Point(159, 161);
             this.textMarcaOld.Name = "textMarcaOld";
             this.textMarcaOld.Size = new System.Drawing.Size(110, 20);
             this.textMarcaOld.TabIndex = 1;
@@ -162,33 +162,10 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.tablaMarcas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.tablaMarcas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tablaMarcas.Size = new System.Drawing.Size(205, 310);
+            this.tablaMarcas.Size = new System.Drawing.Size(205, 280);
             this.tablaMarcas.TabIndex = 91;
             this.tablaMarcas.TabStop = false;
             this.tablaMarcas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaMarcas_CellContentClick);
-            // 
-            // textMarcaNew
-            // 
-            this.textMarcaNew.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textMarcaNew.ForeColor = System.Drawing.Color.White;
-            this.textMarcaNew.Location = new System.Drawing.Point(72, 145);
-            this.textMarcaNew.Name = "textMarcaNew";
-            this.textMarcaNew.Size = new System.Drawing.Size(110, 20);
-            this.textMarcaNew.TabIndex = 2;
-            this.textMarcaNew.Visible = false;
-            // 
-            // labelMod
-            // 
-            this.labelMod.AutoSize = true;
-            this.labelMod.BackColor = System.Drawing.Color.Transparent;
-            this.labelMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMod.ForeColor = System.Drawing.Color.White;
-            this.labelMod.Location = new System.Drawing.Point(71, 125);
-            this.labelMod.Name = "labelMod";
-            this.labelMod.Size = new System.Drawing.Size(113, 17);
-            this.labelMod.TabIndex = 95;
-            this.labelMod.Text = "Nuevo nombre";
-            this.labelMod.Visible = false;
             // 
             // Id
             // 
@@ -214,6 +191,29 @@
             this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
             // 
+            // textMarcaNew
+            // 
+            this.textMarcaNew.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textMarcaNew.ForeColor = System.Drawing.Color.White;
+            this.textMarcaNew.Location = new System.Drawing.Point(159, 161);
+            this.textMarcaNew.Name = "textMarcaNew";
+            this.textMarcaNew.Size = new System.Drawing.Size(110, 20);
+            this.textMarcaNew.TabIndex = 2;
+            this.textMarcaNew.Visible = false;
+            // 
+            // labelMod
+            // 
+            this.labelMod.AutoSize = true;
+            this.labelMod.BackColor = System.Drawing.Color.Transparent;
+            this.labelMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMod.ForeColor = System.Drawing.Color.White;
+            this.labelMod.Location = new System.Drawing.Point(40, 161);
+            this.labelMod.Name = "labelMod";
+            this.labelMod.Size = new System.Drawing.Size(113, 17);
+            this.labelMod.TabIndex = 95;
+            this.labelMod.Text = "Nuevo nombre";
+            this.labelMod.Visible = false;
+            // 
             // MarcaVehiculo_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,7 +221,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(499, 364);
+            this.ClientSize = new System.Drawing.Size(499, 336);
             this.Controls.Add(this.tablaMarcas);
             this.Controls.Add(this.textMarcaOld);
             this.Controls.Add(this.btnSearch);
