@@ -20,6 +20,7 @@ namespace Shopping_Buy_All
             InitializeComponent();
             CargarTablaProductos();
             panelBuscar.Visible = false;
+            labelModificarproducto.Text = "Buscar Producto";
         }
 
         //ACCESO A BASE DE DATOS
@@ -45,6 +46,8 @@ namespace Shopping_Buy_All
             }
             else
             {
+                labelModificarproducto.Text = "Buscar Producto";
+                textCodeProduct.Enabled = true;
                 Producto p = AD_Productos.Buscar_Producto(textCodeProduct.Text);
                 Cargar_Campos(p);
                 panelBuscar.Visible = true;
@@ -53,6 +56,8 @@ namespace Shopping_Buy_All
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clean();
+            labelModificarproducto.Text = "Buscar Producto";
+            textCodeProduct.Enabled = false;
         }
         private void btnPorductLoad_Click(object sender, EventArgs e)
         {
@@ -94,6 +99,8 @@ namespace Shopping_Buy_All
             Producto p = AD_Productos.Buscar_Producto(textCodeProduct.Text);
             Cargar_Campos(p);
             panelBuscar.Visible = true;
+            labelModificarproducto.Text = "Modificar Producto";
+            textCodeProduct.Enabled = false;
 
         }
 
@@ -135,6 +142,8 @@ namespace Shopping_Buy_All
                 Producto p = AD_Productos.Buscar_Producto(codigo);
                 Cargar_Campos(p);
                 panelBuscar.Visible = true;
+                textCodeProduct.Enabled = false;
+                labelModificarproducto.Text = "Modificar Producto";
             }
             catch (Exception)
             {

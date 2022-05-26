@@ -39,7 +39,7 @@
             this.textNameProduct = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelModificarproducto = new System.Windows.Forms.Label();
             this.btnSearchProduct = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textCodeProduct = new System.Windows.Forms.MaskedTextBox();
@@ -138,17 +138,17 @@
             this.label2.TabIndex = 62;
             this.label2.Text = "Nombre";
             // 
-            // label1
+            // labelModificarproducto
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(59, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 22);
-            this.label1.TabIndex = 61;
-            this.label1.Text = "Modificar producto";
+            this.labelModificarproducto.AutoSize = true;
+            this.labelModificarproducto.BackColor = System.Drawing.Color.Transparent;
+            this.labelModificarproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelModificarproducto.ForeColor = System.Drawing.Color.White;
+            this.labelModificarproducto.Location = new System.Drawing.Point(59, 82);
+            this.labelModificarproducto.Name = "labelModificarproducto";
+            this.labelModificarproducto.Size = new System.Drawing.Size(175, 22);
+            this.labelModificarproducto.TabIndex = 61;
+            this.labelModificarproducto.Text = "Modificar producto";
             // 
             // btnSearchProduct
             // 
@@ -320,7 +320,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelModificarproducto);
             this.Controls.Add(this.panelBuscar);
             this.Controls.Add(this.btnSearchProduct);
             this.Controls.Add(this.tablaProductos);
@@ -347,7 +347,7 @@
         private System.Windows.Forms.TextBox textNameProduct;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelModificarproducto;
         private System.Windows.Forms.Button btnSearchProduct;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox textCodeProduct;

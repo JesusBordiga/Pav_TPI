@@ -11,6 +11,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
     public class AD_TipoComercio
     {
+        //TIPO COMERCIO LOAD
         public static DataTable ObtenerTablaTipoComercioReducida()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -45,7 +46,6 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 cn.Close();
             }
         }
-
         public static bool Agregar_TipoComercio(TipoComercio comercio)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -81,6 +81,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 
         }
 
+        //TIPO COMERCIO MODIFY
         public static bool Modificar_TipoComercioANoBorrado(TipoComercio comercio)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -115,7 +116,6 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             return resultado;
 
         }
-
         public static bool ModificarNombre_TipoComercio(int Id, TipoComercio comercio)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -151,7 +151,6 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             return resultado;
 
         }
-
         public static bool Buscar_TipoComercio(string NombreTipoComercio)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -196,7 +195,6 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             return resultado;
 
         }
-
         public static bool Buscar_TipoComercioPorIdyNombre(string Id, string NombreTipoComercio)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -240,7 +238,6 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             return resultado;
 
         }
-
         public static string Buscar_TipoComercioPorId(string Id)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -280,7 +277,6 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             return resultado;
 
         }
-
         public static int Buscar_TipoComercioPorNombre(string NombreTipoComercio)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -320,7 +316,6 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             return resultado;
 
         }
-
         public static bool ExisteTipoComercio(String NombreTipoComercio)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -365,6 +360,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             return resultado;
         }
 
+        //TIPO COMERCIO DELETE
         public static bool BorrarTipoComercio(String NombreTipoComercio)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];

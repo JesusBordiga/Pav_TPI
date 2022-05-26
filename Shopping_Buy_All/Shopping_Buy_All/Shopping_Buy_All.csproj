@@ -330,28 +330,40 @@
     <Compile Include="ABMS\ABM Usuario\User_Modify.Designer.cs">
       <DependentUpon>User_Modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM vehiculos\Vehicle_Delete.cs">
+    <Compile Include="ABMS\ABM Vehiculos\Vehicle_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM vehiculos\Vehicle_Delete.Designer.cs">
+    <Compile Include="ABMS\ABM Vehiculos\Vehicle_Delete.Designer.cs">
       <DependentUpon>Vehicle_Delete.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM vehiculos\Vehicle_Load.cs">
+    <Compile Include="ABMS\ABM Vehiculos\Vehicle_Load.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM vehiculos\Vehicle_Load.Designer.cs">
+    <Compile Include="ABMS\ABM Vehiculos\Vehicle_Load.Designer.cs">
       <DependentUpon>Vehicle_Load.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM vehiculos\Vehicle_Modify.cs">
+    <Compile Include="ABMS\ABM Vehiculos\Vehicle_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM vehiculos\Vehicle_Modify.Designer.cs">
+    <Compile Include="ABMS\ABM Vehiculos\Vehicle_Modify.Designer.cs">
       <DependentUpon>Vehicle_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\AccesoADatos\AD_Modelos.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Vehiculos.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Usuario.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_TipoVehiculo.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_TipoDocumento.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_TipoTarjeta.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Tarjeta.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Sexo.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Rubros.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Profesiones.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_MarcaVehiculo.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_MarcaTarjeta.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_EstadoCivil.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Productos.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Cliente.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Local.cs" />
-    <Compile Include="ABMS\AccesoADatos\AD_Modelo.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_TipoComercio.cs" />
     <Compile Include="Entidades\Automovil.cs" />
     <Compile Include="Entidades\Cliente.cs" />
@@ -613,13 +625,13 @@
     <EmbeddedResource Include="ABMS\ABM Usuario\User_Modify.resx">
       <DependentUpon>User_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM vehiculos\Vehicle_Delete.resx">
+    <EmbeddedResource Include="ABMS\ABM Vehiculos\Vehicle_Delete.resx">
       <DependentUpon>Vehicle_Delete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM vehiculos\Vehicle_Load.resx">
+    <EmbeddedResource Include="ABMS\ABM Vehiculos\Vehicle_Load.resx">
       <DependentUpon>Vehicle_Load.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM vehiculos\Vehicle_Modify.resx">
+    <EmbeddedResource Include="ABMS\ABM Vehiculos\Vehicle_Modify.resx">
       <DependentUpon>Vehicle_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Logged.resx">

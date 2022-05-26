@@ -18,6 +18,7 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
             CargarTablaProductos();
+            labelEliminarproducto.Text=("Buscar Producto");
         }
 
         //ACCESO A BASE DE DATOS
@@ -51,43 +52,20 @@ namespace Shopping_Buy_All
         private void btnClear_Click_1(object sender, EventArgs e)
         {
             Clean();
+            labelEliminarproducto.Text = "Buscar Producto";
             panelBuscar.Visible = false;
             btnSearchProduct.Visible = true;
-        }
-        private void btnSearchProduct2_Click(object sender, EventArgs e)
-        {
-            Clean();
-            panelBuscar.Visible = false;
-        }
-        private void btnDeleteProduct_Click_1(object sender, EventArgs e)
-        {
-            Producto p = ObtenerDatosProducto();
-            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-            String mensajeCarga = (
-                  " |Codigo: " + p.CodigoProducto + "|" + "\n"
-                + " |Nombre: " + p.NombreProducto + "|" + "\n"
-                + " |Precio: " + "$" + p.PrecioProducto + "|" + "\n");
-
-            string titulo = "Información de Producto";
-
-            DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-            if (result == DialogResult.OK)
-            {
-                MessageBox.Show("Borrado agregado con éxito!");
-                AD_Productos.BorrarProducto(p.CodigoProducto, 1);
-                Clean();
-                panelBuscar.Visible = true;
-                AD_Productos.CargarTablaProductos();
-            }
-            else
-            {
-                textNameProduct.Focus();
-            }
+            textCodeProduct.Enabled = true;
+            textNameProduct.Enabled = true;
+            textPrice.Enabled = true;
         }
         private void btnSerachProduct2_Click_1(object sender, EventArgs e)
         {
             panelBuscar.Visible = false;
+            labelEliminarproducto.Text = ("Eliminar Producto");
+            textCodeProduct.Enabled = false;
+            textNameProduct.Enabled = false;
+            textPrice.Enabled = false;
         }
 
         //FUNCIONES
@@ -121,6 +99,7 @@ namespace Shopping_Buy_All
         {
             try
             {
+                labelEliminarproducto.Text = ("Eliminar Producto");
                 Clean();
                 int indice = e.RowIndex;
                 DataGridViewRow filaSeleccionada = tablaProductos.Rows[indice];
@@ -130,6 +109,9 @@ namespace Shopping_Buy_All
                 panelBuscar.Visible = true;
                 btnSearchProduct.Visible = false;
                 btnSearchProduct2.Visible = true;
+                textCodeProduct.Enabled = false;
+                textNameProduct.Enabled = false;
+                textPrice.Enabled = false;
             }
             catch (Exception)
             {

@@ -37,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelEliminarproducto = new System.Windows.Forms.Label();
             this.tablaProductos = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -116,17 +116,17 @@
             this.label15.TabIndex = 84;
             this.label15.Text = "Lista de Productos";
             // 
-            // label1
+            // labelEliminarproducto
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(62, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 22);
-            this.label1.TabIndex = 81;
-            this.label1.Text = "Eliminar producto";
+            this.labelEliminarproducto.AutoSize = true;
+            this.labelEliminarproducto.BackColor = System.Drawing.Color.Transparent;
+            this.labelEliminarproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEliminarproducto.ForeColor = System.Drawing.Color.White;
+            this.labelEliminarproducto.Location = new System.Drawing.Point(62, 88);
+            this.labelEliminarproducto.Name = "labelEliminarproducto";
+            this.labelEliminarproducto.Size = new System.Drawing.Size(166, 22);
+            this.labelEliminarproducto.TabIndex = 81;
+            this.labelEliminarproducto.Text = "Eliminar producto";
             // 
             // tablaProductos
             // 
@@ -320,7 +320,7 @@
             this.Controls.Add(this.btnSearchProduct);
             this.Controls.Add(this.textCodeProduct);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelEliminarproducto);
             this.Controls.Add(this.tablaProductos);
             this.Controls.Add(this.label15);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -346,7 +346,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelEliminarproducto;
         private System.Windows.Forms.DataGridView tablaProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
