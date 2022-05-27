@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.ABM_Tipo_Documento
 {
@@ -25,68 +26,19 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
         }
         private void CargarTablaTipoDocumento()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "getTipoDocumentoNoBorrado";
-                command.Parameters.Clear();
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaTipDoc.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
+                tablaTipDoc.DataSource = AD_TipoDocumento.obtenerDatosTipoDocumento();
             }
             catch (Exception)
             {
-                MessageBox.Show("Error! \n Hubo un error!");
-            }
-            finally
-            {
-                cn.Close();
+
+                MessageBox.Show("Error! No se pudieron obtener los tipos de documento");
             }
         }
         private bool AgregarTipoDocumento(TipoDocumento tipDoc)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "agregarTipoDocumento @nombre";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombre", tipDoc.NombreTipDoc);
-
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error! \n Hubo un error!");
-            }
-            finally
-            {
-                cn.Close();
-            }
+            bool resultado = AD_TipoDocumento.agregarTipoDocumento(tipDoc);
             return resultado;
         }
         private void btnSexoLoad_Click_1(object sender, EventArgs e)

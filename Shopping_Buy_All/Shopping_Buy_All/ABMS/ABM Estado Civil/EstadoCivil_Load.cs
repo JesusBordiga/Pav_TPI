@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.ABM_Estado_Civil
 {
@@ -25,38 +26,14 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
         }
         private void CargarTablaEsCiv()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "getEstadoCivilNoBorrado";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-                tablaEsCiv.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
+                tablaEsCiv.DataSource = AD_EstadoCivil.obtenerDatosEstadoCivil();
             }
             catch (Exception)
             {
-                MessageBox.Show("Error! \n Hubo un error!");
-            }
-            finally
-            {
-                cn.Close();
+
+                MessageBox.Show("Error, no se pudieron obtener los datos de los Estados Civiles");
             }
         }
         private void btnECLoad_Click(object sender, EventArgs e)
@@ -88,35 +65,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
         }
         private bool Agregar_EstadoCivil(EstadoCivil esCiv)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "agregarEstadoCivil @nombre";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombre", esCiv.NombreEc);
-
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error! \n Hubo un error!");
-            }
-            finally
-            {
-                cn.Close();
-            }
+            bool resultado = AD_EstadoCivil.agregarEstadoCivil(esCiv);
             return resultado;
         }
         private void btnLimpiar_Click(object sender, EventArgs e)

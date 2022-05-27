@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
 {
@@ -25,71 +26,19 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
         }
         private void CargarTablaTipoTarjeta()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "getTipoTarjetaNoBorrado";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-                tablaTipoTarjeta.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
+                tablaTipoTarjeta.DataSource = AD_TipoTarjeta.obtenerDatosTipoTarjeta();
             }
             catch (Exception)
             {
-                MessageBox.Show("Error! \n Hubo un error!");
-            }
-            finally
-            {
-                cn.Close();
+
+                MessageBox.Show("Error! No se pudieron obtener los tipos de documento");
             }
         }
         private bool Agregar_TipoTarjeta(TipoTarjeta tipoTarjeta)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "agregarTipoTarjeta @nombre";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombre", tipoTarjeta.NombreTipoTarjeta);
-
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error! \n Hubo un error!");
-            }
-            finally
-            {
-                cn.Close();
-            }
+            bool resultado = AD_TipoTarjeta.agregarTipoTarjeta(tipoTarjeta);
             return resultado;
         }
         private void btnTipoTarjetaLoad_Click(object sender, EventArgs e)

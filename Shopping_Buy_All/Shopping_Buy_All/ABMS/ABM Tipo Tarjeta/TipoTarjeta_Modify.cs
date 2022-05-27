@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
 {
@@ -40,74 +40,23 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
         }
         private void cargarTablaTipoTarjeta()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "getTipoTarjetaNoBorrado";
-                command.Parameters.Clear();
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaTipoTarjeta.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
+                tablaTipoTarjeta.DataSource = AD_TipoTarjeta.obtenerDatosTipoTarjeta();
             }
             catch (Exception)
             {
-                MessageBox.Show("Error! \n Hubo un error!");
-            }
-            finally
-            {
-                cn.Close();
+
+                MessageBox.Show("Error! No se pudieron obtener los tipos de documento");
             }
         }
         private bool busquedaXNombre(string nombreViejo)
         {
             bool resultado = false;
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
+            tablaTipoTarjeta.DataSource = AD_TipoTarjeta.buscarTipoTarjeta(nombreViejo);
+            if (tablaTipoTarjeta.Rows.Count == 1)
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "buscarTipoTarjetaNoBorrado @Nombre";
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@Nombre", nombreViejo);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaTipoTarjeta.DataSource = tabla;
-                if (tabla.Rows.Count == 1)
-                {
-                    resultado = true;
-                }
-            }   
-            catch (SqlException)
-            {
-                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error! \n Hubo un error!");
-            }
-            finally
-            {
-                cn.Close();
+                resultado = true;
             }
             return resultado;
         }
@@ -136,34 +85,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
         }
         private void modificarTipoTarjeta(string nombreNuevo, string nombreViejo)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                string consulta = "modificarTipoTarjeta @nombreNuevo, @nombreViejo";
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@nombreNuevo", nombreNuevo);
-                command.Parameters.AddWithValue("@nombreViejo", nombreViejo);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                command.ExecuteNonQuery();
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error! \n Hubo un error!");
-            }
-            finally
-            {
-                cn.Close();
-            }
+            AD_TipoTarjeta.modificarTipoTarjeta(nombreNuevo, nombreViejo);
         }
         private void btnBuscarTipoTarjeta_Click(object sender, EventArgs e)
         {
