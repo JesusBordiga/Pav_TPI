@@ -18,6 +18,11 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
         }
+        //ACCESO A BASE DE DATOS
+
+        //BOTONES
+
+        //FUNCIONES
 
         private void Marca_Delete_Load(object sender, EventArgs e)
         {

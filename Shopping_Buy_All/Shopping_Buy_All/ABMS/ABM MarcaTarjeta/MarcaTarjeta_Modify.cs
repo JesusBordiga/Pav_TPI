@@ -19,6 +19,11 @@ namespace Shopping_Buy_All
             InitializeComponent();
             CargarTablaMarcas();
         }
+        //ACCESO A BASE DE DATOS
+
+        //BOTONES
+
+        //FUNCIONES
 
         private void Clean()
         {

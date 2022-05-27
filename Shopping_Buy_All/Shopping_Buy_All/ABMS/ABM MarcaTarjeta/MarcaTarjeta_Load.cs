@@ -1,4 +1,5 @@
-﻿using Shopping_Buy_All.Entidades;
+﻿using Shopping_Buy_All.ABMS.AccesoADatos;
+using Shopping_Buy_All.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,98 +22,28 @@ namespace Shopping_Buy_All
             CargarTablaMarcas();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            Clean();
-        }
-
-        private void Clean()
-        {
-            textMarca.Text = "";
-            CargarTablaMarcas();
-        }
-
+        //ACCESO A BASE DE DATOS
         private void CargarTablaMarcas()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM MarcaTarjetas WHERE Borrado like 0";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-                tablaMarcas.DataSource = tabla;
+                tablaMarcas.DataSource = AD_MarcaTarjeta.CargarTablaMarcas();
             }
             catch (Exception)
             {
-                MessageBox.Show("Error en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
+                MessageBox.Show("Error en la carga de Marcas");
             }
         }
 
-        private string ObtenerNombreMarca()
-        {
-            string rubro = textMarca.Text.Trim();
-            return rubro;
-        }
-        private bool ExisteMarca(string marca)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool result = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM MarcaTarjetas WHERE Nombre = @marca AND Borrado like 0";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@marca", marca);
-
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
-                {
-                    result = true;
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return result;
-        }
-
+        //BOTONES
         private void btnLoad_Click(object sender, EventArgs e)
         {
             if (ValidarCampos())
             {
                 string marca = ObtenerNombreMarca();
-                if (!ExisteMarca(marca))
+                if (!AD_MarcaTarjeta.ExisteMarca(marca))
                 {
-                    bool resultado = Agregar_Marca(marca);
+                    bool resultado = AD_MarcaTarjeta.Agregar_Marca(marca);
                     if (resultado)
                     {
                         MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
@@ -152,38 +83,24 @@ namespace Shopping_Buy_All
                         "Complete los campos correctamente por favor!");
             }
         }
-
-        private bool Agregar_Marca(string marca)
+        private void btnClear_Click(object sender, EventArgs e)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO MarcaTarjetas(Nombre)" +
-                                               "VALUES(@marca)";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@marca", marca);
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No se pudo agregar la Marca.\nError en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return resultado;
-
+            Clean();
         }
 
+        //FUNCIONES
+        private void Clean()
+        {
+            textMarca.Text = "";
+            CargarTablaMarcas();
+        }
+        
+        private string ObtenerNombreMarca()
+        {
+            string rubro = textMarca.Text.Trim();
+            return rubro;
+        }
+                
         private bool ValidarCampos()
         {
             if (textMarca.Text.Trim() == "" || textMarca.Text.Trim().Length > 50)
