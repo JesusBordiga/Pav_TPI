@@ -16,7 +16,6 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
     {
         private object textNameVehicle;
 
-        public object TextNameTypeVehicle { get; private set; }
 
         public VehicleType_Modify()
         {

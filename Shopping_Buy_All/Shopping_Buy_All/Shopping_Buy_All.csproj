@@ -366,6 +366,8 @@
     <Compile Include="ABMS\AccesoADatos\AD_Local.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_TipoComercio.cs" />
     <Compile Include="Entidades\Automovil.cs" />
+    <Compile Include="Entidades\Detalle.cs" />
+    <Compile Include="Entidades\Factura.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\EstadoCivil.cs" />
     <Compile Include="Entidades\MarcaVehiculo.cs" />
@@ -481,6 +483,12 @@
     </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Load.Designer.cs">
       <DependentUpon>Product_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion.Designer.cs">
+      <DependentUpon>Facturacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -684,6 +692,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Load.resx">
       <DependentUpon>Product_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion.resx">
+      <DependentUpon>Facturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
