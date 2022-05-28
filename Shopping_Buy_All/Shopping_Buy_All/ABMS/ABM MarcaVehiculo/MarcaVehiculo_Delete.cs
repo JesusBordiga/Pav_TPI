@@ -18,14 +18,13 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
         }
-
         private void MarcaVehiculo_Delete_Load(object sender, EventArgs e)
         {
             btnSearch.Visible = true;
             btnDelete.Visible = false;
             CargarTablaMarcas();
         }
-
+        //ACCESO A BASE DE DATOS
         private void CargarTablaMarcas()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -58,16 +57,6 @@ namespace Shopping_Buy_All
                 cn.Close();
             }
         }
-
-        private void Clean()
-        {
-            textMarca.Text = "";
-            btnDelete.Visible = false;
-            btnSearch.Visible = true;
-            textMarca.Enabled = true;
-            textMarca.Focus();
-        }
-
         private bool ExisteMarca(string marca)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -102,33 +91,6 @@ namespace Shopping_Buy_All
             }
             return result;
         }
-
-        private void btnClean_Click(object sender, EventArgs e)
-        {
-            Clean();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            if (textMarca.Text.Trim() == "")
-            {
-                MessageBox.Show("Error, Debe completar los campos!!");
-            }
-            else
-            {
-                string marca = textMarca.Text.Trim();
-                bool existe = ExisteMarca(marca);
-                if (existe)
-                {
-                    Cargar_Campos(marca);
-                }
-                else
-                {
-                    MessageBox.Show("La marca que busca no existe o fue borrado!");
-                }
-            }
-        }
-
         private bool BorrarMarca(string marca)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -159,6 +121,47 @@ namespace Shopping_Buy_All
             return resultado;
         }
 
+        //BOTONES
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            Clean();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (textMarca.Text.Trim() == "")
+            {
+                MessageBox.Show("Error, Debe completar los campos!!");
+            }
+            else
+            {
+                string marca = textMarca.Text.Trim();
+                bool existe = ExisteMarca(marca);
+                if (existe)
+                {
+                    Cargar_Campos(marca);
+                }
+                else
+                {
+                    MessageBox.Show("La marca que busca no existe o fue borrado!");
+                }
+            }
+
+        }
+        private void tablaMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaMarcas.Rows[indice];
+                string marca = filaSeleccionada.Cells["Descripcion"].Value.ToString();
+                Cargar_Campos(marca);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una casilla dentro de la tabla", "ERROR");
+            }
+        }
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string marca = textMarca.Text.Trim();
@@ -193,27 +196,21 @@ namespace Shopping_Buy_All
             }
         }
 
+        //FUNCIONES    
+        private void Clean()
+        {
+            textMarca.Text = "";
+            btnDelete.Visible = false;
+            btnSearch.Visible = true;
+            textMarca.Enabled = true;
+            textMarca.Focus();
+        }
         private void Cargar_Campos(string marca)
         {
             textMarca.Text = marca;
             btnDelete.Visible = true;
             btnSearch.Visible = false;
             textMarca.Enabled = false;
-        }
-
-        private void tablaMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                int indice = e.RowIndex;
-                DataGridViewRow filaSeleccionada = tablaMarcas.Rows[indice];
-                string marca = filaSeleccionada.Cells["Descripcion"].Value.ToString();
-                Cargar_Campos(marca);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Seleccione una casilla dentro de la tabla", "ERROR");
-            }
         }
     }
 }
