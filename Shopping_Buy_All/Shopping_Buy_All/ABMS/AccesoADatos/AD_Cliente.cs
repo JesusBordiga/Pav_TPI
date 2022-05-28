@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Shopping_Buy_All.ABMS;
+using System.Windows.Forms;
 
 namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
@@ -36,8 +37,14 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 da.Fill(tabla);
                 return tabla;
             }
+            catch (SqlException)
+            {
+                MessageBox.Show("No se pudo Cargar Tipo Estado Civil.\nError en la base de datos.", "ERROR");
+                throw;
+            }
             catch (Exception)
             {
+                MessageBox.Show("No se pudo Cargar Tipo Estado Civil.\nError en la base de datos.", "ERROR");
                 throw;
             }
             finally
@@ -72,9 +79,13 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 cmd.ExecuteNonQuery();
                 resultado = true;
             }
+            catch (SqlException)
+            {
+                MessageBox.Show("No se pudo Agregar cliente.\nError en la base de datos.", "ERROR");
+            }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("No se pudo Agregar cliente.\nError en la base de datos.", "ERROR");
             }
             finally
             {
@@ -107,8 +118,14 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 
                 return tabla;
             }
+            catch (SqlException)
+            {
+                MessageBox.Show("No se pudo Obtener tipo de sexol.\nError en la base de datos.", "ERROR");
+                throw;
+            }
             catch (Exception)
             {
+                MessageBox.Show("No se pudo Obtener tipo de sexol.\nError en la base de datos.", "ERROR");
                 throw;
             }
             finally
@@ -140,8 +157,14 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 
                 return tabla;
             }
+            catch (SqlException)
+            {
+                MessageBox.Show("No se pudo Obtener tipo documento.\nError en la base de datos.", "ERROR");
+                throw;
+            }
             catch (Exception)
             {
+                MessageBox.Show("No se pudo Obtener tipo documento.\nError en la base de datos.", "ERROR");
                 throw;
             }
             finally
@@ -170,8 +193,14 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 da.Fill(tabla);
                 return tabla;
             }
+            catch (SqlException)
+            {
+                MessageBox.Show("No se pudo obtener datos de clientes.\nError en la base de datos.", "ERROR");
+                throw;
+            }
             catch (Exception)
             {
+                MessageBox.Show("No se pudo obtener datos de clientes.\nError en la base de datos.", "ERROR");
                 throw;
             }
             finally
@@ -209,6 +238,16 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 cmd.ExecuteNonQuery();
                 resultado = true;
             }
+
+            catch (SqlException)
+            {
+                MessageBox.Show("No se pudo Obtener tipo documento.\nError en la base de datos.", "ERROR");
+                throw;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo modificar cliente.\nError en la base de datos.", "ERROR");
+            }
             finally
             {
                 cn.Close();
@@ -238,6 +277,14 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 cmd.Connection = cn;
                 cmd.ExecuteNonQuery();
                 resultado = true;
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("No se pudo borrar cliente.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo borrar cliente.\nError en la base de datos.", "ERROR");
             }
             finally
             {

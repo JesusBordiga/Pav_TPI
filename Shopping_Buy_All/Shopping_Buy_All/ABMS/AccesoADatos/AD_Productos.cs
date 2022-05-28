@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Shopping_Buy_All.ABMS;
+using System.Windows.Forms;
 
 namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
@@ -32,6 +33,14 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 cmd.Connection = cn;
                 cmd.ExecuteNonQuery();
                 resultado = true;
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("No se pudo cargar el producto.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo cargar el producto.\nError en la base de datos.", "ERROR");
             }
             finally
             {
@@ -63,6 +72,16 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
                 return tabla;
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("No se pudo cargar tabla de producto.\nError en la base de datos.", "ERROR");
+                throw;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo cargar tabla de producto.\nError en la base de datos.", "ERROR");
+                throw;
             }
             finally
             {
@@ -98,9 +117,13 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 
                 }
             }
+            catch (SqlException)
+            {
+                MessageBox.Show("No se pudo buscar producto.\nError en la base de datos.", "ERROR");
+            }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("No se pudo buscar producto.\nError en la base de datos.", "ERROR");
             }
             finally
             {
@@ -131,9 +154,13 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 cmd.ExecuteNonQuery();
                 resultado = true;
             }
+            catch (SqlException)
+            {
+                MessageBox.Show("No se pudo modificar producto.\nError en la base de datos.", "ERROR");
+            }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("No se pudo modificar producto.\nError en la base de datos.", "ERROR");
             }
             finally
             {
@@ -162,6 +189,14 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 cmd.Connection = cn;
                 cmd.ExecuteNonQuery();
                 resultado = true;
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("No se pudo borrar producto.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo borrar producto.\nError en la base de datos.", "ERROR");
             }
             finally
             {
