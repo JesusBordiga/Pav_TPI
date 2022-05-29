@@ -77,8 +77,8 @@ namespace Shopping_Buy_All
 
         private void buttonFacturacion_Click(object sender, EventArgs e)
         {
-            Facturacion_Ventana facturacion = new Facturacion_Ventana();
-            facturacion.Show();
+            Facturacion_Ventana facturacion_ventana = new Facturacion_Ventana();
+            facturacion_ventana.Show();
         }
     }
 }

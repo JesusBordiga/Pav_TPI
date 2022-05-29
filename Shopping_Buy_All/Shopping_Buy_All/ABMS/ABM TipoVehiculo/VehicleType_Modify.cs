@@ -14,7 +14,6 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
 {
     public partial class VehicleType_Modify : Form
     {
-        private object textNameVehicle;
 
 
         public VehicleType_Modify()

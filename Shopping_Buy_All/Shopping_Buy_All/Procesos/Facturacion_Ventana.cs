@@ -15,8 +15,13 @@ namespace Shopping_Buy_All
 {
     public partial class Facturacion_Ventana : Form
     {
+        public Facturacion_Ventana()
+        {
+            InitializeComponent();
+        }
         private void Facturacion_Load(object sender, EventArgs e)
         {
+            
             CargarTipoDocumento();
             comboBoxDocType.Enabled = false;
             textNumeroDocumento.Enabled = false;
@@ -26,6 +31,12 @@ namespace Shopping_Buy_All
             btnBuscarProducto.Enabled = false;
             textCantidad.Enabled = false;
             labelFechaCompra.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            labelNombrePorducto.Text = "";
+            labelPrecio.Text = "";
+            labelCliente.Text = "";
+            labelLocal.Text = "";
+            textNumberLocal.Focus();
+
         }
         private void CargarTipoDocumento()
         {
@@ -39,7 +50,7 @@ namespace Shopping_Buy_All
             catch (Exception)
             {
 
-                MessageBox.Show("Error, no se pudo Otener Datos de Tipos de Documentos");
+                MessageBox.Show("Error, no se pudo Obtener Datos de Tipos de Documentos");
             }
         }
         private Tarjeta ObtenerDatosBuscar()
@@ -66,10 +77,28 @@ namespace Shopping_Buy_All
                     Local l = AD_Local.Buscar_LocalPorCodigo(textNumberLocal.Text.Trim());
                     if (l.NombreLocal != null)
                     {
-                        labelLocal.Text = l.NombreLocal;
-                        comboBoxDocType.Enabled = true;
-                        textNumeroDocumento.Enabled = true;
-                        buttonCliente.Enabled = true;
+                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                        String mensajeCarga = ("Local encontrado!\n"
+                            +"Nombre: "+ l.NombreLocal.ToString()+"\n"
+                            + "Desea cargar este local?");
+
+                        string titulo = "Local";
+
+                        DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                        if (result == DialogResult.OK)
+                        {
+                                labelLocal.Text = l.NombreLocal;
+                                comboBoxDocType.Enabled = true;
+                                textNumeroDocumento.Enabled = true;
+                                buttonCliente.Enabled = true;
+                                comboBoxDocType.Focus();
+                        }
+                        else
+                        {
+                            textNumberLocal.Focus();
+                        }
+                        
                     }
                     else
                     {
@@ -94,9 +123,25 @@ namespace Shopping_Buy_All
             }
             else
             {
-                Cliente c = AD_Facturacion.Buscar_Cliente_Documento(comboBoxDocType.SelectedValue.ToString(), textNumeroDocumento .Text);
-                labelCliente.Text = c.NombreCliente + "" + c.ApellidoCliente;
-                comboTarjetaCliente.Enabled = true;
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                String mensajeCarga = ("Cliente encontrado!\n"
+                    +"Desea cargar este cliente?");
+
+                string titulo = "Cliente";
+
+                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                if (result == DialogResult.OK)
+                {
+                        Cliente c = AD_Facturacion.Buscar_Cliente_Documento(comboBoxDocType.SelectedValue.ToString(), textNumeroDocumento.Text);
+                        labelCliente.Text = c.NombreCliente.ToString() + " " + c.ApellidoCliente.ToString();
+                        comboTarjetaCliente.Enabled = true;
+                        comboTarjetaCliente.Focus();
+                }
+                else
+                {
+                    comboBoxDocType.Focus();
+                }
             }
 
             
@@ -114,7 +159,7 @@ namespace Shopping_Buy_All
             catch (Exception)
             {
 
-                MessageBox.Show("Error, no se pudo Otener Datos de Tipos de Documentos");
+                MessageBox.Show("Error, no se pudo Obtener Datos de Tipos de Documentos");
             }
         }
 
@@ -123,37 +168,102 @@ namespace Shopping_Buy_All
             Tarjeta t = ObtenerDatosBuscar();
             if (AD_Facturacion.Buscar_Tarjeta(t)!=null)
             {
-                textCodProducto.Enabled = false;
-                btnBuscarProducto.Enabled = false;
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                String mensajeCarga = ("Tarjeta encontrada!\n"
+                    + "Nombre: "+"\n"
+                    +"Desea cargar esta tarjeta?");
+
+                string titulo = "Tarjeta";
+
+                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                if (result == DialogResult.OK)
+                {
+                    textCodProducto.Enabled = false;
+                    btnBuscarProducto.Enabled = false;
+                    textCodProducto.Focus();
+                }
+                else
+                {
+                    comboTarjetaCliente.Focus();
+                }
+  
             }
             else
             {
                 MessageBox.Show("Error, Al seleccionar tarjeta!!");
                 comboTarjetaCliente.Focus();
             }
+            textCodProducto.Enabled = true;
+            textCodProducto.Focus();
+            btnBuscarProducto.Enabled = true;
         }
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            try
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            String mensajeCarga = ("Producto encontrado!\n"
+                +"Desea cargar este prodcuto?");
+
+            string titulo = "Producto";
+
+            DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+            if (result == DialogResult.OK)
             {
-                Producto p = AD_Productos.Buscar_Producto(textCodProducto.Text);
-                labelNombrePorducto.Text = p.NombreProducto;
-                labelPrecio.Text = p.PrecioProducto.ToString();
-                textCantidad.Enabled = false;
+                try
+                {
+                    Producto p = AD_Productos.Buscar_Producto(textCodProducto.Text.Trim());
+                    labelNombrePorducto.Text = p.NombreProducto;
+                    labelPrecio.Text = p.PrecioProducto.ToString();
+                    textCantidad.Enabled = true;
+                    textCantidad.Focus();
 
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Error, no se pudo Obtener producto");
+                }
             }
-            catch (Exception)
+            else
             {
-
-                MessageBox.Show("Error, no se pudo Obtener producto");
+                textCodProducto.Focus();
             }
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonCargarProducto_Click(object sender, EventArgs e)
         {
-            AgregarProducto(obtenerDatosProducto());
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            String mensajeCarga = ("|Codigo: "+textCodProducto.Text+" "+"|Nombre: "+labelNombrePorducto.Text+"|"+"\n"
+                +"|Cantidad: "+""+textCantidad.Text +""+ "|Precio: "+labelPrecio.Text+"|"+"\n"
+                +"Desea cargar este producto?");
+            string titulo = "Producto";
+
+            DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    AgregarProducto(obtenerDatosProducto());
+                    labelNombrePorducto.Text = "";
+                    labelPrecio.Text = "";
+                    textCodProducto.Text = "";
+                    textCantidad.Text = "";
+                    textCodProducto.Focus();
+
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Error, no se pudo Obtener producto");
+                }
+            }
+            else
+            {
+                textCodProducto.Focus();
+            }
+            
         }
 
         private ProductoFactura obtenerDatosProducto()
@@ -176,10 +286,6 @@ namespace Shopping_Buy_All
             DataGridViewTextBoxCell NombreProducto = new DataGridViewTextBoxCell();
             NombreProducto.Value = prod.NombreProducto;
             fila.Cells.Add(NombreProducto);
-            //Agregar apellido
-            DataGridViewTextBoxCell PrecioProducto = new DataGridViewTextBoxCell();
-            PrecioProducto.Value = prod.PrecioProducto;
-            fila.Cells.Add(PrecioProducto);
             //Agregar Fecha
             DataGridViewTextBoxCell Cantidad = new DataGridViewTextBoxCell();
             Cantidad.Value = prod.CantidadProducto;

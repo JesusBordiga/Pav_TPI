@@ -384,6 +384,12 @@
     <Compile Include="Entidades\TipoVehiculo.cs" />
     <Compile Include="Entidades\User.cs" />
     <Compile Include="Entidades\Utils.cs" />
+    <Compile Include="Procesos\Facturacion_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion_Ventana.Designer.cs">
+      <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logged\Logged.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -485,12 +491,6 @@
     </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Load.Designer.cs">
       <DependentUpon>Product_Load.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Procesos\Facturacion_Ventana.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Procesos\Facturacion_Ventana.Designer.cs">
-      <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -644,6 +644,9 @@
     <EmbeddedResource Include="ABMS\ABM Vehiculos\Vehicle_Modify.resx">
       <DependentUpon>Vehicle_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion_Ventana.resx">
+      <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logged\Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
     </EmbeddedResource>
@@ -694,9 +697,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Load.resx">
       <DependentUpon>Product_Load.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Procesos\Facturacion_Ventana.resx">
-      <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -760,5 +760,6 @@
   <ItemGroup>
     <None Include="Resources\fritzing.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

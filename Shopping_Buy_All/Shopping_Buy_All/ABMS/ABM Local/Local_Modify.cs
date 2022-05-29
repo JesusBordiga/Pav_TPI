@@ -205,6 +205,7 @@ namespace Shopping_Buy_All
                             {
                                 MessageBox.Show("Local modificado con éxito!");
                                 Clean();
+                                CargarTablaLocal();
                             }
                             else
                             {
