@@ -348,6 +348,7 @@
     <Compile Include="ABMS\ABM Vehiculos\Vehicle_Modify.Designer.cs">
       <DependentUpon>Vehicle_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\AccesoADatos\AD_Facturacion.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Modelos.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Vehiculos.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Usuario.cs" />
@@ -372,6 +373,7 @@
     <Compile Include="Entidades\EstadoCivil.cs" />
     <Compile Include="Entidades\MarcaVehiculo.cs" />
     <Compile Include="Entidades\Modelo.cs" />
+    <Compile Include="Entidades\ProductoFactura.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\Sexo.cs" />
     <Compile Include="Entidades\Tarjeta.cs" />
@@ -484,11 +486,11 @@
     <Compile Include="ABMS\ABM Productos\Product_Load.Designer.cs">
       <DependentUpon>Product_Load.cs</DependentUpon>
     </Compile>
-    <Compile Include="Procesos\Facturacion.cs">
+    <Compile Include="Procesos\Facturacion_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Procesos\Facturacion.Designer.cs">
-      <DependentUpon>Facturacion.cs</DependentUpon>
+    <Compile Include="Procesos\Facturacion_Ventana.Designer.cs">
+      <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -693,8 +695,8 @@
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Load.resx">
       <DependentUpon>Product_Load.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Procesos\Facturacion.resx">
-      <DependentUpon>Facturacion.cs</DependentUpon>
+    <EmbeddedResource Include="Procesos\Facturacion_Ventana.resx">
+      <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -754,6 +756,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fritzing.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
