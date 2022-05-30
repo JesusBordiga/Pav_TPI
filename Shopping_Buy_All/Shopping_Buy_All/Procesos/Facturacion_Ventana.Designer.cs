@@ -43,6 +43,10 @@
             this.buttonCargarProducto = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tablaProducto = new System.Windows.Forms.DataGridView();
+            this.CodigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.textCantidad = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -73,10 +77,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.buttonLocal = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.CodigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelTipoDoc = new System.Windows.Forms.Label();
+            this.labelNroDoc = new System.Windows.Forms.Label();
+            this.labelTarjeta = new System.Windows.Forms.Label();
+            this.labelCod = new System.Windows.Forms.Label();
             this.fechaCompra.SuspendLayout();
             this.grbDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProducto)).BeginInit();
@@ -177,6 +181,7 @@
             this.grbDetalle.Controls.Add(this.labelPrecio);
             this.grbDetalle.Controls.Add(this.label14);
             this.grbDetalle.Controls.Add(this.labelNombrePorducto);
+            this.grbDetalle.Controls.Add(this.labelCod);
             this.grbDetalle.Location = new System.Drawing.Point(19, 258);
             this.grbDetalle.Name = "grbDetalle";
             this.grbDetalle.Size = new System.Drawing.Size(527, 404);
@@ -201,6 +206,7 @@
             this.buttonCargarProducto.BackColor = System.Drawing.Color.DarkGray;
             this.buttonCargarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCargarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCargarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCargarProducto.ForeColor = System.Drawing.Color.White;
             this.buttonCargarProducto.Location = new System.Drawing.Point(419, 43);
             this.buttonCargarProducto.Name = "buttonCargarProducto";
@@ -262,6 +268,34 @@
             this.tablaProducto.Size = new System.Drawing.Size(436, 267);
             this.tablaProducto.TabIndex = 42;
             this.tablaProducto.TabStop = false;
+            // 
+            // CodigoProducto
+            // 
+            this.CodigoProducto.DataPropertyName = "Codigo_Producto";
+            this.CodigoProducto.HeaderText = "Codigo Producto";
+            this.CodigoProducto.Name = "CodigoProducto";
+            this.CodigoProducto.ReadOnly = true;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.DataPropertyName = "NombreProducto";
+            this.NombreProducto.HeaderText = "Nombre Producto";
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
             // 
             // label9
             // 
@@ -338,6 +372,7 @@
             this.btnBuscarProducto.BackColor = System.Drawing.Color.DarkGray;
             this.btnBuscarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarProducto.ForeColor = System.Drawing.Color.White;
             this.btnBuscarProducto.Location = new System.Drawing.Point(118, 45);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
@@ -351,11 +386,11 @@
             // 
             this.labelPrecio.AutoSize = true;
             this.labelPrecio.BackColor = System.Drawing.Color.Transparent;
-            this.labelPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPrecio.ForeColor = System.Drawing.Color.White;
-            this.labelPrecio.Location = new System.Drawing.Point(320, 47);
+            this.labelPrecio.Location = new System.Drawing.Point(321, 48);
             this.labelPrecio.Name = "labelPrecio";
-            this.labelPrecio.Size = new System.Drawing.Size(71, 17);
+            this.labelPrecio.Size = new System.Drawing.Size(63, 15);
             this.labelPrecio.TabIndex = 44;
             this.labelPrecio.Text = "$$$$$$$";
             // 
@@ -396,6 +431,9 @@
             this.grbCliente.Controls.Add(this.comboBoxDocType);
             this.grbCliente.Controls.Add(this.labelCliente);
             this.grbCliente.Controls.Add(this.textNumeroDocumento);
+            this.grbCliente.Controls.Add(this.labelTarjeta);
+            this.grbCliente.Controls.Add(this.labelNroDoc);
+            this.grbCliente.Controls.Add(this.labelTipoDoc);
             this.grbCliente.Location = new System.Drawing.Point(19, 133);
             this.grbCliente.Name = "grbCliente";
             this.grbCliente.Size = new System.Drawing.Size(527, 116);
@@ -407,8 +445,9 @@
             this.buttonTarjeta.BackColor = System.Drawing.Color.DarkGray;
             this.buttonTarjeta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTarjeta.ForeColor = System.Drawing.Color.White;
-            this.buttonTarjeta.Location = new System.Drawing.Point(436, 79);
+            this.buttonTarjeta.Location = new System.Drawing.Point(406, 79);
             this.buttonTarjeta.Name = "buttonTarjeta";
             this.buttonTarjeta.Size = new System.Drawing.Size(75, 24);
             this.buttonTarjeta.TabIndex = 7;
@@ -433,7 +472,7 @@
             this.comboTarjetaCliente.BackColor = System.Drawing.SystemColors.ControlDark;
             this.comboTarjetaCliente.ForeColor = System.Drawing.Color.White;
             this.comboTarjetaCliente.FormattingEnabled = true;
-            this.comboTarjetaCliente.Location = new System.Drawing.Point(100, 79);
+            this.comboTarjetaCliente.Location = new System.Drawing.Point(87, 79);
             this.comboTarjetaCliente.Name = "comboTarjetaCliente";
             this.comboTarjetaCliente.Size = new System.Drawing.Size(291, 24);
             this.comboTarjetaCliente.TabIndex = 6;
@@ -491,6 +530,7 @@
             this.buttonCliente.BackColor = System.Drawing.Color.DarkGray;
             this.buttonCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCliente.ForeColor = System.Drawing.Color.White;
             this.buttonCliente.Location = new System.Drawing.Point(209, 44);
             this.buttonCliente.Name = "buttonCliente";
@@ -505,7 +545,7 @@
             this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
             this.comboBoxDocType.FormattingEnabled = true;
-            this.comboBoxDocType.Location = new System.Drawing.Point(136, 16);
+            this.comboBoxDocType.Location = new System.Drawing.Point(135, 16);
             this.comboBoxDocType.Name = "comboBoxDocType";
             this.comboBoxDocType.Size = new System.Drawing.Size(67, 24);
             this.comboBoxDocType.TabIndex = 3;
@@ -514,11 +554,11 @@
             // 
             this.labelCliente.AutoSize = true;
             this.labelCliente.BackColor = System.Drawing.Color.Transparent;
-            this.labelCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCliente.ForeColor = System.Drawing.Color.White;
             this.labelCliente.Location = new System.Drawing.Point(390, 46);
             this.labelCliente.Name = "labelCliente";
-            this.labelCliente.Size = new System.Drawing.Size(121, 17);
+            this.labelCliente.Size = new System.Drawing.Size(107, 15);
             this.labelCliente.TabIndex = 50;
             this.labelCliente.Text = "##### #######";
             // 
@@ -526,7 +566,7 @@
             // 
             this.textNumeroDocumento.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNumeroDocumento.ForeColor = System.Drawing.Color.White;
-            this.textNumeroDocumento.Location = new System.Drawing.Point(136, 46);
+            this.textNumeroDocumento.Location = new System.Drawing.Point(128, 45);
             this.textNumeroDocumento.Mask = "99999999";
             this.textNumeroDocumento.Name = "textNumeroDocumento";
             this.textNumeroDocumento.Size = new System.Drawing.Size(67, 23);
@@ -552,7 +592,7 @@
             this.cmbLocal.BackColor = System.Drawing.SystemColors.ControlDark;
             this.cmbLocal.ForeColor = System.Drawing.Color.White;
             this.cmbLocal.FormattingEnabled = true;
-            this.cmbLocal.Location = new System.Drawing.Point(107, 15);
+            this.cmbLocal.Location = new System.Drawing.Point(120, 15);
             this.cmbLocal.Name = "cmbLocal";
             this.cmbLocal.Size = new System.Drawing.Size(119, 24);
             this.cmbLocal.TabIndex = 51;
@@ -575,7 +615,7 @@
             this.labelLocal.BackColor = System.Drawing.Color.Transparent;
             this.labelLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLocal.ForeColor = System.Drawing.Color.White;
-            this.labelLocal.Location = new System.Drawing.Point(448, 17);
+            this.labelLocal.Location = new System.Drawing.Point(371, 20);
             this.labelLocal.Name = "labelLocal";
             this.labelLocal.Size = new System.Drawing.Size(71, 17);
             this.labelLocal.TabIndex = 54;
@@ -587,7 +627,7 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(399, 18);
+            this.label17.Location = new System.Drawing.Point(318, 19);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(52, 17);
             this.label17.TabIndex = 53;
@@ -599,19 +639,20 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(21, 20);
+            this.label4.Location = new System.Drawing.Point(9, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 17);
+            this.label4.Size = new System.Drawing.Size(108, 17);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Cod Local";
+            this.label4.Text = "Nombre Local";
             // 
             // buttonLocal
             // 
             this.buttonLocal.BackColor = System.Drawing.Color.DarkGray;
             this.buttonLocal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLocal.ForeColor = System.Drawing.Color.White;
-            this.buttonLocal.Location = new System.Drawing.Point(238, 15);
+            this.buttonLocal.Location = new System.Drawing.Point(242, 15);
             this.buttonLocal.Name = "buttonLocal";
             this.buttonLocal.Size = new System.Drawing.Size(75, 24);
             this.buttonLocal.TabIndex = 2;
@@ -619,33 +660,53 @@
             this.buttonLocal.UseVisualStyleBackColor = false;
             this.buttonLocal.Click += new System.EventHandler(this.buttonLocal_Click);
             // 
-            // CodigoProducto
+            // labelTipoDoc
             // 
-            this.CodigoProducto.DataPropertyName = "Codigo_Producto";
-            this.CodigoProducto.HeaderText = "Codigo Producto";
-            this.CodigoProducto.Name = "CodigoProducto";
-            this.CodigoProducto.ReadOnly = true;
+            this.labelTipoDoc.AutoSize = true;
+            this.labelTipoDoc.BackColor = System.Drawing.Color.Transparent;
+            this.labelTipoDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTipoDoc.ForeColor = System.Drawing.Color.White;
+            this.labelTipoDoc.Location = new System.Drawing.Point(132, 21);
+            this.labelTipoDoc.Name = "labelTipoDoc";
+            this.labelTipoDoc.Size = new System.Drawing.Size(60, 15);
+            this.labelTipoDoc.TabIndex = 51;
+            this.labelTipoDoc.Text = "TipoDoc";
             // 
-            // NombreProducto
+            // labelNroDoc
             // 
-            this.NombreProducto.DataPropertyName = "NombreProducto";
-            this.NombreProducto.HeaderText = "Nombre Producto";
-            this.NombreProducto.Name = "NombreProducto";
-            this.NombreProducto.ReadOnly = true;
+            this.labelNroDoc.AutoSize = true;
+            this.labelNroDoc.BackColor = System.Drawing.Color.Transparent;
+            this.labelNroDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNroDoc.ForeColor = System.Drawing.Color.White;
+            this.labelNroDoc.Location = new System.Drawing.Point(125, 49);
+            this.labelNroDoc.Name = "labelNroDoc";
+            this.labelNroDoc.Size = new System.Drawing.Size(55, 15);
+            this.labelNroDoc.TabIndex = 52;
+            this.labelNroDoc.Text = "NroDoc";
             // 
-            // Cantidad
+            // labelTarjeta
             // 
-            this.Cantidad.DataPropertyName = "Cantidad";
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
+            this.labelTarjeta.AutoSize = true;
+            this.labelTarjeta.BackColor = System.Drawing.Color.Transparent;
+            this.labelTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTarjeta.ForeColor = System.Drawing.Color.White;
+            this.labelTarjeta.Location = new System.Drawing.Point(89, 83);
+            this.labelTarjeta.Name = "labelTarjeta";
+            this.labelTarjeta.Size = new System.Drawing.Size(52, 15);
+            this.labelTarjeta.TabIndex = 53;
+            this.labelTarjeta.Text = "Tarjeta";
             // 
-            // Precio
+            // labelCod
             // 
-            this.Precio.DataPropertyName = "Precio";
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
+            this.labelCod.AutoSize = true;
+            this.labelCod.BackColor = System.Drawing.Color.Transparent;
+            this.labelCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCod.ForeColor = System.Drawing.Color.White;
+            this.labelCod.Location = new System.Drawing.Point(46, 49);
+            this.labelCod.Name = "labelCod";
+            this.labelCod.Size = new System.Drawing.Size(32, 15);
+            this.labelCod.TabIndex = 54;
+            this.labelCod.Text = "Cod";
             // 
             // Facturacion_Ventana
             // 
@@ -724,5 +785,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.Label labelCod;
+        private System.Windows.Forms.Label labelTarjeta;
+        private System.Windows.Forms.Label labelNroDoc;
+        private System.Windows.Forms.Label labelTipoDoc;
     }
 }

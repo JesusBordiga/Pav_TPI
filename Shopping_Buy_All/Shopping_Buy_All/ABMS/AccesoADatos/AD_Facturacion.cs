@@ -13,40 +13,6 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
     public class AD_Facturacion
     {
-        public static Tarjeta Buscar_Tarjeta(Tarjeta t)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM TarjetaXCliente WHERE TipoDocumento = @tipoDoc AND NroDocumento = @nroDoc AND Borrado like 0";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@tipoDoc", t.TipoDocumentoTarjeta);
-                cmd.Parameters.AddWithValue("@nroDoc", t.NroDocumentoTarjeta);
-                cmd.Parameters.AddWithValue("@nroTarjeta", t.NroTarjetaCliente);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
-                {
-                    t.IdMarcaTarjeta = int.Parse(DataReader["IdMarca"].ToString());
-                    t.IdTipoTarjeta = int.Parse(DataReader["IdTipo"].ToString());
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return t;
-        }
         public static Cliente Buscar_Cliente_Documento(string TipoDocumento, string NroDocumento)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
