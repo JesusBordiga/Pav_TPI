@@ -1,4 +1,5 @@
-﻿using Shopping_Buy_All.Entidades;
+﻿using Shopping_Buy_All.ABMS.AccesoADatos;
+using Shopping_Buy_All.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,144 +21,19 @@ namespace Shopping_Buy_All
             CargarTablaMarcas();
         }
         //ACCESO A BASE DE DATOS
-
-        //BOTONES
-
-        //FUNCIONES
-
-        private void Clean()
-        {
-            textMarcaOld.Text = "";
-            textMarcaNew.Text = "";
-            textMarcaOld.Visible = true;
-            textMarcaNew.Visible = false;
-            btnModify.Visible = false;
-            btnSearch.Visible = true;
-            labelMarca.Visible = true;
-            labelMod.Visible = false;
-            textMarcaOld.Focus();
-        }
-
-        private void Cargar_Campos(string marca)
-        {
-            //Cargar Nombre Original
-            textMarcaOld.Text = marca;
-            //Cargar Nombre Nuevo
-            textMarcaNew.Text = marca;
-            btnModify.Visible = true;
-            textMarcaOld.Visible = false;
-            textMarcaNew.Visible = true;
-            btnSearch.Visible = false;
-            labelMarca.Visible = false;
-            labelMod.Visible = true;
-            textMarcaNew.Focus();
-        }
-
         private void CargarTablaMarcas()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM MarcaTarjetas WHERE Borrado like 0";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-                tablaMarcas.DataSource = tabla;
+                tablaMarcas.DataSource = AD_MarcaTarjeta.CargarTablaMarcas();
             }
             catch (Exception)
             {
-                MessageBox.Show("Error en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
+                MessageBox.Show("Error en la carga de Marcas");
             }
         }
 
-        private bool ExisteRubro(string marca)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool result = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM MarcaTarjetas WHERE Nombre = @marca AND Borrado like 0";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@marca", marca);
-
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
-                {
-                    result = true;
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return result;
-        }
-
-        private string ObtenerDatos()
-        {
-            string m = textMarcaNew.Text.Trim();
-            return m;
-        }
-
-        private bool ModificarMarca(string newM, string oldM)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE MarcaTarjetas SET Nombre = @newNombre WHERE Nombre = @oldNombre";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@newNombre", newM);
-                cmd.Parameters.AddWithValue("@oldNombre", oldM);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No se pudo modificar la Marca.\nError en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return resultado;
-        }
-
+        //BOTONES
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (textMarcaOld.Text.Trim().Equals(""))
@@ -167,7 +43,7 @@ namespace Shopping_Buy_All
             else
             {
                 string rubro = textMarcaOld.Text.Trim();
-                bool existe = ExisteRubro(rubro);
+                bool existe = AD_MarcaTarjeta.ExisteRubro(rubro);
                 if (existe)
                 {
                     Cargar_Campos(rubro);
@@ -178,21 +54,33 @@ namespace Shopping_Buy_All
                 }
             }
         }
-
+        private void tablaMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaMarcas.Rows[indice];
+                string marca = filaSeleccionada.Cells["Nombre"].Value.ToString();
+                Cargar_Campos(marca);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una casilla dentro de la tabla", "ERROR");
+            }
+        }
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clean();
         }
-
         private void btnModify_Click(object sender, EventArgs e)
         {
             if (ValidarCampos())
             {
                 string newM = ObtenerDatos();
-                if (!ExisteRubro(newM))
+                if (!AD_MarcaTarjeta.ExisteRubro(newM))
                 {
                     string oldM = textMarcaOld.Text.Trim().ToLower();
-                    bool resultado = ModificarMarca(newM, oldM);
+                    bool resultado = AD_MarcaTarjeta.ModificarMarca(newM, oldM);
                     if (resultado)
                     {
                         MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
@@ -233,6 +121,38 @@ namespace Shopping_Buy_All
             }
         }
 
+        //FUNCIONES
+        private void Clean()
+        {
+            textMarcaOld.Text = "";
+            textMarcaNew.Text = "";
+            textMarcaOld.Visible = true;
+            textMarcaNew.Visible = false;
+            btnModify.Visible = false;
+            btnSearch.Visible = true;
+            labelMarca.Visible = true;
+            labelMod.Visible = false;
+            textMarcaOld.Focus();
+        }
+        private void Cargar_Campos(string marca)
+        {
+            //Cargar Nombre Original
+            textMarcaOld.Text = marca;
+            //Cargar Nombre Nuevo
+            textMarcaNew.Text = marca;
+            btnModify.Visible = true;
+            textMarcaOld.Visible = false;
+            textMarcaNew.Visible = true;
+            btnSearch.Visible = false;
+            labelMarca.Visible = false;
+            labelMod.Visible = true;
+            textMarcaNew.Focus();
+        }
+        private string ObtenerDatos()
+        {
+            string m = textMarcaNew.Text.Trim();
+            return m;
+        }
         private bool ValidarCampos()
         {
             if (textMarcaNew.Text.Trim() == "" || textMarcaNew.Text.Trim().Length > 50)
@@ -241,20 +161,6 @@ namespace Shopping_Buy_All
             }
             return true;
         }
-
-        private void tablaMarcas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                int indice = e.RowIndex;
-                DataGridViewRow filaSeleccionada = tablaMarcas.Rows[indice];
-                string marca = filaSeleccionada.Cells["Nombre"].Value.ToString();
-                Cargar_Campos(marca);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Seleccione una casilla dentro de la tabla", "ERROR");
-            }
-        }
+        
     }
 }

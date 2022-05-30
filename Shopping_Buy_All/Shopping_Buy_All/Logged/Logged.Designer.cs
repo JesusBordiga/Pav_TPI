@@ -36,6 +36,8 @@
             this.labelHora = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.buttonFacturacion = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureAutomoviles = new System.Windows.Forms.PictureBox();
@@ -52,6 +54,7 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.HourTime = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAutomoviles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTarjetas)).BeginInit();
@@ -132,6 +135,8 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelMenu.Controls.Add(this.pictureBox2);
+            this.panelMenu.Controls.Add(this.buttonFacturacion);
             this.panelMenu.Controls.Add(this.pictureBox1);
             this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.pictureAutomoviles);
@@ -151,13 +156,42 @@
             this.panelMenu.Size = new System.Drawing.Size(334, 286);
             this.panelMenu.TabIndex = 41;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox2.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.fritzing;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Location = new System.Drawing.Point(197, 191);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(58, 55);
+            this.pictureBox2.TabIndex = 56;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.buttonFacturacion_Click);
+            // 
+            // buttonFacturacion
+            // 
+            this.buttonFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonFacturacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFacturacion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFacturacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFacturacion.ForeColor = System.Drawing.Color.White;
+            this.buttonFacturacion.Location = new System.Drawing.Point(189, 252);
+            this.buttonFacturacion.Name = "buttonFacturacion";
+            this.buttonFacturacion.Size = new System.Drawing.Size(75, 23);
+            this.buttonFacturacion.TabIndex = 55;
+            this.buttonFacturacion.Text = "Factura";
+            this.buttonFacturacion.UseVisualStyleBackColor = false;
+            this.buttonFacturacion.Click += new System.EventHandler(this.buttonFacturacion_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pictureBox1.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.user;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(134, 193);
+            this.pictureBox1.Location = new System.Drawing.Point(81, 193);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(58, 55);
             this.pictureBox1.TabIndex = 54;
@@ -172,7 +206,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(114, 253);
+            this.button1.Location = new System.Drawing.Point(61, 253);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 23);
             this.button1.TabIndex = 53;
@@ -383,6 +417,7 @@
             this.Text = "Logged";
             this.Load += new System.EventHandler(this.Logged_Load);
             this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAutomoviles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTarjetas)).EndInit();
@@ -418,5 +453,7 @@
         private System.Windows.Forms.Button btnProfesiones;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Timer HourTime;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button buttonFacturacion;
     }
 }

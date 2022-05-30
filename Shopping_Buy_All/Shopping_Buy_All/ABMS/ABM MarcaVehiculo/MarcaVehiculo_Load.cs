@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 using Shopping_Buy_All.Entidades;
 
 namespace Shopping_Buy_All
@@ -13,94 +14,27 @@ namespace Shopping_Buy_All
             InitializeComponent();
             CargarTablaMarcas();
         }
-
+        //ACCESO A BASE DE DATOS
+        private void CargarTablaMarcas()
+        {
+            try
+            {
+                tablaMarcas.DataSource = AD_MarcaVehiculo.CargarTablaMarcas();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al cargar tabla de marcas.", "ERROR");
+            }
+        }
+        //BOTONES
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clean();
         }
-        private void Clean()
-        {
-            cmbMarca.Text = "";
-            CargarTablaMarcas();
-
-        }
-
-        private void CargarTablaMarcas()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Marcas WHERE Borrado = 0";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-                tablaMarcas.DataSource = tabla;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-        private MarcaVehiculo ObtenerDatosMarca()
-        {
-            MarcaVehiculo c = new MarcaVehiculo();
-
-            c.MarcaVeh = cmbMarca.Text.Trim();
-
-            return c;
-        }
-
-        private bool Agregar_Marca(MarcaVehiculo mark)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO Marcas (Descripcion) " +
-                                               "Values(@descripcion)";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@descripcion", mark.MarcaVeh);
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No se pudo agregar la Marca.\nError en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return resultado;
-
-        }
-
         private void btnMarcaLoad_Click(object sender, EventArgs e)
         {
             MarcaVehiculo c = ObtenerDatosMarca();
-            bool resultado = Agregar_Marca(c);
+            bool resultado = AD_MarcaVehiculo.Agregar_Marca(c);
             if (resultado)
             {
                 MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
@@ -127,5 +61,25 @@ namespace Shopping_Buy_All
                         "Complete los campos por favor!");
             }
         }
+
+        //FUNCIONES
+
+        private void Clean()
+        {
+            cmbMarca.Text = "";
+            CargarTablaMarcas();
+
+        }
+        private MarcaVehiculo ObtenerDatosMarca()
+        {
+            MarcaVehiculo c = new MarcaVehiculo();
+
+            c.MarcaVeh = cmbMarca.Text.Trim();
+
+            return c;
+        }
+
+
+        
     }
 }

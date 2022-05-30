@@ -41,7 +41,7 @@ namespace Shopping_Buy_All
             catch (Exception)
             {
 
-                MessageBox.Show("Error, no se pudo Otener Datos del Cliente");
+                MessageBox.Show("Error, no se pudo Obtener Datos del Cliente");
             }
         }
         private void CargarTipoDocumento()

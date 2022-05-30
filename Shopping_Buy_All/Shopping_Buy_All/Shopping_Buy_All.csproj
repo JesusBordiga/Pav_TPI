@@ -348,6 +348,7 @@
     <Compile Include="ABMS\ABM Vehiculos\Vehicle_Modify.Designer.cs">
       <DependentUpon>Vehicle_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\AccesoADatos\AD_Facturacion.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Modelos.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Vehiculos.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Usuario.cs" />
@@ -366,10 +367,13 @@
     <Compile Include="ABMS\AccesoADatos\AD_Local.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_TipoComercio.cs" />
     <Compile Include="Entidades\Automovil.cs" />
+    <Compile Include="Entidades\Detalle.cs" />
+    <Compile Include="Entidades\Factura.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\EstadoCivil.cs" />
     <Compile Include="Entidades\MarcaVehiculo.cs" />
     <Compile Include="Entidades\Modelo.cs" />
+    <Compile Include="Entidades\ProductoFactura.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\Sexo.cs" />
     <Compile Include="Entidades\Tarjeta.cs" />
@@ -380,6 +384,12 @@
     <Compile Include="Entidades\TipoVehiculo.cs" />
     <Compile Include="Entidades\User.cs" />
     <Compile Include="Entidades\Utils.cs" />
+    <Compile Include="Procesos\Facturacion_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion_Ventana.Designer.cs">
+      <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logged\Logged.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -634,6 +644,9 @@
     <EmbeddedResource Include="ABMS\ABM Vehiculos\Vehicle_Modify.resx">
       <DependentUpon>Vehicle_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion_Ventana.resx">
+      <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logged\Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
     </EmbeddedResource>
@@ -744,5 +757,9 @@
   <ItemGroup>
     <None Include="Resources\user.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fritzing.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
