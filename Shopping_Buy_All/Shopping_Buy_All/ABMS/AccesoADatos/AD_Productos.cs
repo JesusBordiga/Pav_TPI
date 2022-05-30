@@ -114,7 +114,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                     product.CodigoProducto = int.Parse(DataReader["Codigo_Producto"].ToString());
                     product.NombreProducto = DataReader["NombreProducto"].ToString();
                     product.PrecioProducto = float.Parse(DataReader["Precio"].ToString());
-
+                    return product;
                 }
             }
             catch (SqlException)
@@ -129,9 +129,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             {
                 cn.Close();
             }
-            return product;
-
-
+            return null;
         }
         public static bool ModificarProducto(Producto prod)
         {

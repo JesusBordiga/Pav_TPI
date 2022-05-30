@@ -15,11 +15,11 @@ namespace Shopping_Buy_All.Entidades
         private int Borrado;
 
 
-        public Automovil(string documento, string patente, string nombre)
+        public Automovil(string documento, string patente, string nombre, int modelo)
         {
             Documento = documento;
             Patente = patente;
-            Modelo = Modelo;
+            Modelo = modelo;
         }
 
         public Automovil()

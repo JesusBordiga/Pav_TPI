@@ -46,7 +46,7 @@ namespace Shopping_Buy_All
                    User usu = new User (userName, password);
                    Logged LoggedWindow = new Logged(usu);
                    LoggedWindow.Show();
-                   this.Hide();
+                   Hide();
                 }
                 else
                 {

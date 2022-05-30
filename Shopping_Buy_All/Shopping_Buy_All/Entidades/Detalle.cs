@@ -11,17 +11,12 @@ namespace Shopping_Buy_All.Entidades
         private int CodProducto;
         private int Cantidad;
         private float Precio;
-        private string Nombre;
         
-        
-        public Detalle(int codProducto,int cantidad,float precio,string nombre)
+        public Detalle(int codProducto,int cantidad,float precio)
         {
             CodProducto = codProducto;
             Cantidad = cantidad;
             Precio = precio;
-            Nombre = nombre;
-
-
         }
         public Detalle()
         {
@@ -37,10 +32,10 @@ namespace Shopping_Buy_All.Entidades
             get => Cantidad;
             set => Cantidad= value;
         }
-        public string PrecioDetalle
+        public float PrecioDetalle
         {
-            get => Nombre;
-            set => Nombre = value;
+            get => Precio;
+            set => Precio = value;
         }
     }
 }
