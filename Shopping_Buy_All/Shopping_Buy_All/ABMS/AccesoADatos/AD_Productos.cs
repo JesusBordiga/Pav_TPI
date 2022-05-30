@@ -21,7 +21,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO Productos(NombreProducto,Precio) Values(@nombre,@precio)";
+                string consulta = "agregarProducto @nombre, @precio";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nombre", product.NombreProducto);
                 cmd.Parameters.AddWithValue("@precio", product.PrecioProducto);
@@ -48,7 +48,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Productos WHERE Borrado = 0";
+                string consulta = "getProductoNoBorrado";
 
 
                 comand.Parameters.Clear();
@@ -79,7 +79,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Productos WHERE Codigo_Producto like @codigoProducto AND Borrado like 0";
+                string consulta = "BuscarProductoNoBorrado @codigoProducto";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@codigoProducto", Code);
@@ -118,7 +118,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Productos SET NombreProducto = @nombreProducto , Precio = @precio WHERE Codigo_Producto Like @codigoProducto";
+                string consulta = "ModificarProducto @nombreProducto, @precio, @codigoProducto";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@codigoProducto", prod.CodigoProducto);
                 cmd.Parameters.AddWithValue("@nombreProducto", prod.NombreProducto);
@@ -151,7 +151,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Productos SET Borrado = @borrado WHERE Codigo_Producto Like @codigoProducto AND Borrado like 0";
+                string consulta = "BorrarProducto @codigoProducto, @borrado";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@codigoProducto", Codigo);
                 cmd.Parameters.AddWithValue("@borrado", Borrado);

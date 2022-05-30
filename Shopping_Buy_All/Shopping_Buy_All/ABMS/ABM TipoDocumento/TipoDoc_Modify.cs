@@ -103,7 +103,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             catch (Exception)
             {
 
-                MessageBox.Show("Error, no se pudo Otener Datos del Cliente");
+                MessageBox.Show("Error, no se pudieron obtener los datos de los Tipos de Documento");
             }
         }
         private bool busquedaXNombre(string nombreViejo)

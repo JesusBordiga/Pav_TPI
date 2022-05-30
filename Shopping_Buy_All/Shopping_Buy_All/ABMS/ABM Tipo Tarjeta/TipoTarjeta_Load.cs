@@ -33,7 +33,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             catch (Exception)
             {
 
-                MessageBox.Show("Error! No se pudieron obtener los tipos de documento");
+                MessageBox.Show("Error! No se pudieron obtener los datos de los tipos de tarjeta");
             }
         }
         private bool Agregar_TipoTarjeta(TipoTarjeta tipoTarjeta)

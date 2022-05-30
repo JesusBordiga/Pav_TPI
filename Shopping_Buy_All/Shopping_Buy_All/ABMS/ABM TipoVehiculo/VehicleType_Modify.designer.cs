@@ -189,6 +189,7 @@
             this.tablaTipoVehiculo.Size = new System.Drawing.Size(201, 310);
             this.tablaTipoVehiculo.TabIndex = 88;
             this.tablaTipoVehiculo.TabStop = false;
+            this.tablaTipoVehiculo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaTipoVehiculo_CellContentClick);
             // 
             // codigo
             // 

@@ -33,7 +33,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             catch (Exception)
             {
 
-                MessageBox.Show("Error! No se pudieron obtener los tipos de documento");
+                MessageBox.Show("Error! No se pudieron obtener los datos de los tipos de documento");
             }
         }
         private bool AgregarTipoDocumento(TipoDocumento tipDoc)

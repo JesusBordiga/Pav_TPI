@@ -30,7 +30,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Modelos where Borrado = 0";
+                string consulta = "getModeloNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -82,7 +82,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM TipoDocumento WHERE Borrado like 0";
+                string consulta = "getTipoDocumentoNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -120,7 +120,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Automovil WHERE Borrado like 0";
+                string consulta = "getAutomovilNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;

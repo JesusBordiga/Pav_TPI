@@ -30,7 +30,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Modelos where Borrado = 0";
+                string consulta = "getModeloNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -89,7 +89,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Automovil WHERE Borrado like 0";
+                string consulta = "getAutomovilNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -123,7 +123,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM TipoDocumento WHERE Borrado like 0";
+                string consulta = "getTipoDocumentoNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -161,7 +161,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Automovil WHERE Patente like @patente AND Borrado like 0";
+                string consulta = "buscarAutomovilNoBorrado @patente";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@patente", Code);
@@ -215,7 +215,7 @@ namespace Shopping_Buy_All.ABMS.ABM_Vehiculos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Automovil SET Patente = @patente WHERE NroDoc Like @nrodocpropietario";
+                string consulta = "modificarAutomovilNoBorrado @patente, @nrodocpropietario, @modelo, @tipodocpropietario";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nrodocpropietario", aut.DocumentoPropietario);
                 cmd.Parameters.AddWithValue("@patente", aut.PatenteAutomovil);

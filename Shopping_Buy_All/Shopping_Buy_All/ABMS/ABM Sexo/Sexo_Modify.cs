@@ -95,7 +95,7 @@ namespace Shopping_Buy_All.ABM_Sexo
             catch (Exception)
             {
 
-                MessageBox.Show("Error, no se pudo Otener Datos del Cliente");
+                MessageBox.Show("Error! No se pudieron obtener los datos de los sexos");
             }
         }
         private bool busquedaXNombre(string nombreViejo)
