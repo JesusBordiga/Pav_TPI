@@ -90,7 +90,68 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 cn.Close();
             }
             return client;
+        }
+        public static int getNroFactura()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "getMaxNroFactura";
 
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+                cn.Open();
+                cmd.Connection = cn;
+                SqlDataReader DataReader = cmd.ExecuteReader();
+                if (DataReader != null && DataReader.Read())
+                {
+                    int nroFac = int.Parse(DataReader["MaxNum"].ToString());
+                    return nroFac + 1;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en la base de datos.", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return -1;
+        }
+        public static object getTarjetaCliente(int tipoDoc, string nroDoc)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                string consulta = "getTarjetaClienteFactura @nroDocumento, @tipoDocumento";
+
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@nroDocumento", nroDoc);
+                command.Parameters.AddWithValue("@tipoDocumento", tipoDoc);
+                command.CommandType = CommandType.Text;
+                command.CommandText = consulta;
+                cn.Open();
+                command.Connection = cn;
+                DataTable tabla = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en la base de datos.", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return null;
         }
     }
 

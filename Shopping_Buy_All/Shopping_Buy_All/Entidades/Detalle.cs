@@ -14,12 +14,12 @@ namespace Shopping_Buy_All.Entidades
         private string Nombre;
         
         
-        public Detalle(int CodProducto,int Cantidad,float Precio,string Nombre)
+        public Detalle(int codProducto,int cantidad,float precio,string nombre)
         {
-            CodProducto = CodProducto;
-            Cantidad=Cantidad;
-            Precio=Precio;
-            Nombre=Nombre;
+            CodProducto = codProducto;
+            Cantidad = cantidad;
+            Precio = precio;
+            Nombre = nombre;
 
 
         }

@@ -15,13 +15,13 @@ namespace Shopping_Buy_All.Entidades
         private DateTime FechaCompra;
         
         
-        public Factura(int CodLocal,int TipoDocumento,string Documento, int NroTarjeta, DateTime FechaCompra)
+        public Factura(int codLocal,int tipoDocumento, int documento, int nroTarjeta, DateTime fechaCompra)
         {
-            CodLocal = CodLocal;
-            TipoDocumento = TipoDocumento;
-            Documento = Documento;
-            NroTarjeta = NroTarjeta;
-            FechaCompra = FechaCompra;
+            CodLocal = codLocal;
+            TipoDocumento = tipoDocumento;
+            Documento = documento;
+            NroTarjeta = nroTarjeta;
+            FechaCompra = fechaCompra;
         }
         public Factura()
         {

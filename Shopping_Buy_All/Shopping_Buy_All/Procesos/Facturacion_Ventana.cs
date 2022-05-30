@@ -18,15 +18,18 @@ namespace Shopping_Buy_All
         public Facturacion_Ventana()
         {
             InitializeComponent();
+            activarLocal(true);
+            activarCliente(false);
+            activarTarjeta(false);
+            activarDetalle(false);
+            activarGuardado(false);
+            getNroFactura();
+            cargarLocal();
+            CargarTipoDocumento();
         }
         private void Facturacion_Load(object sender, EventArgs e)
         {
-            
             CargarTipoDocumento();
-            comboBoxDocType.Enabled = false;
-            textNumeroDocumento.Enabled = false;
-            buttonCliente.Enabled = false;
-            comboTarjetaCliente.Enabled = false;
             textCodProducto.Enabled = false;
             btnBuscarProducto.Enabled = false;
             textCantidad.Enabled = false;
@@ -35,23 +38,6 @@ namespace Shopping_Buy_All
             labelPrecio.Text = "";
             labelCliente.Text = "";
             labelLocal.Text = "";
-            textNumberLocal.Focus();
-
-        }
-        private void CargarTipoDocumento()
-        {
-            try
-            {
-                comboBoxDocType.DataSource = AD_Cliente.ObtenerTipoDocumento();
-                comboBoxDocType.DisplayMember = "NombreDocumento";
-                comboBoxDocType.ValueMember = "TipoDocumento";
-                comboBoxDocType.SelectedIndex = -1;
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Error, no se pudo Obtener Datos de Tipos de Documentos");
-            }
         }
         private Tarjeta ObtenerDatosBuscar()
         {
@@ -67,102 +53,6 @@ namespace Shopping_Buy_All
             t.NroDocumentoTarjeta = textNumeroDocumento.Text.Trim();
             return t;
         }
-
-        private void buttonLocal_Click(object sender, EventArgs e)
-        {
-            if (!textNumberLocal.Text.Equals(""))
-            {
-                try
-                {
-                    Local l = AD_Local.Buscar_LocalPorCodigo(textNumberLocal.Text.Trim());
-                    if (l.NombreLocal != null)
-                    {
-                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                        String mensajeCarga = ("Local encontrado!\n"
-                            +"Nombre: "+ l.NombreLocal.ToString()+"\n"
-                            + "Desea cargar este local?");
-
-                        string titulo = "Local";
-
-                        DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                        if (result == DialogResult.OK)
-                        {
-                                labelLocal.Text = l.NombreLocal;
-                                comboBoxDocType.Enabled = true;
-                                textNumeroDocumento.Enabled = true;
-                                buttonCliente.Enabled = true;
-                                comboBoxDocType.Focus();
-                        }
-                        else
-                        {
-                            textNumberLocal.Focus();
-                        }
-                        
-                    }
-                    else
-                    {
-                        MessageBox.Show("Local no encontrado");
-                        textNumberLocal.Focus();
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Error al buscar el Local");
-                }
-
-            }
-        }
-
-        public void buttonCliente_Click(object sender, EventArgs e)
-        {
-            if (comboBoxDocType.SelectedIndex != 0 && textNumeroDocumento .Text.Equals(""))
-            {
-                MessageBox.Show("Error, Completar campos de cliente!!");
-                comboBoxDocType.Focus();
-            }
-            else
-            {
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = ("Cliente encontrado!\n"
-                    +"Desea cargar este cliente?");
-
-                string titulo = "Cliente";
-
-                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                if (result == DialogResult.OK)
-                {
-                        Cliente c = AD_Facturacion.Buscar_Cliente_Documento(comboBoxDocType.SelectedValue.ToString(), textNumeroDocumento.Text);
-                        labelCliente.Text = c.NombreCliente.ToString() + " " + c.ApellidoCliente.ToString();
-                        comboTarjetaCliente.Enabled = true;
-                        comboTarjetaCliente.Focus();
-                }
-                else
-                {
-                    comboBoxDocType.Focus();
-                }
-            }
-
-            
-
-        }
-        private void CargarTarjeta()
-        {
-            try
-            {
-                comboBoxDocType.DataSource = AD_Cliente.ObtenerTipoDocumento();
-                comboBoxDocType.DisplayMember = "NombreDocumento";
-                comboBoxDocType.ValueMember = "TipoDocumento";
-                comboBoxDocType.SelectedIndex = -1;
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Error, no se pudo Obtener Datos de Tipos de Documentos");
-            }
-        }
-
         private void buttonTarjeta_Click(object sender, EventArgs e)
         {
             Tarjeta t = ObtenerDatosBuscar();
@@ -198,7 +88,6 @@ namespace Shopping_Buy_All
             textCodProducto.Focus();
             btnBuscarProducto.Enabled = true;
         }
-
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
             MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
@@ -231,7 +120,6 @@ namespace Shopping_Buy_All
                 textCodProducto.Focus();
             }
         }
-
         private void buttonCargarProducto_Click(object sender, EventArgs e)
         {
             MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
@@ -265,7 +153,6 @@ namespace Shopping_Buy_All
             }
             
         }
-
         private ProductoFactura obtenerDatosProducto()
         {
             ProductoFactura p = new ProductoFactura();
@@ -296,6 +183,139 @@ namespace Shopping_Buy_All
             fila.Cells.Add(Precio);
             //Agregar Fila
             tablaProducto.Rows.Add(fila);
+        }
+        
+        /*
+        */
+
+        private void activarCliente(bool booleano)
+        {
+            comboBoxDocType.Enabled = booleano;
+            textNumeroDocumento.Enabled = booleano;
+            buttonCliente.Enabled = booleano;
+        }
+        private void activarLocal(bool booleano)
+        {
+            cmbLocal.Enabled = booleano;
+            buttonLocal.Enabled = booleano;
+        }
+        private void activarTarjeta(bool booleano)
+        {
+            comboTarjetaCliente.Enabled = booleano;
+            buttonTarjeta.Enabled = booleano;
+        }
+        private void activarDetalle(bool booleano)
+        {
+            textCodProducto.Enabled = booleano;
+            btnBuscarProducto.Enabled = booleano;
+            textCantidad.Enabled = booleano;
+            buttonCargarProducto.Enabled = booleano;
+            tablaProducto.Enabled = booleano;
+        }
+        private void activarGuardado(bool booleano)
+        {
+            btnFactura.Enabled = booleano;
+        }
+        private void cargarLocal()
+        {
+            try
+            {
+                cmbLocal.DataSource = AD_Local.ObtenerTablaLocalReducida();
+                cmbLocal.DisplayMember = "Nombre";
+                cmbLocal.ValueMember = "CodigoLocal";
+                cmbLocal.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error, no se pudieron obtener los datos de los locales");
+            }
+        }
+        private void CargarTipoDocumento()
+        {
+            try
+            {
+                comboBoxDocType.DataSource = AD_Cliente.ObtenerTipoDocumento();
+                comboBoxDocType.DisplayMember = "NombreDocumento";
+                comboBoxDocType.ValueMember = "TipoDocumento";
+                comboBoxDocType.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error, no se pudo Obtener Datos de Tipos de Documentos");
+            }
+        }
+        private void getNroFactura()
+        {
+            string pou = AD_Facturacion.getNroFactura().ToString();
+            if (!pou.Equals("-1"))
+            {
+                nroFactura.Text = pou;
+            }
+            else
+            {
+                MessageBox.Show("No se pudo obtener un numero para la factura");
+            }
+        }
+        private void buttonLocal_Click(object sender, EventArgs e)
+        {
+            if (!cmbLocal.SelectedIndex.Equals(-1))
+            {
+                activarLocal(false);
+                activarCliente(true);
+                labelLocal.Text = cmbLocal.Text;
+            }
+            else
+            {
+                MessageBox.Show("No seleccionó un local");
+            }         
+        }
+        public void buttonCliente_Click(object sender, EventArgs e)
+        {
+            if (comboBoxDocType.SelectedIndex != 0 || textNumeroDocumento .Text.Equals(""))
+            {
+                MessageBox.Show("Error, Completar campos de cliente!!");
+                comboBoxDocType.Focus();
+            }
+            else
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                String mensajeCarga = ("Cliente encontrado!\n"
+                    +"Desea cargar este cliente?");
+
+                string titulo = "Cliente";
+
+                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                if (result == DialogResult.OK)
+                {
+                    Cliente c = AD_Facturacion.Buscar_Cliente_Documento(comboBoxDocType.SelectedValue.ToString(), textNumeroDocumento.Text);
+                    labelCliente.Text = c.NombreCliente.ToString() + " " + c.ApellidoCliente.ToString();
+                    activarCliente(false);
+                    CargarTarjeta(c.TipoDocumentoCliente, c.DocumentoCliente);
+                    activarTarjeta(true);
+                    comboTarjetaCliente.Focus();
+                }
+                else
+                {
+                    comboBoxDocType.Focus();
+                }
+            }
+        }
+        private void CargarTarjeta(int tipoDoc, string nroDoc)
+        {
+            try
+            {
+                comboTarjetaCliente.DataSource = AD_Facturacion.getTarjetaCliente(tipoDoc, nroDoc);
+                comboTarjetaCliente.DisplayMember = "Tarjeta";
+                comboTarjetaCliente.ValueMember = "NroTarjeta";
+                comboTarjetaCliente.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error, no se pudo Obtener Datos de Tipos de Documentos");
+            }
         }
     }
 }
