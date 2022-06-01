@@ -77,7 +77,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.btnCargarFactura);
+            this.pictureBox3.Click += new System.EventHandler(this.btnMostrarFacturas_Click);
             // 
             // pictureBox4
             // 
