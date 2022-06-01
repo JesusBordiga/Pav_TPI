@@ -33,17 +33,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Facturacion_View));
             this.tablaFacturas = new System.Windows.Forms.DataGridView();
-            this.Numero_Factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo_Local = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo_Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero_Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero_Tarjeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textNroFactura = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonTarjeta = new System.Windows.Forms.Button();
+            this.Numero_Factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Local = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo_Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero_Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroTarjeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaFacturas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,12 +68,15 @@
             this.tablaFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaFacturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numero_Factura,
-            this.Codigo_Local,
+            this.Local,
             this.Tipo_Documento,
             this.Numero_Documento,
-            this.Numero_Tarjeta,
+            this.NroTarjeta,
             this.FechaCompra,
-            this.Borrado});
+            this.CodigoProducto,
+            this.NombreProducto,
+            this.Cantidad,
+            this.Precio});
             this.tablaFacturas.Cursor = System.Windows.Forms.Cursors.Default;
             this.tablaFacturas.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tablaFacturas.Location = new System.Drawing.Point(178, 13);
@@ -95,65 +101,9 @@
             this.tablaFacturas.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.tablaFacturas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tablaFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaFacturas.Size = new System.Drawing.Size(555, 407);
+            this.tablaFacturas.Size = new System.Drawing.Size(937, 426);
             this.tablaFacturas.TabIndex = 43;
             this.tablaFacturas.TabStop = false;
-            // 
-            // Numero_Factura
-            // 
-            this.Numero_Factura.DataPropertyName = "Numero_Factura";
-            this.Numero_Factura.FillWeight = 58.05373F;
-            this.Numero_Factura.HeaderText = "Nro Factura";
-            this.Numero_Factura.Name = "Numero_Factura";
-            this.Numero_Factura.ReadOnly = true;
-            // 
-            // Codigo_Local
-            // 
-            this.Codigo_Local.DataPropertyName = "Codigo_Local";
-            this.Codigo_Local.FillWeight = 182.7411F;
-            this.Codigo_Local.HeaderText = "Codigo Local";
-            this.Codigo_Local.Name = "Codigo_Local";
-            this.Codigo_Local.ReadOnly = true;
-            // 
-            // Tipo_Documento
-            // 
-            this.Tipo_Documento.DataPropertyName = "Tipo_Documento";
-            this.Tipo_Documento.FillWeight = 89.80129F;
-            this.Tipo_Documento.HeaderText = "Tipo Documento";
-            this.Tipo_Documento.Name = "Tipo_Documento";
-            this.Tipo_Documento.ReadOnly = true;
-            // 
-            // Numero_Documento
-            // 
-            this.Numero_Documento.DataPropertyName = "Numero_Documento";
-            this.Numero_Documento.FillWeight = 89.80129F;
-            this.Numero_Documento.HeaderText = "Numero Documento";
-            this.Numero_Documento.Name = "Numero_Documento";
-            this.Numero_Documento.ReadOnly = true;
-            // 
-            // Numero_Tarjeta
-            // 
-            this.Numero_Tarjeta.DataPropertyName = "Numero_Tarjeta";
-            this.Numero_Tarjeta.FillWeight = 89.80129F;
-            this.Numero_Tarjeta.HeaderText = "Numero Tarjeta";
-            this.Numero_Tarjeta.Name = "Numero_Tarjeta";
-            this.Numero_Tarjeta.ReadOnly = true;
-            // 
-            // FechaCompra
-            // 
-            this.FechaCompra.DataPropertyName = "FechaCompra";
-            this.FechaCompra.FillWeight = 89.80129F;
-            this.FechaCompra.HeaderText = "Fecha de Compra";
-            this.FechaCompra.Name = "FechaCompra";
-            this.FechaCompra.ReadOnly = true;
-            // 
-            // Borrado
-            // 
-            this.Borrado.DataPropertyName = "Borrado";
-            this.Borrado.HeaderText = "Borrado";
-            this.Borrado.Name = "Borrado";
-            this.Borrado.ReadOnly = true;
-            this.Borrado.Visible = false;
             // 
             // textNroFactura
             // 
@@ -205,11 +155,90 @@
             this.buttonTarjeta.UseVisualStyleBackColor = false;
             this.buttonTarjeta.Click += new System.EventHandler(this.buttonTarjeta_Click);
             // 
+            // Numero_Factura
+            // 
+            this.Numero_Factura.DataPropertyName = "Numero_Factura";
+            this.Numero_Factura.FillWeight = 70F;
+            this.Numero_Factura.HeaderText = "Nro Factura";
+            this.Numero_Factura.Name = "Numero_Factura";
+            this.Numero_Factura.ReadOnly = true;
+            // 
+            // Local
+            // 
+            this.Local.DataPropertyName = "Nombre";
+            this.Local.HeaderText = "Local";
+            this.Local.Name = "Local";
+            this.Local.ReadOnly = true;
+            // 
+            // Tipo_Documento
+            // 
+            this.Tipo_Documento.DataPropertyName = "Tipo_Documento";
+            this.Tipo_Documento.FillWeight = 89.80129F;
+            this.Tipo_Documento.HeaderText = "Tipo Documento";
+            this.Tipo_Documento.Name = "Tipo_Documento";
+            this.Tipo_Documento.ReadOnly = true;
+            // 
+            // Numero_Documento
+            // 
+            this.Numero_Documento.DataPropertyName = "NumeroDocumento";
+            this.Numero_Documento.FillWeight = 89.80129F;
+            this.Numero_Documento.HeaderText = "Numero Documento";
+            this.Numero_Documento.Name = "Numero_Documento";
+            this.Numero_Documento.ReadOnly = true;
+            // 
+            // NroTarjeta
+            // 
+            this.NroTarjeta.DataPropertyName = "Numero_Tarjeta";
+            this.NroTarjeta.FillWeight = 60F;
+            this.NroTarjeta.HeaderText = "Numero Tarjeta";
+            this.NroTarjeta.Name = "NroTarjeta";
+            this.NroTarjeta.ReadOnly = true;
+            // 
+            // FechaCompra
+            // 
+            this.FechaCompra.DataPropertyName = "FechaCompra";
+            this.FechaCompra.FillWeight = 89.80129F;
+            this.FechaCompra.HeaderText = "Fecha de Compra";
+            this.FechaCompra.Name = "FechaCompra";
+            this.FechaCompra.ReadOnly = true;
+            // 
+            // CodigoProducto
+            // 
+            this.CodigoProducto.DataPropertyName = "NombreProducto";
+            this.CodigoProducto.FillWeight = 120F;
+            this.CodigoProducto.HeaderText = "Nombre Producto";
+            this.CodigoProducto.Name = "CodigoProducto";
+            this.CodigoProducto.ReadOnly = true;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.DataPropertyName = "NombreProducto";
+            this.NombreProducto.HeaderText = "Producto";
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.ReadOnly = true;
+            this.NombreProducto.Visible = false;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            this.Cantidad.FillWeight = 60F;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            this.Precio.FillWeight = 60F;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
             // Facturacion_View
             // 
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(753, 431);
+            this.ClientSize = new System.Drawing.Size(1127, 451);
             this.Controls.Add(this.buttonTarjeta);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label11);
@@ -231,16 +260,19 @@
         #endregion
 
         private System.Windows.Forms.DataGridView tablaFacturas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Factura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo_Local;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_Documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Tarjeta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.MaskedTextBox textNroFactura;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonTarjeta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Factura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Local;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_Documento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Documento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroTarjeta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }

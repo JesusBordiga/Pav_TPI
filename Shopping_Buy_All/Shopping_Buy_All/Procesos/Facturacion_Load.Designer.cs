@@ -721,7 +721,7 @@
             this.cmbLocal.Location = new System.Drawing.Point(120, 15);
             this.cmbLocal.Name = "cmbLocal";
             this.cmbLocal.Size = new System.Drawing.Size(119, 24);
-            this.cmbLocal.TabIndex = 51;
+            this.cmbLocal.TabIndex = 1;
             // 
             // label15
             // 
@@ -786,7 +786,7 @@
             this.buttonLocal.UseVisualStyleBackColor = false;
             this.buttonLocal.Click += new System.EventHandler(this.buttonLocal_Click);
             // 
-            // Facturacion_Ventana
+            // Facturacion_Load
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -798,7 +798,7 @@
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Facturacion_Ventana";
+            this.Name = "Facturacion_Load";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generar Factura";

@@ -18,29 +18,17 @@ namespace Shopping_Buy_All
         public Facturacion_View()
         {
             InitializeComponent();
-            CargarTablaFacturas();
         }
-        private void CargarTablaFacturas()
-        {
-            try
-            {
-                tablaFacturas.DataSource = ObtenerFacturas();
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Error, no se pudo Otener facturas");
-            }
-        }
-        private DataTable ObtenerFacturas()
+        private DataTable ObtenerFacturas(string nroFactura)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "SELECT F.numero_Factura,F.cod_Local,L.Nombre,F.Tipo_Documento)";
+                string consulta = "buscarFacturaNoBorrada @nroFactura";
                 comand.Parameters.Clear();
+                comand.Parameters.AddWithValue("@nroFactura", nroFactura);
                 comand.CommandType = CommandType.Text;
                 comand.CommandText = consulta;
 
@@ -71,7 +59,18 @@ namespace Shopping_Buy_All
 
         private void buttonTarjeta_Click(object sender, EventArgs e)
         {
-
+            if (textNroFactura.Text != "")
+            {
+                tablaFacturas.DataSource = ObtenerFacturas(textNroFactura.Text);
+                if (tablaFacturas.Rows.Count == 0)
+                {
+                    MessageBox.Show("La factura no existe");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Complete el campo");
+            }
         }
     }
 }
