@@ -13,9 +13,9 @@ using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All
 {
-    public partial class Facturacion_Ventana : Form
+    public partial class Facturacion_Load : Form
     {
-        public Facturacion_Ventana()
+        public Facturacion_Load()
         {
             InitializeComponent();
             activarLocal(true, Color.Silver, Color.Black);
@@ -45,7 +45,7 @@ namespace Shopping_Buy_All
                 set { indiceTabla = value; }
             }
         }
-        private void Facturacion_Load(object sender, EventArgs e)
+        private void Facturacion_Load1(object sender, EventArgs e)
         {
             labelFechaCompra.Text = DateTime.Now.ToString("dd/MM/yyyy");
             labelNombreProducto.Text = "";

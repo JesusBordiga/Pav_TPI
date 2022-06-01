@@ -1,6 +1,6 @@
 ﻿namespace Shopping_Buy_All
 {
-    partial class Facturacion_Ventana
+    partial class Facturacion_Load
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Facturacion_Ventana));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Facturacion_Load));
             this.label1 = new System.Windows.Forms.Label();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
             this.fechaCompra = new System.Windows.Forms.Panel();
@@ -391,7 +391,7 @@
             // 
             this.textCantidad.BackColor = System.Drawing.Color.White;
             this.textCantidad.ForeColor = System.Drawing.Color.Black;
-            this.textCantidad.Location = new System.Drawing.Point(236, 46);
+            this.textCantidad.Location = new System.Drawing.Point(232, 46);
             this.textCantidad.Mask = "9999";
             this.textCantidad.Name = "textCantidad";
             this.textCantidad.Size = new System.Drawing.Size(32, 23);
@@ -426,10 +426,10 @@
             // 
             this.textCodProducto.BackColor = System.Drawing.Color.White;
             this.textCodProducto.ForeColor = System.Drawing.Color.Black;
-            this.textCodProducto.Location = new System.Drawing.Point(28, 46);
+            this.textCodProducto.Location = new System.Drawing.Point(41, 46);
             this.textCodProducto.Mask = "99999999";
             this.textCodProducto.Name = "textCodProducto";
-            this.textCodProducto.Size = new System.Drawing.Size(84, 23);
+            this.textCodProducto.Size = new System.Drawing.Size(58, 23);
             this.textCodProducto.TabIndex = 8;
             this.textCodProducto.ValidatingType = typeof(int);
             // 
@@ -659,7 +659,7 @@
             this.textNumeroDocumento.Location = new System.Drawing.Point(140, 47);
             this.textNumeroDocumento.Mask = "99999999";
             this.textNumeroDocumento.Name = "textNumeroDocumento";
-            this.textNumeroDocumento.Size = new System.Drawing.Size(67, 23);
+            this.textNumeroDocumento.Size = new System.Drawing.Size(62, 23);
             this.textNumeroDocumento.TabIndex = 4;
             this.textNumeroDocumento.ValidatingType = typeof(int);
             // 
@@ -802,7 +802,7 @@
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generar Factura";
-            this.Load += new System.EventHandler(this.Facturacion_Load);
+            this.Load += new System.EventHandler(this.Facturacion_Load1);
             this.fechaCompra.ResumeLayout(false);
             this.fechaCompra.PerformLayout();
             this.grbDetalle.ResumeLayout(false);

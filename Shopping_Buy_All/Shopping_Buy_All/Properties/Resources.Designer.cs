@@ -123,6 +123,16 @@ namespace Shopping_Buy_All.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap notes {
+            get {
+                object obj = ResourceManager.GetObject("notes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap pop_shop {
             get {
                 object obj = ResourceManager.GetObject("pop-shop", resourceCulture);
@@ -186,6 +196,16 @@ namespace Shopping_Buy_All.Properties {
         public static System.Drawing.Bitmap vnote {
             get {
                 object obj = ResourceManager.GetObject("vnote", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap xclipboard {
+            get {
+                object obj = ResourceManager.GetObject("xclipboard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

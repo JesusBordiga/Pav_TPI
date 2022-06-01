@@ -164,7 +164,7 @@
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Location = new System.Drawing.Point(197, 191);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(58, 55);
+            this.pictureBox2.Size = new System.Drawing.Size(58, 57);
             this.pictureBox2.TabIndex = 56;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.buttonFacturacion_Click);
@@ -181,7 +181,7 @@
             this.buttonFacturacion.Name = "buttonFacturacion";
             this.buttonFacturacion.Size = new System.Drawing.Size(75, 23);
             this.buttonFacturacion.TabIndex = 55;
-            this.buttonFacturacion.Text = "Factura";
+            this.buttonFacturacion.Text = "Facturación";
             this.buttonFacturacion.UseVisualStyleBackColor = false;
             this.buttonFacturacion.Click += new System.EventHandler(this.buttonFacturacion_Click);
             // 
