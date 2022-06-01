@@ -18,17 +18,32 @@ namespace Shopping_Buy_All
         public Facturacion_Ventana()
         {
             InitializeComponent();
-            activarLocal(true);
-            activarCliente(false);
-            activarTarjeta(false);
-            activarProducto(false);
-            activarGuardado(false);
-            activarDetalle(false);
+            activarLocal(true, Color.Silver, Color.Black);
+            activarCliente(false, Color.Gray, Color.DimGray);
+            activarTarjeta(false, Color.Gray, Color.DimGray);
+            activarProducto(false, Color.Gray, Color.DimGray);
+            activarGuardado(false, Color.Gray, Color.DimGray);
+            activarDetalle(false, Color.Gray, Color.DimGray);
             activarTabla(false);
             getNroFactura();
             cargarLocal();
             CargarTipoDocumento();
             cmbLocal.Focus();
+        }
+        public static class activarModificacion
+        {
+            public static bool esModificacion = false;
+            public static int indiceTabla = -1;
+            public static bool EsModificacion
+            {
+                get { return esModificacion; }
+                set { esModificacion = value; }
+            }
+            public static int IndiceTabla
+            {
+                get { return indiceTabla; }
+                set { indiceTabla = value; }
+            }
         }
         private void Facturacion_Load(object sender, EventArgs e)
         {
@@ -37,42 +52,63 @@ namespace Shopping_Buy_All
             labelPrecio.Text = "";
             labelCliente.Text = "";
             labelLocal.Text = "";
+            
         }
-        private void activarCliente(bool booleano)
+        private void activarCliente(bool booleano, Color colorFondo, Color colorFuente)
         {
             comboBoxDocType.Enabled = booleano;
             textNumeroDocumento.Enabled = booleano;
             buttonCliente.Enabled = booleano;
+            buttonCliente.BackColor = colorFondo;
+            buttonCliente.ForeColor = colorFuente;
         }
-        private void activarLocal(bool booleano)
+        private void activarLocal(bool booleano, Color colorFondo, Color colorFuente)
         {
             cmbLocal.Enabled = booleano;
             buttonLocal.Enabled = booleano;
+            buttonLocal.BackColor = colorFondo;
+            buttonLocal.ForeColor = colorFuente;
         }
-        private void activarTarjeta(bool booleano)
+        private void activarTarjeta(bool booleano, Color colorFondo, Color colorFuente)
         {
             comboTarjetaCliente.Enabled = booleano;
             buttonTarjeta.Enabled = booleano;
+            buttonTarjeta.BackColor = colorFondo;
+            buttonTarjeta.ForeColor = colorFuente;
         }
-        private void activarProducto(bool booleano)
+        private void activarProducto(bool booleano, Color colorFondo, Color colorFuente)
         {
             textCodProducto.Enabled = booleano;
             btnBuscarProducto.Enabled = booleano;
+            btnBuscarProducto.BackColor = colorFondo;
+            btnBuscarProducto.ForeColor = colorFuente;
 
         }
-        private void activarDetalle(bool booleano)
+        private void activarDetalle(bool booleano, Color colorFondo, Color colorFuente)
         {
             textCantidad.Enabled = booleano;
             buttonCargarProducto.Enabled = booleano;
+            buttonCargarProducto.BackColor = colorFondo;
+            buttonCargarProducto.ForeColor = colorFuente;
 
         }
         private void activarTabla(bool booleano)
         {
             tablaProducto.Enabled = booleano;
         }
-        private void activarGuardado(bool booleano)
+        private void activarGuardado(bool booleano, Color colorFondo, Color colorFuente)
         {
+            lblTotal.Visible = booleano;
+            label19.Visible = booleano;
             btnFactura.Enabled = booleano;
+            btnFactura.BackColor = colorFondo;
+            btnFactura.ForeColor = colorFuente;
+            btnEliminar.Enabled = booleano;
+            btnEliminar.BackColor = colorFondo;
+            btnEliminar.ForeColor = colorFuente;
+            btnModificar.Enabled = booleano;
+            btnModificar.BackColor = colorFondo;
+            btnModificar.ForeColor= colorFuente; 
         }
         private void cargarLocal()
         {
@@ -118,8 +154,8 @@ namespace Shopping_Buy_All
         {
             if (!cmbLocal.SelectedIndex.Equals(-1))
             {
-                activarLocal(false);
-                activarCliente(true);
+                activarLocal(false, Color.Gray, Color.DimGray);
+                activarCliente(true, Color.Silver, Color.Black);
                 labelLocal.Text = cmbLocal.Text;
             }
             else
@@ -154,13 +190,13 @@ namespace Shopping_Buy_All
                         try
                         {
                             labelCliente.Text = c.NombreCliente.ToString() + " " + c.ApellidoCliente.ToString();
-                            activarCliente(false);
+                            activarCliente(false, Color.Gray, Color.DimGray);
                             comboBoxDocType.Visible = false;
                             textNumeroDocumento.Visible = false;
                             labelTipoDoc.Text = comboBoxDocType.Text;
                             labelNroDoc.Text = textNumeroDocumento.Text.Trim();
                             CargarTarjeta(c.TipoDocumentoCliente, c.DocumentoCliente);
-                            activarTarjeta(true);
+                            activarTarjeta(true, Color.Silver, Color.Black);
                             comboTarjetaCliente.Focus();
                         }
                         catch (Exception)
@@ -225,8 +261,8 @@ namespace Shopping_Buy_All
 
                 if (result == DialogResult.OK)
                 {
-                    activarProducto(true);
-                    activarTarjeta(false);
+                    activarProducto(true, Color.Silver, Color.Black);
+                    activarTarjeta(false, Color.Gray, Color.DimGray);
                     labelTarjeta.Text = comboTarjetaCliente.Text;
                     textCodProducto.Focus();
                 }
@@ -264,8 +300,8 @@ namespace Shopping_Buy_All
                     {
                         labelNombreProducto.Text = p.NombreProducto;
                         labelPrecio.Text = p.PrecioProducto.ToString();
-                        activarProducto(false);
-                        activarDetalle(true);
+                        activarProducto(false, Color.Gray, Color.DimGray);
+                        activarDetalle(true, Color.Silver, Color.Black);
                         textCodProducto.Visible = false;
                         textCantidad.Focus();
                         labelCod.Text = textCodProducto.Text.Trim();
@@ -318,8 +354,17 @@ namespace Shopping_Buy_All
             p.CantidadProducto = int.Parse(textCantidad.Text.Trim());
             return p;
         }
+        private void agregarProducto(ProductoFactura producto)
+        {
+            AgregarProducto(producto);
+            activarDetalle(false, Color.Gray, Color.DimGray);
+            activarProducto(true, Color.Silver, Color.Black);
+            lblTotal.Text = calcularTotal();
+            textCodProducto.Focus();
+        }
         private void buttonCargarProducto_Click(object sender, EventArgs e)
         {
+
             MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
             String mensajeCarga = ("|Codigo: " + textCodProducto.Text + " " + "|Nombre: " + labelNombreProducto.Text + "|" + "\n"
                 + "|Cantidad: " + "" + textCantidad.Text + "" + "|Precio: " + labelPrecio.Text + "|" + "\n"
@@ -335,22 +380,37 @@ namespace Shopping_Buy_All
                     {
                         activarTabla(true);
                         btnFactura.Enabled = true;
+                        activarGuardado(true, Color.Silver, Color.Black);
                     }
-                    AgregarProducto(obtenerDatosProducto());
-                    activarDetalle(false);
-                    activarProducto(true);
-                    labelNombreProducto.Text = "";
-                    labelCod.Text = "";
-                    textCodProducto.Visible = true;
-                    labelPrecio.Text = "";
-                    textCodProducto.Text = "";
-                    textCantidad.Text = "";
-                    textCodProducto.Focus();
-
+                    ProductoFactura producto = obtenerDatosProducto();
+                    if (!validarProductoEnTabla(producto.CodigoProducto))
+                    {
+                        agregarProducto(producto);
+                    }
+                    else if(activarModificacion.EsModificacion)
+                    {
+                        tablaProducto.Rows.RemoveAt(activarModificacion.IndiceTabla);
+                        activarModificacion.esModificacion = false;
+                        activarModificacion.indiceTabla = -1;
+                        agregarProducto(producto);
+                        activarGuardado(true, Color.Silver, Color.Black);
+                    }
+                    else
+                    {
+                        activarProducto(true, Color.Silver, Color.Black);
+                        activarDetalle(false, Color.Gray, Color.DimGray);
+                        MessageBox.Show("Error, el producto ya se encuentra en la factura");
+                    }
+                        labelNombreProducto.Text = "";
+                        labelCod.Text = "";
+                        textCodProducto.Visible = true;
+                        labelPrecio.Text = "";
+                        textCodProducto.Text = "";
+                        textCantidad.Text = "";
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error, no se pudo Obtener producto");
+                    MessageBox.Show("Error! Hubo un error");
                 }
             }
             else
@@ -397,6 +457,104 @@ namespace Shopping_Buy_All
                 MessageBox.Show("Error, no se pudo cargar la factura");
             }
             return resultado;
+        }
+        private string calcularTotal()
+        {
+            float total = 0;
+            int largo = tablaProducto.Rows.Count;
+            for (int i = 0; i < largo; i++)
+            {
+                int cantidad = (int)tablaProducto.Rows[i].Cells["Cantidad"].Value;
+                float precio = (float)tablaProducto.Rows[i].Cells["Precio"].Value * cantidad;
+                total += precio;
+            }
+            return total.ToString();
+        }
+        private string restarTotal(int indiceFila)
+        {
+            float total = int.Parse(lblTotal.Text);
+            int cantidad = (int)tablaProducto.Rows[indiceFila].Cells["Cantidad"].Value;
+            float precio = (float)tablaProducto.Rows[indiceFila].Cells["Precio"].Value * cantidad;
+            total -= precio;
+            return total.ToString();
+        }
+        private bool validarProductoEnTabla(int codProducto)
+        {
+            int largo = tablaProducto.Rows.Count;
+            for (int i = 0; i < largo; i++)
+            {
+                if (codProducto.ToString().Equals(tablaProducto.Rows[i].Cells[0].Value.ToString()))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var indiceFila = tablaProducto.CurrentRow.Index;
+            string producto = tablaProducto.Rows[indiceFila].Cells[1].Value.ToString();
+            string cantidad = tablaProducto.Rows[indiceFila].Cells[2].Value.ToString();
+            string codProducto = tablaProducto.Rows[indiceFila].Cells[0].Value.ToString();
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            String mensajeCarga = ("Eliminar producto\n"
+                + "Datos: \n"
+                + "\tCodigo: " + codProducto + "\n"
+                + "\tProducto: " + producto + "\n"
+                + "\tCantidad: " + cantidad + "\n"
+                + "Desea eliminar este producto?");
+
+            string titulo = "Eliminar producto";
+
+            DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+            if (result == DialogResult.OK)
+            {
+                restarTotal(indiceFila);
+                tablaProducto.Rows.RemoveAt(indiceFila);
+                MessageBox.Show("Se eliminó el producto");
+            }
+            if (tablaProducto.Rows.Count == 0)
+            {
+                activarGuardado(false, Color.Gray, Color.DimGray);
+            }
+            else
+            {
+                lblTotal.Text = calcularTotal();
+            }
+        }
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            var indiceFila = tablaProducto.CurrentRow.Index;
+            string producto = tablaProducto.Rows[indiceFila].Cells[1].Value.ToString();
+            string cantidad = tablaProducto.Rows[indiceFila].Cells[2].Value.ToString();
+            string codProducto = tablaProducto.Rows[indiceFila].Cells[0].Value.ToString();
+            string precio = tablaProducto.Rows[indiceFila].Cells[3].Value.ToString();
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            String mensajeCarga = ("Datos: \n"
+                + "\tCodigo: " + codProducto + "\n"
+                + "\tProducto: " + producto + "\n"
+                + "\tCantidad: " + cantidad + "\n"
+                + "Desea modificar este producto?");
+
+            string titulo = "Modificar producto";
+
+            DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+            if (result == DialogResult.OK)
+            {
+                activarDetalle(true, Color.Silver, Color.Black);
+                activarProducto(false, Color.Gray, Color.DimGray);
+                activarGuardado(false, Color.Gray, Color.DimGray);
+                textCodProducto.Visible = false;
+                textCodProducto.Text = codProducto;
+                labelCod.Text = codProducto;
+                labelNombreProducto.Text = producto;
+                labelPrecio.Text = precio;
+                activarModificacion.EsModificacion = true;
+                activarModificacion.indiceTabla = indiceFila;
+                restarTotal(indiceFila);
+            }
         }
     }
 }

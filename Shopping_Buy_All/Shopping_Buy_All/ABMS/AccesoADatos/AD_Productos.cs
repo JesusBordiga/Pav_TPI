@@ -80,7 +80,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             }
             catch (Exception)
             {
-                MessageBox.Show("No se pudo cargar tabla de producto.\nError en la base de datos.", "ERROR");
+                MessageBox.Show("No se pudo cargar tabla de producto.\n", "ERROR");
                 throw;
             }
             finally
