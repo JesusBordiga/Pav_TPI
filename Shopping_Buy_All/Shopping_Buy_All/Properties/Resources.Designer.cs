@@ -143,6 +143,16 @@ namespace Shopping_Buy_All.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap rstudio {
+            get {
+                object obj = ResourceManager.GetObject("rstudio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap software_manager {
             get {
                 object obj = ResourceManager.GetObject("software-manager", resourceCulture);
