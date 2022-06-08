@@ -384,6 +384,11 @@
     <Compile Include="ABMS\AccesoADatos\AD_Cliente.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Local.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_TipoComercio.cs" />
+    <Compile Include="BD3K7G01_2022DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD3K7G01_2022DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Automovil.cs" />
     <Compile Include="Entidades\Detalle.cs" />
     <Compile Include="Entidades\Factura.cs" />
@@ -524,11 +529,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reportes\Usuarios_Ventana.cs">
+    <Compile Include="Reportes\Reporte_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\Usuarios_Ventana.Designer.cs">
-      <DependentUpon>Usuarios_Ventana.cs</DependentUpon>
+    <Compile Include="Reportes\Reporte_Ventana.Designer.cs">
+      <DependentUpon>Reporte_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteListadoFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteListadoFacturas.Designer.cs">
+      <DependentUpon>ReporteListadoFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="ABMS\ABM Cliente\Client_Delete.resx">
@@ -751,9 +762,24 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reportes\Usuarios_Ventana.resx">
-      <DependentUpon>Usuarios_Ventana.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\Reporte_Ventana.resx">
+      <DependentUpon>Reporte_Ventana.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ListadoFactura.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteListadoFacturas.resx">
+      <DependentUpon>ReporteListadoFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BD3K7G01_2022DataSet.xsc">
+      <DependentUpon>BD3K7G01_2022DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD3K7G01_2022DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD3K7G01_2022DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD3K7G01_2022DataSet.xss">
+      <DependentUpon>BD3K7G01_2022DataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -813,9 +839,7 @@
   <ItemGroup>
     <None Include="Resources\xclipboard.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\Ventanas_Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\rstudio.png" />
     <Content Include="SqlServerTypes\readme.htm" />

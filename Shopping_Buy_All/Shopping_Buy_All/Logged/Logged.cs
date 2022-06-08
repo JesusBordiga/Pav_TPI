@@ -83,7 +83,8 @@ namespace Shopping_Buy_All
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-
+            Reportes_Ventana reportes_ventana = new Reportes_Ventana();
+            reportes_ventana.Show();
         }
     }
 }

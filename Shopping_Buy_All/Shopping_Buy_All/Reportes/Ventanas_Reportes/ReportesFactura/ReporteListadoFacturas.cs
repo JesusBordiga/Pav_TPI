@@ -1,25 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Shopping_Buy_All.Entidades;
-using Shopping_Buy_All.Productos;
+using Microsoft.Reporting.WinForms;
+using Shopping_Buy_All.ABMS.ABM_Profesiones;
+using Shopping_Buy_All.ABMS.AccesoADatos;
+
 
 namespace Shopping_Buy_All
 {
-    public partial class Facturacion_View : Form
+    public partial class ReporteListadoFacturas : Form
     {
-        public Facturacion_View()
+        public ReporteListadoFacturas()
         {
             InitializeComponent();
         }
-        private DataTable ObtenerFacturas(string nroFactura)
+        public DataTable ObtenerFacturas()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -28,7 +24,6 @@ namespace Shopping_Buy_All
                 SqlCommand comand = new SqlCommand();
                 string consulta = "Select * From ComprasPorCliente";
                 comand.Parameters.Clear();
-                comand.Parameters.AddWithValue("@nroFactura", nroFactura);
                 comand.CommandType = CommandType.Text;
                 comand.CommandText = consulta;
 
@@ -56,21 +51,23 @@ namespace Shopping_Buy_All
                 cn.Close();
             }
         }
-
-        private void buttonTarjeta_Click(object sender, EventArgs e)
+        private void ReporteListadoFacturas_Load(object sender, EventArgs e)
         {
-            if (textNroFactura.Text != "")
-            {
-                tablaFacturas.DataSource = ObtenerFacturas(textNroFactura.Text);
-                if (tablaFacturas.Rows.Count == 0)
-                {
-                    MessageBox.Show("La factura no existe");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Complete el campo");
-            }
+
+            this.reportViewerFacturas.RefreshReport();
+        }
+
+        private void reportViewerFacturas_Load(object sender, EventArgs e)
+        {
+            DataTable tabla = new DataTable();
+            tabla = ObtenerFacturas();
+
+            ReportDataSource ds = new ReportDataSource("DatosFacturas", tabla);
+
+            reportViewerFacturas.LocalReport.DataSources.Clear();
+            reportViewerFacturas.LocalReport.DataSources.Add(ds);
+            reportViewerFacturas.LocalReport.Refresh();
+
         }
     }
 }
