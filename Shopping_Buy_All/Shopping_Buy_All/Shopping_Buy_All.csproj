@@ -766,6 +766,7 @@
       <DependentUpon>Reporte_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ListadoFactura.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ListadoDetalle.rdlc" />
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteListadoFacturas.resx">
       <DependentUpon>ReporteListadoFacturas.cs</DependentUpon>
     </EmbeddedResource>

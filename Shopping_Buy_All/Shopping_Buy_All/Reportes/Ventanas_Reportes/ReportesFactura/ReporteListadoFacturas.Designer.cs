@@ -40,7 +40,7 @@
             this.reportViewerFacturas.Location = new System.Drawing.Point(12, 96);
             this.reportViewerFacturas.Name = "reportViewerFacturas";
             this.reportViewerFacturas.ServerReport.BearerToken = null;
-            this.reportViewerFacturas.Size = new System.Drawing.Size(726, 497);
+            this.reportViewerFacturas.Size = new System.Drawing.Size(737, 497);
             this.reportViewerFacturas.TabIndex = 0;
             this.reportViewerFacturas.Load += new System.EventHandler(this.reportViewerFacturas_Load);
             // 
@@ -60,7 +60,7 @@
             // 
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(753, 605);
+            this.ClientSize = new System.Drawing.Size(761, 605);
             this.Controls.Add(this.LabelBienvenido);
             this.Controls.Add(this.reportViewerFacturas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -63,11 +63,9 @@ namespace Shopping_Buy_All
             tabla = ObtenerFacturas();
 
             ReportDataSource ds = new ReportDataSource("DatosFacturas", tabla);
-
             reportViewerFacturas.LocalReport.DataSources.Clear();
             reportViewerFacturas.LocalReport.DataSources.Add(ds);
             reportViewerFacturas.LocalReport.Refresh();
-
         }
     }
 }
