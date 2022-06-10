@@ -535,6 +535,12 @@
     <Compile Include="Reportes\Reporte_Ventana.Designer.cs">
       <DependentUpon>Reporte_Ventana.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesClientes\ReporteListadoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesClientes\ReporteListadoClientes.Designer.cs">
+      <DependentUpon>ReporteListadoClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteListadoFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -764,6 +770,10 @@
     </Compile>
     <EmbeddedResource Include="Reportes\Reporte_Ventana.resx">
       <DependentUpon>Reporte_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesClientes\ListadoCliente.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesClientes\ReporteListadoClientes.resx">
+      <DependentUpon>ReporteListadoClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ListadoFactura.rdlc" />
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ListadoDetalle.rdlc" />

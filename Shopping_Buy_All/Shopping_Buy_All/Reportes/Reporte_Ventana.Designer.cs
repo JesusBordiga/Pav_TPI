@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reportes_Ventana));
             this.btnreporteFacturas = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnreporteFacturas
@@ -38,7 +39,7 @@
             this.btnreporteFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnreporteFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreporteFacturas.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnreporteFacturas.Location = new System.Drawing.Point(84, 80);
+            this.btnreporteFacturas.Location = new System.Drawing.Point(85, 51);
             this.btnreporteFacturas.Name = "btnreporteFacturas";
             this.btnreporteFacturas.Size = new System.Drawing.Size(126, 26);
             this.btnreporteFacturas.TabIndex = 0;
@@ -46,11 +47,26 @@
             this.btnreporteFacturas.UseVisualStyleBackColor = false;
             this.btnreporteFacturas.Click += new System.EventHandler(this.btnAltaUsuario_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(85, 100);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 26);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Listado clientes";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Reportes_Ventana
             // 
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(290, 168);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnreporteFacturas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -67,5 +83,6 @@
 
 
         private System.Windows.Forms.Button btnreporteFacturas;
+        private System.Windows.Forms.Button button1;
     }
 }

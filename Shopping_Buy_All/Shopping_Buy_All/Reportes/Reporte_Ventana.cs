@@ -24,5 +24,11 @@ namespace Shopping_Buy_All
             ReporteListadoFacturas reporteListadoFacturas = new ReporteListadoFacturas();
             reporteListadoFacturas.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReporteListadoClientes reporteListadoClientes = new ReporteListadoClientes();
+            reporteListadoClientes.Show();
+        }
     }
 }

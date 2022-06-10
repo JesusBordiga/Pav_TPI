@@ -53,16 +53,16 @@ namespace Shopping_Buy_All
         }
         private void ReporteListadoFacturas_Load(object sender, EventArgs e)
         {
-
             this.reportViewerFacturas.RefreshReport();
         }
 
-        private void reportViewerFacturas_Load(object sender, EventArgs e)
+        private  void reportViewerFacturas_Load(object sender, EventArgs e)
         {
-            DataTable tabla = new DataTable();
-            tabla = ObtenerFacturas();
+            DataTable TablaFacturas = new DataTable();
+            TablaFacturas = ObtenerFacturas();
 
-            ReportDataSource ds = new ReportDataSource("DatosFacturas", tabla);
+            ReportDataSource ds = new ReportDataSource("DatosFacturas", TablaFacturas);
+
             reportViewerFacturas.LocalReport.DataSources.Clear();
             reportViewerFacturas.LocalReport.DataSources.Add(ds);
             reportViewerFacturas.LocalReport.Refresh();
