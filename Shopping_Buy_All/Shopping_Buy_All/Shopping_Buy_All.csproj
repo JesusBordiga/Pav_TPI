@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -48,11 +66,95 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABMS\ABM Productos\Grilla_Productos.cs">
+    <Compile Include="ABMS\ABM Estado Civil\EstadoCivil_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM Productos\Grilla_Productos.Designer.cs">
-      <DependentUpon>Grilla_Productos.cs</DependentUpon>
+    <Compile Include="ABMS\ABM Estado Civil\EstadoCivil_Delete.designer.cs">
+      <DependentUpon>EstadoCivil_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Estado Civil\EstadoCivil_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Estado Civil\EstadoCivil_Load.designer.cs">
+      <DependentUpon>EstadoCivil_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Estado Civil\EstadoCivil_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Estado Civil\EstadoCivil_Modify.designer.cs">
+      <DependentUpon>EstadoCivil_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Delete.Designer.cs">
+      <DependentUpon>Local_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Load.Designer.cs">
+      <DependentUpon>Local_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Local\Local_Modify.Designer.cs">
+      <DependentUpon>Local_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Delete.Designer.cs">
+      <DependentUpon>MarcaTarjeta_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Load.designer.cs">
+      <DependentUpon>MarcaTarjeta_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Modify.Designer.cs">
+      <DependentUpon>MarcaTarjeta_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Delete.Designer.cs">
+      <DependentUpon>MarcaVehiculo_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Modify.Designer.cs">
+      <DependentUpon>MarcaVehiculo_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Load.designer.cs">
+      <DependentUpon>MarcaVehiculo_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Modelo_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Modelo_Delete.Designer.cs">
+      <DependentUpon>Modelo_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Modelo_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Modelo_Load.Designer.cs">
+      <DependentUpon>Modelo_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Modelo_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Modelos\Modelo_Modify.Designer.cs">
+      <DependentUpon>Modelo_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Delete.cs">
       <SubType>Form</SubType>
@@ -78,22 +180,142 @@
     <Compile Include="ABMS\ABM Cliente\Client_Modify.Designer.cs">
       <DependentUpon>Client_Modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABMS\ABM Cliente\Grilla_Clientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABMS\ABM Cliente\Grilla_Clientes.Designer.cs">
-      <DependentUpon>Grilla_Clientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ABMS\ABM Productos\Product_Modify.Designer.cs">
       <DependentUpon>Product_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\ABM Profesiones\Profesion_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Profesiones\Profesion_Delete.Designer.cs">
+      <DependentUpon>Profesion_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Profesiones\Profesion_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Profesiones\Profesion_Load.Designer.cs">
+      <DependentUpon>Profesion_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Profesiones\Profesion_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Profesiones\Profesion_Modify.Designer.cs">
+      <DependentUpon>Profesion_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Rubros\Rubro_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Rubros\Rubro_Delete.Designer.cs">
+      <DependentUpon>Rubro_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Rubros\Rubro_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Rubros\Rubro_Load.designer.cs">
+      <DependentUpon>Rubro_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Rubros\Rubro_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Rubros\Rubro_Modify.Designer.cs">
+      <DependentUpon>Rubro_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Sexo\Sexo_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Sexo\Sexo_Delete.Designer.cs">
+      <DependentUpon>Sexo_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Sexo\Sexo_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Sexo\Sexo_Load.Designer.cs">
+      <DependentUpon>Sexo_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Sexo\Sexo_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Sexo\Sexo_Modify.Designer.cs">
+      <DependentUpon>Sexo_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Delete.Designer.cs">
+      <DependentUpon>Tarjeta_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Modify.Designer.cs">
+      <DependentUpon>Tarjeta_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Tarjeta\Tarjeta_Load.designer.cs">
+      <DependentUpon>Tarjeta_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Delete.Designer.cs">
+      <DependentUpon>TipoComercio_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Load.Designer.cs">
+      <DependentUpon>TipoComercio_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoComercio\TipoComercio_Modify.Designer.cs">
+      <DependentUpon>TipoComercio_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoDocumento\TipoDoc_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoDocumento\TipoDoc_Delete.designer.cs">
+      <DependentUpon>TipoDoc_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoDocumento\TipoDoc_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoDocumento\TipoDoc_Load.designer.cs">
+      <DependentUpon>TipoDoc_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoDocumento\TipoDoc_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM TipoDocumento\TipoDoc_Modify.designer.cs">
+      <DependentUpon>TipoDoc_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Tipo Tarjeta\TipoTarjeta_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Tipo Tarjeta\TipoTarjeta_Delete.designer.cs">
+      <DependentUpon>TipoTarjeta_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Tipo Tarjeta\TipoTarjeta_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Tipo Tarjeta\TipoTarjeta_Load.designer.cs">
+      <DependentUpon>TipoTarjeta_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Tipo Tarjeta\TipoTarjeta_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Tipo Tarjeta\TipoTarjeta_Modify.designer.cs">
+      <DependentUpon>TipoTarjeta_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Delete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Delete.Designer.cs">
+    <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Delete.designer.cs">
       <DependentUpon>VehicleType_Delete.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Load.cs">
@@ -105,8 +327,26 @@
     <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Modify.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Modify.Designer.cs">
+    <Compile Include="ABMS\ABM TipoVehiculo\VehicleType_Modify.designer.cs">
       <DependentUpon>VehicleType_Modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Usuario\User_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Usuario\User_Delete.Designer.cs">
+      <DependentUpon>User_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Usuario\User_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Usuario\User_Load.designer.cs">
+      <DependentUpon>User_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABMS\ABM Usuario\User_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMS\ABM Usuario\User_Modify.Designer.cs">
+      <DependentUpon>User_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMS\ABM Vehiculos\Vehicle_Delete.cs">
       <SubType>Form</SubType>
@@ -126,18 +366,154 @@
     <Compile Include="ABMS\ABM Vehiculos\Vehicle_Modify.Designer.cs">
       <DependentUpon>Vehicle_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMS\AccesoADatos\AD_Facturacion.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Modelos.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Vehiculos.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Usuario.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_TipoVehiculo.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_TipoDocumento.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_TipoTarjeta.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Tarjeta.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Sexo.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Rubros.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Profesiones.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_MarcaVehiculo.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_MarcaTarjeta.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_EstadoCivil.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Productos.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Cliente.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Local.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_TipoComercio.cs" />
+    <Compile Include="BD3K7G01_2022DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD3K7G01_2022DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Automovil.cs" />
+    <Compile Include="Entidades\Detalle.cs" />
+    <Compile Include="Entidades\Factura.cs" />
     <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\EstadoCivil.cs" />
+    <Compile Include="Entidades\MarcaVehiculo.cs" />
+    <Compile Include="Entidades\Modelo.cs" />
+    <Compile Include="Entidades\ProductoFactura.cs" />
     <Compile Include="Entidades\Producto.cs" />
+    <Compile Include="Entidades\Sexo.cs" />
+    <Compile Include="Entidades\Tarjeta.cs" />
     <Compile Include="Entidades\TipoComercio.cs" />
     <Compile Include="Entidades\Local.cs" />
+    <Compile Include="Entidades\TipoDocumento.cs" />
+    <Compile Include="Entidades\TipoTarjeta.cs" />
     <Compile Include="Entidades\TipoVehiculo.cs" />
     <Compile Include="Entidades\User.cs" />
-    <Compile Include="Logged.cs">
+    <Compile Include="Entidades\Utils.cs" />
+    <Compile Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Logged.Designer.cs">
+    <Compile Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.Designer.cs">
+      <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion_View.Designer.cs">
+      <DependentUpon>Facturacion_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion_Load.Designer.cs">
+      <DependentUpon>Facturacion_Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Logged.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Logged.Designer.cs">
       <DependentUpon>Logged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Profesiones_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Profesiones_Ventana.Designer.cs">
+      <DependentUpon>Profesiones_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Locales\Rubros_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Locales\Rubros_Ventana.Designer.cs">
+      <DependentUpon>Rubros_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.Designer.cs">
+      <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\Tarjetas_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Tarjetas\Tarjetas_Ventana.Designer.cs">
+      <DependentUpon>Tarjetas_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Vehiculos\MarcaVehiculo_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Vehiculos\MarcaVehiculo_Ventana.Designer.cs">
+      <DependentUpon>MarcaVehiculo_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Vehiculos\Modelo_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Vehiculos\Modelo_Ventana.Designer.cs">
+      <DependentUpon>Modelo_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Vehiculos\Vehiculos_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Vehiculos\Vehiculos_Ventana.Designer.cs">
+      <DependentUpon>Vehiculos_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\Clientes_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\Clientes_Ventana.Designer.cs">
+      <DependentUpon>Clientes_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\EstadoCivil_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\EstadoCivil_Ventana.Designer.cs">
+      <DependentUpon>EstadoCivil_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\TipoSexo_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\TipoSexo_Ventana.Designer.cs">
+      <DependentUpon>TipoSexo_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\TipoDocumento_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Clientes\TipoDocumento_Ventana.Designer.cs">
+      <DependentUpon>TipoDocumento_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Usuarios_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Usuarios_Ventana.Designer.cs">
+      <DependentUpon>Usuarios_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Locales\Locales_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Locales\Locales_Ventana.Designer.cs">
+      <DependentUpon>Locales_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Productos_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logged\Ventanas\Productos_Ventana.Designer.cs">
+      <DependentUpon>Productos_Ventana.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -153,6 +529,31 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\Reporte_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Reporte_Ventana.Designer.cs">
+      <DependentUpon>Reporte_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesClientes\ReporteListadoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesClientes\ReporteListadoClientes.Designer.cs">
+      <DependentUpon>ReporteListadoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteListadoFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteListadoFacturas.Designer.cs">
+      <DependentUpon>ReporteListadoFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.Designer.cs">
+      <DependentUpon>ReporteProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="ABMS\ABM Cliente\Client_Delete.resx">
       <DependentUpon>Client_Delete.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,17 +563,119 @@
     <EmbeddedResource Include="ABMS\ABM Cliente\Client_Modify.resx">
       <DependentUpon>Client_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Cliente\Grilla_Clientes.resx">
-      <DependentUpon>Grilla_Clientes.cs</DependentUpon>
+    <EmbeddedResource Include="ABMS\ABM Estado Civil\EstadoCivil_Delete.resx">
+      <DependentUpon>EstadoCivil_Delete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABMS\ABM Productos\Grilla_Productos.resx">
-      <DependentUpon>Grilla_Productos.cs</DependentUpon>
+    <EmbeddedResource Include="ABMS\ABM Estado Civil\EstadoCivil_Load.resx">
+      <DependentUpon>EstadoCivil_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Estado Civil\EstadoCivil_Modify.resx">
+      <DependentUpon>EstadoCivil_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Local\Local_Delete.resx">
+      <DependentUpon>Local_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Local\Local_Load.resx">
+      <DependentUpon>Local_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Local\Local_Modify.resx">
+      <DependentUpon>Local_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Delete.resx">
+      <DependentUpon>MarcaTarjeta_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Load.resx">
+      <DependentUpon>MarcaTarjeta_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM MarcaTarjeta\MarcaTarjeta_Modify.resx">
+      <DependentUpon>MarcaTarjeta_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Delete.resx">
+      <DependentUpon>MarcaVehiculo_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Modify.resx">
+      <DependentUpon>MarcaVehiculo_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM MarcaVehiculo\MarcaVehiculo_Load.resx">
+      <DependentUpon>MarcaVehiculo_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Modelos\Modelo_Delete.resx">
+      <DependentUpon>Modelo_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Modelos\Modelo_Load.resx">
+      <DependentUpon>Modelo_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Modelos\Modelo_Modify.resx">
+      <DependentUpon>Modelo_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Delete.resx">
       <DependentUpon>Product_Delete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Productos\Product_Modify.resx">
       <DependentUpon>Product_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Profesiones\Profesion_Delete.resx">
+      <DependentUpon>Profesion_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Profesiones\Profesion_Load.resx">
+      <DependentUpon>Profesion_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Profesiones\Profesion_Modify.resx">
+      <DependentUpon>Profesion_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Rubros\Rubro_Delete.resx">
+      <DependentUpon>Rubro_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Rubros\Rubro_Load.resx">
+      <DependentUpon>Rubro_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Rubros\Rubro_Modify.resx">
+      <DependentUpon>Rubro_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Sexo\Sexo_Delete.resx">
+      <DependentUpon>Sexo_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Sexo\Sexo_Load.resx">
+      <DependentUpon>Sexo_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Sexo\Sexo_Modify.resx">
+      <DependentUpon>Sexo_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Tarjeta\Tarjeta_Delete.resx">
+      <DependentUpon>Tarjeta_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Tarjeta\Tarjeta_Modify.resx">
+      <DependentUpon>Tarjeta_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Tarjeta\Tarjeta_Load.resx">
+      <DependentUpon>Tarjeta_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Delete.resx">
+      <DependentUpon>TipoComercio_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Load.resx">
+      <DependentUpon>TipoComercio_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoComercio\TipoComercio_Modify.resx">
+      <DependentUpon>TipoComercio_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoDocumento\TipoDoc_Delete.resx">
+      <DependentUpon>TipoDoc_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoDocumento\TipoDoc_Load.resx">
+      <DependentUpon>TipoDoc_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM TipoDocumento\TipoDoc_Modify.resx">
+      <DependentUpon>TipoDoc_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Tipo Tarjeta\TipoTarjeta_Delete.resx">
+      <DependentUpon>TipoTarjeta_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Tipo Tarjeta\TipoTarjeta_Load.resx">
+      <DependentUpon>TipoTarjeta_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Tipo Tarjeta\TipoTarjeta_Modify.resx">
+      <DependentUpon>TipoTarjeta_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM TipoVehiculo\VehicleType_Delete.resx">
       <DependentUpon>VehicleType_Delete.cs</DependentUpon>
@@ -183,6 +686,15 @@
     <EmbeddedResource Include="ABMS\ABM TipoVehiculo\VehicleType_Modify.resx">
       <DependentUpon>VehicleType_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Usuario\User_Delete.resx">
+      <DependentUpon>User_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Usuario\User_Load.resx">
+      <DependentUpon>User_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABMS\ABM Usuario\User_Modify.resx">
+      <DependentUpon>User_Modify.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMS\ABM Vehiculos\Vehicle_Delete.resx">
       <DependentUpon>Vehicle_Delete.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,8 +704,59 @@
     <EmbeddedResource Include="ABMS\ABM Vehiculos\Vehicle_Modify.resx">
       <DependentUpon>Vehicle_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Logged.resx">
+    <EmbeddedResource Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.resx">
+      <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion_View.resx">
+      <DependentUpon>Facturacion_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion_Load.resx">
+      <DependentUpon>Facturacion_Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Profesiones_Ventana.resx">
+      <DependentUpon>Profesiones_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Locales\Rubros_Ventana.resx">
+      <DependentUpon>Rubros_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Tarjetas\MarcaTarjeta_Ventana.resx">
+      <DependentUpon>MarcaTarjeta_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Tarjetas\Tarjetas_Ventana.resx">
+      <DependentUpon>Tarjetas_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Vehiculos\MarcaVehiculo_Ventana.resx">
+      <DependentUpon>MarcaVehiculo_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Vehiculos\Modelo_Ventana.resx">
+      <DependentUpon>Modelo_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Vehiculos\Vehiculos_Ventana.resx">
+      <DependentUpon>Vehiculos_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Clientes\Clientes_Ventana.resx">
+      <DependentUpon>Clientes_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Clientes\EstadoCivil_Ventana.resx">
+      <DependentUpon>EstadoCivil_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Clientes\TipoSexo_Ventana.resx">
+      <DependentUpon>TipoSexo_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Clientes\TipoDocumento_Ventana.resx">
+      <DependentUpon>TipoDocumento_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Usuarios_Ventana.resx">
+      <DependentUpon>Usuarios_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Locales\Locales_Ventana.resx">
+      <DependentUpon>Locales_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logged\Ventanas\Productos_Ventana.resx">
+      <DependentUpon>Productos_Ventana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -202,7 +765,7 @@
       <DependentUpon>Product_Load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -211,6 +774,34 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\Reporte_Ventana.resx">
+      <DependentUpon>Reporte_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesClientes\ListadoCliente.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesClientes\ReporteListadoClientes.resx">
+      <DependentUpon>ReporteListadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ListadoFactura.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ListadoDetalle.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteListadoFacturas.resx">
+      <DependentUpon>ReporteListadoFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.resx">
+      <DependentUpon>ReporteProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesProductos\ReportProductos.rdlc" />
+    <None Include="BD3K7G01_2022DataSet.xsc">
+      <DependentUpon>BD3K7G01_2022DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD3K7G01_2022DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD3K7G01_2022DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD3K7G01_2022DataSet.xss">
+      <DependentUpon>BD3K7G01_2022DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -237,18 +828,56 @@
     <None Include="Resources\menu-editor.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ABMS\ABM Local\" />
-    <Folder Include="ABMS\ABM MarcaTarjeta\" />
-    <Folder Include="ABMS\ABM MarcaVehiculo\" />
-    <Folder Include="ABMS\ABM Modelos\" />
-    <Folder Include="ABMS\ABM Profesiones\" />
-    <Folder Include="ABMS\ABM Rubros\" />
-    <Folder Include="ABMS\ABM Tarjetas\" />
-    <Folder Include="ABMS\ABM TipoComercio\" />
-    <Folder Include="ABMS\ABM TipoDocumento\" />
-    <Folder Include="ABMS\ABM TipoEstadoCivil\" />
-    <Folder Include="ABMS\ABM TipoSexo\" />
-    <Folder Include="ABMS\ABM Usuario\" />
+    <None Include="Resources\vnote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-editor1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\software-manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terminator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\audacious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fritzing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xclipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\Ventanas_Reportes\ReportesMarcasTarjeta\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rstudio.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

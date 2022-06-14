@@ -46,7 +46,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM TipoAuto WHERE Borrado like 0";
+                string consulta = "getTipoAutomovilNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -82,7 +82,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM TipoAuto WHERE Cod_tipo like @codigoTipoVehiculo AND Borrado like 0";
+                string consulta = "buscarTipoAutomovilNoBorrado @codigoTipoVehiculo";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@codigoTipoVehiculo", Code);
@@ -130,7 +130,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE TipoAuto SET Borrado = @borrado WHERE Cod_tipo Like @codigoTipo AND Borrado like 0";
+                string consulta = "borrarTipoAutomovil @codigoTipo, @borrado";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@codigoTipo", Codigo);
                 cmd.Parameters.AddWithValue("@borrado", Borrado);

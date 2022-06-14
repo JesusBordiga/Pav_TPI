@@ -11,6 +11,10 @@ namespace Shopping_Buy_All.Entidades
         public string NombreTipoComercio { get; set; }
         public int Borrado { get; set; } = 0;
 
+        public TipoComercio()
+        {
+
+        }
 
         public TipoComercio(string nombreTipoComercio, int borrado)
         {

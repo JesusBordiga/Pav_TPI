@@ -8,8 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 using Shopping_Buy_All.Entidades;
-using Shopping_Buy_All.ABM_Cliente;
 
 namespace Shopping_Buy_All
 {
@@ -18,38 +18,37 @@ namespace Shopping_Buy_All
         public Client_Delete()
         {
             InitializeComponent();
-
         }
         private void Client_Delete_Load(object sender, EventArgs e)
         {
-            tablaClientes.Visible = false;
             btnSearch.Visible = true;
             btnDeleteClient.Visible = false;
-            CargarTiposDocumentos();
-        }
-        private void CargarTiposDocumentos()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
+            CargarTipoDocumento();
+            CargarTablaClientes();
+            comboBoxDocType.Enabled = true;
+            textNumberDoc.Enabled = true;
+            labelClienteaEliminar.Text = "Buscar Cliente";
 
+        }
+
+        //ACCESO A BASE DE DATOS
+        private void CargarTablaClientes()
+        {
             try
             {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM TipoDocumento";
+                tablaClientes.DataSource = AD_Cliente.ObtenerDatosClientes();
+            }
+            catch (Exception)
+            {
 
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-
-                comboBoxDocType.DataSource = tabla;
+                MessageBox.Show("Error, no se pudo Obtener Datos del Cliente");
+            }
+        }
+        private void CargarTipoDocumento()
+        {
+            try
+            {
+                comboBoxDocType.DataSource = AD_Cliente.ObtenerTipoDocumento();
                 comboBoxDocType.DisplayMember = "NombreDocumento";
                 comboBoxDocType.ValueMember = "TipoDocumento";
                 comboBoxDocType.SelectedIndex = -1;
@@ -57,20 +56,10 @@ namespace Shopping_Buy_All
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Error, no se pudo Otener Datos de Tipos de Documentos");
             }
-            finally
-            {
-                cn.Close();
-            }
-            
         }
-        private void Clean()
-        {
-            comboBoxDocType.SelectedIndex = -1;
-            textNumberDoc.Text = "";
-        }
-        private Cliente Cargar_Cliente(int TipoDocumento, string NroDocumento)
+        private Cliente Buscar_Cliente_Documento(string TipoDocumento, string NroDocumento)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -78,7 +67,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Clientes where TipoDocumento like @tipoDocumento AND NroDocumento like @nrodocumento AND Borrado Like 0";
+                string consulta = "buscarClienteNoBorrado @tipoDocumento, @nroDocumento";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
@@ -92,29 +81,25 @@ namespace Shopping_Buy_All
                 SqlDataReader DataReader = cmd.ExecuteReader();
                 if (DataReader != null && DataReader.Read())
                 {
-                    client.TipoDocumentoCliente = int.Parse(DataReader["TipoDocumento"].ToString());
+                    client.TipoDocumentoCliente = int.Parse(DataReader["TipoDoc"].ToString());
                     client.DocumentoCliente = DataReader["NroDocumento"].ToString();
                     client.ApellidoCliente = DataReader["Apellido"].ToString();
                     client.NombreCliente = DataReader["Nombres"].ToString();
                     client.CalleCliente = DataReader["Calle"].ToString();
                     client.NroCalleCliente = int.Parse(DataReader["NroCalle"].ToString());
-                    client.EstadoCivilCliente = int.Parse(DataReader["EstadoCivil"].ToString());
-                    client.SexoCliente = int.Parse(DataReader["Sexo"].ToString());
+                    client.EstadoCivilCliente = int.Parse(DataReader["EstadoCiv"].ToString());
+                    client.SexoCliente = int.Parse(DataReader["Sex"].ToString());
                     client.FechaNacimientoCliente = DateTime.Parse(DataReader["FechaNacimiento"].ToString());
-                    
                 }
                 cn.Close();
-
                 DataTable tabla = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(tabla);
                 tablaClientes.DataSource = tabla;
-
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -123,7 +108,7 @@ namespace Shopping_Buy_All
             return client;
 
         }
-        private bool Buscar_Cliente(int TipoDocumento, string NroDocumento)
+        private bool Buscar_Cliente1(int TipoDocumento, string NroDocumento)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -132,7 +117,7 @@ namespace Shopping_Buy_All
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Clientes where TipoDocumento like @tipoDocumento AND NroDocumento like @nrodocumento AND Borrado like 0";
+                string consulta = "buscarClienteNoBorrado @tipoDocumento, @nroDocumento";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
@@ -146,15 +131,6 @@ namespace Shopping_Buy_All
                 SqlDataReader DataReader = cmd.ExecuteReader();
                 if (DataReader != null && DataReader.Read())
                 {
-                    client.TipoDocumentoCliente = int.Parse(DataReader["TipoDocumento"].ToString());
-                    client.DocumentoCliente = DataReader["NroDocumento"].ToString();
-                    client.ApellidoCliente = DataReader["Apellido"].ToString();
-                    client.NombreCliente = DataReader["Nombres"].ToString();
-                    client.CalleCliente = DataReader["Calle"].ToString();
-                    client.NroCalleCliente = int.Parse(DataReader["NroCalle"].ToString());
-                    client.EstadoCivilCliente = int.Parse(DataReader["EstadoCivil"].ToString());
-                    client.SexoCliente = int.Parse(DataReader["Sexo"].ToString());
-                    client.FechaNacimientoCliente = DateTime.Parse(DataReader["FechaNacimiento"].ToString());
                     cn.Close();
                     DataTable tabla = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -162,12 +138,10 @@ namespace Shopping_Buy_All
                     tablaClientes.DataSource = tabla;
                     resultado = true;
                 }
-  
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
             finally
             {
@@ -175,76 +149,42 @@ namespace Shopping_Buy_All
             }
             return resultado;
 
-        }
-        private void btnClean_Click(object sender, EventArgs e)
-            {    
-              Clean();
-              tablaClientes.Visible = false;
-              btnDeleteClient.Visible = false;
-              btnSearch.Visible = true;
-            }
+        } 
 
+        //BOTONES
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            Clean();
+            CargarTablaClientes();
+            btnDeleteClient.Visible = false;
+            btnSearch.Visible = true;
+            comboBoxDocType.Enabled = true;
+            textNumberDoc.Enabled = true;
+            labelClienteaEliminar.Text = "Buscar Cliente";
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if ((int)comboBoxDocType.SelectedValue == 0 && textNumberDoc.Text.Trim().Equals(""))
-                {
-                MessageBox.Show("Error, Debe completar los campos!!");
-                }
-            else
-                {
-                bool existe = Buscar_Cliente((int)comboBoxDocType.SelectedValue, textNumberDoc.Text.Trim());
+            if (validarCliente())
+            {
+                bool existe = Buscar_Cliente1((int)comboBoxDocType.SelectedValue, textNumberDoc.Text.Trim());
                 if (existe)
-                    {
+                {
+                    labelClienteaEliminar.Text = "Cliente a Eliminar";
                     tablaClientes.Visible = true;
                     btnDeleteClient.Visible = true;
                     btnSearch.Visible = false;
-                    }
+                    comboBoxDocType.Enabled = false;
+                    textNumberDoc.Enabled = false;
+                }
                 else
-                    {
+                {
                     MessageBox.Show("El usuario que busca no existe o fue borrado!");
-                    }
                 }
-        }
-        private bool BorrarCliente(int TipoDocumento, string NroDocumento,int Borrado)
-        {
-                string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-                SqlConnection cn = new SqlConnection(cadenaConexion);
-                bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Clientes SET Borrado = @borrado WHERE TipoDocumento Like @tipoDocumento AND NroDocumento Like @nroDocumento AND Borrado like 0";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@tipoDocumento", TipoDocumento);
-                cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
-                cmd.Parameters.AddWithValue("@borrado", Borrado);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
             }
-            catch (SqlException)
-            {
-                throw;
-                
-            }
-            catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    cn.Close();
-                }
-                return resultado;
         }
-
         private void btnDeleteClient_Click(object sender, EventArgs e)
         {
-            Cliente c = Cargar_Cliente((int)comboBoxDocType.SelectedValue, textNumberDoc.Text.Trim());
+            Cliente c = Buscar_Cliente_Documento((comboBoxDocType.SelectedIndex + 1).ToString(), textNumberDoc.Text);
             MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
             String mensajeCarga = (
                   " |Tipo Documento: " + c.TipoDocumentoCliente + " |Numero Documento: " + c.DocumentoCliente + "|" + "\n"
@@ -259,16 +199,16 @@ namespace Shopping_Buy_All
 
             if (result == DialogResult.OK)
             {
-                bool resultado = BorrarCliente((int)comboBoxDocType.SelectedValue, textNumberDoc.Text.Trim(), 1);
+                bool resultado = AD_Cliente.BorrarCliente(comboBoxDocType.SelectedIndex + 1, textNumberDoc.Text.Trim(), 1);
                 if (resultado)
                 {
                     MessageBox.Show("Cliente Borrado con éxito!");
                     Clean();
                     //BorrarCliente(c);
-                    CargarTiposDocumentos();
-                    tablaClientes.Visible = false;
+                    CargarTipoDocumento();
                     btnDeleteClient.Visible = false;
                     btnSearch.Visible = true;
+                    CargarTablaClientes();
                     comboBoxDocType.Focus();
                 }
                 else
@@ -281,11 +221,59 @@ namespace Shopping_Buy_All
                 comboBoxDocType.Focus();
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void tablaClientes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            Grilla_Clientes tabla = new Grilla_Clientes();
-            tabla.Show();
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaClientes.Rows[indice];
+                string documento = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
+                string tipodocumento = filaSeleccionada.Cells["TipoDoc"].Value.ToString();
+                Cliente c = Buscar_Cliente_Documento(tipodocumento, documento);
+                Clean();
+                Cargar_Campos(c);
+                btnDeleteClient.Visible = true;
+                comboBoxDocType.Enabled = false;
+                textNumberDoc.Enabled = false;
+                labelClienteaEliminar.Text = "Cliente a Eliminar";
+            }
+            catch
+            {
+                MessageBox.Show("Error! \n Seleccione una casilla dentro de la tabla!");
+            }
+        }
 
+        //FUNCIONES
+        private void Clean()
+        {
+            comboBoxDocType.SelectedIndex = -1;
+            textNumberDoc.Text = "";
+        }       
+        private void Cargar_Campos(Cliente c)
+        {
+            //Cargar Tipo Documento
+            comboBoxDocType.SelectedValue = c.TipoDocumentoCliente;
+            //Cargar Documento
+            textNumberDoc.Text = c.DocumentoCliente;
+        }
+        private bool validarCliente()
+        { 
+            bool resultado = false;
+            if (comboBoxDocType.SelectedIndex.Equals(-1))
+            {
+                MessageBox.Show("Error, Cargar tipo de documento!");
+                comboBoxDocType.Focus();
+            }
+            else if (textNumberDoc.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Error, Cargar numero de documento!");
+                textNumberDoc.Focus();
+            }
+            else
+            {
+                resultado = true;
+            }
+            return resultado;
         }
     }
 }
