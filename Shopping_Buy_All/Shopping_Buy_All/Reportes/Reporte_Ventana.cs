@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Shopping_Buy_All.Entidades;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesProductos;
 
 namespace Shopping_Buy_All
 {
@@ -37,6 +38,12 @@ namespace Shopping_Buy_All
         {
             ReporteProductos reporteProductosMasVendidos = new ReporteProductos();
             reporteProductosMasVendidos.Show();
+        }
+
+        private void btn_Vehiculo_Click(object sender, EventArgs e)
+        {
+            ReporteVehiculos reporteVehiculos = new ReporteVehiculos();
+            reporteVehiculos.Show();
         }
     }
 }
