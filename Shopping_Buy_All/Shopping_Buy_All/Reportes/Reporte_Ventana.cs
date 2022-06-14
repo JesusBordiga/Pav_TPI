@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shopping_Buy_All.Entidades;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura;
 
 namespace Shopping_Buy_All
 {
@@ -22,13 +24,13 @@ namespace Shopping_Buy_All
 
         private void btnAltaUsuario_Click(object sender, EventArgs e)
         {
-            ReporteListadoFacturas reporteListadoFacturas = new ReporteListadoFacturas();
+            ReporteFacturas reporteListadoFacturas = new ReporteFacturas();
             reporteListadoFacturas.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ReporteListadoClientes reporteListadoClientes = new ReporteListadoClientes();
+            ReporteClientes reporteListadoClientes = new ReporteClientes();
             reporteListadoClientes.Show();
         }
 

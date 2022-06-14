@@ -10,21 +10,18 @@ using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using Shopping_Buy_All.ABMS.AccesoADatos;
 
-namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
+namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes
 {
-    public partial class ReporteProductos : Form
+    public partial class ReporteClientes : Form
     {
-        AD_Productos _Productos = new AD_Productos();
+        AD_Cliente _Clientes = new AD_Cliente();
         DataTable Tabla = new DataTable();
         string alcance = "";
-        public ReporteProductos()
+        public ReporteClientes()
         {
             InitializeComponent();
             lblRestriccion.Visible = false;
             txt_restriccion.Visible = false;
-        }
-        private void ReporteProductos_Load(object sender, EventArgs e)
-        {
         }
         private void rbPorLetraCheckedChanged(object sender, EventArgs e)
         {
@@ -37,7 +34,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
         {
             lblRestriccion.Text = "Ingrese rango";
             lblRestriccion.Visible = true;
-            txt_restriccion.Mask = "9999999999-9999999999";
+            txt_restriccion.Mask = "99/99/9999-99/99/9999";
             txt_restriccion.Visible = true;
         }
         private void rbTodosCheckedChanged(object sender, EventArgs e)
@@ -54,32 +51,33 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
             if (rbTodos.Checked == true)
             {
                 //todos
-                alcance = "Todos los productos";
-                Tabla = _Productos._Rpt_Productos();
+                alcance = "Todos los clientes";
+                Tabla = _Clientes._Rpt_Clientes();
             }
             if (rbRangoId.Checked == true)
             {
                 //rango
                 string[] datos = txt_restriccion.Text.Split('-');
-                alcance = "Rango de precio del producto, inicio: " + datos[0].Trim().ToString() + " final: " + datos[1].Trim().ToString();
-                Tabla = _Productos._Rpt_Productos(datos[0].ToString(), datos[1].ToString());
+                alcance = "Clientes que nacieron entre: " + datos[0].Trim().ToString() + " y: " + datos[1].Trim().ToString();
+                Tabla = _Clientes._Rpt_Clientes(datos[0].ToString(), datos[1].ToString());
             }
             if (rbPorLetra.Checked == true)
             {
                 //letra
                 alcance = "Productos que empiezan por la letra: " + txt_restriccion.Text;
-                Tabla = _Productos._Rpt_Productos(txt_restriccion.Text);
+                Tabla = _Clientes._Rpt_Clientes(txt_restriccion.Text);
             }
         }
         private void btn_buscar01_Click(object sender, EventArgs e)
         {
-            if (validarSeleccion()){
+            if (validarSeleccion())
+            {
                 Restriccion();
 
-                ReportDataSource Datos = new ReportDataSource("DatosProductos", Tabla);
-                repProd.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesProductos.ReportProductos.rdlc";
+                ReportDataSource Datos = new ReportDataSource("DatosClientes", Tabla);
+                repProd.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes.ReportClientes.rdlc";
                 ReportParameter[] parametros = new ReportParameter[1];
-                parametros[0] = new ReportParameter("PR01", alcance);
+                parametros[0] = new ReportParameter("Alcance", alcance);
                 repProd.LocalReport.SetParameters(parametros);
                 repProd.LocalReport.DataSources.Clear();
                 repProd.LocalReport.DataSources.Add(Datos);

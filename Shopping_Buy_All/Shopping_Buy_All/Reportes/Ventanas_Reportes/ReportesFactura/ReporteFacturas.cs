@@ -10,26 +10,23 @@ using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using Shopping_Buy_All.ABMS.AccesoADatos;
 
-namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
+namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
 {
-    public partial class ReporteProductos : Form
+    public partial class ReporteFacturas : Form
     {
-        AD_Productos _Productos = new AD_Productos();
+        AD_Facturacion _Clientes = new AD_Facturacion();
         DataTable Tabla = new DataTable();
         string alcance = "";
-        public ReporteProductos()
+        public ReporteFacturas()
         {
             InitializeComponent();
             lblRestriccion.Visible = false;
             txt_restriccion.Visible = false;
         }
-        private void ReporteProductos_Load(object sender, EventArgs e)
+        private void rbPorLocalCheckedChanged(object sender, EventArgs e)
         {
-        }
-        private void rbPorLetraCheckedChanged(object sender, EventArgs e)
-        {
-            lblRestriccion.Text = "Ingrese letra";
-            txt_restriccion.Mask = "L";
+            lblRestriccion.Text = "Ingrese local";
+            txt_restriccion.Mask = "99";
             lblRestriccion.Visible = true;
             txt_restriccion.Visible = true;
         }
@@ -37,7 +34,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
         {
             lblRestriccion.Text = "Ingrese rango";
             lblRestriccion.Visible = true;
-            txt_restriccion.Mask = "9999999999-9999999999";
+            txt_restriccion.Mask = "99/99/9999-99/99/9999";
             txt_restriccion.Visible = true;
         }
         private void rbTodosCheckedChanged(object sender, EventArgs e)
@@ -54,36 +51,37 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
             if (rbTodos.Checked == true)
             {
                 //todos
-                alcance = "Todos los productos";
-                Tabla = _Productos._Rpt_Productos();
+                alcance = "Todas las facturas";
+                Tabla = _Clientes._Rpt_Clientes();
             }
             if (rbRangoId.Checked == true)
             {
                 //rango
                 string[] datos = txt_restriccion.Text.Split('-');
-                alcance = "Rango de precio del producto, inicio: " + datos[0].Trim().ToString() + " final: " + datos[1].Trim().ToString();
-                Tabla = _Productos._Rpt_Productos(datos[0].ToString(), datos[1].ToString());
+                alcance = "Facturas entre los días: " + datos[0].Trim().ToString() + " y: " + datos[1].Trim().ToString();
+                Tabla = _Clientes._Rpt_Clientes(datos[0].ToString(), datos[1].ToString());
             }
-            if (rbPorLetra.Checked == true)
+            if (rbLocal.Checked == true)
             {
                 //letra
-                alcance = "Productos que empiezan por la letra: " + txt_restriccion.Text;
-                Tabla = _Productos._Rpt_Productos(txt_restriccion.Text);
+                alcance = "Facturas del local: " + txt_restriccion.Text;
+                Tabla = _Clientes._Rpt_Clientes(txt_restriccion.Text);
             }
         }
         private void btn_buscar01_Click(object sender, EventArgs e)
         {
-            if (validarSeleccion()){
+            if (validarSeleccion())
+            {
                 Restriccion();
 
-                ReportDataSource Datos = new ReportDataSource("DatosProductos", Tabla);
-                repProd.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesProductos.ReportProductos.rdlc";
+                ReportDataSource Datos = new ReportDataSource("DatosFactura", Tabla);
+                repFac.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura.ReportFacturas.rdlc";
                 ReportParameter[] parametros = new ReportParameter[1];
-                parametros[0] = new ReportParameter("PR01", alcance);
-                repProd.LocalReport.SetParameters(parametros);
-                repProd.LocalReport.DataSources.Clear();
-                repProd.LocalReport.DataSources.Add(Datos);
-                repProd.RefreshReport();
+                parametros[0] = new ReportParameter("Alcance", alcance);
+                repFac.LocalReport.SetParameters(parametros);
+                repFac.LocalReport.DataSources.Clear();
+                repFac.LocalReport.DataSources.Add(Datos);
+                repFac.RefreshReport();
             }
             else
             {
@@ -92,7 +90,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
         }
         private bool validarSeleccion()
         {
-            if (rbPorLetra.Checked == false && rbTodos.Checked == false && rbRangoId.Checked == false)
+            if (rbLocal.Checked == false && rbTodos.Checked == false && rbRangoId.Checked == false)
             {
                 return false;
             }

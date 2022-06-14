@@ -266,5 +266,107 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             }
             return null;
         }
+        public DataTable _Rpt_Clientes(string inicio, string final)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "select * from ComprasPorCliente where Borrado = 0 and FechaCompra between @a and @b order by FechaCompra";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@a", inicio);
+                cmd.Parameters.AddWithValue("@b", final);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return tabla;
+        }
+        public DataTable _Rpt_Clientes(string local)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "select * from ComprasPorCliente where Borrado = 0 and Codigo_Local = @cod order by Numero_Factura";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@cod", local);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return tabla;
+        }
+        public DataTable _Rpt_Clientes()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "select * from ComprasPorCliente where Borrado = 0 order by Numero_Factura";
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return tabla;
+        }
     }
 }
