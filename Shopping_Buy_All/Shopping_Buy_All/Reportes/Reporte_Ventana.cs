@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shopping_Buy_All.Entidades;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes;
 
 namespace Shopping_Buy_All
 {
@@ -28,7 +29,7 @@ namespace Shopping_Buy_All
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ReporteListadoClientes reporteListadoClientes = new ReporteListadoClientes();
+            ReporteClientes reporteListadoClientes = new ReporteClientes();
             reporteListadoClientes.Show();
         }
 

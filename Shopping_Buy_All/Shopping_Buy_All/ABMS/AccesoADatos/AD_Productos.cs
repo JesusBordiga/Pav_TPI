@@ -244,7 +244,8 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT Codigo_Producto 'Codigo_Producto', NombreProducto 'NombreProducto', Precio 'Precio' FROM Productos WHERE Borrado = 0 and NombreProducto like '" + letra.Trim() + "%' order by NombreProducto";                cmd.Parameters.Clear();
+                string consulta = "SELECT Codigo_Producto 'Codigo_Producto', NombreProducto 'NombreProducto', Precio 'Precio' FROM Productos WHERE Borrado = 0 and NombreProducto like '" + letra.Trim() + "%' order by NombreProducto";                
+                cmd.Parameters.Clear();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 

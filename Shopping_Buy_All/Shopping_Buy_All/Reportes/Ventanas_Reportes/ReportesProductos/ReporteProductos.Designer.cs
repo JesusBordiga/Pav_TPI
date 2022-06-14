@@ -29,63 +29,63 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteProductos));
-            this.rv01 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.rb_rango_id = new System.Windows.Forms.RadioButton();
-            this.rb_x_letra = new System.Windows.Forms.RadioButton();
-            this.rb_todos = new System.Windows.Forms.RadioButton();
+            this.repProd = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rbRangoId = new System.Windows.Forms.RadioButton();
+            this.rbPorLetra = new System.Windows.Forms.RadioButton();
+            this.rbTodos = new System.Windows.Forms.RadioButton();
             this.btn_buscar01 = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.txt_restriccion = new System.Windows.Forms.MaskedTextBox();
             this.lblRestriccion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // rv01
+            // repProd
             // 
-            this.rv01.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rv01.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura.ListadoDetalle.rdlc";
-            this.rv01.Location = new System.Drawing.Point(0, 96);
-            this.rv01.Name = "rv01";
-            this.rv01.ServerReport.BearerToken = null;
-            this.rv01.Size = new System.Drawing.Size(788, 352);
-            this.rv01.TabIndex = 0;
+            this.repProd.Cursor = System.Windows.Forms.Cursors.Default;
+            this.repProd.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura.ListadoDetalle.rdlc";
+            this.repProd.Location = new System.Drawing.Point(0, 96);
+            this.repProd.Name = "repProd";
+            this.repProd.ServerReport.BearerToken = null;
+            this.repProd.Size = new System.Drawing.Size(788, 352);
+            this.repProd.TabIndex = 0;
             // 
-            // rb_rango_id
+            // rbRangoId
             // 
-            this.rb_rango_id.AutoSize = true;
-            this.rb_rango_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_rango_id.Location = new System.Drawing.Point(172, 37);
-            this.rb_rango_id.Name = "rb_rango_id";
-            this.rb_rango_id.Size = new System.Drawing.Size(227, 21);
-            this.rb_rango_id.TabIndex = 4;
-            this.rb_rango_id.Text = "Restringido por rango de precio";
-            this.rb_rango_id.UseVisualStyleBackColor = true;
-            this.rb_rango_id.CheckedChanged += new System.EventHandler(this.rbRangoCheckedChanged);
+            this.rbRangoId.AutoSize = true;
+            this.rbRangoId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbRangoId.Location = new System.Drawing.Point(172, 37);
+            this.rbRangoId.Name = "rbRangoId";
+            this.rbRangoId.Size = new System.Drawing.Size(227, 21);
+            this.rbRangoId.TabIndex = 4;
+            this.rbRangoId.Text = "Restringido por rango de precio";
+            this.rbRangoId.UseVisualStyleBackColor = true;
+            this.rbRangoId.CheckedChanged += new System.EventHandler(this.rbRangoCheckedChanged);
             // 
-            // rb_x_letra
+            // rbPorLetra
             // 
-            this.rb_x_letra.AutoSize = true;
-            this.rb_x_letra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_x_letra.Location = new System.Drawing.Point(11, 60);
-            this.rb_x_letra.Name = "rb_x_letra";
-            this.rb_x_letra.Size = new System.Drawing.Size(217, 21);
-            this.rb_x_letra.TabIndex = 5;
-            this.rb_x_letra.Text = "Restringido por letra (nombre)";
-            this.rb_x_letra.UseVisualStyleBackColor = true;
-            this.rb_x_letra.CheckedChanged += new System.EventHandler(this.rbPorLetraCheckedChanged);
+            this.rbPorLetra.AutoSize = true;
+            this.rbPorLetra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPorLetra.Location = new System.Drawing.Point(11, 60);
+            this.rbPorLetra.Name = "rbPorLetra";
+            this.rbPorLetra.Size = new System.Drawing.Size(217, 21);
+            this.rbPorLetra.TabIndex = 5;
+            this.rbPorLetra.Text = "Restringido por letra (nombre)";
+            this.rbPorLetra.UseVisualStyleBackColor = true;
+            this.rbPorLetra.CheckedChanged += new System.EventHandler(this.rbPorLetraCheckedChanged);
             // 
-            // rb_todos
+            // rbTodos
             // 
-            this.rb_todos.AutoSize = true;
-            this.rb_todos.Checked = true;
-            this.rb_todos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_todos.Location = new System.Drawing.Point(11, 37);
-            this.rb_todos.Name = "rb_todos";
-            this.rb_todos.Size = new System.Drawing.Size(155, 21);
-            this.rb_todos.TabIndex = 6;
-            this.rb_todos.TabStop = true;
-            this.rb_todos.Text = "Todos los productos";
-            this.rb_todos.UseVisualStyleBackColor = true;
-            this.rb_todos.CheckedChanged += new System.EventHandler(this.rbTodosCheckedChanged);
+            this.rbTodos.AutoSize = true;
+            this.rbTodos.Checked = true;
+            this.rbTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTodos.Location = new System.Drawing.Point(11, 37);
+            this.rbTodos.Name = "rbTodos";
+            this.rbTodos.Size = new System.Drawing.Size(155, 21);
+            this.rbTodos.TabIndex = 6;
+            this.rbTodos.TabStop = true;
+            this.rbTodos.Text = "Todos los productos";
+            this.rbTodos.UseVisualStyleBackColor = true;
+            this.rbTodos.CheckedChanged += new System.EventHandler(this.rbTodosCheckedChanged);
             // 
             // btn_buscar01
             // 
@@ -134,11 +134,11 @@
             this.Controls.Add(this.lblRestriccion);
             this.Controls.Add(this.txt_restriccion);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.rb_rango_id);
-            this.Controls.Add(this.rb_x_letra);
-            this.Controls.Add(this.rb_todos);
+            this.Controls.Add(this.rbRangoId);
+            this.Controls.Add(this.rbPorLetra);
+            this.Controls.Add(this.rbTodos);
             this.Controls.Add(this.btn_buscar01);
-            this.Controls.Add(this.rv01);
+            this.Controls.Add(this.repProd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(803, 488);
@@ -154,10 +154,10 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rv01;
-        private System.Windows.Forms.RadioButton rb_rango_id;
-        private System.Windows.Forms.RadioButton rb_x_letra;
-        private System.Windows.Forms.RadioButton rb_todos;
+        private Microsoft.Reporting.WinForms.ReportViewer repProd;
+        private System.Windows.Forms.RadioButton rbRangoId;
+        private System.Windows.Forms.RadioButton rbPorLetra;
+        private System.Windows.Forms.RadioButton rbTodos;
         private System.Windows.Forms.Button btn_buscar01;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.MaskedTextBox txt_restriccion;
