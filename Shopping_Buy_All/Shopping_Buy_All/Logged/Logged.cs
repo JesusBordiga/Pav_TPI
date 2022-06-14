@@ -80,5 +80,11 @@ namespace Shopping_Buy_All
             Facturacion_Ventana facturacion_ventana = new Facturacion_Ventana();
             facturacion_ventana.Show();
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            Reportes_Ventana reportes_ventana = new Reportes_Ventana();
+            reportes_ventana.Show();
+        }
     }
 }

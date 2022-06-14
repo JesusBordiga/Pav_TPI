@@ -11,11 +11,11 @@ namespace Shopping_Buy_All.Entidades
         private int CodLocal;
         private int TipoDocumento;
         private int Documento;
-        private int NroTarjeta;
+        private string NroTarjeta;
         private DateTime FechaCompra;
+        private Detalle[] Detalles;
         
-        
-        public Factura(int codLocal,int tipoDocumento, int documento, int nroTarjeta, DateTime fechaCompra)
+        public Factura(int codLocal,int tipoDocumento, int documento, string nroTarjeta, DateTime fechaCompra)
         {
             CodLocal = codLocal;
             TipoDocumento = tipoDocumento;
@@ -42,7 +42,7 @@ namespace Shopping_Buy_All.Entidades
             get => Documento;
             set => Documento = value;
         }
-        public int NroTarjetaFactura
+        public string NroTarjetaFactura
         {
             get => NroTarjeta;
             set => NroTarjeta = value;
@@ -51,6 +51,11 @@ namespace Shopping_Buy_All.Entidades
         {
             get => FechaCompra;
             set => FechaCompra = value;
+        }
+        public Detalle[] DetallesFactura
+        {
+            get => Detalles;
+            set => Detalles = value;
         }
     }
 }

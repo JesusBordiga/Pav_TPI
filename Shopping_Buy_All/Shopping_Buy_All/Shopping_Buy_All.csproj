@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -366,6 +384,11 @@
     <Compile Include="ABMS\AccesoADatos\AD_Cliente.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Local.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_TipoComercio.cs" />
+    <Compile Include="BD3K7G01_2022DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD3K7G01_2022DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\Automovil.cs" />
     <Compile Include="Entidades\Detalle.cs" />
     <Compile Include="Entidades\Factura.cs" />
@@ -384,11 +407,23 @@
     <Compile Include="Entidades\TipoVehiculo.cs" />
     <Compile Include="Entidades\User.cs" />
     <Compile Include="Entidades\Utils.cs" />
-    <Compile Include="Procesos\Facturacion_Ventana.cs">
+    <Compile Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Procesos\Facturacion_Ventana.Designer.cs">
+    <Compile Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.Designer.cs">
       <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion_View.Designer.cs">
+      <DependentUpon>Facturacion_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Facturacion_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procesos\Facturacion_Load.Designer.cs">
+      <DependentUpon>Facturacion_Load.cs</DependentUpon>
     </Compile>
     <Compile Include="Logged\Logged.cs">
       <SubType>Form</SubType>
@@ -494,6 +529,31 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\Reporte_Ventana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Reporte_Ventana.Designer.cs">
+      <DependentUpon>Reporte_Ventana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesClientes\ReporteListadoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesClientes\ReporteListadoClientes.Designer.cs">
+      <DependentUpon>ReporteListadoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteListadoFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteListadoFacturas.Designer.cs">
+      <DependentUpon>ReporteListadoFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.Designer.cs">
+      <DependentUpon>ReporteProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="ABMS\ABM Cliente\Client_Delete.resx">
       <DependentUpon>Client_Delete.cs</DependentUpon>
     </EmbeddedResource>
@@ -644,8 +704,14 @@
     <EmbeddedResource Include="ABMS\ABM Vehiculos\Vehicle_Modify.resx">
       <DependentUpon>Vehicle_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Procesos\Facturacion_Ventana.resx">
+    <EmbeddedResource Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.resx">
       <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion_View.resx">
+      <DependentUpon>Facturacion_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\Facturacion_Load.resx">
+      <DependentUpon>Facturacion_Load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Logged.resx">
       <DependentUpon>Logged.cs</DependentUpon>
@@ -708,6 +774,34 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\Reporte_Ventana.resx">
+      <DependentUpon>Reporte_Ventana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesClientes\ListadoCliente.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesClientes\ReporteListadoClientes.resx">
+      <DependentUpon>ReporteListadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ListadoFactura.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ListadoDetalle.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteListadoFacturas.resx">
+      <DependentUpon>ReporteListadoFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.resx">
+      <DependentUpon>ReporteProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesProductos\ReportProductos.rdlc" />
+    <None Include="BD3K7G01_2022DataSet.xsc">
+      <DependentUpon>BD3K7G01_2022DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD3K7G01_2022DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD3K7G01_2022DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD3K7G01_2022DataSet.xss">
+      <DependentUpon>BD3K7G01_2022DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -760,6 +854,30 @@
   <ItemGroup>
     <None Include="Resources\fritzing.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\notes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xclipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\Ventanas_Reportes\ReportesMarcasTarjeta\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rstudio.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
