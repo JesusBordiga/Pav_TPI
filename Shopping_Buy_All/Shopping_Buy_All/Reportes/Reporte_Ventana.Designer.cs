@@ -72,7 +72,7 @@
             this.btnMasVendido.Name = "btnMasVendido";
             this.btnMasVendido.Size = new System.Drawing.Size(126, 26);
             this.btnMasVendido.TabIndex = 2;
-            this.btnMasVendido.Text = "Más vendido";
+            this.btnMasVendido.Text = "Listado Productos";
             this.btnMasVendido.UseVisualStyleBackColor = false;
             this.btnMasVendido.Click += new System.EventHandler(this.btnMasVendido_Click);
             // 
