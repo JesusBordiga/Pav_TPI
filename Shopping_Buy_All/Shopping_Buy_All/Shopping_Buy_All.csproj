@@ -368,7 +368,6 @@
     </Compile>
     <Compile Include="ABMS\AccesoADatos\AD_Facturacion.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Modelos.cs" />
-    <Compile Include="ABMS\AccesoADatos\AD_Vehiculos.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Usuario.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_TipoVehiculo.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_TipoDocumento.cs" />
@@ -384,6 +383,7 @@
     <Compile Include="ABMS\AccesoADatos\AD_Cliente.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_Local.cs" />
     <Compile Include="ABMS\AccesoADatos\AD_TipoComercio.cs" />
+    <Compile Include="ABMS\AccesoADatos\AD_Vehiculos.cs" />
     <Compile Include="BD3K7G01_2022DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -552,6 +552,12 @@
     </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.Designer.cs">
       <DependentUpon>ReporteProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesVehiculos\ReporteVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesVehiculos\ReporteVehiculos.designer.cs">
+      <DependentUpon>ReporteVehiculos.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="ABMS\ABM Cliente\Client_Delete.resx">
@@ -789,6 +795,10 @@
       <DependentUpon>ReporteProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesProductos\ReportProductos.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesVehiculos\ReporteVehiculos.resx">
+      <DependentUpon>ReporteVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesVehiculos\ReportVehiculos.rdlc" />
     <None Include="BD3K7G01_2022DataSet.xsc">
       <DependentUpon>BD3K7G01_2022DataSet.xsd</DependentUpon>
     </None>

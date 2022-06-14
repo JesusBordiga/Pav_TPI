@@ -32,6 +32,7 @@
             this.btnreporteFacturas = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnMasVendido = new System.Windows.Forms.Button();
+            this.btn_Vehiculo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnreporteFacturas
@@ -76,11 +77,26 @@
             this.btnMasVendido.UseVisualStyleBackColor = false;
             this.btnMasVendido.Click += new System.EventHandler(this.btnMasVendido_Click);
             // 
+            // btn_Vehiculo
+            // 
+            this.btn_Vehiculo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Vehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Vehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Vehiculo.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_Vehiculo.Location = new System.Drawing.Point(249, 22);
+            this.btn_Vehiculo.Name = "btn_Vehiculo";
+            this.btn_Vehiculo.Size = new System.Drawing.Size(126, 26);
+            this.btn_Vehiculo.TabIndex = 3;
+            this.btn_Vehiculo.Text = "Vehiculos";
+            this.btn_Vehiculo.UseVisualStyleBackColor = false;
+            this.btn_Vehiculo.Click += new System.EventHandler(this.btn_Vehiculo_Click);
+            // 
             // Reportes_Ventana
             // 
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(290, 168);
+            this.ClientSize = new System.Drawing.Size(442, 168);
+            this.Controls.Add(this.btn_Vehiculo);
             this.Controls.Add(this.btnMasVendido);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnreporteFacturas);
@@ -101,5 +117,6 @@
         private System.Windows.Forms.Button btnreporteFacturas;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnMasVendido;
+        private System.Windows.Forms.Button btn_Vehiculo;
     }
 }
