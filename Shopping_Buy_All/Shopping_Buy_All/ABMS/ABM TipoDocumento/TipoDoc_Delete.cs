@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.ABM_Tipo_Documento
 {
@@ -36,7 +37,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
                 DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
                 if (result == DialogResult.OK)
                 {
-                    modificarTipDoc(nombre);
+                    borrarTipDoc(nombre);
                     MessageBox.Show("Tipo de documento dado de baja con éxito!");
                     limpiarCampos();
                     cambiarBuscador(true);
@@ -55,14 +56,22 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
         }
         private void tablaTipDoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaTipDoc.Rows[indice];
-            string nombre = filaSeleccionada.Cells["NombreDocumento"].Value.ToString();
-            buscarTipDoc(nombre);
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaTipDoc.Rows[indice];
+                string nombre = filaSeleccionada.Cells["NombreDocumento"].Value.ToString();
+                buscarTipDoc(nombre);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! Seleccione una casilla dentro de la tabla!");
+            }
         }
         private void cambiarModificador(bool booleano)
         {
             btnTipDocDelete.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
@@ -76,74 +85,23 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
         }
         private void cargarTablaTipDoc()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "select TipoDocumento, NombreDocumento from TipoDocumento where Borrado = 0";
-                command.Parameters.Clear();
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaTipDoc.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                throw;
+                tablaTipDoc.DataSource = AD_TipoDocumento.obtenerDatosTipoDocumento();
             }
             catch (Exception)
             {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
+
+                MessageBox.Show("Error, no se pudieron obtener los datos de los tipos de documento");
             }
         }
-        private bool busquedaXNombre(string nombre)
+        private bool busquedaXNombre(string nombreViejo)
         {
             bool resultado = false;
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
+            tablaTipDoc.DataSource = AD_TipoDocumento.buscarTipoDocumento(nombreViejo);
+            if (tablaTipDoc.Rows.Count == 1)
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoDocumento where NombreDocumento = @Nombre and Borrado = 0";
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@Nombre", nombre);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaTipDoc.DataSource = tabla;
-                if (tabla.Rows.Count == 1)
-                {
-                    resultado = true;
-                }
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
+                resultado = true;
             }
             return resultado;
         }
@@ -170,38 +128,16 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
                 MessageBox.Show("Error al buscar el tipo de documento! \n Complete el campo por favor!", "Error", MessageBoxButtons.OK);
             }
         }
-        private void modificarTipDoc(string nombre)
+        private void borrarTipDoc(string nombre)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                string consulta = "update TipoDocumento set Borrado = 1 where NombreDocumento = @nombre";
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@nombre", nombre);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaTipDoc.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
+            AD_TipoDocumento.borrarTipoDocumento(nombre);
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaTipDoc();
         }
     }
 }

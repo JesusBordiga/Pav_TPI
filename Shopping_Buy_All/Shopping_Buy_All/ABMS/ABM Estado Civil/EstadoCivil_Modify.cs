@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.ABM_Estado_Civil
 {
@@ -66,6 +66,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
             label4.Visible = booleano;
             txtNuevoNombre.Visible = booleano;
             btnEstadoCivilModify.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
@@ -80,74 +81,23 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
         }
         private void cargarTablaEstadoCivil()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "select TipoEstadoCivil, NombreEstadoCivil from TipoEstadoCivil where Borrado = 0";
-                command.Parameters.Clear();
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaEstadoCivil.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                throw;
+                tablaEstadoCivil.DataSource = AD_EstadoCivil.obtenerDatosEstadoCivil();
             }
             catch (Exception)
             {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
+
+                MessageBox.Show("Error, no se pudieron obtener los datos de los Estados Civiles");
             }
         }
         private bool busquedaXNombre(string nombreViejo)
         {
             bool resultado = false;
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
+            tablaEstadoCivil.DataSource = AD_EstadoCivil.buscarEstadoCivil(nombreViejo);
+            if (tablaEstadoCivil.Rows.Count == 1)
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoEstadoCivil where NombreEstadoCivil = @Nombre and Borrado = 0";
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@Nombre", nombreViejo);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaEstadoCivil.DataSource = tabla;
-                if (tabla.Rows.Count == 1)
-                {
-                    resultado = true;
-                }
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
+                resultado = true;
             }
             return resultado;
         }
@@ -176,37 +126,14 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
         }
         private void modificarEstadoCivil(string nombreNuevo, string nombreViejo)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                string consulta = "update TipoEstadoCivil set NombreEstadoCivil = @nombreNuevo where NombreEstadoCivil = @nombreViejo";
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@nombreNuevo", nombreNuevo);
-                command.Parameters.AddWithValue("@nombreViejo", nombreViejo);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaEstadoCivil.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
+            AD_EstadoCivil.modificarEstadoCivil(nombreNuevo, nombreViejo);
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaEstadoCivil();
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.ABM_Sexo
 {
@@ -19,7 +20,6 @@ namespace Shopping_Buy_All.ABM_Sexo
             InitializeComponent();
             CargarTablaSexo();
         }
-
         private void btnSexoLoad_Click(object sender, EventArgs e)
         {
             Sexo sexo = new Sexo(txtNombreSexo.Text.Trim(), 0);
@@ -53,72 +53,24 @@ namespace Shopping_Buy_All.ABM_Sexo
         }
         private void CargarTablaSexo()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "SELECT * FROM TipoSexo WHERE Borrado = 0";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-                tablaSexo.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                throw;
+                tablaSexo.DataSource = AD_Sexo.obtenerDatosSexo();
             }
             catch (Exception)
             {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
+
+                MessageBox.Show("Error! No se pudieron obtener los datos de los sexos");
             }
         }
         private bool Agregar_Sexo(Sexo sexo)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO TipoSexo Values(@nombre, 0)";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombre", sexo.NombreSexo);
-
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
+            bool resultado = AD_Sexo.agregarSexo(sexo);
             return resultado;
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
         }
     }
 }

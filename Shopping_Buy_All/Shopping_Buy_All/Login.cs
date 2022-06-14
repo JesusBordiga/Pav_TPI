@@ -53,9 +53,6 @@ namespace Shopping_Buy_All
                     MessageBox.Show("Usuario Inexistente!");
                 }
             }
-
-
-
             ClearLogin();
         }
         private void ClearLogin()
@@ -72,7 +69,7 @@ namespace Shopping_Buy_All
             {
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "Select * FROM Users WHERE NombreDeUsuario like @nombreUsuario AND PasswordHash like @hash AND Borrado = 0";
+                string consulta = "getUsuarioNoBorrado @nombreUsuario, @hash";
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nombreUsuario", userName);
@@ -90,7 +87,6 @@ namespace Shopping_Buy_All
 
                 if (table.Rows.Count == 1)
                 {
-
                     return true;
                 }
                 else
@@ -100,7 +96,6 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally

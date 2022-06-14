@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client_Delete));
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelClienteaEliminar = new System.Windows.Forms.Label();
             this.textNumberDoc = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxDocType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,6 +42,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,23 +58,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labelClienteaEliminar
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 29);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Cliente a eliminar";
+            this.labelClienteaEliminar.AutoSize = true;
+            this.labelClienteaEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.labelClienteaEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClienteaEliminar.ForeColor = System.Drawing.Color.White;
+            this.labelClienteaEliminar.Location = new System.Drawing.Point(23, 65);
+            this.labelClienteaEliminar.Name = "labelClienteaEliminar";
+            this.labelClienteaEliminar.Size = new System.Drawing.Size(179, 25);
+            this.labelClienteaEliminar.TabIndex = 33;
+            this.labelClienteaEliminar.Text = "Cliente a eliminar";
             // 
             // textNumberDoc
             // 
             this.textNumberDoc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textNumberDoc.ForeColor = System.Drawing.Color.White;
-            this.textNumberDoc.Location = new System.Drawing.Point(84, 166);
+            this.textNumberDoc.Location = new System.Drawing.Point(162, 146);
             this.textNumberDoc.Mask = "99999999";
             this.textNumberDoc.Name = "textNumberDoc";
             this.textNumberDoc.Size = new System.Drawing.Size(55, 20);
@@ -82,10 +83,11 @@
             // 
             // comboBoxDocType
             // 
+            this.comboBoxDocType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.comboBoxDocType.BackColor = System.Drawing.SystemColors.ControlDark;
             this.comboBoxDocType.ForeColor = System.Drawing.Color.White;
             this.comboBoxDocType.FormattingEnabled = true;
-            this.comboBoxDocType.Location = new System.Drawing.Point(51, 118);
+            this.comboBoxDocType.Location = new System.Drawing.Point(132, 116);
             this.comboBoxDocType.Name = "comboBoxDocType";
             this.comboBoxDocType.Size = new System.Drawing.Size(119, 21);
             this.comboBoxDocType.TabIndex = 1;
@@ -96,7 +98,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(40, 144);
+            this.label5.Location = new System.Drawing.Point(1, 146);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 17);
             this.label5.TabIndex = 44;
@@ -108,11 +110,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(37, 96);
+            this.label4.Location = new System.Drawing.Point(1, 117);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 17);
+            this.label4.Size = new System.Drawing.Size(131, 17);
             this.label4.TabIndex = 43;
-            this.label4.Text = "Tipo de Documento";
+            this.label4.Text = "Tipo  Documento";
             // 
             // btnSearch
             // 
@@ -120,7 +122,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(77, 203);
+            this.btnSearch.Location = new System.Drawing.Point(162, 237);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 3;
@@ -134,7 +136,7 @@
             this.btnClean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClean.ForeColor = System.Drawing.Color.White;
-            this.btnClean.Location = new System.Drawing.Point(77, 260);
+            this.btnClean.Location = new System.Drawing.Point(77, 237);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(75, 23);
             this.btnClean.TabIndex = 4;
@@ -150,9 +152,9 @@
             this.btnDeleteClient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteClient.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteClient.Location = new System.Drawing.Point(73, 298);
+            this.btnDeleteClient.Location = new System.Drawing.Point(14, 230);
             this.btnDeleteClient.Name = "btnDeleteClient";
-            this.btnDeleteClient.Size = new System.Drawing.Size(76, 73);
+            this.btnDeleteClient.Size = new System.Drawing.Size(38, 42);
             this.btnDeleteClient.TabIndex = 67;
             this.btnDeleteClient.UseVisualStyleBackColor = false;
             this.btnDeleteClient.Click += new System.EventHandler(this.btnDeleteClient_Click);
@@ -161,11 +163,11 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(492, 15);
+            this.label15.Location = new System.Drawing.Point(493, 19);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(208, 29);
+            this.label15.Size = new System.Drawing.Size(173, 25);
             this.label15.TabIndex = 71;
             this.label15.Text = "Lista de Clientes";
             // 
@@ -186,6 +188,7 @@
             this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TipoDocumento,
+            this.TipoEstadoCivil,
             this.Borrado,
             this.NroDocumento,
             this.Apellido,
@@ -202,7 +205,8 @@
             this.tablaClientes.Location = new System.Drawing.Point(262, 49);
             this.tablaClientes.MultiSelect = false;
             this.tablaClientes.Name = "tablaClientes";
-            this.tablaClientes.RowHeadersWidth = 20;
+            this.tablaClientes.ReadOnly = true;
+            this.tablaClientes.RowHeadersWidth = 10;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -212,20 +216,30 @@
             this.tablaClientes.Size = new System.Drawing.Size(655, 397);
             this.tablaClientes.TabIndex = 72;
             this.tablaClientes.TabStop = false;
-            this.tablaClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick);
+            this.tablaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellContentClick_1);
             // 
             // TipoDocumento
             // 
             this.TipoDocumento.DataPropertyName = "TipoDocumento";
             this.TipoDocumento.HeaderText = "Tipo Documento";
             this.TipoDocumento.Name = "TipoDocumento";
+            this.TipoDocumento.ReadOnly = true;
             this.TipoDocumento.Width = 70;
+            // 
+            // TipoEstadoCivil
+            // 
+            this.TipoEstadoCivil.DataPropertyName = "TipoEstadoCivil";
+            this.TipoEstadoCivil.HeaderText = "TipoEstadoCivil";
+            this.TipoEstadoCivil.Name = "TipoEstadoCivil";
+            this.TipoEstadoCivil.ReadOnly = true;
+            this.TipoEstadoCivil.Visible = false;
             // 
             // Borrado
             // 
             this.Borrado.DataPropertyName = "Borrado";
             this.Borrado.HeaderText = "Borrado";
             this.Borrado.Name = "Borrado";
+            this.Borrado.ReadOnly = true;
             this.Borrado.Visible = false;
             // 
             // NroDocumento
@@ -233,6 +247,7 @@
             this.NroDocumento.DataPropertyName = "NroDocumento";
             this.NroDocumento.HeaderText = "Nro Documento";
             this.NroDocumento.Name = "NroDocumento";
+            this.NroDocumento.ReadOnly = true;
             this.NroDocumento.Width = 70;
             // 
             // Apellido
@@ -240,6 +255,7 @@
             this.Apellido.DataPropertyName = "Apellido";
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
             this.Apellido.Width = 70;
             // 
             // Nombres
@@ -247,6 +263,7 @@
             this.Nombres.DataPropertyName = "Nombres";
             this.Nombres.HeaderText = "Nombres";
             this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
             this.Nombres.Width = 80;
             // 
             // Calle
@@ -254,12 +271,14 @@
             this.Calle.DataPropertyName = "Calle";
             this.Calle.HeaderText = "Domicilio";
             this.Calle.Name = "Calle";
+            this.Calle.ReadOnly = true;
             // 
             // NroCalle
             // 
             this.NroCalle.DataPropertyName = "NroCalle";
             this.NroCalle.HeaderText = "Nro Calle";
             this.NroCalle.Name = "NroCalle";
+            this.NroCalle.ReadOnly = true;
             this.NroCalle.Width = 50;
             // 
             // EstadoCivil
@@ -267,6 +286,7 @@
             this.EstadoCivil.DataPropertyName = "EstadoCivil";
             this.EstadoCivil.HeaderText = "Estado Civil";
             this.EstadoCivil.Name = "EstadoCivil";
+            this.EstadoCivil.ReadOnly = true;
             this.EstadoCivil.Width = 50;
             // 
             // Sexo
@@ -274,6 +294,7 @@
             this.Sexo.DataPropertyName = "Sexo";
             this.Sexo.HeaderText = "Sexo";
             this.Sexo.Name = "Sexo";
+            this.Sexo.ReadOnly = true;
             this.Sexo.Width = 60;
             // 
             // FechaNacimiento
@@ -281,6 +302,7 @@
             this.FechaNacimiento.DataPropertyName = "FechaNacimiento";
             this.FechaNacimiento.HeaderText = "Fecha Nacimiento";
             this.FechaNacimiento.Name = "FechaNacimiento";
+            this.FechaNacimiento.ReadOnly = true;
             this.FechaNacimiento.Width = 80;
             // 
             // TipoDoc
@@ -288,6 +310,7 @@
             this.TipoDoc.DataPropertyName = "TipoDoc";
             this.TipoDoc.HeaderText = "TipoDoc";
             this.TipoDoc.Name = "TipoDoc";
+            this.TipoDoc.ReadOnly = true;
             this.TipoDoc.Visible = false;
             // 
             // Sex
@@ -295,6 +318,7 @@
             this.Sex.DataPropertyName = "Sex";
             this.Sex.HeaderText = "Sex";
             this.Sex.Name = "Sex";
+            this.Sex.ReadOnly = true;
             this.Sex.Visible = false;
             // 
             // EstadoCiv
@@ -302,13 +326,14 @@
             this.EstadoCiv.DataPropertyName = "EstadoCiv";
             this.EstadoCiv.HeaderText = "EstadoCiv";
             this.EstadoCiv.Name = "EstadoCiv";
+            this.EstadoCiv.ReadOnly = true;
             this.EstadoCiv.Visible = false;
             // 
             // Client_Delete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(922, 450);
@@ -321,7 +346,8 @@
             this.Controls.Add(this.comboBoxDocType);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelClienteaEliminar);
+            this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Client_Delete";
@@ -337,7 +363,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelClienteaEliminar;
         private System.Windows.Forms.MaskedTextBox textNumberDoc;
         private System.Windows.Forms.ComboBox comboBoxDocType;
         private System.Windows.Forms.Label label5;
@@ -348,6 +374,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridView tablaClientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoEstadoCivil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;

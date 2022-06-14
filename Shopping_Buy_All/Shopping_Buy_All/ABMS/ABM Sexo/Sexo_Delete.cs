@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.ABM_Sexo
 {
@@ -31,7 +31,7 @@ namespace Shopping_Buy_All.ABM_Sexo
                 DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
                 if (result == DialogResult.OK)
                 {
-                    modificarSexo(nombre);
+                    borrarSexo(nombre);
                     MessageBox.Show("Nombre de sexo dado de baja con éxito!");
                     limpiarCampos();
                     cambiarBuscador(true);
@@ -55,14 +55,22 @@ namespace Shopping_Buy_All.ABM_Sexo
         }
         private void tablaSexo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaSexo.Rows[indice];
-            string nombre = filaSeleccionada.Cells["NombreSexo"].Value.ToString();
-            buscarSexo(nombre);
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaSexo.Rows[indice];
+                string nombre = filaSeleccionada.Cells["NombreSexo"].Value.ToString();
+                buscarSexo(nombre);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! Seleccione una casilla dentro de la tabla");
+            }
         }
         private void cambiarModificador(bool booleano)
         {
             btnSexoDelete.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
@@ -76,74 +84,23 @@ namespace Shopping_Buy_All.ABM_Sexo
         }
         private void cargarTablaSexo()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "select TipoSexo, NombreSexo from TipoSexo where Borrado = 0";
-                command.Parameters.Clear();
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaSexo.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                throw;
+                tablaSexo.DataSource = AD_Sexo.obtenerDatosSexo();
             }
             catch (Exception)
             {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
+
+                MessageBox.Show("Error! No se pudieron obtener los datos de los sexos");
             }
         }
-        private bool busquedaXNombre(string nombre)
+        private bool busquedaXNombre(string nombreViejo)
         {
             bool resultado = false;
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
+            tablaSexo.DataSource = AD_Sexo.buscarSexo(nombreViejo);
+            if (tablaSexo.Rows.Count == 1)
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoSexo where NombreSexo = @Nombre and Borrado = 0";
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@Nombre", nombre);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaSexo.DataSource = tabla;
-                if (tabla.Rows.Count == 1)
-                {
-                    resultado = true;
-                }
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
+                resultado = true;
             }
             return resultado;
         }
@@ -170,38 +127,16 @@ namespace Shopping_Buy_All.ABM_Sexo
                 MessageBox.Show("Error al buscar el nombre de sexo! \n Complete el campo por favor!", "Error", MessageBoxButtons.OK);
             }
         }
-        private void modificarSexo(string nombre)
+        private void borrarSexo(string nombre)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                string consulta = "update TipoSexo set Borrado = 1 where NombreSexo = @nombre";
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@nombre", nombre);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaSexo.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
+            AD_Sexo.borrarSexo(nombre);
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaSexo();
         }
     }
 }

@@ -28,7 +28,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             try
             {
                 SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM TipoAuto WHERE Borrado = 0";
+                string consulta = "getTipoAutomovilNoBorrado";
 
                 comand.Parameters.Clear();
                 comand.CommandType = CommandType.Text;
@@ -117,7 +117,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO TipoAuto(Nombre,Borrado) Values(@nombre,@borrado)";
+                string consulta = "agregarTipoAutomovil @nombre, @borrado";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nombre", tipoVehiculo.Nombre);
                 cmd.Parameters.AddWithValue("@borrado", tipoVehiculo.Borrado);

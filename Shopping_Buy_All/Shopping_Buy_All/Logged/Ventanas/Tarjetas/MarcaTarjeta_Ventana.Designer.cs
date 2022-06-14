@@ -35,6 +35,7 @@
             this.btnEliminarTipoTarjeta = new System.Windows.Forms.Button();
             this.btnModificarTipoTarjeta = new System.Windows.Forms.Button();
             this.btnCargarTipoTarjeta = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -121,11 +122,26 @@
             this.btnCargarTipoTarjeta.UseVisualStyleBackColor = false;
             this.btnCargarTipoTarjeta.Click += new System.EventHandler(this.btnAltaTipoTarjeta_Click);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.Location = new System.Drawing.Point(108, 156);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(139, 26);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Marcas de Tarjetas";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // MarcaTarjeta_Ventana
             // 
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(353, 168);
+            this.ClientSize = new System.Drawing.Size(353, 194);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.btnEliminarTipoTarjeta);
             this.Controls.Add(this.btnModificarTipoTarjeta);
             this.Controls.Add(this.btnCargarTipoTarjeta);
@@ -145,54 +161,12 @@
 
         #endregion
 
-        private System.Windows.Forms.MaskedTextBox textStreetHeight;
-        private System.Windows.Forms.MaskedTextBox textNumberDoc;
-        private System.Windows.Forms.ComboBox comboBoxDocType;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnClientLoad;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textStreetClient;
-        private System.Windows.Forms.MaskedTextBox textDateBirthDay;
-        private System.Windows.Forms.TextBox textSurnameClient;
-        private System.Windows.Forms.TextBox textNameClient;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox SearchPanel;
-        private System.Windows.Forms.Button btnSearchClient;
-        private System.Windows.Forms.Button btnSearchClient2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel PanelEstadoCivil;
-        private System.Windows.Forms.RadioButton radioButtonMarried;
-        private System.Windows.Forms.RadioButton radioButtonSingle;
-        private System.Windows.Forms.ComboBox comboBoxSex;
-        private System.Windows.Forms.DataGridView tablaClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NroDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NroCalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCivil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCiv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnEliminarTipoTarjeta;
         private System.Windows.Forms.Button btnModificarTipoTarjeta;
         private System.Windows.Forms.Button btnCargarTipoTarjeta;
+        private System.Windows.Forms.Button button4;
     }
 }

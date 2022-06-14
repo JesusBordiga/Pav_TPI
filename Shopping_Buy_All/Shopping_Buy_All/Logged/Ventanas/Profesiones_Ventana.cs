@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABMS.ABM_Profesiones;
+
 
 namespace Shopping_Buy_All
 {
@@ -18,20 +11,22 @@ namespace Shopping_Buy_All
         {
             InitializeComponent();
         }
-        private void btnAltaProfesiones_Click(object sender, EventArgs e)
+        private void btnAltaCliente_Click(object sender, EventArgs e)
         {
-            Client_Load load = new Client_Load();
-            load.ShowDialog();
+            Profesion_Load Profesion_Load = new Profesion_Load();
+            Profesion_Load.ShowDialog();
         }
-        private void btnModificarProfesiones_Click(object sender, EventArgs e)
+
+        private void btnModificarCliente_Click(object sender, EventArgs e)
         {
-            Client_Modify modify = new Client_Modify();
-            modify.ShowDialog();
+            Profesion_Modify Profesion_Modify = new Profesion_Modify();
+            Profesion_Modify.ShowDialog();
         }
-        private void btnEliminarProfesiones_Click(object sender, EventArgs e)
+
+        private void btnEliminarCliente_Click(object sender, EventArgs e)
         {
-            Client_Delete delete = new Client_Delete();
-            delete.ShowDialog();
+            Profesion_Delete Profesion_Delete = new Profesion_Delete();
+            Profesion_Delete.ShowDialog();
         }
     }
 }

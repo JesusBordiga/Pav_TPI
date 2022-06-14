@@ -79,8 +79,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error en la base de datos","ERROR");
             }
             finally
             {
@@ -114,7 +113,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error en la base de datos", "ERROR");
             }
             finally
             {
@@ -150,13 +149,9 @@ namespace Shopping_Buy_All
                 cmd.ExecuteNonQuery();
                 resultado = true;
             }
-            catch (SqlException)
-            {
-                throw;
-            }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("No se pudo modificar el Usuario.\nError en la base de datos.", "ERROR");
             }
             finally
             {
@@ -193,7 +188,7 @@ namespace Shopping_Buy_All
 
         private void btnUserLoad_Click(object sender, EventArgs e)
         {
-            if (textNewUsernameUser.Text.Trim() != "" && textPasswordUser.Text.Trim() != "" && textConfirmPasswordUser.Text.Trim() == textPasswordUser.Text.Trim())
+            if (ValidarCampos())
             {
                 User u = ObtenerDatos();
                 string oldUser = textUsernameUser.Text.Trim().ToLower();
@@ -228,16 +223,45 @@ namespace Shopping_Buy_All
             else
             {
                 MessageBox.Show("Error al cargar el Usuario! \n" +
-                            "Complete los campos por favor!");
+                            "Complete los campos correctamente por favor!");
             }
+        }
+
+        private bool ValidarCampos()
+        {
+            // Validar que usuario no esté vacío y no tenga más de 50 caracteres (por base de datos)
+            if (textNewUsernameUser.Text.Trim() == "" || textNewUsernameUser.Text.Trim().Length > 50)
+            {
+                return false;
+            }
+            if (textPasswordUser.Text.Trim() == "")
+            {
+                return false;
+            }
+            if (textConfirmPasswordUser.Text.Trim() == "")
+            {
+                return false;
+            }
+            if (textConfirmPasswordUser.Text.Trim() != textPasswordUser.Text.Trim())
+            {
+                return false;
+            }
+            return true;
         }
 
         private void tablaUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaUsuarios.Rows[indice];
-            string username = filaSeleccionada.Cells["NombreDeUsuario"].Value.ToString();
-            Cargar_Campos(username);
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaUsuarios.Rows[indice];
+                string username = filaSeleccionada.Cells["NombreDeUsuario"].Value.ToString();
+                Cargar_Campos(username);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una casilla dentro de la tabla", "ERROR");
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.ABM_Estado_Civil
 {
@@ -23,6 +23,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
         private void cambiarModificador(bool booleano)
         {
             btnECDelete.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
@@ -36,74 +37,23 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
         }
         private void cargarTablaEC()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "select TipoEstadoCivil, NombreEstadoCivil from TipoEstadoCivil where Borrado = 0";
-                command.Parameters.Clear();
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaEC.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                throw;
+                tablaEC.DataSource = AD_EstadoCivil.obtenerDatosEstadoCivil();
             }
             catch (Exception)
             {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
+
+                MessageBox.Show("Error, no se pudieron obtener los datos de los Estados Civiles");
             }
         }
         private bool busquedaXNombre(string nombre)
         {
             bool resultado = false;
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
+            tablaEC.DataSource = AD_EstadoCivil.buscarEstadoCivil(nombre);
+            if (tablaEC.Rows.Count == 1)
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoEstadoCivil where NombreEstadoCivil = @Nombre and Borrado = 0";
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@Nombre", nombre);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaEC.DataSource = tabla;
-                if (tabla.Rows.Count == 1)
-                {
-                    resultado = true;
-                }
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
+                resultado = true;
             }
             return resultado;
         }
@@ -130,38 +80,9 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
                 MessageBox.Show("Error al buscar el estado civil! \n Complete el campo por favor!", "Error", MessageBoxButtons.OK);
             }
         }
-        private void modificarEC(string nombre)
+        private void borrarEC(string nombre)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                string consulta = "update TipoEstadoCivil set Borrado = 1 where NombreEstadoCivil = @nombre";
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@nombre", nombre);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaEC.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
+            AD_EstadoCivil.borrarEstadoCivil(nombre);
         }
         private void btnECDelete_Click(object sender, EventArgs e)
         {
@@ -174,7 +95,7 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
                 DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
                 if (result == DialogResult.OK)
                 {
-                    modificarEC(nombre);
+                    borrarEC(nombre);
                     MessageBox.Show("Estado civil dado de baja con éxito!");
                     limpiarCampos();
                     cambiarBuscador(true);
@@ -198,10 +119,24 @@ namespace Shopping_Buy_All.ABM_Estado_Civil
         }
         private void tablaEC_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaEC.Rows[indice];
-            string nombre = filaSeleccionada.Cells["NombreEstadoCivil"].Value.ToString();
-            buscarEC(nombre);
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaEC.Rows[indice];
+                string nombre = filaSeleccionada.Cells["NombreEstadoCivil"].Value.ToString();
+                buscarEC(nombre);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! \n Seleccione una casilla dentro de la tabla");
+            }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaEC();
         }
     }
 }

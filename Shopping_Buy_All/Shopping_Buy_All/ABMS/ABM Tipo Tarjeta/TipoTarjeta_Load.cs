@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
 {
@@ -25,74 +26,21 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
         }
         private void CargarTablaTipoTarjeta()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "SELECT * FROM TipoTarjeta WHERE Borrado = 0";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-                tablaTipoTarjeta.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                throw;
+                tablaTipoTarjeta.DataSource = AD_TipoTarjeta.obtenerDatosTipoTarjeta();
             }
             catch (Exception)
             {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
+
+                MessageBox.Show("Error! No se pudieron obtener los datos de los tipos de tarjeta");
             }
         }
         private bool Agregar_TipoTarjeta(TipoTarjeta tipoTarjeta)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO TipoTarjeta Values(@nombre, 0)";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombre", tipoTarjeta.NombreTipoTarjeta);
-
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
+            bool resultado = AD_TipoTarjeta.agregarTipoTarjeta(tipoTarjeta);
             return resultado;
         }
-
         private void btnTipoTarjetaLoad_Click(object sender, EventArgs e)
         {
             TipoTarjeta tipoTarjeta = new TipoTarjeta(txtNombreTdT.Text.Trim(), 0);
@@ -119,6 +67,10 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             {
                 MessageBox.Show("Error al cargar el Tipo de Tarjeta! \n Complete los campos por favor!");
             }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
         }
     }
 }

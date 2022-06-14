@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TipoComercio_Load));
             this.tablaTipoComercio = new System.Windows.Forms.DataGridView();
+            this.Tipo_Comercio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreTipoComercio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
@@ -37,8 +39,6 @@
             this.btnTipoComercioLoad = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.txtNombreTipoComercio = new System.Windows.Forms.TextBox();
-            this.Tipo_Comercio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreTipoComercio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tablaTipoComercio)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             this.Tipo_Comercio,
             this.NombreTipoComercio});
             this.tablaTipoComercio.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tablaTipoComercio.Location = new System.Drawing.Point(14, 215);
+            this.tablaTipoComercio.Location = new System.Drawing.Point(229, 39);
             this.tablaTipoComercio.Name = "tablaTipoComercio";
             this.tablaTipoComercio.ReadOnly = true;
             this.tablaTipoComercio.RowHeadersWidth = 10;
@@ -61,15 +61,31 @@
             this.tablaTipoComercio.TabIndex = 0;
             this.tablaTipoComercio.TabStop = false;
             // 
+            // Tipo_Comercio
+            // 
+            this.Tipo_Comercio.DataPropertyName = "Tipo_Comercio";
+            this.Tipo_Comercio.HeaderText = "Id";
+            this.Tipo_Comercio.Name = "Tipo_Comercio";
+            this.Tipo_Comercio.ReadOnly = true;
+            this.Tipo_Comercio.Width = 50;
+            // 
+            // NombreTipoComercio
+            // 
+            this.NombreTipoComercio.DataPropertyName = "NombreTipoComercio";
+            this.NombreTipoComercio.HeaderText = "Nombre";
+            this.NombreTipoComercio.Name = "NombreTipoComercio";
+            this.NombreTipoComercio.ReadOnly = true;
+            this.NombreTipoComercio.Width = 150;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(54, 28);
+            this.label1.Location = new System.Drawing.Point(53, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 50);
+            this.label1.Size = new System.Drawing.Size(140, 44);
             this.label1.TabIndex = 1;
             this.label1.Text = "      Cargar \r\nTipo Comercio";
             // 
@@ -79,7 +95,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(98, 77);
+            this.label4.Location = new System.Drawing.Point(33, 97);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 17);
             this.label4.TabIndex = 4;
@@ -89,11 +105,11 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(13, 187);
+            this.label15.Location = new System.Drawing.Point(228, 11);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(235, 25);
+            this.label15.Size = new System.Drawing.Size(217, 22);
             this.label15.TabIndex = 28;
             this.label15.Text = "Lista de Tipo Comercio";
             // 
@@ -127,26 +143,10 @@
             // 
             this.txtNombreTipoComercio.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtNombreTipoComercio.ForeColor = System.Drawing.Color.White;
-            this.txtNombreTipoComercio.Location = new System.Drawing.Point(76, 98);
+            this.txtNombreTipoComercio.Location = new System.Drawing.Point(107, 97);
             this.txtNombreTipoComercio.Name = "txtNombreTipoComercio";
             this.txtNombreTipoComercio.Size = new System.Drawing.Size(100, 20);
             this.txtNombreTipoComercio.TabIndex = 3;
-            // 
-            // Tipo_Comercio
-            // 
-            this.Tipo_Comercio.DataPropertyName = "Tipo_Comercio";
-            this.Tipo_Comercio.HeaderText = "Id";
-            this.Tipo_Comercio.Name = "Tipo_Comercio";
-            this.Tipo_Comercio.ReadOnly = true;
-            this.Tipo_Comercio.Width = 50;
-            // 
-            // NombreTipoComercio
-            // 
-            this.NombreTipoComercio.DataPropertyName = "NombreTipoComercio";
-            this.NombreTipoComercio.HeaderText = "Nombre";
-            this.NombreTipoComercio.Name = "NombreTipoComercio";
-            this.NombreTipoComercio.ReadOnly = true;
-            this.NombreTipoComercio.Width = 150;
             // 
             // TipoComercio_Load
             // 
@@ -155,7 +155,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(255, 387);
+            this.ClientSize = new System.Drawing.Size(468, 212);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnTipoComercioLoad);
             this.Controls.Add(this.label15);

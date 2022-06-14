@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.ABM_Tipo_Documento
 {
@@ -25,75 +26,25 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
         }
         private void CargarTablaTipoDocumento()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "select * from TipoDocumento where Borrado = 0";
-                command.Parameters.Clear();
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaTipDoc.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                throw;
+                tablaTipDoc.DataSource = AD_TipoDocumento.obtenerDatosTipoDocumento();
             }
             catch (Exception)
             {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
+
+                MessageBox.Show("Error! No se pudieron obtener los datos de los tipos de documento");
             }
         }
-        private bool Agregar_Sexo(TipoDocumento tipDoc)
+        private bool AgregarTipoDocumento(TipoDocumento tipDoc)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO TipoDocumento Values(@nombre, 0)";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombre", tipDoc.NombreTipDoc);
-
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
+            bool resultado = AD_TipoDocumento.agregarTipoDocumento(tipDoc);
             return resultado;
         }
-
         private void btnSexoLoad_Click_1(object sender, EventArgs e)
         {
             TipoDocumento tipDoc = new TipoDocumento(txtTipoDoc.Text.Trim(), 0);
-            bool resultado = Agregar_Sexo(tipDoc);
+            bool resultado = AgregarTipoDocumento(tipDoc);
             if (resultado)
             {
                 MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
@@ -116,6 +67,10 @@ namespace Shopping_Buy_All.ABM_Tipo_Documento
             {
                 MessageBox.Show("Error al cargar el tipo de documento! \n Complete los campos por favor!");
             }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
         }
     }
 }

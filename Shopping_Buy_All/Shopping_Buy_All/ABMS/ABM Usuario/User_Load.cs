@@ -59,8 +59,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error en la base de datos", "ERROR");
             }
             finally
             {
@@ -135,13 +134,9 @@ namespace Shopping_Buy_All
                 cmd.ExecuteNonQuery();
                 resultado = true;
             }
-            catch (SqlException)
-            {
-                throw;
-            }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("No se pudo agregar el Usuario.\nError en la base de datos.", "ERROR");
             }
             finally
             {
@@ -153,7 +148,8 @@ namespace Shopping_Buy_All
 
         private bool ValidarCampos()
         {
-            if (textUsernameUser.Text.Trim() == "")
+            // Validar que usuario no esté vacío y no tenga más de 50 caracteres (por base de datos)
+            if (textUsernameUser.Text.Trim() == "" || textUsernameUser.Text.Trim().Length > 50)
             {
                 return false;
             }

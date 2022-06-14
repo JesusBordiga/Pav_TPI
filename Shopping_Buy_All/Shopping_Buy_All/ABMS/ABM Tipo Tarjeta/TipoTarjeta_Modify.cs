@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
 {
@@ -25,6 +25,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
             label4.Visible = booleano;
             txtNuevoNombre.Visible = booleano;
             btnTipoTarjetaModify.Visible = booleano;
+            btnLimpiar.Visible = booleano;
         }
         private void cambiarBuscador(bool booleano)
         {
@@ -39,74 +40,23 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
         }
         private void cargarTablaTipoTarjeta()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
             try
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "select idTipo, Nombre from TipoTarjeta where Borrado = 0";
-                command.Parameters.Clear();
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaTipoTarjeta.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                throw;
+                tablaTipoTarjeta.DataSource = AD_TipoTarjeta.obtenerDatosTipoTarjeta();
             }
             catch (Exception)
             {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
+
+                MessageBox.Show("Error! No se pudieron obtener los datos de los tipos de tarjeta");
             }
         }
         private bool busquedaXNombre(string nombreViejo)
         {
             bool resultado = false;
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
+            tablaTipoTarjeta.DataSource = AD_TipoTarjeta.buscarTipoTarjeta(nombreViejo);
+            if (tablaTipoTarjeta.Rows.Count == 1)
             {
-                SqlCommand command = new SqlCommand();
-                string consulta = "select idTipo, Nombre from TipoTarjeta where Nombre = @Nombre and Borrado = 0";
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@Nombre", nombreViejo);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaTipoTarjeta.DataSource = tabla;
-                if (tabla.Rows.Count == 1)
-                {
-                    resultado = true;
-                }
-            }   
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
+                resultado = true;
             }
             return resultado;
         }
@@ -135,37 +85,7 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
         }
         private void modificarTipoTarjeta(string nombreNuevo, string nombreViejo)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                string consulta = "update TipoTarjeta set Nombre = @nombreNuevo where Nombre = @nombreViejo";
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@nombreNuevo", nombreNuevo);
-                command.Parameters.AddWithValue("@nombreViejo", nombreViejo);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                tablaTipoTarjeta.DataSource = tabla;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
+            AD_TipoTarjeta.modificarTipoTarjeta(nombreNuevo, nombreViejo);
         }
         private void btnBuscarTipoTarjeta_Click(object sender, EventArgs e)
         {
@@ -203,10 +123,24 @@ namespace Shopping_Buy_All.ABM_Tipo_Tarjeta
         }
         private void tablaTipoTarjeta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
             int indice = e.RowIndex;
             DataGridViewRow filaSeleccionada = tablaTipoTarjeta.Rows[indice];
             string nombre = filaSeleccionada.Cells["Nombre"].Value.ToString();
             buscarTipoTarjeta(nombre);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! Seleccione una casilla dentro de la tabla");
+            }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cambiarModificador(false);
+            cambiarBuscador(true);
+            cargarTablaTipoTarjeta();
         }
     }
 }

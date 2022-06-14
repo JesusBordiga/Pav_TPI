@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shopping_Buy_All.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Shopping_Buy_All.Entidades;
 
 namespace Shopping_Buy_All
 {
@@ -17,14 +17,126 @@ namespace Shopping_Buy_All
         public Tarjeta_Delete()
         {
             InitializeComponent();
-
-        }
-        private void Tarjeta_Delete_Load(object sender, EventArgs e)
-        {
-            btnSearch.Visible = true;
-            btnDeleteTarjeta.Visible = false;
             CargarTablaTarjetas();
+            CargarTiposDocumentos();
+            CargarTipoTarjetas();
+            CargarMarcaTarjetas();
         }
+
+        private void CargarTiposDocumentos()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "Select * FROM TipoDocumento where Borrado = 0";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                cmbTipoDoc.DataSource = tabla;
+                cmbTipoDoc.DisplayMember = "NombreDocumento";
+                cmbTipoDoc.ValueMember = "TipoDocumento";
+                cmbTipoDoc.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        private void CargarTipoTarjetas()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "Select * FROM TipoTarjeta where Borrado = 0";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                cmbTipo.DataSource = tabla;
+                cmbTipo.DisplayMember = "Nombre";
+                cmbTipo.ValueMember = "idTipo";
+                cmbTipo.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        private void CargarMarcaTarjetas()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "Select * FROM MarcaTarjetas where Borrado = 0";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                cmbMarca.DataSource = tabla;
+                cmbMarca.DisplayMember = "Nombre";
+                cmbMarca.ValueMember = "idMarca";
+                cmbMarca.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         private void CargarTablaTarjetas()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -61,21 +173,56 @@ namespace Shopping_Buy_All
 
         private void Clean()
         {
+            cmbTipoDoc.SelectedIndex = -1;
+            cmbMarca.SelectedIndex = -1;
+            cmbTipo.SelectedIndex = -1;
+            textNroDoc.Text = "";
             textNroTarjeta.Text = "";
+            cmbTipoDoc.Enabled = true;
+            textNroDoc.Enabled = true;
+            textNroTarjeta.Enabled = true;
+            btnDelete.Visible = false;
+            btnSearch.Visible = true;
+            labelMarca.Visible = false;
+            labelTipo.Visible = false;
+            cmbMarca.Visible = false;
+            cmbTipo.Visible = false;
+            cmbTipoDoc.Focus();
         }
-        private Tarjeta Cargar_Tarjeta(string NroTarjeta)
+
+        private void Cargar_Campos(Tarjeta t)
+        {
+            cmbTipoDoc.SelectedValue = t.TipoDocumentoTarjeta;
+            textNroDoc.Text = t.NroDocumentoTarjeta;
+            textNroTarjeta.Text = t.NroTarjetaCliente;
+            cmbTipoDoc.Enabled = false;
+            textNroDoc.Enabled = false;
+            textNroTarjeta.Enabled = false;
+            cmbMarca.Visible = true;
+            cmbTipo.Visible = true;
+            cmbMarca.SelectedValue = t.IdMarcaTarjeta;
+            cmbTipo.SelectedValue = t.IdTipoTarjeta;
+            labelMarca.Visible = true;
+            labelTipo.Visible = true;
+            btnDelete.Visible = true;
+            btnSearch.Visible = false;
+            cmbMarca.Focus();
+        }
+
+        private bool ExisteTarjeta(Tarjeta t)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
-            Tarjeta card = new Tarjeta();
+            bool result = false;
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM TarjetaXCliente where NroTarjeta like @nroTarjeta AND Borrado = 0";
+                string consulta = "SELECT * FROM TarjetaXCliente WHERE TipoDocumento = @tipoDoc AND NroDocumento = @nroDoc AND NroTarjeta = @nroTarjeta AND Borrado like 0";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nroTarjeta", NroTarjeta);
-
+                cmd.Parameters.AddWithValue("@tipoDoc", t.TipoDocumentoTarjeta);
+                cmd.Parameters.AddWithValue("@nroDoc", t.NroDocumentoTarjeta);
+                cmd.Parameters.AddWithValue("@nroTarjeta", t.NroTarjetaCliente);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -84,122 +231,60 @@ namespace Shopping_Buy_All
                 SqlDataReader DataReader = cmd.ExecuteReader();
                 if (DataReader != null && DataReader.Read())
                 {
-                    card.TipoDocumentoTarjeta = int.Parse(DataReader["TipoDocumento"].ToString());
-                    card.NroDocumentoTarjeta = DataReader["NroDocumento"].ToString();
-                    card.NroTarjetaCliente = DataReader["NroTarjeta"].ToString();
-                    card.IdMarcaTarjeta = int.Parse(DataReader["IdMarca"].ToString());
-                    card.IdTipoTarjeta = int.Parse(DataReader["IdTipo"].ToString());
-                    
+                    result = true;
                 }
-                cn.Close();
-
-                DataTable tabla = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(tabla);
-                tablaTarjetas.DataSource = tabla;
-
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Error en la base de datos.", "ERROR");
             }
             finally
             {
                 cn.Close();
             }
-            return card;
-
+            return result;
         }
-        private bool Buscar_Tarjeta1(string NroTarjeta)
+
+        private Tarjeta ObtenerDatosBuscar()
+        {
+            Tarjeta t = new Tarjeta();
+            if (cmbTipoDoc.SelectedIndex == -1)
+            {
+                t.TipoDocumentoTarjeta = 0;
+            }
+            else
+            {
+                t.TipoDocumentoTarjeta = (int)cmbTipoDoc.SelectedValue;
+            }
+            t.NroDocumentoTarjeta = textNroDoc.Text.Trim();
+            t.NroTarjetaCliente = textNroTarjeta.Text.Trim();
+            return t;
+        }
+
+        private Tarjeta ObtenerDatos()
+        {
+            Tarjeta t = new Tarjeta();
+            t.TipoDocumentoTarjeta = (int)cmbTipoDoc.SelectedValue;
+            t.NroDocumentoTarjeta = textNroDoc.Text.Trim();
+            t.NroTarjetaCliente = textNroTarjeta.Text.Trim();
+            t.IdMarcaTarjeta = (int)cmbMarca.SelectedValue;
+            t.IdTipoTarjeta = (int)cmbTipo.SelectedValue;
+            return t;
+        }
+
+        private bool EliminarTarjeta(Tarjeta t)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
-            Tarjeta card = new Tarjeta();
             bool resultado = false;
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM TarjetaXCliente where NroTarjeta like @nroTarjeta AND Borrado = 0";
-
+                string consulta = "UPDATE TarjetaXCliente SET Borrado = 1 WHERE TipoDocumento = @tipoDocumento AND NroDocumento = @nroDocumento AND NroTarjeta = @nroTarjeta AND Borrado LIKE 0";
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nroTarjeta", NroTarjeta);
-
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
-                {
-                    card.TipoDocumentoTarjeta = int.Parse(DataReader["TipoDocumento"].ToString());
-                    card.NroDocumentoTarjeta = DataReader["NroDocumento"].ToString();
-                    card.NroTarjetaCliente = DataReader["NroTarjeta"].ToString();
-                    card.IdMarcaTarjeta = int.Parse(DataReader["IdMarca"].ToString());
-                    card.IdTipoTarjeta = int.Parse(DataReader["IdTipo"].ToString());
-                    cn.Close();
-                    DataTable tabla = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(tabla);
-                    tablaTarjetas.DataSource = tabla;
-                    resultado = true;
-                }
-  
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return resultado;
-
-        }
-        private void btnClean_Click(object sender, EventArgs e)
-            {    
-              Clean();
-              CargarTablaTarjetas();
-              btnDeleteTarjeta.Visible = false;
-              btnSearch.Visible = true;
-            }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            if (textNroTarjeta.Text.Trim().Equals(""))
-                {
-                MessageBox.Show("Error, Debe completar los campos!!");
-                }
-            else
-                {
-                bool existe = Buscar_Tarjeta1(textNroTarjeta.Text.Trim());
-                if (existe)
-                    {
-                    tablaTarjetas.Visible = true;
-                    btnDeleteTarjeta.Visible = true;
-                    btnSearch.Visible = false;
-                    }
-                else
-                    {
-                    MessageBox.Show("La tarjeta que busca no existe o fue borrado!");
-                    }
-                }
-        }
-        private bool BorrarTarjeta(string NroTarjeta, int Borrado)
-        {
-                string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-                SqlConnection cn = new SqlConnection(cadenaConexion);
-                bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE TarjetaXCliente SET Borrado = @borrado WHERE NroTarjeta Like @nroTarjeta AND Borrado like 0";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nroTarjeta", NroTarjeta);
-                cmd.Parameters.AddWithValue("@borrado", Borrado);
+                cmd.Parameters.AddWithValue("@tipoDocumento", t.TipoDocumentoTarjeta);
+                cmd.Parameters.AddWithValue("@nroDocumento", t.NroDocumentoTarjeta);
+                cmd.Parameters.AddWithValue("@nroTarjeta", t.NroTarjetaCliente);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -208,120 +293,139 @@ namespace Shopping_Buy_All
                 cmd.ExecuteNonQuery();
                 resultado = true;
             }
-            catch (SqlException)
-            {
-                throw;
-                
-            }
-            catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    cn.Close();
-                }
-                return resultado;
-        }
-
-        private void btnDeleteTarjeta_Click(object sender, EventArgs e)
-        {
-            Tarjeta c = Cargar_Tarjeta(textNroTarjeta.Text.Trim());
-            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-            String mensajeCarga = (
-                  " |Tipo Documento: " + c.TipoDocumentoTarjeta + " |Numero Documento: " + c.NroDocumentoTarjeta + "|" + "\n"
-                + " |Nro Tarjeta: " + c.NroTarjetaCliente + " |Marca: " + c.IdMarcaTarjeta + "|" + "\n"
-                + " |Tipo: " + c.IdTipoTarjeta + "\n" + "\n" + " |Desea eliminar a esta tarjeta??");
-
-            string titulo = "Información de Eliminación";
-
-            DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-            if (result == DialogResult.OK)
-            {
-                bool resultado = BorrarTarjeta(textNroTarjeta.Text.Trim(), 1);
-                if (resultado)
-                {
-                    MessageBox.Show("Tarjeta Borrado con éxito!");
-                    Clean();
-                    btnDeleteTarjeta.Visible = false;
-                    btnSearch.Visible = true;
-                    CargarTablaTarjetas();
-                    textNroTarjeta.Focus();
-                }
-                else
-                {
-                    MessageBox.Show("La Tarjeta No fue Borrado!");
-                }
-            }
-            else
-            {
-                textNroTarjeta.Focus();
-            }
-        }
-
-        private void Cargar_Campos(Tarjeta c)
-        {
-
-            //Cargar Documento
-            textNroTarjeta.Text  = c.NroDocumentoTarjeta;
-        }
-        private Tarjeta Buscar_Tarjeta2(string NroTarjeta)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            Tarjeta card = new Tarjeta();
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM TarjetaXCliente WHERE NroTarjeta like @nroTarjeta AND Borrado = 0 ";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nroTarjeta", NroTarjeta);
-
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
-                {
-                    card.TipoDocumentoTarjeta = int.Parse(DataReader["TipoDocumento"].ToString());
-                    card.NroDocumentoTarjeta = DataReader["NroDocumento"].ToString();
-                    card.NroTarjetaCliente = DataReader["NroTarjeta"].ToString();
-                    card.IdMarcaTarjeta = int.Parse(DataReader["IdMarca"].ToString());
-                    card.IdTipoTarjeta = int.Parse(DataReader["IdTipo"].ToString());
-                    cn.Close();
-                    DataTable tabla = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(tabla);
-                    tablaTarjetas.DataSource = tabla;
-                }
-            }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("No se pudo borrar la Tarjeta.\nError en la base de datos.", "ERROR");
             }
             finally
             {
                 cn.Close();
             }
-            return card;
-
+            return resultado;
         }
 
-        private void tablaTarjetas_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaTarjetas.Rows[indice];
-            string nroTarjeta = filaSeleccionada.Cells["NroTarjeta"].Value.ToString();
-            Tarjeta c = Buscar_Tarjeta2(nroTarjeta);
+            Tarjeta t = ObtenerDatosBuscar();
+            bool existe = ExisteTarjeta(t);
+            if (existe)
+            {
+                t = Buscar_Tarjeta(t);
+                Cargar_Campos(t);
+            }
+            else
+            {
+                Clean();
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
             Clean();
-            Cargar_Campos(c);
-            btnDeleteTarjeta.Visible = true;
+        }
+
+        private Tarjeta Buscar_Tarjeta(Tarjeta t)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT * FROM TarjetaXCliente WHERE TipoDocumento = @tipoDoc AND NroDocumento = @nroDoc AND NroTarjeta = @nroTarjeta AND Borrado like 0";
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@tipoDoc", t.TipoDocumentoTarjeta);
+                cmd.Parameters.AddWithValue("@nroDoc", t.NroDocumentoTarjeta);
+                cmd.Parameters.AddWithValue("@nroTarjeta", t.NroTarjetaCliente);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+                cn.Open();
+                cmd.Connection = cn;
+                SqlDataReader DataReader = cmd.ExecuteReader();
+                if (DataReader != null && DataReader.Read())
+                {
+                    t.IdMarcaTarjeta = int.Parse(DataReader["IdMarca"].ToString());
+                    t.IdTipoTarjeta = int.Parse(DataReader["IdTipo"].ToString());
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en la base de datos.", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return t;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (ValidarCampos())
+            {
+                Tarjeta t = ObtenerDatos();
+                bool resultado = EliminarTarjeta(t);
+                if (resultado)
+                {
+                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                    String mensajeCarga = (
+                    " |Tipo Documento: " + t.TipoDocumentoTarjeta + " |Numero Documento: " + t.NroDocumentoTarjeta + "|" + "\n"
+                + " |Nro. de Tarjeta: " + t.NroTarjetaCliente + " |Marca: " + t.IdMarcaTarjeta + "|" + "\n"
+                + " |Tipo: " + t.IdTipoTarjeta + "\n");
+
+                    string titulo = "Información de Tarjeta";
+
+                    DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                    if (result == DialogResult.OK)
+                    {
+                        MessageBox.Show("Tarjeta borrada con éxito!");
+                        Clean();
+                        CargarTablaTarjetas();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error al cargar la Tarjeta! \n" +
+                            "Complete los campos por favor!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar la Tarjeta! \n" +
+                            "Complete los campos por favor!");
+            }
+        }
+
+        private bool ValidarCampos()
+        {
+            if (cmbMarca.SelectedIndex == -1 || cmbTipo.SelectedIndex == -1)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private void tablaTarjetas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaTarjetas.Rows[indice];
+                string tipoDoc = filaSeleccionada.Cells["TipoDocumento"].Value.ToString();
+                string nroDoc = filaSeleccionada.Cells["NroDocumento"].Value.ToString();
+                string nroTarjeta = filaSeleccionada.Cells["NroTarjeta"].Value.ToString();
+                Tarjeta t = new Tarjeta();
+                t.TipoDocumentoTarjeta = int.Parse(tipoDoc);
+                t.NroDocumentoTarjeta = nroDoc;
+                t.NroTarjetaCliente = nroTarjeta;
+                t = Buscar_Tarjeta(t);
+                Cargar_Campos(t);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una casilla dentro de la tabla", "ERROR");
+            }
         }
     }
 }
-
