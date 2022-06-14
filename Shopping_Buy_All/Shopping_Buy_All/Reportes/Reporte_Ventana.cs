@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas;
 
 namespace Shopping_Buy_All
 {
@@ -29,6 +30,12 @@ namespace Shopping_Buy_All
         {
             ReporteListadoClientes reporteListadoClientes = new ReporteListadoClientes();
             reporteListadoClientes.Show();
+        }
+
+        private void btnMasVendido_Click(object sender, EventArgs e)
+        {
+            ReporteProductos reporteProductosMasVendidos = new ReporteProductos();
+            reporteProductosMasVendidos.Show();
         }
     }
 }

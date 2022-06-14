@@ -202,5 +202,106 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             }
             return resultado;
         }
+       
+        public DataTable _Rpt_Productos()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT Codigo_Producto 'Codigo_Producto', NombreProducto 'NombreProducto', Precio 'Precio' FROM Productos WHERE Borrado = 0 order by Codigo_Producto";
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return tabla;
+        }
+        public DataTable _Rpt_Productos(string letra)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT Codigo_Producto 'Codigo_Producto', NombreProducto 'NombreProducto', Precio 'Precio' FROM Productos WHERE Borrado = 0 and NombreProducto like '" + letra.Trim() + "%' order by NombreProducto";                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return tabla;
+        }
+        public DataTable _Rpt_Productos(string inicio, string final)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT Codigo_Producto 'Codigo_Producto', NombreProducto 'NombreProducto', Precio 'Precio' FROM Productos WHERE Borrado = 0 and Precio Between @a and @b order by Precio";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@a", inicio);
+                cmd.Parameters.AddWithValue("@b", final);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return tabla;
+        }
     }
 }

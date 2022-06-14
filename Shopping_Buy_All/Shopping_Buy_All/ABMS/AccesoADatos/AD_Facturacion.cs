@@ -13,6 +13,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
     public class AD_Facturacion
     {
+
         public static Cliente Buscar_Cliente_Documento(string TipoDocumento, string NroDocumento)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -175,6 +176,95 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             }
             return resultado;
         }
-    }
+        public static DataTable getMasVendido()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                string consulta = "getMasVendido";
 
+                command.Parameters.Clear();
+                command.CommandType = CommandType.Text;
+                command.CommandText = consulta;
+                cn.Open();
+                command.Connection = cn;
+                DataTable tabla = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en la base de datos.", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return null;
+        }
+        public static DataTable getMasVendidoPorFecha(DateTime fechaDesde, DateTime fechaHasta)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                string consulta = "getMasVendidoPorFecha @fechaDesde, @fechaHasta";
+
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+                command.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+                command.CommandType = CommandType.Text;
+                command.CommandText = consulta;
+                cn.Open();
+                command.Connection = cn;
+                DataTable tabla = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en la base de datos.", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return null;
+        }
+        public static DataTable getMasVendidoPorLocal(int idLocal)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                string consulta = "getMasVendidoPorLocal @idLocal";
+
+                command.Parameters.Clear();
+                command.Parameters.AddWithValue("@idLocal", idLocal);
+                command.CommandType = CommandType.Text;
+                command.CommandText = consulta;
+                cn.Open();
+                command.Connection = cn;
+                DataTable tabla = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(tabla);
+                return tabla;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error en la base de datos.", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return null;
+        }
+    }
 }

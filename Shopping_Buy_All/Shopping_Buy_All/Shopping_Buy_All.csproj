@@ -547,6 +547,12 @@
     <Compile Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteListadoFacturas.Designer.cs">
       <DependentUpon>ReporteListadoFacturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.Designer.cs">
+      <DependentUpon>ReporteProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="ABMS\ABM Cliente\Client_Delete.resx">
       <DependentUpon>Client_Delete.cs</DependentUpon>
@@ -780,6 +786,10 @@
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteListadoFacturas.resx">
       <DependentUpon>ReporteListadoFacturas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.resx">
+      <DependentUpon>ReporteProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesProductos\ReportProductos.rdlc" />
     <None Include="BD3K7G01_2022DataSet.xsc">
       <DependentUpon>BD3K7G01_2022DataSet.xsd</DependentUpon>
     </None>
@@ -850,7 +860,9 @@
   <ItemGroup>
     <None Include="Resources\xclipboard.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Reportes\Ventanas_Reportes\ReportesMarcasTarjeta\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rstudio.png" />
     <Content Include="SqlServerTypes\readme.htm" />
