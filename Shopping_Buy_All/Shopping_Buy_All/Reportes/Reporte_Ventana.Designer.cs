@@ -68,7 +68,7 @@
             this.btnMasVendido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMasVendido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMasVendido.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnMasVendido.Location = new System.Drawing.Point(85, 108);
+            this.btnMasVendido.Location = new System.Drawing.Point(85, 105);
             this.btnMasVendido.Name = "btnMasVendido";
             this.btnMasVendido.Size = new System.Drawing.Size(126, 26);
             this.btnMasVendido.TabIndex = 2;
