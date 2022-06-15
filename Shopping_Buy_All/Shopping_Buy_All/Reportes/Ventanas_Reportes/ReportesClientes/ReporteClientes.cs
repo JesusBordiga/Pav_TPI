@@ -22,13 +22,17 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes
             InitializeComponent();
             lblRestriccion.Visible = false;
             txt_restriccion.Visible = false;
+            comboBoxNombre.Visible = false;
         }
         private void rbPorLetraCheckedChanged(object sender, EventArgs e)
         {
             lblRestriccion.Text = "Ingrese letra";
-            txt_restriccion.Mask = "L";
+            //txt_restriccion.Mask = "L";
             lblRestriccion.Visible = true;
-            txt_restriccion.Visible = true;
+            //txt_restriccion.Visible = true;
+            comboBoxNombre.Visible = true;
+            txt_restriccion.Visible = false;
+            comboBoxNombre.SelectedIndex = -1;
         }
         private void rbRangoCheckedChanged(object sender, EventArgs e)
         {
@@ -36,6 +40,8 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes
             lblRestriccion.Visible = true;
             txt_restriccion.Mask = "99/99/9999-99/99/9999";
             txt_restriccion.Visible = true;
+            comboBoxNombre.Visible = false;
+            comboBoxNombre.SelectedIndex = -1;
         }
         private void rbTodosCheckedChanged(object sender, EventArgs e)
         {
@@ -44,6 +50,8 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes
                 lblRestriccion.Text = "";
                 lblRestriccion.Visible = false;
                 txt_restriccion.Visible = false;
+                comboBoxNombre.Visible = false;
+                comboBoxNombre.SelectedIndex = -1;
             }
         }
         private void Restriccion()
@@ -64,8 +72,8 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes
             if (rbPorLetra.Checked == true)
             {
                 //letra
-                alcance = "Productos que empiezan por la letra: " + txt_restriccion.Text;
-                Tabla = _Clientes._Rpt_Clientes(txt_restriccion.Text);
+                alcance = "Productos que empiezan por la letra: " + comboBoxNombre.Text;
+                Tabla = _Clientes._Rpt_Clientes(comboBoxNombre.Text);
             }
         }
         private void btn_buscar01_Click(object sender, EventArgs e)
@@ -97,6 +105,8 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes
             rbTodos.Checked = false;
             lblRestriccion.Visible = false;
             txt_restriccion.Visible = false;
+            comboBoxNombre.Visible = false;
+            comboBoxNombre.SelectedIndex = -1;
         }
         private bool validarSeleccion()
         {

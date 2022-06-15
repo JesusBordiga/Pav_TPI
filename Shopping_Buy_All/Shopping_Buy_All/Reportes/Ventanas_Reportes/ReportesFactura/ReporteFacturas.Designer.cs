@@ -37,6 +37,7 @@
             this.rbLocal = new System.Windows.Forms.RadioButton();
             this.rbTodos = new System.Windows.Forms.RadioButton();
             this.repFac = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.comboBoxLocal = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
@@ -142,6 +143,72 @@
             this.repFac.Size = new System.Drawing.Size(637, 352);
             this.repFac.TabIndex = 19;
             // 
+            // comboBoxLocal
+            // 
+            this.comboBoxLocal.AutoCompleteCustomSource.AddRange(new string[] {
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h",
+            "i",
+            "j",
+            "k",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "q",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "w",
+            "y",
+            "z"});
+            this.comboBoxLocal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxLocal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxLocal.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.comboBoxLocal.DropDownHeight = 70;
+            this.comboBoxLocal.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxLocal.FormattingEnabled = true;
+            this.comboBoxLocal.IntegralHeight = false;
+            this.comboBoxLocal.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "Y",
+            "Z"});
+            this.comboBoxLocal.Location = new System.Drawing.Point(501, 25);
+            this.comboBoxLocal.Name = "comboBoxLocal";
+            this.comboBoxLocal.Size = new System.Drawing.Size(144, 21);
+            this.comboBoxLocal.TabIndex = 28;
+            // 
             // ReporteFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,6 +216,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(650, 444);
+            this.Controls.Add(this.comboBoxLocal);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_restriccion);
             this.Controls.Add(this.lblTitulo);
@@ -176,5 +244,6 @@
         private System.Windows.Forms.RadioButton rbLocal;
         private System.Windows.Forms.RadioButton rbTodos;
         private Microsoft.Reporting.WinForms.ReportViewer repFac;
+        private System.Windows.Forms.ComboBox comboBoxLocal;
     }
 }

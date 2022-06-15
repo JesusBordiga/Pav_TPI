@@ -867,6 +867,7 @@
             this.pictureBox8.Size = new System.Drawing.Size(58, 55);
             this.pictureBox8.TabIndex = 52;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.btnReporteFactura_Click);
             // 
             // pictureBox9
             // 

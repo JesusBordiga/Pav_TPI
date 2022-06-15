@@ -37,6 +37,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txt_restriccion = new System.Windows.Forms.MaskedTextBox();
             this.lblRestriccion = new System.Windows.Forms.Label();
+            this.comboBoxNombre = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -103,14 +104,14 @@
             this.repProd.Location = new System.Drawing.Point(5, 86);
             this.repProd.Name = "repProd";
             this.repProd.ServerReport.BearerToken = null;
-            this.repProd.Size = new System.Drawing.Size(958, 352);
+            this.repProd.Size = new System.Drawing.Size(944, 352);
             this.repProd.TabIndex = 11;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(888, 60);
+            this.button1.Location = new System.Drawing.Point(875, 60);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 18;
@@ -122,11 +123,11 @@
             // 
             this.txt_restriccion.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txt_restriccion.ForeColor = System.Drawing.SystemColors.Control;
-            this.txt_restriccion.Location = new System.Drawing.Point(821, 32);
+            this.txt_restriccion.Location = new System.Drawing.Point(808, 32);
             this.txt_restriccion.Mask = "LLLLLLLL";
             this.txt_restriccion.Name = "txt_restriccion";
             this.txt_restriccion.PromptChar = '⠀';
-            this.txt_restriccion.Size = new System.Drawing.Size(142, 20);
+            this.txt_restriccion.Size = new System.Drawing.Size(138, 20);
             this.txt_restriccion.TabIndex = 25;
             // 
             // lblRestriccion
@@ -135,11 +136,77 @@
             this.lblRestriccion.BackColor = System.Drawing.Color.Transparent;
             this.lblRestriccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRestriccion.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblRestriccion.Location = new System.Drawing.Point(824, 14);
+            this.lblRestriccion.Location = new System.Drawing.Point(811, 14);
             this.lblRestriccion.Name = "lblRestriccion";
             this.lblRestriccion.Size = new System.Drawing.Size(89, 17);
             this.lblRestriccion.TabIndex = 26;
             this.lblRestriccion.Text = "Restriccion";
+            // 
+            // comboBoxNombre
+            // 
+            this.comboBoxNombre.AutoCompleteCustomSource.AddRange(new string[] {
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h",
+            "i",
+            "j",
+            "k",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "q",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "w",
+            "y",
+            "z"});
+            this.comboBoxNombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxNombre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxNombre.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.comboBoxNombre.DropDownHeight = 70;
+            this.comboBoxNombre.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBoxNombre.FormattingEnabled = true;
+            this.comboBoxNombre.IntegralHeight = false;
+            this.comboBoxNombre.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "Y",
+            "Z"});
+            this.comboBoxNombre.Location = new System.Drawing.Point(822, 31);
+            this.comboBoxNombre.Name = "comboBoxNombre";
+            this.comboBoxNombre.Size = new System.Drawing.Size(77, 21);
+            this.comboBoxNombre.TabIndex = 27;
             // 
             // ReporteClientes
             // 
@@ -147,7 +214,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(970, 443);
+            this.ClientSize = new System.Drawing.Size(958, 443);
+            this.Controls.Add(this.comboBoxNombre);
             this.Controls.Add(this.lblRestriccion);
             this.Controls.Add(this.txt_restriccion);
             this.Controls.Add(this.button1);
@@ -175,5 +243,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MaskedTextBox txt_restriccion;
         private System.Windows.Forms.Label lblRestriccion;
+        private System.Windows.Forms.ComboBox comboBoxNombre;
     }
 }

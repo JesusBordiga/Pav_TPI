@@ -22,13 +22,28 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
             InitializeComponent();
             lblRestriccion.Visible = false;
             txt_restriccion.Visible = false;
+            comboBoxLocal.Visible = false;
         }
         private void rbPorLocalCheckedChanged(object sender, EventArgs e)
         {
             lblRestriccion.Text = "Ingrese local";
-            txt_restriccion.Mask = "99";
             lblRestriccion.Visible = true;
-            txt_restriccion.Visible = true;
+            comboBoxLocal.Visible = true;
+            cargarLocal();
+        }
+        private void cargarLocal()
+        {
+            try
+            {
+                comboBoxLocal.DataSource = AD_Local.ObtenerTablaLocalReducida();
+                comboBoxLocal.DisplayMember = "Nombre";
+                comboBoxLocal.ValueMember = "CodigoLocal";
+                comboBoxLocal.SelectedIndex = -1;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error, no se pudieron obtener los datos de los locales");
+            }
         }
         private void rbRangoCheckedChanged(object sender, EventArgs e)
         {
@@ -36,6 +51,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
             lblRestriccion.Visible = true;
             txt_restriccion.Mask = "99/99/9999-99/99/9999";
             txt_restriccion.Visible = true;
+            comboBoxLocal.Visible = false;
         }
         private void rbTodosCheckedChanged(object sender, EventArgs e)
         {
@@ -44,6 +60,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
                 lblRestriccion.Text = "";
                 lblRestriccion.Visible = false;
                 txt_restriccion.Visible = false;
+                comboBoxLocal.Visible = false;
             }
         }
         private void Restriccion()
@@ -64,8 +81,8 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
             if (rbLocal.Checked == true)
             {
                 //letra
-                alcance = "Facturas del local: " + txt_restriccion.Text;
-                Tabla = _Clientes._Rpt_Clientes(txt_restriccion.Text);
+                alcance = "Facturas del local: " + comboBoxLocal.Text;
+                Tabla = _Clientes._Rpt_Clientes(comboBoxLocal.SelectedIndex.ToString());
             }
         }
         private void btn_buscar01_Click(object sender, EventArgs e)
@@ -98,6 +115,8 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
             rbTodos.Checked = false;
             lblRestriccion.Visible = false;
             txt_restriccion.Visible = false;
+            comboBoxLocal.Visible = false;
+            comboBoxLocal.SelectedIndex = -1;
         }
 
         private bool validarSeleccion()
