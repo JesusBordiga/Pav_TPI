@@ -41,7 +41,7 @@ namespace Shopping_Buy_All.ABMS.ABM_TipoVehiculo
 
                 SqlDataAdapter da = new SqlDataAdapter(comand);
                 da.Fill(tabla);
-                tablaTipoVehiculo.DataSource = tabla;
+                TablaTipoAuto.DataSource = tabla;
             }
             catch (Exception)
             {

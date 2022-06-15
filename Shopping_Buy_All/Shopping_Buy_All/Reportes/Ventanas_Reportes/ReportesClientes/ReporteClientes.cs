@@ -82,11 +82,21 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes
                 repProd.LocalReport.DataSources.Clear();
                 repProd.LocalReport.DataSources.Add(Datos);
                 repProd.RefreshReport();
+                clean();
             }
             else
             {
                 MessageBox.Show("Seleccione una restricción!", "Error");
             }
+        }
+        private void clean()
+        {
+            txt_restriccion.Text = "";
+            rbPorLetra.Checked = false;
+            rbRangoId.Checked = false;
+            rbTodos.Checked = false;
+            lblRestriccion.Visible = false;
+            txt_restriccion.Visible = false;
         }
         private bool validarSeleccion()
         {

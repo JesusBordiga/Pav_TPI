@@ -8,6 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesProductos;
+
 namespace Shopping_Buy_All
 {
     public partial class Logged : Form
@@ -21,6 +26,7 @@ namespace Shopping_Buy_All
         {
             btnMenu1.Visible = true;
             panelMenu.Visible = false;
+            MenuReportes.Visible = false;
 
         }
         private void btnClientLoad_Click(object sender, EventArgs e)
@@ -83,8 +89,36 @@ namespace Shopping_Buy_All
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            Reportes_Ventana reportes_ventana = new Reportes_Ventana();
-            reportes_ventana.Show();
+            MenuReportes.Visible = true;
+        }
+
+        private void pictureBoxMenuReportes_Click(object sender, EventArgs e)
+        {
+            MenuReportes.Visible = false;
+        }
+
+        private void btnReporteClientes_Click(object sender, EventArgs e)
+        {
+            ReporteClientes reporteCllientes = new ReporteClientes();
+            reporteCllientes.Show();
+        }
+
+        private void btnReporteFactura_Click(object sender, EventArgs e)
+        {
+            ReporteFacturas reportefacturas = new ReporteFacturas();
+            reportefacturas.Show();
+        }
+
+        private void btnReportesProductos_Click(object sender, EventArgs e)
+        {
+            ReporteProductos reporteproductos = new ReporteProductos();
+            reporteproductos.Show();
+        }
+
+        private void btnReportesVehiculos_Click(object sender, EventArgs e)
+        {
+            ReporteVehiculos reportevehiculos = new ReporteVehiculos();
+            reportevehiculos.Show();
         }
     }
 }

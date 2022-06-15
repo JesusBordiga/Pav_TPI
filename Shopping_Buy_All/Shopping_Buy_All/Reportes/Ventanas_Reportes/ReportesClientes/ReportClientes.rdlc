@@ -92,9 +92,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.2643cm</Top>
+            <Left>0.00001cm</Left>
             <Height>0.99688cm</Height>
-            <Width>23.42536cm</Width>
+            <Width>24.76591cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -113,18 +113,20 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Alcance de reporte :</Value>
-                    <Style />
+                    <Value>Alcance de reporte:</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>1.29646cm</Top>
+            <Top>0.97896cm</Top>
             <Left>0.00001cm</Left>
             <Height>0.6cm</Height>
-            <Width>3.32021cm</Width>
+            <Width>3.46132cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -151,10 +153,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Alcance</rd:DefaultName>
-            <Top>1.29646cm</Top>
-            <Left>3.39078cm</Left>
+            <Top>0.97896cm</Top>
+            <Left>3.46133cm</Left>
             <Height>0.6cm</Height>
-            <Width>20.0346cm</Width>
+            <Width>21.30458cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -170,10 +172,10 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.5475cm</Width>
+                  <Width>2.99388cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.36771cm</Width>
+                  <Width>3.05563cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>3.61125cm</Width>
@@ -188,13 +190,13 @@
                   <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.96542cm</Width>
+                  <Width>1.30938cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.09771cm</Width>
+                  <Width>2.15604cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.43687cm</Width>
+                  <Width>3.24083cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -211,7 +213,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Tipo Documento</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -243,7 +247,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Nro Documento</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -275,7 +281,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Apellido</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -307,7 +315,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Nombres</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -339,7 +349,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Calle</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -371,7 +383,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Nro Calle</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -403,7 +417,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Sexo</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -435,7 +451,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Estado Civil</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -467,7 +485,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Fecha Nacimiento</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -508,7 +528,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -540,7 +560,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -572,7 +592,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -604,7 +624,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -636,7 +656,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -668,7 +688,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -700,7 +720,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -732,7 +752,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -764,7 +784,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -810,10 +830,9 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DatosClientes</DataSetName>
-            <Top>2.00229cm</Top>
-            <Left>0cm</Left>
+            <Top>1.68479cm</Top>
             <Height>1.2cm</Height>
-            <Width>23.42536cm</Width>
+            <Width>24.76591cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -822,52 +841,11 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.83333in</Height>
+        <Height>1.14583in</Height>
         <Style />
       </Body>
-      <Width>9.22259in</Width>
+      <Width>9.75036in</Width>
       <Page>
-        <PageFooter>
-          <Height>2.54cm</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
-            <Textbox Name="PageNumber">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Globals!PageNumber</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>1.50495cm</Top>
-              <Left>19.39078cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-          </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
