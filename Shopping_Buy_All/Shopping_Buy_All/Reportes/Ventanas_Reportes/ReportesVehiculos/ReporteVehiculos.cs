@@ -22,24 +22,24 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesProductos
         {
             InitializeComponent();
             lblRestriccion.Visible = false;
-            txt_restriccion.Visible = false;
+            text_patente.Visible = false;
             text_patente.Visible = false;
         }
         private void rbPorPatenteCheckedChanged(object sender, EventArgs e)
         {
             text_patente.Visible = true;
-            lblRestriccion.Text = "Ingrese patente";
+            lblRestriccion.Text = "Ingrese Patente";
             text_patente.Text = "";
             lblRestriccion.Visible = true;
-            txt_restriccion.Visible = false;
+            text_patente.Visible = true;
         }
         private void rbDocCheckedChanged(object sender, EventArgs e)
         {
             text_patente.Visible = false;
             lblRestriccion.Text = "Ingrese Documento";
-            txt_restriccion.Mask = "99999999";
+            text_patente.Mask = "99999999";
             lblRestriccion.Visible = true;
-            txt_restriccion.Visible = true;
+            text_patente.Visible = true;
         }
         private void rbTodosCheckedChanged(object sender, EventArgs e)
         {
@@ -48,7 +48,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesProductos
                 text_patente.Visible = false;
                 lblRestriccion.Text = "";
                 lblRestriccion.Visible = false;
-                txt_restriccion.Visible = false;
+                text_patente.Visible = false;
             }
         }
         private void Restriccion()
@@ -62,8 +62,8 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesProductos
             if (rb_doc_id.Checked == true)
             {
                 //documento
-                alcance = "Documento nro:" + txt_restriccion.Text;
-                Tabla = _Vehiculos._Rpt_Vehiculos1(txt_restriccion.Text);
+                alcance = "Documento nro:" + text_patente.Text;
+                Tabla = _Vehiculos._Rpt_Vehiculos1(text_patente.Text);
             }
            if (rb_x_letra.Checked == true)
             {
@@ -72,9 +72,19 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesProductos
                 Tabla = _Vehiculos._Rpt_Vehiculos(text_patente.Text);
             }
         }
-        private void btn_buscar01_Click(object sender, EventArgs e)
+        private bool validarSeleccion()
         {
-            if (validarSeleccion()){
+            if (rb_x_letra.Checked == false && rb_todos.Checked == false && rb_doc_id.Checked == false)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (validarSeleccion())
+            {
                 Restriccion();
 
                 ReportDataSource Datos = new ReportDataSource("DatosVehiculos", Tabla);
@@ -91,14 +101,5 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesProductos
                 MessageBox.Show("Seleccione una restricción!", "Error");
             }
         }
-        private bool validarSeleccion()
-        {
-            if (rb_x_letra.Checked == false && rb_todos.Checked == false && rb_doc_id.Checked == false)
-            {
-                return false;
-            }
-            return true;
-        }
-
     }
 }

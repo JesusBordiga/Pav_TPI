@@ -67,10 +67,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>PR01</rd:DefaultName>
-            <Top>1.59686cm</Top>
-            <Left>3.39077cm</Left>
+            <Top>0.96186cm</Top>
+            <Left>3.70827cm</Left>
             <Height>0.6cm</Height>
-            <Width>10.37167cm</Width>
+            <Width>8.33438cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -88,18 +88,20 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Alcance de reporte :</Value>
-                    <Style />
+                    <Value>Alcance de reporte:</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>1.59686cm</Top>
+            <Top>0.99713cm</Top>
             <Left>0.03528cm</Left>
             <Height>0.6cm</Height>
-            <Width>3.32021cm</Width>
+            <Width>3.58479cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -131,10 +133,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.52942cm</Top>
             <Left>0.03528cm</Left>
             <Height>0.99688cm</Height>
-            <Width>13.72716cm</Width>
+            <Width>12.00737cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -157,7 +158,7 @@
                   <Width>1.92737cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.26521cm</Width>
+                  <Width>3.54542cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>3.21437cm</Width>
@@ -177,7 +178,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Patente</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -209,7 +212,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Tipo Doc</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -241,7 +246,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Nro Doc</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -273,7 +280,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Modelo</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -314,7 +323,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -346,7 +355,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -378,7 +387,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -410,7 +419,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -451,10 +460,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DatosVehiculos</DataSetName>
-            <Top>2.23214cm</Top>
+            <Top>1.59714cm</Top>
             <Left>0.03528cm</Left>
             <Height>1.2cm</Height>
-            <Width>13.72716cm</Width>
+            <Width>12.00737cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -463,13 +472,17 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2.97916in</Height>
-        <Style />
+        <Height>1.11458in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
       </Body>
-      <Width>5.50162in</Width>
+      <Width>4.77245in</Width>
       <Page>
         <PageFooter>
-          <Height>2.54cm</Height>
+          <Height>0.71437cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -488,8 +501,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>1.6637cm</Top>
-              <Left>11.26244cm</Left>
+              <Top>0.04549cm</Top>
+              <Left>9.54265cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <Style>

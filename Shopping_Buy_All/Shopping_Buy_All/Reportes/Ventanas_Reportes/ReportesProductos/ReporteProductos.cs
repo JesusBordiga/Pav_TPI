@@ -71,9 +71,19 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
                 Tabla = _Productos._Rpt_Productos(txt_restriccion.Text);
             }
         }
-        private void btn_buscar01_Click(object sender, EventArgs e)
+        private bool validarSeleccion()
         {
-            if (validarSeleccion()){
+            if (rbPorLetra.Checked == false && rbTodos.Checked == false && rbRangoId.Checked == false)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private void btn_buscar01_Click_1(object sender, EventArgs e)
+        {
+            if (validarSeleccion())
+            {
                 Restriccion();
 
                 ReportDataSource Datos = new ReportDataSource("DatosProductos", Tabla);
@@ -89,14 +99,6 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
             {
                 MessageBox.Show("Seleccione una restricción!", "Error");
             }
-        }
-        private bool validarSeleccion()
-        {
-            if (rbPorLetra.Checked == false && rbTodos.Checked == false && rbRangoId.Checked == false)
-            {
-                return false;
-            }
-            return true;
         }
     }
 }
