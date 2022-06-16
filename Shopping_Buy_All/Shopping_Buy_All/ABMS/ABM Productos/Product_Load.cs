@@ -15,6 +15,7 @@ namespace Shopping_Buy_All.Productos
 {
     public partial class Product_Load : Form
     {
+        AD_Productos _datosProductos = new AD_Productos();
         public Product_Load()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace Shopping_Buy_All.Productos
         {
             try
             {
-               tablaProductos.DataSource = AD_Productos.CargarTablaProductos();
+               tablaProductos.DataSource = _datosProductos.CargarTablaProductos();
             }
             catch (Exception)
             {
@@ -41,29 +42,10 @@ namespace Shopping_Buy_All.Productos
             if (ValidarProducto())
             {
                 Producto p = ObtenerDatosProducto();
-                bool resultado = AD_Productos.Cargar_Producto(p);
-                if (resultado)
-                {
-                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                    String mensajeCarga = (
-                          " |Nombre: " + p.NombreProducto + "|" + "\n"
-                        + " |Precio: " + "$" + p.PrecioProducto + "|" + "\n");
-
-                    string titulo = "Información de Carga";
-
-                    DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                    if (result == DialogResult.OK)
-                    {
-                        MessageBox.Show("Producto agregado con éxito!");
-                        Clean();
-                        CargarTablaProductos();
-                    }
-                    else
-                    {
-                        textNameProduct.Focus();
-                    }
-                }
+                _datosProductos.Cargar_Producto(p);
+                CargarTablaProductos();
+                MessageBox.Show("Producto agregado con éxito!");
+                Clean();
             }
             
             

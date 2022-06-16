@@ -14,19 +14,20 @@ namespace Shopping_Buy_All
 {
     public partial class Product_Delete : Form
     {
+        AD_Productos _datosProductos = new AD_Productos();
         public Product_Delete()
         {
             InitializeComponent();
             CargarTablaProductos();
-            labelEliminarproducto.Text=("Buscar Producto");
+            labelEliminarproducto.Text = "Buscar Producto";
+            panelBuscar.Visible = false;
         }
-
         //ACCESO A BASE DE DATOS
         private void CargarTablaProductos()
         {
             try
             {
-                tablaProductos.DataSource = AD_Productos.CargarTablaProductos();
+                tablaProductos.DataSource = _datosProductos.CargarTablaProductos();
             }
             catch (Exception)
             {
@@ -44,36 +45,23 @@ namespace Shopping_Buy_All
             }
             else
             {
-                Producto p = AD_Productos.Buscar_Producto(textCodeProduct.Text.Trim());
-                Cargar_Campos(p);
-                panelBuscar.Visible = true;
-            }
-        }
-        private void btnClear_Click_1(object sender, EventArgs e)
-        {
-            Clean();
-            labelEliminarproducto.Text = "Buscar Producto";
-            panelBuscar.Visible = false;
-            btnSearchProduct.Visible = true;
-            textCodeProduct.Enabled = true;
-            textNameProduct.Enabled = true;
-            textPrice.Enabled = true;
-        }
-        private void btnSerachProduct2_Click_1(object sender, EventArgs e)
-        {
-            panelBuscar.Visible = false;
-            labelEliminarproducto.Text = ("Eliminar Producto");
-            textCodeProduct.Enabled = false;
-            textNameProduct.Enabled = false;
-            textPrice.Enabled = false;
-        }
+                DataTable productos = _datosProductos.Buscar_Producto(textCodeProduct.Text.Trim());
+                if (productos.Rows.Count == 1)
+                {
+                    labelEliminarproducto.Text = "Eliminar Producto";
+                    Producto p = new Producto();
+                    p.NombreProducto = productos.Rows[0]["NombreProducto"].ToString();
+                    p.CodigoProducto = (int)productos.Rows[0]["Codigo_Producto"];
+                    p.PrecioProducto = (float)Convert.ToDouble(productos.Rows[0]["Precio"]);
+                    Cargar_Campos(p);
+                    panelBuscar.Visible = true;
 
-        //FUNCIONES
-        private void Clean()
-        {
-            textNameProduct.Text = "";
-            textCodeProduct.Text = "";
-            textPrice.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Error! \n No se encontró el producto");
+                }
+            }
         }
         private void Cargar_Campos(Producto p)
         {
@@ -83,6 +71,33 @@ namespace Shopping_Buy_All
             textNameProduct.Text = p.NombreProducto;
             //Cargar Precio
             textPrice.Text = p.PrecioProducto.ToString();
+            textCodeProduct.Enabled = false;
+            textNameProduct.Enabled = false;
+            textPrice.Enabled = false;
+        }
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            Clean();
+            labelEliminarproducto.Text = "Buscar Producto";
+            panelBuscar.Visible = false;
+        }
+
+        //FUNCIONES
+        public Producto CrearProducto(DataTable datosProducto)
+        {
+            Producto p = new Producto();
+            p.CodigoProducto = (int)datosProducto.Rows[0]["Codigo_Producto"];
+            p.PrecioProducto = (float)Convert.ToDouble(datosProducto.Rows[0]["Precio"]);
+            p.NombreProducto = datosProducto.Rows[0]["NombreProducto"].ToString();
+            return p;
+        }
+        private void Clean()
+        {
+            textCodeProduct.Enabled = true;
+            textNameProduct.Text = "";
+            textCodeProduct.Text = "";
+            textPrice.Text = "";
+            labelEliminarproducto.Text = "Buscar Producto";
         }
         private Producto ObtenerDatosProducto()
         {
@@ -99,26 +114,37 @@ namespace Shopping_Buy_All
         {
             try
             {
-                labelEliminarproducto.Text = ("Eliminar Producto");
                 Clean();
+                labelEliminarproducto.Text = "Eliminar Producto";
                 int indice = e.RowIndex;
                 DataGridViewRow filaSeleccionada = tablaProductos.Rows[indice];
                 string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
-                Producto p = AD_Productos.Buscar_Producto(codigo);
-                Cargar_Campos(p);
-                panelBuscar.Visible = true;
-                btnSearchProduct.Visible = false;
-                btnSearchProduct2.Visible = true;
-                textCodeProduct.Enabled = false;
-                textNameProduct.Enabled = false;
-                textPrice.Enabled = false;
+                DataTable producto = _datosProductos.Buscar_Producto(codigo);
+                if (producto.Rows.Count == 1)
+                {
+                    Producto p = CrearProducto(producto);
+                    Cargar_Campos(p);
+                    panelBuscar.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Error! \n No se encontró el producto");
+                }
             }
             catch (Exception)
             {
                 MessageBox.Show("Error! \n Seleccione una casilla dentro de la tabla");
             }
         }
-
+        private void btnDeleteProduct_Click(object sender, EventArgs e)
+        {            
+            Producto p = ObtenerDatosProducto();
+            _datosProductos.BorrarProducto(p.CodigoProducto, 1);
+            CargarTablaProductos();
+            panelBuscar.Visible = false;
+            Clean();
+            MessageBox.Show("Se borro el producto con éxito");
+        }
     }
 }
 

@@ -15,6 +15,7 @@ namespace Shopping_Buy_All
 {
     public partial class Product_Modify : Form
     {
+        AD_Productos _DB = new AD_Productos();
         public  Product_Modify()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace Shopping_Buy_All
         {
             try
             {
-                tablaProductos.DataSource = AD_Productos.CargarTablaProductos();
+                tablaProductos.DataSource = _DB.CargarTablaProductos();
             }
             catch (Exception)
             {
@@ -46,11 +47,19 @@ namespace Shopping_Buy_All
             }
             else
             {
-                labelModificarproducto.Text = "Buscar Producto";
-                textCodeProduct.Enabled = true;
-                Producto p = AD_Productos.Buscar_Producto(textCodeProduct.Text);
-                Cargar_Campos(p);
-                panelBuscar.Visible = true;
+                DataTable producto = _DB.Buscar_Producto(textCodeProduct.Text);
+                if (producto.Rows.Count == 1)
+                {
+                    Producto p = CrearProducto(producto);
+                    Cargar_Campos(p);
+                    labelModificarproducto.Text = "Buscar Producto";
+                    textCodeProduct.Enabled = false;
+                    panelBuscar.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Error! \n No se encontró el producto");
+                }
             }
         }
         private void btnClear_Click(object sender, EventArgs e)
@@ -62,45 +71,29 @@ namespace Shopping_Buy_All
         private void btnPorductLoad_Click(object sender, EventArgs e)
         {
             Producto p = ObtenerDatosProducto();
-            bool resultado = AD_Productos.ModificarProducto(p);
-            if (resultado)
-            {
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = (
-                      " |Codigo: " + p.CodigoProducto + "|" + "\n"
-                    + " |Nombre: " + p.NombreProducto + "|" + "\n"
-                    + " |Precio: " +"$"+ p.PrecioProducto + "|" + "\n");
-
-                string titulo = "Información de Producto";
-
-                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                if (result == DialogResult.OK)
-                {
-                    MessageBox.Show("Producto agregado con éxito!");
-                    Clean();
-                    panelBuscar.Visible = false;
-                    btnSerachProduct2.Visible = true;
-                    CargarTablaProductos();
-                }
-                else
-                {
-                    textNameProduct.Focus();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Error al cargar el Producto! \n" +
-                        "Complete los campos por favor!");
-            }
+            _DB.ModificarProducto(p);
+            MessageBox.Show("Producto agregado con éxito!");
+            Clean();
+            panelBuscar.Visible = false;
+            labelModificarproducto.Text = "Buscar Producto";
+            btnSerachProduct2.Visible = true;
+            CargarTablaProductos();
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Producto p = AD_Productos.Buscar_Producto(textCodeProduct.Text);
-            Cargar_Campos(p);
-            panelBuscar.Visible = true;
-            labelModificarproducto.Text = "Modificar Producto";
-            textCodeProduct.Enabled = false;
+            DataTable producto = _DB.Buscar_Producto(textCodeProduct.Text);
+            if (producto.Rows.Count == 1)
+            {
+                Producto p = CrearProducto(producto);
+                Cargar_Campos(p);
+                panelBuscar.Visible = true;
+                labelModificarproducto.Text = "Modificar Producto";
+                textCodeProduct.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Error! \n No se encontró el producto");
+            }
 
         }
 
@@ -111,11 +104,12 @@ namespace Shopping_Buy_All
             textCodeProduct.Text = "";
             textPrice.Text = "";
             panelBuscar.Visible = false;
+            textCodeProduct.Enabled = true;
         }
         private void Cargar_Campos(Producto p)
         {
             //Cargar Codigo
-            textCodeProduct.Text =p.CodigoProducto.ToString();
+            textCodeProduct.Text = p.CodigoProducto.ToString();
             //Cargar Nombre
             textNameProduct.Text = p.NombreProducto;
             //Cargar Precio
@@ -132,18 +126,34 @@ namespace Shopping_Buy_All
              p.PrecioProducto= int.Parse(textPrice.Text.Trim());
             return p;
         }
-        private void tablaProductos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        public Producto CrearProducto(DataTable datosProducto)
+        {
+            Producto p = new Producto();
+            p.CodigoProducto = (int)datosProducto.Rows[0]["Codigo_Producto"];
+            p.PrecioProducto = (float)Convert.ToDouble(datosProducto.Rows[0]["Precio"]);
+            p.NombreProducto = datosProducto.Rows[0]["NombreProducto"].ToString();
+            return p;
+        }
+        public void tablaProductos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             { 
                 int indice = e.RowIndex;
                 DataGridViewRow filaSeleccionada = tablaProductos.Rows[indice];
                 string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
-                Producto p = AD_Productos.Buscar_Producto(codigo);
-                Cargar_Campos(p);
-                panelBuscar.Visible = true;
-                textCodeProduct.Enabled = false;
-                labelModificarproducto.Text = "Modificar Producto";
+                DataTable producto = _DB.Buscar_Producto(codigo);
+                if (producto.Rows.Count == 1)
+                {
+                    Producto p = CrearProducto(producto);
+                    Cargar_Campos(p);
+                    panelBuscar.Visible = true;
+                    textCodeProduct.Enabled = false;
+                    labelModificarproducto.Text = "Modificar Producto";
+                }
+                else
+                {
+                    MessageBox.Show("Error! \n No se encontró el producto");
+                }
             }
             catch (Exception)
             {
