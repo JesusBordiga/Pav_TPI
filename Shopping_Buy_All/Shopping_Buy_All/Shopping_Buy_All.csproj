@@ -542,6 +542,12 @@
     <Compile Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteFacturas.Designer.cs">
       <DependentUpon>ReporteFacturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesMarcaTarjeta\ReporteMarcaTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesMarcaTarjeta\ReporteMarcaTarjeta.designer.cs">
+      <DependentUpon>ReporteMarcaTarjeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -783,6 +789,10 @@
       <DependentUpon>ReporteFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ReportFacturas.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesMarcaTarjeta\ReporteMarcaTarjeta.resx">
+      <DependentUpon>ReporteMarcaTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesMarcaTarjeta\ReportMarcaTarjeta.rdlc" />
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.resx">
       <DependentUpon>ReporteProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -861,9 +871,7 @@
   <ItemGroup>
     <None Include="Resources\xclipboard.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reportes\Ventanas_Reportes\ReportesMarcaTarjeta\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\rstudio.png" />
     <None Include="Resources\gparted.png" />
