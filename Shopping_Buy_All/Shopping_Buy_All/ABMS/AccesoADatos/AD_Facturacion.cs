@@ -13,360 +13,112 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
     public class AD_Facturacion
     {
+        private AccesoADatos _DB = new AccesoADatos();
 
-        public static Cliente Buscar_Cliente_Documento(string TipoDocumento, string NroDocumento)
+        /// <summary>
+        /// obtiene un cliente por un tipo de documento y un nro de documento dado
+        /// </summary>
+        /// <param name="TipoDocumento"></param>
+        /// <param name="NroDocumento"></param>
+        /// <returns></returns>
+        public DataTable Buscar_Cliente_Documento(string TipoDocumento, string NroDocumento)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            Cliente client = new Cliente();
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "buscarClienteNoBorrado @tipoDocumento, @nroDocumento";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nroDocumento", NroDocumento);
-                cmd.Parameters.AddWithValue("@tipoDocumento", TipoDocumento);
-
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
-                {
-                    client.TipoDocumentoCliente = int.Parse(DataReader["TipoDoc"].ToString());
-                    client.DocumentoCliente = DataReader["NroDocumento"].ToString();
-                    client.ApellidoCliente = DataReader["Apellido"].ToString();
-                    client.NombreCliente = DataReader["Nombres"].ToString();
-                    client.CalleCliente = DataReader["Calle"].ToString();
-                    client.NroCalleCliente = int.Parse(DataReader["NroCalle"].ToString());
-                    client.EstadoCivilCliente = int.Parse(DataReader["EstadoCiv"].ToString());
-                    client.SexoCliente = int.Parse(DataReader["Sex"].ToString());
-                    client.FechaNacimientoCliente = DateTime.Parse(DataReader["FechaNacimiento"].ToString());
-                }
-                cn.Close();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error al buscar al cliente");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return client;
+            string consulta = "buscarClienteNoBorrado " + TipoDocumento + "," + NroDocumento;
+            return _DB.Consultar(consulta);
         }
-        public static int getNroFactura()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "getMaxNroFactura";
 
-                cmd.Parameters.Clear();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
-                {
-                    int nroFac = int.Parse(DataReader["MaxNum"].ToString());
-                    return nroFac + 1;
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return -1;
-        }
-        public static object getTarjetaCliente(int tipoDoc, string nroDoc)
+        /// <summary>
+        /// obtiene el numero de factura más alto
+        /// </summary>
+        /// <returns></returns>
+        public DataTable getNroFactura()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                string consulta = "getTarjetaClienteFactura @nroDocumento, @tipoDocumento";
+            string consulta = "getMaxNroFactura";
+            return _DB.Consultar(consulta);
+        }
 
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@nroDocumento", nroDoc);
-                command.Parameters.AddWithValue("@tipoDocumento", tipoDoc);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                return tabla;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return null;
-        }
-        public static bool cargarFactura(Factura factura, int nroFactura)
+        /// <summary>
+        /// obtiene la tarjeta de un cliente dado
+        /// </summary>
+        /// <param name="tipoDoc"></param>
+        /// <param name="nroDoc"></param>
+        /// <returns></returns>
+        public DataTable getTarjetaCliente(int tipoDoc, string nroDoc)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlTransaction objTransaction = null;
-            SqlConnection cn = new SqlConnection(cadenaConexion);
+            string consulta = "getTarjetaClienteFactura " + nroDoc + ", " + tipoDoc.ToString();
+            return _DB.Consultar(consulta);
+        }
+
+        /// <summary>
+        /// carga una nueva factura y su detalle
+        /// </summary>
+        /// <param name="factura"></param>
+        /// <param name="nroFactura"></param>
+        /// <returns></returns>
+        public bool cargarFactura(Factura factura, int nroFactura)
+        {
             bool resultado = false;
+
+            string codLocal = factura.CodigoLocalFactura.ToString();
+            string tipDoc = factura.TipoDocumentoFactura.ToString();
+            string nroDoc = factura.DocumentoFactura.ToString();
+            string nroTarj = factura.NroTarjetaFactura.ToString();
+            string fec = factura.FechaCompraFactura.ToShortDateString();
+            string consulta = "agregarFactura " + codLocal + ", " + tipDoc + ", " + nroDoc + ", " + nroTarj + ", '" + fec + "'";
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "agregarFactura @codLocal, @tipoDocumento, @nroDocumento, @nroTarjeta, @fecha";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@codLocal", factura.CodigoLocalFactura);
-                cmd.Parameters.AddWithValue("@tipoDocumento", factura.TipoDocumentoFactura);
-                cmd.Parameters.AddWithValue("@nroDocumento", factura.DocumentoFactura);
-                cmd.Parameters.AddWithValue("@nroTarjeta", factura.NroTarjetaFactura);
-                cmd.Parameters.AddWithValue("@fecha", factura.FechaCompraFactura);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                objTransaction = cn.BeginTransaction("AltaDeFactura");
-                cmd.Transaction = objTransaction;
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
+                _DB.IniciarTransaccion();
+                _DB.ModificarDB(consulta);
 
                 foreach (var detalle in factura.DetallesFactura)
                 {
-                    string consultaDetalle = "agregarDetalleFactura @nroFactura, @codLocal, @codProducto, @cantidad, @precio";
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@nroFactura", nroFactura);
-                    cmd.Parameters.AddWithValue("@codLocal", factura.CodigoLocalFactura);
-                    cmd.Parameters.AddWithValue("@codProducto", detalle.CodigoPorductoDetalle);
-                    cmd.Parameters.AddWithValue("@cantidad",  detalle.CantidadProductoDetalle);
-                    cmd.Parameters.AddWithValue("@precio", detalle.PrecioDetalle);
-                    cmd.CommandText = consultaDetalle;
-                    cmd.ExecuteNonQuery();
+                    string codProd = detalle.CodigoPorductoDetalle.ToString();
+                    string cant = detalle.CantidadProductoDetalle.ToString();
+                    string prec = detalle.PrecioDetalle.ToString();
+                    string consultaDetalle = "agregarDetalleFactura " + nroFactura.ToString() + ", " + codLocal + ", " + codProd + ", " + cant + ", " + prec;
+                    _DB.ModificarDB(consultaDetalle);
                 }
-                objTransaction.Commit();
-                return true;
+                _DB.FinalizarTransaccion();
+                resultado = true;
             }
-            catch (SqlException)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
-                objTransaction.Rollback();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error! \n Hubo un error!");
-                objTransaction.Rollback();
-            }
-            finally
-            {
-                cn.Close();
+                MessageBox.Show("Hubo un error en la Base de Datos\nEl error en la base de datos:\n" + ex.Message);
             }
             return resultado;
         }
-        public static DataTable getMasVendido()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                string consulta = "getMasVendido";
 
-                command.Parameters.Clear();
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                return tabla;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return null;
-        }
-        public static DataTable getMasVendidoPorFecha(DateTime fechaDesde, DateTime fechaHasta)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                string consulta = "getMasVendidoPorFecha @fechaDesde, @fechaHasta";
-
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@fechaDesde", fechaDesde);
-                command.Parameters.AddWithValue("@fechaHasta", fechaHasta);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                return tabla;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return null;
-        }
-        public static DataTable getMasVendidoPorLocal(int idLocal)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                string consulta = "getMasVendidoPorLocal @idLocal";
-
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@idLocal", idLocal);
-                command.CommandType = CommandType.Text;
-                command.CommandText = consulta;
-                cn.Open();
-                command.Connection = cn;
-                DataTable tabla = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(tabla);
-                return tabla;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error en la base de datos.", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return null;
-        }
+        /// <summary>
+        /// Obtiene las facturas realizadas en un periodo de tiempo dado ordenadas por fecha
+        /// </summary>
+        /// <param name="inicio"></param>
+        /// <param name="final"></param>
+        /// <returns></returns>
         public DataTable _Rpt_Clientes(string inicio, string final)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            DataTable tabla = new DataTable();
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "select * from ComprasPorCliente where Borrado = 0 and FechaCompra between @a and @b order by FechaCompra";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@a", inicio);
-                cmd.Parameters.AddWithValue("@b", final);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(tabla);
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return tabla;
+            string consulta = "select * from ComprasPorCliente where Borrado = 0 and FechaCompra between " + inicio + " and " + final + " order by FechaCompra";
+            return _DB.Consultar(consulta);
         }
+
+        /// <summary>
+        /// obtiene las facturas emitidas por un local dado ordenadas por nro de factura
+        /// </summary>
+        /// <param name="local"></param>
+        /// <returns></returns>
         public DataTable _Rpt_Clientes(string local)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            DataTable tabla = new DataTable();
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "select * from ComprasPorCliente where Borrado = 0 and Codigo_Local = @cod order by Numero_Factura";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@cod", local);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(tabla);
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return tabla;
+            string consulta = "select * from ComprasPorCliente where Borrado = 0 and Codigo_Local = " + local + "order by Numero_Factura";
+            return _DB.Consultar(consulta);
         }
+
+        /// <summary>
+        /// obtiene las facturas ordenadas por nro de factura
+        /// </summary>
+        /// <returns></returns>
         public DataTable _Rpt_Clientes()
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            DataTable tabla = new DataTable();
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "select * from ComprasPorCliente where Borrado = 0 order by Numero_Factura";
-                cmd.Parameters.Clear();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(tabla);
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return tabla;
+            string consulta = "select * from ComprasPorCliente where Borrado = 0 order by Numero_Factura";
+            return _DB.Consultar(consulta);
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Shopping_Buy_All
 {
     public partial class Facturacion_Load : Form
     {
+        AD_Facturacion _accesoADatos = new AD_Facturacion();
         public Facturacion_Load()
         {
             InitializeComponent();
@@ -138,18 +139,21 @@ namespace Shopping_Buy_All
                 MessageBox.Show("Error, no se pudo Obtener Datos de Tipos de Documentos");
             }
         }
+
+        /// <summary>
+        /// Obtiene el próximo nro de factura a cargar
+        /// </summary>
         private void getNroFactura()
         {
-            string pou = AD_Facturacion.getNroFactura().ToString();
-            if (!pou.Equals("-1"))
-            {
-                nroFactura.Text = pou;
-            }
-            else
-            {
-                MessageBox.Show("No se pudo obtener un numero para la factura");
-            }
+            DataTable respuestaDB = _accesoADatos.getNroFactura();
+            int nroFac = (int)respuestaDB.Rows[0]["MaxNum"] + 1;
+            nroFactura.Text = nroFac.ToString();
         }
+        /// <summary>
+        /// Una vez cargado el local habilita el siguiente paso de la carga de la factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonLocal_Click(object sender, EventArgs e)
         {
             if (!cmbLocal.SelectedIndex.Equals(-1))
@@ -163,6 +167,12 @@ namespace Shopping_Buy_All
                 MessageBox.Show("No seleccionó un local");
             }
         }
+
+        /// <summary>
+        /// Una vez cargado el cliente habilita el siguiente paso de la carga de la factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void buttonCliente_Click(object sender, EventArgs e)
         {
             if (comboBoxDocType.SelectedIndex == -1 || textNumeroDocumento.Text.Equals(""))
@@ -173,7 +183,12 @@ namespace Shopping_Buy_All
             else
             {
 
-                Cliente c = AD_Facturacion.Buscar_Cliente_Documento(comboBoxDocType.SelectedValue.ToString(), textNumeroDocumento.Text);
+                DataTable tablaCliente = _accesoADatos.Buscar_Cliente_Documento(comboBoxDocType.SelectedValue.ToString(), textNumeroDocumento.Text);
+                Cliente c = new Cliente();
+                c.TipoDocumentoCliente = (int)tablaCliente.Rows[0]["TipoDoc"];
+                c.DocumentoCliente = tablaCliente.Rows[0]["NroDocumento"].ToString();
+                c.ApellidoCliente = tablaCliente.Rows[0]["Apellido"].ToString();
+                c.NombreCliente = tablaCliente.Rows[0]["Nombres"].ToString();
                 if (c != null)
                 {
                     MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
@@ -217,11 +232,17 @@ namespace Shopping_Buy_All
                 }
             }
         }
+
+        /// <summary>
+        /// obtiene los datos de la tarjeta
+        /// </summary>
+        /// <param name="tipoDoc"></param>
+        /// <param name="nroDoc"></param>
         private void CargarTarjeta(int tipoDoc, string nroDoc)
         {
             try
             {
-                comboTarjetaCliente.DataSource = AD_Facturacion.getTarjetaCliente(tipoDoc, nroDoc);
+                comboTarjetaCliente.DataSource = _accesoADatos.getTarjetaCliente(tipoDoc, nroDoc);
                 comboTarjetaCliente.DisplayMember = "Tarjeta";
                 comboTarjetaCliente.ValueMember = "NroTarjeta";
                 comboTarjetaCliente.SelectedIndex = -1;
@@ -245,6 +266,12 @@ namespace Shopping_Buy_All
             t.NroDocumentoTarjeta = textNumeroDocumento.Text.Trim();
             return t;
         }
+
+        /// <summary>
+        /// Una vez seleccionada la tarjeta habilita el siguiente paso de la carga de la factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonTarjeta_Click(object sender, EventArgs e)
         {
             Tarjeta t = ObtenerDatosBuscar();
@@ -345,6 +372,11 @@ namespace Shopping_Buy_All
             //Agregar Fila
             tablaProducto.Rows.Add(fila);
         }
+
+        /// <summary>
+        /// Obtiene los datos del producto
+        /// </summary>
+        /// <returns></returns>
         private ProductoFactura obtenerDatosProducto()
         {
             ProductoFactura p = new ProductoFactura();
@@ -354,6 +386,8 @@ namespace Shopping_Buy_All
             p.CantidadProducto = int.Parse(textCantidad.Text.Trim());
             return p;
         }
+
+        
         private void agregarProducto(ProductoFactura producto)
         {
             AgregarProducto(producto);
@@ -362,6 +396,12 @@ namespace Shopping_Buy_All
             lblTotal.Text = calcularTotal();
             textCodProducto.Focus();
         }
+
+        /// <summary>
+        /// Añade un producto al detalle de la factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonCargarProducto_Click(object sender, EventArgs e)
         {
 
@@ -447,7 +487,7 @@ namespace Shopping_Buy_All
         }
         private bool cargarFactura(Factura factura, int nroFactura)
         {
-            bool resultado = AD_Facturacion.cargarFactura(factura, nroFactura);
+            bool resultado = _accesoADatos.cargarFactura(factura, nroFactura);
             if (resultado)
             {
                 MessageBox.Show("Se cargó la factura exitosamente");
