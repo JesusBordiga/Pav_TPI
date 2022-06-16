@@ -13,6 +13,41 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
     public class AD_MarcaVehiculo
     {
+        private AccesoADatos _DB = new AccesoADatos();
+
+        /// <summary>
+        /// Obtiene todas los marcas de vehiculo
+        /// </summary>
+        /// <returns></returns>
+        public DataTable _Rpt_Marcas()
+        {
+            string consulta = "getMarcaNoBorrado";
+            return _DB.Consultar(consulta);
+        }
+
+        /// <summary>
+        /// Obtiene las marcas que comienzan con una letra
+        /// </summary>
+        /// <param name="letr"></param>
+        /// <returns></returns>
+        public DataTable _Rpt_Marcas(string letr)
+        {
+            string consulta = "getMarcasPorLetra " + letr;
+            return _DB.Consultar(consulta);
+        }
+
+        /// <summary>
+        /// Obtiene las marcas dentro de un rango de IDs
+        /// </summary>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public DataTable _Rpt_Marcas(int min, int max)
+        {
+            string consulta = "getMarcasPorRangoID " + min.ToString() + "," + max.ToString();
+            return _DB.Consultar(consulta);
+        }
+
         //MARCA VEHICULO LOAD
         public static bool Agregar_Marca(MarcaVehiculo mark)
         {

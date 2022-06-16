@@ -1,6 +1,6 @@
 ﻿namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
 {
-    partial class ReporteUsuarios
+    partial class ReporteMarcasAutomovil
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteUsuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteMarcasAutomovil));
             this.rbRangoId = new System.Windows.Forms.RadioButton();
             this.rbPorLetra = new System.Windows.Forms.RadioButton();
             this.rbTodos = new System.Windows.Forms.RadioButton();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.repUsu = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.repMarc = new Microsoft.Reporting.WinForms.ReportViewer();
             this.lblRestriccion = new System.Windows.Forms.Label();
             this.txt_restriccion = new System.Windows.Forms.MaskedTextBox();
             this.btn_buscar01 = new System.Windows.Forms.Button();
@@ -47,9 +47,9 @@
             this.rbRangoId.ForeColor = System.Drawing.SystemColors.Control;
             this.rbRangoId.Location = new System.Drawing.Point(187, 39);
             this.rbRangoId.Name = "rbRangoId";
-            this.rbRangoId.Size = new System.Drawing.Size(158, 21);
+            this.rbRangoId.Size = new System.Drawing.Size(228, 21);
             this.rbRangoId.TabIndex = 4;
-            this.rbRangoId.Text = "Restringido por ID";
+            this.rbRangoId.Text = "Restringido por rango de ID";
             this.rbRangoId.UseVisualStyleBackColor = false;
             this.rbRangoId.CheckedChanged += new System.EventHandler(this.rbRangoCheckedChanged);
             // 
@@ -76,10 +76,10 @@
             this.rbTodos.ForeColor = System.Drawing.SystemColors.Control;
             this.rbTodos.Location = new System.Drawing.Point(11, 37);
             this.rbTodos.Name = "rbTodos";
-            this.rbTodos.Size = new System.Drawing.Size(164, 21);
+            this.rbTodos.Size = new System.Drawing.Size(174, 21);
             this.rbTodos.TabIndex = 6;
             this.rbTodos.TabStop = true;
-            this.rbTodos.Text = "Todos los usuarios";
+            this.rbTodos.Text = "Todos los productos";
             this.rbTodos.UseVisualStyleBackColor = false;
             this.rbTodos.CheckedChanged += new System.EventHandler(this.rbTodosCheckedChanged);
             // 
@@ -91,20 +91,20 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(6, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(219, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(205, 25);
             this.lblTitulo.TabIndex = 8;
-            this.lblTitulo.Text = "Reportes de Usuarios";
+            this.lblTitulo.Text = "Reportes de Marcas";
             // 
-            // repUsu
+            // repMarc
             // 
-            this.repUsu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.repUsu.Cursor = System.Windows.Forms.Cursors.Default;
-            this.repUsu.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura.ListadoDetalle.rdlc";
-            this.repUsu.Location = new System.Drawing.Point(9, 93);
-            this.repUsu.Name = "repUsu";
-            this.repUsu.ServerReport.BearerToken = null;
-            this.repUsu.Size = new System.Drawing.Size(626, 352);
-            this.repUsu.TabIndex = 12;
+            this.repMarc.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.repMarc.Cursor = System.Windows.Forms.Cursors.Default;
+            this.repMarc.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura.ListadoDetalle.rdlc";
+            this.repMarc.Location = new System.Drawing.Point(9, 93);
+            this.repMarc.Name = "repMarc";
+            this.repMarc.ServerReport.BearerToken = null;
+            this.repMarc.Size = new System.Drawing.Size(626, 352);
+            this.repMarc.TabIndex = 12;
             // 
             // lblRestriccion
             // 
@@ -141,7 +141,7 @@
             this.btn_buscar01.UseVisualStyleBackColor = false;
             this.btn_buscar01.Click += new System.EventHandler(this.btn_buscar01_Click_1);
             // 
-            // ReporteUsuarios
+            // ReporteMarcasAutomovil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -151,17 +151,17 @@
             this.Controls.Add(this.btn_buscar01);
             this.Controls.Add(this.lblRestriccion);
             this.Controls.Add(this.txt_restriccion);
-            this.Controls.Add(this.repUsu);
+            this.Controls.Add(this.repMarc);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.rbRangoId);
             this.Controls.Add(this.rbPorLetra);
             this.Controls.Add(this.rbTodos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "ReporteUsuarios";
+            this.Name = "ReporteMarcasAutomovil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reporte Usuarios";
-            this.Load += new System.EventHandler(this.ReporteUsuarios_Load);
+            this.Text = "Reporte Marcas";
+            this.Load += new System.EventHandler(this.ReporteMarcasAutomovil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,9 +172,9 @@
         private System.Windows.Forms.RadioButton rbPorLetra;
         private System.Windows.Forms.RadioButton rbTodos;
         private System.Windows.Forms.Label lblTitulo;
+        private Microsoft.Reporting.WinForms.ReportViewer repMarc;
         private System.Windows.Forms.Label lblRestriccion;
         private System.Windows.Forms.MaskedTextBox txt_restriccion;
         private System.Windows.Forms.Button btn_buscar01;
-        private Microsoft.Reporting.WinForms.ReportViewer repUsu;
     }
 }
