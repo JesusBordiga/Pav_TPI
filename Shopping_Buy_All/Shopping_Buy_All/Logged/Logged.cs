@@ -15,19 +15,20 @@ using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesProductos;
 
 namespace Shopping_Buy_All
 {
-    public partial class Logged : Form
+    public partial class btnEstadisticas : Form
     {
-        public Logged(User usu)
+        public btnEstadisticas(User usu)
         {
             InitializeComponent();
             LabelBienvenido.Text = "Bienvenido "+ usu.userName;
+            CargarUsuarios(usu);
         }
         private void Logged_Load(object sender, EventArgs e)
         {
             btnMenu1.Visible = true;
             panelMenu.Visible = false;
             MenuReportes.Visible = false;
-
+            panelEstadisticas.Visible = false;
         }
         private void btnClientLoad_Click(object sender, EventArgs e)
         {
@@ -95,6 +96,7 @@ namespace Shopping_Buy_All
         private void pictureBoxMenuReportes_Click(object sender, EventArgs e)
         {
             MenuReportes.Visible = false;
+            lblVolver.Visible = false;
         }
 
         private void btnReporteClientes_Click(object sender, EventArgs e)
@@ -119,6 +121,48 @@ namespace Shopping_Buy_All
         {
             ReporteVehiculos reportevehiculos = new ReporteVehiculos();
             reportevehiculos.Show();
+        }
+
+        private void pictureBoxMenuReportes_MouseHover(object sender, EventArgs e)
+        {
+            lblVolver.Visible = true;
+        }
+
+        private void pictureBoxMenuReportes_MouseLeave(object sender, EventArgs e)
+        {
+            lblVolver.Visible = false;
+        }
+
+        private void CargarUsuarios(User usu)
+        {
+            if (usu.permiso == 0)
+            {
+                panelUsuarios.Visible = true;
+            }
+            else
+            {
+                panelUsuarios.Visible = false;
+            }
+        }
+
+        private void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            panelEstadisticas.Visible = true;
+        }
+
+        private void VolverEstadisticas(object sender, EventArgs e)
+        {
+            panelEstadisticas.Visible = false;
+        }
+
+        private void pictureBox27_MouseEnter(object sender, EventArgs e)
+        {
+            lblVolverEstadisticas.Visible = false;
+        }
+
+        private void pictureBox27_MouseLeave(object sender, EventArgs e)
+        {
+            lblVolverEstadisticas.Visible = true;
         }
     }
 }

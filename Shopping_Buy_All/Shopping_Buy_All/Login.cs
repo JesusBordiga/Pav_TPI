@@ -30,21 +30,20 @@ namespace Shopping_Buy_All
                 string userName = TxtUser.Text.ToLower();
                 string password = TxtPassword.Text;
                 bool resultado = false;
+                User usu = new User(userName, password);
                 try
                 {
-                    resultado = Validate_Exist(userName, password);
+                    
+                    resultado = Validate_Exist(usu);
                 }
                 catch (Exception)
                 {
 
                     MessageBox.Show("Error, Base de datos no encontrada!");
                 }
-
-                
                 if (resultado == true)
                 {
-                   User usu = new User (userName, password);
-                   Logged LoggedWindow = new Logged(usu);
+                   btnEstadisticas LoggedWindow = new btnEstadisticas(usu);
                    LoggedWindow.Show();
                    Hide();
                 }
@@ -60,7 +59,7 @@ namespace Shopping_Buy_All
             TxtUser.Text = "";
             TxtPassword.Text = "";
         }
-        private bool Validate_Exist(string userName, string password)
+        private bool Validate_Exist(User usu)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -72,8 +71,8 @@ namespace Shopping_Buy_All
                 string consulta = "getUsuarioNoBorrado @nombreUsuario, @hash";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombreUsuario", userName);
-                cmd.Parameters.AddWithValue("@hash", Utils.UserToSHA256(userName, password));
+                cmd.Parameters.AddWithValue("@nombreUsuario", usu.userName);
+                cmd.Parameters.AddWithValue("@hash", Utils.UserToSHA256(usu.userName, usu.password));
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -87,6 +86,7 @@ namespace Shopping_Buy_All
 
                 if (table.Rows.Count == 1)
                 {
+                    usu.permiso = (int)table.Rows[0]["Permiso"];
                     return true;
                 }
                 else
