@@ -96,7 +96,12 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
         /// <returns></returns>
         public DataTable _Rpt_Clientes(string inicio, string final)
         {
-            string consulta = "select * from ComprasPorCliente where Borrado = 0 and FechaCompra between " + inicio + " and " + final + " order by FechaCompra";
+            string consulta = "select F.Numero_Factura, F.Numero_Documento, D.NombreDocumento, L.Nombre, F.Numero_Tarjeta, F.FechaCompra " +
+                "from ComprasPorCliente F " +
+                "join TipoDocumento D on F.Tipo_Documento = D.TipoDocumento " +
+                "join Locales L on F.Codigo_Local = L.CodigoLocal " +
+                "where F.Borrado = 0 and F.FechaCompra between '" + inicio + "' and '" + final + "' " +
+                "order by F.FechaCompra";
             return _DB.Consultar(consulta);
         }
 
@@ -107,7 +112,12 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
         /// <returns></returns>
         public DataTable _Rpt_Clientes(string local)
         {
-            string consulta = "select * from ComprasPorCliente where Borrado = 0 and Codigo_Local = " + local + "order by Numero_Factura";
+            string consulta = "select F.Numero_Factura, F.Numero_Documento, D.NombreDocumento, L.Nombre, F.Numero_Tarjeta, F.FechaCompra " +
+                "from ComprasPorCliente F " +
+                "join TipoDocumento D on F.Tipo_Documento = D.TipoDocumento " +
+                "join Locales L on F.Codigo_Local = L.CodigoLocal " +
+                "where F.Borrado = 0 and F.Codigo_Local = " + local +  " " +
+                "order by F.Numero_Factura";
             return _DB.Consultar(consulta);
         }
 
@@ -117,7 +127,12 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
         /// <returns></returns>
         public DataTable _Rpt_Clientes()
         {
-            string consulta = "select * from ComprasPorCliente where Borrado = 0 order by Numero_Factura";
+            string consulta = "select F.Numero_Factura, F.Numero_Documento, D.NombreDocumento, L.Nombre, F.Numero_Tarjeta, F.FechaCompra " +
+                "from ComprasPorCliente F " +
+                "join TipoDocumento D on F.Tipo_Documento = D.TipoDocumento " +
+                "join Locales L on F.Codigo_Local = L.CodigoLocal " +
+                "where F.Borrado = 0 " +
+                "order by F.Numero_Factura";
             return _DB.Consultar(consulta);
         }
     }

@@ -16,6 +16,7 @@ namespace Shopping_Buy_All
     public partial class Facturacion_Load : Form
     {
         AD_Facturacion _accesoADatos = new AD_Facturacion();
+        AD_Productos _datosProductos = new AD_Productos();
         public Facturacion_Load()
         {
             InitializeComponent();
@@ -182,44 +183,45 @@ namespace Shopping_Buy_All
             }
             else
             {
-
                 DataTable tablaCliente = _accesoADatos.Buscar_Cliente_Documento(comboBoxDocType.SelectedValue.ToString(), textNumeroDocumento.Text);
-                Cliente c = new Cliente();
-                c.TipoDocumentoCliente = (int)tablaCliente.Rows[0]["TipoDoc"];
-                c.DocumentoCliente = tablaCliente.Rows[0]["NroDocumento"].ToString();
-                c.ApellidoCliente = tablaCliente.Rows[0]["Apellido"].ToString();
-                c.NombreCliente = tablaCliente.Rows[0]["Nombres"].ToString();
-                if (c != null)
+                if (tablaCliente.Rows.Count == 1)
                 {
-                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                    String mensajeCarga = ("Cliente encontrado!\n"
-                        + "|Nombre y Apellido: " + c.NombreCliente.ToString() + " " + c.ApellidoCliente.ToString() + "\n"
-                        + "Desea cargar este cliente?");
-
-                    string titulo = "Cliente";
-
-                    DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                    if (result == DialogResult.OK)
+                    Cliente c = new Cliente();
+                    c.TipoDocumentoCliente = (int)tablaCliente.Rows[0]["TipoDoc"];
+                    c.DocumentoCliente = tablaCliente.Rows[0]["NroDocumento"].ToString();
+                    c.ApellidoCliente = tablaCliente.Rows[0]["Apellido"].ToString();
+                    c.NombreCliente = tablaCliente.Rows[0]["Nombres"].ToString();
+                    if (c != null)
                     {
-                        try
-                        {
-                            labelCliente.Text = c.NombreCliente.ToString() + " " + c.ApellidoCliente.ToString();
-                            activarCliente(false, Color.Gray, Color.DimGray);
-                            comboBoxDocType.Visible = false;
-                            textNumeroDocumento.Visible = false;
-                            labelTipoDoc.Text = comboBoxDocType.Text;
-                            labelNroDoc.Text = textNumeroDocumento.Text.Trim();
-                            CargarTarjeta(c.TipoDocumentoCliente, c.DocumentoCliente);
-                            activarTarjeta(true, Color.Silver, Color.Black);
-                            comboTarjetaCliente.Focus();
-                        }
-                        catch (Exception)
-                        {
+                        MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                        String mensajeCarga = ("Cliente encontrado!\n"
+                            + "|Nombre y Apellido: " + c.NombreCliente.ToString() + " " + c.ApellidoCliente.ToString() + "\n"
+                            + "Desea cargar este cliente?");
 
-                            MessageBox.Show("Error, no se encontró cliente!!");
-                        }
+                        string titulo = "Cliente";
 
+                        DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                        if (result == DialogResult.OK)
+                        {
+                            try
+                            {
+                                labelCliente.Text = c.NombreCliente.ToString() + " " + c.ApellidoCliente.ToString();
+                                activarCliente(false, Color.Gray, Color.DimGray);
+                                comboBoxDocType.Visible = false;
+                                textNumeroDocumento.Visible = false;
+                                labelTipoDoc.Text = comboBoxDocType.Text;
+                                labelNroDoc.Text = textNumeroDocumento.Text.Trim();
+                                CargarTarjeta(c.TipoDocumentoCliente, c.DocumentoCliente);
+                                activarTarjeta(true, Color.Silver, Color.Black);
+                                comboTarjetaCliente.Focus();
+                            }
+                            catch (Exception)
+                            {
+
+                                MessageBox.Show("Error, no se encontró cliente!!");
+                            }
+                        }
                     }
                     else
                     {
@@ -303,45 +305,50 @@ namespace Shopping_Buy_All
                 MessageBox.Show("Error, Al seleccionar tarjeta!!");
                 comboTarjetaCliente.Focus();
             }
-            textCodProducto.Enabled = true;
-            textCodProducto.Focus();
-            btnBuscarProducto.Enabled = true;
         }
+
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            Producto p = AD_Productos.Buscar_Producto(textCodProducto.Text.Trim());
-            if (p != null)
+            DataTable producto = _datosProductos.Buscar_Producto(textCodProducto.Text.Trim());
+            if (producto.Rows.Count == 1)
             {
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                String mensajeCarga = ("Producto encontrado!\n"
-                    + p.NombreProducto + "\n"
-                    + "Desea cargar este producto?");
-
-                string titulo = "Producto";
-
-                DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-                if (result == DialogResult.OK)
+                Producto p = new Producto();
+                p.NombreProducto = producto.Rows[0]["NombreProducto"].ToString();
+                p.CodigoProducto = (int)producto.Rows[0]["Codigo_Producto"]; 
+                p.PrecioProducto = (float)Convert.ToDouble(producto.Rows[0]["Precio"]);
+                if (p != null)
                 {
-                    try
-                    {
-                        labelNombreProducto.Text = p.NombreProducto;
-                        labelPrecio.Text = p.PrecioProducto.ToString();
-                        activarProducto(false, Color.Gray, Color.DimGray);
-                        activarDetalle(true, Color.Silver, Color.Black);
-                        textCodProducto.Visible = false;
-                        textCantidad.Focus();
-                        labelCod.Text = textCodProducto.Text.Trim();
-                    }
-                    catch (Exception)
-                    {
+                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                    String mensajeCarga = ("Producto encontrado!\n"
+                        + p.NombreProducto + "\n"
+                        + "Desea cargar este producto?");
 
-                        MessageBox.Show("Error, no se pudo Obtener producto");
+                    string titulo = "Producto";
+
+                    DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
+
+                    if (result == DialogResult.OK)
+                    {
+                        try
+                        {
+                            labelNombreProducto.Text = p.NombreProducto;
+                            labelPrecio.Text = p.PrecioProducto.ToString();
+                            activarProducto(false, Color.Gray, Color.DimGray);
+                            activarDetalle(true, Color.Silver, Color.Black);
+                            textCodProducto.Visible = false;
+                            textCantidad.Focus();
+                            labelCod.Text = textCodProducto.Text.Trim();
+                        }
+                        catch (Exception)
+                        {
+
+                            MessageBox.Show("Error, no se pudo Obtener producto");
+                        }
                     }
-                }
-                else
-                {
-                    textCodProducto.Focus();
+                    else
+                    {
+                        textCodProducto.Focus();
+                    }
                 }
             }
             else
@@ -349,28 +356,6 @@ namespace Shopping_Buy_All
                 MessageBox.Show("Error, no se pudo Obtener producto");
             }
 
-        }
-        public void AgregarProducto(ProductoFactura prod)
-        {
-            DataGridViewRow fila = new DataGridViewRow();
-            //Agregar Codigo
-            DataGridViewTextBoxCell CodigoProducto = new DataGridViewTextBoxCell();
-            CodigoProducto.Value = prod.CodigoProducto;
-            fila.Cells.Add(CodigoProducto);
-            //Agregar nombre
-            DataGridViewTextBoxCell NombreProducto = new DataGridViewTextBoxCell();
-            NombreProducto.Value = prod.NombreProducto;
-            fila.Cells.Add(NombreProducto);
-            //Agregar Fecha
-            DataGridViewTextBoxCell Cantidad = new DataGridViewTextBoxCell();
-            Cantidad.Value = prod.CantidadProducto;
-            fila.Cells.Add(Cantidad);
-            //Agregar Carrera
-            DataGridViewTextBoxCell Precio = new DataGridViewTextBoxCell();
-            Precio.Value = prod.PrecioProducto;
-            fila.Cells.Add(Precio);
-            //Agregar Fila
-            tablaProducto.Rows.Add(fila);
         }
 
         /// <summary>
@@ -387,10 +372,31 @@ namespace Shopping_Buy_All
             return p;
         }
 
-        
-        private void agregarProducto(ProductoFactura producto)
+        /// <summary>
+        /// Agrega un producto a la tabla
+        /// </summary>
+        /// <param name="producto"></param>
+        private void AgregarProducto(ProductoFactura producto)
         {
-            AgregarProducto(producto);
+            DataGridViewRow fila = new DataGridViewRow();
+            //Agregar Codigo
+            DataGridViewTextBoxCell CodigoProducto = new DataGridViewTextBoxCell();
+            CodigoProducto.Value = producto.CodigoProducto;
+            fila.Cells.Add(CodigoProducto);
+            //Agregar nombre
+            DataGridViewTextBoxCell NombreProducto = new DataGridViewTextBoxCell();
+            NombreProducto.Value = producto.NombreProducto;
+            fila.Cells.Add(NombreProducto);
+            //Agregar Fecha
+            DataGridViewTextBoxCell Cantidad = new DataGridViewTextBoxCell();
+            Cantidad.Value = producto.CantidadProducto;
+            fila.Cells.Add(Cantidad);
+            //Agregar Carrera
+            DataGridViewTextBoxCell Precio = new DataGridViewTextBoxCell();
+            Precio.Value = producto.PrecioProducto;
+            fila.Cells.Add(Precio);
+            //Agregar Fila
+            tablaProducto.Rows.Add(fila);
             activarDetalle(false, Color.Gray, Color.DimGray);
             activarProducto(true, Color.Silver, Color.Black);
             lblTotal.Text = calcularTotal();
@@ -425,14 +431,14 @@ namespace Shopping_Buy_All
                     ProductoFactura producto = obtenerDatosProducto();
                     if (!validarProductoEnTabla(producto.CodigoProducto))
                     {
-                        agregarProducto(producto);
+                        AgregarProducto(producto);
                     }
                     else if(activarModificacion.EsModificacion)
                     {
                         tablaProducto.Rows.RemoveAt(activarModificacion.IndiceTabla);
                         activarModificacion.esModificacion = false;
                         activarModificacion.indiceTabla = -1;
-                        agregarProducto(producto);
+                        AgregarProducto(producto);
                         activarGuardado(true, Color.Silver, Color.Black);
                     }
                     else
@@ -459,6 +465,12 @@ namespace Shopping_Buy_All
             }
 
         }
+
+        /// <summary>
+        /// Crea el objeto factura
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnFactura_Click(object sender, EventArgs e)
         {
             int codLocal = (int)cmbLocal.SelectedValue;
@@ -471,6 +483,11 @@ namespace Shopping_Buy_All
             cargarFactura(factura, numeroFactura);
             Close();
         }
+
+        /// <summary>
+        /// Crea un array de detalles obteniéndolos desde la tabla
+        /// </summary>
+        /// <returns></returns>
         private Detalle[] getDetalles()
         {
             int largo = tablaProducto.Rows.Count;
@@ -485,6 +502,13 @@ namespace Shopping_Buy_All
             }
             return detalle;
         }
+
+        /// <summary>
+        /// Carga la factura en la DB
+        /// </summary>
+        /// <param name="factura"></param>
+        /// <param name="nroFactura"></param>
+        /// <returns></returns>
         private bool cargarFactura(Factura factura, int nroFactura)
         {
             bool resultado = _accesoADatos.cargarFactura(factura, nroFactura);
@@ -498,6 +522,11 @@ namespace Shopping_Buy_All
             }
             return resultado;
         }
+
+        /// <summary>
+        /// Calcula el total de la factura
+        /// </summary>
+        /// <returns></returns>
         private string calcularTotal()
         {
             float total = 0;
@@ -510,6 +539,12 @@ namespace Shopping_Buy_All
             }
             return total.ToString();
         }
+
+        /// <summary>
+        /// Resta el precio de un producto del total de la factura
+        /// </summary>
+        /// <param name="indiceFila"></param>
+        /// <returns></returns>
         private string restarTotal(int indiceFila)
         {
             float total = int.Parse(lblTotal.Text);
@@ -518,6 +553,12 @@ namespace Shopping_Buy_All
             total -= precio;
             return total.ToString();
         }
+
+        /// <summary>
+        /// Verifica si un producto se encuentra entre los detalles
+        /// </summary>
+        /// <param name="codProducto"></param>
+        /// <returns></returns>
         private bool validarProductoEnTabla(int codProducto)
         {
             int largo = tablaProducto.Rows.Count;
@@ -530,6 +571,12 @@ namespace Shopping_Buy_All
             }
             return false;
         }
+
+        /// <summary>
+        /// Elimina uno de los detalles de la tabla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             var indiceFila = tablaProducto.CurrentRow.Index;
@@ -563,6 +610,11 @@ namespace Shopping_Buy_All
                 lblTotal.Text = calcularTotal();
             }
         }
+        /// <summary>
+        /// Modifica uno de los detalles de la factura elegidos desde la tabla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModificar_Click(object sender, EventArgs e)
         {
             var indiceFila = tablaProducto.CurrentRow.Index;

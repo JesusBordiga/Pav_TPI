@@ -44,7 +44,6 @@
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelBuscar = new System.Windows.Forms.Panel();
-            this.btnSearchProduct2 = new System.Windows.Forms.Button();
             this.textPrice = new System.Windows.Forms.MaskedTextBox();
             this.textNameProduct = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -211,31 +210,16 @@
             // panelBuscar
             // 
             this.panelBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.panelBuscar.Controls.Add(this.btnSearchProduct2);
             this.panelBuscar.Controls.Add(this.textPrice);
             this.panelBuscar.Controls.Add(this.textNameProduct);
             this.panelBuscar.Controls.Add(this.label9);
             this.panelBuscar.Controls.Add(this.label2);
             this.panelBuscar.Controls.Add(this.label4);
             this.panelBuscar.Controls.Add(this.btnDeleteProduct);
-            this.panelBuscar.Location = new System.Drawing.Point(12, 166);
+            this.panelBuscar.Location = new System.Drawing.Point(12, 165);
             this.panelBuscar.Name = "panelBuscar";
             this.panelBuscar.Size = new System.Drawing.Size(244, 173);
             this.panelBuscar.TabIndex = 90;
-            // 
-            // btnSearchProduct2
-            // 
-            this.btnSearchProduct2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSearchProduct2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchProduct2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchProduct2.ForeColor = System.Drawing.Color.White;
-            this.btnSearchProduct2.Location = new System.Drawing.Point(85, 148);
-            this.btnSearchProduct2.Name = "btnSearchProduct2";
-            this.btnSearchProduct2.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchProduct2.TabIndex = 96;
-            this.btnSearchProduct2.Text = "Buscar";
-            this.btnSearchProduct2.UseVisualStyleBackColor = false;
-            this.btnSearchProduct2.Click += new System.EventHandler(this.btnSerachProduct2_Click_1);
             // 
             // textPrice
             // 
@@ -306,6 +290,7 @@
             this.btnDeleteProduct.Size = new System.Drawing.Size(39, 40);
             this.btnDeleteProduct.TabIndex = 98;
             this.btnDeleteProduct.UseVisualStyleBackColor = false;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
             // Product_Delete
             // 
@@ -353,7 +338,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Borrado;
         private System.Windows.Forms.Panel panelBuscar;
-        private System.Windows.Forms.Button btnSearchProduct2;
         private System.Windows.Forms.MaskedTextBox textPrice;
         private System.Windows.Forms.TextBox textNameProduct;
         private System.Windows.Forms.Label label9;

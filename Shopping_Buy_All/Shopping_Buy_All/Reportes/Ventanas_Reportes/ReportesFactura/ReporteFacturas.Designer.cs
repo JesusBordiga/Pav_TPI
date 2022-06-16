@@ -41,7 +41,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(609, 57);
+            this.button1.Location = new System.Drawing.Point(738, 58);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 26;
@@ -52,7 +52,7 @@
             // lblRestriccion
             // 
             this.lblRestriccion.AutoSize = true;
-            this.lblRestriccion.Location = new System.Drawing.Point(458, 27);
+            this.lblRestriccion.Location = new System.Drawing.Point(591, 31);
             this.lblRestriccion.Name = "lblRestriccion";
             this.lblRestriccion.Size = new System.Drawing.Size(63, 13);
             this.lblRestriccion.TabIndex = 25;
@@ -60,7 +60,7 @@
             // 
             // txt_restriccion
             // 
-            this.txt_restriccion.Location = new System.Drawing.Point(542, 27);
+            this.txt_restriccion.Location = new System.Drawing.Point(671, 28);
             this.txt_restriccion.Mask = "LLLLLLLL";
             this.txt_restriccion.Name = "txt_restriccion";
             this.txt_restriccion.PromptChar = '⠀';
@@ -122,14 +122,14 @@
             this.repFac.Location = new System.Drawing.Point(7, 86);
             this.repFac.Name = "repFac";
             this.repFac.ServerReport.BearerToken = null;
-            this.repFac.Size = new System.Drawing.Size(677, 352);
+            this.repFac.Size = new System.Drawing.Size(806, 352);
             this.repFac.TabIndex = 19;
             // 
             // ReporteFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 441);
+            this.ClientSize = new System.Drawing.Size(825, 441);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblRestriccion);
             this.Controls.Add(this.txt_restriccion);

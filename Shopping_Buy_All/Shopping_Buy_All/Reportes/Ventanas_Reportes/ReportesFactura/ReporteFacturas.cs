@@ -74,13 +74,17 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
             {
                 Restriccion();
 
-                ReportDataSource Datos = new ReportDataSource("DatosFactura", Tabla);
+                ReportDataSource DatosFactura = new ReportDataSource("DatosFactura", Tabla);
+                ReportDataSource DatosLocal = new ReportDataSource("DatosLocal", Tabla);
+                ReportDataSource DatosDocumento = new ReportDataSource("DatosDocumento", Tabla);
                 repFac.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura.ReportFacturas.rdlc";
                 ReportParameter[] parametros = new ReportParameter[1];
                 parametros[0] = new ReportParameter("Alcance", alcance);
                 repFac.LocalReport.SetParameters(parametros);
                 repFac.LocalReport.DataSources.Clear();
-                repFac.LocalReport.DataSources.Add(Datos);
+                repFac.LocalReport.DataSources.Add(DatosFactura);
+                repFac.LocalReport.DataSources.Add(DatosLocal);
+                repFac.LocalReport.DataSources.Add(DatosDocumento);
                 repFac.RefreshReport();
             }
             else
