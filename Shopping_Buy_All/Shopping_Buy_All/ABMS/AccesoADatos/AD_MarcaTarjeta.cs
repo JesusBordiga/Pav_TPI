@@ -207,5 +207,104 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             }
             return resultado;
         }
-    }
+        public DataTable _Rpt_MarcaTarjeta()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT * FROM MarcaTarjeta WHERE Borrado = 0 order by Nombre";
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return tabla;
+        }
+        public DataTable _Rpt_MarcaTarjeta(string nombre)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT * FROM MarcaTarjeta WHERE Borrado = 0 and Nombre like '" + nombre.Trim() + "%' order by Nombre";
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return tabla;
+        }
+        public DataTable _Rpt_MarcaTarjeta1(string id)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT * FROM MarcaTarjeta WHERE Borrado = 0 and idMarca like '" + id + "%' order by idMarca";
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return tabla;
+        } }
 }
+
