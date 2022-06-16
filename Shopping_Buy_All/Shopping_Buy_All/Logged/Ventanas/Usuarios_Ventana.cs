@@ -23,5 +23,17 @@ namespace Shopping_Buy_All
             User_Load Userload = new User_Load();
             Userload.ShowDialog();
         }
+
+        private void btnModifyUsuario_Click(object sender, EventArgs e)
+        {
+            User_Modify user_modify = new User_Modify();
+            user_modify.ShowDialog();
+        }
+
+        private void btnDeleteUsuario_Click(object sender, EventArgs e)
+        {
+            User_Delete user_delete = new User_Delete();
+            user_delete.ShowDialog();
+        }
     }
 }

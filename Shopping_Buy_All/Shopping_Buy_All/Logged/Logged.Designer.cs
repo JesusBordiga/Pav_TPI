@@ -931,6 +931,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox5.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.terminator;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Location = new System.Drawing.Point(323, 42);
@@ -938,6 +939,7 @@
             this.pictureBox5.Size = new System.Drawing.Size(58, 55);
             this.pictureBox5.TabIndex = 56;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.btnmarcatarjetaReport_Click);
             // 
             // button3
             // 
@@ -947,12 +949,13 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(314, 103);
+            this.button3.Location = new System.Drawing.Point(307, 103);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(94, 23);
             this.button3.TabIndex = 55;
-            this.button3.Text = "Completar";
+            this.button3.Text = "Marca Tarjeta";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btnmarcatarjetaReport_Click);
             // 
             // pictureBox8
             // 
@@ -1477,7 +1480,6 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelEstadisticas);
             this.Controls.Add(this.MenuReportes);
             this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.labelFecha);
@@ -1486,6 +1488,7 @@
             this.Controls.Add(this.LabelBienvenido);
             this.Controls.Add(this.btnMenu2);
             this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.panelEstadisticas);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

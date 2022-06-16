@@ -164,5 +164,11 @@ namespace Shopping_Buy_All
         {
             lblVolverEstadisticas.Visible = true;
         }
+
+        private void btnmarcatarjetaReport_Click(object sender, EventArgs e)
+        {
+            ReporteMarcaTarjeta reportemarcatarjeta = new ReporteMarcaTarjeta();
+            reportemarcatarjeta.Show();
+        }
     }
 }
