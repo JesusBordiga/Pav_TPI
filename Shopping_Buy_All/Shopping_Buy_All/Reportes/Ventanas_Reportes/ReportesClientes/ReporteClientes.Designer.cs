@@ -104,14 +104,14 @@
             this.repProd.Location = new System.Drawing.Point(5, 86);
             this.repProd.Name = "repProd";
             this.repProd.ServerReport.BearerToken = null;
-            this.repProd.Size = new System.Drawing.Size(944, 352);
+            this.repProd.Size = new System.Drawing.Size(959, 352);
             this.repProd.TabIndex = 11;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(875, 60);
+            this.button1.Location = new System.Drawing.Point(886, 60);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 18;
@@ -123,7 +123,7 @@
             // 
             this.txt_restriccion.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txt_restriccion.ForeColor = System.Drawing.SystemColors.Control;
-            this.txt_restriccion.Location = new System.Drawing.Point(808, 32);
+            this.txt_restriccion.Location = new System.Drawing.Point(819, 32);
             this.txt_restriccion.Mask = "LLLLLLLL";
             this.txt_restriccion.Name = "txt_restriccion";
             this.txt_restriccion.PromptChar = '⠀';
@@ -136,7 +136,7 @@
             this.lblRestriccion.BackColor = System.Drawing.Color.Transparent;
             this.lblRestriccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRestriccion.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblRestriccion.Location = new System.Drawing.Point(811, 14);
+            this.lblRestriccion.Location = new System.Drawing.Point(822, 14);
             this.lblRestriccion.Name = "lblRestriccion";
             this.lblRestriccion.Size = new System.Drawing.Size(89, 17);
             this.lblRestriccion.TabIndex = 26;
@@ -203,7 +203,7 @@
             "W",
             "Y",
             "Z"});
-            this.comboBoxNombre.Location = new System.Drawing.Point(822, 31);
+            this.comboBoxNombre.Location = new System.Drawing.Point(833, 31);
             this.comboBoxNombre.Name = "comboBoxNombre";
             this.comboBoxNombre.Size = new System.Drawing.Size(77, 21);
             this.comboBoxNombre.TabIndex = 27;
@@ -214,7 +214,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(958, 443);
+            this.ClientSize = new System.Drawing.Size(971, 443);
             this.Controls.Add(this.comboBoxNombre);
             this.Controls.Add(this.lblRestriccion);
             this.Controls.Add(this.txt_restriccion);

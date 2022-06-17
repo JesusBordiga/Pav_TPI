@@ -46,6 +46,8 @@ namespace Shopping_Buy_All
             panelMenu.Visible = false;
             MenuReportes.Visible = false;
             panelEstadisticas.Visible = false;
+            lblVolver.Visible = false;
+            lblVolverEstadisticas.Visible = false;
         }
         private void btnClientLoad_Click(object sender, EventArgs e)
         {

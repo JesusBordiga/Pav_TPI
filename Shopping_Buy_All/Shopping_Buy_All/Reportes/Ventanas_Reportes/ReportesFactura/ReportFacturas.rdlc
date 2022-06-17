@@ -142,7 +142,7 @@
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.28607cm</Top>
             <Height>0.99688cm</Height>
-            <Width>21.2287cm</Width>
+            <Width>20.03809cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -171,7 +171,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>1.036cm</Top>
+            <Top>1.3535cm</Top>
             <Height>0.6cm</Height>
             <Width>3.56716cm</Width>
             <ZIndex>1</ZIndex>
@@ -205,7 +205,7 @@
             <Top>1.35351cm</Top>
             <Left>3.32022cm</Left>
             <Height>0.6cm</Height>
-            <Width>17.90848cm</Width>
+            <Width>16.71787cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -391,7 +391,7 @@
             <DataSetName>DatosFactura</DataSetName>
             <Top>2.05934cm</Top>
             <Height>1.2cm</Height>
-            <Width>5cm</Width>
+            <Width>5.82022cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -471,7 +471,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>NombreDocumento</rd:DefaultName>
@@ -591,7 +593,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Nombre</rd:DefaultName>
@@ -643,10 +647,10 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>4.45792cm</Width>
+                  <Width>3.53188cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.13037cm</Width>
+                  <Width>4.86579cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -757,7 +761,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Numero_Tarjeta</rd:DefaultName>
@@ -830,7 +836,7 @@
             <Top>2.05934cm</Top>
             <Left>11.64042cm</Left>
             <Height>1.2cm</Height>
-            <Width>9.58828cm</Width>
+            <Width>8.39766cm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -839,13 +845,13 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2.35661in</Height>
+        <Height>1.2832in</Height>
         <Style />
       </Body>
-      <Width>8.35776in</Width>
+      <Width>7.92026in</Width>
       <Page>
         <PageFooter>
-          <Height>2.54cm</Height>
+          <Height>0.70583cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -864,8 +870,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>1.60458cm</Top>
-              <Left>18.7287cm</Left>
+              <Left>17.53808cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <Style>
