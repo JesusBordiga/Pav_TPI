@@ -9,22 +9,29 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="EstadisticasFacturacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="EstadisticasFacturacion" msprop:Generator_DataSetName="EstadisticasFacturacion">
+  <xs:element name="EstadisticasFacturacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="EstadisticasFacturacion" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EstadisticasFacturacion">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="LocalesMasFacturas" msprop:Generator_RowEvHandlerName="LocalesMasFacturasRowChangeEventHandler" msprop:Generator_RowDeletedName="LocalesMasFacturasRowDeleted" msprop:Generator_RowDeletingName="LocalesMasFacturasRowDeleting" msprop:Generator_RowEvArgName="LocalesMasFacturasRowChangeEvent" msprop:Generator_TablePropName="LocalesMasFacturas" msprop:Generator_RowChangedName="LocalesMasFacturasRowChanged" msprop:Generator_RowChangingName="LocalesMasFacturasRowChanging" msprop:Generator_TableClassName="LocalesMasFacturasDataTable" msprop:Generator_RowClassName="LocalesMasFacturasRow" msprop:Generator_TableVarName="tableLocalesMasFacturas" msprop:Generator_UserTableName="LocalesMasFacturas">
+        <xs:element name="LocalesMasFacturas" msprop:Generator_RowClassName="LocalesMasFacturasRow" msprop:Generator_RowEvHandlerName="LocalesMasFacturasRowChangeEventHandler" msprop:Generator_RowDeletedName="LocalesMasFacturasRowDeleted" msprop:Generator_RowDeletingName="LocalesMasFacturasRowDeleting" msprop:Generator_RowEvArgName="LocalesMasFacturasRowChangeEvent" msprop:Generator_TablePropName="LocalesMasFacturas" msprop:Generator_RowChangedName="LocalesMasFacturasRowChanged" msprop:Generator_UserTableName="LocalesMasFacturas" msprop:Generator_RowChangingName="LocalesMasFacturasRowChanging" msprop:Generator_TableClassName="LocalesMasFacturasDataTable" msprop:Generator_TableVarName="tableLocalesMasFacturas">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Nombre_x0020_local" msprop:Generator_ColumnPropNameInRow="Nombre_local" msprop:Generator_ColumnPropNameInTable="Nombre_localColumn" msprop:Generator_ColumnVarNameInTable="columnNombre_local" msprop:Generator_UserColumnName="Nombre local" type="xs:string" minOccurs="0" />
-              <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
+              <xs:element name="Nombre_x0020_local" msprop:Generator_UserColumnName="Nombre local" msprop:Generator_ColumnPropNameInTable="Nombre_localColumn" msprop:Generator_ColumnPropNameInRow="Nombre_local" msprop:Generator_ColumnVarNameInTable="columnNombre_local" type="xs:string" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ClientesMasFacturas" msprop:Generator_RowEvHandlerName="ClientesMasFacturasRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientesMasFacturasRowDeleted" msprop:Generator_RowDeletingName="ClientesMasFacturasRowDeleting" msprop:Generator_RowEvArgName="ClientesMasFacturasRowChangeEvent" msprop:Generator_TablePropName="ClientesMasFacturas" msprop:Generator_RowChangedName="ClientesMasFacturasRowChanged" msprop:Generator_RowChangingName="ClientesMasFacturasRowChanging" msprop:Generator_TableClassName="ClientesMasFacturasDataTable" msprop:Generator_RowClassName="ClientesMasFacturasRow" msprop:Generator_TableVarName="tableClientesMasFacturas" msprop:Generator_UserTableName="ClientesMasFacturas">
+        <xs:element name="ClientesMasFacturas" msprop:Generator_RowClassName="ClientesMasFacturasRow" msprop:Generator_RowEvHandlerName="ClientesMasFacturasRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientesMasFacturasRowDeleted" msprop:Generator_RowDeletingName="ClientesMasFacturasRowDeleting" msprop:Generator_RowEvArgName="ClientesMasFacturasRowChangeEvent" msprop:Generator_TablePropName="ClientesMasFacturas" msprop:Generator_RowChangedName="ClientesMasFacturasRowChanged" msprop:Generator_UserTableName="ClientesMasFacturas" msprop:Generator_RowChangingName="ClientesMasFacturasRowChanging" msprop:Generator_TableClassName="ClientesMasFacturasDataTable" msprop:Generator_TableVarName="tableClientesMasFacturas">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Nombre_x0020_clientes" msprop:Generator_ColumnPropNameInRow="Nombre_clientes" msprop:Generator_ColumnPropNameInTable="Nombre_clientesColumn" msprop:Generator_ColumnVarNameInTable="columnNombre_clientes" msprop:Generator_UserColumnName="Nombre clientes" type="xs:string" minOccurs="0" />
-              <xs:element name="Cantiad" msprop:Generator_ColumnPropNameInRow="Cantiad" msprop:Generator_ColumnPropNameInTable="CantiadColumn" msprop:Generator_ColumnVarNameInTable="columnCantiad" msprop:Generator_UserColumnName="Cantiad" type="xs:int" minOccurs="0" />
+              <xs:element name="Nombre_x0020_clientes" msprop:Generator_UserColumnName="Nombre clientes" msprop:Generator_ColumnPropNameInTable="Nombre_clientesColumn" msprop:Generator_ColumnPropNameInRow="Nombre_clientes" msprop:Generator_ColumnVarNameInTable="columnNombre_clientes" type="xs:string" minOccurs="0" />
+              <xs:element name="Cantiad" msprop:Generator_UserColumnName="Cantiad" msprop:Generator_ColumnPropNameInTable="CantiadColumn" msprop:Generator_ColumnPropNameInRow="Cantiad" msprop:Generator_ColumnVarNameInTable="columnCantiad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FacturasTotales" msprop:Generator_RowEvHandlerName="FacturasTotalesRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturasTotalesRowDeleted" msprop:Generator_RowDeletingName="FacturasTotalesRowDeleting" msprop:Generator_RowEvArgName="FacturasTotalesRowChangeEvent" msprop:Generator_TablePropName="FacturasTotales" msprop:Generator_RowChangedName="FacturasTotalesRowChanged" msprop:Generator_RowChangingName="FacturasTotalesRowChanging" msprop:Generator_TableClassName="FacturasTotalesDataTable" msprop:Generator_RowClassName="FacturasTotalesRow" msprop:Generator_TableVarName="tableFacturasTotales" msprop:Generator_UserTableName="FacturasTotales">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_UserColumnName="Cantidad" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

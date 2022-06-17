@@ -4,11 +4,11 @@
 
     partial class EstadisticasFacturacion
     {
-        partial class ClientesMasFacturasDataTable
+        partial class FacturasTotalesDataTable
         {
         }
 
-        partial class DataTable1DataTable
+        partial class ClientesMasFacturasDataTable
         {
         }
     }

@@ -174,6 +174,11 @@ namespace Shopping_Buy_All
             ReporteEstadisticasClientes reporteEstadisticasClientes = new ReporteEstadisticasClientes();
             reporteEstadisticasClientes.Show();
         }
+        private void btnFacturaEstadisticas_Click(object sender, EventArgs e)
+        {
+            ReporteEstadisticasFacturacion reporteEstadisticasFacturacion = new ReporteEstadisticasFacturacion();
+            reporteEstadisticasFacturacion.Show();
+        }
 
         //ACCIONES DE ESTADISTICAS
         private void btnEstadisticas_Click(object sender, EventArgs e)
@@ -196,6 +201,6 @@ namespace Shopping_Buy_All
 
         }
 
-
+        
     }
 }

@@ -1435,6 +1435,7 @@
             this.pictureBox31.Size = new System.Drawing.Size(58, 55);
             this.pictureBox31.TabIndex = 52;
             this.pictureBox31.TabStop = false;
+            this.pictureBox31.Click += new System.EventHandler(this.btnFacturaEstadisticas_Click);
             // 
             // pictureBox32
             // 
@@ -1463,6 +1464,7 @@
             this.button25.TabIndex = 46;
             this.button25.Text = "Facturas";
             this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.btnFacturaEstadisticas_Click);
             // 
             // button26
             // 

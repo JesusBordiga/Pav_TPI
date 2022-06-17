@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteEstadisticasFacturacion));
-            this.reporteCliente = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reporteFactura = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // reporteCliente
+            // reporteFactura
             // 
-            this.reporteCliente.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.reporteCliente.Cursor = System.Windows.Forms.Cursors.Default;
-            this.reporteCliente.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Estadisticas.Ventanas_Reportes.EstadisticasClientes.EstadisticaC" +
-    "lientes.rdlc";
-            this.reporteCliente.Location = new System.Drawing.Point(7, 8);
-            this.reporteCliente.Name = "reporteCliente";
-            this.reporteCliente.ServerReport.BearerToken = null;
-            this.reporteCliente.Size = new System.Drawing.Size(944, 423);
-            this.reporteCliente.TabIndex = 11;
+            this.reporteFactura.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.reporteFactura.Cursor = System.Windows.Forms.Cursors.Default;
+            this.reporteFactura.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFacturacion.Estad" +
+    "isticaFacturacion.rdlc";
+            this.reporteFactura.Location = new System.Drawing.Point(7, 8);
+            this.reporteFactura.Name = "reporteFactura";
+            this.reporteFactura.ServerReport.BearerToken = null;
+            this.reporteFactura.Size = new System.Drawing.Size(944, 423);
+            this.reporteFactura.TabIndex = 11;
             // 
             // ReporteEstadisticasFacturacion
             // 
@@ -51,17 +51,18 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(958, 443);
-            this.Controls.Add(this.reporteCliente);
+            this.Controls.Add(this.reporteFactura);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ReporteEstadisticasFacturacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reportes de Estadisticas de Facturacion";
+            this.Load += new System.EventHandler(this.ReporteEstadisticasFacturacion_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Microsoft.Reporting.WinForms.ReportViewer reporteCliente;
+        private Microsoft.Reporting.WinForms.ReportViewer reporteFactura;
     }
 }
