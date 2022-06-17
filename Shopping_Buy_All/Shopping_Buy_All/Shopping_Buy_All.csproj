@@ -949,7 +949,9 @@
   <ItemGroup>
     <None Include="Resources\xclipboard.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rstudio.png" />
     <None Include="Resources\gparted.png" />
