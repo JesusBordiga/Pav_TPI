@@ -422,10 +422,19 @@
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\ReporteEstadisticasClientes.Designer.cs">
       <DependentUpon>ReporteEstadisticasClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\EstadisticasFacturacion.cs">
+      <DependentUpon>EstadisticasFacturacion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\EstadisticasFacturacion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EstadisticasFacturacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\ReporteEstadisticasClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\ReporteEstadisticasClientes.Designer.cs">
+      <DependentUpon>ReporteEstadisticasClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.cs">
       <SubType>Form</SubType>
@@ -744,6 +753,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\EstadisticaClientes.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\ReporteEstadisticasClientes.resx">
+      <DependentUpon>ReporteEstadisticasClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\EstadisticaFacturacion.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\ReporteEstadisticasClientes.resx">
       <DependentUpon>ReporteEstadisticasClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.resx">

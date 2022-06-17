@@ -592,7 +592,7 @@
             this.MenuReportes.Controls.Add(this.pictureBox9);
             this.MenuReportes.Controls.Add(this.btnReporteFactura);
             this.MenuReportes.Controls.Add(this.btnReporteClientes);
-            this.MenuReportes.Location = new System.Drawing.Point(129, 74);
+            this.MenuReportes.Location = new System.Drawing.Point(128, 75);
             this.MenuReportes.Name = "MenuReportes";
             this.MenuReportes.Size = new System.Drawing.Size(552, 315);
             this.MenuReportes.TabIndex = 59;
@@ -1447,6 +1447,7 @@
             this.pictureBox32.Size = new System.Drawing.Size(58, 55);
             this.pictureBox32.TabIndex = 50;
             this.pictureBox32.TabStop = false;
+            this.pictureBox32.Click += new System.EventHandler(this.EstadisticasClientes_Click);
             // 
             // button25
             // 
@@ -1487,8 +1488,8 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.MenuReportes);
             this.Controls.Add(this.panelEstadisticas);
+            this.Controls.Add(this.MenuReportes);
             this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.labelHora);
