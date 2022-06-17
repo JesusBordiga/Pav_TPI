@@ -135,5 +135,14 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 "order by F.Numero_Factura";
             return _DB.Consultar(consulta);
         }
+        public DataTable _GetEstRecXMes()
+        {
+            string consulta = "SELECT DATENAME(MONTH, DATEADD(MONTH, MONTH(FechaCompra), 0) - 1) 'Mes', SUM(D.Precio) 'TotalRecaudado' " +
+                "FROM ComprasPorCliente C JOIN DetalleDeCompra D ON C.Numero_Factura = D.NroFactura " +
+                "WHERE C.Borrado = 0 AND D.Borrado = 0 " +
+                "GROUP BY DATENAME(MONTH, DATEADD(MONTH, MONTH(FechaCompra), 0) - 1) " +
+                "ORDER BY 'TotalRecaudado' DESC";
+            return _DB.Consultar(consulta);
+        }
     }
 }

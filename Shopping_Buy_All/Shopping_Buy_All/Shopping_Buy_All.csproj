@@ -436,6 +436,26 @@
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\ReporteEstadisticasFacturacion.Designer.cs">
       <DependentUpon>ReporteEstadisticasFacturacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\DatosRecaudacion.cs">
+      <DependentUpon>DatosRecaudacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\DatosRecaudacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosRecaudacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorMes\RecPorMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorMes\RecPorMes.Designer.cs">
+      <DependentUpon>RecPorMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\VentanaRecaudacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\VentanaRecaudacion.Designer.cs">
+      <DependentUpon>VentanaRecaudacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -759,6 +779,13 @@
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\ReporteEstadisticasFacturacion.resx">
       <DependentUpon>ReporteEstadisticasFacturacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorMes\RecaudacionPorMes.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorMes\RecPorMes.resx">
+      <DependentUpon>RecPorMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\VentanaRecaudacion.resx">
+      <DependentUpon>VentanaRecaudacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.resx">
       <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
     </EmbeddedResource>
@@ -890,6 +917,17 @@
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\EstadisticasFacturacion.xss">
       <DependentUpon>EstadisticasFacturacion.xsd</DependentUpon>
     </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\DatosRecaudacion.xsc">
+      <DependentUpon>DatosRecaudacion.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\DatosRecaudacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosRecaudacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\DatosRecaudacion.xss">
+      <DependentUpon>DatosRecaudacion.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -949,9 +987,7 @@
   <ItemGroup>
     <None Include="Resources\xclipboard.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\rstudio.png" />
     <None Include="Resources\gparted.png" />

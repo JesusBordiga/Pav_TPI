@@ -1091,12 +1091,13 @@
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(476, 191);
+            this.button13.Location = new System.Drawing.Point(465, 191);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.Size = new System.Drawing.Size(86, 23);
             this.button13.TabIndex = 95;
-            this.button13.Text = "Completar";
+            this.button13.Text = "Recaudacion";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.btnEstadisticasRecaudacion_Click);
             // 
             // button14
             // 
@@ -1228,6 +1229,7 @@
             this.pictureBox18.Size = new System.Drawing.Size(58, 55);
             this.pictureBox18.TabIndex = 86;
             this.pictureBox18.TabStop = false;
+            this.pictureBox18.Click += new System.EventHandler(this.btnEstadisticasRecaudacion_Click);
             // 
             // pictureBox19
             // 

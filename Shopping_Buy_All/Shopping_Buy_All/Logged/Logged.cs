@@ -13,6 +13,8 @@ using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesProductos;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasClientes;
+using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaudacion.RecaudacionPorMes;
+using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaudacion;
 
 namespace Shopping_Buy_All
 {
@@ -179,6 +181,11 @@ namespace Shopping_Buy_All
             ReporteEstadisticasFacturacion reporteEstadisticasFacturacion = new ReporteEstadisticasFacturacion();
             reporteEstadisticasFacturacion.Show();
         }
+        private void btnEstadisticasRecaudacion_Click(object sender, EventArgs e)
+        {
+            VentanaRecaudacion ventanaRecaudacion = new VentanaRecaudacion();
+            ventanaRecaudacion.Show();
+        }
 
         //ACCIONES DE ESTADISTICAS
         private void btnEstadisticas_Click(object sender, EventArgs e)
@@ -200,7 +207,5 @@ namespace Shopping_Buy_All
             panelEstadisticas.Visible = false;
 
         }
-
-        
     }
 }
