@@ -73,6 +73,16 @@ namespace Shopping_Buy_All.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap distributor_logo_archlabs {
+            get {
+                object obj = ResourceManager.GetObject("distributor-logo-archlabs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap fritzing {
             get {
                 object obj = ResourceManager.GetObject("fritzing", resourceCulture);

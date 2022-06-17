@@ -408,6 +408,25 @@
     <Compile Include="Entidades\TipoVehiculo.cs" />
     <Compile Include="Entidades\User.cs" />
     <Compile Include="Entidades\Utils.cs" />
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\EstadisticasClientes.cs">
+      <DependentUpon>EstadisticasClientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\EstadisticasClientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadisticasClientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\ReporteEstadisticasClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\ReporteEstadisticasClientes.Designer.cs">
+      <DependentUpon>ReporteEstadisticasClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\EstadisticasFacturacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadisticasFacturacion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -723,6 +742,10 @@
     <EmbeddedResource Include="ABMS\ABM Vehiculos\Vehicle_Modify.resx">
       <DependentUpon>Vehicle_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\EstadisticaClientes.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\ReporteEstadisticasClientes.resx">
+      <DependentUpon>ReporteEstadisticasClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.resx">
       <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
     </EmbeddedResource>
@@ -832,6 +855,28 @@
     <None Include="BD3K7G01_2022DataSet.xss">
       <DependentUpon>BD3K7G01_2022DataSet.xsd</DependentUpon>
     </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\EstadisticasClientes.xsc">
+      <DependentUpon>EstadisticasClientes.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\EstadisticasClientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstadisticasClientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\EstadisticasClientes.xss">
+      <DependentUpon>EstadisticasClientes.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\EstadisticasFacturacion.xsc">
+      <DependentUpon>EstadisticasFacturacion.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\EstadisticasFacturacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstadisticasFacturacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\EstadisticasFacturacion.xss">
+      <DependentUpon>EstadisticasFacturacion.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -895,6 +940,7 @@
   <ItemGroup>
     <None Include="Resources\rstudio.png" />
     <None Include="Resources\gparted.png" />
+    <None Include="Resources\distributor-logo-archlabs.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

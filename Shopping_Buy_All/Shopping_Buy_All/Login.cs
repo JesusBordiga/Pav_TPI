@@ -43,7 +43,7 @@ namespace Shopping_Buy_All
                 }
                 if (resultado == true)
                 {
-                   btnEstadisticas LoggedWindow = new btnEstadisticas(usu);
+                   Logged LoggedWindow = new Logged(usu);
                    LoggedWindow.Show();
                    Hide();
                 }

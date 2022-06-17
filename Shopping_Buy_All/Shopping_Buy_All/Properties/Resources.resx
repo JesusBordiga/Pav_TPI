@@ -130,6 +130,9 @@
   <data name="software-manager" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\software-manager.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gparted" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gparted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="terminator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\terminator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,14 +151,11 @@
   <data name="icons" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="xclipboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\xclipboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="fritzing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fritzing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="xclipboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xclipboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vnote" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vnote.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,7 +166,10 @@
   <data name="pop-shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pop-shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gparted" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gparted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="distributor-logo-archlabs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\distributor-logo-archlabs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
