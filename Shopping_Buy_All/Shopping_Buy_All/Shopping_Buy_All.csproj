@@ -542,6 +542,12 @@
     <Compile Include="Reportes\Ventanas_Reportes\ReportesFactura\ReporteFacturas.Designer.cs">
       <DependentUpon>ReporteFacturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesLocales\ReporteLocales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesLocales\ReporteLocales.Designer.cs">
+      <DependentUpon>ReporteLocales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesMarcasAutomovil\ReporteMarcasAutomovil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -801,6 +807,9 @@
       <DependentUpon>ReporteFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesFactura\ReportFacturas.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesLocales\ReporteLocales.resx">
+      <DependentUpon>ReporteLocales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesMarcasAutomovil\ReporteMarcasAutomovil.resx">
       <DependentUpon>ReporteMarcasAutomovil.cs</DependentUpon>
     </EmbeddedResource>
