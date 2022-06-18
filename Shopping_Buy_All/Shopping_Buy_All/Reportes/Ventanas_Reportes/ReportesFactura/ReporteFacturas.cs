@@ -20,48 +20,31 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
         public ReporteFacturas()
         {
             InitializeComponent();
-            lblRestriccion.Visible = false;
-            txt_restriccion.Visible = false;
-            comboBoxLocal.Visible = false;
-        }
-        private void rbPorLocalCheckedChanged(object sender, EventArgs e)
-        {
-            lblRestriccion.Text = "Ingrese local";
-            lblRestriccion.Visible = true;
-            comboBoxLocal.Visible = true;
             cargarLocal();
+            grbRestFecha.Visible = false;
+            grbRestLocal.Visible = false;
         }
         private void cargarLocal()
         {
             try
             {
-                comboBoxLocal.DataSource = AD_Local.ObtenerTablaLocalReducida();
-                comboBoxLocal.DisplayMember = "Nombre";
-                comboBoxLocal.ValueMember = "CodigoLocal";
-                comboBoxLocal.SelectedIndex = -1;
+                cmbLocal.DataSource = AD_Local.ObtenerTablaLocalReducida();
+                cmbLocal.DisplayMember = "Nombre";
+                cmbLocal.ValueMember = "CodigoLocal";
+                cmbLocal.SelectedIndex = -1;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error, no se pudieron obtener los datos de los locales");
+                MessageBox.Show("Error, no se pudieron obtener los datos de los locales\nError:\n" + ex.Message);
             }
+        }
+        private void rbPorLocalCheckedChanged(object sender, EventArgs e)
+        {
+            grbRestLocal.Visible = rbLocal.Checked;
         }
         private void rbRangoCheckedChanged(object sender, EventArgs e)
         {
-            lblRestriccion.Text = "Ingrese rango";
-            lblRestriccion.Visible = true;
-            txt_restriccion.Mask = "99/99/9999-99/99/9999";
-            txt_restriccion.Visible = true;
-            comboBoxLocal.Visible = false;
-        }
-        private void rbTodosCheckedChanged(object sender, EventArgs e)
-        {
-            if (rbTodos.Checked == true)
-            {
-                lblRestriccion.Text = "";
-                lblRestriccion.Visible = false;
-                txt_restriccion.Visible = false;
-                comboBoxLocal.Visible = false;
-            }
+            grbRestFecha.Visible = rbRangoId.Checked;
         }
         private void Restriccion()
         {
@@ -71,20 +54,28 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
                 alcance = "Todas las facturas";
                 Tabla = _Clientes._Rpt_Clientes();
             }
-            if (rbRangoId.Checked == true)
+            else if (rbRangoId.Checked == true)
             {
                 //rango
-                string[] datos = txt_restriccion.Text.Split('-');
-                alcance = "Facturas entre los días: " + datos[0].Trim().ToString() + " y: " + datos[1].Trim().ToString();
-                Tabla = _Clientes._Rpt_Clientes(datos[0].ToString(), datos[1].ToString());
+                if (ComparararFechas(txtFecDesde.Text, txtFecHasta.Text))
+                {
+                    alcance = "Facturas entre los días: " + txtFecDesde.Text + " y: " + txtFecHasta.Text;
+                    Tabla = _Clientes._Rpt_Clientes(txtFecDesde.Text, txtFecHasta.Text);
+                }
+                else
+                {
+                    alcance = "Facturas entre los días: " + txtFecHasta.Text + " y: " + txtFecDesde.Text;
+                    Tabla = _Clientes._Rpt_Clientes(txtFecHasta.Text, txtFecDesde.Text);
+                }
             }
-            if (rbLocal.Checked == true)
+            else
             {
                 //letra
-                alcance = "Facturas del local: " + comboBoxLocal.Text;
-                Tabla = _Clientes._Rpt_Clientes(comboBoxLocal.SelectedIndex.ToString());
+                alcance = "Facturas del local: " + cmbLocal.Text;
+                Tabla = _Clientes._Rpt_Clientes(cmbLocal.SelectedValue.ToString());
             }
         }
+
         private void btn_buscar01_Click(object sender, EventArgs e)
         {
             if (validarSeleccion())
@@ -113,13 +104,11 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
 
         private void clean()
         {
-            txt_restriccion.Text = "";
-            rbLocal.Checked = false;
+            txtFecHasta.Text = "";
+            txtFecDesde.Text = "";
+            rbTodos.Checked = true;
             rbRangoId.Checked = false;
-            rbTodos.Checked = false;
-            lblRestriccion.Visible = false;
-            txt_restriccion.Visible = false;
-            comboBoxLocal.Visible = false;
+            rbLocal.Checked = false;
             comboBoxLocal.SelectedIndex = -1;
         }
 
@@ -130,6 +119,36 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
                 return false;
             }
             return true;
+        }
+
+        private void txtFecDesde_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                txtFecDesde.Select(0, 0);
+            });
+        }
+
+        private void txtFecHasta_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                txtFecHasta.Select(0, 0);
+            });
+        }
+
+        private bool ComparararFechas(string fec1, string fec2)
+        {
+            DateTime fecha1 = DateTime.ParseExact(fec1, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime fecha2 = DateTime.ParseExact(fec2, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            if (fecha1 <= fecha2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

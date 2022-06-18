@@ -1014,6 +1014,8 @@
     <None Include="Resources\distributor-logo-archlabs.png" />
     <None Include="Resources\211802_plus_icon.png" />
     <None Include="Resources\1315084_less_minus_icon.png" />
+    <None Include="Resources\372920_less_linecon_minus_remove_round_icon.png" />
+    <None Include="Resources\1315083_add_plus_icon.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

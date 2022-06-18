@@ -20,34 +20,17 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
         public ReporteProductos()
         {
             InitializeComponent();
-            lblRestriccion.Visible = false;
-            txt_restriccion.Visible = false;
-        }
-        private void ReporteProductos_Load(object sender, EventArgs e)
-        {
+            rbTodos.Checked = true;
+            grbRangoPrecio.Visible = false;
+            grbLetra.Visible = false;
         }
         private void rbPorLetraCheckedChanged(object sender, EventArgs e)
         {
-            lblRestriccion.Text = "Ingrese letra";
-            txt_restriccion.Mask = "L";
-            lblRestriccion.Visible = true;
-            txt_restriccion.Visible = true;
+            grbLetra.Visible = rbPorLetra.Checked; 
         }
         private void rbRangoCheckedChanged(object sender, EventArgs e)
         {
-            lblRestriccion.Text = "Ingrese rango";
-            lblRestriccion.Visible = true;
-            txt_restriccion.Mask = "9999999999-9999999999";
-            txt_restriccion.Visible = true;
-        }
-        private void rbTodosCheckedChanged(object sender, EventArgs e)
-        {
-            if (rbTodos.Checked == true)
-            {
-                lblRestriccion.Text = "";
-                lblRestriccion.Visible = false;
-                txt_restriccion.Visible = false;
-            }
+            grbRangoPrecio.Visible = rbRangoId.Checked;
         }
         private void Restriccion()
         {
@@ -57,18 +40,25 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
                 alcance = "Todos los productos";
                 Tabla = _Productos._Rpt_Productos();
             }
-            if (rbRangoId.Checked == true)
+            else if (rbRangoId.Checked == true)
             {
                 //rango
-                string[] datos = txt_restriccion.Text.Split('-');
-                alcance = "Rango de precio del producto, inicio: " + datos[0].Trim().ToString() + " final: " + datos[1].Trim().ToString();
-                Tabla = _Productos._Rpt_Productos(datos[0].ToString(), datos[1].ToString());
+                if (Convert.ToUInt32(txtPrecDesde.Text.Trim()) <= Convert.ToUInt32(txtPrecHasta.Text.Trim()))
+                {
+                    alcance = "Rango de precio del producto, inicio: " + txtPrecDesde.Text + " final: " + txtPrecHasta.Text;
+                    Tabla = _Productos._Rpt_Productos(txtPrecDesde.Text, txtPrecHasta.Text);
+                }
+                else
+                {
+                    alcance = "Rango de precio del producto, inicio: " + txtPrecHasta.Text + " final: " + txtPrecDesde.Text;
+                    Tabla = _Productos._Rpt_Productos(txtPrecHasta.Text, txtPrecDesde.Text);
+                }   
             }
-            if (rbPorLetra.Checked == true)
+            else
             {
                 //letra
-                alcance = "Productos que empiezan por la letra: " + txt_restriccion.Text;
-                Tabla = _Productos._Rpt_Productos(txt_restriccion.Text);
+                alcance = "Productos que empiezan por la letra: " + txtLetra.Text;
+                Tabla = _Productos._Rpt_Productos(txtLetra.Text);
             }
         }
         private bool validarSeleccion()
@@ -94,11 +84,46 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
                 repProd.LocalReport.DataSources.Clear();
                 repProd.LocalReport.DataSources.Add(Datos);
                 repProd.RefreshReport();
+                Clear();
             }
             else
             {
                 MessageBox.Show("Seleccione una restricción!", "Error");
             }
+        }
+
+        private void Clear()
+        {
+            rbTodos.Checked = true;
+            grbRangoPrecio.Visible = false;
+            grbLetra.Visible = false;
+            txtLetra.Text = "";
+            txtPrecHasta.Text = "";
+            txtPrecDesde.Text = "";
+        }
+
+        private void MaskedTextBox1_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                txtLetra.Select(0, 0);
+            });
+        }
+
+        private void TxtPrecHasta_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                txtPrecHasta.Select(0, 0);
+            });
+        }
+
+        private void TxtPrecDesde_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                txtPrecDesde.Select(0, 0);
+            });
         }
     }
 }
