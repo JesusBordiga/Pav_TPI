@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>969caacc-8763-412f-b54b-199bb8593d45</rd:DataSourceID>
+      <rd:DataSourceID>9288a131-ce06-46b4-af1f-8f26daa67134</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -17,19 +17,19 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Mes">
-          <DataField>Mes</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="TotalRecaudado">
           <DataField>TotalRecaudado</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DatosRecaudacion</rd:DataSetName>
         <rd:SchemaPath>D:\Lean\Facultad\Programación de Aplicaciones Visuales I\LONGO\Pav_TPI\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\DatosRecaudacion.xsd</rd:SchemaPath>
-        <rd:TableName>RecaudacionPorMes</rd:TableName>
+        <rd:TableName>RecaudacionPorLocal</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -40,6 +40,16 @@
     <ReportSection>
       <Body>
         <ReportItems>
+          <Line Name="Line1">
+            <Top>1.36411cm</Top>
+            <Height>0cm</Height>
+            <Width>17.145cm</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
           <Textbox Name="Textbox1">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -47,7 +57,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Recaudacion Mensual</Value>
+                    <Value>Recaudacion por local</Value>
                     <Style>
                       <FontSize>20pt</FontSize>
                     </Style>
@@ -57,9 +67,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.08792cm</Top>
-            <Height>1.20865cm</Height>
-            <Width>18cm</Width>
+            <Top>0.29104cm</Top>
+            <Height>0.89668cm</Height>
+            <Width>17.145cm</Width>
+            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -70,32 +81,21 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Line Name="Line1">
-            <Top>1.47296cm</Top>
-            <Height>0cm</Height>
-            <Width>18cm</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-            </Style>
-          </Line>
           <Chart Name="Chart1">
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Mes.Value</GroupExpression>
+                      <GroupExpression>=Fields!Nombre.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Mes.Value</Value>
+                      <Value>=Fields!Nombre.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Mes.Value</Label>
+                  <Label>=Fields!Nombre.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -156,16 +156,18 @@
                         <Style>None</Style>
                       </Border>
                       <FontSize>8pt</FontSize>
+                      <Format>E2</Format>
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
-                      <Caption>Meses</Caption>
+                      <Caption>Locales</Caption>
                       <Style>
                         <FontSize>9pt</FontSize>
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
                     <Interval>1</Interval>
+                    <IntervalType>Default</IntervalType>
                     <ChartMajorGridLines>
                       <Enabled>True</Enabled>
                       <Style>
@@ -199,6 +201,7 @@
                       </Style>
                       <Length>0.5</Length>
                     </ChartMinorTickMarks>
+                    <Reverse>true</Reverse>
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
@@ -431,9 +434,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DatosRecaudacion</DataSetName>
-            <Top>2.39046cm</Top>
-            <Height>15.60954cm</Height>
-            <Width>18cm</Width>
+            <Top>2.31689cm</Top>
+            <Left>0.03619cm</Left>
+            <Height>15.68311cm</Height>
+            <Width>17.145cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -451,11 +455,23 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Recaudación mensual en el año </Value>
+                    <Value>Recaudación por local en el mes </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!Mes.Value</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value> del año </Value>
                     <Style />
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!Anio.Value</Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value>.</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -463,9 +479,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.61407cm</Top>
+            <Top>1.5405cm</Top>
+            <Left>0.03619cm</Left>
             <Height>0.6cm</Height>
-            <Width>18cm</Width>
+            <Width>17.145cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -481,10 +498,10 @@
         <Height>18cm</Height>
         <Style />
       </Body>
-      <Width>18cm</Width>
+      <Width>17.18119cm</Width>
       <Page>
-        <PageHeight>18cm</PageHeight>
-        <PageWidth>12cm</PageWidth>
+        <PageHeight>30cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
         <RightMargin>2cm</RightMargin>
         <TopMargin>2cm</TopMargin>
@@ -499,6 +516,10 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="Mes">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -510,9 +531,14 @@
           <RowIndex>0</RowIndex>
           <ParameterName>Anio</ParameterName>
         </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Mes</ParameterName>
+        </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>66448e25-5dba-42e6-928e-b389dd9a307f</rd:ReportID>
+  <rd:ReportID>3856647f-030d-4bdb-9215-ed915b7818db</rd:ReportID>
 </Report>

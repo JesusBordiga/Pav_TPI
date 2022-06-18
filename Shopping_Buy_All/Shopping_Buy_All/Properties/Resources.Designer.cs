@@ -63,6 +63,36 @@ namespace Shopping_Buy_All.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap _1315084_less_minus_icon {
+            get {
+                object obj = ResourceManager.GetObject("1315084_less_minus_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _211802_plus_icon {
+            get {
+                object obj = ResourceManager.GetObject("211802_plus_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _211802_plus_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("211802_plus_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap audacious {
             get {
                 object obj = ResourceManager.GetObject("audacious", resourceCulture);

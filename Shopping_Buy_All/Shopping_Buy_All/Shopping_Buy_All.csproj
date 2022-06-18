@@ -444,11 +444,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatosRecaudacion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorLocal\RecPorLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorLocal\RecPorLocal.Designer.cs">
+      <DependentUpon>RecPorLocal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorMes\RecPorMes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorMes\RecPorMes.Designer.cs">
       <DependentUpon>RecPorMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorProducto\RecPorProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorProducto\RecPorProducto.Designer.cs">
+      <DependentUpon>RecPorProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\VentanaRecaudacion.cs">
       <SubType>Form</SubType>
@@ -779,9 +791,17 @@
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\ReporteEstadisticasFacturacion.resx">
       <DependentUpon>ReporteEstadisticasFacturacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorLocal\RecaudacionPorLocal.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorLocal\RecPorLocal.resx">
+      <DependentUpon>RecPorLocal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorMes\RecaudacionPorMes.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorMes\RecPorMes.resx">
       <DependentUpon>RecPorMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorProducto\RecaudacionPorProducto.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorProducto\RecPorProducto.resx">
+      <DependentUpon>RecPorProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\VentanaRecaudacion.resx">
       <DependentUpon>VentanaRecaudacion.cs</DependentUpon>
@@ -992,6 +1012,8 @@
     <None Include="Resources\rstudio.png" />
     <None Include="Resources\gparted.png" />
     <None Include="Resources\distributor-logo-archlabs.png" />
+    <None Include="Resources\211802_plus_icon.png" />
+    <None Include="Resources\1315084_less_minus_icon.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

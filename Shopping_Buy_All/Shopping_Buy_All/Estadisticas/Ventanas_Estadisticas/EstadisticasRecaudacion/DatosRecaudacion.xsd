@@ -12,11 +12,27 @@
   <xs:element name="DatosRecaudacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DatosRecaudacion" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DatosRecaudacion">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="RecaudacionPorMes" msprop:Generator_RowClassName="RecaudacionPorMesRow" msprop:Generator_RowEvHandlerName="RecaudacionPorMesRowChangeEventHandler" msprop:Generator_RowDeletedName="RecaudacionPorMesRowDeleted" msprop:Generator_RowDeletingName="RecaudacionPorMesRowDeleting" msprop:Generator_RowEvArgName="RecaudacionPorMesRowChangeEvent" msprop:Generator_TablePropName="RecaudacionPorMes" msprop:Generator_RowChangedName="RecaudacionPorMesRowChanged" msprop:Generator_UserTableName="RecaudacionPorMes" msprop:Generator_RowChangingName="RecaudacionPorMesRowChanging" msprop:Generator_TableClassName="RecaudacionPorMesDataTable" msprop:Generator_TableVarName="tableRecaudacionPorMes">
+        <xs:element name="RecaudacionPorMes" msprop:Generator_RowEvHandlerName="RecaudacionPorMesRowChangeEventHandler" msprop:Generator_RowDeletedName="RecaudacionPorMesRowDeleted" msprop:Generator_RowDeletingName="RecaudacionPorMesRowDeleting" msprop:Generator_RowEvArgName="RecaudacionPorMesRowChangeEvent" msprop:Generator_TablePropName="RecaudacionPorMes" msprop:Generator_RowChangedName="RecaudacionPorMesRowChanged" msprop:Generator_UserTableName="RecaudacionPorMes" msprop:Generator_RowChangingName="RecaudacionPorMesRowChanging" msprop:Generator_RowClassName="RecaudacionPorMesRow" msprop:Generator_TableClassName="RecaudacionPorMesDataTable" msprop:Generator_TableVarName="tableRecaudacionPorMes">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Mes" msprop:Generator_UserColumnName="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnVarNameInTable="columnMes" type="xs:string" minOccurs="0" />
-              <xs:element name="TotalRecaudado" msprop:Generator_UserColumnName="TotalRecaudado" msprop:Generator_ColumnPropNameInTable="TotalRecaudadoColumn" msprop:Generator_ColumnPropNameInRow="TotalRecaudado" msprop:Generator_ColumnVarNameInTable="columnTotalRecaudado" type="xs:double" minOccurs="0" />
+              <xs:element name="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_UserColumnName="Mes" msprop:Generator_ColumnVarNameInTable="columnMes" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalRecaudado" msprop:Generator_ColumnPropNameInTable="TotalRecaudadoColumn" msprop:Generator_ColumnPropNameInRow="TotalRecaudado" msprop:Generator_UserColumnName="TotalRecaudado" msprop:Generator_ColumnVarNameInTable="columnTotalRecaudado" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RecaudacionPorLocal" msprop:Generator_RowEvHandlerName="RecaudacionPorLocalRowChangeEventHandler" msprop:Generator_RowDeletedName="RecaudacionPorLocalRowDeleted" msprop:Generator_RowDeletingName="RecaudacionPorLocalRowDeleting" msprop:Generator_RowEvArgName="RecaudacionPorLocalRowChangeEvent" msprop:Generator_TablePropName="RecaudacionPorLocal" msprop:Generator_RowChangedName="RecaudacionPorLocalRowChanged" msprop:Generator_RowChangingName="RecaudacionPorLocalRowChanging" msprop:Generator_TableClassName="RecaudacionPorLocalDataTable" msprop:Generator_RowClassName="RecaudacionPorLocalRow" msprop:Generator_TableVarName="tableRecaudacionPorLocal" msprop:Generator_UserTableName="RecaudacionPorLocal">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TotalRecaudado" msprop:Generator_ColumnPropNameInRow="TotalRecaudado" msprop:Generator_ColumnPropNameInTable="TotalRecaudadoColumn" msprop:Generator_ColumnVarNameInTable="columnTotalRecaudado" msprop:Generator_UserColumnName="TotalRecaudado" type="xs:double" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_UserColumnName="Nombre" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RecaudacionPorProducto" msprop:Generator_RowEvHandlerName="RecaudacionPorProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="RecaudacionPorProductoRowDeleted" msprop:Generator_RowDeletingName="RecaudacionPorProductoRowDeleting" msprop:Generator_RowEvArgName="RecaudacionPorProductoRowChangeEvent" msprop:Generator_TablePropName="RecaudacionPorProducto" msprop:Generator_RowChangedName="RecaudacionPorProductoRowChanged" msprop:Generator_RowChangingName="RecaudacionPorProductoRowChanging" msprop:Generator_TableClassName="RecaudacionPorProductoDataTable" msprop:Generator_RowClassName="RecaudacionPorProductoRow" msprop:Generator_TableVarName="tableRecaudacionPorProducto" msprop:Generator_UserTableName="RecaudacionPorProducto">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NombreProducto" msprop:Generator_ColumnPropNameInRow="NombreProducto" msprop:Generator_ColumnPropNameInTable="NombreProductoColumn" msprop:Generator_ColumnVarNameInTable="columnNombreProducto" msprop:Generator_UserColumnName="NombreProducto" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalRecaudado" msprop:Generator_ColumnPropNameInRow="TotalRecaudado" msprop:Generator_ColumnPropNameInTable="TotalRecaudadoColumn" msprop:Generator_ColumnVarNameInTable="columnTotalRecaudado" msprop:Generator_UserColumnName="TotalRecaudado" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

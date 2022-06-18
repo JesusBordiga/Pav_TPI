@@ -135,12 +135,52 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 "order by F.Numero_Factura";
             return _DB.Consultar(consulta);
         }
-        public DataTable _GetEstRecXMes()
+
+        /// <summary>
+        /// Obtiene la recaudación mensual en un año dado
+        /// </summary>
+        /// <returns></returns>
+        public DataTable _GetEstRecXMes(string anioReporte)
         {
             string consulta = "SELECT DATENAME(MONTH, DATEADD(MONTH, MONTH(FechaCompra), 0) - 1) 'Mes', SUM(D.Precio) 'TotalRecaudado' " +
-                "FROM ComprasPorCliente C JOIN DetalleDeCompra D ON C.Numero_Factura = D.NroFactura " +
-                "WHERE C.Borrado = 0 AND D.Borrado = 0 " +
+                "FROM ComprasPorCliente C " +
+                "JOIN DetalleDeCompra D ON C.Numero_Factura = D.NroFactura " +
+                "WHERE C.Borrado = 0 AND D.Borrado = 0 AND YEAR(C.FechaCompra) = " + anioReporte + " " +
                 "GROUP BY DATENAME(MONTH, DATEADD(MONTH, MONTH(FechaCompra), 0) - 1) " +
+                "ORDER BY 'TotalRecaudado' DESC";
+            return _DB.Consultar(consulta);
+        }
+
+        /// <summary>
+        /// Obtiene la recaudación por local en un año y mes dados
+        /// </summary>
+        /// <returns></returns>
+        public DataTable _GetEstRecXLocal(string anioReporte, string mesReporte)
+        {
+            string consulta = "SELECT L.Nombre, SUM(D.Precio) 'TotalRecaudado' " +
+                "FROM Locales L " +
+                "JOIN ComprasPorCliente C ON C.Codigo_Local = L.CodigoLocal " +
+                "JOIN DetalleDeCompra D ON D.NroFactura = C.Numero_Factura " +
+                "WHERE C.Borrado = 0 AND D.Borrado = 0 AND L.Borrado = 0 AND YEAR(C.FechaCompra) = " + anioReporte + " AND MONTH(C.FechaCompra) = " + mesReporte + " " +
+                "GROUP BY L.Nombre " +
+                "HAVING SUM(D.Precio) > 0 " +
+                "ORDER BY 'TotalRecaudado' DESC";
+            return _DB.Consultar(consulta);
+        }
+
+        /// <summary>
+        /// Obtiene la recaudación por producto en un año y mes dados
+        /// </summary>
+        /// <returns></returns>
+        public DataTable _GetEstRecXProducto(string anioReporte, string mesReporte)
+        {
+            string consulta = "SELECT TOP 10 P.NombreProducto, SUM(D.Precio) 'TotalRecaudado' " +
+                "FROM Productos P " +
+                "JOIN DetalleDeCompra D ON P.Codigo_Producto = D.Codigo_Producto " +
+                "JOIN ComprasPorCliente C ON C.Numero_Factura = D.NroFactura " +
+                "WHERE D.Borrado = 0 AND P.Borrado = 0 AND C.Borrado = 0 AND YEAR(C.FechaCompra) = " + anioReporte + " AND MONTH(C.FechaCompra) = " + mesReporte + " " +
+                "GROUP BY P.NombreProducto " +
+                "HAVING SUM(D.Precio) > 0 " +
                 "ORDER BY 'TotalRecaudado' DESC";
             return _DB.Consultar(consulta);
         }
