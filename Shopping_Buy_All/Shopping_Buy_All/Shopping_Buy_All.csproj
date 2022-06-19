@@ -810,6 +810,7 @@
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesLocales\ReporteLocales.resx">
       <DependentUpon>ReporteLocales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesLocales\ReportLocales.rdlc" />
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesMarcasAutomovil\ReporteMarcasAutomovil.resx">
       <DependentUpon>ReporteMarcasAutomovil.cs</DependentUpon>
     </EmbeddedResource>

@@ -11,7 +11,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
     public class AD_Local
     {
-
+        AccesoADatos _DB = new AccesoADatos();
         //LOCAL LOAD
         public static DataTable ObtenerTablaLocalReducida()
         {
@@ -370,5 +370,17 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             return resultado;
         }
 
+        //REPORTES LOCALES
+        public DataTable _Rpt_Local()
+        {
+            string consulta = "SELECT * FROM Locales WHERE Borrado = 0 ORDER BY 1";
+            return _DB.Consultar(consulta);
+        }
+        public DataTable _Rpt_Local(string letra)
+        {
+            string consulta = "SELECT * FROM Locales WHERE Borrado = 0 and Nombre LIKE '" + letra.Trim() + "%' ORDER BY Nombre";
+            return _DB.Consultar(consulta);
+
+        }
     }
 }
