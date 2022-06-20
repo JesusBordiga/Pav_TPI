@@ -1,6 +1,6 @@
 ﻿namespace Shopping_Buy_All
 {
-    partial class btnEstadisticas
+    partial class Logged
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(btnEstadisticas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Logged));
             this.LabelBienvenido = new System.Windows.Forms.Label();
             this.btnMenu1 = new System.Windows.Forms.Button();
             this.btnMenu2 = new System.Windows.Forms.Button();
@@ -75,7 +75,7 @@
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.BotonUsuarios = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBoxMenuReportes = new System.Windows.Forms.PictureBox();
             this.Reportes = new System.Windows.Forms.Label();
@@ -141,7 +141,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BotonUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -578,7 +578,7 @@
             this.MenuReportes.Controls.Add(this.pictureBox11);
             this.MenuReportes.Controls.Add(this.pictureBox10);
             this.MenuReportes.Controls.Add(this.pictureBox7);
-            this.MenuReportes.Controls.Add(this.pictureBox6);
+            this.MenuReportes.Controls.Add(this.BotonUsuarios);
             this.MenuReportes.Controls.Add(this.pictureBox4);
             this.MenuReportes.Controls.Add(this.pictureBoxMenuReportes);
             this.MenuReportes.Controls.Add(this.Reportes);
@@ -592,7 +592,7 @@
             this.MenuReportes.Controls.Add(this.pictureBox9);
             this.MenuReportes.Controls.Add(this.btnReporteFactura);
             this.MenuReportes.Controls.Add(this.btnReporteClientes);
-            this.MenuReportes.Location = new System.Drawing.Point(128, 74);
+            this.MenuReportes.Location = new System.Drawing.Point(128, 75);
             this.MenuReportes.Name = "MenuReportes";
             this.MenuReportes.Size = new System.Drawing.Size(552, 315);
             this.MenuReportes.TabIndex = 59;
@@ -726,8 +726,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 88;
-            this.button4.Text = "Completar";
+            this.button4.Text = "Usuarios";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.btnReportesUsuarios_Click);
             // 
             // button2
             // 
@@ -737,12 +738,13 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(395, 103);
+            this.button2.Location = new System.Drawing.Point(385, 103);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(96, 23);
             this.button2.TabIndex = 87;
-            this.button2.Text = "Completar";
+            this.button2.Text = "Marca Automovil";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnMarcaAutomovil_Click);
             // 
             // pictureBox15
             // 
@@ -821,20 +823,23 @@
             this.pictureBox7.TabIndex = 80;
             this.pictureBox7.TabStop = false;
             // 
-            // pictureBox6
+            // BotonUsuarios
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Location = new System.Drawing.Point(481, 42);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(58, 55);
-            this.pictureBox6.TabIndex = 79;
-            this.pictureBox6.TabStop = false;
+            this.BotonUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BotonUsuarios.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.user;
+            this.BotonUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BotonUsuarios.Location = new System.Drawing.Point(481, 42);
+            this.BotonUsuarios.Name = "BotonUsuarios";
+            this.BotonUsuarios.Size = new System.Drawing.Size(58, 55);
+            this.BotonUsuarios.TabIndex = 79;
+            this.BotonUsuarios.TabStop = false;
+            this.BotonUsuarios.Click += new System.EventHandler(this.btnReportesUsuarios_Click);
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox4.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.distributor_logo_archlabs;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Location = new System.Drawing.Point(401, 42);
@@ -842,6 +847,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(58, 55);
             this.pictureBox4.TabIndex = 78;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.btnMarcaAutomovil_Click);
             // 
             // pictureBoxMenuReportes
             // 
@@ -854,7 +860,7 @@
             this.pictureBoxMenuReportes.Size = new System.Drawing.Size(51, 51);
             this.pictureBoxMenuReportes.TabIndex = 76;
             this.pictureBoxMenuReportes.TabStop = false;
-            this.pictureBoxMenuReportes.Click += new System.EventHandler(this.pictureBoxMenuReportes_Click);
+            this.pictureBoxMenuReportes.Click += new System.EventHandler(this.VolverReportes_Click);
             this.pictureBoxMenuReportes.MouseEnter += new System.EventHandler(this.pictureBoxMenuReportes_MouseHover);
             this.pictureBoxMenuReportes.MouseLeave += new System.EventHandler(this.pictureBoxMenuReportes_MouseLeave);
             // 
@@ -1085,12 +1091,13 @@
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(476, 191);
+            this.button13.Location = new System.Drawing.Point(465, 191);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.Size = new System.Drawing.Size(86, 23);
             this.button13.TabIndex = 95;
-            this.button13.Text = "Completar";
+            this.button13.Text = "Recaudacion";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.btnEstadisticasRecaudacion_Click);
             // 
             // button14
             // 
@@ -1222,6 +1229,7 @@
             this.pictureBox18.Size = new System.Drawing.Size(58, 55);
             this.pictureBox18.TabIndex = 86;
             this.pictureBox18.TabStop = false;
+            this.pictureBox18.Click += new System.EventHandler(this.btnEstadisticasRecaudacion_Click);
             // 
             // pictureBox19
             // 
@@ -1429,6 +1437,7 @@
             this.pictureBox31.Size = new System.Drawing.Size(58, 55);
             this.pictureBox31.TabIndex = 52;
             this.pictureBox31.TabStop = false;
+            this.pictureBox31.Click += new System.EventHandler(this.btnFacturaEstadisticas_Click);
             // 
             // pictureBox32
             // 
@@ -1441,6 +1450,7 @@
             this.pictureBox32.Size = new System.Drawing.Size(58, 55);
             this.pictureBox32.TabIndex = 50;
             this.pictureBox32.TabStop = false;
+            this.pictureBox32.Click += new System.EventHandler(this.EstadisticasClientes_Click);
             // 
             // button25
             // 
@@ -1456,6 +1466,7 @@
             this.button25.TabIndex = 46;
             this.button25.Text = "Facturas";
             this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.btnFacturaEstadisticas_Click);
             // 
             // button26
             // 
@@ -1471,8 +1482,9 @@
             this.button26.TabIndex = 44;
             this.button26.Text = "Clientes";
             this.button26.UseVisualStyleBackColor = false;
+            this.button26.Click += new System.EventHandler(this.EstadisticasClientes_Click);
             // 
-            // btnEstadisticas
+            // Logged
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1480,6 +1492,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelEstadisticas);
             this.Controls.Add(this.MenuReportes);
             this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.labelFecha);
@@ -1488,13 +1501,12 @@
             this.Controls.Add(this.LabelBienvenido);
             this.Controls.Add(this.btnMenu2);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.panelEstadisticas);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(816, 489);
             this.MinimumSize = new System.Drawing.Size(816, 489);
-            this.Name = "btnEstadisticas";
+            this.Name = "Logged";
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logged";
@@ -1519,7 +1531,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BotonUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReportes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
@@ -1594,7 +1606,7 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox BotonUsuarios;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBoxMenuReportes;
         private System.Windows.Forms.Label Reportes;

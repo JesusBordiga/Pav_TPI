@@ -393,5 +393,42 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             }
             return tabla;
         }
+        // ESTADISTICAS CLIENTES
+        public static DataTable ObtenerEstadisticasClientes()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "";
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+                return tabla;
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("No se pudo obtener datos de clientes.\nError en la base de datos.", "ERROR");
+                throw;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo obtener datos de clientes.\nError en la base de datos.", "ERROR");
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }

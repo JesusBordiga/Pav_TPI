@@ -12,16 +12,35 @@ using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesProductos;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasClientes;
+using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaudacion.RecaudacionPorMes;
+using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaudacion;
 
 namespace Shopping_Buy_All
 {
-    public partial class btnEstadisticas : Form
+    public partial class Logged : Form
     {
-        public btnEstadisticas(User usu)
+        public Logged(User usu)
         {
             InitializeComponent();
             LabelBienvenido.Text = "Bienvenido "+ usu.userName;
             CargarUsuarios(usu);
+        }
+        private void CargarUsuarios(User usu)
+        {
+            if (usu.permiso == 0)
+            {
+                panelUsuarios.Visible = true;
+            }
+            else
+            {
+                panelUsuarios.Visible = false;
+            }
+        }
+        private void HourTime_Tick(object sender, EventArgs e)
+        {
+            labelHora.Text = "Hora: " + DateTime.Now.ToString("hh:mm:ss");
+            labelFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
         private void Logged_Load(object sender, EventArgs e)
         {
@@ -29,12 +48,17 @@ namespace Shopping_Buy_All
             panelMenu.Visible = false;
             MenuReportes.Visible = false;
             panelEstadisticas.Visible = false;
+            lblVolver.Visible = false;
+            lblVolverEstadisticas.Visible = false;
         }
         private void btnClientLoad_Click(object sender, EventArgs e)
         {
             btnMenu1.Visible = false;
             panelMenu.Visible = true;
         }
+
+        //MENU PRINCIPAL
+
         private void btnMenu2_Click(object sender, EventArgs e)
         {
             btnMenu1.Visible = true;
@@ -70,12 +94,6 @@ namespace Shopping_Buy_All
             Usuarios_Ventana Usuarios = new Usuarios_Ventana();
             Usuarios.Show();
         }
-        private void HourTime_Tick(object sender, EventArgs e)
-        {
-            labelHora.Text = "Hora: " + DateTime.Now.ToString("hh:mm:ss");
-            labelFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
-        }
-
         private void btnProfesiones_Click(object sender, EventArgs e)
         {
             Profesiones_Ventana profesiones_Ventana = new Profesiones_Ventana();
@@ -88,21 +106,12 @@ namespace Shopping_Buy_All
             facturacion_ventana.Show();
         }
 
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            MenuReportes.Visible = true;
-        }
-
-        private void pictureBoxMenuReportes_Click(object sender, EventArgs e)
-        {
-            MenuReportes.Visible = false;
-            lblVolver.Visible = false;
-        }
+        //MENU REPORTES 
 
         private void btnReporteClientes_Click(object sender, EventArgs e)
         {
-            ReporteClientes reporteCllientes = new ReporteClientes();
-            reporteCllientes.Show();
+            ReporteClientes reporteClientes = new ReporteClientes();
+            reporteClientes.Show();
         }
 
         private void btnReporteFactura_Click(object sender, EventArgs e)
@@ -122,7 +131,18 @@ namespace Shopping_Buy_All
             ReporteVehiculos reportevehiculos = new ReporteVehiculos();
             reportevehiculos.Show();
         }
+        private void btnMarcaAutomovil_Click(object sender, EventArgs e)
+        {
+            ReporteMarcasAutomovil reporteMarcasAutomovil = new ReporteMarcasAutomovil();
+            reporteMarcasAutomovil.Show();
+        }
 
+        private void btnReportesUsuarios_Click(object sender, EventArgs e)
+        {
+            ReporteUsuarios reporteUsuarios = new ReporteUsuarios();
+            reporteUsuarios.Show();
+        }
+        //ACCIONES DE REPORTE
         private void pictureBoxMenuReportes_MouseHover(object sender, EventArgs e)
         {
             lblVolver.Visible = true;
@@ -132,43 +152,60 @@ namespace Shopping_Buy_All
         {
             lblVolver.Visible = false;
         }
-
-        private void CargarUsuarios(User usu)
+        //BOTONES REPORTES
+        private void btnReportes_Click(object sender, EventArgs e)
         {
-            if (usu.permiso == 0)
-            {
-                panelUsuarios.Visible = true;
-            }
-            else
-            {
-                panelUsuarios.Visible = false;
-            }
+            MenuReportes.Visible = true;
         }
 
+        private void VolverReportes_Click(object sender, EventArgs e)
+        {
+            MenuReportes.Visible = false;
+            lblVolver.Visible = false;
+        }
+
+        //MENU DE ESTADISTICAS
+        private void btnmarcatarjetaReport_Click(object sender, EventArgs e)
+        {
+            ReporteMarcaTarjeta reportemarcatarjeta = new ReporteMarcaTarjeta();
+            reportemarcatarjeta.Show();
+        }
+
+        private void EstadisticasClientes_Click(object sender, EventArgs e)
+        {
+            ReporteEstadisticasClientes reporteEstadisticasClientes = new ReporteEstadisticasClientes();
+            reporteEstadisticasClientes.Show();
+        }
+        private void btnFacturaEstadisticas_Click(object sender, EventArgs e)
+        {
+            ReporteEstadisticasFacturacion reporteEstadisticasFacturacion = new ReporteEstadisticasFacturacion();
+            reporteEstadisticasFacturacion.Show();
+        }
+        private void btnEstadisticasRecaudacion_Click(object sender, EventArgs e)
+        {
+            VentanaRecaudacion ventanaRecaudacion = new VentanaRecaudacion();
+            ventanaRecaudacion.Show();
+        }
+
+        //ACCIONES DE ESTADISTICAS
         private void btnEstadisticas_Click(object sender, EventArgs e)
         {
             panelEstadisticas.Visible = true;
-        }
-
-        private void VolverEstadisticas(object sender, EventArgs e)
-        {
-            panelEstadisticas.Visible = false;
-        }
-
-        private void pictureBox27_MouseEnter(object sender, EventArgs e)
-        {
-            lblVolverEstadisticas.Visible = false;
         }
 
         private void pictureBox27_MouseLeave(object sender, EventArgs e)
         {
             lblVolverEstadisticas.Visible = true;
         }
-
-        private void btnmarcatarjetaReport_Click(object sender, EventArgs e)
+        private void pictureBox27_MouseEnter(object sender, EventArgs e)
         {
-            ReporteMarcaTarjeta reportemarcatarjeta = new ReporteMarcaTarjeta();
-            reportemarcatarjeta.Show();
+            lblVolverEstadisticas.Visible = false;
+        }
+        //BOTONES ESTADISTICAS
+        private void VolverEstadisticas(object sender, EventArgs e)
+        {
+            panelEstadisticas.Visible = false;
+
         }
     }
 }

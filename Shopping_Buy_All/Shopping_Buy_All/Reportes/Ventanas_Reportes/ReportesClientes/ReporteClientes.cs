@@ -19,7 +19,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes
         string alcance = "";
         public ReporteClientes()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             lblRestriccion.Visible = false;
             txt_restriccion.Visible = false;
             comboBoxNombre.Visible = false;
