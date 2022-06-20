@@ -36,8 +36,8 @@
             // 
             this.reporteCliente.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.reporteCliente.Cursor = System.Windows.Forms.Cursors.Default;
-            this.reporteCliente.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Estadist" +
-    "icaClientes.rdlc";
+            this.reporteCliente.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Clientes" +
+    " por Estado Civil.EstadisticasClientesEstadoCivil.rdlc";
             this.reporteCliente.Location = new System.Drawing.Point(7, 8);
             this.reporteCliente.Name = "reporteCliente";
             this.reporteCliente.ServerReport.BearerToken = null;

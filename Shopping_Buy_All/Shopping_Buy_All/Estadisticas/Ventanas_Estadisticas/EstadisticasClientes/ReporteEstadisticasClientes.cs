@@ -177,23 +177,41 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasCliente
         {
             DataTable cantidadClientes = new DataTable();
             cantidadClientes = ObtenerCantidadClientes();
-            DataTable cantidadTipoDocumento = new DataTable();
-            cantidadTipoDocumento = ObtenerCantidadTipoDocumento();
-            DataTable cantidadSexo = new DataTable();
-            cantidadSexo = ObtenerCantidadSexo();
-            DataTable cantidadEstadoCivil = new DataTable();
-            cantidadEstadoCivil = ObtenerCantidadTEstadoCivil();
+
+            reporteCliente.LocalReport.DataSources.Clear();
 
             ReportDataSource ds = new ReportDataSource("DatosClientes", cantidadClientes);
-            ReportDataSource ds1 = new ReportDataSource("DatosTipoDocumento", cantidadTipoDocumento);
-            ReportDataSource ds2 = new ReportDataSource("DatosSexo", cantidadSexo);
-            ReportDataSource ds3 = new ReportDataSource("DatosEstadoCIvil", cantidadEstadoCivil);
-            reporteCliente.LocalReport.DataSources.Clear();
+
+            reporteCliente.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Clientes_Totales.EstadisticasClientesTotales.rdlc";
+
             reporteCliente.LocalReport.DataSources.Add(ds);
-            reporteCliente.LocalReport.DataSources.Add(ds1);
-            reporteCliente.LocalReport.DataSources.Add(ds2);
-            reporteCliente.LocalReport.DataSources.Add(ds3);
+
             reporteCliente.LocalReport.Refresh();
+
+            //DataTable cantidadTipoDocumento = new DataTable();
+            //cantidadTipoDocumento = ObtenerCantidadTipoDocumento();
+
+            //DataTable cantidadSexo = new DataTable();
+            //cantidadSexo = ObtenerCantidadSexo();
+
+            //DataTable cantidadEstadoCivil = new DataTable();
+            //cantidadEstadoCivil = ObtenerCantidadTEstadoCivil();
+
+
+            //ReportDataSource ds1 = new ReportDataSource("DatosTipoDocumento", cantidadTipoDocumento);
+            //reporteCliente.LocalReport.ReportEmbeddedResource = ("Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Clientes_Por_Sexo");
+
+            //ReportDataSource ds2 = new ReportDataSource("DatosSexo", cantidadSexo);
+            //reporteCliente.LocalReport.ReportEmbeddedResource = ("Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Clientes_Por_TipoDocumento");
+
+            //ReportDataSource ds3 = new ReportDataSource("DatosEstadoCIvil", cantidadEstadoCivil);
+            //reporteCliente.LocalReport.ReportEmbeddedResource = ("Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.ClientesTotales");S
+
+
+            //reporteCliente.LocalReport.DataSources.Add(ds1);
+            //reporteCliente.LocalReport.DataSources.Add(ds2);
+            //reporteCliente.LocalReport.DataSources.Add(ds3);
+
         }
 
     }

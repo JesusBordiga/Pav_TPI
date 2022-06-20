@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EstadisticasClientes" targetNamespace="http://tempuri.org/EstadisticasClientes.xsd" xmlns:mstns="http://tempuri.org/EstadisticasClientes.xsd" xmlns="http://tempuri.org/EstadisticasClientes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EstadisticasClientes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="EstadisticasClientes" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EstadisticasClientes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Cantidad_x0020_de_x0020_Clientes" msprop:Generator_RowClassName="Cantidad_de_ClientesRow" msprop:Generator_RowEvHandlerName="Cantidad_de_ClientesRowChangeEventHandler" msprop:Generator_RowDeletedName="Cantidad_de_ClientesRowDeleted" msprop:Generator_RowDeletingName="Cantidad_de_ClientesRowDeleting" msprop:Generator_RowEvArgName="Cantidad_de_ClientesRowChangeEvent" msprop:Generator_TablePropName="Cantidad_de_Clientes" msprop:Generator_RowChangedName="Cantidad_de_ClientesRowChanged" msprop:Generator_UserTableName="Cantidad de Clientes" msprop:Generator_RowChangingName="Cantidad_de_ClientesRowChanging" msprop:Generator_TableClassName="Cantidad_de_ClientesDataTable" msprop:Generator_TableVarName="tableCantidad_de_Clientes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cantidad_x0020_Clientes" msprop:Generator_UserColumnName="Cantidad Clientes" msprop:Generator_ColumnPropNameInTable="Cantidad_ClientesColumn" msprop:Generator_ColumnPropNameInRow="Cantidad_Clientes" msprop:Generator_ColumnVarNameInTable="columnCantidad_Clientes" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EstadisticasClientes" targetNamespace="http://tempuri.org/EstadisticasClientes.xsd" xmlns:mstns="http://tempuri.org/EstadisticasClientes.xsd" xmlns="http://tempuri.org/EstadisticasClientes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EstadisticasClientes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="EstadisticasClientes" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EstadisticasClientes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Clientes_x0020_por_x0020_Tipo_x0020_Documento" msprop:Generator_RowEvHandlerName="Clientes_por_Tipo_DocumentoRowChangeEventHandler" msprop:Generator_RowDeletedName="Clientes_por_Tipo_DocumentoRowDeleted" msprop:Generator_RowDeletingName="Clientes_por_Tipo_DocumentoRowDeleting" msprop:Generator_RowEvArgName="Clientes_por_Tipo_DocumentoRowChangeEvent" msprop:Generator_TablePropName="Clientes_por_Tipo_Documento" msprop:Generator_RowChangedName="Clientes_por_Tipo_DocumentoRowChanged" msprop:Generator_UserTableName="Clientes por Tipo Documento" msprop:Generator_RowChangingName="Clientes_por_Tipo_DocumentoRowChanging" msprop:Generator_RowClassName="Clientes_por_Tipo_DocumentoRow" msprop:Generator_TableClassName="Clientes_por_Tipo_DocumentoDataTable" msprop:Generator_TableVarName="tableClientes_por_Tipo_Documento">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nombre_x0020_Tipo_x0020_Documento" msprop:Generator_ColumnPropNameInTable="Nombre_Tipo_DocumentoColumn" msprop:Generator_ColumnPropNameInRow="Nombre_Tipo_Documento" msprop:Generator_UserColumnName="Nombre Tipo Documento" msprop:Generator_ColumnVarNameInTable="columnNombre_Tipo_Documento" type="xs:string" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_UserColumnName="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -408,13 +408,37 @@
     <Compile Include="Entidades\TipoVehiculo.cs" />
     <Compile Include="Entidades\User.cs" />
     <Compile Include="Entidades\Utils.cs" />
-    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\EstadisticasClientes.cs">
-      <DependentUpon>EstadisticasClientes.xsd</DependentUpon>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_EstadoCivil\AccesoDatosEstadoCivil.cs">
+      <DependentUpon>AccesoDatosEstadoCivil.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\EstadisticasClientes.Designer.cs">
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_EstadoCivil\AccesoDatosEstadoCivil.Designer.cs">
+      <DependentUpon>AccesoDatosEstadoCivil.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EstadisticasClientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_TipoDocumento\AccesoDatosTipoDocumento.cs">
+      <DependentUpon>AccesoDatosTipoDocumento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_TipoDocumento\AccesoDatosTipoDocumento.Designer.cs">
+      <DependentUpon>AccesoDatosTipoDocumento.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Sexo\AccesoDatosSexo.cs">
+      <DependentUpon>AccesoDatosSexo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Sexo\AccesoDatosSexo.Designer.cs">
+      <DependentUpon>AccesoDatosSexo.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Totales\AccesoDatosClientesTotales.cs">
+      <DependentUpon>AccesoDatosClientesTotales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Totales\AccesoDatosClientesTotales.Designer.cs">
+      <DependentUpon>AccesoDatosClientesTotales.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\ReporteEstadisticasClientes.cs">
       <SubType>Form</SubType>
@@ -783,7 +807,10 @@
     <EmbeddedResource Include="ABMS\ABM Vehiculos\Vehicle_Modify.resx">
       <DependentUpon>Vehicle_Modify.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\EstadisticaClientes.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_EstadoCivil\EstadisticasClientesEstadoCivil.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_TipoDocumento\EstadisticasClientesTipoDocumento.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Sexo\EstadisticaClientesSexo.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Totales\EstadisticaClientesTotales.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\ReporteEstadisticasClientes.resx">
       <DependentUpon>ReporteEstadisticasClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -915,16 +942,49 @@
     <None Include="BD3K7G01_2022DataSet.xss">
       <DependentUpon>BD3K7G01_2022DataSet.xsd</DependentUpon>
     </None>
-    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\EstadisticasClientes.xsc">
-      <DependentUpon>EstadisticasClientes.xsd</DependentUpon>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_EstadoCivil\AccesoDatosEstadoCivil.xsc">
+      <DependentUpon>AccesoDatosEstadoCivil.xsd</DependentUpon>
     </None>
-    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\EstadisticasClientes.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_EstadoCivil\AccesoDatosEstadoCivil.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>EstadisticasClientes.Designer.cs</LastGenOutput>
+      <LastGenOutput>AccesoDatosEstadoCivil.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\EstadisticasClientes.xss">
-      <DependentUpon>EstadisticasClientes.xsd</DependentUpon>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_EstadoCivil\AccesoDatosEstadoCivil.xss">
+      <DependentUpon>AccesoDatosEstadoCivil.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_TipoDocumento\AccesoDatosTipoDocumento.xsc">
+      <DependentUpon>AccesoDatosTipoDocumento.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_TipoDocumento\AccesoDatosTipoDocumento.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccesoDatosTipoDocumento.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_TipoDocumento\AccesoDatosTipoDocumento.xss">
+      <DependentUpon>AccesoDatosTipoDocumento.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Sexo\AccesoDatosSexo.xsc">
+      <DependentUpon>AccesoDatosSexo.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Sexo\AccesoDatosSexo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccesoDatosSexo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Sexo\AccesoDatosSexo.xss">
+      <DependentUpon>AccesoDatosSexo.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Totales\AccesoDatosClientesTotales.xsc">
+      <DependentUpon>AccesoDatosClientesTotales.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Totales\AccesoDatosClientesTotales.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccesoDatosClientesTotales.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Totales\AccesoDatosClientesTotales.xss">
+      <DependentUpon>AccesoDatosClientesTotales.xsd</DependentUpon>
     </None>
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\EstadisticasFacturacion.xsc">
       <DependentUpon>EstadisticasFacturacion.xsd</DependentUpon>
