@@ -12,10 +12,21 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
     public class AD_Rubros
     {
-        //RUBROS LOAD
+        AccesoADatos _DB = new AccesoADatos();
 
-        //RUBROS MODIFY
+        public DataTable _Rpt_Rubros()
+        {
+            string consulta = "SELECT * FROM Rubros WHERE Borrado = 0 ORDER BY CodigoRubro";
+            return _DB.Consultar(consulta);
+        }
+        public DataTable _Rpt_Rubros(string letra)
+        {
+            string consulta = "SELECT * FROM Rubros WHERE Borrado = 0 and Nombre LIKE '" + letra.Trim() + "%' ORDER BY Nombre";
+            return _DB.Consultar(consulta);
 
-        //RUBROS DELETE
+        }
+
+
+
     }
 }
