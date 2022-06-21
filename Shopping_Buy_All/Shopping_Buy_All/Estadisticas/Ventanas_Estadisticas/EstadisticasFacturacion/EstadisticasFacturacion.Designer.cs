@@ -349,9 +349,9 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class LocalesMasFacturasDataTable : global::System.Data.TypedTableBase<LocalesMasFacturasRow> {
             
-            private global::System.Data.DataColumn columnNombre_local;
+            private global::System.Data.DataColumn columnNombre;
             
-            private global::System.Data.DataColumn columnCantidad;
+            private global::System.Data.DataColumn columnCantidadFacturas;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -388,17 +388,17 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Nombre_localColumn {
+            public global::System.Data.DataColumn NombreColumn {
                 get {
-                    return this.columnNombre_local;
+                    return this.columnNombre;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CantidadColumn {
+            public global::System.Data.DataColumn CantidadFacturasColumn {
                 get {
-                    return this.columnCantidad;
+                    return this.columnCantidadFacturas;
                 }
             }
             
@@ -439,11 +439,11 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LocalesMasFacturasRow AddLocalesMasFacturasRow(string Nombre_local, int Cantidad) {
+            public LocalesMasFacturasRow AddLocalesMasFacturasRow(string Nombre, int CantidadFacturas) {
                 LocalesMasFacturasRow rowLocalesMasFacturasRow = ((LocalesMasFacturasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Nombre_local,
-                        Cantidad};
+                        Nombre,
+                        CantidadFacturas};
                 rowLocalesMasFacturasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLocalesMasFacturasRow);
                 return rowLocalesMasFacturasRow;
@@ -466,17 +466,17 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnNombre_local = base.Columns["Nombre local"];
-                this.columnCantidad = base.Columns["Cantidad"];
+                this.columnNombre = base.Columns["Nombre"];
+                this.columnCantidadFacturas = base.Columns["CantidadFacturas"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnNombre_local = new global::System.Data.DataColumn("Nombre local", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre_local);
-                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantidad);
+                this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombre);
+                this.columnCantidadFacturas = new global::System.Data.DataColumn("CantidadFacturas", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidadFacturas);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -610,9 +610,9 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ClientesMasFacturasDataTable : global::System.Data.TypedTableBase<ClientesMasFacturasRow> {
             
-            private global::System.Data.DataColumn columnNombre_clientes;
+            private global::System.Data.DataColumn columnCliente;
             
-            private global::System.Data.DataColumn columnCantiad;
+            private global::System.Data.DataColumn columnCantidadFacturas;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -649,17 +649,17 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Nombre_clientesColumn {
+            public global::System.Data.DataColumn ClienteColumn {
                 get {
-                    return this.columnNombre_clientes;
+                    return this.columnCliente;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CantiadColumn {
+            public global::System.Data.DataColumn CantidadFacturasColumn {
                 get {
-                    return this.columnCantiad;
+                    return this.columnCantidadFacturas;
                 }
             }
             
@@ -700,11 +700,11 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ClientesMasFacturasRow AddClientesMasFacturasRow(string Nombre_clientes, int Cantiad) {
+            public ClientesMasFacturasRow AddClientesMasFacturasRow(string Cliente, int CantidadFacturas) {
                 ClientesMasFacturasRow rowClientesMasFacturasRow = ((ClientesMasFacturasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Nombre_clientes,
-                        Cantiad};
+                        Cliente,
+                        CantidadFacturas};
                 rowClientesMasFacturasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowClientesMasFacturasRow);
                 return rowClientesMasFacturasRow;
@@ -727,17 +727,17 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnNombre_clientes = base.Columns["Nombre clientes"];
-                this.columnCantiad = base.Columns["Cantiad"];
+                this.columnCliente = base.Columns["Cliente"];
+                this.columnCantidadFacturas = base.Columns["CantidadFacturas"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnNombre_clientes = new global::System.Data.DataColumn("Nombre clientes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre_clientes);
-                this.columnCantiad = new global::System.Data.DataColumn("Cantiad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantiad);
+                this.columnCliente = new global::System.Data.DataColumn("Cliente", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCliente);
+                this.columnCantidadFacturas = new global::System.Data.DataColumn("CantidadFacturas", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidadFacturas);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -871,7 +871,7 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class FacturasTotalesDataTable : global::System.Data.TypedTableBase<FacturasTotalesRow> {
             
-            private global::System.Data.DataColumn columnCantidad;
+            private global::System.Data.DataColumn columnCantidadFacturas;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -908,9 +908,9 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CantidadColumn {
+            public global::System.Data.DataColumn CantidadFacturasColumn {
                 get {
-                    return this.columnCantidad;
+                    return this.columnCantidadFacturas;
                 }
             }
             
@@ -951,10 +951,10 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FacturasTotalesRow AddFacturasTotalesRow(string Cantidad) {
+            public FacturasTotalesRow AddFacturasTotalesRow(string CantidadFacturas) {
                 FacturasTotalesRow rowFacturasTotalesRow = ((FacturasTotalesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Cantidad};
+                        CantidadFacturas};
                 rowFacturasTotalesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFacturasTotalesRow);
                 return rowFacturasTotalesRow;
@@ -977,14 +977,14 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnCantidad = base.Columns["Cantidad"];
+                this.columnCantidadFacturas = base.Columns["CantidadFacturas"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantidad);
+                this.columnCantidadFacturas = new global::System.Data.DataColumn("CantidadFacturas", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidadFacturas);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1127,59 +1127,59 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Nombre_local {
+            public string Nombre {
                 get {
                     try {
-                        return ((string)(this[this.tableLocalesMasFacturas.Nombre_localColumn]));
+                        return ((string)(this[this.tableLocalesMasFacturas.NombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre local\' de la tabla \'LocalesMasFacturas\' es DBNull." +
-                                "", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre\' de la tabla \'LocalesMasFacturas\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLocalesMasFacturas.Nombre_localColumn] = value;
+                    this[this.tableLocalesMasFacturas.NombreColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Cantidad {
+            public int CantidadFacturas {
                 get {
                     try {
-                        return ((int)(this[this.tableLocalesMasFacturas.CantidadColumn]));
+                        return ((int)(this[this.tableLocalesMasFacturas.CantidadFacturasColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad\' de la tabla \'LocalesMasFacturas\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CantidadFacturas\' de la tabla \'LocalesMasFacturas\' es DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableLocalesMasFacturas.CantidadColumn] = value;
+                    this[this.tableLocalesMasFacturas.CantidadFacturasColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNombre_localNull() {
-                return this.IsNull(this.tableLocalesMasFacturas.Nombre_localColumn);
+            public bool IsNombreNull() {
+                return this.IsNull(this.tableLocalesMasFacturas.NombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNombre_localNull() {
-                this[this.tableLocalesMasFacturas.Nombre_localColumn] = global::System.Convert.DBNull;
+            public void SetNombreNull() {
+                this[this.tableLocalesMasFacturas.NombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCantidadNull() {
-                return this.IsNull(this.tableLocalesMasFacturas.CantidadColumn);
+            public bool IsCantidadFacturasNull() {
+                return this.IsNull(this.tableLocalesMasFacturas.CantidadFacturasColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCantidadNull() {
-                this[this.tableLocalesMasFacturas.CantidadColumn] = global::System.Convert.DBNull;
+            public void SetCantidadFacturasNull() {
+                this[this.tableLocalesMasFacturas.CantidadFacturasColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1199,59 +1199,59 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Nombre_clientes {
+            public string Cliente {
                 get {
                     try {
-                        return ((string)(this[this.tableClientesMasFacturas.Nombre_clientesColumn]));
+                        return ((string)(this[this.tableClientesMasFacturas.ClienteColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre clientes\' de la tabla \'ClientesMasFacturas\' es DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cliente\' de la tabla \'ClientesMasFacturas\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableClientesMasFacturas.Nombre_clientesColumn] = value;
+                    this[this.tableClientesMasFacturas.ClienteColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Cantiad {
+            public int CantidadFacturas {
                 get {
                     try {
-                        return ((int)(this[this.tableClientesMasFacturas.CantiadColumn]));
+                        return ((int)(this[this.tableClientesMasFacturas.CantidadFacturasColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantiad\' de la tabla \'ClientesMasFacturas\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CantidadFacturas\' de la tabla \'ClientesMasFacturas\' es DB" +
+                                "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableClientesMasFacturas.CantiadColumn] = value;
+                    this[this.tableClientesMasFacturas.CantidadFacturasColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNombre_clientesNull() {
-                return this.IsNull(this.tableClientesMasFacturas.Nombre_clientesColumn);
+            public bool IsClienteNull() {
+                return this.IsNull(this.tableClientesMasFacturas.ClienteColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNombre_clientesNull() {
-                this[this.tableClientesMasFacturas.Nombre_clientesColumn] = global::System.Convert.DBNull;
+            public void SetClienteNull() {
+                this[this.tableClientesMasFacturas.ClienteColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCantiadNull() {
-                return this.IsNull(this.tableClientesMasFacturas.CantiadColumn);
+            public bool IsCantidadFacturasNull() {
+                return this.IsNull(this.tableClientesMasFacturas.CantidadFacturasColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCantiadNull() {
-                this[this.tableClientesMasFacturas.CantiadColumn] = global::System.Convert.DBNull;
+            public void SetCantidadFacturasNull() {
+                this[this.tableClientesMasFacturas.CantidadFacturasColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1271,30 +1271,31 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFactur
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Cantidad {
+            public string CantidadFacturas {
                 get {
                     try {
-                        return ((string)(this[this.tableFacturasTotales.CantidadColumn]));
+                        return ((string)(this[this.tableFacturasTotales.CantidadFacturasColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad\' de la tabla \'FacturasTotales\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CantidadFacturas\' de la tabla \'FacturasTotales\' es DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tableFacturasTotales.CantidadColumn] = value;
+                    this[this.tableFacturasTotales.CantidadFacturasColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCantidadNull() {
-                return this.IsNull(this.tableFacturasTotales.CantidadColumn);
+            public bool IsCantidadFacturasNull() {
+                return this.IsNull(this.tableFacturasTotales.CantidadFacturasColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCantidadNull() {
-                this[this.tableFacturasTotales.CantidadColumn] = global::System.Convert.DBNull;
+            public void SetCantidadFacturasNull() {
+                this[this.tableFacturasTotales.CantidadFacturasColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
-using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasClientes
 {
@@ -18,7 +17,21 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasCliente
         public ReporteEstadisticasFacturacion()
         {
             InitializeComponent();
-            
+            reporteFactura.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasFacturacion.EstadisticaFacturacion.rdlc";
+            DataTable cantidadFacturas = ObtenerCantidadFacturas();
+            DataTable cantidadLocalesMayorFacturas = ObtenerLocalesMayorFacturas();
+            DataTable cantidadClientesMayorFacturas = ObtenerClientesMayorFacturas();
+            int cantidadFac = (int)cantidadFacturas.Rows[0]["CantidadFacturas"];
+
+            ReportDataSource ds = new ReportDataSource("DatosFacturaClientes", cantidadClientesMayorFacturas);
+            ReportDataSource ds1 = new ReportDataSource("DatosFacturaLocales", cantidadLocalesMayorFacturas);
+            ReportParameter[] lista = new ReportParameter[1];
+            lista[0] = new ReportParameter("Parametro", cantidadFac.ToString());
+            reporteFactura.LocalReport.SetParameters(lista);
+            reporteFactura.LocalReport.DataSources.Clear();
+            reporteFactura.LocalReport.DataSources.Add(ds);
+            reporteFactura.LocalReport.DataSources.Add(ds1);
+            this.reporteFactura.RefreshReport();
         }
         private void ReporteEstadisticasFacturacion_Load(object sender, EventArgs e)
         {
@@ -140,21 +153,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasCliente
         
         private void CargarReporte_Load(object sender, EventArgs e)
         {
-            DataTable cantidadFacturas = new DataTable();
-            cantidadFacturas = ObtenerCantidadFacturas();
-            DataTable cantidadLocalesMayorFacturas = new DataTable();
-            cantidadLocalesMayorFacturas = ObtenerLocalesMayorFacturas();
-            DataTable cantidadClientesMayorFacturas = new DataTable();
-            cantidadClientesMayorFacturas = ObtenerClientesMayorFacturas();
-
-            ReportDataSource ds = new ReportDataSource("DatosClientes", cantidadFacturas);
-            ReportDataSource ds1 = new ReportDataSource("DatosTipoDocumento", cantidadLocalesMayorFacturas);
-            ReportDataSource ds2 = new ReportDataSource("DatosSexo", cantidadClientesMayorFacturas);
-            reporteFactura.LocalReport.DataSources.Clear();
-            reporteFactura.LocalReport.DataSources.Add(ds);
-            reporteFactura.LocalReport.DataSources.Add(ds1);
-            reporteFactura.LocalReport.DataSources.Add(ds2);
-            reporteFactura.LocalReport.Refresh();
+            
         }
     }
 }
