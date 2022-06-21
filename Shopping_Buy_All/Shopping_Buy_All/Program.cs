@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesTipoDocumentos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace Shopping_Buy_All
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            //Application.Run(new Login());
+            Application.Run(new ReporteTipoDocumentos());
         }
     }
 }

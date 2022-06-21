@@ -49,12 +49,13 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -650,6 +651,12 @@
     <Compile Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.Designer.cs">
       <DependentUpon>ReporteProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoDocumentos\ReporteTipoDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoDocumentos\ReporteTipoDocumentos.Designer.cs">
+      <DependentUpon>ReporteTipoDocumentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesUsuarios\ReporteUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -933,6 +940,10 @@
       <DependentUpon>ReporteProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesProductos\ReportProductos.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoDocumentos\ReporteTipoDocumentos.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoDocumentos\ReporteTipoDocumentos.resx">
+      <DependentUpon>ReporteTipoDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesUsuarios\ReporteUsuarios.resx">
       <DependentUpon>ReporteUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -1077,15 +1088,7 @@
   <ItemGroup>
     <None Include="Resources\xclipboard.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\rstudio.png" />
-    <None Include="Resources\gparted.png" />
-    <None Include="Resources\distributor-logo-archlabs.png" />
-    <None Include="Resources\211802_plus_icon.png" />
-    <None Include="Resources\1315084_less_minus_icon.png" />
-    <None Include="Resources\372920_less_linecon_minus_remove_round_icon.png" />
-    <None Include="Resources\1315083_add_plus_icon.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1099,6 +1102,15 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rstudio.png" />
+    <None Include="Resources\gparted.png" />
+    <None Include="Resources\distributor-logo-archlabs.png" />
+    <None Include="Resources\211802_plus_icon.png" />
+    <None Include="Resources\1315084_less_minus_icon.png" />
+    <None Include="Resources\372920_less_linecon_minus_remove_round_icon.png" />
+    <None Include="Resources\1315083_add_plus_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
