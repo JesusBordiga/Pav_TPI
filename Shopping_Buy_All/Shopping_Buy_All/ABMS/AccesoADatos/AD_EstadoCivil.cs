@@ -13,6 +13,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
     public class AD_EstadoCivil
     {
+        AccesoADatos _DB = new AccesoADatos();
         //ESTADO CIVIL LOAD
         public static object obtenerDatosEstadoCivil()
         {
@@ -182,6 +183,16 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             {
                 cn.Close();
             }
+        }
+
+        public DataTable ObtenerClientesPorEsCiv()
+        {
+            string consulta = "SELECT T.NombreEstadoCivil, COUNT(C.NroDocumento) 'CantidadClientes' " +
+                "FROM TipoEstadoCivil T JOIN Clientes C on C.TipoDocumento = T.TipoEstadoCivil " +
+                "WHERE C.Borrado = 0 and T.Borrado = 0 " +
+                "GROUP BY T.NombreEstadoCivil " +
+                "ORDER BY 'CantidadClientes' DESC";
+            return _DB.Consultar(consulta);
         }
     }
 }

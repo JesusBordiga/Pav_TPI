@@ -211,7 +211,7 @@
             this.btnEliminar.TabIndex = 62;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -226,7 +226,7 @@
             this.btnModificar.TabIndex = 61;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // lblTotal
             // 
@@ -265,7 +265,7 @@
             this.btnFactura.TabIndex = 48;
             this.btnFactura.Text = "Aceptar";
             this.btnFactura.UseVisualStyleBackColor = false;
-            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
+            this.btnFactura.Click += new System.EventHandler(this.BtnFactura_Click);
             // 
             // buttonCargarProducto
             // 
@@ -280,7 +280,7 @@
             this.buttonCargarProducto.TabIndex = 11;
             this.buttonCargarProducto.Text = "Cargar";
             this.buttonCargarProducto.UseVisualStyleBackColor = false;
-            this.buttonCargarProducto.Click += new System.EventHandler(this.buttonCargarProducto_Click);
+            this.buttonCargarProducto.Click += new System.EventHandler(this.ButtonCargarProducto_Click);
             // 
             // label6
             // 
@@ -458,7 +458,7 @@
             this.btnBuscarProducto.TabIndex = 9;
             this.btnBuscarProducto.Text = "Buscar";
             this.btnBuscarProducto.UseVisualStyleBackColor = false;
-            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
+            this.btnBuscarProducto.Click += new System.EventHandler(this.BtnBuscarProducto_Click);
             // 
             // labelPrecio
             // 
@@ -543,7 +543,7 @@
             this.buttonTarjeta.TabIndex = 7;
             this.buttonTarjeta.Text = "Aceptar";
             this.buttonTarjeta.UseVisualStyleBackColor = false;
-            this.buttonTarjeta.Click += new System.EventHandler(this.buttonTarjeta_Click);
+            this.buttonTarjeta.Click += new System.EventHandler(this.ButtonTarjeta_Click);
             // 
             // label13
             // 

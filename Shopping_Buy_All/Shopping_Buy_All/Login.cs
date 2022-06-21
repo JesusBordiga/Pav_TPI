@@ -33,13 +33,12 @@ namespace Shopping_Buy_All
                 User usu = new User(userName, password);
                 try
                 {
-                    
                     resultado = Validate_Exist(usu);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
 
-                    MessageBox.Show("Error, Base de datos no encontrada!");
+                    MessageBox.Show("Error, Base de datos no encontrada! \n" + ex.Message);
                 }
                 if (resultado == true)
                 {

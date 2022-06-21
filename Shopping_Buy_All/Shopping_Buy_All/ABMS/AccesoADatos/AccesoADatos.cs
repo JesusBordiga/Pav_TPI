@@ -25,9 +25,9 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 
         SqlConnection conexion = new SqlConnection();
         SqlCommand command = new SqlCommand();
+        SqlTransaction transaccion;
         TipoConexion tipoConexion = TipoConexion.simple;
         TipoEstado tipoEstado = TipoEstado.sinTransaccion;
-        SqlTransaction transaccion;
         
         string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
 

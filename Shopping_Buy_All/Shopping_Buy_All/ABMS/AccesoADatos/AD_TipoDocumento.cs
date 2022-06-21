@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Shopping_Buy_All.ABMS;
 using System.Windows.Forms;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 
 namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
     public class AD_TipoDocumento
     {
+        public AccesoADatos _DB = new AccesoADatos();
         //TIPO DOCUMENTO LOAD
         public static object obtenerDatosTipoDocumento()
         {
@@ -182,6 +184,16 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             {
                 cn.Close();
             }
+        }
+        
+        public DataTable ObtenerCantidadTipoDocumento()
+        {
+            string consulta = "SELECT T.NombreDocumento, COUNT(C.NroDocumento) 'CantidadClientes' " +
+                "FROM TipoDocumento T JOIN Clientes C on C.TipoDocumento = T.TipoDocumento " +
+                "WHERE C.Borrado = 0 and T.Borrado = 0 " +
+                "GROUP BY T.NombreDocumento " +
+                "ORDER BY 'CantidadClientes' DESC";
+            return _DB.Consultar(consulta);
         }
     }
 }

@@ -11,24 +11,24 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DatosTipoDocumento">
+    <DataSet Name="DatosDocumento">
       <Query>
         <DataSourceName>EstadisticasClientes</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Nombre Tipo Documento">
-          <DataField>Nombre Tipo Documento</DataField>
+        <Field Name="NombreDocumento">
+          <DataField>NombreDocumento</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Cantidad">
-          <DataField>Cantidad</DataField>
+        <Field Name="CantidadClientes">
+          <DataField>CantidadClientes</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>EstadisticasClientes</rd:DataSetName>
-        <rd:SchemaPath>G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\Estadisticas\Ventanas_Reportes\EstadisticasClientes\EstadisticasClientes.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\Lean\Facultad\Programación de Aplicaciones Visuales I\LONGO\Pav_TPI\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_TipoDocumento\AccesoDatosTipoDocumento.xsd</rd:SchemaPath>
         <rd:TableName>Clientes por Tipo Documento</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -90,32 +90,32 @@
                 <ChartMember>
                   <Group Name="Chart10_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Nombre Tipo Documento.Value</GroupExpression>
+                      <GroupExpression>=Fields!NombreDocumento.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Nombre Tipo Documento.Value</Value>
+                      <Value>=Fields!NombreDocumento.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Nombre Tipo Documento.Value</Label>
+                  <Label>=Fields!NombreDocumento.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Cantidad</Label>
+                  <Label>Cantidad Clientes</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Cantidad">
+                <ChartSeries Name="CantidadClientes">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!Cantidad.Value)</Y>
+                        <Y>=Sum(Fields!CantidadClientes.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -417,7 +417,7 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DatosTipoDocumento</DataSetName>
+            <DataSetName>DatosDocumento</DataSetName>
             <Top>2.93038cm</Top>
             <Left>1.54278cm</Left>
             <Height>6.72642cm</Height>

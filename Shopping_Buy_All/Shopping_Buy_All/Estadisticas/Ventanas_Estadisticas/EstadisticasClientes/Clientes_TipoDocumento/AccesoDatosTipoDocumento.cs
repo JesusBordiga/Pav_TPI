@@ -31,6 +31,9 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
 
     public partial class EstadisticasClientes
     {
+        partial class Clientes_por_Tipo_DocumentoDataTable
+        {
+        }
     }
 }
 namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Clientes_por_TipoDocumento {

@@ -17,18 +17,18 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Nombre Estado Civil">
-          <DataField>Nombre Estado Civil</DataField>
+        <Field Name="NombreEstadoCivil">
+          <DataField>NombreEstadoCivil</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Cantidad">
-          <DataField>Cantidad</DataField>
+        <Field Name="CantidadClientes">
+          <DataField>CantidadClientes</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>EstadisticasClientes</rd:DataSetName>
-        <rd:SchemaPath>G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes por Estado Civil\AccesoDatosEstadoCivil.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\Lean\Facultad\Programación de Aplicaciones Visuales I\LONGO\Pav_TPI\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_EstadoCivil\AccesoDatosEstadoCivil.xsd</rd:SchemaPath>
         <rd:TableName>Clientes por Estado Civil</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -90,35 +90,37 @@
                 <ChartMember>
                   <Group Name="Chart3_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Nombre Estado Civil.Value</GroupExpression>
+                      <GroupExpression>=Fields!NombreEstadoCivil.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Nombre Estado Civil.Value</Value>
+                      <Value>=Fields!NombreEstadoCivil.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Nombre Estado Civil.Value</Label>
+                  <Label>=Fields!NombreEstadoCivil.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Cantidad</Label>
+                  <Label>Cantidad Clientes</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Cantidad1">
+                <ChartSeries Name="CantidadClientes">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!Cantidad.Value)</Y>
+                        <Y>=Sum(Fields!CantidadClientes.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>

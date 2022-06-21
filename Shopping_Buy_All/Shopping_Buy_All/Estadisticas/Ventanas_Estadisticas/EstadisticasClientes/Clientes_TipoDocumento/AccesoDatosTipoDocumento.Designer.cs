@@ -279,9 +279,9 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Clientes_por_Tipo_DocumentoDataTable : global::System.Data.TypedTableBase<Clientes_por_Tipo_DocumentoRow> {
             
-            private global::System.Data.DataColumn columnNombre_Tipo_Documento;
+            private global::System.Data.DataColumn columnNombreDocumento;
             
-            private global::System.Data.DataColumn columnCantidad;
+            private global::System.Data.DataColumn columnCantidadClientes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -318,17 +318,17 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Nombre_Tipo_DocumentoColumn {
+            public global::System.Data.DataColumn NombreDocumentoColumn {
                 get {
-                    return this.columnNombre_Tipo_Documento;
+                    return this.columnNombreDocumento;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CantidadColumn {
+            public global::System.Data.DataColumn CantidadClientesColumn {
                 get {
-                    return this.columnCantidad;
+                    return this.columnCantidadClientes;
                 }
             }
             
@@ -369,11 +369,11 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Clientes_por_Tipo_DocumentoRow AddClientes_por_Tipo_DocumentoRow(string Nombre_Tipo_Documento, int Cantidad) {
+            public Clientes_por_Tipo_DocumentoRow AddClientes_por_Tipo_DocumentoRow(string NombreDocumento, int CantidadClientes) {
                 Clientes_por_Tipo_DocumentoRow rowClientes_por_Tipo_DocumentoRow = ((Clientes_por_Tipo_DocumentoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Nombre_Tipo_Documento,
-                        Cantidad};
+                        NombreDocumento,
+                        CantidadClientes};
                 rowClientes_por_Tipo_DocumentoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowClientes_por_Tipo_DocumentoRow);
                 return rowClientes_por_Tipo_DocumentoRow;
@@ -396,17 +396,17 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnNombre_Tipo_Documento = base.Columns["Nombre Tipo Documento"];
-                this.columnCantidad = base.Columns["Cantidad"];
+                this.columnNombreDocumento = base.Columns["NombreDocumento"];
+                this.columnCantidadClientes = base.Columns["CantidadClientes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnNombre_Tipo_Documento = new global::System.Data.DataColumn("Nombre Tipo Documento", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre_Tipo_Documento);
-                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantidad);
+                this.columnNombreDocumento = new global::System.Data.DataColumn("NombreDocumento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreDocumento);
+                this.columnCantidadClientes = new global::System.Data.DataColumn("CantidadClientes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidadClientes);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -549,60 +549,60 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Nombre_Tipo_Documento {
+            public string NombreDocumento {
                 get {
                     try {
-                        return ((string)(this[this.tableClientes_por_Tipo_Documento.Nombre_Tipo_DocumentoColumn]));
+                        return ((string)(this[this.tableClientes_por_Tipo_Documento.NombreDocumentoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre Tipo Documento\' de la tabla \'Clientes por Tipo Doc" +
-                                "umento\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreDocumento\' de la tabla \'Clientes por Tipo Documento" +
+                                "\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableClientes_por_Tipo_Documento.Nombre_Tipo_DocumentoColumn] = value;
+                    this[this.tableClientes_por_Tipo_Documento.NombreDocumentoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Cantidad {
+            public int CantidadClientes {
                 get {
                     try {
-                        return ((int)(this[this.tableClientes_por_Tipo_Documento.CantidadColumn]));
+                        return ((int)(this[this.tableClientes_por_Tipo_Documento.CantidadClientesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad\' de la tabla \'Clientes por Tipo Documento\' es DB" +
-                                "Null.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CantidadClientes\' de la tabla \'Clientes por Tipo Document" +
+                                "o\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableClientes_por_Tipo_Documento.CantidadColumn] = value;
+                    this[this.tableClientes_por_Tipo_Documento.CantidadClientesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNombre_Tipo_DocumentoNull() {
-                return this.IsNull(this.tableClientes_por_Tipo_Documento.Nombre_Tipo_DocumentoColumn);
+            public bool IsNombreDocumentoNull() {
+                return this.IsNull(this.tableClientes_por_Tipo_Documento.NombreDocumentoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNombre_Tipo_DocumentoNull() {
-                this[this.tableClientes_por_Tipo_Documento.Nombre_Tipo_DocumentoColumn] = global::System.Convert.DBNull;
+            public void SetNombreDocumentoNull() {
+                this[this.tableClientes_por_Tipo_Documento.NombreDocumentoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCantidadNull() {
-                return this.IsNull(this.tableClientes_por_Tipo_Documento.CantidadColumn);
+            public bool IsCantidadClientesNull() {
+                return this.IsNull(this.tableClientes_por_Tipo_Documento.CantidadClientesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCantidadNull() {
-                this[this.tableClientes_por_Tipo_Documento.CantidadColumn] = global::System.Convert.DBNull;
+            public void SetCantidadClientesNull() {
+                this[this.tableClientes_por_Tipo_Documento.CantidadClientesColumn] = global::System.Convert.DBNull;
             }
         }
         

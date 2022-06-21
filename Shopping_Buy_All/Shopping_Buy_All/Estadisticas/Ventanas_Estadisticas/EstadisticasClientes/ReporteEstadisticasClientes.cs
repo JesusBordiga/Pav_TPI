@@ -15,6 +15,8 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasCliente
 {
     public partial class ReporteEstadisticasClientes : Form
     {
+        AD_TipoDocumento _tipDoc = new AD_TipoDocumento();
+        AD_EstadoCivil _esCiv = new AD_EstadoCivil();
         public ReporteEstadisticasClientes()
         {
             InitializeComponent();
@@ -23,80 +25,6 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasCliente
         private void ReporteEstadisticasClientes_Load(object sender, EventArgs e)
         {
             this.reporteCliente.RefreshReport();
-        }
-        private DataTable ObtenerCantidadClientes()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "SELECT COUNT(*) 'CantidadClientes'FROM Clientes C WHERE Borrado = 0";
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable cantidad = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(cantidad);
-                return cantidad;
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("No se pudo obtener datos de clientes.\nError en la base de datos.", "ERROR");
-                throw;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No se pudo obtener datos de clientes.\nError en la base de datos.", "ERROR");
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
-        private DataTable ObtenerCantidadTipoDocumento()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "SELECT T.NombreDocumento, COUNT(C.NroDocumento) 'CantidadClientes'FROM TipoDocumento " +
-                    "T JOIN Clientes C on C.TipoDocumento = T.TipoDocumento WHERE C.Borrado = 0 and T.Borrado = 0 " +
-                    "GROUP BY T.NombreDocumento ORDER BY 'CantidadClientes' DESC";
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable cantidad = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(cantidad);
-                return cantidad;
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("No se pudo obtener datos de clientes.\nError en la base de datos.", "ERROR");
-                throw;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No se pudo obtener datos de clientes.\nError en la base de datos.", "ERROR");
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
         }
         private DataTable ObtenerCantidadSexo()
         {
@@ -135,84 +63,44 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasCliente
                 cn.Close();
             }
         }
-        private DataTable ObtenerCantidadTEstadoCivil()
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "SELECT T.NombreEstadoCivil, COUNT(C.NroDocumento) 'CantidadClientes' FROM TipoEstadoCivil T    " +
-                    "JOIN Clientes C on C.TipoDocumento = T.TipoEstadoCivil WHERE C.Borrado = 0 and T.Borrado = 0 GROUP BY T.NombreEstadoCivil " +
-                    "ORDER BY 'CantidadClientes' DESC";
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable cantidad = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(cantidad);
-                return cantidad;
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("No se pudo obtener datos de clientes.\nError en la base de datos.", "ERROR");
-                throw;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No se pudo obtener datos de clientes.\nError en la base de datos.", "ERROR");
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
         private void CargarReporte_Load(object sender, EventArgs e)
         {
-            DataTable cantidadClientes = new DataTable();
-            cantidadClientes = ObtenerCantidadClientes();
-
-            reporteCliente.LocalReport.DataSources.Clear();
-
-            ReportDataSource ds = new ReportDataSource("DatosClientes", cantidadClientes);
-
-            reporteCliente.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Clientes_Totales.EstadisticasClientesTotales.rdlc";
-
-            reporteCliente.LocalReport.DataSources.Add(ds);
-
-            reporteCliente.LocalReport.Refresh();
-
-            //DataTable cantidadTipoDocumento = new DataTable();
-            //cantidadTipoDocumento = ObtenerCantidadTipoDocumento();
-
-            //DataTable cantidadSexo = new DataTable();
-            //cantidadSexo = ObtenerCantidadSexo();
-
-            //DataTable cantidadEstadoCivil = new DataTable();
-            //cantidadEstadoCivil = ObtenerCantidadTEstadoCivil();
-
-
-            //ReportDataSource ds1 = new ReportDataSource("DatosTipoDocumento", cantidadTipoDocumento);
-            //reporteCliente.LocalReport.ReportEmbeddedResource = ("Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Clientes_Por_Sexo");
-
-            //ReportDataSource ds2 = new ReportDataSource("DatosSexo", cantidadSexo);
-            //reporteCliente.LocalReport.ReportEmbeddedResource = ("Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Clientes_Por_TipoDocumento");
-
-            //ReportDataSource ds3 = new ReportDataSource("DatosEstadoCIvil", cantidadEstadoCivil);
-            //reporteCliente.LocalReport.ReportEmbeddedResource = ("Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.ClientesTotales");S
-
-
-            //reporteCliente.LocalReport.DataSources.Add(ds1);
-            //reporteCliente.LocalReport.DataSources.Add(ds2);
-            //reporteCliente.LocalReport.DataSources.Add(ds3);
+            
 
         }
+        private void ReporteXEsCiv()
+        {
+            DataTable cantidadEsCiv = _esCiv.ObtenerClientesPorEsCiv();
 
+            ReportDataSource ds = new ReportDataSource("DataClientesEstadoCivil", cantidadEsCiv);
+
+            reporteCliente.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Clientes_EstadoCivil.EstadisticasClientesEstadoCivil.rdlc";
+
+            reporteCliente.LocalReport.DataSources.Clear();
+            reporteCliente.LocalReport.DataSources.Add(ds);
+            this.reporteCliente.RefreshReport();
+        }
+        private void ReporteClientesXDoc()
+        {
+            DataTable cantidadTipoDocumento = _tipDoc.ObtenerCantidadTipoDocumento();
+
+            ReportDataSource ds = new ReportDataSource("DatosDocumento", cantidadTipoDocumento);
+
+            reporteCliente.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Clientes_TipoDocumento.EstadisticasClientesTipoDocumento.rdlc";
+
+            reporteCliente.LocalReport.DataSources.Clear();
+            reporteCliente.LocalReport.DataSources.Add(ds);
+            this.reporteCliente.RefreshReport();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ReporteClientesXDoc();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReporteXEsCiv();
+        }
     }
 }

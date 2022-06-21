@@ -279,9 +279,9 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Clientes_por_Estado_CivilDataTable : global::System.Data.TypedTableBase<Clientes_por_Estado_CivilRow> {
             
-            private global::System.Data.DataColumn columnNombre_EstadoCivil;
+            private global::System.Data.DataColumn columnNombreEstadoCivil;
             
-            private global::System.Data.DataColumn columnCantidad;
+            private global::System.Data.DataColumn columnCantidadClientes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -318,17 +318,17 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Nombre_EstadoCivilColumn {
+            public global::System.Data.DataColumn NombreEstadoCivilColumn {
                 get {
-                    return this.columnNombre_EstadoCivil;
+                    return this.columnNombreEstadoCivil;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CantidadColumn {
+            public global::System.Data.DataColumn CantidadClientesColumn {
                 get {
-                    return this.columnCantidad;
+                    return this.columnCantidadClientes;
                 }
             }
             
@@ -369,11 +369,11 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Clientes_por_Estado_CivilRow AddClientes_por_Estado_CivilRow(string Nombre_EstadoCivil, int Cantidad) {
+            public Clientes_por_Estado_CivilRow AddClientes_por_Estado_CivilRow(string NombreEstadoCivil, int CantidadClientes) {
                 Clientes_por_Estado_CivilRow rowClientes_por_Estado_CivilRow = ((Clientes_por_Estado_CivilRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Nombre_EstadoCivil,
-                        Cantidad};
+                        NombreEstadoCivil,
+                        CantidadClientes};
                 rowClientes_por_Estado_CivilRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowClientes_por_Estado_CivilRow);
                 return rowClientes_por_Estado_CivilRow;
@@ -396,17 +396,17 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnNombre_EstadoCivil = base.Columns["Nombre EstadoCivil"];
-                this.columnCantidad = base.Columns["Cantidad"];
+                this.columnNombreEstadoCivil = base.Columns["NombreEstadoCivil"];
+                this.columnCantidadClientes = base.Columns["CantidadClientes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnNombre_EstadoCivil = new global::System.Data.DataColumn("Nombre EstadoCivil", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre_EstadoCivil);
-                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantidad);
+                this.columnNombreEstadoCivil = new global::System.Data.DataColumn("NombreEstadoCivil", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreEstadoCivil);
+                this.columnCantidadClientes = new global::System.Data.DataColumn("CantidadClientes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidadClientes);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -549,60 +549,60 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Nombre_EstadoCivil {
+            public string NombreEstadoCivil {
                 get {
                     try {
-                        return ((string)(this[this.tableClientes_por_Estado_Civil.Nombre_EstadoCivilColumn]));
+                        return ((string)(this[this.tableClientes_por_Estado_Civil.NombreEstadoCivilColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre EstadoCivil\' de la tabla \'Clientes por Estado Civi" +
-                                "l\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreEstadoCivil\' de la tabla \'Clientes por Estado Civil" +
+                                "\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableClientes_por_Estado_Civil.Nombre_EstadoCivilColumn] = value;
+                    this[this.tableClientes_por_Estado_Civil.NombreEstadoCivilColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Cantidad {
+            public int CantidadClientes {
                 get {
                     try {
-                        return ((int)(this[this.tableClientes_por_Estado_Civil.CantidadColumn]));
+                        return ((int)(this[this.tableClientes_por_Estado_Civil.CantidadClientesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad\' de la tabla \'Clientes por Estado Civil\' es DBNu" +
-                                "ll.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CantidadClientes\' de la tabla \'Clientes por Estado Civil\'" +
+                                " es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableClientes_por_Estado_Civil.CantidadColumn] = value;
+                    this[this.tableClientes_por_Estado_Civil.CantidadClientesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNombre_EstadoCivilNull() {
-                return this.IsNull(this.tableClientes_por_Estado_Civil.Nombre_EstadoCivilColumn);
+            public bool IsNombreEstadoCivilNull() {
+                return this.IsNull(this.tableClientes_por_Estado_Civil.NombreEstadoCivilColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNombre_EstadoCivilNull() {
-                this[this.tableClientes_por_Estado_Civil.Nombre_EstadoCivilColumn] = global::System.Convert.DBNull;
+            public void SetNombreEstadoCivilNull() {
+                this[this.tableClientes_por_Estado_Civil.NombreEstadoCivilColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCantidadNull() {
-                return this.IsNull(this.tableClientes_por_Estado_Civil.CantidadColumn);
+            public bool IsCantidadClientesNull() {
+                return this.IsNull(this.tableClientes_por_Estado_Civil.CantidadClientesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCantidadNull() {
-                this[this.tableClientes_por_Estado_Civil.CantidadColumn] = global::System.Convert.DBNull;
+            public void SetCantidadClientesNull() {
+                this[this.tableClientes_por_Estado_Civil.CantidadClientesColumn] = global::System.Convert.DBNull;
             }
         }
         
