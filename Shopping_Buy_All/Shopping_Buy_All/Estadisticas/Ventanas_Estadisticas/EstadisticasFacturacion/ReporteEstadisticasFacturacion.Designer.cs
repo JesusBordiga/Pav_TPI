@@ -41,7 +41,7 @@
             this.reporteFactura.Location = new System.Drawing.Point(7, 8);
             this.reporteFactura.Name = "reporteFactura";
             this.reporteFactura.ServerReport.BearerToken = null;
-            this.reporteFactura.Size = new System.Drawing.Size(944, 423);
+            this.reporteFactura.Size = new System.Drawing.Size(668, 423);
             this.reporteFactura.TabIndex = 11;
             // 
             // ReporteEstadisticasFacturacion
@@ -50,7 +50,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(958, 443);
+            this.ClientSize = new System.Drawing.Size(682, 443);
             this.Controls.Add(this.reporteFactura);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

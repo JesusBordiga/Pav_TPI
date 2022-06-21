@@ -26,16 +26,19 @@ namespace Shopping_Buy_All
             InitializeComponent();
             LabelBienvenido.Text = "Bienvenido "+ usu.userName;
             CargarUsuarios(usu);
+
         }
         private void CargarUsuarios(User usu)
         {
             if (usu.permiso == 0)
             {
-                panelUsuarios.Visible = true;
+                panelUsuarios.Visible = false;
+                btnAdmin.Visible = true;
             }
             else
             {
                 panelUsuarios.Visible = false;
+                btnAdmin.Visible = false;
             }
         }
         private void HourTime_Tick(object sender, EventArgs e)
@@ -216,6 +219,16 @@ namespace Shopping_Buy_All
 
         }
 
-        
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+                panelUsuarios.Visible = true;
+                btnAdmin.Visible = false;
+        }
+
+        private void btnAdmin2_Click(object sender, EventArgs e)
+        {
+                btnAdmin.Visible = true;
+                panelUsuarios.Visible = false;
+        }
     }
 }

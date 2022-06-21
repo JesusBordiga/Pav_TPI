@@ -59,7 +59,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.335cm</Top>
-            <Left>0.84021cm</Left>
+            <Left>1.47521cm</Left>
             <Height>1.05861cm</Height>
             <Width>9.35272cm</Width>
             <Style>
@@ -75,7 +75,7 @@
           <Line Name="Line1">
             <Top>1.57cm</Top>
             <Height>0cm</Height>
-            <Width>10.96287cm</Width>
+            <Width>12.1173cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -420,10 +420,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataClientesEstadoCivil</DataSetName>
-            <Top>2.2987cm</Top>
-            <Left>1.87537cm</Left>
-            <Height>5cm</Height>
-            <Width>7.5cm</Width>
+            <Top>1.64056cm</Top>
+            <Left>0.84021cm</Left>
+            <Height>7.50233cm</Height>
+            <Width>10.14647cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -435,10 +435,10 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>3.77975in</Height>
+        <Height>3.59956in</Height>
         <Style />
       </Body>
-      <Width>4.31609in</Width>
+      <Width>4.77059in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

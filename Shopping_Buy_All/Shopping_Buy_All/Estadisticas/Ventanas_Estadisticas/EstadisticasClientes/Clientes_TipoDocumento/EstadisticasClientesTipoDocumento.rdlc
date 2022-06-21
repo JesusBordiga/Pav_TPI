@@ -418,7 +418,7 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DatosDocumento</DataSetName>
-            <Top>2.93038cm</Top>
+            <Top>1.67583cm</Top>
             <Left>1.54278cm</Left>
             <Height>6.72642cm</Height>
             <Width>9.73759cm</Width>
@@ -433,7 +433,7 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>3.96414in</Height>
+        <Height>3.59956in</Height>
         <Style />
       </Body>
       <Width>4.86817in</Width>

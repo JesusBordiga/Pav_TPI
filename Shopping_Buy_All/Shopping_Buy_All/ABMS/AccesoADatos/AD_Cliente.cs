@@ -14,7 +14,8 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
     public class AD_Cliente
     {
         //CLIENT LOAD
-         public static object CargarTipoEstadoCivil()
+        AccesoADatos _DB = new AccesoADatos();
+        public static object CargarTipoEstadoCivil()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);

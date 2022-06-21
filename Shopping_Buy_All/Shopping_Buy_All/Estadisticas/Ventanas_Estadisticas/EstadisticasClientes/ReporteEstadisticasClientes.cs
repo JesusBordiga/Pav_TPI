@@ -18,6 +18,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasCliente
         AD_TipoDocumento _tipDoc = new AD_TipoDocumento();
         AD_EstadoCivil _esCiv = new AD_EstadoCivil();
         AD_Sexo _Sex = new AD_Sexo();
+        AD_Cliente _Total = new AD_Cliente();
 
         public ReporteEstadisticasClientes()
         {
@@ -28,13 +29,8 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasCliente
         {
             this.reporteCliente.RefreshReport();
         }
-       
-        private void CargarReporte_Load(object sender, EventArgs e)
-        {
-            
 
-        }
-        private void ReporteXEsCiv()
+        private void ReporteClientesXEsCiv()
         {
             DataTable cantidadEsCiv = _esCiv.ObtenerClientesPorEsCiv();
 
@@ -58,11 +54,11 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasCliente
             reporteCliente.LocalReport.DataSources.Add(ds);
             this.reporteCliente.RefreshReport();
         }
-        private void ReporteXSexo()
+        private void ReporteClientesXSexo()
         {
             DataTable cantidadSex = _Sex.ObtenerClientesPorSex();
 
-            ReportDataSource ds = new ReportDataSource("DataClientesSexo", cantidadSex);
+            ReportDataSource ds = new ReportDataSource("DatosSexo", cantidadSex);
 
             reporteCliente.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Clientes_Sexo.EstadisticasClientesSexo.rdlc";
 
@@ -70,7 +66,6 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasCliente
             reporteCliente.LocalReport.DataSources.Add(ds);
             this.reporteCliente.RefreshReport();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             ReporteClientesXDoc();
@@ -78,17 +73,13 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasCliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ReporteXEsCiv();
+            ReporteClientesXEsCiv();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ReporteXSexo();
+            ReporteClientesXSexo();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

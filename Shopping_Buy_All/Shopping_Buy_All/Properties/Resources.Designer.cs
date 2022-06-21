@@ -83,6 +83,26 @@ namespace Shopping_Buy_All.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap _180_ {
+            get {
+                object obj = ResourceManager.GetObject("(180)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _1920 {
+            get {
+                object obj = ResourceManager.GetObject("1920", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap _211802_plus_icon {
             get {
                 object obj = ResourceManager.GetObject("211802_plus_icon", resourceCulture);
@@ -106,6 +126,26 @@ namespace Shopping_Buy_All.Properties {
         public static System.Drawing.Bitmap _372920_less_linecon_minus_remove_round_icon {
             get {
                 object obj = ResourceManager.GetObject("372920_less_linecon_minus_remove_round_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _43_ {
+            get {
+                object obj = ResourceManager.GetObject("(43)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _Tutosinvhizible___45_ {
+            get {
+                object obj = ResourceManager.GetObject("(Tutosinvhizible) (45)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +256,16 @@ namespace Shopping_Buy_All.Properties {
         public static System.Drawing.Bitmap pop_shop {
             get {
                 object obj = ResourceManager.GetObject("pop-shop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap preferences_system_windows_effect_flipswitch {
+            get {
+                object obj = ResourceManager.GetObject("preferences-system-windows-effect-flipswitch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

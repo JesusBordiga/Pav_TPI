@@ -81,9 +81,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>6.32009cm</Top>
+            <Top>3.78009cm</Top>
             <Height>0.6cm</Height>
-            <Width>6.83917cm</Width>
+            <Width>8.45313cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -112,10 +112,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.3175cm</Top>
             <Left>3.48604cm</Left>
             <Height>1.05861cm</Height>
-            <Width>9.85542cm</Width>
+            <Width>11.46938cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -128,9 +127,9 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>1.57cm</Top>
+            <Top>0.935cm</Top>
             <Height>0cm</Height>
-            <Width>16.36037cm</Width>
+            <Width>17.02183cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -156,10 +155,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>2.39978cm</Top>
+            <Top>1.76478cm</Top>
             <Left>6.95382cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.8175cm</Width>
+            <Width>4.43146cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -188,9 +187,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>12.28169cm</Top>
+            <Top>9.74169cm</Top>
             <Height>0.6cm</Height>
-            <Width>7.10375cm</Width>
+            <Width>8.71771cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -208,35 +207,37 @@
                 <ChartMember>
                   <Group Name="Chart4_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!CantidadFacturas.Value</GroupExpression>
+                      <GroupExpression>=Fields!Nombre.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!CantidadFacturas.Value</Value>
+                      <Value>=Fields!Nombre.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!CantidadFacturas.Value</Label>
+                  <Label>=Fields!Nombre.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Nombre</Label>
+                  <Label>Cantidad Facturas</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Nombre">
+                <ChartSeries Name="CantidadFacturas">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Count(Fields!Nombre.Value)</Y>
+                        <Y>=Sum(Fields!CantidadFacturas.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
@@ -500,25 +501,6 @@
                 </Style>
               </ChartArea>
             </ChartAreas>
-            <ChartLegends>
-              <ChartLegend Name="Default">
-                <Style>
-                  <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <Position>TopLeft</Position>
-                <ChartLegendTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </ChartLegendTitle>
-                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-              </ChartLegend>
-            </ChartLegends>
             <Palette>Pacific</Palette>
             <ChartBorderSkin>
               <Style>
@@ -537,9 +519,9 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DatosFacturaLocales</DataSetName>
-            <Top>7.09648cm</Top>
+            <Top>4.5653cm</Top>
             <Height>5cm</Height>
-            <Width>16.36037cm</Width>
+            <Width>17.02183cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -585,6 +567,8 @@
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
@@ -848,25 +832,6 @@
                 </Style>
               </ChartArea>
             </ChartAreas>
-            <ChartLegends>
-              <ChartLegend Name="Default">
-                <Style>
-                  <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <Position>TopLeft</Position>
-                <ChartLegendTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </ChartLegendTitle>
-                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-              </ChartLegend>
-            </ChartLegends>
             <Palette>Pacific</Palette>
             <ChartBorderSkin>
               <Style>
@@ -885,9 +850,9 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DatosFacturaClientes</DataSetName>
-            <Top>13.05808cm</Top>
+            <Top>10.51808cm</Top>
             <Height>5cm</Height>
-            <Width>16.36037cm</Width>
+            <Width>17.02183cm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -906,17 +871,22 @@
                 <TextRuns>
                   <TextRun>
                     <Value>=Parameters!Parametro.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>20pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Parametro</rd:DefaultName>
-            <Top>3.48933cm</Top>
+            <Top>2.53683cm</Top>
             <Left>6.95382cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Height>0.86458cm</Height>
+            <Width>4.43146cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -929,10 +899,10 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>7.27975in</Height>
+        <Height>6.10948in</Height>
         <Style />
       </Body>
-      <Width>6.48276in</Width>
+      <Width>6.70151in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

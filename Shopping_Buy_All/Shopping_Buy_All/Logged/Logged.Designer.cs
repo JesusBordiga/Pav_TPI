@@ -36,14 +36,14 @@
             this.labelHora = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.pictureTarjetas = new System.Windows.Forms.PictureBox();
+            this.btnMarcasTarjetas = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.Estadisticas = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnReportes = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.buttonFacturacion = new System.Windows.Forms.Button();
-            this.pictureTarjetas = new System.Windows.Forms.PictureBox();
-            this.btnMarcasTarjetas = new System.Windows.Forms.Button();
             this.pictureAutomoviles = new System.Windows.Forms.PictureBox();
             this.pictureProductos = new System.Windows.Forms.PictureBox();
             this.pictureLocales = new System.Windows.Forms.PictureBox();
@@ -58,6 +58,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.HourTime = new System.Windows.Forms.Timer(this.components);
             this.MenuReportes = new System.Windows.Forms.Panel();
+            this.btnReportesLocales = new System.Windows.Forms.Button();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblVolver = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -65,18 +69,14 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.btnReportesLocales = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.BotonUsuarios = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBoxMenuReportes = new System.Windows.Forms.PictureBox();
             this.Reportes = new System.Windows.Forms.Label();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
@@ -122,11 +122,13 @@
             this.pictureBox32 = new System.Windows.Forms.PictureBox();
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.btnAdmin2 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTarjetas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Estadisticas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureTarjetas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAutomoviles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLocales)).BeginInit();
@@ -134,15 +136,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MenuReportes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BotonUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
@@ -239,15 +241,17 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMenu.BackgroundImage")));
+            this.panelMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelMenu.Controls.Add(this.pictureTarjetas);
+            this.panelMenu.Controls.Add(this.btnMarcasTarjetas);
             this.panelMenu.Controls.Add(this.button12);
             this.panelMenu.Controls.Add(this.Estadisticas);
             this.panelMenu.Controls.Add(this.pictureBox3);
             this.panelMenu.Controls.Add(this.btnReportes);
             this.panelMenu.Controls.Add(this.pictureBox2);
             this.panelMenu.Controls.Add(this.buttonFacturacion);
-            this.panelMenu.Controls.Add(this.pictureTarjetas);
-            this.panelMenu.Controls.Add(this.btnMarcasTarjetas);
             this.panelMenu.Controls.Add(this.pictureAutomoviles);
             this.panelMenu.Controls.Add(this.pictureProductos);
             this.panelMenu.Controls.Add(this.pictureLocales);
@@ -258,14 +262,41 @@
             this.panelMenu.Controls.Add(this.btnLocales);
             this.panelMenu.Controls.Add(this.btnProfesiones);
             this.panelMenu.Controls.Add(this.btnClientes);
-            this.panelMenu.Location = new System.Drawing.Point(236, 74);
+            this.panelMenu.Location = new System.Drawing.Point(233, 72);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(334, 286);
             this.panelMenu.TabIndex = 41;
             // 
+            // pictureTarjetas
+            // 
+            this.pictureTarjetas.BackColor = System.Drawing.Color.Transparent;
+            this.pictureTarjetas.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.terminator;
+            this.pictureTarjetas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureTarjetas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureTarjetas.Location = new System.Drawing.Point(134, 99);
+            this.pictureTarjetas.Name = "pictureTarjetas";
+            this.pictureTarjetas.Size = new System.Drawing.Size(58, 55);
+            this.pictureTarjetas.TabIndex = 102;
+            this.pictureTarjetas.TabStop = false;
+            // 
+            // btnMarcasTarjetas
+            // 
+            this.btnMarcasTarjetas.BackColor = System.Drawing.Color.Transparent;
+            this.btnMarcasTarjetas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMarcasTarjetas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMarcasTarjetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMarcasTarjetas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarcasTarjetas.ForeColor = System.Drawing.Color.White;
+            this.btnMarcasTarjetas.Location = new System.Drawing.Point(112, 160);
+            this.btnMarcasTarjetas.Name = "btnMarcasTarjetas";
+            this.btnMarcasTarjetas.Size = new System.Drawing.Size(106, 23);
+            this.btnMarcasTarjetas.TabIndex = 101;
+            this.btnMarcasTarjetas.Text = "Marcas de Tarjeta";
+            this.btnMarcasTarjetas.UseVisualStyleBackColor = false;
+            // 
             // button12
             // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button12.BackColor = System.Drawing.Color.Transparent;
             this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -281,7 +312,7 @@
             // 
             // Estadisticas
             // 
-            this.Estadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Estadisticas.BackColor = System.Drawing.Color.Transparent;
             this.Estadisticas.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.gparted;
             this.Estadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Estadisticas.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -294,7 +325,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.rstudio;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -307,13 +338,13 @@
             // 
             // btnReportes
             // 
-            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReportes.BackColor = System.Drawing.Color.Transparent;
             this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Location = new System.Drawing.Point(126, 258);
+            this.btnReportes.Location = new System.Drawing.Point(126, 256);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(75, 23);
             this.btnReportes.TabIndex = 57;
@@ -323,7 +354,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.fritzing;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -336,7 +367,7 @@
             // 
             // buttonFacturacion
             // 
-            this.buttonFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonFacturacion.BackColor = System.Drawing.Color.Transparent;
             this.buttonFacturacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFacturacion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -350,42 +381,13 @@
             this.buttonFacturacion.UseVisualStyleBackColor = false;
             this.buttonFacturacion.Click += new System.EventHandler(this.buttonFacturacion_Click);
             // 
-            // pictureTarjetas
-            // 
-            this.pictureTarjetas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureTarjetas.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.terminator;
-            this.pictureTarjetas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureTarjetas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureTarjetas.Location = new System.Drawing.Point(250, 101);
-            this.pictureTarjetas.Name = "pictureTarjetas";
-            this.pictureTarjetas.Size = new System.Drawing.Size(58, 55);
-            this.pictureTarjetas.TabIndex = 51;
-            this.pictureTarjetas.TabStop = false;
-            this.pictureTarjetas.Click += new System.EventHandler(this.btnMarcasTarjetas_Click);
-            // 
-            // btnMarcasTarjetas
-            // 
-            this.btnMarcasTarjetas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMarcasTarjetas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMarcasTarjetas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMarcasTarjetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarcasTarjetas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMarcasTarjetas.ForeColor = System.Drawing.Color.White;
-            this.btnMarcasTarjetas.Location = new System.Drawing.Point(228, 162);
-            this.btnMarcasTarjetas.Name = "btnMarcasTarjetas";
-            this.btnMarcasTarjetas.Size = new System.Drawing.Size(106, 23);
-            this.btnMarcasTarjetas.TabIndex = 45;
-            this.btnMarcasTarjetas.Text = "Marcas de Tarjeta";
-            this.btnMarcasTarjetas.UseVisualStyleBackColor = false;
-            this.btnMarcasTarjetas.Click += new System.EventHandler(this.btnMarcasTarjetas_Click);
-            // 
             // pictureAutomoviles
             // 
-            this.pictureAutomoviles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureAutomoviles.BackColor = System.Drawing.Color.Transparent;
             this.pictureAutomoviles.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.vnote;
             this.pictureAutomoviles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureAutomoviles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureAutomoviles.Location = new System.Drawing.Point(134, 101);
+            this.pictureAutomoviles.Location = new System.Drawing.Point(250, 101);
             this.pictureAutomoviles.Name = "pictureAutomoviles";
             this.pictureAutomoviles.Size = new System.Drawing.Size(58, 55);
             this.pictureAutomoviles.TabIndex = 52;
@@ -394,7 +396,7 @@
             // 
             // pictureProductos
             // 
-            this.pictureProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureProductos.BackColor = System.Drawing.Color.Transparent;
             this.pictureProductos.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.icons;
             this.pictureProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureProductos.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -407,7 +409,7 @@
             // 
             // pictureLocales
             // 
-            this.pictureLocales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureLocales.BackColor = System.Drawing.Color.Transparent;
             this.pictureLocales.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.software_manager;
             this.pictureLocales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureLocales.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -420,7 +422,7 @@
             // 
             // pictureProfesiones
             // 
-            this.pictureProfesiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureProfesiones.BackColor = System.Drawing.Color.Transparent;
             this.pictureProfesiones.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.menu_editor1;
             this.pictureProfesiones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureProfesiones.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -433,7 +435,7 @@
             // 
             // pictureClientes
             // 
-            this.pictureClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureClientes.BackColor = System.Drawing.Color.Transparent;
             this.pictureClientes.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.users;
             this.pictureClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureClientes.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -446,13 +448,13 @@
             // 
             // btnVehiculos
             // 
-            this.btnVehiculos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnVehiculos.BackColor = System.Drawing.Color.Transparent;
             this.btnVehiculos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVehiculos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVehiculos.ForeColor = System.Drawing.Color.White;
-            this.btnVehiculos.Location = new System.Drawing.Point(126, 162);
+            this.btnVehiculos.Location = new System.Drawing.Point(242, 162);
             this.btnVehiculos.Name = "btnVehiculos";
             this.btnVehiculos.Size = new System.Drawing.Size(75, 23);
             this.btnVehiculos.TabIndex = 46;
@@ -462,7 +464,7 @@
             // 
             // btnProductos
             // 
-            this.btnProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnProductos.BackColor = System.Drawing.Color.Transparent;
             this.btnProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -478,7 +480,7 @@
             // 
             // btnLocales
             // 
-            this.btnLocales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnLocales.BackColor = System.Drawing.Color.Transparent;
             this.btnLocales.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLocales.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLocales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -494,7 +496,7 @@
             // 
             // btnProfesiones
             // 
-            this.btnProfesiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnProfesiones.BackColor = System.Drawing.Color.Transparent;
             this.btnProfesiones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProfesiones.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnProfesiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -510,7 +512,7 @@
             // 
             // btnClientes
             // 
-            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnClientes.BackColor = System.Drawing.Color.Transparent;
             this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClientes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -526,28 +528,28 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.user;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(17, 15);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 52);
+            this.pictureBox1.Size = new System.Drawing.Size(50, 45);
             this.pictureBox1.TabIndex = 54;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 56);
+            this.button1.Location = new System.Drawing.Point(11, 65);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 31);
+            this.button1.Size = new System.Drawing.Size(63, 24);
             this.button1.TabIndex = 53;
             this.button1.Text = "Usuarios";
             this.button1.UseVisualStyleBackColor = false;
@@ -555,12 +557,19 @@
             // 
             // HourTime
             // 
+            this.HourTime.Enabled = true;
             this.HourTime.Tick += new System.EventHandler(this.HourTime_Tick);
             // 
             // MenuReportes
             // 
             this.MenuReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.MenuReportes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MenuReportes.BackgroundImage")));
+            this.MenuReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MenuReportes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.MenuReportes.Controls.Add(this.btnReportesLocales);
+            this.MenuReportes.Controls.Add(this.pictureBox7);
+            this.MenuReportes.Controls.Add(this.button2);
+            this.MenuReportes.Controls.Add(this.pictureBox4);
             this.MenuReportes.Controls.Add(this.lblVolver);
             this.MenuReportes.Controls.Add(this.button11);
             this.MenuReportes.Controls.Add(this.button10);
@@ -568,18 +577,14 @@
             this.MenuReportes.Controls.Add(this.button8);
             this.MenuReportes.Controls.Add(this.button7);
             this.MenuReportes.Controls.Add(this.button6);
-            this.MenuReportes.Controls.Add(this.btnReportesLocales);
             this.MenuReportes.Controls.Add(this.button4);
-            this.MenuReportes.Controls.Add(this.button2);
             this.MenuReportes.Controls.Add(this.pictureBox15);
             this.MenuReportes.Controls.Add(this.pictureBox14);
             this.MenuReportes.Controls.Add(this.pictureBox13);
             this.MenuReportes.Controls.Add(this.pictureBox12);
             this.MenuReportes.Controls.Add(this.pictureBox11);
             this.MenuReportes.Controls.Add(this.pictureBox10);
-            this.MenuReportes.Controls.Add(this.pictureBox7);
             this.MenuReportes.Controls.Add(this.BotonUsuarios);
-            this.MenuReportes.Controls.Add(this.pictureBox4);
             this.MenuReportes.Controls.Add(this.pictureBoxMenuReportes);
             this.MenuReportes.Controls.Add(this.Reportes);
             this.MenuReportes.Controls.Add(this.pictureBox16);
@@ -592,10 +597,64 @@
             this.MenuReportes.Controls.Add(this.pictureBox9);
             this.MenuReportes.Controls.Add(this.btnReporteFactura);
             this.MenuReportes.Controls.Add(this.btnReporteClientes);
-            this.MenuReportes.Location = new System.Drawing.Point(128, 75);
+            this.MenuReportes.Location = new System.Drawing.Point(122, 73);
             this.MenuReportes.Name = "MenuReportes";
             this.MenuReportes.Size = new System.Drawing.Size(552, 315);
             this.MenuReportes.TabIndex = 59;
+            // 
+            // btnReportesLocales
+            // 
+            this.btnReportesLocales.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportesLocales.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportesLocales.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReportesLocales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportesLocales.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportesLocales.ForeColor = System.Drawing.Color.White;
+            this.btnReportesLocales.Location = new System.Drawing.Point(391, 103);
+            this.btnReportesLocales.Name = "btnReportesLocales";
+            this.btnReportesLocales.Size = new System.Drawing.Size(75, 23);
+            this.btnReportesLocales.TabIndex = 101;
+            this.btnReportesLocales.Text = "Locales";
+            this.btnReportesLocales.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.software_manager;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Location = new System.Drawing.Point(399, 42);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(58, 55);
+            this.pictureBox7.TabIndex = 100;
+            this.pictureBox7.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(223, 193);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(96, 23);
+            this.button2.TabIndex = 99;
+            this.button2.Text = "Marca Automovil";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.distributor_logo_archlabs;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Location = new System.Drawing.Point(242, 132);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(58, 55);
+            this.pictureBox4.TabIndex = 98;
+            this.pictureBox4.TabStop = false;
             // 
             // lblVolver
             // 
@@ -611,13 +670,13 @@
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button11.BackColor = System.Drawing.Color.Transparent;
             this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(476, 191);
+            this.button11.Location = new System.Drawing.Point(476, 193);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 23);
             this.button11.TabIndex = 95;
@@ -626,7 +685,7 @@
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button10.BackColor = System.Drawing.Color.Transparent;
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -641,7 +700,7 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button9.BackColor = System.Drawing.Color.Transparent;
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -656,13 +715,13 @@
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button8.BackColor = System.Drawing.Color.Transparent;
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(233, 193);
+            this.button8.Location = new System.Drawing.Point(7, 193);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 92;
@@ -671,13 +730,13 @@
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button7.BackColor = System.Drawing.Color.Transparent;
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(156, 193);
+            this.button7.Location = new System.Drawing.Point(155, 193);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 91;
@@ -686,7 +745,7 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button6.BackColor = System.Drawing.Color.Transparent;
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -699,31 +758,15 @@
             this.button6.Text = "Completar";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // btnReportesLocales
-            // 
-            this.btnReportesLocales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnReportesLocales.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportesLocales.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnReportesLocales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportesLocales.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportesLocales.ForeColor = System.Drawing.Color.White;
-            this.btnReportesLocales.Location = new System.Drawing.Point(7, 193);
-            this.btnReportesLocales.Name = "btnReportesLocales";
-            this.btnReportesLocales.Size = new System.Drawing.Size(75, 23);
-            this.btnReportesLocales.TabIndex = 89;
-            this.btnReportesLocales.Text = "Locales";
-            this.btnReportesLocales.UseVisualStyleBackColor = false;
-            this.btnReportesLocales.Click += new System.EventHandler(this.btnReportesLocales_Click);
-            // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(476, 103);
+            this.button4.Location = new System.Drawing.Point(467, 103);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 88;
@@ -731,25 +774,9 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.btnReportesUsuarios_Click);
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(385, 103);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 23);
-            this.button2.TabIndex = 87;
-            this.button2.Text = "Marca Automovil";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.btnMarcaAutomovil_Click);
-            // 
             // pictureBox15
             // 
-            this.pictureBox15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox15.Location = new System.Drawing.Point(481, 130);
@@ -760,7 +787,7 @@
             // 
             // pictureBox14
             // 
-            this.pictureBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox14.Location = new System.Drawing.Point(401, 132);
@@ -771,7 +798,7 @@
             // 
             // pictureBox13
             // 
-            this.pictureBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox13.Location = new System.Drawing.Point(323, 130);
@@ -782,10 +809,10 @@
             // 
             // pictureBox12
             // 
-            this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox12.Location = new System.Drawing.Point(241, 132);
+            this.pictureBox12.Location = new System.Drawing.Point(15, 132);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(58, 55);
             this.pictureBox12.TabIndex = 83;
@@ -793,7 +820,7 @@
             // 
             // pictureBox11
             // 
-            this.pictureBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox11.Location = new System.Drawing.Point(163, 132);
@@ -804,7 +831,7 @@
             // 
             // pictureBox10
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox10.Location = new System.Drawing.Point(88, 132);
@@ -813,48 +840,22 @@
             this.pictureBox10.TabIndex = 81;
             this.pictureBox10.TabStop = false;
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureBox7.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.software_manager;
-            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox7.Location = new System.Drawing.Point(15, 132);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(58, 55);
-            this.pictureBox7.TabIndex = 80;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.btnReportesLocales_Click);
-            // 
             // BotonUsuarios
             // 
-            this.BotonUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BotonUsuarios.BackColor = System.Drawing.Color.Transparent;
             this.BotonUsuarios.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.user;
             this.BotonUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BotonUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BotonUsuarios.Location = new System.Drawing.Point(481, 42);
+            this.BotonUsuarios.Location = new System.Drawing.Point(472, 42);
             this.BotonUsuarios.Name = "BotonUsuarios";
             this.BotonUsuarios.Size = new System.Drawing.Size(58, 55);
             this.BotonUsuarios.TabIndex = 79;
             this.BotonUsuarios.TabStop = false;
             this.BotonUsuarios.Click += new System.EventHandler(this.btnReportesUsuarios_Click);
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureBox4.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.distributor_logo_archlabs;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Location = new System.Drawing.Point(401, 42);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(58, 55);
-            this.pictureBox4.TabIndex = 78;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.btnMarcaAutomovil_Click);
-            // 
             // pictureBoxMenuReportes
             // 
-            this.pictureBoxMenuReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBoxMenuReportes.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxMenuReportes.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.rstudio;
             this.pictureBoxMenuReportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxMenuReportes.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -881,11 +882,11 @@
             // 
             // pictureBox16
             // 
-            this.pictureBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox16.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox16.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.vnote;
             this.pictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox16.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox16.Location = new System.Drawing.Point(241, 42);
+            this.pictureBox16.Location = new System.Drawing.Point(239, 42);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(58, 55);
             this.pictureBox16.TabIndex = 66;
@@ -894,7 +895,7 @@
             // 
             // pictureBox17
             // 
-            this.pictureBox17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox17.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox17.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.icons;
             this.pictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox17.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -907,13 +908,13 @@
             // 
             // btnReportesVehiculos
             // 
-            this.btnReportesVehiculos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReportesVehiculos.BackColor = System.Drawing.Color.Transparent;
             this.btnReportesVehiculos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportesVehiculos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnReportesVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportesVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportesVehiculos.ForeColor = System.Drawing.Color.White;
-            this.btnReportesVehiculos.Location = new System.Drawing.Point(233, 103);
+            this.btnReportesVehiculos.Location = new System.Drawing.Point(231, 103);
             this.btnReportesVehiculos.Name = "btnReportesVehiculos";
             this.btnReportesVehiculos.Size = new System.Drawing.Size(75, 23);
             this.btnReportesVehiculos.TabIndex = 63;
@@ -923,7 +924,7 @@
             // 
             // btnReportesProductos
             // 
-            this.btnReportesProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReportesProductos.BackColor = System.Drawing.Color.Transparent;
             this.btnReportesProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportesProductos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnReportesProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -939,7 +940,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.terminator;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -952,15 +953,15 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(307, 103);
+            this.button3.Location = new System.Drawing.Point(306, 103);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 23);
+            this.button3.Size = new System.Drawing.Size(85, 23);
             this.button3.TabIndex = 55;
             this.button3.Text = "Marca Tarjeta";
             this.button3.UseVisualStyleBackColor = false;
@@ -968,7 +969,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.xclipboard;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -981,7 +982,7 @@
             // 
             // pictureBox9
             // 
-            this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox9.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.users;
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -994,7 +995,7 @@
             // 
             // btnReporteFactura
             // 
-            this.btnReporteFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReporteFactura.BackColor = System.Drawing.Color.Transparent;
             this.btnReporteFactura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReporteFactura.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnReporteFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1010,7 +1011,7 @@
             // 
             // btnReporteClientes
             // 
-            this.btnReporteClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReporteClientes.BackColor = System.Drawing.Color.Transparent;
             this.btnReporteClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReporteClientes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnReporteClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1027,16 +1028,20 @@
             // panelUsuarios
             // 
             this.panelUsuarios.BackColor = System.Drawing.Color.Transparent;
+            this.panelUsuarios.BackgroundImage = global::Shopping_Buy_All.Properties.Resources._180_;
+            this.panelUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelUsuarios.Controls.Add(this.pictureBox1);
             this.panelUsuarios.Controls.Add(this.button1);
-            this.panelUsuarios.Location = new System.Drawing.Point(2, 369);
+            this.panelUsuarios.Location = new System.Drawing.Point(8, 328);
             this.panelUsuarios.Name = "panelUsuarios";
-            this.panelUsuarios.Size = new System.Drawing.Size(66, 86);
+            this.panelUsuarios.Size = new System.Drawing.Size(85, 95);
             this.panelUsuarios.TabIndex = 60;
             // 
             // panelEstadisticas
             // 
             this.panelEstadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelEstadisticas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelEstadisticas.BackgroundImage")));
+            this.panelEstadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelEstadisticas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelEstadisticas.Controls.Add(this.lblVolverEstadisticas);
             this.panelEstadisticas.Controls.Add(this.button13);
@@ -1069,7 +1074,7 @@
             this.panelEstadisticas.Controls.Add(this.pictureBox32);
             this.panelEstadisticas.Controls.Add(this.button25);
             this.panelEstadisticas.Controls.Add(this.button26);
-            this.panelEstadisticas.Location = new System.Drawing.Point(128, 76);
+            this.panelEstadisticas.Location = new System.Drawing.Point(123, 74);
             this.panelEstadisticas.Name = "panelEstadisticas";
             this.panelEstadisticas.Size = new System.Drawing.Size(552, 313);
             this.panelEstadisticas.TabIndex = 98;
@@ -1088,13 +1093,13 @@
             // 
             // button13
             // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button13.BackColor = System.Drawing.Color.Transparent;
             this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(465, 191);
+            this.button13.Location = new System.Drawing.Point(467, 193);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(86, 23);
             this.button13.TabIndex = 95;
@@ -1104,22 +1109,22 @@
             // 
             // button14
             // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button14.BackColor = System.Drawing.Color.Transparent;
             this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(395, 193);
+            this.button14.Location = new System.Drawing.Point(396, 193);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.Size = new System.Drawing.Size(69, 23);
             this.button14.TabIndex = 94;
             this.button14.Text = "Completar";
             this.button14.UseVisualStyleBackColor = false;
             // 
             // button15
             // 
-            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button15.BackColor = System.Drawing.Color.Transparent;
             this.button15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button15.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1134,7 +1139,7 @@
             // 
             // button16
             // 
-            this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button16.BackColor = System.Drawing.Color.Transparent;
             this.button16.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button16.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1149,7 +1154,7 @@
             // 
             // button17
             // 
-            this.button17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button17.BackColor = System.Drawing.Color.Transparent;
             this.button17.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button17.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1164,7 +1169,7 @@
             // 
             // button18
             // 
-            this.button18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button18.BackColor = System.Drawing.Color.Transparent;
             this.button18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button18.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1179,7 +1184,7 @@
             // 
             // button19
             // 
-            this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button19.BackColor = System.Drawing.Color.Transparent;
             this.button19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button19.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1194,7 +1199,7 @@
             // 
             // button20
             // 
-            this.button20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button20.BackColor = System.Drawing.Color.Transparent;
             this.button20.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button20.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1209,7 +1214,7 @@
             // 
             // button21
             // 
-            this.button21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button21.BackColor = System.Drawing.Color.Transparent;
             this.button21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button21.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1224,7 +1229,7 @@
             // 
             // pictureBox18
             // 
-            this.pictureBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox18.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox18.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.dropbox;
             this.pictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox18.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1237,7 +1242,7 @@
             // 
             // pictureBox19
             // 
-            this.pictureBox19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox19.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox19.Location = new System.Drawing.Point(401, 132);
@@ -1248,7 +1253,7 @@
             // 
             // pictureBox20
             // 
-            this.pictureBox20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox20.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox20.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox20.Location = new System.Drawing.Point(323, 130);
@@ -1259,7 +1264,7 @@
             // 
             // pictureBox21
             // 
-            this.pictureBox21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox21.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox21.Location = new System.Drawing.Point(241, 132);
@@ -1270,7 +1275,7 @@
             // 
             // pictureBox22
             // 
-            this.pictureBox22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox22.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox22.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox22.Location = new System.Drawing.Point(163, 132);
@@ -1281,7 +1286,7 @@
             // 
             // pictureBox23
             // 
-            this.pictureBox23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox23.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox23.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox23.Location = new System.Drawing.Point(88, 132);
@@ -1292,7 +1297,7 @@
             // 
             // pictureBox24
             // 
-            this.pictureBox24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox24.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox24.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox24.Location = new System.Drawing.Point(15, 132);
@@ -1303,7 +1308,7 @@
             // 
             // pictureBox25
             // 
-            this.pictureBox25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox25.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox25.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox25.Location = new System.Drawing.Point(481, 42);
@@ -1314,7 +1319,7 @@
             // 
             // pictureBox26
             // 
-            this.pictureBox26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox26.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox26.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox26.Location = new System.Drawing.Point(401, 42);
@@ -1325,7 +1330,7 @@
             // 
             // pictureBox27
             // 
-            this.pictureBox27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox27.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox27.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.gparted;
             this.pictureBox27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox27.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1352,7 +1357,7 @@
             // 
             // pictureBox28
             // 
-            this.pictureBox28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox28.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox28.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.vnote;
             this.pictureBox28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox28.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1364,7 +1369,7 @@
             // 
             // pictureBox29
             // 
-            this.pictureBox29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox29.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox29.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.icons;
             this.pictureBox29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox29.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1376,7 +1381,7 @@
             // 
             // button22
             // 
-            this.button22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button22.BackColor = System.Drawing.Color.Transparent;
             this.button22.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button22.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1391,7 +1396,7 @@
             // 
             // button23
             // 
-            this.button23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button23.BackColor = System.Drawing.Color.Transparent;
             this.button23.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button23.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1406,7 +1411,7 @@
             // 
             // pictureBox30
             // 
-            this.pictureBox30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox30.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox30.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox30.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox30.Location = new System.Drawing.Point(323, 42);
@@ -1417,7 +1422,7 @@
             // 
             // button24
             // 
-            this.button24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button24.BackColor = System.Drawing.Color.Transparent;
             this.button24.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button24.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1432,7 +1437,7 @@
             // 
             // pictureBox31
             // 
-            this.pictureBox31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox31.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox31.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.xclipboard;
             this.pictureBox31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox31.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1445,7 +1450,7 @@
             // 
             // pictureBox32
             // 
-            this.pictureBox32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox32.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox32.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.users;
             this.pictureBox32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox32.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1458,7 +1463,7 @@
             // 
             // button25
             // 
-            this.button25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button25.BackColor = System.Drawing.Color.Transparent;
             this.button25.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button25.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1474,7 +1479,7 @@
             // 
             // button26
             // 
-            this.button26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button26.BackColor = System.Drawing.Color.Transparent;
             this.button26.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button26.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1488,6 +1493,38 @@
             this.button26.UseVisualStyleBackColor = false;
             this.button26.Click += new System.EventHandler(this.EstadisticasClientes_Click);
             // 
+            // btnAdmin
+            // 
+            this.btnAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmin.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Location = new System.Drawing.Point(18, 424);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(64, 24);
+            this.btnAdmin.TabIndex = 99;
+            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // btnAdmin2
+            // 
+            this.btnAdmin2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAdmin2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmin2.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnAdmin2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin2.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin2.Location = new System.Drawing.Point(18, 424);
+            this.btnAdmin2.Name = "btnAdmin2";
+            this.btnAdmin2.Size = new System.Drawing.Size(64, 24);
+            this.btnAdmin2.TabIndex = 100;
+            this.btnAdmin2.Text = "Admin";
+            this.btnAdmin2.UseVisualStyleBackColor = false;
+            this.btnAdmin2.Click += new System.EventHandler(this.btnAdmin2_Click);
+            // 
             // Logged
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1496,6 +1533,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.panelEstadisticas);
             this.Controls.Add(this.MenuReportes);
             this.Controls.Add(this.panelUsuarios);
@@ -1505,6 +1543,7 @@
             this.Controls.Add(this.LabelBienvenido);
             this.Controls.Add(this.btnMenu2);
             this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.btnAdmin2);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -1516,10 +1555,10 @@
             this.Text = "Logged";
             this.Load += new System.EventHandler(this.Logged_Load);
             this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTarjetas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Estadisticas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureTarjetas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAutomoviles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLocales)).EndInit();
@@ -1528,15 +1567,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MenuReportes.ResumeLayout(false);
             this.MenuReportes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BotonUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReportes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
@@ -1577,13 +1616,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureAutomoviles;
-        private System.Windows.Forms.PictureBox pictureTarjetas;
         private System.Windows.Forms.PictureBox pictureProductos;
         private System.Windows.Forms.PictureBox pictureLocales;
         private System.Windows.Forms.PictureBox pictureProfesiones;
         private System.Windows.Forms.PictureBox pictureClientes;
         private System.Windows.Forms.Button btnVehiculos;
-        private System.Windows.Forms.Button btnMarcasTarjetas;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnLocales;
         private System.Windows.Forms.Button btnProfesiones;
@@ -1600,18 +1637,14 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button btnReportesLocales;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox BotonUsuarios;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBoxMenuReportes;
         private System.Windows.Forms.Label Reportes;
         private System.Windows.Forms.PictureBox pictureBox16;
@@ -1660,5 +1693,13 @@
         private System.Windows.Forms.PictureBox pictureBox32;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btnReportesLocales;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureTarjetas;
+        private System.Windows.Forms.Button btnMarcasTarjetas;
+        private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Button btnAdmin2;
     }
 }

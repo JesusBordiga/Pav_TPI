@@ -432,14 +432,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Totales\AccesoDatosClientesTotales.cs">
-      <DependentUpon>AccesoDatosClientesTotales.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Totales\AccesoDatosClientesTotales.Designer.cs">
-      <DependentUpon>AccesoDatosClientesTotales.xsd</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\ReporteEstadisticasClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -816,7 +808,6 @@
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_EstadoCivil\EstadisticasClientesEstadoCivil.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_TipoDocumento\EstadisticasClientesTipoDocumento.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Sexo\EstadisticasClientesSexo.rdlc" />
-    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Totales\EstadisticaClientesTotales.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\ReporteEstadisticasClientes.resx">
       <DependentUpon>ReporteEstadisticasClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -985,17 +976,6 @@
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Sexo\AccesoDatosSexo.xss">
       <DependentUpon>AccesoDatosSexo.xsd</DependentUpon>
     </None>
-    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Totales\AccesoDatosClientesTotales.xsc">
-      <DependentUpon>AccesoDatosClientesTotales.xsd</DependentUpon>
-    </None>
-    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Totales\AccesoDatosClientesTotales.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AccesoDatosClientesTotales.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Totales\AccesoDatosClientesTotales.xss">
-      <DependentUpon>AccesoDatosClientesTotales.xsd</DependentUpon>
-    </None>
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\EstadisticasFacturacion.xsc">
       <DependentUpon>EstadisticasFacturacion.xsd</DependentUpon>
     </None>
@@ -1089,6 +1069,11 @@
     <None Include="Resources\dropbox.png" />
     <None Include="Resources\sublime.png" />
     <None Include="Resources\typora.png" />
+    <None Include="Resources\preferences-system-windows-effect-flipswitch.png" />
+    <None Include="Resources\%2843%29.jpg" />
+    <None Include="Resources\1920.jpg" />
+    <None Include="Resources\%28Tutosinvhizible%29 %2845%29.jpg" />
+    <None Include="Resources\%28180%29.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

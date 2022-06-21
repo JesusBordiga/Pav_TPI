@@ -11,7 +11,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DatoSexo">
+    <DataSet Name="DatosSexo">
       <Query>
         <DataSourceName>EstadisticasClientes</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -58,7 +58,6 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.3175cm</Top>
             <Left>2.85104cm</Left>
             <Height>1.05861cm</Height>
             <Width>6.36292cm</Width>
@@ -73,7 +72,7 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>1.57cm</Top>
+            <Top>1.2525cm</Top>
             <Height>0cm</Height>
             <Width>12.60063cm</Width>
             <ZIndex>1</ZIndex>
@@ -119,6 +118,8 @@
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
@@ -417,10 +418,10 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DatoSexo</DataSetName>
-            <Top>1.64056cm</Top>
-            <Height>8.42836cm</Height>
-            <Width>12.60064cm</Width>
+            <DataSetName>DatosSexo</DataSetName>
+            <Top>1.32306cm</Top>
+            <Height>7.74044cm</Height>
+            <Width>12.60063cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -432,7 +433,7 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>3.96414in</Height>
+        <Height>3.56831in</Height>
         <Style />
       </Body>
       <Width>4.96088in</Width>
