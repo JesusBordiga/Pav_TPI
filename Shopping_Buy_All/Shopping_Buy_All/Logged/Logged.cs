@@ -15,6 +15,7 @@ using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesProductos;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasClientes;
 using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaudacion.RecaudacionPorMes;
 using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaudacion;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesLocales;
 
 namespace Shopping_Buy_All
 {
@@ -142,6 +143,12 @@ namespace Shopping_Buy_All
             ReporteUsuarios reporteUsuarios = new ReporteUsuarios();
             reporteUsuarios.Show();
         }
+
+        private void btnReportesLocales_Click(object sender, EventArgs e)
+        {
+            ReporteLocales reportelocales = new ReporteLocales();
+            reportelocales.Show();
+        }
         //ACCIONES DE REPORTE
         private void pictureBoxMenuReportes_MouseHover(object sender, EventArgs e)
         {
@@ -186,6 +193,7 @@ namespace Shopping_Buy_All
             VentanaRecaudacion ventanaRecaudacion = new VentanaRecaudacion();
             ventanaRecaudacion.Show();
         }
+        
 
         //ACCIONES DE ESTADISTICAS
         private void btnEstadisticas_Click(object sender, EventArgs e)
@@ -207,5 +215,7 @@ namespace Shopping_Buy_All
             panelEstadisticas.Visible = false;
 
         }
+
+        
     }
 }

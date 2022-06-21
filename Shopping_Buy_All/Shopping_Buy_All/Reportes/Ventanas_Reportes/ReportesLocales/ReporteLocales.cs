@@ -73,7 +73,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesLocales
             return true;
         }
 
-        private void btn_buscar01_Click_1(object sender, EventArgs e)
+        private void btn_buscar01_Click(object sender, EventArgs e)
         {
             if (validarSeleccion())
             {
@@ -93,9 +93,5 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesLocales
                 MessageBox.Show("Seleccione una restricción!", "Error");
             }
         }
-
-
-
-
     }
 }

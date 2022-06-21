@@ -65,7 +65,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnReportesLocales = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
@@ -568,7 +568,7 @@
             this.MenuReportes.Controls.Add(this.button8);
             this.MenuReportes.Controls.Add(this.button7);
             this.MenuReportes.Controls.Add(this.button6);
-            this.MenuReportes.Controls.Add(this.button5);
+            this.MenuReportes.Controls.Add(this.btnReportesLocales);
             this.MenuReportes.Controls.Add(this.button4);
             this.MenuReportes.Controls.Add(this.button2);
             this.MenuReportes.Controls.Add(this.pictureBox15);
@@ -699,20 +699,21 @@
             this.button6.Text = "Completar";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnReportesLocales
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(7, 193);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 89;
-            this.button5.Text = "Completar";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnReportesLocales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReportesLocales.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportesLocales.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReportesLocales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportesLocales.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportesLocales.ForeColor = System.Drawing.Color.White;
+            this.btnReportesLocales.Location = new System.Drawing.Point(7, 193);
+            this.btnReportesLocales.Name = "btnReportesLocales";
+            this.btnReportesLocales.Size = new System.Drawing.Size(75, 23);
+            this.btnReportesLocales.TabIndex = 89;
+            this.btnReportesLocales.Text = "Locales";
+            this.btnReportesLocales.UseVisualStyleBackColor = false;
+            this.btnReportesLocales.Click += new System.EventHandler(this.btnReportesLocales_Click);
             // 
             // button4
             // 
@@ -815,6 +816,7 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox7.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.software_manager;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Location = new System.Drawing.Point(15, 132);
@@ -822,6 +824,7 @@
             this.pictureBox7.Size = new System.Drawing.Size(58, 55);
             this.pictureBox7.TabIndex = 80;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.btnReportesLocales_Click);
             // 
             // BotonUsuarios
             // 
@@ -1066,7 +1069,7 @@
             this.panelEstadisticas.Controls.Add(this.pictureBox32);
             this.panelEstadisticas.Controls.Add(this.button25);
             this.panelEstadisticas.Controls.Add(this.button26);
-            this.panelEstadisticas.Location = new System.Drawing.Point(128, 76);
+            this.panelEstadisticas.Location = new System.Drawing.Point(128, 84);
             this.panelEstadisticas.Name = "panelEstadisticas";
             this.panelEstadisticas.Size = new System.Drawing.Size(552, 313);
             this.panelEstadisticas.TabIndex = 98;
@@ -1492,8 +1495,8 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelEstadisticas);
             this.Controls.Add(this.MenuReportes);
+            this.Controls.Add(this.panelEstadisticas);
             this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.labelHora);
@@ -1596,7 +1599,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnReportesLocales;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox15;
