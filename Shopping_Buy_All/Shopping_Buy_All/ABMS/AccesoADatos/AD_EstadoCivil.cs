@@ -192,6 +192,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 "WHERE C.Borrado = 0 and T.Borrado = 0 " +
                 "GROUP BY T.NombreEstadoCivil " +
                 "ORDER BY 'CantidadClientes' DESC";
+
             return _DB.Consultar(consulta);
         }
     }

@@ -1069,7 +1069,7 @@
             this.panelEstadisticas.Controls.Add(this.pictureBox32);
             this.panelEstadisticas.Controls.Add(this.button25);
             this.panelEstadisticas.Controls.Add(this.button26);
-            this.panelEstadisticas.Location = new System.Drawing.Point(128, 84);
+            this.panelEstadisticas.Location = new System.Drawing.Point(128, 76);
             this.panelEstadisticas.Name = "panelEstadisticas";
             this.panelEstadisticas.Size = new System.Drawing.Size(552, 313);
             this.panelEstadisticas.TabIndex = 98;
@@ -1225,6 +1225,7 @@
             // pictureBox18
             // 
             this.pictureBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox18.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.dropbox;
             this.pictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox18.Location = new System.Drawing.Point(481, 130);
@@ -1495,8 +1496,8 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.MenuReportes);
             this.Controls.Add(this.panelEstadisticas);
+            this.Controls.Add(this.MenuReportes);
             this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.labelHora);

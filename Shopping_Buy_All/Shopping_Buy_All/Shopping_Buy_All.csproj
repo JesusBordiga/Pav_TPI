@@ -815,7 +815,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_EstadoCivil\EstadisticasClientesEstadoCivil.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_TipoDocumento\EstadisticasClientesTipoDocumento.rdlc" />
-    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Sexo\EstadisticaClientesSexo.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Sexo\EstadisticasClientesSexo.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Totales\EstadisticaClientesTotales.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\ReporteEstadisticasClientes.resx">
       <DependentUpon>ReporteEstadisticasClientes.cs</DependentUpon>
@@ -1086,6 +1086,9 @@
     <None Include="Resources\1315084_less_minus_icon.png" />
     <None Include="Resources\372920_less_linecon_minus_remove_round_icon.png" />
     <None Include="Resources\1315083_add_plus_icon.png" />
+    <None Include="Resources\dropbox.png" />
+    <None Include="Resources\sublime.png" />
+    <None Include="Resources\typora.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -133,6 +133,16 @@ namespace Shopping_Buy_All.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap dropbox {
+            get {
+                object obj = ResourceManager.GetObject("dropbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap fritzing {
             get {
                 object obj = ResourceManager.GetObject("fritzing", resourceCulture);
@@ -233,6 +243,16 @@ namespace Shopping_Buy_All.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap sublime {
+            get {
+                object obj = ResourceManager.GetObject("sublime", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap terminator {
             get {
                 object obj = ResourceManager.GetObject("terminator", resourceCulture);
@@ -246,6 +266,16 @@ namespace Shopping_Buy_All.Properties {
         public static System.Drawing.Bitmap Trash {
             get {
                 object obj = ResourceManager.GetObject("Trash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap typora {
+            get {
+                object obj = ResourceManager.GetObject("typora", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

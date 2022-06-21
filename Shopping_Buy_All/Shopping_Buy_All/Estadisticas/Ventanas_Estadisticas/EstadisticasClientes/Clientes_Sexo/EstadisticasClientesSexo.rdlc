@@ -11,24 +11,24 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DatosSexo">
+    <DataSet Name="DatoSexo">
       <Query>
         <DataSourceName>EstadisticasClientes</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Nombre Sexo">
-          <DataField>Nombre Sexo</DataField>
+        <Field Name="NombreSexo">
+          <DataField>NombreSexo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Cantidad">
-          <DataField>Cantidad</DataField>
+        <Field Name="CantidadClientes">
+          <DataField>CantidadClientes</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>EstadisticasClientes</rd:DataSetName>
-        <rd:SchemaPath>G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\Estadisticas\Ventanas_Reportes\EstadisticasClientes\EstadisticasClientes.xsd</rd:SchemaPath>
+        <rd:SchemaPath>G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_Sexo\AccesoDatosSexo.xsd</rd:SchemaPath>
         <rd:TableName>Clientes por Sexo</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -90,32 +90,32 @@
                 <ChartMember>
                   <Group Name="Chart8_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Nombre Sexo.Value</GroupExpression>
+                      <GroupExpression>=Fields!NombreSexo.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Nombre Sexo.Value</Value>
+                      <Value>=Fields!NombreSexo.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Nombre Sexo.Value</Label>
+                  <Label>=Fields!NombreSexo.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Cantidad</Label>
+                  <Label>Cantidad Clientes</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Cantidad">
+                <ChartSeries Name="CantidadClientes">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!Cantidad.Value)</Y>
+                        <Y>=Sum(Fields!CantidadClientes.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -417,11 +417,10 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DatosSexo</DataSetName>
-            <Top>2.63934cm</Top>
-            <Left>1.87382cm</Left>
-            <Height>6.32623cm</Height>
-            <Width>8.01215cm</Width>
+            <DataSetName>DatoSexo</DataSetName>
+            <Top>1.64056cm</Top>
+            <Height>8.42836cm</Height>
+            <Width>12.60064cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>

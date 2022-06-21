@@ -279,9 +279,9 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Clientes_por_SexoDataTable : global::System.Data.TypedTableBase<Clientes_por_SexoRow> {
             
-            private global::System.Data.DataColumn columnNombre_Sexo;
+            private global::System.Data.DataColumn columnNombreSexo;
             
-            private global::System.Data.DataColumn columnCantidad;
+            private global::System.Data.DataColumn columnCantidadClientes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -318,17 +318,17 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Nombre_SexoColumn {
+            public global::System.Data.DataColumn NombreSexoColumn {
                 get {
-                    return this.columnNombre_Sexo;
+                    return this.columnNombreSexo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CantidadColumn {
+            public global::System.Data.DataColumn CantidadClientesColumn {
                 get {
-                    return this.columnCantidad;
+                    return this.columnCantidadClientes;
                 }
             }
             
@@ -369,11 +369,11 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Clientes_por_SexoRow AddClientes_por_SexoRow(string Nombre_Sexo, int Cantidad) {
+            public Clientes_por_SexoRow AddClientes_por_SexoRow(string NombreSexo, int CantidadClientes) {
                 Clientes_por_SexoRow rowClientes_por_SexoRow = ((Clientes_por_SexoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Nombre_Sexo,
-                        Cantidad};
+                        NombreSexo,
+                        CantidadClientes};
                 rowClientes_por_SexoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowClientes_por_SexoRow);
                 return rowClientes_por_SexoRow;
@@ -396,17 +396,17 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnNombre_Sexo = base.Columns["Nombre Sexo"];
-                this.columnCantidad = base.Columns["Cantidad"];
+                this.columnNombreSexo = base.Columns["NombreSexo"];
+                this.columnCantidadClientes = base.Columns["CantidadClientes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnNombre_Sexo = new global::System.Data.DataColumn("Nombre Sexo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre_Sexo);
-                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantidad);
+                this.columnNombreSexo = new global::System.Data.DataColumn("NombreSexo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreSexo);
+                this.columnCantidadClientes = new global::System.Data.DataColumn("CantidadClientes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidadClientes);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -549,58 +549,59 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Nombre_Sexo {
+            public string NombreSexo {
                 get {
                     try {
-                        return ((string)(this[this.tableClientes_por_Sexo.Nombre_SexoColumn]));
+                        return ((string)(this[this.tableClientes_por_Sexo.NombreSexoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre Sexo\' de la tabla \'Clientes por Sexo\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreSexo\' de la tabla \'Clientes por Sexo\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableClientes_por_Sexo.Nombre_SexoColumn] = value;
+                    this[this.tableClientes_por_Sexo.NombreSexoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Cantidad {
+            public int CantidadClientes {
                 get {
                     try {
-                        return ((int)(this[this.tableClientes_por_Sexo.CantidadColumn]));
+                        return ((int)(this[this.tableClientes_por_Sexo.CantidadClientesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad\' de la tabla \'Clientes por Sexo\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CantidadClientes\' de la tabla \'Clientes por Sexo\' es DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableClientes_por_Sexo.CantidadColumn] = value;
+                    this[this.tableClientes_por_Sexo.CantidadClientesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNombre_SexoNull() {
-                return this.IsNull(this.tableClientes_por_Sexo.Nombre_SexoColumn);
+            public bool IsNombreSexoNull() {
+                return this.IsNull(this.tableClientes_por_Sexo.NombreSexoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNombre_SexoNull() {
-                this[this.tableClientes_por_Sexo.Nombre_SexoColumn] = global::System.Convert.DBNull;
+            public void SetNombreSexoNull() {
+                this[this.tableClientes_por_Sexo.NombreSexoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCantidadNull() {
-                return this.IsNull(this.tableClientes_por_Sexo.CantidadColumn);
+            public bool IsCantidadClientesNull() {
+                return this.IsNull(this.tableClientes_por_Sexo.CantidadClientesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCantidadNull() {
-                this[this.tableClientes_por_Sexo.CantidadColumn] = global::System.Convert.DBNull;
+            public void SetCantidadClientesNull() {
+                this[this.tableClientes_por_Sexo.CantidadClientesColumn] = global::System.Convert.DBNull;
             }
         }
         

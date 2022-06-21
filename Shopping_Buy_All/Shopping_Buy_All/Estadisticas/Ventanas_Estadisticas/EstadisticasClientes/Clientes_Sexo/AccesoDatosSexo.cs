@@ -29,3 +29,15 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClient
         }
     }
 }
+
+namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Clientes_Sexo
+{
+
+
+    partial class EstadisticasClientes
+    {
+        partial class Clientes_por_SexoDataTable
+        {
+        }
+    }
+}

@@ -13,6 +13,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
     public class AD_Sexo
     {
+        AccesoADatos _DB = new AccesoADatos();
         //SEXO LOAD
         public static object obtenerDatosSexo()
         {
@@ -182,6 +183,16 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             {
                 cn.Close();
             }
+        }
+
+        public DataTable ObtenerClientesPorSex()
+        {
+            string consulta = "SELECT T.NombreSexo, COUNT(C.NroDocumento) 'CantidadClientes' F" +
+                "ROM TipoSexo T JOIN Clientes C on C.TipoDocumento = T.TipoSexo " +
+                "WHERE C.Borrado = 0 and T.Borrado = 0 " +
+                "GROUP BY T.NombreSexo  " +
+                "ORDER BY 'CantidadClientes' DESC";
+            return _DB.Consultar(consulta);
         }
     }
 }
