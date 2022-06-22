@@ -281,13 +281,13 @@
             // 
             // btnMarcasTarjetas
             // 
-            this.btnMarcasTarjetas.BackColor = System.Drawing.Color.Transparent;
+            this.btnMarcasTarjetas.BackColor = System.Drawing.Color.DimGray;
             this.btnMarcasTarjetas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMarcasTarjetas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnMarcasTarjetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMarcasTarjetas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarcasTarjetas.ForeColor = System.Drawing.Color.White;
-            this.btnMarcasTarjetas.Location = new System.Drawing.Point(112, 160);
+            this.btnMarcasTarjetas.Location = new System.Drawing.Point(112, 162);
             this.btnMarcasTarjetas.Name = "btnMarcasTarjetas";
             this.btnMarcasTarjetas.Size = new System.Drawing.Size(106, 23);
             this.btnMarcasTarjetas.TabIndex = 101;
@@ -296,7 +296,7 @@
             // 
             // button12
             // 
-            this.button12.BackColor = System.Drawing.Color.Transparent;
+            this.button12.BackColor = System.Drawing.Color.DimGray;
             this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -338,13 +338,13 @@
             // 
             // btnReportes
             // 
-            this.btnReportes.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportes.BackColor = System.Drawing.Color.DimGray;
             this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.Location = new System.Drawing.Point(126, 256);
+            this.btnReportes.Location = new System.Drawing.Point(132, 256);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(75, 23);
             this.btnReportes.TabIndex = 57;
@@ -367,7 +367,7 @@
             // 
             // buttonFacturacion
             // 
-            this.buttonFacturacion.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFacturacion.BackColor = System.Drawing.Color.DimGray;
             this.buttonFacturacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonFacturacion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -448,7 +448,7 @@
             // 
             // btnVehiculos
             // 
-            this.btnVehiculos.BackColor = System.Drawing.Color.Transparent;
+            this.btnVehiculos.BackColor = System.Drawing.Color.DimGray;
             this.btnVehiculos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVehiculos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -464,7 +464,7 @@
             // 
             // btnProductos
             // 
-            this.btnProductos.BackColor = System.Drawing.Color.Transparent;
+            this.btnProductos.BackColor = System.Drawing.Color.DimGray;
             this.btnProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -480,7 +480,7 @@
             // 
             // btnLocales
             // 
-            this.btnLocales.BackColor = System.Drawing.Color.Transparent;
+            this.btnLocales.BackColor = System.Drawing.Color.DimGray;
             this.btnLocales.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLocales.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLocales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -496,7 +496,7 @@
             // 
             // btnProfesiones
             // 
-            this.btnProfesiones.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfesiones.BackColor = System.Drawing.Color.DimGray;
             this.btnProfesiones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProfesiones.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnProfesiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -512,7 +512,7 @@
             // 
             // btnClientes
             // 
-            this.btnClientes.BackColor = System.Drawing.Color.Transparent;
+            this.btnClientes.BackColor = System.Drawing.Color.DimGray;
             this.btnClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClientes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -541,7 +541,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackColor = System.Drawing.Color.DimGray;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -597,14 +597,14 @@
             this.MenuReportes.Controls.Add(this.pictureBox9);
             this.MenuReportes.Controls.Add(this.btnReporteFactura);
             this.MenuReportes.Controls.Add(this.btnReporteClientes);
-            this.MenuReportes.Location = new System.Drawing.Point(122, 73);
+            this.MenuReportes.Location = new System.Drawing.Point(123, 72);
             this.MenuReportes.Name = "MenuReportes";
             this.MenuReportes.Size = new System.Drawing.Size(552, 315);
             this.MenuReportes.TabIndex = 59;
             // 
             // btnReportesLocales
             // 
-            this.btnReportesLocales.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportesLocales.BackColor = System.Drawing.Color.DimGray;
             this.btnReportesLocales.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportesLocales.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnReportesLocales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -631,7 +631,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackColor = System.Drawing.Color.DimGray;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -670,7 +670,7 @@
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.Color.Transparent;
+            this.button11.BackColor = System.Drawing.Color.DimGray;
             this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -685,7 +685,7 @@
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.BackColor = System.Drawing.Color.DimGray;
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -700,7 +700,7 @@
             // 
             // button9
             // 
-            this.button9.BackColor = System.Drawing.Color.Transparent;
+            this.button9.BackColor = System.Drawing.Color.DimGray;
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -715,7 +715,7 @@
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.BackColor = System.Drawing.Color.DimGray;
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -730,7 +730,7 @@
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.BackColor = System.Drawing.Color.DimGray;
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -745,7 +745,7 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.BackColor = System.Drawing.Color.DimGray;
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -760,7 +760,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.BackColor = System.Drawing.Color.DimGray;
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -908,7 +908,7 @@
             // 
             // btnReportesVehiculos
             // 
-            this.btnReportesVehiculos.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportesVehiculos.BackColor = System.Drawing.Color.DimGray;
             this.btnReportesVehiculos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportesVehiculos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnReportesVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -924,7 +924,7 @@
             // 
             // btnReportesProductos
             // 
-            this.btnReportesProductos.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportesProductos.BackColor = System.Drawing.Color.DimGray;
             this.btnReportesProductos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportesProductos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnReportesProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -953,7 +953,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackColor = System.Drawing.Color.DimGray;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -995,7 +995,7 @@
             // 
             // btnReporteFactura
             // 
-            this.btnReporteFactura.BackColor = System.Drawing.Color.Transparent;
+            this.btnReporteFactura.BackColor = System.Drawing.Color.DimGray;
             this.btnReporteFactura.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReporteFactura.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnReporteFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1011,7 +1011,7 @@
             // 
             // btnReporteClientes
             // 
-            this.btnReporteClientes.BackColor = System.Drawing.Color.Transparent;
+            this.btnReporteClientes.BackColor = System.Drawing.Color.DimGray;
             this.btnReporteClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReporteClientes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnReporteClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1074,7 +1074,7 @@
             this.panelEstadisticas.Controls.Add(this.pictureBox32);
             this.panelEstadisticas.Controls.Add(this.button25);
             this.panelEstadisticas.Controls.Add(this.button26);
-            this.panelEstadisticas.Location = new System.Drawing.Point(123, 74);
+            this.panelEstadisticas.Location = new System.Drawing.Point(123, 73);
             this.panelEstadisticas.Name = "panelEstadisticas";
             this.panelEstadisticas.Size = new System.Drawing.Size(552, 313);
             this.panelEstadisticas.TabIndex = 98;
@@ -1093,7 +1093,7 @@
             // 
             // button13
             // 
-            this.button13.BackColor = System.Drawing.Color.Transparent;
+            this.button13.BackColor = System.Drawing.Color.DimGray;
             this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1109,7 +1109,7 @@
             // 
             // button14
             // 
-            this.button14.BackColor = System.Drawing.Color.Transparent;
+            this.button14.BackColor = System.Drawing.Color.DimGray;
             this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1124,7 +1124,7 @@
             // 
             // button15
             // 
-            this.button15.BackColor = System.Drawing.Color.Transparent;
+            this.button15.BackColor = System.Drawing.Color.DimGray;
             this.button15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button15.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1139,7 +1139,7 @@
             // 
             // button16
             // 
-            this.button16.BackColor = System.Drawing.Color.Transparent;
+            this.button16.BackColor = System.Drawing.Color.DimGray;
             this.button16.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button16.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1154,7 +1154,7 @@
             // 
             // button17
             // 
-            this.button17.BackColor = System.Drawing.Color.Transparent;
+            this.button17.BackColor = System.Drawing.Color.DimGray;
             this.button17.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button17.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1169,7 +1169,7 @@
             // 
             // button18
             // 
-            this.button18.BackColor = System.Drawing.Color.Transparent;
+            this.button18.BackColor = System.Drawing.Color.DimGray;
             this.button18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button18.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1184,7 +1184,7 @@
             // 
             // button19
             // 
-            this.button19.BackColor = System.Drawing.Color.Transparent;
+            this.button19.BackColor = System.Drawing.Color.DimGray;
             this.button19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button19.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1199,7 +1199,7 @@
             // 
             // button20
             // 
-            this.button20.BackColor = System.Drawing.Color.Transparent;
+            this.button20.BackColor = System.Drawing.Color.DimGray;
             this.button20.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button20.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1214,7 +1214,7 @@
             // 
             // button21
             // 
-            this.button21.BackColor = System.Drawing.Color.Transparent;
+            this.button21.BackColor = System.Drawing.Color.DimGray;
             this.button21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button21.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1381,7 +1381,7 @@
             // 
             // button22
             // 
-            this.button22.BackColor = System.Drawing.Color.Transparent;
+            this.button22.BackColor = System.Drawing.Color.DimGray;
             this.button22.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button22.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1396,7 +1396,7 @@
             // 
             // button23
             // 
-            this.button23.BackColor = System.Drawing.Color.Transparent;
+            this.button23.BackColor = System.Drawing.Color.DimGray;
             this.button23.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button23.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1422,7 +1422,7 @@
             // 
             // button24
             // 
-            this.button24.BackColor = System.Drawing.Color.Transparent;
+            this.button24.BackColor = System.Drawing.Color.DimGray;
             this.button24.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button24.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1463,7 +1463,7 @@
             // 
             // button25
             // 
-            this.button25.BackColor = System.Drawing.Color.Transparent;
+            this.button25.BackColor = System.Drawing.Color.DimGray;
             this.button25.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button25.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1479,7 +1479,7 @@
             // 
             // button26
             // 
-            this.button26.BackColor = System.Drawing.Color.Transparent;
+            this.button26.BackColor = System.Drawing.Color.DimGray;
             this.button26.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button26.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
