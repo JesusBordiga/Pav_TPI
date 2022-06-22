@@ -12,6 +12,10 @@ namespace Shopping_Buy_All.Entidades
         public int TipoComercio { get; set; }
         public int Borrado { get; set; } = 0;
 
+        public Local()
+        {
+
+        }
 
         public Local( string nombreLocal, int tipoComercio, int borrado)
         {

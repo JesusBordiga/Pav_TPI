@@ -10,13 +10,16 @@ namespace Shopping_Buy_All.Entidades
     {
         public string userName { get; set; }
         public string password { get; set; }
-        public bool Active { get; set; } = true;
-        public DateTime DateLogin { get; set; } = DateTime.Now;
+        public int permiso{ get; set; }
 
+        public User()
+        {
+
+        }
 
         public User(string userName, string password)
         {
-            this.userName = userName;
+            this.userName = userName.ToLower();
             this.password = password;
         }
     }

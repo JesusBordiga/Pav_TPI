@@ -8,25 +8,60 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Shopping_Buy_All.ABMS.AccesoADatos;
 using Shopping_Buy_All.Entidades;
 namespace Shopping_Buy_All
 {
     public partial class Product_Delete : Form
     {
+        AD_Productos _datosProductos = new AD_Productos();
         public Product_Delete()
         {
             InitializeComponent();
-
-        }
-        private void Client_Delete_Load(object sender, EventArgs e)
-        {
             CargarTablaProductos();
+            labelEliminarproducto.Text = "Buscar Producto";
+            panelBuscar.Visible = false;
         }
-        private void Clean()
+        //ACCESO A BASE DE DATOS
+        private void CargarTablaProductos()
         {
-            textNameProduct.Text = "";
-            textCodeProduct.Text = "";
-            textPrice.Text = "";
+            try
+            {
+                tablaProductos.DataSource = _datosProductos.CargarTablaProductos();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error, no se pudo Cargar Tabla Productos");
+            }
+        }
+
+        //BOTONES
+        private void btnSearchProduct_Click_1(object sender, EventArgs e)
+        {
+            if (textCodeProduct.Text.Equals(""))
+            {
+                MessageBox.Show("Error, Completar campos!!");
+            }
+            else
+            {
+                DataTable productos = _datosProductos.Buscar_Producto(textCodeProduct.Text.Trim());
+                if (productos.Rows.Count == 1)
+                {
+                    labelEliminarproducto.Text = "Eliminar Producto";
+                    Producto p = new Producto();
+                    p.NombreProducto = productos.Rows[0]["NombreProducto"].ToString();
+                    p.CodigoProducto = (int)productos.Rows[0]["Codigo_Producto"];
+                    p.PrecioProducto = (float)Convert.ToDouble(productos.Rows[0]["Precio"]);
+                    Cargar_Campos(p);
+                    panelBuscar.Visible = true;
+
+                }
+                else
+                {
+                    MessageBox.Show("Error! \n No se encontró el producto");
+                }
+            }
         }
         private void Cargar_Campos(Producto p)
         {
@@ -36,82 +71,34 @@ namespace Shopping_Buy_All
             textNameProduct.Text = p.NombreProducto;
             //Cargar Precio
             textPrice.Text = p.PrecioProducto.ToString();
+            textCodeProduct.Enabled = false;
+            textNameProduct.Enabled = false;
+            textPrice.Enabled = false;
         }
-
-        private void CargarTablaProductos()
+        private void btnClear_Click_1(object sender, EventArgs e)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            try
-            {
-                SqlCommand comand = new SqlCommand();
-                string consulta = "Select * FROM Productos WHERE Borrado like 0";
-
-                comand.Parameters.Clear();
-                comand.CommandType = CommandType.Text;
-                comand.CommandText = consulta;
-
-                cn.Open();
-                comand.Connection = cn;
-
-                DataTable tabla = new DataTable();
-
-                SqlDataAdapter da = new SqlDataAdapter(comand);
-                da.Fill(tabla);
-                tablaProductos.DataSource = tabla;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
+            Clean();
+            labelEliminarproducto.Text = "Buscar Producto";
+            panelBuscar.Visible = false;
         }
-        private Producto Buscar_Producto(string Code)
+
+        //FUNCIONES
+        public Producto CrearProducto(DataTable datosProducto)
         {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            Producto product = new Producto();
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT * FROM Productos WHERE Codigo_Producto like @codigoProducto AND Borrado like 0";
-
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@codigoProducto", Code);
-
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                SqlDataReader DataReader = cmd.ExecuteReader();
-                if (DataReader != null && DataReader.Read())
-                {
-                    product.CodigoProducto = int.Parse(DataReader["Codigo_Producto"].ToString());
-                    product.NombreProducto = DataReader["NombreProducto"].ToString();
-                    product.PrecioProducto = float.Parse(DataReader["Precio"].ToString());
-
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return product;
-
-
+            Producto p = new Producto();
+            p.CodigoProducto = (int)datosProducto.Rows[0]["Codigo_Producto"];
+            p.PrecioProducto = (float)Convert.ToDouble(datosProducto.Rows[0]["Precio"]);
+            p.NombreProducto = datosProducto.Rows[0]["NombreProducto"].ToString();
+            return p;
         }
-
+        private void Clean()
+        {
+            textCodeProduct.Enabled = true;
+            textNameProduct.Text = "";
+            textCodeProduct.Text = "";
+            textPrice.Text = "";
+            labelEliminarproducto.Text = "Buscar Producto";
+        }
         private Producto ObtenerDatosProducto()
         {
             Producto p = new Producto();
@@ -123,114 +110,40 @@ namespace Shopping_Buy_All
             p.PrecioProducto = int.Parse(textPrice.Text.Trim());
             return p;
         }
-        private bool BorrarProducto(int Codigo,int Borrado)
+        private void tablaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-                string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-                SqlConnection cn = new SqlConnection(cadenaConexion);
-                bool resultado = false;
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "UPDATE Productos SET Borrado = @borrado WHERE Codigo_Producto Like @codigoProducto AND Borrado like 0";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@codigoProducto", Codigo);
-                cmd.Parameters.AddWithValue("@borrado", Borrado);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException)
-            {
-                throw;
-                
+                Clean();
+                labelEliminarproducto.Text = "Eliminar Producto";
+                int indice = e.RowIndex;
+                DataGridViewRow filaSeleccionada = tablaProductos.Rows[indice];
+                string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
+                DataTable producto = _datosProductos.Buscar_Producto(codigo);
+                if (producto.Rows.Count == 1)
+                {
+                    Producto p = CrearProducto(producto);
+                    Cargar_Campos(p);
+                    panelBuscar.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Error! \n No se encontró el producto");
+                }
             }
             catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    cn.Close();
-                }
-                return resultado;
+            {
+                MessageBox.Show("Error! \n Seleccione una casilla dentro de la tabla");
+            }
         }
-
         private void btnDeleteProduct_Click(object sender, EventArgs e)
-        {
+        {            
             Producto p = ObtenerDatosProducto();
-            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-            String mensajeCarga = (
-                  " |Codigo: " + p.CodigoProducto + "|" + "\n"
-                + " |Nombre: " + p.NombreProducto + "|" + "\n"
-                + " |Precio: " + p.PrecioProducto + "|" + "\n");
-
-            string titulo = "Información de Producto";
-
-            DialogResult result = MessageBox.Show(mensajeCarga, titulo, buttons);
-
-            if (result == DialogResult.OK)
-            {
-                MessageBox.Show("Borrado agregado con éxito!");
-                BorrarProducto(p.CodigoProducto,1);
-                Clean();
-                SearchPanel.Visible = true;
-                btnSearchProduct.Visible = true;
-                btnSerachProduct2.Visible = false;
-                CargarTablaProductos();
-            }
-            else
-            {
-                textNameProduct.Focus();
-            }
-        }
-
-        private void btnSearchProduct_Click_1(object sender, EventArgs e)
-        {
-            if (textCodeProduct.Text.Equals(""))
-            {
-                MessageBox.Show("Error, Completar campos!!");
-            }
-            else
-            {
-                Producto p = Buscar_Producto(textCodeProduct.Text);
-                Cargar_Campos(p);
-                SearchPanel.Visible = false;
-                btnSearchProduct.Visible = false;
-                btnSerachProduct2.Visible = true;
-            }
-        }
-
-        private void btnClear_Click_1(object sender, EventArgs e)
-        {
+            _datosProductos.BorrarProducto(p.CodigoProducto, 1);
+            CargarTablaProductos();
+            panelBuscar.Visible = false;
             Clean();
-            SearchPanel.Visible = true;
-            btnSearchProduct.Visible = true;
-        }
-
-        private void btnSerachProduct2_Click(object sender, EventArgs e)
-        {
-            Clean();
-            SearchPanel.Visible = true;
-            btnSearchProduct.Visible = true;
-            btnSerachProduct2.Visible = false;
-        }
-
-        private void tablaProductos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            Clean();
-            int indice = e.RowIndex;
-            DataGridViewRow filaSeleccionada = tablaProductos.Rows[indice];
-            string codigo = filaSeleccionada.Cells["Codigo"].Value.ToString();
-            Producto p = Buscar_Producto(codigo);
-            Cargar_Campos(p);
-            SearchPanel.Visible = false;
-            btnSearchProduct.Visible = false;
-            btnSerachProduct2.Visible = true;
-            
+            MessageBox.Show("Se borro el producto con éxito");
         }
     }
 }

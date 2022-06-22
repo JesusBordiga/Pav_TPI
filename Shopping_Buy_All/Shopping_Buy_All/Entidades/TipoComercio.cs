@@ -11,6 +11,10 @@ namespace Shopping_Buy_All.Entidades
         public string NombreTipoComercio { get; set; }
         public bool Borrado { get; set; } = false;
 
+        public TipoComercio()
+        {
+
+        }
 
         public TipoComercio(string nombreTipoComercio, bool borrado)
         {

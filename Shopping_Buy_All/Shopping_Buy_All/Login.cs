@@ -27,35 +27,30 @@ namespace Shopping_Buy_All
             }
             else
             {
-                string userName = TxtUser.Text;
+                string userName = TxtUser.Text.ToLower();
                 string password = TxtPassword.Text;
                 bool resultado = false;
+                User usu = new User(userName, password);
                 try
                 {
-                    resultado = Validate_Exist(userName, password);
+                    resultado = Validate_Exist(usu);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
 
-                    MessageBox.Show("Error, Base de datos no encontrada!");
+                    MessageBox.Show("Error, Base de datos no encontrada! \n" + ex.Message);
                 }
-
-                
                 if (resultado == true)
                 {
-                   User usu = new User (userName, password);
                    Logged LoggedWindow = new Logged(usu);
                    LoggedWindow.Show();
-                   this.Hide();
+                   Hide();
                 }
                 else
                 {
                     MessageBox.Show("Usuario Inexistente!");
                 }
             }
-
-
-
             ClearLogin();
         }
         private void ClearLogin()
@@ -63,7 +58,7 @@ namespace Shopping_Buy_All
             TxtUser.Text = "";
             TxtPassword.Text = "";
         }
-        private bool Validate_Exist(string userName, string password)
+        private bool Validate_Exist(User usu)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
@@ -72,11 +67,11 @@ namespace Shopping_Buy_All
             {
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "Select * FROM Users WHERE NombreDeUsuario like @nombreUsuario AND Password like @pass";
+                string consulta = "getUsuarioNoBorrado @nombreUsuario, @hash";
 
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombreUsuario", userName);
-                cmd.Parameters.AddWithValue("@pass", password);
+                cmd.Parameters.AddWithValue("@nombreUsuario", usu.userName);
+                cmd.Parameters.AddWithValue("@hash", Utils.UserToSHA256(usu.userName, usu.password));
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -90,7 +85,7 @@ namespace Shopping_Buy_All
 
                 if (table.Rows.Count == 1)
                 {
-
+                    usu.permiso = (int)table.Rows[0]["Permiso"];
                     return true;
                 }
                 else
@@ -100,7 +95,6 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally

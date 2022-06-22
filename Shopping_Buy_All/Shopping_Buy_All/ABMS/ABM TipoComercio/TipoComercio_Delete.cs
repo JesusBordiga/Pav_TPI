@@ -34,7 +34,7 @@ namespace Shopping_Buy_All
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Error! \n Hubo un error!");
             }
         }
         private void Clean()

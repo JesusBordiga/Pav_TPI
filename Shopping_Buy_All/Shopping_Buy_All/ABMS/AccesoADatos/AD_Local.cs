@@ -11,6 +11,8 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
     public class AD_Local
     {
+        AccesoADatos _DB = new AccesoADatos();
+        //LOCAL LOAD
         public static DataTable ObtenerTablaLocalReducida()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -45,7 +47,46 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 cn.Close();
             }
         }
+        public static bool Agregar_Local(Local l)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            bool resultado = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "agregarLocal";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Nombre", l.NombreLocal);
+                cmd.Parameters.AddWithValue("@TipoComercio", l.TipoComercio);
 
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                resultado = true;
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
+
+        }
+
+
+        //LOCAL MODIFY
         public static bool Buscar_Local(Local l)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -171,45 +212,6 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             return resultado;
 
         }
-
-        public static bool Agregar_Local(Local l)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "agregarLocal";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@Nombre", l.NombreLocal);
-                cmd.Parameters.AddWithValue("@TipoComercio", l.TipoComercio);
-
-
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return resultado;
-
-        }
-
         public static Local Buscar_LocalPorCodigo(string codigo)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -296,40 +298,6 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             }
         }
 
-        public static bool BorrarLocal(int Codigo)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            bool resultado = false;
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "BorrarLocal";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@Codigo", Codigo);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return resultado;
-        }
-
         public static bool Modificar_Local(string Codigo, Local l)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
@@ -365,6 +333,124 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
             }
             return resultado;
 
+        }
+
+        //LOCAL DELETE
+        public static bool BorrarLocal(int Codigo)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            bool resultado = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "BorrarLocal";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Codigo", Codigo);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                resultado = true;
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
+        }
+
+        //REPORTES LOCALES
+        public DataTable _Rpt_Local()
+        {
+            string consulta = "SELECT * FROM Locales WHERE Borrado = 0 ORDER BY 1";
+            return _DB.Consultar(consulta);
+        }
+        public DataTable _Rpt_Local(string letra)
+        {
+            string consulta = "SELECT * FROM Locales WHERE Borrado = 0 and Nombre LIKE '" + letra.Trim() + "%' ORDER BY Nombre";
+            return _DB.Consultar(consulta);
+
+        }
+
+        public static DataTable ObtenerEstadisticaLocalesPorRubro()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "select r.Nombre, COUNT(lc.Cod_Local) as Cantidad from LocalesporRubro lc inner join Rubros r on r.CodigoRubro = lc.Cod_Rubro group by r.Nombre";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static DataTable ObtenerEstadisticaLocalesPorTipoComercio()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand comand = new SqlCommand();
+                string consulta = "select t.NombreTipoComercio as Nombre, COUNT(lc.CodigoLocal) as Cantidad from Locales lc inner join TipoComercio t on t.Tipo_Comercio = lc.TipoComercio group by t.NombreTipoComercio";
+
+                comand.Parameters.Clear();
+                comand.CommandType = CommandType.Text;
+                comand.CommandText = consulta;
+
+                cn.Open();
+                comand.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(comand);
+                da.Fill(tabla);
+
+                return tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }
