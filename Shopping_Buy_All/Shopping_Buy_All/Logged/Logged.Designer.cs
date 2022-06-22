@@ -576,9 +576,9 @@
             this.MenuReportes.Controls.Add(this.pictureBox9);
             this.MenuReportes.Controls.Add(this.btnReporteFactura);
             this.MenuReportes.Controls.Add(this.btnReporteClientes);
-            this.MenuReportes.Location = new System.Drawing.Point(123, 78);
+            this.MenuReportes.Location = new System.Drawing.Point(129, 78);
             this.MenuReportes.Name = "MenuReportes";
-            this.MenuReportes.Size = new System.Drawing.Size(564, 315);
+            this.MenuReportes.Size = new System.Drawing.Size(554, 315);
             this.MenuReportes.TabIndex = 59;
             // 
             // btnReportesLocales
