@@ -12,53 +12,6 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
 {
     public class AD_TipoTarjeta
     {
-
-        public DataTable GetComprasPorTipo(string anio, string mes)
-        {
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
-            DataTable tabla = new DataTable();
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "SELECT TI.Nombre, COUNT(*) 'Cantidad' " +
-                    "FROM ComprasPorCliente C JOIN TarjetaXCliente T " +
-                    "ON (C.Numero_Tarjeta = T.NroTarjeta " +
-                    "AND C.Tipo_Documento = T.TipoDocumento " +
-                    "AND C.Numero_Documento = T.NroDocumento) " +
-                    "JOIN TipoTarjeta TI ON T.IdTipo = TI.idTipo " +
-                    "WHERE C.Borrado = 0 AND T.Borrado = 0 AND TI.Borrado = 0 " +
-                    "AND YEAR(FechaCompra) = @anio " +
-                    "AND MONTH(FechaCompra) = @mes " +
-                    "GROUP BY TI.Nombre, TI.idTipo " +
-                    "ORDER BY 'Cantidad' DESC";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@anio", anio);
-                cmd.Parameters.AddWithValue("@mes", mes);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(tabla);
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
-            }
-            finally
-            {
-                cn.Close();
-            }
-            return tabla;
-        }
-
         //TIPO TARJETA LOAD
         public static object obtenerDatosTipoTarjeta()
         {

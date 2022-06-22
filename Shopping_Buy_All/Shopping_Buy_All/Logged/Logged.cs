@@ -240,6 +240,7 @@ namespace Shopping_Buy_All
                 panelUsuarios.Visible = false;
         }
 
+<<<<<<< HEAD
         private void btnVentanaEstadsitica(object sender, EventArgs e)
         {
 
@@ -272,5 +273,8 @@ namespace Shopping_Buy_All
             EstadisticasTipoTarjeta ventanaEstadisticaTipoTarjeta = new EstadisticasTipoTarjeta();
             ventanaEstadisticaTipoTarjeta.Show();
         }
+=======
+        
+>>>>>>> parent of 6723a76 (Merge branch 'main' of https://github.com/JesusBordiga/Pav_TPI)
     }
 }
