@@ -1,4 +1,4 @@
-﻿using Shopping_Buy_All.Entidades;
+using Shopping_Buy_All.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -193,6 +193,75 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 "GROUP BY T.NombreSexo  " +
                 "ORDER BY 'CantidadClientes' DESC";
             return _DB.Consultar(consulta);
+        public static DataTable obtenerDatosSexo2()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                string consulta = "getTipoSexoNoBorrado";
+                command.Parameters.Clear();
+                command.CommandType = CommandType.Text;
+                command.CommandText = consulta;
+
+                cn.Open();
+                command.Connection = cn;
+                DataTable tabla = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(tabla);
+                return tabla;
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
+                throw;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! \n Hubo un error!");
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public static DataTable obtenerDatosTipoSexoQueEmpiezanPor(string letra)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                string consulta = "select * from TipoSexo where Borrado = 0 and NombreSexo like '" + letra.Trim() + "%' order by NombreSexo";
+                command.Parameters.Clear();
+                command.CommandType = CommandType.Text;
+                command.CommandText = consulta;
+
+                cn.Open();
+                command.Connection = cn;
+                DataTable tabla = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(tabla);
+                return tabla;
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error! \n Hubo un error con la base de datos!");
+                throw;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error! \n Hubo un error!");
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }

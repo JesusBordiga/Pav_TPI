@@ -1,4 +1,4 @@
-﻿namespace Shopping_Buy_All
+namespace Shopping_Buy_All
 {
     partial class Logged
     {
@@ -1326,9 +1326,9 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.MenuReportes);
             this.Controls.Add(this.panelEstadisticas);
             this.Controls.Add(this.btnAdmin);
+            this.Controls.Add(this.MenuReportes);
             this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.labelHora);
