@@ -642,6 +642,12 @@
     <Compile Include="Reportes\Ventanas_Reportes\ReportesProductos\ReporteProductos.Designer.cs">
       <DependentUpon>ReporteProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesRubro\ReporteRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesRubro\ReporteRubro.Designer.cs">
+      <DependentUpon>ReporteRubro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesUsuarios\ReporteUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -924,6 +930,10 @@
       <DependentUpon>ReporteProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesProductos\ReportProductos.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesRubro\ReporteRubro.resx">
+      <DependentUpon>ReporteRubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesRubro\ReportRubro.rdlc" />
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesUsuarios\ReporteUsuarios.resx">
       <DependentUpon>ReporteUsuarios.cs</DependentUpon>
     </EmbeddedResource>
