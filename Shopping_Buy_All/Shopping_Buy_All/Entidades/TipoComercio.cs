@@ -26,7 +26,5 @@ namespace Shopping_Buy_All.Entidades
         {
             this.NombreTipoComercio = nombreTipoComercio;
         }
-
-        public TipoComercio() { }
     }
 }

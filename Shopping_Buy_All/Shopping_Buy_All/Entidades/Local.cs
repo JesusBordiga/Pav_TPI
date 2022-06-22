@@ -30,9 +30,5 @@ namespace Shopping_Buy_All.Entidades
             this.TipoComercio = tipoComercio;
         }
 
-        public Local()
-        {
-
-        }
     }
 }
