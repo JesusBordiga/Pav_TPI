@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -461,6 +476,28 @@
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\ReporteEstadisticasFacturacion.Designer.cs">
       <DependentUpon>ReporteEstadisticasFacturacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalesPorRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalesPorRubro.Designer.cs">
+      <DependentUpon>EstadisticaLocalesPorRubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalPorRubro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadisticaLocalPorRubro.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\DatosEstadisticosTipoComercio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticosTipoComercio.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\EstadisticasTipoComercio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\EstadisticasTipoComercio.Designer.cs">
+      <DependentUpon>EstadisticasTipoComercio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\DatosRecaudacion.cs">
       <DependentUpon>DatosRecaudacion.xsd</DependentUpon>
     </Compile>
@@ -837,6 +874,10 @@
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\ReporteEstadisticasFacturacion.resx">
       <DependentUpon>ReporteEstadisticasFacturacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalesPorRubro.resx">
+      <DependentUpon>EstadisticaLocalesPorRubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalPorRubro.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorLocal\RecaudacionPorLocal.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorLocal\RecPorLocal.resx">
       <DependentUpon>RecPorLocal.cs</DependentUpon>
@@ -852,6 +893,10 @@
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\VentanaRecaudacion.resx">
       <DependentUpon>VentanaRecaudacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\EstadisticasTipoComercio.resx">
+      <DependentUpon>EstadisticasTipoComercio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\EstadisticaTipoComercio.rdlc" />
     <EmbeddedResource Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.resx">
       <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
     </EmbeddedResource>
@@ -1028,6 +1073,17 @@
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\EstadisticasFacturacion.xss">
       <DependentUpon>EstadisticasFacturacion.xsd</DependentUpon>
     </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalPorRubro.xsc">
+      <DependentUpon>EstadisticaLocalPorRubro.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalPorRubro.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstadisticaLocalPorRubro.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalPorRubro.xss">
+      <DependentUpon>EstadisticaLocalPorRubro.xsd</DependentUpon>
+    </None>
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\DatosRecaudacion.xsc">
       <DependentUpon>DatosRecaudacion.xsd</DependentUpon>
     </None>
@@ -1038,6 +1094,17 @@
     </None>
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\DatosRecaudacion.xss">
       <DependentUpon>DatosRecaudacion.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\DatosEstadisticosTipoComercio.xsc">
+      <DependentUpon>DatosEstadisticosTipoComercio.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\DatosEstadisticosTipoComercio.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticosTipoComercio.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\DatosEstadisticosTipoComercio.xss">
+      <DependentUpon>DatosEstadisticosTipoComercio.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -1121,6 +1188,18 @@
     <None Include="Resources\1315084_less_minus_icon.png" />
     <None Include="Resources\372920_less_linecon_minus_remove_round_icon.png" />
     <None Include="Resources\1315083_add_plus_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
