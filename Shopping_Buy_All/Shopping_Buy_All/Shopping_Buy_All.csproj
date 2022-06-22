@@ -484,6 +484,32 @@
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\VentanaRecaudacion.Designer.cs">
       <DependentUpon>VentanaRecaudacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\DatosEstadisticasTarjetas.cs">
+      <DependentUpon>DatosEstadisticasTarjetas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\DatosEstadisticasTarjetas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticasTarjetas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\UsoPorMarca\ComprasPorMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\UsoPorMarca\ComprasPorMarca.Designer.cs">
+      <DependentUpon>ComprasPorMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\UsoPorTipo\ComprasPorTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\UsoPorTipo\ComprasPorTipo.Designer.cs">
+      <DependentUpon>ComprasPorTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\VentanaRecaudacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\VentanaRecaudacion.Designer.cs">
+      <DependentUpon>VentanaRecaudacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -836,6 +862,17 @@
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\VentanaRecaudacion.resx">
       <DependentUpon>VentanaRecaudacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\UsoPorMarca\ComprasPorMarca.resx">
+      <DependentUpon>ComprasPorMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\UsoPorMarca\ComprasPorMarca.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\UsoPorTipo\ComprasPorTipo.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\UsoPorTipo\ComprasPorTipo.resx">
+      <DependentUpon>ComprasPorTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\VentanaRecaudacion.resx">
+      <DependentUpon>VentanaRecaudacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.resx">
       <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
     </EmbeddedResource>
@@ -1007,6 +1044,17 @@
     </None>
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\DatosRecaudacion.xss">
       <DependentUpon>DatosRecaudacion.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\DatosEstadisticasTarjetas.xsc">
+      <DependentUpon>DatosEstadisticasTarjetas.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\DatosEstadisticasTarjetas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticasTarjetas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\DatosEstadisticasTarjetas.xss">
+      <DependentUpon>DatosEstadisticasTarjetas.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

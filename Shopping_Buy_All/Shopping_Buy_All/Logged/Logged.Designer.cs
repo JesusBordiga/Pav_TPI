@@ -117,7 +117,7 @@
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.pictureBox30 = new System.Windows.Forms.PictureBox();
-            this.button24 = new System.Windows.Forms.Button();
+            this.btnEstadisticasTarjetas = new System.Windows.Forms.Button();
             this.pictureBox31 = new System.Windows.Forms.PictureBox();
             this.pictureBox32 = new System.Windows.Forms.PictureBox();
             this.button25 = new System.Windows.Forms.Button();
@@ -678,7 +678,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(476, 193);
+            this.button11.Location = new System.Drawing.Point(469, 193);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 23);
             this.button11.TabIndex = 95;
@@ -693,7 +693,7 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(395, 193);
+            this.button10.Location = new System.Drawing.Point(393, 193);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 23);
             this.button10.TabIndex = 94;
@@ -769,7 +769,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(467, 103);
+            this.button4.Location = new System.Drawing.Point(466, 103);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 88;
@@ -782,7 +782,7 @@
             this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox15.Location = new System.Drawing.Point(481, 130);
+            this.pictureBox15.Location = new System.Drawing.Point(476, 131);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(58, 55);
             this.pictureBox15.TabIndex = 86;
@@ -793,7 +793,7 @@
             this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox14.Location = new System.Drawing.Point(401, 132);
+            this.pictureBox14.Location = new System.Drawing.Point(399, 132);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(58, 55);
             this.pictureBox14.TabIndex = 85;
@@ -804,7 +804,7 @@
             this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox13.Location = new System.Drawing.Point(323, 131);
+            this.pictureBox13.Location = new System.Drawing.Point(323, 132);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(58, 55);
             this.pictureBox13.TabIndex = 84;
@@ -851,7 +851,7 @@
             this.BotonUsuarios.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.user;
             this.BotonUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BotonUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BotonUsuarios.Location = new System.Drawing.Point(472, 42);
+            this.BotonUsuarios.Location = new System.Drawing.Point(473, 42);
             this.BotonUsuarios.Name = "BotonUsuarios";
             this.BotonUsuarios.Size = new System.Drawing.Size(58, 55);
             this.BotonUsuarios.TabIndex = 79;
@@ -1074,7 +1074,7 @@
             this.panelEstadisticas.Controls.Add(this.button22);
             this.panelEstadisticas.Controls.Add(this.button23);
             this.panelEstadisticas.Controls.Add(this.pictureBox30);
-            this.panelEstadisticas.Controls.Add(this.button24);
+            this.panelEstadisticas.Controls.Add(this.btnEstadisticasTarjetas);
             this.panelEstadisticas.Controls.Add(this.pictureBox31);
             this.panelEstadisticas.Controls.Add(this.pictureBox32);
             this.panelEstadisticas.Controls.Add(this.button25);
@@ -1425,20 +1425,21 @@
             this.pictureBox30.TabIndex = 56;
             this.pictureBox30.TabStop = false;
             // 
-            // button24
+            // btnEstadisticasTarjetas
             // 
-            this.button24.BackColor = System.Drawing.Color.DimGray;
-            this.button24.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button24.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.ForeColor = System.Drawing.Color.White;
-            this.button24.Location = new System.Drawing.Point(314, 103);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(75, 23);
-            this.button24.TabIndex = 55;
-            this.button24.Text = "Completar";
-            this.button24.UseVisualStyleBackColor = false;
+            this.btnEstadisticasTarjetas.BackColor = System.Drawing.Color.DimGray;
+            this.btnEstadisticasTarjetas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstadisticasTarjetas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEstadisticasTarjetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstadisticasTarjetas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticasTarjetas.ForeColor = System.Drawing.Color.White;
+            this.btnEstadisticasTarjetas.Location = new System.Drawing.Point(314, 103);
+            this.btnEstadisticasTarjetas.Name = "btnEstadisticasTarjetas";
+            this.btnEstadisticasTarjetas.Size = new System.Drawing.Size(75, 23);
+            this.btnEstadisticasTarjetas.TabIndex = 55;
+            this.btnEstadisticasTarjetas.Text = "Tarjetas";
+            this.btnEstadisticasTarjetas.UseVisualStyleBackColor = false;
+            this.btnEstadisticasTarjetas.Click += new System.EventHandler(this.btnVentanaEstadsitica);
             // 
             // pictureBox31
             // 
@@ -1538,6 +1539,7 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelEstadisticas);
             this.Controls.Add(this.MenuReportes);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.panelUsuarios);
@@ -1548,7 +1550,6 @@
             this.Controls.Add(this.btnMenu2);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.btnAdmin2);
-            this.Controls.Add(this.panelEstadisticas);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -1693,7 +1694,7 @@
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.PictureBox pictureBox30;
-        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button btnEstadisticasTarjetas;
         private System.Windows.Forms.PictureBox pictureBox31;
         private System.Windows.Forms.PictureBox pictureBox32;
         private System.Windows.Forms.Button button25;
