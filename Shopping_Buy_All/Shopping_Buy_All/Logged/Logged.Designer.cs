@@ -66,7 +66,7 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnRubro = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -574,7 +574,7 @@
             this.MenuReportes.Controls.Add(this.button11);
             this.MenuReportes.Controls.Add(this.button10);
             this.MenuReportes.Controls.Add(this.button9);
-            this.MenuReportes.Controls.Add(this.button8);
+            this.MenuReportes.Controls.Add(this.btnRubro);
             this.MenuReportes.Controls.Add(this.button7);
             this.MenuReportes.Controls.Add(this.button6);
             this.MenuReportes.Controls.Add(this.button4);
@@ -599,7 +599,7 @@
             this.MenuReportes.Controls.Add(this.btnReporteClientes);
             this.MenuReportes.Location = new System.Drawing.Point(123, 72);
             this.MenuReportes.Name = "MenuReportes";
-            this.MenuReportes.Size = new System.Drawing.Size(552, 315);
+            this.MenuReportes.Size = new System.Drawing.Size(564, 315);
             this.MenuReportes.TabIndex = 59;
             // 
             // btnReportesLocales
@@ -713,20 +713,21 @@
             this.button9.Text = "Completar";
             this.button9.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btnRubro
             // 
-            this.button8.BackColor = System.Drawing.Color.DimGray;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(7, 193);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 92;
-            this.button8.Text = "Completar";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnRubro.BackColor = System.Drawing.Color.DimGray;
+            this.btnRubro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRubro.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRubro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRubro.ForeColor = System.Drawing.Color.White;
+            this.btnRubro.Location = new System.Drawing.Point(7, 193);
+            this.btnRubro.Name = "btnRubro";
+            this.btnRubro.Size = new System.Drawing.Size(75, 23);
+            this.btnRubro.TabIndex = 92;
+            this.btnRubro.Text = "Rubro";
+            this.btnRubro.UseVisualStyleBackColor = false;
+            this.btnRubro.Click += new System.EventHandler(this.btnReportesRubro_Click);
             // 
             // button7
             // 
@@ -755,7 +756,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 90;
-            this.button6.Text = "Completar";
+            this.button6.Text = "completar";
             this.button6.UseVisualStyleBackColor = false;
             // 
             // button4
@@ -801,7 +802,7 @@
             this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox13.Location = new System.Drawing.Point(323, 130);
+            this.pictureBox13.Location = new System.Drawing.Point(323, 131);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(58, 55);
             this.pictureBox13.TabIndex = 84;
@@ -810,6 +811,7 @@
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox12.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.help_info;
             this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox12.Location = new System.Drawing.Point(15, 132);
@@ -1076,7 +1078,7 @@
             this.panelEstadisticas.Controls.Add(this.button26);
             this.panelEstadisticas.Location = new System.Drawing.Point(123, 73);
             this.panelEstadisticas.Name = "panelEstadisticas";
-            this.panelEstadisticas.Size = new System.Drawing.Size(552, 313);
+            this.panelEstadisticas.Size = new System.Drawing.Size(564, 313);
             this.panelEstadisticas.TabIndex = 98;
             // 
             // lblVolverEstadisticas
@@ -1099,7 +1101,7 @@
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(467, 193);
+            this.button13.Location = new System.Drawing.Point(470, 193);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(86, 23);
             this.button13.TabIndex = 95;
@@ -1533,9 +1535,8 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnAdmin);
-            this.Controls.Add(this.panelEstadisticas);
             this.Controls.Add(this.MenuReportes);
+            this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.labelHora);
@@ -1544,6 +1545,7 @@
             this.Controls.Add(this.btnMenu2);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.btnAdmin2);
+            this.Controls.Add(this.panelEstadisticas);
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -1634,7 +1636,7 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnRubro;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button4;

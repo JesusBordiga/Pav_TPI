@@ -1084,6 +1084,7 @@
     <None Include="Resources\1920.jpg" />
     <None Include="Resources\%28Tutosinvhizible%29 %2845%29.jpg" />
     <None Include="Resources\%28180%29.jpg" />
+    <None Include="Resources\help-info.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
