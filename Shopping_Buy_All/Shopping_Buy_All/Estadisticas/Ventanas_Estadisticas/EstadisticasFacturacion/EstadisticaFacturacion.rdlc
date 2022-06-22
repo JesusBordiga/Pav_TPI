@@ -246,7 +246,6 @@
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
-                  <Subtype>PercentStacked</Subtype>
                   <Style />
                   <ChartEmptyPoints>
                     <Style />
@@ -492,9 +491,6 @@
                     </ChartAxisScaleBreak>
                   </ChartAxis>
                 </ChartValueAxes>
-                <ChartThreeDProperties>
-                  <Enabled>true</Enabled>
-                </ChartThreeDProperties>
                 <Style>
                   <BackgroundColor>#00ffffff</BackgroundColor>
                   <BackgroundGradientType>None</BackgroundGradientType>
@@ -577,7 +573,6 @@
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
-                  <Subtype>PercentStacked</Subtype>
                   <Style />
                   <ChartEmptyPoints>
                     <Style />
@@ -823,9 +818,6 @@
                     </ChartAxisScaleBreak>
                   </ChartAxis>
                 </ChartValueAxes>
-                <ChartThreeDProperties>
-                  <Enabled>true</Enabled>
-                </ChartThreeDProperties>
                 <Style>
                   <BackgroundColor>#00ffffff</BackgroundColor>
                   <BackgroundGradientType>None</BackgroundGradientType>
@@ -884,7 +876,7 @@
             </Paragraphs>
             <rd:DefaultName>Parametro</rd:DefaultName>
             <Top>2.53683cm</Top>
-            <Left>6.95382cm</Left>
+            <Left>6.31882cm</Left>
             <Height>0.86458cm</Height>
             <Width>4.43146cm</Width>
             <ZIndex>7</ZIndex>

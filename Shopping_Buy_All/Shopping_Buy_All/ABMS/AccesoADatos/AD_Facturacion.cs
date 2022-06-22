@@ -184,5 +184,15 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 "ORDER BY 'TotalRecaudado' DESC";
             return _DB.Consultar(consulta);
         }
+        /// <summary>
+        /// Obtiene una factura buscando por su número
+        /// </summary>
+        /// <param name="nroFactura"></param>
+        /// <returns></returns>
+        public DataTable _GetFacturaPorNro(string nroFactura)
+        {
+            string consulta = "buscarFacturaNoBorrada " + nroFactura;
+            return _DB.Consultar(consulta);
+        }
     }
 }
