@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Shopping_Buy_All.Entidades;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +17,9 @@ using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaudacio
 using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaudacion;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesLocales;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesRubro;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes;
+using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasTipoDocumento;
+using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasTipoTarjeta;
 
 namespace Shopping_Buy_All
 {
@@ -240,6 +243,34 @@ namespace Shopping_Buy_All
         private void btnVentanaEstadsitica(object sender, EventArgs e)
         {
 
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            ReporteTipoDocumento ventanaTipoDocumento = new ReporteTipoDocumento();
+            ventanaTipoDocumento.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ReporteTipoDocumento ventanaTipoTarjeta = new ReporteTipoDocumento();
+            ventanaTipoTarjeta.Show();
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            ReporteTipoDocumento ventanaTipoTarjeta = new ReporteTipoDocumento();
+            ventanaTipoTarjeta.Show();
+        }
+
+        private void pictureBox30_Click(object sender, EventArgs e)
+        {
+            EstadisticaMarcasTarjeta ventanaEstadisticaMarcasTarjeta = new EstadisticaMarcasTarjeta();
+            ventanaEstadisticaMarcasTarjeta.Show();
+        }
+
+        private void pictureBox26_Click(object sender, EventArgs e)
+        {
+            EstadisticasTipoTarjeta ventanaEstadisticaTipoTarjeta = new EstadisticasTipoTarjeta();
+            ventanaEstadisticaTipoTarjeta.Show();
         }
     }
 }

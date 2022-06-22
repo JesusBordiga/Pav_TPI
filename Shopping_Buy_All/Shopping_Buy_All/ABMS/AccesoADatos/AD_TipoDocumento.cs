@@ -195,5 +195,72 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 "ORDER BY 'CantidadClientes' DESC";
             return _DB.Consultar(consulta);
         }
+
+        public DataTable _Rpt_TipoDocumento()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "select * from TipoDocumento where Borrado = 0 order by TipoDocumento, NombreDocumento";
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return tabla;
+        }
+        public DataTable _Rpt_TipoDocumento(string letra)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
+            DataTable tabla = new DataTable();
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "select * from TipoDocumento where Borrado = 0 and NombreDocumento like '" + letra.Trim() + "%' order by NombreDocumento";
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Error!.\nError en la base de datos.", "ERROR");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error!.\nHubo un error!", "ERROR");
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return tabla;
+        }
     }
 }

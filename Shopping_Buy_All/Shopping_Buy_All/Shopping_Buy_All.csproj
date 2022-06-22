@@ -509,6 +509,30 @@
     </Compile>
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\VentanaRecaudacion.Designer.cs">
       <DependentUpon>VentanaRecaudacion.cs</DependentUpon>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjeta\DatosEstadisticaMarcasTarjeta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticaMarcasTarjeta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjeta\EstadisticaMarcasPorTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjeta\EstadisticaMarcasPorTarjeta.Designer.cs">
+      <DependentUpon>EstadisticaMarcasPorTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoTarjeta\DatosEstadisticaTiposTarjeta.cs">
+      <DependentUpon>DatosEstadisticaTiposTarjeta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoTarjeta\DatosEstadisticaTiposTarjeta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosEstadisticaTiposTarjeta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoTarjeta\EstadisticasTipoTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoTarjeta\EstadisticasTipoTarjeta.Designer.cs">
+      <DependentUpon>EstadisticasTipoTarjeta.cs</DependentUpon>
     </Compile>
     <Compile Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.cs">
       <SubType>Form</SubType>
@@ -632,6 +656,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoDocumento\ReporteDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoDocumento\ReporteDocumento.Designer.cs">
+      <DependentUpon>ReporteDocumento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesClientes\ReporteClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -673,6 +703,11 @@
     </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesRubro\ReporteRubro.Designer.cs">
       <DependentUpon>ReporteRubro.cs</DependentUpon>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoTarjeta\ReporteTipoTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoTarjeta\ReporteTipoTarjeta.Designer.cs">
+      <DependentUpon>ReporteTipoTarjeta.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesUsuarios\ReporteUsuarios.cs">
       <SubType>Form</SubType>
@@ -873,6 +908,14 @@
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\VentanaRecaudacion.resx">
       <DependentUpon>VentanaRecaudacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjeta\EstadisticaMarcasPorTarjeta.resx">
+      <DependentUpon>EstadisticaMarcasPorTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjeta\EstadisticaMarcaTarjeta.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoTarjeta\EstadisticasTipoTarjeta.resx">
+      <DependentUpon>EstadisticasTipoTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoTarjeta\ReporteEstadisticaTipoTarjeta.rdlc" />
     <EmbeddedResource Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.resx">
       <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
     </EmbeddedResource>
@@ -943,6 +986,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoDocumento\ReportTipoDocumento.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoDocumento\ReporteDocumento.resx">
+      <DependentUpon>ReporteDocumento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesClientes\ReportClientes.rdlc" />
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesClientes\ReporteClientes.resx">
       <DependentUpon>ReporteClientes.cs</DependentUpon>
@@ -971,6 +1018,10 @@
       <DependentUpon>ReporteRubro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesRubro\ReportRubro.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoTarjeta\ReporteTipoTarjeta.resx">
+      <DependentUpon>ReporteTipoTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoTarjeta\ReportTipoTarjeta.rdlc" />
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesUsuarios\ReporteUsuarios.resx">
       <DependentUpon>ReporteUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -1055,6 +1106,27 @@
     </None>
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\DatosEstadisticasTarjetas.xss">
       <DependentUpon>DatosEstadisticasTarjetas.xsd</DependentUpon>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjeta\DatosEstadisticaMarcasTarjeta.xsc">
+      <DependentUpon>DatosEstadisticaMarcasTarjeta.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjeta\DatosEstadisticaMarcasTarjeta.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticaMarcasTarjeta.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjeta\DatosEstadisticaMarcasTarjeta.xss">
+      <DependentUpon>DatosEstadisticaMarcasTarjeta.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoTarjeta\DatosEstadisticaTiposTarjeta.xsc">
+      <DependentUpon>DatosEstadisticaTiposTarjeta.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoTarjeta\DatosEstadisticaTiposTarjeta.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosEstadisticaTiposTarjeta.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoTarjeta\DatosEstadisticaTiposTarjeta.xss">
+      <DependentUpon>DatosEstadisticaTiposTarjeta.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

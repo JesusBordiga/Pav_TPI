@@ -85,7 +85,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes
                 ReportDataSource Datos = new ReportDataSource("DatosClientes", Tabla);
                 repProd.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesClientes.ReportClientes.rdlc";
                 ReportParameter[] parametros = new ReportParameter[1];
-                parametros[0] = new ReportParameter("Alcance", alcance);
+                parametros[0] = new ReportParameter("Alcance1", alcance);
                 repProd.LocalReport.SetParameters(parametros);
                 repProd.LocalReport.DataSources.Clear();
                 repProd.LocalReport.DataSources.Add(Datos);

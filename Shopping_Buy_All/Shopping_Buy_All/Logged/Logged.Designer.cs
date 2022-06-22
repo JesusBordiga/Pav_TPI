@@ -752,13 +752,14 @@
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Location = new System.Drawing.Point(82, 193);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(75, 32);
             this.button6.TabIndex = 90;
             this.button6.Text = "completar";
+            this.button6.Text = "Tipo Documento";
             this.button6.UseVisualStyleBackColor = false;
             // 
             // button4
@@ -833,6 +834,7 @@
             this.pictureBox11.Size = new System.Drawing.Size(58, 55);
             this.pictureBox11.TabIndex = 82;
             this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
             // 
             // pictureBox10
             // 
@@ -844,6 +846,7 @@
             this.pictureBox10.Size = new System.Drawing.Size(58, 55);
             this.pictureBox10.TabIndex = 81;
             this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
             // BotonUsuarios
             // 
@@ -1080,6 +1083,7 @@
             this.panelEstadisticas.Controls.Add(this.button25);
             this.panelEstadisticas.Controls.Add(this.button26);
             this.panelEstadisticas.Location = new System.Drawing.Point(123, 73);
+            this.panelEstadisticas.Location = new System.Drawing.Point(129, 74);
             this.panelEstadisticas.Name = "panelEstadisticas";
             this.panelEstadisticas.Size = new System.Drawing.Size(564, 313);
             this.panelEstadisticas.TabIndex = 98;
@@ -1332,6 +1336,7 @@
             this.pictureBox26.Size = new System.Drawing.Size(58, 55);
             this.pictureBox26.TabIndex = 78;
             this.pictureBox26.TabStop = false;
+            this.pictureBox26.Click += new System.EventHandler(this.pictureBox26_Click);
             // 
             // pictureBox27
             // 
@@ -1424,6 +1429,7 @@
             this.pictureBox30.Size = new System.Drawing.Size(58, 55);
             this.pictureBox30.TabIndex = 56;
             this.pictureBox30.TabStop = false;
+            this.pictureBox30.Click += new System.EventHandler(this.pictureBox30_Click);
             // 
             // btnEstadisticasTarjetas
             // 
