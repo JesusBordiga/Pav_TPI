@@ -237,6 +237,9 @@ namespace Shopping_Buy_All
                 panelUsuarios.Visible = false;
         }
 
-        
+        private void btnVentanaEstadsitica(object sender, EventArgs e)
+        {
+
+        }
     }
 }

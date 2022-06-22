@@ -504,6 +504,12 @@
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\UsoPorTipo\ComprasPorTipo.Designer.cs">
       <DependentUpon>ComprasPorTipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\VentanaRecaudacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\VentanaRecaudacion.Designer.cs">
+      <DependentUpon>VentanaRecaudacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -863,6 +869,9 @@
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\UsoPorTipo\ComprasPorTipo.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\UsoPorTipo\ComprasPorTipo.resx">
       <DependentUpon>ComprasPorTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\VentanaRecaudacion.resx">
+      <DependentUpon>VentanaRecaudacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.resx">
       <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
