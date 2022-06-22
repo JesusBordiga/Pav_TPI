@@ -657,6 +657,12 @@
     <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoDocumentos\ReporteTipoDocumentos.Designer.cs">
       <DependentUpon>ReporteTipoDocumentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoSexo\ReporteTipoSexo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoSexo\ReporteTipoSexo.Designer.cs">
+      <DependentUpon>ReporteTipoSexo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesUsuarios\ReporteUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -943,6 +949,10 @@
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoDocumentos\ReporteTipoDocumentos.rdlc" />
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoDocumentos\ReporteTipoDocumentos.resx">
       <DependentUpon>ReporteTipoDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoSexo\ReporteTipoSexo.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoSexo\ReporteTipoSexo.resx">
+      <DependentUpon>ReporteTipoSexo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesUsuarios\ReporteUsuarios.resx">
       <DependentUpon>ReporteUsuarios.cs</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesTipoDocumentos;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesTipoSexo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
