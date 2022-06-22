@@ -50,6 +50,19 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 cn.Close();
             }
         }
+
+        public DataTable obtenerDatosSexo2()
+        {
+            string consulta = "getTipoSexoNoBorrado";
+            return _DB.Consultar(consulta);
+        }
+
+        public DataTable obtenerDatosTipoSexoQueEmpiezanPor(string letra)
+        {
+            string consulta = "select * from TipoSexo where Borrado = 0 and NombreSexo like '" + letra.Trim() + "%' order by NombreSexo";
+            return _DB.Consultar(consulta);
+        }
+
         public static bool agregarSexo(Sexo sexo)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];

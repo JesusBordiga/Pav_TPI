@@ -51,6 +51,19 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 cn.Close();
             }
         }
+
+        public DataTable obtenerDatosTipoDocumento2()
+        {
+            string consulta = "getTipoDocumentoNoBorrado";
+            return _DB.Consultar(consulta);
+        }
+
+        public DataTable obtenerDatosTipoDocumentoQueEmpiezanPor(string letra)
+        {
+            string consulta = "select * from TipoDocumento where Borrado = 0 and NombreDocumento like '" + letra.Trim() + "%' order by NombreDocumento";
+            return _DB.Consultar(consulta);
+        }
+
         public static bool agregarTipoDocumento(TipoDocumento tipDoc)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];

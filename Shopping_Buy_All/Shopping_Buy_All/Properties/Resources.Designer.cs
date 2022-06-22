@@ -243,6 +243,16 @@ namespace Shopping_Buy_All.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap org_gnome_Books {
+            get {
+                object obj = ResourceManager.GetObject("org.gnome.Books", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap pop_shop {
             get {
                 object obj = ResourceManager.GetObject("pop-shop", resourceCulture);

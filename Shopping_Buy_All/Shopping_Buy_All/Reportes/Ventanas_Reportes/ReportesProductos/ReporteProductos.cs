@@ -40,7 +40,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
         /// </summary>
         private void Restriccion()
         {
-            if (rbTodos.Checked == true)
+            if (rbTodos.Checked == true || (rbRangoId.Checked && ( txtPrecDesde.Text.Equals("") || txtPrecHasta.Text.Equals("") )) || (rbPorLetra.Checked && txtLetra.Text.Equals("") ))
             {
                 //todos
                 alcance = "Todos los productos";

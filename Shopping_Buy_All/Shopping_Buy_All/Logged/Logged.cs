@@ -17,6 +17,10 @@ using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaudacio
 using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaudacion;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesLocales;
 using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesRubro;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesTipoSexo;
+using Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesTipoDocumentos;
+using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasLocales;
+using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasTipoComercio;
 
 namespace Shopping_Buy_All
 {
@@ -25,7 +29,7 @@ namespace Shopping_Buy_All
         public Logged(User usu)
         {
             InitializeComponent();
-            LabelBienvenido.Text = "Bienvenido "+ usu.userName;
+            LabelBienvenido.Text = "Bienvenido " + usu.userName;
             CargarUsuarios(usu);
 
         }
@@ -174,6 +178,17 @@ namespace Shopping_Buy_All
         {
             lblVolver.Visible = false;
         }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ReporteTipoSexo reporteTipoSexo = new ReporteTipoSexo();
+            reporteTipoSexo.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ReporteTipoDocumentos ventana = new ReporteTipoDocumentos();
+            ventana.Show();
+        }
         //BOTONES REPORTES
         private void btnReportes_Click(object sender, EventArgs e)
         {
@@ -208,9 +223,15 @@ namespace Shopping_Buy_All
             VentanaRecaudacion ventanaRecaudacion = new VentanaRecaudacion();
             ventanaRecaudacion.Show();
         }
-        private void btnEstadsiticasProductos(object sender, EventArgs e)
+        private void btnEstadsiticasLocales(object sender, EventArgs e)
         {
-
+            EstadisticaLocalesPorRubro ventana = new EstadisticaLocalesPorRubro();
+            ventana.Show();
+        }
+        private void btnEstadsiticasRubros(object sender, EventArgs e)
+        {
+            EstadisticasTipoComercio ventana = new EstadisticasTipoComercio();
+            ventana.Show();
         }
         private void btnMarcasTarjeta_Click(object sender, EventArgs e)
         {
@@ -240,16 +261,16 @@ namespace Shopping_Buy_All
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-                panelUsuarios.Visible = true;
-                btnAdmin.Visible = false;
+            panelUsuarios.Visible = true;
+            btnAdmin.Visible = false;
         }
 
         private void btnAdmin2_Click(object sender, EventArgs e)
         {
-                btnAdmin.Visible = true;
-                panelUsuarios.Visible = false;
+            btnAdmin.Visible = true;
+            panelUsuarios.Visible = false;
         }
 
-       
     }
 }
+

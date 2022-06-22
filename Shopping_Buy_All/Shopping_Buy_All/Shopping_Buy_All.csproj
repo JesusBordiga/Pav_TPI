@@ -460,6 +460,13 @@
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\ReporteEstadisticasFacturacion.Designer.cs">
       <DependentUpon>ReporteEstadisticasFacturacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalesPorRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalesPorRubro.Designer.cs">
+      <DependentUpon>EstadisticaLocalesPorRubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalPorRubro.Designer.cs" />
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\DatosRecaudacion.cs">
       <DependentUpon>DatosRecaudacion.xsd</DependentUpon>
     </Compile>
@@ -518,6 +525,14 @@
     <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\VentanaEstadisticasTarjetas.Designer.cs">
       <DependentUpon>VentanaEstadisticasTarjetas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\DatosEstadisticosTipoComercio.Designer.cs" />
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\EstadisticasTipoComercio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\EstadisticasTipoComercio.Designer.cs">
+      <DependentUpon>EstadisticasTipoComercio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logged\ReporteTipoDocumento.cs" />
     <Compile Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -681,6 +696,18 @@
     </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesRubro\ReporteRubro.Designer.cs">
       <DependentUpon>ReporteRubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoDocumentos\ReporteTipoDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoDocumentos\ReporteTipoDocumentos.Designer.cs">
+      <DependentUpon>ReporteTipoDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoSexo\ReporteTipoSexo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoSexo\ReporteTipoSexo.Designer.cs">
+      <DependentUpon>ReporteTipoSexo.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesUsuarios\ReporteUsuarios.cs">
       <SubType>Form</SubType>
@@ -856,6 +883,10 @@
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\ReporteEstadisticasFacturacion.resx">
       <DependentUpon>ReporteEstadisticasFacturacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalesPorRubro.resx">
+      <DependentUpon>EstadisticaLocalesPorRubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalPorRubro.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorLocal\RecaudacionPorLocal.rdlc" />
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\RecaudacionPorLocal\RecPorLocal.resx">
       <DependentUpon>RecPorLocal.cs</DependentUpon>
@@ -882,6 +913,10 @@
     <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\VentanaEstadisticasTarjetas.resx">
       <DependentUpon>VentanaEstadisticasTarjetas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\EstadisticasTipoComercio.resx">
+      <DependentUpon>EstadisticasTipoComercio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\EstadisticaTipoComercio.rdlc" />
     <EmbeddedResource Include="Logged\Ventanas\Facturacion\Facturacion_Ventana.resx">
       <DependentUpon>Facturacion_Ventana.cs</DependentUpon>
     </EmbeddedResource>
@@ -980,6 +1015,14 @@
       <DependentUpon>ReporteRubro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesRubro\ReportRubro.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoDocumentos\ReporteTipoDocumentos.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoDocumentos\ReporteTipoDocumentos.resx">
+      <DependentUpon>ReporteTipoDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoSexo\ReporteTipoSexo.rdlc" />
+    <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesTipoSexo\ReporteTipoSexo.resx">
+      <DependentUpon>ReporteTipoSexo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Ventanas_Reportes\ReportesUsuarios\ReporteUsuarios.resx">
       <DependentUpon>ReporteUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -1054,6 +1097,13 @@
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasFacturacion\EstadisticasFacturacion.xss">
       <DependentUpon>EstadisticasFacturacion.xsd</DependentUpon>
     </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalPorRubro.xsc">
+      <DependentUpon>EstadisticaLocalPorRubro.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalPorRubro.xsd" />
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasLocales\EstadisticaLocalPorRubro\EstadisticaLocalPorRubro.xss">
+      <DependentUpon>EstadisticaLocalPorRubro.xsd</DependentUpon>
+    </None>
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasRecaudacion\DatosRecaudacion.xsc">
       <DependentUpon>DatosRecaudacion.xsd</DependentUpon>
     </None>
@@ -1075,6 +1125,13 @@
     </None>
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\DatosEstadisticasTarjetas.xss">
       <DependentUpon>DatosEstadisticasTarjetas.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\DatosEstadisticosTipoComercio.xsc">
+      <DependentUpon>DatosEstadisticosTipoComercio.xsd</DependentUpon>
+    </None>
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\DatosEstadisticosTipoComercio.xsd" />
+    <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\DatosEstadisticosTipoComercio.xss">
+      <DependentUpon>DatosEstadisticosTipoComercio.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -1154,6 +1211,7 @@
     <None Include="Resources\%28180%29.jpg" />
     <None Include="Resources\help-info.png" />
     <None Include="Resources\mega.png" />
+    <None Include="Resources\org.gnome.Books.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

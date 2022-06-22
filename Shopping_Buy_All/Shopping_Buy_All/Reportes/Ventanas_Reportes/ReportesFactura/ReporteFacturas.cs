@@ -55,7 +55,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
         /// </summary>
         private void Restriccion()
         {
-            if (rbTodos.Checked == true)
+            if (rbTodos.Checked == true || (rbRangoId.Checked && (txtFecDesde.Text.Equals("  /  /") || txtFecHasta.Text.Equals("  /  /"))) || (rbLocal.Checked && cmbLocal.SelectedIndex.Equals(-1)))
             {
                 //todos
                 alcance = "Todas las facturas";

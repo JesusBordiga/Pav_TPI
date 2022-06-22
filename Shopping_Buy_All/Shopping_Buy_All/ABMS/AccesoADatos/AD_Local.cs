@@ -47,6 +47,19 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 cn.Close();
             }
         }
+
+        public DataTable ObtenerEstadisticaLocalesPorTipoComercio()
+        {
+            string consulta = "select t.NombreTipoComercio as Nombre, COUNT(lc.CodigoLocal) as Cantidad from Locales lc inner join TipoComercio t on t.Tipo_Comercio = lc.TipoComercio group by t.NombreTipoComercio";
+            return _DB.Consultar(consulta);
+        }
+
+        public DataTable ObtenerEstadisticaLocalesPorRubro()
+        {
+            string consulta = "select r.Nombre, COUNT(lc.Cod_Local) as Cantidad from LocalesporRubro lc inner join Rubros r on r.CodigoRubro = lc.Cod_Rubro group by r.Nombre";
+            return _DB.Consultar(consulta);
+        }
+
         public static bool Agregar_Local(Local l)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
