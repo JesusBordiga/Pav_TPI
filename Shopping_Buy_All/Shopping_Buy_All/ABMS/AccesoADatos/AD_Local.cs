@@ -373,12 +373,20 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
         //REPORTES LOCALES
         public DataTable _Rpt_Local()
         {
-            string consulta = "SELECT * FROM Locales WHERE Borrado = 0 ORDER BY 1";
+            string consulta = "SELECT L.Nombre, T.NombreTipoComercio, L.CodigoLocal " +
+                "FROM Locales L " +
+                "JOIN TipoComercio T ON L.TipoComercio = T.Tipo_Comercio " +
+                "WHERE L.Borrado = 0 AND T.Borrado = 0 " +
+                "ORDER BY L.Nombre";
             return _DB.Consultar(consulta);
         }
         public DataTable _Rpt_Local(string letra)
         {
-            string consulta = "SELECT * FROM Locales WHERE Borrado = 0 and Nombre LIKE '" + letra.Trim() + "%' ORDER BY Nombre";
+            string consulta = "SELECT L.Nombre, T.NombreTipoComercio, L.CodigoLocal " +
+                "FROM Locales L " +
+                "JOIN TipoComercio T ON L.TipoComercio = T.Tipo_Comercio " +
+                "WHERE L.Borrado = 0 AND T.Borrado = 0 AND L.Nombre like '" + letra + "%' " +
+                "ORDER BY L.Nombre";
             return _DB.Consultar(consulta);
 
         }

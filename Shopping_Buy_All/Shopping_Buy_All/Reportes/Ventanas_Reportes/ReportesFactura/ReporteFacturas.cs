@@ -24,6 +24,7 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
             grbRestFecha.Visible = false;
             grbRestLocal.Visible = false;
         }
+
         private void cargarLocal()
         {
             try
@@ -38,14 +39,20 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
                 MessageBox.Show("Error, no se pudieron obtener los datos de los locales\nError:\n" + ex.Message);
             }
         }
+
         private void rbPorLocalCheckedChanged(object sender, EventArgs e)
         {
             grbRestLocal.Visible = rbLocal.Checked;
         }
+
         private void rbRangoCheckedChanged(object sender, EventArgs e)
         {
             grbRestFecha.Visible = rbRangoId.Checked;
         }
+
+        /// <summary>
+        /// Construye el alcance del producto y obtiene los datos necesarios para el reporte
+        /// </summary>
         private void Restriccion()
         {
             if (rbTodos.Checked == true)
@@ -76,6 +83,11 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
             }
         }
 
+        /// <summary>
+        /// Manda los datos al reporte y lo muestra
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_buscar01_Click(object sender, EventArgs e)
         {
             if (validarSeleccion())
@@ -102,6 +114,9 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
             }
         }
 
+        /// <summary>
+        /// Limpia los campos
+        /// </summary>
         private void clean()
         {
             txtFecHasta.Text = "";
@@ -112,6 +127,10 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
             comboBoxLocal.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// Valida que al menos un rb se haya seleccionado
+        /// </summary>
+        /// <returns></returns>
         private bool validarSeleccion()
         {
             if (rbLocal.Checked == false && rbTodos.Checked == false && rbRangoId.Checked == false)
@@ -121,6 +140,11 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
             return true;
         }
 
+        /// <summary>
+        /// Lleva al puntero al comienzo del textBox cuando se entra en él
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtFecDesde_Enter(object sender, EventArgs e)
         {
             this.BeginInvoke((MethodInvoker)delegate ()
@@ -129,6 +153,11 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
             });
         }
 
+        /// <summary>
+        /// Lleva al puntero al comienzo del textBox cuando se entra en él
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtFecHasta_Enter(object sender, EventArgs e)
         {
             this.BeginInvoke((MethodInvoker)delegate ()
@@ -137,6 +166,12 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesFactura
             });
         }
 
+        /// <summary>
+        /// Compara las fechas recibidas y valida que la fec1 sea menor que la fec2
+        /// </summary>
+        /// <param name="fec1"></param>
+        /// <param name="fec2"></param>
+        /// <returns></returns>
         private bool ComparararFechas(string fec1, string fec2)
         {
             DateTime fecha1 = DateTime.ParseExact(fec1, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);

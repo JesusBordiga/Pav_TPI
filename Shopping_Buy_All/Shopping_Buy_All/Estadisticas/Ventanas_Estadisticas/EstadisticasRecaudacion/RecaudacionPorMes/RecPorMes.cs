@@ -27,6 +27,11 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaud
             this.reportViewer1.RefreshReport();
         }
 
+        /// <summary>
+        /// Manda los datos al reporte y lo muestra
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             DataTable dt = _DB._GetEstRecXMes(anioReporte.ToString());
@@ -47,12 +52,22 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaud
             }
         }
 
+        /// <summary>
+        /// Suma uno al atributo mes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Add_Click(object sender, EventArgs e)
         {
             anioReporte++;
             lblAnio.Text = anioReporte.ToString();
         }
 
+        /// <summary>
+        /// Resta uno al atributo mes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Rid_Click(object sender, EventArgs e)
         {
             anioReporte--;

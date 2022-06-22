@@ -24,14 +24,20 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
             grbRangoPrecio.Visible = false;
             grbLetra.Visible = false;
         }
+
         private void rbPorLetraCheckedChanged(object sender, EventArgs e)
         {
             grbLetra.Visible = rbPorLetra.Checked; 
         }
+        
         private void rbRangoCheckedChanged(object sender, EventArgs e)
         {
             grbRangoPrecio.Visible = rbRangoId.Checked;
         }
+
+        /// <summary>
+        /// Construye el alcance del producto y obtiene los datos necesarios para el reporte
+        /// </summary>
         private void Restriccion()
         {
             if (rbTodos.Checked == true)
@@ -61,6 +67,11 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
                 Tabla = _Productos._Rpt_Productos(txtLetra.Text);
             }
         }
+
+        /// <summary>
+        /// Valida que al menos un rb se haya seleccionado
+        /// </summary>
+        /// <returns></returns>
         private bool validarSeleccion()
         {
             if (rbPorLetra.Checked == false && rbTodos.Checked == false && rbRangoId.Checked == false)
@@ -70,6 +81,11 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
             return true;
         }
 
+        /// <summary>
+        /// Manda los datos al reporte y lo muestra
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_buscar01_Click_1(object sender, EventArgs e)
         {
             if (validarSeleccion())
@@ -92,6 +108,9 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
             }
         }
 
+        /// <summary>
+        /// Limpia los campos
+        /// </summary>
         private void Clear()
         {
             rbTodos.Checked = true;
@@ -102,6 +121,11 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
             txtPrecDesde.Text = "";
         }
 
+        /// <summary>
+        /// Lleva al puntero al comienzo del textBox cuando se entra en él
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MaskedTextBox1_Enter(object sender, EventArgs e)
         {
             this.BeginInvoke((MethodInvoker)delegate ()
@@ -110,6 +134,11 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
             });
         }
 
+        /// <summary>
+        /// Lleva al puntero al comienzo del textBox cuando se entra en él
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtPrecHasta_Enter(object sender, EventArgs e)
         {
             this.BeginInvoke((MethodInvoker)delegate ()
@@ -118,6 +147,11 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesMarcasTarjetas
             });
         }
 
+        /// <summary>
+        /// Lleva al puntero al comienzo del textBox cuando se entra en él
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtPrecDesde_Enter(object sender, EventArgs e)
         {
             this.BeginInvoke((MethodInvoker)delegate ()

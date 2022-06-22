@@ -32,6 +32,11 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaud
             this.reportViewer1.RefreshReport();
         }
 
+        /// <summary>
+        /// Manda los datos al reporte y lo muestra
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             DataTable dt = _DB._GetEstRecXLocal(anioReporte.ToString(), mesReporte.ToString());
@@ -53,6 +58,11 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaud
             }
         }
 
+        /// <summary>
+        /// Suma uno al atributo mes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddMonth_Click(object sender, EventArgs e)
         {
             if (mesReporte <= 11)
@@ -66,6 +76,11 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaud
             lblMes.Text = Capitalize(mesReporte);
         }
 
+        /// <summary>
+        /// Resta uno al atributo mes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RidMonth_Click(object sender, EventArgs e)
         {
             if (mesReporte >= 2)
@@ -79,12 +94,22 @@ namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaud
             lblMes.Text = Capitalize(mesReporte);
         }
 
+        /// <summary>
+        /// Suma uno al atributo año
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddYear_Click(object sender, EventArgs e)
         {
             anioReporte++;
             lblAnio.Text = anioReporte.ToString();
         }
 
+        /// <summary>
+        /// Resta uno al atributo año
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RidYear_Click(object sender, EventArgs e)
         {
             anioReporte--;

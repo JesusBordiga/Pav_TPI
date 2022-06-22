@@ -616,6 +616,7 @@
             this.btnReportesLocales.TabIndex = 101;
             this.btnReportesLocales.Text = "Locales";
             this.btnReportesLocales.UseVisualStyleBackColor = false;
+            this.btnReportesLocales.Click += new System.EventHandler(this.btnReportesLocales_Click);
             // 
             // pictureBox7
             // 
@@ -628,6 +629,7 @@
             this.pictureBox7.Size = new System.Drawing.Size(58, 55);
             this.pictureBox7.TabIndex = 100;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.btnReportesLocales_Click);
             // 
             // button2
             // 
@@ -819,6 +821,7 @@
             this.pictureBox12.Size = new System.Drawing.Size(58, 55);
             this.pictureBox12.TabIndex = 83;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.btnReportesRubro_Click);
             // 
             // pictureBox11
             // 

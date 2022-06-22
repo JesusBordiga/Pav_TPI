@@ -20,64 +20,45 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesRubro
         public ReporteRubro()
         {
             InitializeComponent();
-            lblRestriccion.Visible = false;
-            txt_restriccion.Visible = false;
+            grbRestricción.Visible = false;
         }
 
         private void rbPorLetraCheckedChanged(object sender, EventArgs e)
         {
-            lblRestriccion.Text = "Ingrese letra";
-            //txt_restriccion.Mask = "L";
-            lblRestriccion.Visible = true;
-            //txt_restriccion.Visible = true;
-            comboBoxNombre.Visible = true;
-            txt_restriccion.Visible = false;
-            comboBoxNombre.SelectedIndex = -1;
-        }
-
-        private void rbTodosCheckedChanged(object sender, EventArgs e)
-        {
-            if (rbTodos.Checked == true)
-            {
-                lblRestriccion.Text = "";
-                lblRestriccion.Visible = false;
-                txt_restriccion.Visible = false;
-                comboBoxNombre.Visible = false;
-                comboBoxNombre.SelectedIndex = -1;
-            }
+            grbRestricción.Visible = rbPorLetra.Checked;
         }
 
         private void Restriccion()
         {
-            if (rbTodos.Checked == true)
+            if (rbTodos.Checked == true || txt_restriccion.Text == "")
             {
                 //todos
-                alcance = "Todos los clientes";
+                alcance = "Todos los Rubros";
                 Tabla = _Rubros._Rpt_Rubros();
             }
-            if (rbPorLetra.Checked == true)
+            if (rbPorLetra.Checked == true && txt_restriccion.Text != "")
             {
                 //letra
-                alcance = "Rubros que empiezan por la letra: " + comboBoxNombre.Text;
-                Tabla = _Rubros._Rpt_Rubros(comboBoxNombre.Text);
+                alcance = "Rubros que empiezan por la letra: " + txt_restriccion.Text;
+                Tabla = _Rubros._Rpt_Rubros(txt_restriccion.Text);
             }
         }
 
         private void btn_buscar01_Click(object sender, EventArgs e)
         {
-            if (validarSeleccion())
+            if (ValidarSeleccion())
             {
                 Restriccion();
 
                 ReportDataSource Datos = new ReportDataSource("DatosRubros", Tabla);
-                repRub.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesRubros.ReportRubros.rdlc";
+                repRub.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesRubro.ReportRubro.rdlc";
                 ReportParameter[] parametros = new ReportParameter[1];
                 parametros[0] = new ReportParameter("Alcance", alcance);
                 repRub.LocalReport.SetParameters(parametros);
                 repRub.LocalReport.DataSources.Clear();
                 repRub.LocalReport.DataSources.Add(Datos);
                 repRub.RefreshReport();
-                clean();
+                Clean();
             }
             else
             {
@@ -85,18 +66,14 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesRubro
             }
         }
 
-        private void clean()
+        private void Clean()
         {
             txt_restriccion.Text = "";
             rbPorLetra.Checked = false;
-            rbTodos.Checked = false;
-            lblRestriccion.Visible = false;
-            txt_restriccion.Visible = false;
-            comboBoxNombre.Visible = false;
-            comboBoxNombre.SelectedIndex = -1;
+            rbTodos.Checked = true;
         }
 
-        private bool validarSeleccion()
+        private bool ValidarSeleccion()
         {
             if (rbPorLetra.Checked == false && rbTodos.Checked == false)
             {
@@ -105,6 +82,12 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesRubro
             return true;
         }
 
-
+        private void txt_restriccion_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                txt_restriccion.Select(0, 0);
+            });
+        }
     }
 }

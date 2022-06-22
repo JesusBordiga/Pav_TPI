@@ -21,42 +21,27 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesLocales
         public ReporteLocales()
         {
             InitializeComponent();
-            lblRestriccion.Visible = false;
-            txt_restriccion.Visible = false;
+            grbRestricción.Visible = false;
         }
 
         private void ReporteLocales_Load(object sender, EventArgs e)
         {
-
             this.repLocales.RefreshReport();
         }
 
-        private void rbRangoCheckedChanged(object sender, EventArgs e)
+        private void rbPorLetraCheckedChanged(object sender, EventArgs e)
         {
-            lblRestriccion.Text = "Ingrese tipo de local";
-            lblRestriccion.Visible = true;
-            txt_restriccion.Mask = "xxxxxxxx";
-            txt_restriccion.Visible = true;
-        }
-
-        private void rbTodosCheckedChanged(object sender, EventArgs e)
-        {
-            if (rbTodos.Checked == true)
-            {
-                lblRestriccion.Text = "";
-                lblRestriccion.Visible = false;
-                txt_restriccion.Visible = false;
-            }
+            grbRestricción.Visible = rbPorLetra.Checked;
         }
         private void Restriccion()
         {
-            if (rbTodos.Checked == true)
+            if (rbTodos.Checked == true || txt_restriccion.Text == "")
             {
                 //todos
-                alcance = "Todos los locales";
+                alcance = "Todos los locales.";
                 Tabla = _Local._Rpt_Local();
             }
-            if (rbPorTipo.Checked == true)
+            if (rbPorLetra.Checked == true && txt_restriccion.Text != "")
             {
                 //letra
                 alcance = "Locales que empiezan por la letra: " + txt_restriccion.Text;
@@ -66,32 +51,47 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesLocales
 
         private bool validarSeleccion()
         {
-            if (rbPorTipo.Checked == false && rbTodos.Checked == false )
+            if (rbPorLetra.Checked == false && rbTodos.Checked == false )
             {
                 return false;
             }
             return true;
         }
-
+        private void Clean()
+        {
+            txt_restriccion.Text = "";
+            rbPorLetra.Checked = false;
+            rbTodos.Checked = true;
+        }
         private void btn_buscar01_Click(object sender, EventArgs e)
         {
             if (validarSeleccion())
             {
                 Restriccion();
 
-                ReportDataSource Datos = new ReportDataSource("DatosLocales", Tabla);
+                ReportDataSource Datos1 = new ReportDataSource("DatosLocales", Tabla);
+                ReportDataSource Datos2 = new ReportDataSource("DatosTipoComercio", Tabla);
                 repLocales.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Reportes.Ventanas_Reportes.ReportesLocales.ReportLocales.rdlc";
                 ReportParameter[] parametros = new ReportParameter[1];
-                parametros[0] = new ReportParameter("PR01", alcance);
+                parametros[0] = new ReportParameter("Alcance", alcance);
                 repLocales.LocalReport.SetParameters(parametros);
                 repLocales.LocalReport.DataSources.Clear();
-                repLocales.LocalReport.DataSources.Add(Datos);
-                repLocales.RefreshReport();
+                repLocales.LocalReport.DataSources.Add(Datos1);
+                repLocales.LocalReport.DataSources.Add(Datos2);
+                this.repLocales.RefreshReport();
+                Clean();
             }
             else
             {
                 MessageBox.Show("Seleccione una restricción!", "Error");
             }
+        }
+        private void txt_restriccion_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                txt_restriccion.Select(0, 0);
+            });
         }
     }
 }

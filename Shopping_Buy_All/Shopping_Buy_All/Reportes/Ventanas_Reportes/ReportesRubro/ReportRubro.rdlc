@@ -11,23 +11,19 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DatosProductos">
+    <DataSet Name="DatosRubros">
       <Query>
         <DataSourceName>BD3K7G01_2022DataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Codigo_Producto">
-          <DataField>Codigo_Producto</DataField>
+        <Field Name="CodigoRubro">
+          <DataField>CodigoRubro</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="NombreProducto">
-          <DataField>NombreProducto</DataField>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Precio">
-          <DataField>Precio</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
         <Field Name="Borrado">
           <DataField>Borrado</DataField>
@@ -37,10 +33,10 @@
       <rd:DataSetInfo>
         <rd:DataSetName>BD3K7G01_2022DataSet</rd:DataSetName>
         <rd:SchemaPath>D:\Lean\Facultad\Programación de Aplicaciones Visuales I\LONGO\Pav_TPI\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\BD3K7G01_2022DataSet.xsd</rd:SchemaPath>
-        <rd:TableName>Productos</rd:TableName>
+        <rd:TableName>Rubros</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ProductosTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>RubrosTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -55,7 +51,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Parameters!RU01.Value</Value>
+                    <Value>=Parameters!Alcance.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -148,29 +144,27 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.32021cm</Width>
+                  <Width>3.62889cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>8.51549cm</Width>
+                  <Width>12.25493cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.78321cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox4">
+                        <Textbox Name="Textbox7">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Codigo Rubro</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
+                                  <Value>Codigo</Value>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -178,7 +172,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -194,17 +188,15 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox6">
+                        <Textbox Name="Textbox9">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Nombre Rubro</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
+                                  <Value>Nombre</Value>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -212,7 +204,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox6</rd:DefaultName>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -229,11 +221,11 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.78321cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Codigo_Producto">
+                        <Textbox Name="CodigoRubro">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -245,11 +237,11 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Codigo_Producto</rd:DefaultName>
+                          <rd:DefaultName>CodigoRubro</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -265,7 +257,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="NombreProducto">
+                        <Textbox Name="Nombre">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -277,11 +269,11 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>NombreProducto</rd:DefaultName>
+                          <rd:DefaultName>Nombre</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -293,6 +285,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -315,11 +308,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DatosProductos</DataSetName>
+            <DataSetName>DatosRubros</DataSetName>
             <Top>1.59714cm</Top>
             <Left>0.03528cm</Left>
-            <Height>1.2cm</Height>
-            <Width>11.8357cm</Width>
+            <Height>1.56642cm</Height>
+            <Width>15.88382cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -328,7 +321,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.10124in</Height>
+        <Height>1.31494in</Height>
         <Style />
       </Body>
       <Width>6.26736in</Width>
@@ -353,7 +346,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>0cm</Top>
+              <Top>0.03528cm</Top>
               <Left>13.4191cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
@@ -386,7 +379,7 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="PR01">
+    <ReportParameter Name="Alcance">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -399,7 +392,7 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>PR01</ParameterName>
+          <ParameterName>Alcance</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
