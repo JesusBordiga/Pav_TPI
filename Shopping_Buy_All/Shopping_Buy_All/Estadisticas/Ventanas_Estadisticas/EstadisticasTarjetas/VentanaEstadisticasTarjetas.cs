@@ -15,9 +15,9 @@ using Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasTarjetas.U
 
 namespace Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasRecaudacion
 {
-    public partial class VentanaEstadisticasarjetas : Form
+    public partial class VentanaEstadisticasTarjetas : Form
     {
-        public VentanaEstadisticasarjetas()
+        public VentanaEstadisticasTarjetas()
         {
             InitializeComponent();
         }

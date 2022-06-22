@@ -28,6 +28,13 @@ namespace Shopping_Buy_All.Reportes.Ventanas_Reportes.ReporteEstadisticasCliente
         private void ReporteEstadisticasClientes_Load(object sender, EventArgs e)
         {
             this.reporteCliente.RefreshReport();
+            reporteTotalClientes.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.Total_Clientes.TotalClientes.rdlc";
+            DataTable cantidadClientes = _Total.ObtenerCantidadClientes();
+            int cantidadClient = (int)cantidadClientes.Rows[0]["CantidadClientes"];
+            ReportParameter[] lista = new ReportParameter[1];
+            lista[0] = new ReportParameter("Parametro", cantidadClient.ToString());
+            reporteTotalClientes.LocalReport.SetParameters(lista);
+            this.reporteTotalClientes.RefreshReport();
         }
 
         private void ReporteClientesXEsCiv()

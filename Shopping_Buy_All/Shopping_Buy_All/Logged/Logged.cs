@@ -158,6 +158,12 @@ namespace Shopping_Buy_All
             ReporteRubro reporteRubro = new ReporteRubro();
             reporteRubro.Show();
         }
+        private void btnReporteAutomovil_Click(object sender, EventArgs e)
+        {
+            ReporteMarcasAutomovil ventana = new ReporteMarcasAutomovil();
+            ventana.Show();
+        }
+
         //ACCIONES DE REPORTE
         private void pictureBoxMenuReportes_MouseHover(object sender, EventArgs e)
         {
@@ -202,8 +208,15 @@ namespace Shopping_Buy_All
             VentanaRecaudacion ventanaRecaudacion = new VentanaRecaudacion();
             ventanaRecaudacion.Show();
         }
-        
+        private void btnEstadsiticasProductos(object sender, EventArgs e)
+        {
 
+        }
+        private void btnMarcasTarjeta_Click(object sender, EventArgs e)
+        {
+            VentanaEstadisticasTarjetas ventana = new VentanaEstadisticasTarjetas();
+            ventana.Show();
+        }
         //ACCIONES DE ESTADISTICAS
         private void btnEstadisticas_Click(object sender, EventArgs e)
         {
@@ -237,9 +250,6 @@ namespace Shopping_Buy_All
                 panelUsuarios.Visible = false;
         }
 
-        private void btnVentanaEstadsitica(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

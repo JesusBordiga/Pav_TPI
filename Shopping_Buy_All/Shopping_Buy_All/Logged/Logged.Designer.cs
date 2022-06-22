@@ -60,7 +60,7 @@
             this.MenuReportes = new System.Windows.Forms.Panel();
             this.btnReportesLocales = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnReporteAutomovil = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblVolver = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
@@ -547,7 +547,7 @@
             this.MenuReportes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.MenuReportes.Controls.Add(this.btnReportesLocales);
             this.MenuReportes.Controls.Add(this.pictureBox7);
-            this.MenuReportes.Controls.Add(this.button2);
+            this.MenuReportes.Controls.Add(this.btnReporteAutomovil);
             this.MenuReportes.Controls.Add(this.pictureBox4);
             this.MenuReportes.Controls.Add(this.lblVolver);
             this.MenuReportes.Controls.Add(this.button11);
@@ -576,7 +576,7 @@
             this.MenuReportes.Controls.Add(this.pictureBox9);
             this.MenuReportes.Controls.Add(this.btnReporteFactura);
             this.MenuReportes.Controls.Add(this.btnReporteClientes);
-            this.MenuReportes.Location = new System.Drawing.Point(123, 72);
+            this.MenuReportes.Location = new System.Drawing.Point(123, 78);
             this.MenuReportes.Name = "MenuReportes";
             this.MenuReportes.Size = new System.Drawing.Size(564, 315);
             this.MenuReportes.TabIndex = 59;
@@ -610,20 +610,21 @@
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.btnReportesLocales_Click);
             // 
-            // button2
+            // btnReporteAutomovil
             // 
-            this.button2.BackColor = System.Drawing.Color.DimGray;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(223, 193);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 23);
-            this.button2.TabIndex = 99;
-            this.button2.Text = "Marca Automovil";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnReporteAutomovil.BackColor = System.Drawing.Color.DimGray;
+            this.btnReporteAutomovil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporteAutomovil.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnReporteAutomovil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteAutomovil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteAutomovil.ForeColor = System.Drawing.Color.White;
+            this.btnReporteAutomovil.Location = new System.Drawing.Point(223, 193);
+            this.btnReporteAutomovil.Name = "btnReporteAutomovil";
+            this.btnReporteAutomovil.Size = new System.Drawing.Size(96, 23);
+            this.btnReporteAutomovil.TabIndex = 99;
+            this.btnReporteAutomovil.Text = "Marca Automovil";
+            this.btnReporteAutomovil.UseVisualStyleBackColor = false;
+            this.btnReporteAutomovil.Click += new System.EventHandler(this.btnReporteAutomovil_Click);
             // 
             // pictureBox4
             // 
@@ -636,6 +637,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(58, 55);
             this.pictureBox4.TabIndex = 98;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.btnMarcaAutomovil_Click);
             // 
             // lblVolver
             // 
@@ -1069,7 +1071,7 @@
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(65, 206);
+            this.button13.Location = new System.Drawing.Point(61, 206);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(86, 23);
             this.button13.TabIndex = 95;
@@ -1104,8 +1106,9 @@
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(75, 23);
             this.button21.TabIndex = 87;
-            this.button21.Text = "Completar";
+            this.button21.Text = "Tarjetas";
             this.button21.UseVisualStyleBackColor = false;
+            this.button21.Click += new System.EventHandler(this.btnMarcasTarjeta_Click);
             // 
             // pictureBox18
             // 
@@ -1125,7 +1128,7 @@
             this.pictureBox25.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox25.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox25.Location = new System.Drawing.Point(337, 145);
+            this.pictureBox25.Location = new System.Drawing.Point(339, 145);
             this.pictureBox25.Name = "pictureBox25";
             this.pictureBox25.Size = new System.Drawing.Size(58, 55);
             this.pictureBox25.TabIndex = 79;
@@ -1134,9 +1137,10 @@
             // pictureBox26
             // 
             this.pictureBox26.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox26.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.terminator;
             this.pictureBox26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox26.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox26.Location = new System.Drawing.Point(204, 145);
+            this.pictureBox26.Location = new System.Drawing.Point(206, 145);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(58, 55);
             this.pictureBox26.TabIndex = 78;
@@ -1207,6 +1211,7 @@
             this.button22.TabIndex = 63;
             this.button22.Text = "Vehiculos";
             this.button22.UseVisualStyleBackColor = false;
+            this.button22.Click += new System.EventHandler(this.btnEstadsiticasProductos);
             // 
             // button23
             // 
@@ -1321,8 +1326,8 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelEstadisticas);
             this.Controls.Add(this.MenuReportes);
+            this.Controls.Add(this.panelEstadisticas);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.panelUsuarios);
             this.Controls.Add(this.labelFecha);
@@ -1460,7 +1465,7 @@
         private System.Windows.Forms.PictureBox pictureBox32;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnReporteAutomovil;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btnReportesLocales;
         private System.Windows.Forms.PictureBox pictureBox7;

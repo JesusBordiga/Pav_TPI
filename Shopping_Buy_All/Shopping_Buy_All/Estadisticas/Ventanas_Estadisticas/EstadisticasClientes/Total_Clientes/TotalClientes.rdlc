@@ -1,75 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="EstadisticasClientes">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>2e341f73-e9a3-41b0-ba42-9cd0e9af8468</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
-  <DataSets>
-    <DataSet Name="DataClientesEstadoCivil">
-      <Query>
-        <DataSourceName>EstadisticasClientes</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="NombreEstadoCivil">
-          <DataField>NombreEstadoCivil</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CantidadClientes">
-          <DataField>CantidadClientes</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>EstadisticasClientes</rd:DataSetName>
-        <rd:SchemaPath>D:\Lean\Facultad\Programación de Aplicaciones Visuales I\LONGO\Pav_TPI\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_EstadoCivil\AccesoDatosEstadoCivil.xsd</rd:SchemaPath>
-        <rd:TableName>Clientes por Estado Civil</rd:TableName>
-        <rd:TableAdapterFillMethod />
-        <rd:TableAdapterGetDataMethod />
-        <rd:TableAdapterName />
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="DatosClientes">
-      <Query>
-        <DataSourceName>EstadisticasClientes</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="CantidadClientes">
-          <DataField>CantidadClientes</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>EstadisticasClientes</rd:DataSetName>
-        <rd:SchemaPath>G:\Documentos\PAV\Pav_TPI\Shopping_Buy_All\Shopping_Buy_All\Estadisticas\Ventanas_Estadisticas\EstadisticasClientes\Clientes_TipoDocumento\AccesoDatosTipoDocumento.xsd</rd:SchemaPath>
-        <rd:TableName>ClientesTotales</rd:TableName>
-        <rd:TableAdapterFillMethod />
-        <rd:TableAdapterGetDataMethod />
-        <rd:TableAdapterName />
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
         <ReportItems>
-          <Textbox Name="Textbox2">
+          <Textbox Name="Textbox1">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Clientes por Estado Civil</Value>
+                    <Value>Total Clientes</Value>
                     <Style>
-                      <FontSize>20pt</FontSize>
+                      <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -78,10 +23,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.335cm</Top>
-            <Left>1.47521cm</Left>
-            <Height>1.05861cm</Height>
-            <Width>9.35272cm</Width>
+            <Height>0.6cm</Height>
+            <Width>2.26257cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -92,376 +35,58 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Line Name="Line1">
-            <Top>1.57cm</Top>
-            <Height>0cm</Height>
-            <Width>12.1173cm</Width>
+          <Image Name="Image1">
+            <Source>Embedded</Source>
+            <Value>users</Value>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.63528cm</Top>
+            <Left>1.14181cm</Left>
+            <Height>0.89146cm</Height>
+            <Width>1.12076cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
-                <Style>Solid</Style>
-                <Width>3pt</Width>
+                <Style>None</Style>
               </Border>
             </Style>
-          </Line>
-          <Chart Name="Chart3">
-            <ChartCategoryHierarchy>
-              <ChartMembers>
-                <ChartMember>
-                  <Group Name="Chart3_CategoryGroup">
-                    <GroupExpressions>
-                      <GroupExpression>=Fields!NombreEstadoCivil.Value</GroupExpression>
-                    </GroupExpressions>
-                  </Group>
-                  <SortExpressions>
-                    <SortExpression>
-                      <Value>=Fields!NombreEstadoCivil.Value</Value>
-                    </SortExpression>
-                  </SortExpressions>
-                  <Label>=Fields!NombreEstadoCivil.Value</Label>
-                </ChartMember>
-              </ChartMembers>
-            </ChartCategoryHierarchy>
-            <ChartSeriesHierarchy>
-              <ChartMembers>
-                <ChartMember>
-                  <Label>Cantidad Clientes</Label>
-                </ChartMember>
-              </ChartMembers>
-            </ChartSeriesHierarchy>
-            <ChartData>
-              <ChartSeriesCollection>
-                <ChartSeries Name="CantidadClientes">
-                  <ChartDataPoints>
-                    <ChartDataPoint>
-                      <ChartDataPointValues>
-                        <Y>=Sum(Fields!CantidadClientes.Value)</Y>
-                      </ChartDataPointValues>
-                      <ChartDataLabel>
-                        <Style>
-                          <FontWeight>Bold</FontWeight>
-                        </Style>
-                        <UseValueAsLabel>true</UseValueAsLabel>
-                        <Visible>true</Visible>
-                      </ChartDataLabel>
-                      <Style />
-                      <ChartMarker>
-                        <Style />
-                      </ChartMarker>
-                      <DataElementOutput>Output</DataElementOutput>
-                    </ChartDataPoint>
-                  </ChartDataPoints>
-                  <Style />
-                  <ChartEmptyPoints>
-                    <Style />
-                    <ChartMarker>
-                      <Style />
-                    </ChartMarker>
-                    <ChartDataLabel>
-                      <Style />
-                    </ChartDataLabel>
-                  </ChartEmptyPoints>
-                  <ValueAxisName>Primary</ValueAxisName>
-                  <CategoryAxisName>Primary</CategoryAxisName>
-                  <ChartSmartLabel>
-                    <CalloutLineColor>Black</CalloutLineColor>
-                    <MinMovingDistance>0pt</MinMovingDistance>
-                  </ChartSmartLabel>
-                </ChartSeries>
-              </ChartSeriesCollection>
-            </ChartData>
-            <ChartAreas>
-              <ChartArea Name="Default">
-                <ChartCategoryAxes>
-                  <ChartAxis Name="Primary">
+          </Image>
+          <Textbox Name="Parametro">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!Parametro.Value</Value>
                     <Style>
-                      <Border>
-                        <Color>Gainsboro</Color>
-                        <Style>None</Style>
-                      </Border>
-                      <FontSize>8pt</FontSize>
-                      <Color>#5c5c5c</Color>
+                      <FontSize>20pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
                     </Style>
-                    <ChartAxisTitle>
-                      <Caption />
-                      <Style>
-                        <FontSize>9pt</FontSize>
-                        <Color>#5c5c5c</Color>
-                      </Style>
-                    </ChartAxisTitle>
-                    <ChartMajorGridLines>
-                      <Enabled>False</Enabled>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                        </Border>
-                      </Style>
-                    </ChartMajorGridLines>
-                    <ChartMinorGridLines>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                          <Style>Dotted</Style>
-                        </Border>
-                      </Style>
-                    </ChartMinorGridLines>
-                    <ChartMajorTickMarks>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                          <Style>None</Style>
-                        </Border>
-                      </Style>
-                    </ChartMajorTickMarks>
-                    <ChartMinorTickMarks>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                        </Border>
-                      </Style>
-                      <Length>0.5</Length>
-                    </ChartMinorTickMarks>
-                    <CrossAt>NaN</CrossAt>
-                    <Minimum>NaN</Minimum>
-                    <Maximum>NaN</Maximum>
-                    <ChartAxisScaleBreak>
-                      <Style />
-                    </ChartAxisScaleBreak>
-                  </ChartAxis>
-                  <ChartAxis Name="Secondary">
-                    <Style>
-                      <Border>
-                        <Color>Gainsboro</Color>
-                        <Style>None</Style>
-                      </Border>
-                      <FontSize>8pt</FontSize>
-                      <Color>#5c5c5c</Color>
-                    </Style>
-                    <ChartAxisTitle>
-                      <Caption />
-                      <Style>
-                        <FontSize>9pt</FontSize>
-                        <Color>#5c5c5c</Color>
-                      </Style>
-                    </ChartAxisTitle>
-                    <ChartMajorGridLines>
-                      <Enabled>False</Enabled>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                        </Border>
-                      </Style>
-                    </ChartMajorGridLines>
-                    <ChartMinorGridLines>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                          <Style>Dotted</Style>
-                        </Border>
-                      </Style>
-                    </ChartMinorGridLines>
-                    <ChartMajorTickMarks>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                          <Style>None</Style>
-                        </Border>
-                      </Style>
-                    </ChartMajorTickMarks>
-                    <ChartMinorTickMarks>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                        </Border>
-                      </Style>
-                      <Length>0.5</Length>
-                    </ChartMinorTickMarks>
-                    <CrossAt>NaN</CrossAt>
-                    <Location>Opposite</Location>
-                    <Minimum>NaN</Minimum>
-                    <Maximum>NaN</Maximum>
-                    <ChartAxisScaleBreak>
-                      <Style />
-                    </ChartAxisScaleBreak>
-                  </ChartAxis>
-                </ChartCategoryAxes>
-                <ChartValueAxes>
-                  <ChartAxis Name="Primary">
-                    <Style>
-                      <Border>
-                        <Color>Gainsboro</Color>
-                        <Style>None</Style>
-                      </Border>
-                      <FontSize>8pt</FontSize>
-                      <Color>#5c5c5c</Color>
-                    </Style>
-                    <ChartAxisTitle>
-                      <Caption />
-                      <Style>
-                        <FontSize>9pt</FontSize>
-                        <Color>#5c5c5c</Color>
-                      </Style>
-                    </ChartAxisTitle>
-                    <ChartMajorGridLines>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                        </Border>
-                      </Style>
-                    </ChartMajorGridLines>
-                    <ChartMinorGridLines>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                          <Style>Dotted</Style>
-                        </Border>
-                      </Style>
-                    </ChartMinorGridLines>
-                    <ChartMajorTickMarks>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                          <Style>None</Style>
-                        </Border>
-                      </Style>
-                    </ChartMajorTickMarks>
-                    <ChartMinorTickMarks>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                        </Border>
-                      </Style>
-                      <Length>0.5</Length>
-                    </ChartMinorTickMarks>
-                    <CrossAt>NaN</CrossAt>
-                    <Minimum>NaN</Minimum>
-                    <Maximum>NaN</Maximum>
-                    <ChartAxisScaleBreak>
-                      <Style />
-                    </ChartAxisScaleBreak>
-                  </ChartAxis>
-                  <ChartAxis Name="Secondary">
-                    <Style>
-                      <Border>
-                        <Color>Gainsboro</Color>
-                        <Style>None</Style>
-                      </Border>
-                      <FontSize>8pt</FontSize>
-                      <Color>#5c5c5c</Color>
-                    </Style>
-                    <ChartAxisTitle>
-                      <Caption />
-                      <Style>
-                        <FontSize>9pt</FontSize>
-                        <Color>#5c5c5c</Color>
-                      </Style>
-                    </ChartAxisTitle>
-                    <ChartMajorGridLines>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                        </Border>
-                      </Style>
-                    </ChartMajorGridLines>
-                    <ChartMinorGridLines>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                          <Style>Dotted</Style>
-                        </Border>
-                      </Style>
-                    </ChartMinorGridLines>
-                    <ChartMajorTickMarks>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                          <Style>None</Style>
-                        </Border>
-                      </Style>
-                    </ChartMajorTickMarks>
-                    <ChartMinorTickMarks>
-                      <Style>
-                        <Border>
-                          <Color>Gainsboro</Color>
-                        </Border>
-                      </Style>
-                      <Length>0.5</Length>
-                    </ChartMinorTickMarks>
-                    <CrossAt>NaN</CrossAt>
-                    <Location>Opposite</Location>
-                    <Minimum>NaN</Minimum>
-                    <Maximum>NaN</Maximum>
-                    <ChartAxisScaleBreak>
-                      <Style />
-                    </ChartAxisScaleBreak>
-                  </ChartAxis>
-                </ChartValueAxes>
-                <ChartThreeDProperties>
-                  <Enabled>true</Enabled>
-                  <Clustered>true</Clustered>
-                </ChartThreeDProperties>
-                <Style>
-                  <BackgroundColor>#00ffffff</BackgroundColor>
-                  <BackgroundGradientType>None</BackgroundGradientType>
-                </Style>
-              </ChartArea>
-            </ChartAreas>
-            <ChartLegends>
-              <ChartLegend Name="Default">
-                <Style>
-                  <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <Position>RightCenter</Position>
-                <DockOutsideChartArea>true</DockOutsideChartArea>
-                <ChartLegendTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </ChartLegendTitle>
-                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-              </ChartLegend>
-            </ChartLegends>
-            <Palette>Pacific</Palette>
-            <ChartBorderSkin>
-              <Style>
-                <BackgroundColor>Gray</BackgroundColor>
-                <BackgroundGradientType>None</BackgroundGradientType>
-                <Color>White</Color>
-              </Style>
-            </ChartBorderSkin>
-            <ChartNoDataMessage Name="NoDataMessage">
-              <Caption>Sin datos disponibles</Caption>
-              <Style>
-                <BackgroundGradientType>None</BackgroundGradientType>
-                <FontWeight>Bold</FontWeight>
-                <TextAlign>General</TextAlign>
-                <VerticalAlign>Top</VerticalAlign>
-              </Style>
-            </ChartNoDataMessage>
-            <DataSetName>DataClientesEstadoCivil</DataSetName>
-            <Top>1.60528cm</Top>
-            <Height>5.41212cm</Height>
-            <Width>12.1173cm</Width>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Parametro</rd:DefaultName>
+            <Top>0.74111cm</Top>
+            <Height>0.63033cm</Height>
+            <Width>0.96542cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
-                <Color>LightGrey</Color>
                 <Style>None</Style>
               </Border>
-              <BackgroundColor>White</BackgroundColor>
-              <BackgroundGradientType>None</BackgroundGradientType>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
             </Style>
-          </Chart>
+          </Textbox>
         </ReportItems>
-        <Height>2.76276in</Height>
+        <Height>0.60108in</Height>
         <Style />
       </Body>
-      <Width>4.78101in</Width>
+      <Width>0.89078in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
@@ -474,10 +99,23 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Parametro">
+      <DataType>Integer</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Parametro</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <EmbeddedImages>
@@ -502,5 +140,5 @@ AGJqwcwzbDaeQTqx2vuBfwOvD9uOvwrDNmMhbTxR/b3DNX43PNugUUhpNqt/l63hxwV7/g09V7PO8y8L
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>76a9e847-55e5-4f02-82ce-3b36eaac6d3c</rd:ReportID>
+  <rd:ReportID>04287d7c-d87d-4ee0-bfc6-5c75350c0fc8</rd:ReportID>
 </Report>

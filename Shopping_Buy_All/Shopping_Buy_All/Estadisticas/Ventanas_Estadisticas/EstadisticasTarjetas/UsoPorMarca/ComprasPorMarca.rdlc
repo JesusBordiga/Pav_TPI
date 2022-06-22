@@ -390,6 +390,10 @@
                     </ChartAxisScaleBreak>
                   </ChartAxis>
                 </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                  <Clustered>true</Clustered>
+                </ChartThreeDProperties>
                 <Style>
                   <BackgroundColor>#00ffffff</BackgroundColor>
                   <BackgroundGradientType>None</BackgroundGradientType>
@@ -506,7 +510,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>18cm</Height>
+        <Height>16.03878cm</Height>
         <Style />
       </Body>
       <Width>17.145cm</Width>

@@ -37,6 +37,8 @@
             this.pictureBox31 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.reporteTotalClientes = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -144,6 +146,28 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.button3_Click);
             // 
+            // reporteTotalClientes
+            // 
+            this.reporteTotalClientes.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.reporteTotalClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.reporteTotalClientes.Cursor = System.Windows.Forms.Cursors.Default;
+            this.reporteTotalClientes.DocumentMapWidth = 81;
+            this.reporteTotalClientes.LocalReport.ReportEmbeddedResource = "Shopping_Buy_All.Estadisticas.Ventanas_Estadisticas.EstadisticasClientes.TotalCli" +
+    "entes.TotalClientesEstadisticas.rdlc";
+            this.reporteTotalClientes.Location = new System.Drawing.Point(53, 9);
+            this.reporteTotalClientes.Name = "reporteTotalClientes";
+            this.reporteTotalClientes.ServerReport.BearerToken = null;
+            this.reporteTotalClientes.Size = new System.Drawing.Size(99, 96);
+            this.reporteTotalClientes.TabIndex = 56;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Location = new System.Drawing.Point(53, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(99, 26);
+            this.panel1.TabIndex = 57;
+            // 
             // ReporteEstadisticasClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,6 +175,8 @@
             this.BackgroundImage = global::Shopping_Buy_All.Properties.Resources.montanas_minimalista_arte_low_poly_2560x1440_xtrafondos_com;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(599, 514);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.reporteTotalClientes);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox31);
@@ -182,5 +208,7 @@
         private System.Windows.Forms.PictureBox pictureBox31;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private Microsoft.Reporting.WinForms.ReportViewer reporteTotalClientes;
+        private System.Windows.Forms.Panel panel1;
     }
 }

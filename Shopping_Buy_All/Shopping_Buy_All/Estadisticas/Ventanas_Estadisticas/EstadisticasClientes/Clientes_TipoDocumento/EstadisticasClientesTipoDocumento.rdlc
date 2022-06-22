@@ -118,7 +118,11 @@
                         <Y>=Sum(Fields!CantidadClientes.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
-                        <Style />
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
@@ -127,7 +131,6 @@
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
-                  <Type>Shape</Type>
                   <Style />
                   <ChartEmptyPoints>
                     <Style />
@@ -375,6 +378,7 @@
                 </ChartValueAxes>
                 <ChartThreeDProperties>
                   <Enabled>true</Enabled>
+                  <Clustered>true</Clustered>
                 </ChartThreeDProperties>
                 <Style>
                   <BackgroundColor>#00ffffff</BackgroundColor>
@@ -419,9 +423,8 @@
             </ChartNoDataMessage>
             <DataSetName>DatosDocumento</DataSetName>
             <Top>1.67583cm</Top>
-            <Left>1.54278cm</Left>
-            <Height>6.72642cm</Height>
-            <Width>9.73759cm</Width>
+            <Height>7.46705cm</Height>
+            <Width>12.36516cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
