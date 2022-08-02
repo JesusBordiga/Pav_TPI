@@ -719,6 +719,7 @@
     </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesRubro\ReporteRubro.Designer.cs">
       <DependentUpon>ReporteRubro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Ventanas_Reportes\ReportesTipoDocumentos\ReporteTipoDocumentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1151,6 +1152,7 @@
     </None>
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTarjetas\DatosEstadisticasTarjetas.xss">
       <DependentUpon>DatosEstadisticasTarjetas.xsd</DependentUpon>
+    </None>
     <None Include="Estadisticas\Ventanas_Estadisticas\EstadisticasTipoComercio\DatosEstadisticosTipoComercio.xsc">
       <DependentUpon>DatosEstadisticosTipoComercio.xsd</DependentUpon>
     </None>
@@ -1239,19 +1241,6 @@
     <None Include="Resources\%28180%29.jpg" />
     <None Include="Resources\help-info.png" />
     <None Include="Resources\mega.png" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rstudio.png" />
@@ -1273,6 +1262,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

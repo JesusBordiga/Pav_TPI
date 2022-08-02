@@ -193,6 +193,7 @@ namespace Shopping_Buy_All.ABMS.AccesoADatos
                 "GROUP BY T.NombreSexo  " +
                 "ORDER BY 'CantidadClientes' DESC";
             return _DB.Consultar(consulta);
+        }
         public static DataTable obtenerDatosSexo2()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBaseDatos"];
